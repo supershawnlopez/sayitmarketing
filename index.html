@@ -1,153 +1,487 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Say It Marketing</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{
-  --bg:#ffffff; --text:#0b0c0d; --muted:#5f6368; --line:#e9ecef;
-  --soft:#f7f9fb; --accent:#53A0D1;
-}
-*{box-sizing:border-box}
-body{margin:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,sans-serif;color:var(--text);background:#fff}
-a{text-decoration:none;color:inherit}
-.wrap{max-width:1160px;margin:0 auto;padding:0 22px}
-.nav{position:sticky;top:0;background:rgba(255,255,255,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.nav-inner{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
-.brand{font-weight:800;letter-spacing:-.03em}
-.nav-cta{background:#111;color:#fff;padding:12px 18px;border-radius:999px;font-weight:600}
-.section{padding:96px 0}
-.hero{padding:56px 0 80px}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
-h1{font-size:clamp(2.8rem,6vw,4.6rem);line-height:1.02;letter-spacing:-.04em;margin:10px 0 16px}
-.lead{color:var(--muted);font-size:clamp(1rem,1.6vw,1.15rem);max-width:620px}
-.cta-row{display:flex;gap:12px;margin-top:22px}
-.btn{padding:14px 22px;border-radius:999px;font-weight:600}
-.btn-primary{background:#111;color:#fff}
-.btn-secondary{border:1px solid var(--line)}
-.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
-.pill{border:1px solid var(--line);padding:10px 14px;border-radius:999px;color:#3f4347}
-.hero-visual{border:1px solid var(--line);border-radius:24px;overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,.06)}
-.hero-visual img{display:block;width:100%}
-.center{text-align:center}
-.section h2{font-size:clamp(2rem,4vw,3rem);letter-spacing:-.04em;margin:0 0 10px}
-.sub{color:var(--muted);max-width:720px;margin:0 auto}
-.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
-.card{padding:28px 0;border-top:1px solid var(--line)}
-.card h3{margin:0 0 8px}
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:30px}
-.step{padding:22px 0;border-top:1px solid var(--line)}
-.badge{display:inline-block;background:#111;color:#fff;border-radius:999px;padding:6px 10px;font-size:12px;margin-left:8px}
-.packages{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:30px}
-.pkg{padding:24px;border-radius:18px;background:#fff}
-.pkg.mid{background:#0b0c0d;color:#fff}
-.price{font-size:2.8rem;letter-spacing:-.04em;margin:6px 0}
-.pkg ul{list-style:none;padding:0;margin:14px 0 18px;display:grid;gap:8px}
-.pkg li{color:#5f6368}
-.pkg.mid li{color:#d1d6db}
-.dark{background:#0b0c0d;color:#fff}
-.dark .sub{color:#c8ccd1}
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:30px}
-.feature{padding:18px 0;border-top:1px solid rgba(255,255,255,.12)}
-.soft{background:var(--soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.cta{padding:80px 0}
-.cta-box{border:1px solid var(--line);border-radius:24px;padding:36px;text-align:center}
-.footer{border-top:1px solid var(--line);padding:24px 0;color:var(--muted);text-align:center}
-@media (max-width:900px){
-  .hero-grid,.grid-3,.steps,.packages,.features{grid-template-columns:1fr}
-}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Say It Marketing</title>
+  <meta name="description" content="Professional websites, print, and social media for local Tucson businesses." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#0b0c0d;
+      --muted:#61666b;
+      --line:#e8ecf0;
+      --soft:#f6f8fa;
+      --soft-blue:#f5faff;
+      --accent:#53A0D1;
+      --accent-dark:#244d68;
+      --max:1180px;
+      --radius:26px;
+      --shadow:0 30px 90px rgba(14,20,27,.08);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      line-height:1.5;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    img{display:block;max-width:100%}
+    a{text-decoration:none;color:inherit}
+    .wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
+    .section{padding:104px 0}
+    .section.soft{background:linear-gradient(180deg,#fbfcfd,#f6f8fa)}
+    .section.blue-soft{background:linear-gradient(180deg,#ffffff,#f7fbff)}
+    .nav{
+      position:sticky;top:0;z-index:40;
+      background:rgba(255,255,255,.84);
+      backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(232,236,240,.8);
+    }
+    .nav-inner{
+      height:84px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .brand{
+      display:flex;align-items:center;gap:16px;
+    }
+    .brand img{height:36px;width:auto}
+    .nav-links{
+      display:flex;align-items:center;gap:30px;
+      font-size:15px;color:#23272b;
+    }
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      gap:10px;padding:15px 22px;border-radius:999px;
+      font-weight:600;font-size:15px;transition:.2s ease;
+      border:1px solid transparent;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:#0b0c0d;color:#fff;box-shadow:0 18px 50px rgba(11,12,13,.18)}
+    .btn-secondary{background:#fff;border-color:var(--line);color:#0b0c0d}
+    .btn-light{background:#fff;border-color:#ffffff;color:#0b0c0d}
+    .eyebrow-row{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+    .eyebrow{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:10px 14px;border-radius:999px;border:1px solid var(--line);
+      background:#fff;color:#3d4348;font-size:14px;font-weight:500;
+    }
+    .hero{
+      padding:58px 0 76px;
+      background:
+        radial-gradient(circle at 82% 10%, rgba(83,160,209,.09), transparent 19%),
+        linear-gradient(180deg,#ffffff 0%, #fbfdff 56%, #ffffff 100%);
+    }
+    .hero-grid{
+      display:grid;grid-template-columns:1fr 1.02fr;gap:54px;align-items:center;
+    }
+    .hero-copy h1{
+      margin:0 0 18px;
+      font-size:clamp(3rem,6vw,5.45rem);
+      line-height:.95;
+      letter-spacing:-.055em;
+      font-weight:800;
+      max-width:720px;
+    }
+    .hero-copy p{
+      margin:0;
+      color:var(--muted);
+      font-size:clamp(1.06rem,1.7vw,1.22rem);
+      max-width:610px;
+    }
+    .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+    .hero-visual{
+      position:relative;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:30px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .hero-visual::after{
+      content:"";
+      position:absolute;inset:auto 22px 18px 22px;height:10px;border-radius:999px;
+      background:linear-gradient(90deg, rgba(83,160,209,.18), rgba(83,160,209,0));
+      filter:blur(8px);
+    }
+    .section-head{
+      text-align:center;
+      max-width:760px;
+      margin:0 auto 54px;
+    }
+    .section-head h2{
+      margin:0 0 14px;
+      font-size:clamp(2.2rem,4vw,4rem);
+      line-height:.98;
+      letter-spacing:-.05em;
+      font-weight:800;
+    }
+    .section-head p{
+      margin:0;
+      color:var(--muted);
+      font-size:1.08rem;
+    }
+    .three-col{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:26px;
+    }
+    .value-item{
+      padding:14px 4px 0;
+    }
+    .value-item h3{
+      margin:0 0 12px;
+      font-size:1.35rem;
+      letter-spacing:-.03em;
+    }
+    .value-item p{margin:0;color:var(--muted)}
+    .how-grid{
+      display:grid;grid-template-columns:1.02fr .98fr;gap:42px;align-items:center;
+    }
+    .step-list{display:grid;gap:24px}
+    .step{
+      padding:0 0 22px;
+      border-bottom:1px solid var(--line);
+    }
+    .step:last-child{border-bottom:none;padding-bottom:0}
+    .step-top{
+      display:flex;align-items:center;gap:14px;margin-bottom:10px;
+    }
+    .step-num{
+      width:42px;height:42px;border-radius:50%;
+      display:inline-flex;align-items:center;justify-content:center;
+      background:#0b0c0d;color:#fff;font-weight:700;
+      box-shadow:0 14px 36px rgba(11,12,13,.14);
+    }
+    .step h3{
+      margin:0;
+      font-size:1.32rem;
+      letter-spacing:-.03em;
+    }
+    .step p{margin:0;color:var(--muted)}
+    .packages{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:26px;align-items:stretch;
+    }
+    .package{
+      position:relative;
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:30px;
+      padding:30px;
+      box-shadow:0 10px 30px rgba(14,20,27,.03);
+      display:flex;flex-direction:column;
+      min-height:100%;
+    }
+    .package.popular{
+      background:#0b0c0d;
+      color:#fff;
+      border-color:#0b0c0d;
+      box-shadow:0 30px 90px rgba(11,12,13,.24);
+      transform:translateY(-6px);
+    }
+    .package .tag{
+      position:absolute;top:22px;right:22px;
+      padding:9px 12px;border-radius:999px;
+      font-size:12px;font-weight:700;
+      background:rgba(83,160,209,.15);color:#33566d;
+    }
+    .package.popular .tag{
+      background:rgba(255,255,255,.12);
+      color:#fff;
+    }
+    .price{
+      font-size:4rem;
+      line-height:1;
+      letter-spacing:-.06em;
+      margin:8px 0 18px;
+      font-weight:700;
+    }
+    .package h3{
+      margin:0 0 10px;
+      font-size:1.8rem;
+      letter-spacing:-.035em;
+    }
+    .package .desc{
+      margin:0 0 20px;
+      color:var(--muted);
+      font-size:1.02rem;
+    }
+    .package.popular .desc{color:#c8cdd1}
+    .feature-list{
+      list-style:none;padding:0;margin:0 0 26px;display:grid;gap:11px;
+    }
+    .feature-list li{
+      display:flex;gap:11px;align-items:flex-start;
+      color:#2d3338;
+    }
+    .package.popular .feature-list li{color:#e7eaed}
+    .check{
+      width:24px;height:24px;border-radius:50%;
+      display:inline-flex;align-items:center;justify-content:center;
+      background:rgba(83,160,209,.12);color:#31556b;
+      font-size:14px;flex:0 0 auto;font-weight:700;margin-top:1px;
+    }
+    .package.popular .check{
+      background:rgba(255,255,255,.12);color:#fff;
+    }
+    .package .btn{margin-top:auto}
+    .dark-section{
+      background:#0b0c0d;
+      color:#fff;
+      position:relative;
+      overflow:hidden;
+    }
+    .dark-section::before{
+      content:"";
+      position:absolute;inset:0;
+      background:
+        radial-gradient(circle at 16% 22%, rgba(83,160,209,.16), transparent 24%),
+        radial-gradient(circle at 88% 78%, rgba(83,160,209,.10), transparent 20%);
+      pointer-events:none;
+    }
+    .dark-section .wrap{position:relative}
+    .dark-section .section-head p{color:#c7ccd0}
+    .feature-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+    }
+    .feature-card{
+      padding:24px 6px 0;
+      border-top:1px solid rgba(255,255,255,.12);
+    }
+    .feature-card h3{
+      margin:0 0 10px;
+      font-size:1.25rem;
+      letter-spacing:-.03em;
+    }
+    .feature-card p{
+      margin:0;color:#c7ccd0;
+    }
+    .services-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:26px;
+    }
+    .service-card{
+      background:#fff;border:1px solid var(--line);border-radius:30px;padding:30px;
+      box-shadow:0 8px 30px rgba(14,20,27,.03);
+    }
+    .service-card h3{
+      margin:0 0 14px;font-size:1.55rem;letter-spacing:-.03em;
+    }
+    .service-card p{margin:0 0 22px;color:var(--muted)}
+    .care-grid{
+      display:grid;grid-template-columns:repeat(3,1fr);gap:26px;
+    }
+    .care-card{
+      background:#fff;border:1px solid var(--line);border-radius:30px;padding:30px;
+    }
+    .care-card.recommended{
+      border-color:rgba(83,160,209,.4);
+      box-shadow:0 24px 70px rgba(83,160,209,.12);
+      background:linear-gradient(180deg,#ffffff,#fbfdff);
+    }
+    .care-card .price{font-size:3.8rem}
+    .care-card h3{
+      margin:0 0 10px;font-size:1.8rem;letter-spacing:-.03em;
+    }
+    .care-card p{margin:0 0 18px;color:var(--muted)}
+    .care-card .tag{
+      display:inline-flex;padding:9px 12px;border-radius:999px;font-size:12px;font-weight:700;
+      background:rgba(83,160,209,.12);color:#3a617b;
+      margin-bottom:16px;
+    }
+    .cta-box{
+      background:linear-gradient(180deg,#ffffff,#fbfcfd);
+      border:1px solid var(--line);
+      border-radius:34px;
+      padding:52px 34px;
+      text-align:center;
+      box-shadow:var(--shadow);
+    }
+    .cta-box h2{
+      margin:0 0 14px;
+      font-size:clamp(2.3rem,4vw,4rem);
+      line-height:.98;
+      letter-spacing:-.05em;
+    }
+    .cta-box p{
+      margin:0 auto 28px;
+      max-width:620px;color:var(--muted);font-size:1.08rem;
+    }
+    .footer{
+      border-top:1px solid var(--line);
+      padding:30px 0 40px;
+      color:var(--muted);
+      text-align:center;
+      font-size:14px;
+    }
+    .footer .line2{margin-top:10px}
+    @media (max-width: 980px){
+      .nav-links{display:none}
+      .hero-grid,.how-grid,.three-col,.packages,.feature-grid,.services-grid,.care-grid{grid-template-columns:1fr}
+      .package.popular{transform:none}
+    }
+    @media (max-width: 640px){
+      .wrap{padding:0 18px}
+      .section{padding:82px 0}
+      .nav-inner{height:76px}
+      .brand img{height:30px}
+      .hero{padding:40px 0 50px}
+      .hero-copy h1{font-size:clamp(2.7rem,12vw,4rem)}
+      .hero-actions{flex-direction:column}
+      .btn{width:100%}
+      .eyebrow-row{display:grid;grid-template-columns:1fr}
+      .eyebrow{width:100%}
+      .price{font-size:3.2rem}
+      .care-card .price{font-size:3rem}
+      .cta-box{padding:38px 24px}
+    }
+  </style>
 </head>
 <body>
-  <div class="nav">
+  <nav class="nav">
     <div class="wrap nav-inner">
-      <div class="brand">sayit</div>
-      <a class="nav-cta" href="#packages">Start My Website</a>
+      <a class="brand" href="#">
+        <img src="assets/sayit-logo.png" alt="Say It Marketing logo">
+      </a>
+      <div class="nav-links">
+        <a href="#packages">Websites</a>
+        <a href="#services">Other Services</a>
+        <a href="#care">Care Plans</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="btn btn-primary" href="#packages">Start My Website</a>
     </div>
-  </div>
+  </nav>
 
   <header class="hero">
     <div class="wrap hero-grid">
-      <div>
-        <div class="pills">
-          <span class="pill">Tucson-based</span>
-          <span class="pill">Fast turnaround</span>
-          <span class="pill">Built for local business</span>
+      <div class="hero-copy">
+        <div class="eyebrow-row">
+          <span class="eyebrow">Tucson-based</span>
+          <span class="eyebrow">Fast turnaround</span>
+          <span class="eyebrow">Built for local business</span>
         </div>
-        <h1>Get Your Business Online in 48 Hours</h1>
-        <p class="lead">Professional website, branding, and setup — without the stress, without the wait.</p>
-        <div class="cta-row">
+        <h1>Get Your Business Online in 48 Hours.</h1>
+        <p>Professional website, branding, and setup — without the stress, without the wait, and without wasting days trying to piece it together yourself.</p>
+        <div class="hero-actions">
           <a class="btn btn-primary" href="#packages">Start My Website</a>
           <a class="btn btn-secondary" href="#how">How It Works</a>
         </div>
       </div>
       <div class="hero-visual">
-        <img src="assets/hero.svg" alt="Preview"/>
+        <img src="assets/hero-visual.svg" alt="Website visual preview">
       </div>
     </div>
   </header>
 
-  <section class="section center">
+  <section class="section">
     <div class="wrap">
-      <h2>Built for businesses that need to look professional fast.</h2>
-      <p class="sub">If Wix or “doing it yourself” has been eating your time, this is the cleaner way forward.</p>
-      <div class="grid-3">
-        <div class="card"><h3>Stop wasting hours</h3><p class="sub">We handle the build so you can run your business.</p></div>
-        <div class="card"><h3>Look legit</h3><p class="sub">Clean, modern layouts that build trust fast.</p></div>
-        <div class="card"><h3>Launch quickly</h3><p class="sub">A simple system that gets you live in days, not weeks.</p></div>
+      <div class="section-head">
+        <h2>Built for businesses that need to look professional fast.</h2>
+        <p>If Wix, Squarespace, or “doing it yourself” has been eating your time, this is the cleaner way forward.</p>
+      </div>
+      <div class="three-col">
+        <div class="value-item">
+          <h3>Stop wasting hours</h3>
+          <p>We handle the build so you can focus on your business instead of your website.</p>
+        </div>
+        <div class="value-item">
+          <h3>Look legit</h3>
+          <p>Clean, modern design that feels more polished and more trustworthy from the start.</p>
+        </div>
+        <div class="value-item">
+          <h3>Launch quickly</h3>
+          <p>A refined workflow that gets you online fast without the usual back-and-forth.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="how" class="section soft center">
-    <div class="wrap">
-      <h2>Simple process. Less stress.</h2>
-      <p class="sub">Pick a package, send your info, we build and launch.</p>
-      <div class="steps">
-        <div class="step"><h3>1. Pick your package</h3><p class="sub">Choose what fits your business.</p></div>
-        <div class="step"><h3>2. Send your info</h3><p class="sub">Logo, photos, services, details.</p></div>
-        <div class="step"><h3>3. We build & launch</h3><p class="sub">Your site goes live fast.</p></div>
+  <section id="how" class="section blue-soft">
+    <div class="wrap how-grid">
+      <div>
+        <div class="section-head" style="text-align:left;max-width:none;margin:0 0 30px;">
+          <h2>Simple process. Less stress.</h2>
+          <p>Pick a package, send your info, and let the system do the heavy lifting.</p>
+        </div>
+        <div class="step-list">
+          <div class="step">
+            <div class="step-top"><span class="step-num">1</span><h3>Pick your package</h3></div>
+            <p>Choose the option that fits where your business is right now.</p>
+          </div>
+          <div class="step">
+            <div class="step-top"><span class="step-num">2</span><h3>Send your info</h3></div>
+            <p>Logo, photos, services, contact details, or let us help fill the gaps.</p>
+          </div>
+          <div class="step">
+            <div class="step-top"><span class="step-num">3</span><h3>We build & launch</h3></div>
+            <p>Your site goes live fast with a cleaner workflow and less wasted time.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <img src="assets/section-visual.svg" alt="Process visual preview" style="border-radius:28px;box-shadow:var(--shadow);border:1px solid var(--line);">
       </div>
     </div>
   </section>
 
-  <section id="packages" class="section center">
+  <section id="packages" class="section">
     <div class="wrap">
-      <h2>Website packages</h2>
-      <p class="sub">Clear pricing. Clean deliverables.</p>
+      <div class="section-head">
+        <h2>Website packages</h2>
+        <p>Clear pricing. Clean deliverables. Built for small businesses that need momentum.</p>
+      </div>
       <div class="packages">
-        <div class="pkg">
+        <div class="package">
           <div class="price">$399</div>
           <h3>Get Found</h3>
-          <ul>
-            <li>Logo (2–3 variations)</li>
-            <li>1-page website</li>
-            <li>Mobile friendly</li>
-            <li>Contact form</li>
+          <p class="desc">Clean start — logo, site, and Google presence.</p>
+          <ul class="feature-list">
+            <li><span class="check">✓</span><span>Custom logo (2–3 variations)</span></li>
+            <li><span class="check">✓</span><span>Final files included</span></li>
+            <li><span class="check">✓</span><span>1-page starter website</span></li>
+            <li><span class="check">✓</span><span>Mobile-friendly</span></li>
+            <li><span class="check">✓</span><span>Contact form</span></li>
           </ul>
           <a class="btn btn-primary" href="#">Get Started</a>
         </div>
-        <div class="pkg mid">
+
+        <div class="package popular">
+          <span class="tag">Most Popular</span>
           <div class="price">$599</div>
-          <h3>Look Pro <span class="badge">Most Popular</span></h3>
-          <ul>
-            <li>3-page website</li>
-            <li>Services + pricing</li>
-            <li>Booking form</li>
-            <li>Instagram feed</li>
+          <h3>Look Pro</h3>
+          <p class="desc">Smart choice — launch and start booking.</p>
+          <ul class="feature-list">
+            <li><span class="check">✓</span><span>Everything in Get Found</span></li>
+            <li><span class="check">✓</span><span>3-page website</span></li>
+            <li><span class="check">✓</span><span>Services + pricing page</span></li>
+            <li><span class="check">✓</span><span>Online booking / appointment form</span></li>
+            <li><span class="check">✓</span><span>Instagram photo feed on site</span></li>
+            <li><span class="check">✓</span><span>Basic on-page SEO</span></li>
           </ul>
-          <a class="btn btn-primary" href="#">Get Started</a>
+          <a class="btn btn-light" href="#">Get Started</a>
         </div>
-        <div class="pkg">
+
+        <div class="package">
           <div class="price">$799</div>
           <h3>Full Launch</h3>
-          <ul>
-            <li>5-page website</li>
-            <li>Brand kit</li>
-            <li>Gallery</li>
-            <li>Social setup</li>
+          <p class="desc">Everything — look established from day one.</p>
+          <ul class="feature-list">
+            <li><span class="check">✓</span><span>Everything in Look Pro</span></li>
+            <li><span class="check">✓</span><span>5-page website</span></li>
+            <li><span class="check">✓</span><span>Logo + full brand kit</span></li>
+            <li><span class="check">✓</span><span>Google reviews widget</span></li>
+            <li><span class="check">✓</span><span>Photo gallery page</span></li>
+            <li><span class="check">✓</span><span>Social media profile setup</span></li>
           </ul>
           <a class="btn btn-primary" href="#">Get Started</a>
         </div>
@@ -155,42 +489,113 @@ h1{font-size:clamp(2.8rem,6vw,4.6rem);line-height:1.02;letter-spacing:-.04em;mar
     </div>
   </section>
 
-  <section class="section dark center">
+  <section class="section dark-section">
     <div class="wrap">
-      <h2>Fast builds. Clean design. More customers.</h2>
-      <p class="sub">This is where speed meets quality — without the usual mess.</p>
-      <div class="features">
-        <div class="feature"><h3>Google Reviews</h3></div>
-        <div class="feature"><h3>Instagram Feed</h3></div>
-        <div class="feature"><h3>Booking Forms</h3></div>
+      <div class="section-head">
+        <h2>Fast builds. Clean design. More confidence.</h2>
+        <p>This is where speed meets quality — and where your site starts looking like a real business, not a DIY project.</p>
+      </div>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Google Reviews</h3>
+          <p>Add instant trust and social proof right on the site.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Instagram Feed</h3>
+          <p>Perfect for businesses that need visuals and fresh activity.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Booking & Contact Forms</h3>
+          <p>Let customers call, book, or reach out fast.</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section center">
+  <section id="services" class="section soft">
     <div class="wrap">
-      <h2>Website care plans</h2>
-      <div class="packages">
-        <div class="pkg"><div class="price">$37.99</div><h3>Basic</h3></div>
-        <div class="pkg mid"><div class="price">$64.99</div><h3>Pro</h3></div>
-        <div class="pkg"><div class="price">$99.99</div><h3>Elite</h3></div>
+      <div class="section-head">
+        <h2>More ways to launch and grow.</h2>
+        <p>Your website can be the starting point. These services help complete the picture.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <h3>Print & Marketing Materials</h3>
+          <p>Business cards, flyers, banners, menus, and more for businesses that need to look legit online and in person.</p>
+          <a class="btn btn-secondary" href="#">Explore Print</a>
+        </div>
+        <div class="service-card">
+          <h3>Social Media Setup</h3>
+          <p>Instagram, Facebook, and TikTok setup with branded posts so your business looks ready to be seen.</p>
+          <a class="btn btn-secondary" href="#">See Social Media</a>
+        </div>
+        <div class="service-card">
+          <h3>Custom Design</h3>
+          <p>For projects that need something more tailored, more visual, or more brand-specific.</p>
+          <a class="btn btn-secondary" href="#">Ask About Design</a>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="cta">
+  <section id="care" class="section blue-soft">
+    <div class="wrap">
+      <div class="section-head">
+        <h2>Website care plans</h2>
+        <p>Keep your site live, secure, updated, and supported without having to think about the technical side.</p>
+      </div>
+      <div class="care-grid">
+        <div class="care-card">
+          <div class="price">$37.99</div>
+          <h3>Basic</h3>
+          <p>Simple and reliable for new sites.</p>
+          <ul class="feature-list">
+            <li><span class="check">✓</span><span>Free SSL certificate</span></li>
+            <li><span class="check">✓</span><span>Daily backups</span></li>
+            <li><span class="check">✓</span><span>1 GB media storage</span></li>
+          </ul>
+        </div>
+        <div class="care-card recommended">
+          <span class="tag">Recommended</span>
+          <div class="price">$64.99</div>
+          <h3>Pro</h3>
+          <p>The smart choice for growing businesses.</p>
+          <ul class="feature-list">
+            <li><span class="check">✓</span><span>Everything in Basic</span></li>
+            <li><span class="check">✓</span><span>Up to 5 branded email addresses</span></li>
+            <li><span class="check">✓</span><span>Speed & performance optimization</span></li>
+          </ul>
+        </div>
+        <div class="care-card">
+          <div class="price">$99.99</div>
+          <h3>Elite</h3>
+          <p>Best performance with priority support.</p>
+          <ul class="feature-list">
+            <li><span class="check">✓</span><span>Everything in Pro</span></li>
+            <li><span class="check">✓</span><span>CDN + monitoring</span></li>
+            <li><span class="check">✓</span><span>Monthly performance checks</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
     <div class="wrap">
       <div class="cta-box">
         <h2>Ready to get your business online?</h2>
-        <p class="sub">Choose a package and let the system do the heavy lifting.</p>
-        <div class="cta-row" style="justify-content:center">
+        <p>Choose a package, send your info, and let the system do the heavy lifting.</p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
           <a class="btn btn-primary" href="#packages">Start My Website</a>
-          <a class="btn btn-secondary" href="#">Contact Me</a>
+          <a class="btn btn-secondary" href="mailto:hello@sayitmarketing.com">Contact Me</a>
         </div>
       </div>
     </div>
   </section>
 
-  <div class="footer">Say It Marketing • Tucson, Arizona</div>
+  <footer class="footer">
+    <div>Say It Marketing • Tucson, Arizona</div>
+    <div class="line2">Websites • Print • Social Media</div>
+  </footer>
 </body>
 </html>
