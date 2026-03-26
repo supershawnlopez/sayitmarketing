@@ -1,0 +1,34 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#F7FBFE"/>
+    <stop offset="100%" stop-color="#FFFFFF"/>
+  </linearGradient>
+  <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#53A0D1" stop-opacity="0.25"/>
+    <stop offset="100%" stop-color="#53A0D1" stop-opacity="0.03"/>
+  </linearGradient>
+</defs>
+<rect width="1200" height="900" rx="36" fill="url(#bg)"/>
+<circle cx="970" cy="140" r="170" fill="url(#glow)"/>
+<circle cx="240" cy="780" r="220" fill="url(#glow)"/>
+<rect x="116" y="114" width="968" height="672" rx="28" fill="#FFFFFF" stroke="#E9ECEF"/>
+<rect x="116" y="114" width="968" height="66" rx="28" fill="#FCFDFE"/>
+<circle cx="166" cy="147" r="8" fill="#D6DBE0"/>
+<circle cx="194" cy="147" r="8" fill="#D6DBE0"/>
+<circle cx="222" cy="147" r="8" fill="#D6DBE0"/>
+<rect x="180" y="230" width="398" height="72" rx="12" fill="#0B0C0D"/>
+<rect x="180" y="326" width="480" height="16" rx="8" fill="#E9EEF2"/>
+<rect x="180" y="358" width="440" height="16" rx="8" fill="#E9EEF2"/>
+<rect x="180" y="426" width="180" height="48" rx="24" fill="#0B0C0D"/>
+<rect x="380" y="426" width="176" height="48" rx="24" fill="#FFFFFF" stroke="#E9ECEF"/>
+<rect x="720" y="222" width="276" height="438" rx="26" fill="#F6FAFD" stroke="#DDE7EF"/>
+<rect x="760" y="278" width="196" height="14" rx="7" fill="#0B0C0D"/>
+<rect x="760" y="324" width="164" height="10" rx="5" fill="#DDE4EA"/>
+<rect x="760" y="352" width="176" height="10" rx="5" fill="#DDE4EA"/>
+<rect x="760" y="408" width="164" height="44" rx="22" fill="#53A0D1"/>
+<rect x="760" y="492" width="196" height="118" rx="18" fill="#FFFFFF" stroke="#E9ECEF"/>
+<rect x="784" y="524" width="112" height="10" rx="5" fill="#111111"/>
+<rect x="784" y="552" width="144" height="10" rx="5" fill="#DDE4EA"/>
+<rect x="784" y="578" width="130" height="10" rx="5" fill="#DDE4EA"/>
+</svg>
