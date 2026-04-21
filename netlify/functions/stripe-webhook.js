@@ -61,8 +61,38 @@ async function upsertOrderAndPayment(session, state) {
     }
   }
 
+  // Last-resort fallback: create a lead from checkout email so payment/order records can still be tied.
+  if (!leadId && customerEmail) {
+    const createLeadRes = await supabase("leads", {
+      method: "POST",
+      body: JSON.stringify({
+        full_name: customerEmail.split("@")[0] || "Stripe Customer",
+        business_name: null,
+        email: String(customerEmail).toLowerCase(),
+        phone: null,
+        need: "stripe_checkout",
+        budget: null,
+        timeline: null,
+        preferred_contact: "email",
+        notes: `Auto-created from Stripe checkout session ${checkoutSessionId || "unknown"}`,
+        status: "contacted",
+        source: "stripe_webhook",
+        score: 0,
+        is_spam: false,
+        created_at: new Date().toISOString(),
+        status_updated_at: new Date().toISOString()
+      })
+    });
+    if (createLeadRes.ok) {
+      const createdRows = await createLeadRes.json();
+      if (createdRows.length > 0) {
+        leadId = Number(createdRows[0].id || 0);
+      }
+    }
+  }
+
   if (!leadId) {
-    return { ok: false, reason: "missing lead_id metadata" };
+    return { ok: false, reason: "unable_to_resolve_or_create_lead" };
   }
 
   const orderPayload = {
