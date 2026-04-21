@@ -20,10 +20,10 @@
   --tile-pad: 1.5rem;
   --tile-section-pad: 1.375rem;
   --tile-copy-max: 32rem;
-  --tile-edge-inset: clamp(2.75rem, 6vh, 3.5rem);
-  --tile-edge-inset-mobile: clamp(1.5rem, 5.5vw, 2rem);
+  --tile-edge-inset: clamp(3.5rem, 6.8vh, 5rem);
+  --tile-edge-inset-mobile: clamp(2.2rem, 8vw, 2.8rem);
   --tile-head-max: clamp(9ch, 34vw, 13ch);
-  --tile-sub-max: clamp(22ch, 46vw, 30ch);
+  --tile-sub-max: clamp(26ch, 50vw, 36ch);
   --tile-cta-gap: 0.75rem;
   --tile-heading-gap: 0.75rem;
   --tile-subcta-gap: 1.25rem;
@@ -279,7 +279,7 @@ p { margin: 0; color: var(--text-3); max-width: 66ch; }
 
 .hero-center {
   max-width: 760px;
-  padding: 3rem 0;
+  padding: clamp(4rem, 8vh, 5.5rem) 0;
 }
 
 .hero-billboard h1,
@@ -380,7 +380,7 @@ p { margin: 0; color: var(--text-3); max-width: 66ch; }
 }
 
 .home-apple .hero-links {
-  margin-top: var(--space-lg);
+  margin-top: clamp(1.75rem, 3.2vh, 2.5rem);
   display: flex;
   justify-content: center;
   gap: 12px;
@@ -525,6 +525,10 @@ p { margin: 0; color: var(--text-3); max-width: 66ch; }
 .tile-print .tile-content {
   padding-top: 0;
   padding-bottom: var(--tile-edge-inset);
+}
+
+.tile-print .tile-content p {
+  max-inline-size: 30ch;
 }
 
 .home-apple .card {
@@ -896,7 +900,7 @@ textarea { min-height: 120px; resize: vertical; }
   }
 
   .hero-billboard.light h2 { max-inline-size: 13ch; }
-  .hero-billboard.light .hero-sub { max-inline-size: 32ch; }
+  .hero-billboard.light .hero-sub { max-inline-size: 34ch; }
 }
 
 @media (min-width: 48.0625rem) and (max-width: 64rem) {
