@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Leads Admin | SayIt</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 20px; background: #f5f6f8; }
+    .wrap { max-width: 1100px; margin: 0 auto; }
+    .bar { display: flex; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+    input, select, button { padding: 8px 10px; border-radius: 8px; border: 1px solid #cfd7e2; }
+    button { cursor: pointer; background: #0b5f99; color: #fff; border: 0; }
+    table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #d8dee6; }
+    th, td { font-size: 13px; padding: 9px; border-bottom: 1px solid #eef1f4; text-align: left; }
+    th { background: #f9fafb; }
+    .muted { color: #66727f; font-size: 12px; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h1>Leads</h1>
+    <div class="bar">
+      <input id="adminKey" placeholder="Admin API Key">
+      <select id="status">
+        <option value="">All Status</option>
+        <option value="new">new</option>
+        <option value="contacted">contacted</option>
+        <option value="won">won</option>
+        <option value="lost">lost</option>
+      </select>
+      <select id="tag">
+        <option value="">All Tags</option>
+        <option value="hot">hot</option>
+        <option value="warm">warm</option>
+        <option value="cold">cold</option>
+        <option value="spam">spam</option>
+      </select>
+      <button id="load">Load</button>
+    </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Created</th><th>Name</th><th>Email</th><th>Phone</th><th>Type</th><th>Score</th><th>Tag</th><th>Status</th>
+        </tr>
+      </thead>
+      <tbody id="rows">
+        <tr><td colspan="8">No data loaded.</td></tr>
+      </tbody>
+    </table>
+    <div class="muted">This page uses the Netlify pipeline API and requires `ADMIN_API_KEY`.</div>
+  </div>
+  <script>
+    async function loadLeads() {
+      const key = document.getElementById("adminKey").value.trim();
+      const status = document.getElementById("status").value;
+      const tag = document.getElementById("tag").value;
+      const params = new URLSearchParams({ page: "1", page_size: "50" });
+      if (status) params.set("status", status);
+      if (tag) params.set("tag", tag);
+      const res = await fetch("/api/pipeline?" + params.toString(), { headers: { "X-Admin-Key": key } });
+      const rows = document.getElementById("rows");
+      if (!res.ok) {
+        rows.innerHTML = "<tr><td colspan='8'>Failed to load leads.</td></tr>";
+        return;
+      }
+      const data = await res.json();
+      if (!data.items || data.items.length === 0) {
+        rows.innerHTML = "<tr><td colspan='8'>No leads found.</td></tr>";
+        return;
+      }
+      rows.innerHTML = data.items.map(item => (
+        `<tr>
+          <td>${new Date(item.created_at).toLocaleString()}</td>
+          <td>${item.full_name || ""}</td>
+          <td>${item.email || ""}</td>
+          <td>${item.mobile_phone || ""}</td>
+          <td>${item.lead_type || ""}</td>
+          <td>${item.score ?? ""}</td>
+          <td>${item.tag || ""}</td>
+          <td>${item.status || ""}</td>
+        </tr>`
+      )).join("");
+    }
+    document.getElementById("load").addEventListener("click", loadLeads);
+  </script>
+</body>
+</html>

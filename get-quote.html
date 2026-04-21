@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get Quote | SayIt Marketing</title>
+  <meta name="description" content="Request a website, hosting, care, social, or print quote from SayIt Marketing.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body { margin: 0; font-family: Manrope, system-ui, sans-serif; background: #f3f5f7; color: #101418; }
+    .wrap { width: min(760px, calc(100% - 28px)); margin: 0 auto; }
+    .section { padding: 48px 0; }
+    .card { background: #fff; border: 1px solid #d8dee6; border-radius: 20px; padding: 24px; }
+    h1 { margin: 0 0 10px; font-size: 2.2rem; letter-spacing: -0.03em; }
+    p { margin: 0 0 16px; color: #5e6a79; }
+    label { display: block; font-weight: 700; margin: 12px 0 6px; }
+    input, select, textarea {
+      width: 100%; border: 1px solid #cfd7e2; border-radius: 12px; padding: 12px; font: inherit; background: #fff;
+    }
+    textarea { min-height: 120px; resize: vertical; }
+    .row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .btn {
+      margin-top: 16px; border: 0; border-radius: 999px; padding: 13px 20px; font-weight: 800;
+      color: #fff; background: linear-gradient(140deg, #096fb4, #0b4f80); cursor: pointer;
+    }
+    .status { margin-top: 12px; font-weight: 700; color: #0a5f99; min-height: 20px; }
+    .tiny { font-size: 12px; color: #5e6a79; margin-top: 10px; }
+    @media (max-width: 700px) { .row { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <section class="section">
+    <div class="wrap">
+      <div class="card">
+        <h1>Get a Quote</h1>
+        <p>Tell us what you need. We will reply by email/text with your best option.</p>
+        <form data-lead-form data-lead-type="quote" data-api="/api/leads">
+          <div class="row">
+            <div>
+              <label for="full_name">Full Name</label>
+              <input id="full_name" name="full_name" required>
+            </div>
+            <div>
+              <label for="business_name">Business Name</label>
+              <input id="business_name" name="business_name">
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required>
+            </div>
+            <div>
+              <label for="mobile_phone">Mobile Phone</label>
+              <input id="mobile_phone" name="mobile_phone" required>
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="service_interest">Service Interest</label>
+              <select id="service_interest" name="service_interest" required>
+                <option value="">Select one</option>
+                <option>Website</option>
+                <option>Website + Hosting</option>
+                <option>Website + Hosting + Care</option>
+                <option>Social Media</option>
+                <option>Print</option>
+              </select>
+            </div>
+            <div>
+              <label for="monthly_plan_interest">Monthly Plan Interest</label>
+              <select id="monthly_plan_interest" name="monthly_plan_interest">
+                <option value="">Select one</option>
+                <option>Hosting only</option>
+                <option>Hosting + Care</option>
+                <option>Not sure yet</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="row">
+            <div>
+              <label for="budget_range">Budget Range</label>
+              <select id="budget_range" name="budget_range" required>
+                <option value="">Select one</option>
+                <option>&lt;500</option>
+                <option>500-1000</option>
+                <option>1000-2500</option>
+                <option>2500+</option>
+              </select>
+            </div>
+            <div>
+              <label for="timeline">Timeline</label>
+              <select id="timeline" name="timeline" required>
+                <option value="">Select one</option>
+                <option>asap</option>
+                <option>2-4 weeks</option>
+                <option>1-2 months</option>
+                <option>exploring</option>
+              </select>
+            </div>
+          </div>
+
+          <label for="primary_goal">Primary Goal</label>
+          <select id="primary_goal" name="primary_goal" required>
+            <option value="">Select one</option>
+            <option>More calls</option>
+            <option>More leads</option>
+            <option>Online booking</option>
+            <option>Look more professional</option>
+          </select>
+
+          <label for="notes">Notes</label>
+          <textarea id="notes" name="notes" placeholder="Tell us anything important."></textarea>
+
+          <label>
+            <input type="checkbox" name="consent_sms_email" required>
+            I agree to receive email/text updates about my request.
+          </label>
+
+          <input type="text" name="website_field" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
+          <button class="btn" type="submit">Submit Quote Request</button>
+          <div id="form-status" class="status"></div>
+          <div class="tiny">Prefer immediate action? You can still pay a website deposit from the homepage.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+  <script src="assets/lead-form.js"></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+services:
+  api:
+    build:
+      context: ./backend
+    environment:
+      DATABASE_URL: postgresql+psycopg2://sayit:sayit@postgres:5432/sayit
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+      - redis
+
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: sayit
+      POSTGRES_PASSWORD: sayit
+      POSTGRES_DB: sayit
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+volumes:
+  postgres_data:
