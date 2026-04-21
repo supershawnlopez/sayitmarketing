@@ -69,15 +69,17 @@ async function upsertOrderAndPayment(session, state) {
         full_name: customerEmail.split("@")[0] || "Stripe Customer",
         business_name: null,
         email: String(customerEmail).toLowerCase(),
-        phone: null,
-        need: "stripe_checkout",
-        budget: null,
+        mobile_phone: null,
+        service_interest: packageName || "Website",
+        monthly_plan_interest: null,
+        budget_range: null,
         timeline: null,
         preferred_contact: "email",
         notes: `Auto-created from Stripe checkout session ${checkoutSessionId || "unknown"}`,
+        lead_type: "checkout",
         status: "contacted",
-        source: "stripe_webhook",
         score: 0,
+        tag: "warm",
         is_spam: false,
         created_at: new Date().toISOString(),
         status_updated_at: new Date().toISOString()
@@ -92,7 +94,7 @@ async function upsertOrderAndPayment(session, state) {
   }
 
   if (!leadId) {
-    return { ok: false, reason: "unable_to_resolve_or_create_lead" };
+    return { ok: false, reason: "unable_to_resolve_or_create_lead", email: customerEmail || null };
   }
 
   const orderPayload = {
