@@ -34,7 +34,7 @@ async function logEvent(eventId, eventType, payload) {
 }
 
 async function upsertOrderAndPayment(session, state) {
-  const leadId = Number(session?.metadata?.lead_id || 0);
+  const metadataLeadId = Number(session?.metadata?.lead_id || 0);
   const packageName = session?.metadata?.package || null;
   const planType = session?.metadata?.plan_type || null;
   const amount = Number(session?.amount_total || 0) / 100;
@@ -42,6 +42,24 @@ async function upsertOrderAndPayment(session, state) {
   const checkoutSessionId = session?.id || null;
   const customerEmail = session?.customer_details?.email || null;
   const paymentStatus = session?.payment_status || null;
+  let leadId = metadataLeadId;
+
+  // Fallback for Payment Links / sessions that don't include lead_id metadata:
+  // find the most recent non-spam lead by customer email.
+  if (!leadId && customerEmail) {
+    const lookupRes = await supabase(
+      `leads?select=id,status,is_spam,created_at&email=eq.${encodeURIComponent(
+        String(customerEmail).toLowerCase()
+      )}&is_spam=eq.false&order=created_at.desc&limit=1`,
+      { method: "GET" }
+    );
+    if (lookupRes.ok) {
+      const rows = await lookupRes.json();
+      if (rows.length > 0) {
+        leadId = Number(rows[0].id || 0);
+      }
+    }
+  }
 
   if (!leadId) {
     return { ok: false, reason: "missing lead_id metadata" };
