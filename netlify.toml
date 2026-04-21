@@ -17,3 +17,7 @@
   to = "/.netlify/functions/lead-status-update"
   status = 200
 
+[[redirects]]
+  from = "/api/webhooks/stripe"
+  to = "/.netlify/functions/stripe-webhook"
+  status = 200
