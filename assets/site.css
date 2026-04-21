@@ -23,7 +23,7 @@
 
 body {
   margin: 0;
-  font-family: "Manrope", system-ui, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, Arial, sans-serif;
   color: var(--text-1);
   background:
     radial-gradient(1200px 500px at 100% -120px, rgba(10, 114, 184, 0.1), transparent 62%),
@@ -158,6 +158,161 @@ p { margin: 0; color: var(--text-3); max-width: 66ch; }
   grid-template-columns: 1.02fr 0.98fr;
   gap: 22px;
   align-items: center;
+}
+
+.home-apple .section {
+  padding: clamp(56px, 8vw, 88px) 0;
+}
+
+.hero-billboard {
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border-bottom: 10px solid #f4f6f9;
+}
+
+.hero-billboard.dark {
+  background:
+    linear-gradient(180deg, rgba(5, 18, 31, 0.6), rgba(5, 18, 31, 0.55)),
+    url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=2000&q=80") center/cover no-repeat;
+  color: #fff;
+}
+
+.hero-billboard.light {
+  min-height: 56vh;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.92)),
+    url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2000&q=80") center/cover no-repeat;
+}
+
+.hero-center {
+  max-width: 760px;
+  padding: 30px 0;
+}
+
+.hero-billboard h1,
+.hero-billboard h2 {
+  margin: 0 0 10px;
+  letter-spacing: -0.04em;
+}
+
+.hero-billboard h1 {
+  font-size: clamp(2.5rem, 7vw, 5.2rem);
+  line-height: 1.02;
+}
+
+.hero-billboard h2 {
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  line-height: 1.04;
+  color: #101418;
+}
+
+.eyebrow {
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  opacity: 0.95;
+}
+
+.hero-sub {
+  margin: 0 auto;
+  max-width: 58ch;
+  font-size: clamp(1rem, 1.9vw, 1.32rem);
+}
+
+.hero-billboard.dark .hero-sub,
+.hero-billboard.dark .eyebrow {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.hero-billboard.light .hero-sub,
+.hero-billboard.light .eyebrow {
+  color: #2f3b49;
+}
+
+.home-apple .hero-links {
+  margin-top: 18px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.service-grid-wrap {
+  padding-top: 22px;
+}
+
+.service-grid {
+  width: min(1160px, calc(100% - 20px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.service-tile {
+  min-height: 430px;
+  border-radius: 24px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+  background-size: cover;
+  background-position: center;
+}
+
+.service-tile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 18, 30, 0.08), rgba(10, 18, 30, 0.72));
+}
+
+.tile-content {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.tile-content h3 {
+  margin: 0 0 4px;
+  font-size: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.tile-content p {
+  margin: 0 0 8px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.tile-content a {
+  color: #7ec8ff;
+  font-weight: 600;
+}
+
+.tile-web {
+  background-image: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80");
+}
+
+.tile-hosting {
+  background-image: url("https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=80");
+}
+
+.tile-social {
+  background-image: url("https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=1600&q=80");
+}
+
+.tile-print {
+  background-image: url("https://images.unsplash.com/photo-1586717799252-bd134ad00e26?auto=format&fit=crop&w=1600&q=80");
+}
+
+.cta-minimal {
+  text-align: center;
 }
 
 .hero-shell {
@@ -359,6 +514,7 @@ textarea { min-height: 120px; resize: vertical; }
   .form-grid,
   .proof-strip,
   .faq { grid-template-columns: 1fr; }
+  .service-grid { grid-template-columns: 1fr; }
   .nav-links { display: none; }
 }
 
