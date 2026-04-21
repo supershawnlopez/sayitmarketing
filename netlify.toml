@@ -21,3 +21,8 @@
   from = "/api/webhooks/stripe"
   to = "/.netlify/functions/stripe-webhook"
   status = 200
+
+[[redirects]]
+  from = "/print-services-tucson.html"
+  to = "/print-services.html"
+  status = 301
