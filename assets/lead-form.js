@@ -70,6 +70,7 @@
       }
       form.reset();
       form.dataset.lastTag = data.tag || "";
+      window.location.href = "thank-you.html";
     } catch (err) {
       if (statusEl) {
         statusEl.textContent = "Could not submit right now. Please email hello@sayitmarketing.com.";
