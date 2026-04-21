@@ -1,22 +1,22 @@
 (function () {
-  // Stripe Payment Links configured for SAYIT.
+  // Test-mode Stripe links only. Replace with real test payment links from Stripe test mode.
   window.SAYIT_STRIPE_LINKS = {
-    deposit_main: "https://pay.sayitmarketing.com/b/eVq5kEeqaaVb14g2zabV60u",
-    deposit_get_found: "https://pay.sayitmarketing.com/b/4gM8wQ4PAbZfeV68XybV60v",
-    full_get_found: "https://pay.sayitmarketing.com/b/7sY3cw0zk9R7aEQgq0bV60w",
-    deposit_look_pro: "https://pay.sayitmarketing.com/b/00w28s6XIgfv7sEb5GbV60x",
-    full_look_pro: "https://pay.sayitmarketing.com/b/9B6dRabdYgfveV6ddObV60y",
-    deposit_full_launch: "https://pay.sayitmarketing.com/b/aFabJ2gyi7IZ7sE4HibV60z",
-    full_full_launch: "https://pay.sayitmarketing.com/b/eVqdRadm6bZf3coc9KbV60A",
-    sub_hosting_basic: "https://pay.sayitmarketing.com/b/eVq3cwa9UbZf00cc9KbV60B",
-    sub_hosting_pro: "https://pay.sayitmarketing.com/b/28E7sMbdY3sJcMYgq0bV60C",
-    sub_hosting_elite: "https://pay.sayitmarketing.com/b/3cI00kgyi7IZfZac9KbV60D",
-    sub_care_basic: "https://pay.sayitmarketing.com/b/bJe7sM4PAgfv8wIddObV60E",
-    sub_care_standard: "https://pay.sayitmarketing.com/b/14AaEY0zk8N34gs6PqbV60F",
-    sub_care_advanced: "https://pay.sayitmarketing.com/b/8x27sM3Lwd3j5kwc9KbV60G",
-    social_starter: "https://pay.sayitmarketing.com/b/14A6oI1Dod3j14gc9KbV60H",
-    social_pro: "https://pay.sayitmarketing.com/b/3cI00kci2aVbeV66PqbV60I",
-    social_elite: "https://pay.sayitmarketing.com/b/14AfZi5TE5AR8wI1v6bV60J"
+    deposit_main: "https://buy.stripe.com/test_placeholder_deposit_main",
+    deposit_get_found: "https://buy.stripe.com/test_placeholder_deposit_get_found",
+    full_get_found: "https://buy.stripe.com/test_placeholder_full_get_found",
+    deposit_look_pro: "https://buy.stripe.com/test_placeholder_deposit_look_pro",
+    full_look_pro: "https://buy.stripe.com/test_placeholder_full_look_pro",
+    deposit_full_launch: "https://buy.stripe.com/test_placeholder_deposit_full_launch",
+    full_full_launch: "https://buy.stripe.com/test_placeholder_full_full_launch",
+    sub_hosting_basic: "https://buy.stripe.com/test_placeholder_sub_hosting_basic",
+    sub_hosting_pro: "https://buy.stripe.com/test_placeholder_sub_hosting_pro",
+    sub_hosting_elite: "https://buy.stripe.com/test_placeholder_sub_hosting_elite",
+    sub_care_basic: "https://buy.stripe.com/test_placeholder_sub_care_basic",
+    sub_care_standard: "https://buy.stripe.com/test_placeholder_sub_care_standard",
+    sub_care_advanced: "https://buy.stripe.com/test_placeholder_sub_care_advanced",
+    social_starter: "https://buy.stripe.com/test_placeholder_social_starter",
+    social_pro: "https://buy.stripe.com/test_placeholder_social_pro",
+    social_elite: "https://buy.stripe.com/test_placeholder_social_elite"
   };
 
   var links = window.SAYIT_STRIPE_LINKS || {};
