@@ -5,8 +5,8 @@
   --text-2: #344252;
   --text-3: #5d6c7d;
   --line: #d7dee8;
-  --brand: #0a72b8;
-  --brand-strong: #085e99;
+  --brand: #0071e3;
+  --brand-strong: #0077ed;
   --max: 1140px;
   --radius: 20px;
   --radius-sm: 12px;
@@ -86,23 +86,25 @@ img { display: block; max-width: 100%; }
   justify-content: center;
   border-radius: 999px;
   border: 1px solid transparent;
-  min-height: 48px;
-  padding: 0 22px;
-  font-weight: 700;
-  font-size: 14px;
+  min-height: 44px;
+  padding: 0 19px;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 1.235;
+  letter-spacing: -0.01em;
 }
 
 .btn-primary {
   color: #fff;
   background: var(--brand);
   border-color: var(--brand);
-  box-shadow: 0 8px 20px rgba(10, 114, 184, 0.22);
+  box-shadow: none;
 }
 
 .btn-primary:hover {
   background: var(--brand-strong);
   border-color: var(--brand-strong);
-  transform: translateY(-1px);
+  transform: none;
 }
 
 .btn-secondary {
@@ -112,10 +114,10 @@ img { display: block; max-width: 100%; }
 }
 
 .btn-secondary:hover {
-  background: #eef7fe;
-  border-color: var(--brand-strong);
-  color: var(--brand-strong);
-  transform: translateY(-1px);
+  background: rgba(0, 113, 227, 1);
+  border-color: var(--brand);
+  color: #fff;
+  transform: none;
 }
 
 .btn-wide { width: 100%; }
@@ -229,16 +231,28 @@ p { margin: 0; color: var(--text-3); max-width: 66ch; }
   color: rgba(255, 255, 255, 0.92);
 }
 
+.hero-billboard.dark .btn-secondary {
+  color: var(--brand);
+  border-color: var(--brand);
+  background: transparent;
+}
+
+.hero-billboard.dark .btn-secondary:hover {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: #fff;
+}
+
 .hero-billboard.light .hero-sub,
 .hero-billboard.light .eyebrow {
   color: #2f3b49;
 }
 
 .home-apple .hero-links {
-  margin-top: 18px;
+  margin-top: 20px;
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
@@ -256,7 +270,7 @@ p { margin: 0; color: var(--text-3); max-width: 66ch; }
 
 .service-tile {
   min-height: 430px;
-  border-radius: 24px;
+  border-radius: 0;
   overflow: hidden;
   position: relative;
   display: flex;
@@ -309,6 +323,10 @@ p { margin: 0; color: var(--text-3); max-width: 66ch; }
 
 .tile-print {
   background-image: url("https://images.unsplash.com/photo-1586717799252-bd134ad00e26?auto=format&fit=crop&w=1600&q=80");
+}
+
+.home-apple .card {
+  border-radius: 0;
 }
 
 .cta-minimal {
