@@ -276,6 +276,13 @@ p { margin: 0; color: var(--text-3); max-width: 66ch; }
   border-radius: 12px;
 }
 
+.service-card .flat-icon {
+  width: 54px;
+  height: 54px;
+  margin-bottom: 14px;
+  border-radius: 12px;
+}
+
 .pricing-preview .card {
   background: linear-gradient(180deg, #ffffff, #f8fbff);
   border: 1px solid #dce6f3;
