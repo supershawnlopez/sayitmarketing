@@ -21,7 +21,16 @@
   --tile-section-pad: 1.375rem;
   --tile-copy-max: 32rem;
   --tile-top-offset: clamp(3.5rem, 6.8vh, 5rem);
-  --tile-bottom-offset: clamp(2rem, 5vh, 3rem);
+  --tile-bottom-optical-nudge: 0rem;
+  --tile-bottom-offset: max(
+    2rem,
+    calc(var(--tile-top-offset) - var(--tile-bottom-optical-nudge))
+  );
+  --tile-top-offset-mobile: clamp(2.2rem, 8vw, 2.8rem);
+  --tile-bottom-offset-mobile: max(
+    1.25rem,
+    calc(var(--tile-top-offset-mobile) - var(--tile-bottom-optical-nudge))
+  );
   --tile-cta-gap: 0.75rem;
   --tile-heading-gap: 0.75rem;
   --tile-subcta-gap: 1.25rem;
@@ -38,6 +47,10 @@
   --tile-cta-line: 1.2;
   --tile-cta-weight: 500;
   --tile-cta-track: -0.014em;
+  --hero-h2-size: clamp(1.875rem, 1.15rem + 2.8vw, 3.25rem);
+  --hero-h2-max: clamp(12ch, 54vw, 17ch);
+  --hero-sub-size: clamp(1.0625rem, 0.98rem + 0.45vw, 1.25rem);
+  --hero-sub-max: clamp(30ch, 50vw, 40ch);
   --space-xs: 0.5rem;
   --space-sm: 0.75rem;
   --space-md: 1rem;
@@ -251,6 +264,15 @@ p { margin: 0; color: var(--text-3); max-width: 66ch; }
   color: #101418;
 }
 
+.hero-billboard.light h2 {
+  font-size: var(--hero-h2-size);
+  line-height: 1.06;
+  letter-spacing: -0.028em;
+  max-inline-size: var(--hero-h2-max);
+  margin-inline: auto;
+  text-wrap: pretty;
+}
+
 .eyebrow {
   margin-bottom: var(--space-sm);
   text-transform: uppercase;
@@ -269,6 +291,14 @@ p { margin: 0; color: var(--text-3); max-width: 66ch; }
   max-width: 58ch;
   font-size: clamp(1rem, 1.9vw, 1.32rem);
   text-align: center;
+}
+
+.hero-billboard.light .hero-sub {
+  font-size: var(--hero-sub-size);
+  line-height: 1.34;
+  max-inline-size: var(--hero-sub-max);
+  margin-inline: auto;
+  text-wrap: pretty;
 }
 
 .hero-billboard.dark .hero-sub,
@@ -302,6 +332,13 @@ p { margin: 0; color: var(--text-3); max-width: 66ch; }
 .hero-billboard.light .hero-sub,
 .hero-billboard.light .eyebrow {
   color: #2f3b49;
+}
+
+@supports (text-wrap: balance) {
+  .hero-billboard.light h2,
+  .hero-billboard.light .hero-sub {
+    text-wrap: balance;
+  }
 }
 
 .home-apple .hero-links {
@@ -733,12 +770,12 @@ textarea { min-height: 120px; resize: vertical; }
   .service-grid { grid-template-columns: 1fr; }
 
   .tile-content {
-    padding-top: clamp(2.2rem, 8vw, 2.8rem);
+    padding-top: var(--tile-top-offset-mobile);
   }
 
   .tile-social .tile-content,
   .tile-print .tile-content {
-    padding-bottom: clamp(1.25rem, 5vw, 1.75rem);
+    padding-bottom: var(--tile-bottom-offset-mobile);
   }
 
   .tile-actions {
@@ -758,6 +795,14 @@ textarea { min-height: 120px; resize: vertical; }
   .btn-cta-main {
     width: 100%;
   }
+
+  .hero-billboard.light h2 { max-inline-size: 13ch; }
+  .hero-billboard.light .hero-sub { max-inline-size: 32ch; }
+}
+
+@media (min-width: 48.0625rem) and (max-width: 64rem) {
+  .hero-billboard.light h2 { max-inline-size: 15ch; }
+  .hero-billboard.light .hero-sub { max-inline-size: 36ch; }
 }
 
 @media (max-width: 47.5rem) {
