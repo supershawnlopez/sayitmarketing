@@ -473,6 +473,49 @@
       color: #768698;
       font-size: 12px;
     }
+    .lead-capture {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--r-xl);
+      box-shadow: var(--shadow-soft);
+      padding: 24px;
+      max-width: 860px;
+      margin: 0 auto;
+    }
+    .lead-capture h3 {
+      margin: 0 0 8px;
+      font-size: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    .lead-capture p {
+      margin: 0 0 14px;
+      color: var(--muted);
+    }
+    .lead-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .lead-form-grid input,
+    .lead-form-grid select {
+      width: 100%;
+      border: 1px solid #cfd7e2;
+      border-radius: 12px;
+      padding: 11px 12px;
+      font: inherit;
+      background: #fff;
+    }
+    .lead-capture .status {
+      margin-top: 10px;
+      min-height: 20px;
+      font-weight: 700;
+      color: #0a5f99;
+    }
+    .lead-capture .tiny {
+      margin-top: 8px;
+      font-size: 12px;
+      color: #607083;
+    }
 
     .mobile-sticky {
       display: none;
@@ -514,6 +557,7 @@
       .hero { padding: 38px 0; }
       .hero-cta { display: grid; grid-template-columns: 1fr; }
       .hero-cta .btn { width: 100%; }
+      .lead-form-grid { grid-template-columns: 1fr; }
       .decision-strip { align-items: flex-start; }
       .mobile-sticky { display: grid; }
       body { padding-bottom: 88px; }
@@ -534,7 +578,7 @@
         <a href="free-website-audit.html">Free Audit</a>
         <a href="#faq">FAQ</a>
       </div>
-      <a class="btn btn-primary" href="https://buy.stripe.com/test_placeholder_deposit_main">Pay Deposit</a>
+      <a class="btn btn-primary" data-stripe-key="deposit_main" href="#">Pay Deposit</a>
     </div>
   </nav>
 
@@ -586,8 +630,8 @@
             <li><span class="check">+</span><span>Google Business Profile setup</span></li>
           </ul>
           <div class="cta-stack">
-            <a class="btn btn-primary btn-wide" href="https://buy.stripe.com/test_placeholder_deposit_get_found">Pay Deposit</a>
-            <a class="btn btn-secondary btn-wide" href="https://buy.stripe.com/test_placeholder_full_get_found">Pay In Full</a>
+            <a class="btn btn-primary btn-wide" data-stripe-key="deposit_get_found" href="#">Pay Deposit</a>
+            <a class="btn btn-secondary btn-wide" data-stripe-key="full_get_found" href="#">Pay In Full</a>
           </div>
         </article>
 
@@ -603,8 +647,8 @@
             <li><span class="check">+</span><span>Online booking form + basic SEO</span></li>
           </ul>
           <div class="cta-stack">
-            <a class="btn btn-primary btn-wide" href="https://buy.stripe.com/test_placeholder_deposit_look_pro">Pay Deposit</a>
-            <a class="btn btn-secondary btn-wide" href="https://buy.stripe.com/test_placeholder_full_look_pro">Pay In Full</a>
+            <a class="btn btn-primary btn-wide" data-stripe-key="deposit_look_pro" href="#">Pay Deposit</a>
+            <a class="btn btn-secondary btn-wide" data-stripe-key="full_look_pro" href="#">Pay In Full</a>
           </div>
         </article>
 
@@ -620,8 +664,8 @@
             <li><span class="check">+</span><span>3 branded social posts + setup</span></li>
           </ul>
           <div class="cta-stack">
-            <a class="btn btn-primary btn-wide" href="https://buy.stripe.com/test_placeholder_deposit_full_launch">Pay Deposit</a>
-            <a class="btn btn-secondary btn-wide" href="https://buy.stripe.com/test_placeholder_full_full_launch">Pay In Full</a>
+            <a class="btn btn-primary btn-wide" data-stripe-key="deposit_full_launch" href="#">Pay Deposit</a>
+            <a class="btn btn-secondary btn-wide" data-stripe-key="full_full_launch" href="#">Pay In Full</a>
           </div>
         </article>
       </div>
@@ -685,7 +729,7 @@
                 <li><span class="check">+</span><span>1 GB storage</span></li>
               </ul>
               <div class="cta-stack">
-                <a class="btn btn-primary btn-wide" href="https://buy.stripe.com/test_placeholder_sub_hosting_basic">Start Subscription</a>
+                <a class="btn btn-primary btn-wide" data-stripe-key="sub_hosting_basic" href="#">Start Subscription</a>
               </div>
             </article>
             <article class="card featured">
@@ -697,7 +741,7 @@
                 <li><span class="check">+</span><span>Performance optimization</span></li>
               </ul>
               <div class="cta-stack">
-                <a class="btn btn-primary btn-wide" href="https://buy.stripe.com/test_placeholder_sub_hosting_pro">Start Subscription</a>
+                <a class="btn btn-primary btn-wide" data-stripe-key="sub_hosting_pro" href="#">Start Subscription</a>
               </div>
             </article>
             <article class="card">
@@ -709,7 +753,7 @@
                 <li><span class="check">+</span><span>Priority support</span></li>
               </ul>
               <div class="cta-stack">
-                <a class="btn btn-primary btn-wide" href="https://buy.stripe.com/test_placeholder_sub_hosting_elite">Start Subscription</a>
+                <a class="btn btn-primary btn-wide" data-stripe-key="sub_hosting_elite" href="#">Start Subscription</a>
               </div>
             </article>
           </div>
@@ -729,7 +773,7 @@
                 <li><span class="check">+</span><span>48-72 hr response</span></li>
               </ul>
               <div class="cta-stack">
-                <a class="btn btn-primary btn-wide" href="https://buy.stripe.com/test_placeholder_sub_care_basic">Start Subscription</a>
+                <a class="btn btn-primary btn-wide" data-stripe-key="sub_care_basic" href="#">Start Subscription</a>
               </div>
             </article>
             <article class="card featured">
@@ -741,7 +785,7 @@
                 <li><span class="check">+</span><span>Weekly SEO blog post</span></li>
               </ul>
               <div class="cta-stack">
-                <a class="btn btn-primary btn-wide" href="https://buy.stripe.com/test_placeholder_sub_care_standard">Start Subscription</a>
+                <a class="btn btn-primary btn-wide" data-stripe-key="sub_care_standard" href="#">Start Subscription</a>
               </div>
             </article>
             <article class="card">
@@ -753,7 +797,7 @@
                 <li><span class="check">+</span><span>Weekly blog + strategy</span></li>
               </ul>
               <div class="cta-stack">
-                <a class="btn btn-primary btn-wide" href="https://buy.stripe.com/test_placeholder_sub_care_advanced">Start Subscription</a>
+                <a class="btn btn-primary btn-wide" data-stripe-key="sub_care_advanced" href="#">Start Subscription</a>
               </div>
             </article>
           </div>
@@ -780,7 +824,7 @@
             <li><span class="check">+</span><span>3 posts ready to publish</span></li>
           </ul>
           <div class="cta-stack">
-            <a class="btn btn-primary btn-wide" href="https://buy.stripe.com/test_placeholder_social_starter">Buy Setup</a>
+            <a class="btn btn-primary btn-wide" data-stripe-key="social_starter" href="#">Buy Setup</a>
           </div>
         </article>
         <article class="card featured">
@@ -793,7 +837,7 @@
             <li><span class="check">+</span><span>6 posts + 2 reels</span></li>
           </ul>
           <div class="cta-stack">
-            <a class="btn btn-primary btn-wide" href="https://buy.stripe.com/test_placeholder_social_pro">Buy Setup</a>
+            <a class="btn btn-primary btn-wide" data-stripe-key="social_pro" href="#">Buy Setup</a>
           </div>
         </article>
         <article class="card">
@@ -806,7 +850,7 @@
             <li><span class="check">+</span><span>Monthly report + strategy call</span></li>
           </ul>
           <div class="cta-stack">
-            <a class="btn btn-primary btn-wide" href="https://buy.stripe.com/test_placeholder_social_elite">Start Service</a>
+            <a class="btn btn-primary btn-wide" data-stripe-key="social_elite" href="#">Start Service</a>
           </div>
         </article>
       </div>
@@ -851,11 +895,42 @@
 
   <section class="section">
     <div class="wrap">
+      <div class="lead-capture">
+        <h3>Not ready to pay today?</h3>
+        <p>Send your info and we will text/email you your best package options today.</p>
+        <form data-lead-form data-lead-type="quote" data-api="/api/leads">
+          <div class="lead-form-grid">
+            <input name="full_name" placeholder="Full name" required>
+            <input name="email" type="email" placeholder="Email" required>
+            <input name="mobile_phone" placeholder="Mobile phone">
+            <select name="service_interest" required>
+              <option value="">What do you need?</option>
+              <option>Website</option>
+              <option>Website + Hosting</option>
+              <option>Website + Hosting + Care</option>
+              <option>Social Media</option>
+              <option>Print</option>
+            </select>
+          </div>
+          <input type="hidden" name="timeline" value="asap">
+          <input type="hidden" name="primary_goal" value="More leads">
+          <input type="hidden" name="consent_sms_email" value="true">
+          <input type="text" name="website_field" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;">
+          <button class="btn btn-primary" type="submit" style="margin-top:12px;">Send My Options</button>
+          <div id="form-status" class="status"></div>
+          <div class="tiny">No spam. We only contact you about your request.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
       <div class="final">
         <h2>Build once, bill monthly.</h2>
         <p>Ready to move forward? Pay a deposit or request a quote and we will send next steps by email/text.</p>
         <div class="hero-cta" style="justify-content:center;">
-          <a class="btn btn-primary" href="https://buy.stripe.com/test_placeholder_deposit_main">Pay Deposit</a>
+          <a class="btn btn-primary" data-stripe-key="deposit_main" href="#">Pay Deposit</a>
           <a class="btn btn-secondary" href="get-quote.html">Get a Quote</a>
         </div>
         <a class="helper-link" href="free-website-audit.html">Still deciding? Request a free audit.</a>
@@ -869,8 +944,10 @@
   </footer>
 
   <div class="mobile-sticky">
-    <a class="btn btn-primary" href="https://buy.stripe.com/test_placeholder_deposit_main">Pay Deposit</a>
+    <a class="btn btn-primary" data-stripe-key="deposit_main" href="#">Pay Deposit</a>
     <a class="btn btn-secondary" href="get-quote.html">Get Quote</a>
   </div>
+  <script src="assets/stripe-links.js"></script>
+  <script src="assets/lead-form.js"></script>
 </body>
 </html>
