@@ -26,6 +26,7 @@
     "name": "SayIt Marketing",
     "url": "https://sayitmarketing.com/",
     "image": "https://sayitmarketing.com/assets/hero-visual.svg",
+    "telephone": "+1-520-222-6308",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Phoenix",
@@ -135,7 +136,20 @@
 
     .section { padding: 88px 0; }
 
-    .nav {
+
+    .top-contact {
+      background: #0f1419;
+      color: #f5f8fb;
+      font-size: 12px;
+      font-weight: 700;
+      text-align: center;
+      padding: 7px 12px;
+    }
+    .top-contact a {
+      color: #fff;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }    .nav {
       position: sticky;
       top: 0;
       z-index: 50;
@@ -171,9 +185,9 @@
       justify-content: center;
       border-radius: 999px;
       border: 1px solid transparent;
-      font-size: 14px;
+      font-size: 13px;
       font-weight: 800;
-      padding: 13px 19px;
+      padding: 11px 16px;
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
     .btn:hover { transform: translateY(-1px); }
@@ -246,6 +260,23 @@
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
+    }
+    .hero-cta .btn { min-width: 176px; }
+
+    .trust-row {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      font-size: 13px;
+      color: #324252;
+      font-weight: 700;
+    }
+    .trust-row a {
+      color: #245f89;
+      text-decoration: underline;
+      text-underline-offset: 2px;
     }
 
     .hero-note {
@@ -430,6 +461,10 @@
     }
 
     .btn-wide { width: 100%; }
+    .cta-stack .btn {
+      font-size: 13px;
+      padding: 11px 14px;
+    }
     .decision-strip {
       margin-top: 18px;
       border: 1px solid var(--line);
@@ -701,6 +736,7 @@
   </style>
 </head>
 <body>
+  <div class="top-contact">Call or text <a href="tel:+15202226308">520-222-6308</a> | Fast response within 1 business day</div>
   <nav class="nav">
     <div class="wrap nav-inner">
       <a class="brand" href="#">
@@ -715,7 +751,7 @@
         <a href="free-website-audit.html">Free Audit</a>
         <a href="#faq">FAQ</a>
       </div>
-      <a class="btn btn-primary" data-stripe-key="deposit_main" href="#">Start My Website (Pay Deposit)</a>
+      <a class="btn btn-primary" data-stripe-key="deposit_main" href="#">Get My Website Started</a>
     </div>
   </nav>
 
@@ -727,11 +763,18 @@
           <span class="pill">48-hour first draft</span>
           <span class="pill">Simple pricing, no surprises</span>
         </div>
-        <h1>Get a modern website that helps customers book now.</h1>
-        <p>We build fast, mobile-ready websites for businesses in Arizona and across the U.S., then support you monthly with hosting, updates, social, and print so you keep growing without agency headaches.</p>
+        <h1>Get a clean, professional website that helps people choose your business.</h1>
+        <p>We build fast, mobile-ready websites for small businesses across the U.S. Then we help you keep it updated and growing month to month.</p>
         <div class="hero-cta">
-          <a class="btn btn-primary" data-stripe-key="deposit_main" href="#">Start My Website (Pay Deposit)</a>
-          <a class="btn btn-secondary" href="get-quote.html">Get a Quote</a>
+          <a class="btn btn-primary" data-stripe-key="deposit_main" href="#">Get My Website Started</a>
+          <a class="btn btn-secondary" href="get-quote.html">Get My Recommendation</a>
+        </div>
+        <div class="trust-row">
+          <span>Call or text <a href="tel:+15202226308">520-222-6308</a></span>
+          <span>|</span>
+          <span>Response within 1 business day</span>
+          <span>|</span>
+          <span>Trusted in Arizona, serving clients nationwide</span>
         </div>
         <a class="helper-link" href="free-website-audit.html">Not ready yet? Request a free website audit.</a>
         <div class="hero-visual">
@@ -739,10 +782,10 @@
         </div>
       </div>
       <aside class="hero-card">
-        <h2>Built for service businesses across the U.S.</h2>
-        <p>Start with the right website package, then add only what you need each month.</p>
+        <h2>Built for real small-business owners</h2>
+        <p>Start simple. Add more only when you are ready.</p>
         <ul class="mini">
-          <li><span class="dot">+</span><span>Website packages from $399 one-time</span></li>
+          <li><span class="dot">+</span><span>Website packages from $399</span></li>
           <li><span class="dot">+</span><span>Hosting plans from $37.99/month</span></li>
           <li><span class="dot">+</span><span>Care plans from $99/month</span></li>
           <li><span class="dot">+</span><span>Social and print add-ons available</span></li>
@@ -754,13 +797,13 @@
   <section id="website" class="section">
     <div class="wrap">
       <div class="section-head">
-        <h2>Website packages (one-time)</h2>
+        <h2>Website packages</h2>
         <p>Start with one website package today, then add monthly hosting, care, social, or print support later as your business grows.</p>
       </div>
       <div class="grid-3">
         <article class="card">
           <div class="tag">Get Found</div>
-          <p class="price">$399 <small>one-time</small></p>
+          <p class="price">$399 <small>package</small></p>
           <h3>Starter launch</h3>
           <p>Best for businesses that need a clean, trustworthy online presence quickly.</p>
           <ul class="list">
@@ -770,14 +813,14 @@
             <li><span class="check">+</span><span>Google Business Profile setup</span></li>
           </ul>
           <div class="cta-stack">
-            <a class="btn btn-primary btn-wide" data-stripe-key="deposit_get_found" href="#">Pay Deposit</a>
-            <a class="btn btn-secondary btn-wide" data-stripe-key="full_get_found" href="#">Pay In Full</a>
+            <a class="btn btn-primary btn-wide" data-stripe-key="deposit_get_found" href="#">Reserve My Spot</a>
+            <a class="btn btn-secondary btn-wide" data-stripe-key="full_get_found" href="#">Start Now (Pay in Full)</a>
           </div>
         </article>
 
         <article class="card featured">
           <div class="tag">Look Pro</div>
-          <p class="price">$599 <small>one-time</small></p>
+          <p class="price">$599 <small>package</small></p>
           <h3>Most popular</h3>
           <p>Great for businesses that want stronger branding and more inbound leads.</p>
           <ul class="list">
@@ -787,14 +830,14 @@
             <li><span class="check">+</span><span>Online booking form + basic SEO</span></li>
           </ul>
           <div class="cta-stack">
-            <a class="btn btn-primary btn-wide" data-stripe-key="deposit_look_pro" href="#">Pay Deposit</a>
-            <a class="btn btn-secondary btn-wide" data-stripe-key="full_look_pro" href="#">Pay In Full</a>
+            <a class="btn btn-primary btn-wide" data-stripe-key="deposit_look_pro" href="#">Reserve My Spot</a>
+            <a class="btn btn-secondary btn-wide" data-stripe-key="full_look_pro" href="#">Start Now (Pay in Full)</a>
           </div>
         </article>
 
         <article class="card">
           <div class="tag">Full Launch</div>
-          <p class="price">$799 <small>one-time</small></p>
+          <p class="price">$799 <small>package</small></p>
           <h3>Scale ready</h3>
           <p>Best for businesses ready for full launch with stronger proof and content.</p>
           <ul class="list">
@@ -804,15 +847,15 @@
             <li><span class="check">+</span><span>3 branded social posts + setup</span></li>
           </ul>
           <div class="cta-stack">
-            <a class="btn btn-primary btn-wide" data-stripe-key="deposit_full_launch" href="#">Pay Deposit</a>
-            <a class="btn btn-secondary btn-wide" data-stripe-key="full_full_launch" href="#">Pay In Full</a>
+            <a class="btn btn-primary btn-wide" data-stripe-key="deposit_full_launch" href="#">Reserve My Spot</a>
+            <a class="btn btn-secondary btn-wide" data-stripe-key="full_full_launch" href="#">Start Now (Pay in Full)</a>
           </div>
         </article>
       </div>
       <div class="decision-strip">
-        <strong>Need help choosing the right package?</strong>
+        <strong>Not sure which package fits your business?</strong>
         <div class="actions">
-          <a class="btn btn-secondary" href="get-quote.html">Get a Quote</a>
+          <a class="btn btn-secondary" href="get-quote.html">Get My Recommendation</a>
           <a class="helper-link" href="free-website-audit.html">Free Website Audit</a>
         </div>
       </div>
@@ -828,7 +871,7 @@
       <div class="steps">
         <div class="step">
           <strong>1. Choose your package</strong>
-          <p>Pay deposit or full amount to secure your build slot.</p>
+          <p>Choose the option that feels right for you and lock your build slot.</p>
         </div>
         <div class="step">
           <strong>2. Send business details</strong>
@@ -1006,8 +1049,8 @@
   <section id="print" class="section path">
     <div class="wrap">
       <div class="section-head">
-        <h2>Print services for existing website clients</h2>
-        <p>After your website launch, add business cards, flyers, signs, menus, and banners with nationwide delivery right to your door.</p>
+        <h2>Print services for businesses nationwide</h2>
+        <p>Order business cards, flyers, signs, menus, and banners with nationwide delivery right to your door. Bundle with a website package for better pricing.</p>
         <a class="helper-link" href="print-services.html">See full print services page</a>
       </div>
       <div class="grid-3">
@@ -1066,8 +1109,8 @@
   <section class="section">
     <div class="wrap">
       <div class="guarantee">
-        <h3>Trust and speed promise</h3>
-        <p>You get your first design draft in 48 hours after intake. Pricing is clear before work starts. No hidden fees, no surprise delays, no confusing agency process.</p>
+        <h3>Simple promise</h3>
+        <p>You will get your first draft within 48 hours after we receive your info. Clear pricing up front. No hidden fees.</p>
       </div>
     </div>
   </section>
@@ -1117,8 +1160,8 @@
   <section class="section">
     <div class="wrap">
       <div class="lead-capture">
-        <h3>Not ready to pay today?</h3>
-        <p>Tell us what you need and we will text or email your best package options within 1 business day.</p>
+        <h3>Not ready to start today?</h3>
+        <p>Tell us what you need, and we will send your best options within 1 business day.</p>
         <form data-lead-form data-lead-type="quote" data-api="/api/leads">
           <div class="lead-form-grid">
             <input name="full_name" placeholder="Full name" required>
@@ -1148,11 +1191,11 @@
   <section class="section">
     <div class="wrap">
       <div class="final">
-        <h2>Ready to launch your next customer-winning website?</h2>
-        <p>Start with a deposit or request a quote. You will get clear next steps by email or text.</p>
+        <h2>Ready for a website that helps you get more calls?</h2>
+        <p>Choose the option that feels right for you. We will text or email your next step within 1 business day.</p>
         <div class="hero-cta" style="justify-content:center;">
-          <a class="btn btn-primary" data-stripe-key="deposit_main" href="#">Start My Website (Pay Deposit)</a>
-          <a class="btn btn-secondary" href="get-quote.html">Get a Quote</a>
+          <a class="btn btn-primary" data-stripe-key="deposit_main" href="#">Get My Website Started</a>
+          <a class="btn btn-secondary" href="get-quote.html">Get My Recommendation</a>
         </div>
         <a class="helper-link" href="free-website-audit.html">Still deciding? Request a free audit.</a>
       </div>
@@ -1160,16 +1203,17 @@
   </section>
 
   <footer class="footer">
-    <div>SayIt Marketing | Arizona-Based, Nationwide Service</div>
-    <div class="line2">Websites, Hosting, Care Plans, Social Media, Print Services</div>
+    <div>SayIt Marketing | Trusted in Arizona, Serving Businesses Nationwide | <a href="tel:+15202226308">520-222-6308</a></div>
+    <div class="line2">Websites, Monthly Support, Social Media, and Print</div>
     <div class="line2"><a href="print-services.html">Print Services</a> | <a href="get-quote.html">Get Quote</a> | <a href="free-website-audit.html">Free Audit</a></div>
   </footer>
 
   <div class="mobile-sticky">
-    <a class="btn btn-primary" data-stripe-key="deposit_main" href="#">Start My Website (Pay Deposit)</a>
-    <a class="btn btn-secondary" href="get-quote.html">Get Quote</a>
+    <a class="btn btn-primary" data-stripe-key="deposit_main" href="#">Get Started</a>
+    <a class="btn btn-secondary" href="get-quote.html">Get My Recommendation</a>
   </div>
   <script src="assets/stripe-links.js"></script>
   <script src="assets/lead-form.js"></script>
 </body>
 </html>
+
