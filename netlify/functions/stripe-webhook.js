@@ -64,7 +64,16 @@ async function upsertOrderAndPayment(session, state) {
     body: JSON.stringify(orderPayload)
   });
 
-  if (!orderRes.ok) {
+  let patchedRows = [];
+  if (orderRes.ok) {
+    try {
+      patchedRows = await orderRes.json();
+    } catch {
+      patchedRows = [];
+    }
+  }
+
+  if (!orderRes.ok || patchedRows.length === 0) {
     await supabase("orders", {
       method: "POST",
       body: JSON.stringify({
