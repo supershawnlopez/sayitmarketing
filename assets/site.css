@@ -531,10 +531,6 @@ p { margin: 0; color: var(--text-3); max-width: 66ch; }
   max-inline-size: 30ch;
 }
 
-.home-apple .card {
-  border-radius: 0;
-}
-
 .cta-bottom-shell {
   padding-top: clamp(5.25rem, 10vw, 8.75rem);
   padding-bottom: clamp(5.25rem, 10vw, 8.75rem);
