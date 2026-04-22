@@ -1137,6 +1137,55 @@ body.page-audit,
 body.page-faq,
 body.page-thanks { --page-accent-1: 64 100 152; --page-accent-2: 106 139 189; }
 
+/* Per-page hero photography to avoid text-only inner pages */
+body.page-websites .page-hero--dark {
+  background:
+    linear-gradient(180deg, rgba(4, 16, 30, 0.66), rgba(4, 16, 30, 0.66)),
+    url("https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=2200&q=80") center/cover no-repeat;
+}
+
+body.page-monthly .page-hero--light {
+  background:
+    linear-gradient(180deg, rgba(250, 253, 255, 0.86), rgba(244, 250, 254, 0.9)),
+    url("https://images.unsplash.com/photo-1551281044-8b5bd6f3a8a0?auto=format&fit=crop&w=2200&q=80") center/cover no-repeat;
+}
+
+body.page-pricing .page-hero--light {
+  background:
+    linear-gradient(180deg, rgba(252, 253, 255, 0.9), rgba(245, 249, 254, 0.9)),
+    url("https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=2200&q=80") center/cover no-repeat;
+}
+
+body.page-portfolio .page-hero--dark {
+  background:
+    linear-gradient(180deg, rgba(7, 18, 32, 0.66), rgba(7, 18, 32, 0.66)),
+    url("https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=2200&q=80") center/cover no-repeat;
+}
+
+body.page-print .page-hero--dark {
+  background:
+    linear-gradient(180deg, rgba(33, 16, 8, 0.62), rgba(33, 16, 8, 0.62)),
+    url("https://images.unsplash.com/photo-1586704849707-a72eb0e4c2f0?auto=format&fit=crop&w=2200&q=80") center/cover no-repeat;
+}
+
+body.page-faq .page-hero--light {
+  background:
+    linear-gradient(180deg, rgba(252, 253, 255, 0.9), rgba(245, 249, 254, 0.9)),
+    url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=2200&q=80") center/cover no-repeat;
+}
+
+body.page-contact .page-hero--compact {
+  background:
+    linear-gradient(180deg, rgba(251, 253, 255, 0.9), rgba(243, 248, 253, 0.9)),
+    url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=80") center/cover no-repeat;
+}
+
+body.page-audit .page-hero--light {
+  background:
+    linear-gradient(180deg, rgba(252, 253, 255, 0.9), rgba(246, 250, 254, 0.9)),
+    url("https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&w=2200&q=80") center/cover no-repeat;
+}
+
 .img-premium,
 .media-frame,
 .split-media {
