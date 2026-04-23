@@ -194,29 +194,27 @@ body.nav-open {
 
 .btn-primary {
   color: #fff;
-  background: linear-gradient(180deg, #0a84ff 0%, #0071e3 100%);
-  border-color: #0068d1;
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.25) inset, 0 8px 20px rgba(0, 113, 227, 0.28);
+  background: var(--brand);
+  border-color: var(--brand);
+  box-shadow: none;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(180deg, #2f95ff 0%, #0a7eed 100%);
-  border-color: #0a7eed;
+  background: var(--brand-strong);
+  border-color: var(--brand-strong);
   transform: translateY(-1px);
-  filter: saturate(1.05);
 }
 
 .btn-secondary {
   color: var(--brand);
-  background: rgba(255, 255, 255, 0.82);
+  background: transparent;
   border-color: var(--brand);
-  backdrop-filter: blur(8px);
 }
 
 .btn-secondary:hover {
-  background: rgba(0, 113, 227, 1);
+  background: rgba(0, 113, 227, 0.1);
   border-color: var(--brand);
-  color: #fff;
+  color: var(--brand);
 }
 
 .btn:focus-visible {
@@ -489,12 +487,12 @@ p { margin: 0; color: #36485b; max-width: 62ch; font-size: var(--fs-body); line-
 }
 
 .btn-tile {
-  min-height: 2.25rem;
-  padding-inline: 0.9375rem;
-  font-size: var(--tile-cta-size);
-  font-weight: var(--tile-cta-weight);
-  line-height: var(--tile-cta-line);
-  letter-spacing: var(--tile-cta-track);
+  min-height: var(--btn-h);
+  padding-inline: var(--btn-px);
+  font-size: var(--btn-font-size);
+  font-weight: 600;
+  line-height: var(--btn-line);
+  letter-spacing: -0.015em;
   white-space: nowrap;
   text-wrap: nowrap;
 }
@@ -1111,7 +1109,7 @@ body.page-websites .page-hero h1 {
 }
 
 .form-shell-premium .btn {
-  min-height: 2.6rem;
+  min-height: var(--btn-h);
 }
 
 /* Premium imagery system: consistent treatment with page-level accents */
@@ -1180,6 +1178,23 @@ body.page-contact .page-hero--compact {
   background:
     linear-gradient(180deg, rgba(251, 253, 255, 0.9), rgba(243, 248, 253, 0.9)),
     url("https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=2200&q=80") center/cover no-repeat;
+}
+
+body.page-contact .panel-social {
+  background-image:
+    radial-gradient(130% 90% at 12% 8%, rgba(88, 148, 214, 0.42), rgba(88, 148, 214, 0)),
+    linear-gradient(160deg, #0d2339 0%, #184469 100%);
+}
+
+body.page-contact .panel-monthly {
+  background-image:
+    radial-gradient(120% 90% at 78% 18%, rgba(95, 154, 217, 0.36), rgba(95, 154, 217, 0)),
+    linear-gradient(160deg, #0f2d47 0%, #1e567f 100%);
+}
+
+body.page-contact .panel-social::before,
+body.page-contact .panel-monthly::before {
+  background: linear-gradient(180deg, rgba(7, 20, 34, 0.25), rgba(7, 20, 34, 0.42));
 }
 
 body.page-audit .page-hero--light {
@@ -1569,12 +1584,14 @@ body.page-audit .page-hero--light {
   width: min(var(--max), calc(100% - 28px));
   margin: 0 auto clamp(1rem, 2.5vw, 2rem);
   display: grid;
+  justify-items: center;
+  text-align: center;
   gap: 0.5rem;
 }
 
 .chapter-head h2 {
   margin: 0;
-  max-width: 14ch;
+  max-width: 16ch;
 }
 
 .chapter-head p {
@@ -1601,7 +1618,9 @@ body.page-audit .page-hero--light {
   background-size: cover;
   background-position: center;
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 var(--tile-pad);
 }
 
 .chapter-panel::before {
@@ -1614,29 +1633,39 @@ body.page-audit .page-hero--light {
 .chapter-panel-copy {
   position: relative;
   z-index: 1;
-  padding: clamp(1.3rem, 3.2vw, 2.4rem);
+  width: min(100%, var(--tile-copy-max));
+  margin-inline: auto;
+  padding-top: var(--tile-edge-inset);
   color: #fff;
-  max-width: 32rem;
+  text-align: center;
 }
 
 .chapter-panel-copy h3 {
-  margin: 0 0 0.55rem;
+  margin: 0 0 var(--tile-heading-gap);
+  max-inline-size: var(--tile-head-max);
+  margin-inline: auto;
   color: #fff;
-  font-size: clamp(2rem, 3.3vw, 3rem);
-  letter-spacing: -0.028em;
-  line-height: 1.05;
+  font-size: var(--tile-title-size);
+  letter-spacing: var(--tile-title-track);
+  line-height: var(--tile-title-line);
+  font-weight: var(--tile-title-weight);
 }
 
 .chapter-panel-copy p {
-  margin: 0 0 0.95rem;
+  margin: 0 0 var(--tile-subcta-gap);
+  max-width: var(--tile-sub-max);
+  margin-inline: auto;
   color: rgba(255, 255, 255, 0.92);
-  font-size: clamp(1rem, 1.3vw, 1.18rem);
+  font-size: var(--tile-body-size);
+  line-height: var(--tile-body-line);
+  letter-spacing: var(--tile-body-track);
 }
 
 .chapter-actions {
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .panel-website {
