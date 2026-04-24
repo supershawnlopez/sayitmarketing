@@ -2198,6 +2198,38 @@ body.page-audit .page-hero--light {
 }
 .home-proof-item strong { display: block; font-size: 1.5rem; margin-bottom: 0.2rem; }
 
+.launch-machine-band {
+  background: linear-gradient(180deg, #f7fbff 0%, #edf4fb 100%);
+  border-top: 1px solid #d7e3ef;
+  border-bottom: 1px solid #d7e3ef;
+}
+.launch-machine-shell {
+  border: 1px solid #d7e3ef;
+  border-radius: 1.2rem;
+  background: #fff;
+  padding: clamp(1rem, 2.8vw, 1.6rem);
+}
+.launch-machine-shell h2 {
+  margin: 0 0 0.5rem;
+}
+.addon-chip-row {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.addon-chip {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  border: 1px solid #c8d8ea;
+  background: #f7fbff;
+  padding: 0.4rem 0.7rem;
+  font-size: 0.82rem;
+  color: #30475f;
+  font-weight: 600;
+}
+
 .services-diagnose {
   width: min(var(--max), calc(100% - 28px));
   margin: 0 auto;
