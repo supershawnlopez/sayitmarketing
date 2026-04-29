@@ -1,3 +1,34 @@
+## Session: April 29, 2026 — Part 2
+**AI:** Claude (Sonnet)
+**Worked on:** BRIEF.md system, PROJECT.md rename, CHANGELOG rules, Stripe prep
+
+### Completed This Session
+- BRIEF.md created — universal AI entry point
+- PROJECT.md created — renamed from CLAUDE.md, AI-neutral
+- CLAUDE.md deleted
+- All references updated across BRIEF.md and CHANGELOG.md
+- Team rules, approval rules, time=money philosophy documented
+- Agent roles defined in PROJECT.md
+
+### Pending
+- Stripe links — all fallback to get-quote.html except SEO On the Map. Hand to Claude Code/Codex with sk_live key
+- Stripe bundle link — $199/mo + $250 one-time in one checkout for dogandcat
+- Netlify SUPABASE_SERVICE_ROLE_KEY — confirm set in dashboard
+- Lead form test — submit on get-quote.html, verify Supabase receives it
+- Site DNS — verify sayitmarketing.com resolves correctly
+- Google Business Profile — shows as CLOSED, fix ASAP
+- GitHub token — regenerate after this session (was used in chat)
+
+### Next (In Order)
+1. Stripe — Claude Code or Codex with sk_live key, update stripe-links.js
+2. Verify site loads + DNS
+3. Test lead form → Supabase
+4. Send Eimy proposal link — opens May 4th
+5. Fix Google Business Profile
+6. Regenerate GitHub token
+
+---
+
 # CHANGELOG.md — Say It Marketing
 ### Every AI must update this file at the end of every session.
 ### Format: Date · What was done · What's pending · What's next.
