@@ -793,7 +793,7 @@
       <!-- Ads confirmation message — shows after tap when ads selected -->
       <div class="ads-confirm" id="ads-confirm" style="display:none;">
         <div class="ads-confirm-icon">📱</div>
-        <div class="ads-confirm-text" id="ads-confirm-text">After payment, Shawn will text you within the hour to get your Google Ads account set up — you'll be live before May 4th.</div>
+        <div class="ads-confirm-text" id="ads-confirm-text">After payment, Shawn will reach out to get your Google Ads account set up before May 4th.</div>
       </div>
 
       <p class="cta-note t" data-en="Tap to pay securely. Questions? Call or text Shawn · (520) 222-6308" data-es="Toca para pagar de forma segura. ¿Preguntas? Llama o escríbele a Shawn · (520) 222-6308">Tap to pay securely. Questions? Call or text Shawn · (520) 222-6308</p>
@@ -934,8 +934,8 @@
       adsConfirm.style.display = adsOn ? 'flex' : 'none';
       if (adsOn) {
         document.getElementById('ads-confirm-text').textContent = lang==='es'
-          ? 'Después del pago, Shawn te escribirá en menos de una hora para configurar tu cuenta de Google Ads — estarás activa antes del 4 de mayo.'
-          : 'After payment, Shawn will text you within the hour to get your Google Ads account set up — you'll be live before May 4th.';
+          ? 'Después del pago, Shawn te contactará para configurar tu cuenta de Google Ads antes del 4 de mayo.'
+          : 'After payment, Shawn will reach out to get your Google Ads account set up before May 4th.';
       }
 
       // Stripe link — SEO only vs SEO+Social
