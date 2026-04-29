@@ -6,14 +6,37 @@
   <title>Dog & Cat Groomer — Your SEO Plan</title>
   <link rel="stylesheet" href="../assets/site.css">
   <style>
-    /* ── Page overrides ── */
     .proposal-page {
       max-width: 680px;
       margin: 0 auto;
       padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1rem, 4vw, 1.75rem) 5rem;
     }
-
-    /* ── For tag ── */
+    .lang-toggle {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 20px;
+    }
+    .lang-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 16px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--text-2);
+      cursor: pointer;
+      transition: all 0.18s ease;
+      font-family: inherit;
+    }
+    .lang-btn:hover {
+      border-color: var(--brand);
+      color: var(--brand);
+      background: rgba(0,113,227,0.05);
+    }
     .for-tag {
       display: inline-flex;
       align-items: center;
@@ -38,8 +61,6 @@
       0%,100% { opacity:1; }
       50%      { opacity:.3; }
     }
-
-    /* ── Hero text ── */
     .proposal-h1 {
       font-size: clamp(2.5rem, 7vw, 4rem);
       letter-spacing: -0.04em;
@@ -48,10 +69,7 @@
       margin: 0 0 16px;
       max-width: 14ch;
     }
-    .proposal-h1 em {
-      font-style: normal;
-      color: var(--brand);
-    }
+    .proposal-h1 em { font-style: normal; color: var(--brand); }
     .proposal-intro {
       font-size: 1.05rem;
       color: var(--text-3);
@@ -59,15 +77,11 @@
       line-height: 1.65;
       margin-bottom: 40px;
     }
-
-    /* ── Divider ── */
     .rule {
       border: none;
       border-top: 1px solid var(--line);
       margin: 36px 0;
     }
-
-    /* ── Verdict card ── */
     .verdict-card {
       background: linear-gradient(180deg, #fbfdff 0%, #f3f7fc 100%);
       border: 1px solid #d5e1ef;
@@ -97,8 +111,6 @@
       line-height: 1.65;
       margin: 0;
     }
-
-    /* ── Reason cards ── */
     .reasons {
       display: flex;
       flex-direction: column;
@@ -136,8 +148,6 @@
       margin: 0;
       max-width: 100%;
     }
-
-    /* ── Included list ── */
     .included-card {
       background: #fff;
       border: 1px solid var(--line);
@@ -181,8 +191,70 @@
       line-height: 1.5;
       margin-bottom: 0;
     }
-
-    /* ── CTA card ── */
+    /* ── Google Ads card ── */
+    .ads-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: clamp(1.5rem, 4vw, 2rem);
+      box-shadow: var(--shadow-soft);
+      margin-bottom: 16px;
+    }
+    .ads-card h2 {
+      font-size: clamp(1.3rem, 3vw, 1.7rem);
+      letter-spacing: -0.025em;
+      color: var(--text-1);
+      margin: 0 0 10px;
+    }
+    .ads-intro {
+      font-size: 0.95rem;
+      color: var(--text-2);
+      line-height: 1.65;
+      margin: 0 0 20px;
+      max-width: 54ch;
+    }
+    .ads-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .ads-col {
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+    }
+    .ads-col-label {
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .label-seo { color: var(--brand); }
+    .label-ads { color: #e37400; }
+    .ads-col p {
+      font-size: 0.82rem;
+      color: var(--text-3);
+      line-height: 1.55;
+      margin: 0;
+      max-width: 100%;
+    }
+    .ads-callout {
+      background: rgba(227,116,0,0.06);
+      border: 1px solid rgba(227,116,0,0.2);
+      border-radius: var(--radius-sm);
+      padding: 16px 18px;
+    }
+    .ads-callout p {
+      font-size: 0.88rem;
+      color: var(--text-2);
+      line-height: 1.6;
+      margin: 0;
+      max-width: 100%;
+    }
+    /* ── CTA ── */
     .cta-card {
       background:
         radial-gradient(110% 90% at 50% -10%, rgba(0,113,227,0.12), rgba(0,113,227,0) 55%),
@@ -240,8 +312,6 @@
       margin: 0 auto;
       max-width: 36ch;
     }
-
-    /* ── Footer ── */
     .proposal-footer {
       margin-top: 48px;
       padding-top: 22px;
@@ -253,9 +323,9 @@
       font-size: 0.78rem;
       color: var(--text-3);
     }
-
     @media (max-width: 600px) {
       .proposal-footer { flex-direction: column; }
+      .ads-split { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -278,76 +348,105 @@
 
   <main class="proposal-page">
 
+    <!-- LANGUAGE TOGGLE -->
+    <div class="lang-toggle">
+      <button class="lang-btn" onclick="toggleLang()" id="langBtn">
+        🌐 <span id="langBtnText">Ver en Español</span>
+      </button>
+    </div>
+
     <!-- FOR TAG -->
     <div class="for-tag">
       <span class="for-dot"></span>
-      Prepared for Eimy Martinez
+      <span class="t" data-en="Prepared for Eimy Martinez" data-es="Preparado para Eimy Martinez">Prepared for Eimy Martinez</span>
     </div>
 
     <!-- HERO -->
-    <h1 class="proposal-h1">Google is the right move <em>first.</em></h1>
-    <p class="proposal-intro">I looked at your market and your competition in Glendale. The research confirmed exactly what we talked about on the phone. Here's the short version — and how to get started today.</p>
+    <h1 class="proposal-h1">
+      <span class="t" data-en="Google is the right move " data-es="Google es el primer paso ">Google is the right move </span><em class="t" data-en="first." data-es="correcto.">first.</em>
+    </h1>
+    <p class="proposal-intro t" data-en="I looked at your market and your competition in Glendale. The research confirmed exactly what we talked about on the phone. Here's the short version — and how to get started today." data-es="Analicé tu mercado y tu competencia en Glendale. La investigación confirmó exactamente lo que hablamos por teléfono. Aquí está el resumen — y cómo empezar hoy.">I looked at your market and your competition in Glendale. The research confirmed exactly what we talked about on the phone. Here's the short version — and how to get started today.</p>
 
     <hr class="rule">
 
     <!-- VERDICT -->
     <div class="verdict-card">
-      <div class="card-eyebrow">Our Recommendation</div>
-      <h2>Start with SEO — On the Map.</h2>
-      <p>People in Glendale are searching for a groomer right now. This plan puts Dog &amp; Cat Groomer in front of them at that exact moment — when they're ready to book. That's the fastest way to fill your schedule.</p>
+      <div class="card-eyebrow t" data-en="Our Recommendation" data-es="Nuestra Recomendación">Our Recommendation</div>
+      <h2 class="t" data-en="Start with SEO — On the Map." data-es="Empieza con SEO — En el Mapa.">Start with SEO — On the Map.</h2>
+      <p class="t" data-en="People in Glendale are searching for a groomer right now. This plan puts Dog &amp; Cat Groomer in front of them at that exact moment — when they're ready to book. That's the fastest way to fill your schedule." data-es="Hay personas en Glendale buscando un groomer ahora mismo. Este plan pone a Dog &amp; Cat Groomer frente a ellos en ese momento exacto — cuando están listos para reservar. Es la forma más rápida de llenar tu agenda.">People in Glendale are searching for a groomer right now. This plan puts Dog &amp; Cat Groomer in front of them at that exact moment — when they're ready to book. That's the fastest way to fill your schedule.</p>
     </div>
 
-    <!-- 3 REASONS -->
+    <!-- REASONS -->
     <div class="reasons">
       <div class="reason-card">
         <div class="r-icon">🎯</div>
         <div>
-          <div class="r-title">They're already looking for you</div>
-          <p class="r-body">93% of people search Google before choosing a local business. SEO reaches people who are actively searching for a groomer — not just scrolling a feed.</p>
+          <div class="r-title t" data-en="They're already looking for you" data-es="Ya te están buscando">They're already looking for you</div>
+          <p class="r-body t" data-en="93% of people search Google before choosing a local business. SEO reaches people who are actively searching for a groomer — not just scrolling a feed." data-es="El 93% de las personas busca en Google antes de elegir un negocio local. El SEO llega a personas que están buscando activamente un groomer — no solo viendo el feed.">93% of people search Google before choosing a local business. SEO reaches people who are actively searching for a groomer — not just scrolling a feed.</p>
         </div>
       </div>
       <div class="reason-card">
         <div class="r-icon">📍</div>
         <div>
-          <div class="r-title">Google Maps = free advertising every day</div>
-          <p class="r-body">Once you're in the local map pack, every search costs you nothing. It works on weekends, at night, while you're with a client — always on.</p>
+          <div class="r-title t" data-en="Google Maps = free advertising every day" data-es="Google Maps = publicidad gratis todos los días">Google Maps = free advertising every day</div>
+          <p class="r-body t" data-en="Once you're in the local map pack, every search costs you nothing. It works on weekends, at night, while you're with a client — always on." data-es="Una vez que apareces en el mapa local, cada búsqueda no te cuesta nada. Funciona los fines de semana, de noche, mientras atiendes clientes — siempre activo.">Once you're in the local map pack, every search costs you nothing. It works on weekends, at night, while you're with a client — always on.</p>
         </div>
       </div>
       <div class="reason-card">
         <div class="r-icon">⭐</div>
         <div>
-          <div class="r-title">Reviews build trust and rankings</div>
-          <p class="r-body">A steady flow of 5-star reviews is the #1 reason someone picks one groomer over another — and they directly boost how high you show up on Google.</p>
+          <div class="r-title t" data-en="Reviews build trust and rankings" data-es="Las reseñas generan confianza y posición">Reviews build trust and rankings</div>
+          <p class="r-body t" data-en="A steady flow of 5-star reviews is the #1 reason someone picks one groomer over another — and they directly boost how high you show up on Google." data-es="Un flujo constante de reseñas de 5 estrellas es la razón #1 por la que eligen un groomer — y suben directamente tu posición en Google.">A steady flow of 5-star reviews is the #1 reason someone picks one groomer over another — and they directly boost how high you show up on Google.</p>
         </div>
       </div>
     </div>
 
     <!-- INCLUDED -->
     <div class="included-card">
-      <div class="card-eyebrow">What's included every month</div>
+      <div class="card-eyebrow t" data-en="What's included every month" data-es="Qué incluye cada mes">What's included every month</div>
       <ul class="inc-list">
-        <li><span class="inc-check">✓</span> Google Business Profile setup &amp; full optimization</li>
-        <li><span class="inc-check">✓</span> Monthly profile updates &amp; photo management</li>
-        <li><span class="inc-check">✓</span> Review request strategy to grow your star rating</li>
-        <li><span class="inc-check">✓</span> Weekly Google posts to keep your profile active</li>
-        <li><span class="inc-check">✓</span> Listed on Yelp, Apple Maps &amp; local directories</li>
-        <li><span class="inc-check">✓</span> Keyword ranking tracking — we watch your position</li>
-        <li><span class="inc-check">✓</span> Monthly performance report so you see the results</li>
+        <li><span class="inc-check">✓</span><span class="t" data-en="Google Business Profile setup &amp; full optimization" data-es="Configuración y optimización completa de Google Business Profile">Google Business Profile setup &amp; full optimization</span></li>
+        <li><span class="inc-check">✓</span><span class="t" data-en="Monthly profile updates &amp; photo management" data-es="Actualizaciones mensuales del perfil y manejo de fotos">Monthly profile updates &amp; photo management</span></li>
+        <li><span class="inc-check">✓</span><span class="t" data-en="Review request strategy to grow your star rating" data-es="Estrategia para solicitar reseñas y mejorar tu calificación">Review request strategy to grow your star rating</span></li>
+        <li><span class="inc-check">✓</span><span class="t" data-en="Weekly Google posts to keep your profile active" data-es="Publicaciones semanales en Google para mantener tu perfil activo">Weekly Google posts to keep your profile active</span></li>
+        <li><span class="inc-check">✓</span><span class="t" data-en="Listed on Yelp, Apple Maps &amp; local directories" data-es="Listado en Yelp, Apple Maps y directorios locales">Listed on Yelp, Apple Maps &amp; local directories</span></li>
+        <li><span class="inc-check">✓</span><span class="t" data-en="Keyword ranking tracking — we watch your position" data-es="Seguimiento de palabras clave — monitoreamos tu posición">Keyword ranking tracking — we watch your position</span></li>
+        <li><span class="inc-check">✓</span><span class="t" data-en="Monthly performance report so you see the results" data-es="Reporte mensual de rendimiento para que veas los resultados">Monthly performance report so you see the results</span></li>
       </ul>
-      <p class="inc-note">We handle all of it. You stay focused on your clients and their pets.</p>
+      <p class="inc-note t" data-en="We handle all of it. You stay focused on your clients and their pets." data-es="Nosotros nos encargamos de todo. Tú te enfocas en tus clientes y sus mascotas.">We handle all of it. You stay focused on your clients and their pets.</p>
+    </div>
+
+    <!-- GOOGLE ADS -->
+    <div class="ads-card">
+      <div class="card-eyebrow t" style="color:#e37400;" data-en="Want clients on day one? — Opens May 1st" data-es="¿Quieres clientes desde el primer día? — Abres el 1 de Mayo">Want clients on day one? — Opens May 1st</div>
+      <h2 class="t" data-en="Add Google Ads for instant visibility." data-es="Agrega Google Ads para visibilidad inmediata.">Add Google Ads for instant visibility.</h2>
+      <p class="ads-intro t" data-en="SEO builds your permanent Google presence — but it takes 60–90 days to kick in. A small Google Ads budget gets your phone ringing on opening day while SEO builds in the background." data-es="El SEO construye tu presencia permanente en Google — pero tarda 60–90 días en activarse. Un pequeño presupuesto en Google Ads hace que tu teléfono suene desde el día de apertura mientras el SEO se desarrolla.">SEO builds your permanent Google presence — but it takes 60–90 days to kick in. A small Google Ads budget gets your phone ringing on opening day while SEO builds in the background.</p>
+      <div class="ads-split">
+        <div class="ads-col">
+          <div class="ads-col-label label-seo t" data-en="SEO — Long Term" data-es="SEO — Largo Plazo">SEO — Long Term</div>
+          <p class="t" data-en="Permanent rankings. Free traffic every month. Builds momentum over 60–90 days." data-es="Posicionamiento permanente. Tráfico gratuito cada mes. Gana impulso en 60–90 días.">Permanent rankings. Free traffic every month. Builds momentum over 60–90 days.</p>
+        </div>
+        <div class="ads-col">
+          <div class="ads-col-label label-ads t" data-en="Google Ads — Right Now" data-es="Google Ads — Ahora Mismo">Google Ads — Right Now</div>
+          <p class="t" data-en="Instant visibility on day one. Shows up while SEO is building. Pause anytime." data-es="Visibilidad instantánea desde el primer día. Apareces mientras el SEO se construye. Pausa cuando quieras.">Instant visibility on day one. Shows up while SEO is building. Pause anytime.</p>
+        </div>
+      </div>
+      <div class="ads-callout">
+        <p class="t" data-en="A budget of $150–$200/mo is enough to compete for grooming searches in Glendale. Ask Shawn about adding a Google Ads campaign when you sign up." data-es="Un presupuesto de $150–$200/mes es suficiente para competir en búsquedas de grooming en Glendale. Pregúntale a Shawn sobre agregar una campaña de Google Ads al registrarte.">A budget of $150–$200/mo is enough to compete for grooming searches in Glendale. Ask Shawn about adding a Google Ads campaign when you sign up.</p>
+      </div>
     </div>
 
     <!-- CTA -->
     <div class="cta-card">
-      <div class="cta-plan-label">SEO — On the Map</div>
+      <div class="cta-plan-label t" data-en="SEO — On the Map" data-es="SEO — En el Mapa">SEO — On the Map</div>
       <div class="cta-price">$199</div>
-      <div class="cta-mo">per month · cancel anytime</div>
-      <div class="cta-save-pill">$50/mo less than the social package</div>
+      <div class="cta-mo t" data-en="per month · cancel anytime" data-es="por mes · cancela cuando quieras">per month · cancel anytime</div>
+      <div class="cta-save-pill t" data-en="$50/mo less than the social package" data-es="$50/mes menos que el paquete social">$50/mo less than the social package</div>
       <br>
-      <a class="btn btn-primary" href="https://pay.sayitmarketing.com/b/4gM6oI5TE2oFfZab5GbV60M">
+      <a class="btn btn-primary t" href="https://pay.sayitmarketing.com/b/4gM6oI5TE2oFfZab5GbV60M" data-en="Yes — Let's Get Started" data-es="Sí — ¡Empecemos!">
         Yes — Let's Get Started
       </a>
-      <p class="cta-btn-note">Tap to pay securely online.<br>Questions? Call or text Shawn · (520) 222-6308</p>
+      <p class="cta-btn-note t" data-en="Tap to pay securely online. Questions? Call or text Shawn · (520) 222-6308" data-es="Toca para pagar de forma segura. ¿Preguntas? Llama o escríbele a Shawn · (520) 222-6308">Tap to pay securely online.<br>Questions? Call or text Shawn · (520) 222-6308</p>
     </div>
 
     <div class="proposal-footer">
@@ -356,6 +455,22 @@
     </div>
 
   </main>
+
+  <script>
+    var isSpanish = false;
+    function toggleLang() {
+      isSpanish = !isSpanish;
+      var lang = isSpanish ? 'es' : 'en';
+      document.querySelectorAll('.t').forEach(function(el) {
+        var val = el.getAttribute('data-' + lang);
+        if (!val) return;
+        if (el.tagName === 'A') { el.textContent = val; }
+        else { el.innerHTML = val; }
+      });
+      document.getElementById('langBtnText').textContent = isSpanish ? 'View in English' : 'Ver en Español';
+      document.documentElement.lang = isSpanish ? 'es' : 'en';
+    }
+  </script>
 
 </body>
 </html>
