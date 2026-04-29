@@ -1,0 +1,103 @@
+# CHANGELOG.md — Say It Marketing
+### Every AI must update this file at the end of every session.
+### Format: Date · What was done · What's pending · What's next.
+
+---
+
+## Session: April 29, 2026
+**AI:** Claude (Sonnet)
+**Worked on:** Full site audit, new pages, client proposal, database setup, master AI instruction file
+
+### ✅ Completed This Session
+
+**Infrastructure**
+- Supabase project restored and `leads` + `automation_jobs` tables created with full schema
+- Netlify environment variables confirmed needed: `SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY`
+- `stripe-links.js` updated — all placeholder links now fallback to `get-quote.html` (no dead buttons)
+- `CLAUDE.md` created at repo root — master AI instruction file for all agents
+- This `CHANGELOG.md` created
+
+**New Pages**
+- `local-seo.html` — Dedicated SEO plans page (Get Listed $99 / On the Map $199 / Own the Block $299)
+- `social-media.html` — Dedicated social media plans page (Launch Ready / Content Pro / Done For You)
+
+**Client Proposal — Eimy Martinez (Dog & Cat Groomer)**
+- `proposals/dogandcat.html` — Full rebuild with:
+  - 3-step conversion flow (SEO → Google Ads → Social)
+  - Bottom sheet modals for SEO and Social detail (slide up, no page leave)
+  - Plan builder with toggles (Social on/off, Google Ads on/off)
+  - Two-bucket payment clarity (Pay Say It Marketing vs Pay Google directly)
+  - Budget selector for Google Ads ($100/$175★/$250/$350)
+  - Dynamic CTA that changes based on selections
+  - Spanish/English toggle (full bilingual)
+  - Stripe link live for SEO On the Map: `https://pay.sayitmarketing.com/b/4gM6oI5TE2oFfZab5GbV60M`
+  - Opening date: May 4th
+  - Google Ads ads message: "Shawn will reach out to get your Google Ads account set up"
+
+**Content / Data**
+- `content/services.json` in dogandcatgroomer repo updated with full pricing from Eimy's menu board
+- `docs/seo-delivery-sop.md` created — Local SEO service delivery playbook (free stack, monthly workflow, report template)
+
+---
+
+### ⏳ Pending / In Progress
+
+| Item | Status | Notes |
+|---|---|---|
+| Stripe bundle link | ❌ Not created | Need $199/mo SEO + $250 one-time social in ONE Stripe checkout. Currently falls back to `get-quote.html` |
+| Netlify env vars | ❓ Unconfirmed | `SUPABASE_SERVICE_ROLE_KEY` needs to be set in Netlify dashboard → Site Config → Env Vars |
+| Lead form → Supabase | ❓ Unconfirmed | Depends on env vars being set. Test by submitting get-quote.html form and checking Supabase leads table |
+| DNS / site loading | ❓ Unstable | sayitmarketing.com DNS flip attempted tonight. Site not loading as of end of session. Check Netlify deploy log for errors |
+| Google Business Profile | ❌ Not done | Currently showing as CLOSED due to old partner/office address. Highest priority for inbound leads |
+
+---
+
+### 🔜 What To Work On Next (In Order)
+
+1. **Fix site loading issue** — Check Netlify deploy logs for build errors. Verify DNS propagation. Confirm `SUPABASE_SERVICE_ROLE_KEY` is set.
+
+2. **Test lead form** — Submit a test entry on `get-quote.html` and verify it appears in Supabase `leads` table.
+
+3. **Create Stripe bundle link** — In Stripe: create a product for SEO $199/mo subscription. Then create a separate one-time $250 social setup. Update `stripe-links.js` with real links.
+
+4. **Send Eimy the proposal** — `sayitmarketing.com/proposals/dogandcat`. Text her the link once site is confirmed loading.
+
+5. **Fix Google Business Profile** — Log into GBP, update address, mark as open, add photos, get review link.
+
+6. **Portfolio** — Add 3–5 real client screenshots with descriptions to `portfolio.html`.
+
+7. **Testimonials** — Add 2–3 real client quotes to homepage.
+
+8. **Automation emails** — Wire up `automation-runner.js` to send actual follow-up emails at day 1, 3, 7 after lead submission.
+
+---
+
+## How To Update This File
+
+At the end of every AI session, update this file with a new entry:
+
+```markdown
+## Session: [Date]
+**AI:** [Which AI / model]
+**Worked on:** [Brief topic]
+
+### ✅ Completed This Session
+- Item 1
+- Item 2
+
+### ⏳ Pending / In Progress
+| Item | Status | Notes |
+
+### 🔜 What To Work On Next
+1. First priority
+2. Second priority
+```
+
+**Rule:** No AI should close a session without updating this file.
+**Rule:** The "What To Work On Next" section is always in priority order.
+**Rule:** Move completed items from "Next" to "Completed" — never delete history.
+
+---
+
+*This file is the memory of the project.*
+*Read it before you start. Update it before you stop.*
