@@ -982,7 +982,8 @@
       document.getElementById('cta-price-big').textContent = '$199';
     }
 
-    // Init
+    // Init — isSpanish must be declared before updatePlan() runs
+    var isSpanish = false;
     updatePlan();
 
     /* ── Sheet open/close ── */
@@ -998,7 +999,6 @@
     }
 
     /* ── Language toggle ── */
-    var isSpanish = false;
     var translations = {
       en: {
         langBtn: 'Ver en Español',
