@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Local SEO Plans | SayIt Marketing</title>
+  <meta name="description" content="Get found on Google Maps and local search. Three SEO plans built for small businesses in Tucson, Glendale, and the Southwest.">
+  <link rel="canonical" href="https://sayitmarketing.com/local-seo.html">
+  <link rel="stylesheet" href="assets/site.css">
+  <style>
+    .seo-hero {
+      padding: clamp(3.5rem, 8vw, 6rem) 0 clamp(2rem, 4vw, 3rem);
+      text-align: center;
+    }
+    .seo-hero h1 {
+      max-width: 18ch;
+      margin-inline: auto;
+      margin-bottom: 16px;
+    }
+    .seo-hero h1 em { font-style: normal; color: var(--brand); }
+    .seo-hero p {
+      max-width: 52ch;
+      margin-inline: auto;
+      font-size: clamp(1rem, 1.8vw, 1.2rem);
+      color: var(--text-3);
+    }
+    .seo-hero .hero-links { margin-top: 28px; }
+
+    /* ── Why section ── */
+    .why-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+    .why-item {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-soft);
+    }
+    .why-num {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--brand);
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .why-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-1);
+      margin-bottom: 4px;
+    }
+    .why-body {
+      font-size: 0.82rem;
+      color: var(--text-3);
+      line-height: 1.55;
+      margin: 0;
+      max-width: 100%;
+    }
+
+    /* ── Plans ── */
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-top: 2.5rem;
+    }
+    .plan-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: clamp(1.25rem, 3vw, 1.75rem);
+      background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      flex-direction: column;
+    }
+    .plan-card.recommended {
+      border-color: rgba(0,113,227,0.4);
+      background: linear-gradient(160deg, #eff7ff 0%, #e4f0ff 100%);
+      box-shadow: 0 12px 32px rgba(0,113,227,0.14);
+      position: relative;
+    }
+    .rec-badge {
+      display: inline-block;
+      background: var(--brand);
+      color: #fff;
+      font-size: 0.6rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
+      width: fit-content;
+    }
+    .plan-tier {
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 6px;
+    }
+    .plan-name {
+      font-size: 1.4rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--text-1);
+      margin-bottom: 4px;
+    }
+    .plan-tagline {
+      font-size: 0.85rem;
+      color: var(--text-3);
+      margin-bottom: 20px;
+      line-height: 1.45;
+    }
+    .plan-price {
+      font-size: clamp(2.2rem, 5vw, 2.8rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      color: var(--text-1);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .plan-price.recommended { color: var(--brand); }
+    .plan-mo {
+      font-size: 0.82rem;
+      color: var(--text-3);
+      margin-bottom: 20px;
+    }
+    .plan-divider {
+      border: none;
+      border-top: 1px solid var(--line);
+      margin-bottom: 18px;
+    }
+    .plan-features {
+      list-style: none;
+      margin: 0 0 24px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      flex: 1;
+    }
+    .plan-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--text-2);
+      line-height: 1.4;
+    }
+    .plan-features li::before {
+      content: '✓';
+      color: var(--brand);
+      font-weight: 800;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .plan-card .btn { width: 100%; justify-content: center; }
+
+    /* ── How it works ── */
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+    .how-step {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      padding: 1.25rem;
+      box-shadow: var(--shadow-soft);
+    }
+    .how-n {
+      font-size: 0.62rem;
+      font-weight: 800;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--brand);
+      margin-bottom: 8px;
+    }
+    .how-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text-1);
+      margin-bottom: 4px;
+    }
+    .how-body {
+      font-size: 0.82rem;
+      color: var(--text-3);
+      line-height: 1.55;
+      margin: 0;
+      max-width: 100%;
+    }
+
+    /* ── CTA band ── */
+    .seo-cta {
+      background: linear-gradient(165deg, #f3f8ff 0%, #eaf2fc 100%);
+      border: 1px solid #d6e2ef;
+      border-radius: var(--radius);
+      padding: clamp(2rem, 5vw, 3.5rem);
+      text-align: center;
+      box-shadow: var(--shadow-soft);
+      margin-top: 2rem;
+    }
+    .seo-cta h2 {
+      max-width: 22ch;
+      margin-inline: auto;
+      margin-bottom: 10px;
+    }
+    .seo-cta p {
+      max-width: 46ch;
+      margin-inline: auto;
+      color: var(--text-3);
+      margin-bottom: 28px;
+    }
+    .seo-cta .hero-links { margin-top: 0; }
+
+    /* ── Section headers ── */
+    .sec-head {
+      text-align: center;
+      margin-bottom: 0;
+    }
+    .sec-head .eyebrow { color: var(--brand); }
+    .sec-head h2 { max-width: 26ch; margin-inline: auto; margin-bottom: 8px; }
+    .sec-head p { max-width: 50ch; margin-inline: auto; color: var(--text-3); }
+
+    @media (max-width: 860px) {
+      .plans-grid, .why-strip { grid-template-columns: 1fr; }
+      .how-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .how-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body class="home-apple">
+
+  <div class="top-contact">Call/Text <a href="tel:+15202226308">520-222-6308</a> | Response in 1 business day</div>
+
+  <nav class="nav reveal">
+    <div class="wrap nav-inner">
+      <a class="brand" href="index.html"><img src="assets/sayit-logo.png" alt="SayIt logo"></a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="website-design-services.html">Services</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <a class="btn btn-primary" href="get-quote.html">Start My Plan</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav-panel" aria-label="Open navigation menu">
+        <span class="nav-toggle-line"></span><span class="nav-toggle-line"></span>
+      </button>
+    </div>
+    <div class="nav-panel" id="mobile-nav-panel" hidden>
+      <div class="wrap nav-panel-inner">
+        <div class="nav-panel-links" aria-label="Mobile"></div>
+        <div class="nav-panel-cta"></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="section seo-hero">
+    <div class="wrap">
+      <p class="eyebrow">Local SEO Plans</p>
+      <h1>Show up first.<br><em>Get found on Google.</em></h1>
+      <p>Local SEO that puts your business at the top of the map — we do the work every month so you don't have to.</p>
+      <div class="hero-links">
+        <a class="btn btn-primary" href="get-quote.html">Start My Plan</a>
+        <a class="btn btn-secondary" href="#plans">See Plans</a>
+      </div>
+
+      <!-- WHY IT MATTERS -->
+      <div class="why-strip">
+        <div class="why-item">
+          <div class="why-num">93%</div>
+          <div class="why-title">Search before they choose</div>
+          <p class="why-body">93% of people search Google before picking a local business. If you're not showing up, they're going somewhere else.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-num">#1</div>
+          <div class="why-title">The map pack wins</div>
+          <p class="why-body">The top 3 results on Google Maps get the majority of calls. That's exactly what we're building toward for your business.</p>
+        </div>
+        <div class="why-item">
+          <div class="why-num">Free</div>
+          <div class="why-title">Traffic that never stops</div>
+          <p class="why-body">Once you rank, every search that finds you costs nothing. It works while you're working, sleeping, and on weekends.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PLANS -->
+  <section class="section" id="plans">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Choose Your Plan</p>
+        <h2>Three tiers. One goal — get you found.</h2>
+        <p>Start where you are. Upgrade as you grow. Cancel anytime.</p>
+      </div>
+      <div class="plans-grid">
+
+        <!-- GET LISTED -->
+        <div class="plan-card">
+          <div class="plan-tier">Starter</div>
+          <div class="plan-name">Get Listed</div>
+          <div class="plan-tagline">Get on the map and start building your presence.</div>
+          <div class="plan-price">$99</div>
+          <div class="plan-mo">per month</div>
+          <hr class="plan-divider">
+          <ul class="plan-features">
+            <li>Google Business Profile setup &amp; optimization</li>
+            <li>Monthly profile updates</li>
+            <li>Photo management</li>
+            <li>Review request strategy</li>
+          </ul>
+          <a class="btn btn-secondary" data-stripe-key="sub_seo_starter" href="get-quote.html">Start Get Listed</a>
+        </div>
+
+        <!-- ON THE MAP -->
+        <div class="plan-card recommended">
+          <div class="rec-badge">★ Most Popular</div>
+          <div class="plan-tier">Pro</div>
+          <div class="plan-name">On the Map</div>
+          <div class="plan-tagline">The smart choice for new and growing businesses.</div>
+          <div class="plan-price recommended">$199</div>
+          <div class="plan-mo">per month</div>
+          <hr class="plan-divider">
+          <ul class="plan-features">
+            <li>Everything in Get Listed</li>
+            <li>Weekly Google posts</li>
+            <li>Listed on Yelp, Apple Maps &amp; more</li>
+            <li>Keyword ranking tracking</li>
+            <li>Monthly performance report</li>
+          </ul>
+          <a class="btn btn-primary" data-stripe-key="sub_seo_pro" href="get-quote.html">Start On the Map</a>
+        </div>
+
+        <!-- OWN THE BLOCK -->
+        <div class="plan-card">
+          <div class="plan-tier">Dominator</div>
+          <div class="plan-name">Own the Block</div>
+          <div class="plan-tagline">Be the #1 name in your area. No competition.</div>
+          <div class="plan-price">$299</div>
+          <div class="plan-mo">per month</div>
+          <hr class="plan-divider">
+          <ul class="plan-features">
+            <li>Everything in On the Map</li>
+            <li>Service area pages on your website</li>
+            <li>Competitor analysis</li>
+            <li>Review response management</li>
+            <li>Priority support</li>
+          </ul>
+          <a class="btn btn-secondary" data-stripe-key="sub_seo_dominator" href="get-quote.html">Start Own the Block</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">What Happens Every Month</p>
+        <h2>We handle it. You focus on your business.</h2>
+        <p>This is what your plan looks like in practice, every single month.</p>
+      </div>
+      <div class="how-grid">
+        <div class="how-step">
+          <div class="how-n">Week 1</div>
+          <div class="how-title">Profile &amp; Listings</div>
+          <p class="how-body">We update your Google Business Profile, check all directory listings for consistency, and publish your first Google post.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-n">Week 2</div>
+          <div class="how-title">Content &amp; Reviews</div>
+          <p class="how-body">Second Google post goes live. We monitor new reviews and send you any that need a response. Review request reminders go out.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-n">Week 3</div>
+          <div class="how-title">Photos &amp; Updates</div>
+          <p class="how-body">Fresh photos uploaded, seasonal updates applied, third post published. Your profile stays active and current.</p>
+        </div>
+        <div class="how-step">
+          <div class="how-n">Week 4</div>
+          <div class="how-title">Report &amp; Rankings</div>
+          <p class="how-body">Fourth post live. We pull your ranking data, GBP insights, and send your monthly performance report so you see exactly what moved.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="section">
+    <div class="wrap">
+      <div class="seo-cta">
+        <p class="eyebrow">Ready to move</p>
+        <h2>Your customers are searching right now.</h2>
+        <p>Let's make sure they find you first. Start with any plan — upgrade or cancel anytime.</p>
+        <div class="hero-links">
+          <a class="btn btn-primary btn-cta-main" href="get-quote.html">Start My SEO Plan</a>
+          <a class="btn btn-secondary" href="contact.html">Ask a Question</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div>SayIt | Arizona-rooted, serving businesses nationwide</div>
+    <div class="line2">
+      <a href="website-design-services.html">Services</a> |
+      <a href="pricing.html">Pricing</a> |
+      <a href="portfolio.html">Portfolio</a> |
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <div class="mobile-sticky"><a class="btn btn-primary" href="get-quote.html">Start My Plan</a></div>
+
+  <script src="assets/stripe-links.js"></script>
+  <script src="assets/motion.js"></script>
+  <script src="assets/nav.js"></script>
+</body>
+</html>
