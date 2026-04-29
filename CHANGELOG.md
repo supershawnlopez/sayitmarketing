@@ -14,7 +14,7 @@
 - Supabase project restored and `leads` + `automation_jobs` tables created with full schema
 - Netlify environment variables confirmed needed: `SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY`
 - `stripe-links.js` updated — all placeholder links now fallback to `get-quote.html` (no dead buttons)
-- `CLAUDE.md` created at repo root — master AI instruction file for all agents
+- `PROJECT.md` created at repo root — master AI instruction file for all agents
 - This `CHANGELOG.md` created
 
 **New Pages**
