@@ -326,6 +326,9 @@ Rules: Never commit secrets. Always validate inputs server-side. Always sanitize
 - The `proposals/` folder is for client-specific pages — keep them separate from main site pages
 - Shawn communicates via WhatsApp in Tucson Spanglish with some clients — match that tone in client-facing copy when appropriate
 - This file should be updated every time a significant change is made to the site
+- **ALWAYS update `CHANGELOG.md` at the end of every session** — what was done, what's pending, what's next
+- Read `CHANGELOG.md` at the START of every session so you know exactly where things left off
+- No session ends without a CHANGELOG update. No exceptions.
 
 ---
 
