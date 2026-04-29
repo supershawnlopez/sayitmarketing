@@ -436,6 +436,37 @@
       font-size: 0.82rem; color: #8a4400;
       line-height: 1.55; margin: 0; max-width: 100%;
     }
+
+    /* ── Sheet upgrade nudge ── */
+    .sheet-upgrade-nudge {
+      display: flex; justify-content: space-between;
+      align-items: center; gap: 16px;
+      background: rgba(0,85,179,0.06);
+      border: 1px solid rgba(0,85,179,0.18);
+      border-radius: 14px; padding: 14px 16px;
+      margin-top: 16px;
+    }
+    .sheet-upgrade-left {}
+    .sheet-upgrade-label {
+      font-size: 0.88rem; font-weight: 700;
+      color: var(--text-1); margin-bottom: 2px;
+    }
+    .sheet-upgrade-desc { font-size: 0.76rem; color: var(--text-3); }
+
+    /* ── Sheet toggle row ── */
+    .sheet-toggle-row {
+      display: flex; justify-content: space-between;
+      align-items: center; gap: 16px;
+      background: rgba(0,85,179,0.06);
+      border: 1px solid rgba(0,85,179,0.18);
+      border-radius: 14px; padding: 16px;
+      margin-top: 20px;
+    }
+    .sheet-toggle-title {
+      font-size: 0.92rem; font-weight: 700;
+      color: var(--text-1); margin-bottom: 3px;
+    }
+    .sheet-toggle-desc { font-size: 0.76rem; color: var(--text-3); }
     /* ══ PLAN BUILDER ══ */
     .bucket-label {
       font-size: 0.75rem; font-weight: 800;
@@ -838,6 +869,17 @@
         </div>
         <div class="sheet-price-amt">$199/mo</div>
       </div>
+      <!-- Upgrade nudge -->
+      <div class="sheet-upgrade-nudge" id="seo-upgrade-nudge">
+        <div class="sheet-upgrade-left">
+          <div class="sheet-upgrade-label">Want to add Social Media Setup?</div>
+          <div class="sheet-upgrade-desc">IG + FB + TikTok branded &amp; ready · $250 one-time</div>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="seo-sheet-social-toggle" onchange="syncToggleFromSheet('social', this.checked)">
+          <span class="toggle-track"></span>
+        </label>
+      </div>
       <a href="https://pay.sayitmarketing.com/b/4gM6oI5TE2oFfZab5GbV60M" class="sheet-cta" id="seo-cta-btn">Yes — Start On the Map</a>
     </div>
   </div>
@@ -881,7 +923,18 @@
         </div>
         <div class="sheet-price-amt" style="color:#0055b3;">$250</div>
       </div>
-      <button class="sheet-cta" style="background:#0055b3;" onclick="closeSheet('social'); window.location.href='tel:+15202226308'" id="social-cta-btn">Call Shawn to Add This → (520) 222-6308</button>
+      <!-- Social toggle inside sheet -->
+      <div class="sheet-toggle-row">
+        <div>
+          <div class="sheet-toggle-title" id="social-toggle-title">Add Social Media Setup to my plan</div>
+          <div class="sheet-toggle-desc" id="social-toggle-desc">$250 one-time · turns on in your plan below</div>
+        </div>
+        <label class="toggle-switch">
+          <input type="checkbox" id="social-sheet-toggle" onchange="syncToggleFromSheet('social', this.checked)" checked>
+          <span class="toggle-track"></span>
+        </label>
+      </div>
+      <button class="sheet-cta" style="background:#0055b3;" onclick="closeSheet('social')" id="social-cta-btn">Got it — close</button>
     </div>
   </div>
 
@@ -894,6 +947,10 @@
       document.querySelectorAll('.budget-opt').forEach(function(b) { b.classList.remove('active'); });
       btn.classList.add('active');
       adsBudget = amount;
+      // Update the price display in the ads builder row immediately
+      var lang = isSpanish ? 'es' : 'en';
+      var el = document.getElementById('ads-price-display');
+      if (el) el.innerHTML = '~$' + amount + '<span class="builder-per">' + (lang==='es' ? '/mes' : '/mo') + '</span>';
       updatePlan();
     }
 
@@ -988,9 +1045,32 @@
 
     /* ── Sheet open/close ── */
     function openSheet(id) {
+      // Sync sheet toggles to current builder state before opening
+      if (id === 'social') {
+        var builderToggle = document.getElementById('social-toggle');
+        var sheetToggle   = document.getElementById('social-sheet-toggle');
+        if (builderToggle && sheetToggle) sheetToggle.checked = builderToggle.checked;
+      }
+      if (id === 'seo') {
+        var socialBuilderToggle = document.getElementById('social-toggle');
+        var seoSheetSocialToggle = document.getElementById('seo-sheet-social-toggle');
+        if (socialBuilderToggle && seoSheetSocialToggle) seoSheetSocialToggle.checked = socialBuilderToggle.checked;
+      }
       document.getElementById(id+'-overlay').classList.add('open');
       document.getElementById(id+'-sheet').classList.add('open');
       document.body.style.overflow = 'hidden';
+    }
+
+    function syncToggleFromSheet(which, value) {
+      // Sync sheet toggle back to builder toggle and update plan
+      if (which === 'social') {
+        var builderToggle = document.getElementById('social-toggle');
+        if (builderToggle) builderToggle.checked = value;
+        // Also sync the SEO sheet social toggle if open
+        var seoSheetToggle = document.getElementById('seo-sheet-social-toggle');
+        if (seoSheetToggle) seoSheetToggle.checked = value;
+      }
+      updatePlan();
     }
     function closeSheet(id) {
       document.getElementById(id+'-overlay').classList.remove('open');
