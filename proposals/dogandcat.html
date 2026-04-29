@@ -3,387 +3,402 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dog & Cat Groomer — Your SEO Plan</title>
+  <title>Eimy — Here's Your Growth Plan</title>
   <link rel="stylesheet" href="../assets/site.css">
   <style>
+    body { background: #f4f6f9; }
+
     .proposal-page {
-      max-width: 680px;
+      max-width: 660px;
       margin: 0 auto;
-      padding: clamp(2.5rem, 6vw, 4.5rem) clamp(1rem, 4vw, 1.75rem) 5rem;
-    }
-    .lang-toggle {
-      display: flex;
-      justify-content: flex-end;
-      margin-bottom: 20px;
-    }
-    .lang-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 7px 16px;
-      font-size: 0.75rem;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      color: var(--text-2);
-      cursor: pointer;
-      transition: all 0.18s ease;
-      font-family: inherit;
-    }
-    .lang-btn:hover {
-      border-color: var(--brand);
-      color: var(--brand);
-      background: rgba(0,113,227,0.05);
-    }
-    .for-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 6px 14px;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: var(--brand);
-      margin-bottom: 28px;
-    }
-    .for-dot {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: var(--brand);
-      animation: blink 2s ease-in-out infinite;
-    }
-    @keyframes blink {
-      0%,100% { opacity:1; }
-      50%      { opacity:.3; }
-    }
-    .proposal-h1 {
-      font-size: clamp(2.5rem, 7vw, 4rem);
-      letter-spacing: -0.04em;
-      line-height: 1.05;
-      color: var(--text-1);
-      margin: 0 0 16px;
-      max-width: 14ch;
-    }
-    .proposal-h1 em { font-style: normal; color: var(--brand); }
-    .proposal-intro {
-      font-size: 1.05rem;
-      color: var(--text-3);
-      max-width: 52ch;
-      line-height: 1.65;
-      margin-bottom: 40px;
-    }
-    .rule {
-      border: none;
-      border-top: 1px solid var(--line);
-      margin: 36px 0;
-    }
-    .verdict-card {
-      background: linear-gradient(180deg, #fbfdff 0%, #f3f7fc 100%);
-      border: 1px solid #d5e1ef;
-      border-radius: var(--radius);
-      padding: clamp(1.5rem, 4vw, 2.25rem);
-      box-shadow: var(--shadow-soft);
-      margin-bottom: 16px;
-    }
-    .card-eyebrow {
-      font-size: 0.68rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--brand);
-      margin-bottom: 10px;
-    }
-    .verdict-card h2 {
-      font-size: clamp(1.4rem, 3vw, 1.9rem);
-      letter-spacing: -0.025em;
-      color: var(--text-1);
-      margin: 0 0 10px;
-    }
-    .verdict-card p {
-      font-size: 1rem;
-      color: var(--text-2);
-      max-width: 54ch;
-      line-height: 1.65;
-      margin: 0;
-    }
-    .reasons {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      margin-bottom: 16px;
-    }
-    .reason-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-sm);
-      padding: 18px 20px;
-      display: flex;
-      gap: 16px;
-      align-items: flex-start;
-      box-shadow: var(--shadow-soft);
-    }
-    .r-icon {
-      width: 38px; height: 38px;
-      border-radius: 10px;
-      background: rgba(0,113,227,0.08);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      font-size: 1rem;
-    }
-    .r-title {
-      font-size: 0.92rem;
-      font-weight: 700;
-      color: var(--text-1);
-      margin-bottom: 3px;
-    }
-    .r-body {
-      font-size: 0.85rem;
-      color: var(--text-3);
-      line-height: 1.55;
-      margin: 0;
-      max-width: 100%;
-    }
-    .included-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: clamp(1.5rem, 4vw, 2rem);
-      box-shadow: var(--shadow-soft);
-      margin-bottom: 16px;
-    }
-    .inc-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 11px;
-      margin: 0; padding: 0;
-    }
-    .inc-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      font-size: 0.92rem;
-      color: var(--text-2);
-      line-height: 1.45;
-    }
-    .inc-check {
-      width: 20px; height: 20px;
-      border-radius: 50%;
-      background: rgba(0,113,227,0.1);
-      display: flex; align-items: center; justify-content: center;
-      flex-shrink: 0;
-      color: var(--brand);
-      font-size: 0.65rem;
-      font-weight: 800;
-      margin-top: 1px;
-    }
-    .inc-note {
-      margin-top: 18px;
-      padding-top: 16px;
-      border-top: 1px solid var(--line);
-      font-size: 0.8rem;
-      color: var(--text-3);
-      line-height: 1.5;
-      margin-bottom: 0;
-    }
-    /* ── Google Ads card ── */
-    .ads-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: clamp(1.5rem, 4vw, 2rem);
-      box-shadow: var(--shadow-soft);
-      margin-bottom: 16px;
-    }
-    .ads-card h2 {
-      font-size: clamp(1.3rem, 3vw, 1.7rem);
-      letter-spacing: -0.025em;
-      color: var(--text-1);
-      margin: 0 0 10px;
-    }
-    .ads-intro {
-      font-size: 0.95rem;
-      color: var(--text-2);
-      line-height: 1.65;
-      margin: 0 0 20px;
-      max-width: 54ch;
-    }
-    .ads-split {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-    .ads-col {
-      background: #f8fafc;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-sm);
-      padding: 16px;
-    }
-    .ads-col-label {
-      font-size: 0.65rem;
-      font-weight: 800;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-    .label-seo { color: var(--brand); }
-    .label-ads { color: #e37400; }
-    .ads-col p {
-      font-size: 0.82rem;
-      color: var(--text-3);
-      line-height: 1.55;
-      margin: 0;
-      max-width: 100%;
-    }
-    .ads-callout {
-      background: rgba(227,116,0,0.06);
-      border: 1px solid rgba(227,116,0,0.2);
-      border-radius: var(--radius-sm);
-      padding: 16px 18px;
-    }
-    .ads-callout p {
-      font-size: 0.88rem;
-      color: var(--text-2);
-      line-height: 1.6;
-      margin: 0;
-      max-width: 100%;
-    }
-    /* ── CTA ── */
-    .cta-card {
-      background:
-        radial-gradient(110% 90% at 50% -10%, rgba(0,113,227,0.12), rgba(0,113,227,0) 55%),
-        linear-gradient(180deg, #fbfdff 0%, #f0f5fc 100%);
-      border: 1px solid #d5e1ef;
-      border-radius: var(--radius);
-      padding: clamp(2rem, 5vw, 2.75rem);
-      text-align: center;
-      box-shadow: 0 14px 36px rgba(15,36,66,0.1);
-    }
-    .cta-plan-label {
-      font-size: 0.68rem;
-      font-weight: 800;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #415c7a;
-      margin-bottom: 8px;
-    }
-    .cta-price {
-      font-size: clamp(3.5rem, 10vw, 5rem);
-      font-weight: 700;
-      letter-spacing: -0.05em;
-      color: var(--brand);
-      line-height: 1;
-      margin-bottom: 4px;
-    }
-    .cta-mo {
-      font-size: 0.9rem;
-      color: var(--text-3);
-      margin-bottom: 8px;
-    }
-    .cta-save-pill {
-      display: inline-block;
-      background: rgba(0,113,227,0.09);
-      border: 1px solid rgba(0,113,227,0.18);
-      color: var(--brand);
-      font-size: 0.72rem;
-      font-weight: 700;
-      padding: 5px 14px;
-      border-radius: 999px;
-      margin-bottom: 28px;
-    }
-    .cta-card .btn {
-      width: 100%;
-      max-width: 340px;
-      font-size: 1rem;
-      font-weight: 700;
-      min-height: 3.25rem;
-      margin-bottom: 14px;
-    }
-    .cta-btn-note {
-      font-size: 0.78rem;
-      color: var(--text-3);
-      line-height: 1.55;
-      margin: 0 auto;
-      max-width: 36ch;
-    }
-    .proposal-footer {
-      margin-top: 48px;
-      padding-top: 22px;
-      border-top: 1px solid var(--line);
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 6px;
-      font-size: 0.78rem;
-      color: var(--text-3);
+      padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 4vw, 1.5rem) 6rem;
     }
 
-    /* ── Billing clarity ── */
-    .billing-row {
-      display: grid;
-      grid-template-columns: 1fr auto 1fr;
-      gap: 20px;
-      align-items: start;
-      margin-top: 4px;
+    /* ── Topbar ── */
+    .topbar { display: flex; justify-content: flex-end; margin-bottom: 40px; }
+    .lang-btn {
+      display: inline-flex; align-items: center; gap: 7px;
+      background: #fff; border: 1px solid var(--line);
+      border-radius: 999px; padding: 7px 16px;
+      font-size: 0.75rem; font-weight: 700;
+      color: var(--text-2); cursor: pointer; font-family: inherit;
+      transition: border-color 0.15s, color 0.15s;
     }
-    .billing-divider {
-      width: 1px;
-      background: var(--line);
-      align-self: stretch;
-      margin-top: 4px;
+    .lang-btn:hover { border-color: var(--brand); color: var(--brand); }
+
+    /* ── Greeting ── */
+    .greeting-from {
+      font-size: 0.72rem; font-weight: 800;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--brand); margin-bottom: 8px;
     }
-    .billing-type {
-      font-size: 0.72rem;
-      font-weight: 800;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--brand);
+    .greeting-msg {
+      font-size: 1.05rem; color: var(--text-3);
+      line-height: 1.65; max-width: 50ch; margin: 0 0 24px;
+    }
+
+    /* ── Hero ── */
+    .hero-hed {
+      font-size: clamp(3rem, 9vw, 4.8rem);
+      font-weight: 700; letter-spacing: -0.045em;
+      line-height: 0.98; color: var(--text-1);
+      margin: 0 0 20px; max-width: 13ch;
+    }
+    .hero-hed em { font-style: normal; color: var(--brand); }
+    .hero-sub {
+      font-size: 1.05rem; color: var(--text-3);
+      line-height: 1.68; max-width: 50ch; margin: 0;
+    }
+
+    /* ── Section divider ── */
+    .sec-divider {
+      display: flex; align-items: center; gap: 14px;
+      margin: 44px 0 28px;
+    }
+    .sec-divider::before, .sec-divider::after {
+      content: ''; flex: 1; height: 1px; background: var(--line);
+    }
+    .sec-divider span {
+      font-size: 0.6rem; font-weight: 800;
+      letter-spacing: 0.26em; text-transform: uppercase;
+      color: var(--text-3); white-space: nowrap;
+    }
+
+    /* ── Cards ── */
+    .pcard {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: clamp(1.4rem, 4vw, 2rem);
+      box-shadow: 0 1px 3px rgba(16,24,40,0.04), 0 8px 24px rgba(16,24,40,0.06);
+      margin-bottom: 12px;
+    }
+    .pcard.blue {
+      border-color: rgba(0,113,227,0.3);
+      background: linear-gradient(160deg, #f0f7ff 0%, #e8f2ff 100%);
+      box-shadow: 0 12px 32px rgba(0,113,227,0.11);
+    }
+    .pcard.orange {
+      border-color: rgba(227,116,0,0.25);
+      background: linear-gradient(160deg, #fffaf4 0%, #fff5e8 100%);
+    }
+    .pcard.teal {
+      border-color: rgba(0,120,180,0.2);
+      background: linear-gradient(160deg, #f5faff 0%, #eef5ff 100%);
+    }
+
+    /* ── Card header ── */
+    .pcard-step {
+      font-size: 0.6rem; font-weight: 800;
+      letter-spacing: 0.24em; text-transform: uppercase;
       margin-bottom: 6px;
     }
-    .billing-name {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text-1);
-      margin-bottom: 4px;
+    .pcard-step.blue { color: var(--brand); }
+    .pcard-step.orange { color: #e37400; }
+    .pcard-step.teal { color: #0068c9; }
+
+    .pcard-title {
+      font-size: clamp(1.4rem, 4vw, 1.9rem);
+      font-weight: 700; letter-spacing: -0.028em;
+      color: var(--text-1); line-height: 1.12; margin: 0 0 10px;
     }
-    .billing-amount {
-      font-size: 2rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
+    .pcard-body {
+      font-size: 0.97rem; color: var(--text-2);
+      line-height: 1.68; max-width: 52ch; margin: 0;
+    }
+
+    /* ── Reason rows ── */
+    .reasons { display: flex; flex-direction: column; gap: 8px; margin-top: 20px; }
+    .reason {
+      display: flex; gap: 14px; align-items: flex-start;
+      background: rgba(0,113,227,0.05); border-radius: 12px;
+      padding: 12px 14px;
+    }
+    .reason-icon {
+      width: 36px; height: 36px; border-radius: 9px;
+      background: rgba(0,113,227,0.1);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 1rem;
+    }
+    .reason-title {
+      font-size: 0.9rem; font-weight: 700;
+      color: var(--text-1); margin-bottom: 2px;
+    }
+    .reason-body {
+      font-size: 0.82rem; color: var(--text-3);
+      line-height: 1.5; margin: 0; max-width: 100%;
+    }
+
+    /* ── Checklist ── */
+    .checklist {
+      list-style: none; margin: 16px 0 0; padding: 0;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .checklist li {
+      display: flex; align-items: flex-start; gap: 11px;
+      font-size: 0.93rem; color: var(--text-2); line-height: 1.45;
+    }
+    .ck {
+      width: 20px; height: 20px; border-radius: 50%;
+      background: rgba(0,113,227,0.1);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; color: var(--brand);
+      font-size: 0.65rem; font-weight: 800; margin-top: 1px;
+    }
+    .checklist-note {
+      margin-top: 14px; padding-top: 14px;
+      border-top: 1px solid var(--line);
+      font-size: 0.8rem; color: var(--text-3); line-height: 1.5;
+    }
+
+    /* ── See more button ── */
+    .see-more-btn {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 16px;
+      background: none; border: 1.5px solid var(--brand);
+      border-radius: 999px; padding: 8px 18px;
+      font-size: 0.8rem; font-weight: 700;
+      color: var(--brand); cursor: pointer;
+      font-family: inherit; transition: background 0.15s;
+    }
+    .see-more-btn:hover { background: rgba(0,113,227,0.06); }
+    .see-more-btn.orange-btn {
+      border-color: #e37400; color: #e37400;
+    }
+    .see-more-btn.orange-btn:hover { background: rgba(227,116,0,0.06); }
+
+    /* ── Split cols ── */
+    .split {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 10px; margin: 16px 0;
+    }
+    .split-col {
+      background: rgba(255,255,255,0.75);
+      border: 1px solid var(--line);
+      border-radius: 12px; padding: 14px;
+    }
+    .split-label {
+      font-size: 0.6rem; font-weight: 800;
+      letter-spacing: 0.16em; text-transform: uppercase; margin-bottom: 6px;
+    }
+    .split-label.seo { color: var(--brand); }
+    .split-label.ads { color: #e37400; }
+    .split-col p {
+      font-size: 0.82rem; color: var(--text-3);
+      line-height: 1.55; margin: 0; max-width: 100%;
+    }
+    .orange-callout {
+      background: rgba(227,116,0,0.07);
+      border: 1px solid rgba(227,116,0,0.22);
+      border-radius: 12px; padding: 14px 16px; margin-top: 0;
+    }
+    .orange-callout p {
+      font-size: 0.88rem; color: var(--text-2);
+      line-height: 1.6; margin: 0; max-width: 100%;
+    }
+
+    /* ── Social platforms ── */
+    .platform-row {
+      display: flex; gap: 8px; flex-wrap: wrap; margin: 12px 0 14px;
+    }
+    .plt-chip {
+      background: rgba(0,113,227,0.08);
+      border: 1px solid rgba(0,113,227,0.18);
       color: var(--brand);
-      line-height: 1;
-      margin-bottom: 6px;
+      font-size: 0.72rem; font-weight: 700;
+      padding: 5px 12px; border-radius: 999px;
     }
-    .billing-per {
-      font-size: 0.85rem;
-      font-weight: 500;
-      color: var(--text-3);
+
+    /* ── Billing summary card ── */
+    .billing-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(16,24,40,0.04), 0 8px 24px rgba(16,24,40,0.06);
+      margin-bottom: 12px;
     }
-    .billing-desc {
-      font-size: 0.82rem;
-      color: var(--text-3);
-      line-height: 1.5;
-      margin-bottom: 10px;
+    .billing-head {
+      padding: 18px 22px 14px;
+      border-bottom: 1px solid var(--line);
     }
-    .billing-link {
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--brand);
-      text-decoration: none;
+    .billing-head-title {
+      font-size: 1.2rem; font-weight: 700;
+      color: var(--text-1); margin: 0 0 3px;
     }
-    @media (max-width: 500px) {
-      .billing-row { grid-template-columns: 1fr; }
-      .billing-divider { width: 100%; height: 1px; }
+    .billing-head-sub {
+      font-size: 0.82rem; color: var(--text-3); margin: 0;
+      max-width: 100%;
     }
-    @media (max-width: 600px) {
+    .billing-line {
+      display: flex; justify-content: space-between;
+      align-items: center; padding: 16px 22px;
+      border-bottom: 1px solid var(--line); gap: 14px;
+    }
+    .billing-line:last-child { border-bottom: none; }
+    .bl-type {
+      font-size: 0.6rem; font-weight: 800;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    .bl-type.monthly { color: var(--brand); }
+    .bl-type.onetime { color: #0055b3; }
+    .bl-type.optional { color: #e37400; }
+    .bl-name {
+      font-size: 0.95rem; font-weight: 600; color: var(--text-1);
+    }
+    .bl-desc { font-size: 0.78rem; color: var(--text-3); margin-top: 2px; }
+    .bl-right { text-align: right; flex-shrink: 0; }
+    .bl-price {
+      font-size: 1.6rem; font-weight: 800;
+      letter-spacing: -0.03em; color: var(--brand); line-height: 1;
+    }
+    .bl-price.orange { color: #e37400; }
+    .bl-freq { font-size: 0.72rem; color: var(--text-3); margin-top: 2px; }
+
+    /* ── CTA ── */
+    .cta-card {
+      background: linear-gradient(160deg, #eef6ff 0%, #e3efff 100%);
+      border: 1.5px solid rgba(0,113,227,0.28);
+      border-radius: 20px;
+      padding: clamp(1.75rem, 5vw, 2.5rem);
+      text-align: center;
+      box-shadow: 0 12px 36px rgba(0,113,227,0.12);
+    }
+    .cta-eyebrow {
+      font-size: 0.62rem; font-weight: 800;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: #415c7a; margin-bottom: 10px;
+    }
+    .cta-hed {
+      font-size: clamp(1.7rem, 4.5vw, 2.4rem);
+      font-weight: 700; letter-spacing: -0.03em;
+      color: var(--text-1); line-height: 1.1; margin-bottom: 10px;
+    }
+    .cta-sub {
+      font-size: 0.95rem; color: var(--text-3);
+      line-height: 1.65; max-width: 40ch;
+      margin: 0 auto 24px;
+    }
+    .cta-price {
+      font-size: clamp(4rem, 11vw, 5.5rem);
+      font-weight: 800; letter-spacing: -0.05em;
+      color: var(--brand); line-height: 1; margin-bottom: 4px;
+    }
+    .cta-freq { font-size: 0.88rem; color: var(--text-3); margin-bottom: 28px; }
+    .cta-card .btn {
+      width: 100%; max-width: 360px;
+      font-size: 1rem; font-weight: 700;
+      min-height: 3.25rem; margin-bottom: 12px;
+    }
+    .cta-note {
+      font-size: 0.78rem; color: var(--text-3);
+      line-height: 1.6; max-width: 34ch; margin: 0 auto;
+    }
+
+    /* ── Footer ── */
+    .proposal-footer {
+      margin-top: 44px; padding-top: 20px;
+      border-top: 1px solid var(--line);
+      display: flex; justify-content: space-between;
+      flex-wrap: wrap; gap: 6px;
+      font-size: 0.78rem; color: var(--text-3);
+    }
+
+    /* ════════════════════════════
+       BOTTOM SHEET MODAL
+    ════════════════════════════ */
+    .sheet-overlay {
+      position: fixed; inset: 0;
+      background: rgba(10,20,35,0.5);
+      z-index: 100; opacity: 0; pointer-events: none;
+      transition: opacity 0.28s ease;
+      backdrop-filter: blur(3px);
+    }
+    .sheet-overlay.open { opacity: 1; pointer-events: all; }
+
+    .sheet {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: #fff;
+      border-radius: 24px 24px 0 0;
+      z-index: 101; max-height: 88vh;
+      overflow-y: auto;
+      transform: translateY(100%);
+      transition: transform 0.32s cubic-bezier(0.32, 0.72, 0, 1);
+      padding: 0 0 env(safe-area-inset-bottom, 16px);
+    }
+    .sheet.open { transform: translateY(0); }
+
+    .sheet-handle-row {
+      display: flex; justify-content: center;
+      padding: 14px 0 8px; position: sticky;
+      top: 0; background: #fff; z-index: 2;
+      border-radius: 24px 24px 0 0;
+    }
+    .sheet-handle {
+      width: 40px; height: 4px; border-radius: 999px;
+      background: #d0d8e4;
+    }
+    .sheet-close {
+      position: absolute; top: 10px; right: 16px;
+      width: 32px; height: 32px; border-radius: 50%;
+      background: #f0f2f5; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem; color: var(--text-3);
+      font-family: inherit;
+    }
+    .sheet-close:hover { background: #e4e7ec; }
+    .sheet-content { padding: 8px 24px 32px; }
+    .sheet-title {
+      font-size: clamp(1.4rem, 5vw, 2rem);
+      font-weight: 700; letter-spacing: -0.028em;
+      color: var(--text-1); margin: 0 0 8px;
+    }
+    .sheet-sub {
+      font-size: 0.95rem; color: var(--text-3);
+      line-height: 1.65; max-width: 50ch; margin: 0 0 24px;
+    }
+    .sheet-section-title {
+      font-size: 0.62rem; font-weight: 800;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--brand); margin: 20px 0 10px;
+    }
+    .sheet-checklist {
+      list-style: none; margin: 0; padding: 0;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .sheet-checklist li {
+      display: flex; gap: 11px; align-items: flex-start;
+      font-size: 0.92rem; color: var(--text-2); line-height: 1.45;
+    }
+    .sheet-checklist li::before {
+      content: '✓'; color: var(--brand); font-weight: 800;
+      font-size: 0.75rem; flex-shrink: 0; margin-top: 1px;
+    }
+    .sheet-price-row {
+      background: linear-gradient(160deg, #eef6ff, #e4f0ff);
+      border: 1px solid rgba(0,113,227,0.2);
+      border-radius: 14px; padding: 18px 20px;
+      margin-top: 24px; display: flex;
+      justify-content: space-between; align-items: center;
+    }
+    .sheet-price-label { font-size: 0.85rem; font-weight: 600; color: var(--text-2); }
+    .sheet-price-amt {
+      font-size: 1.8rem; font-weight: 800;
+      letter-spacing: -0.04em; color: var(--brand);
+    }
+    .sheet-cta {
+      display: block; width: 100%; margin-top: 16px;
+      background: var(--brand); color: #fff;
+      font-family: inherit; font-size: 0.95rem; font-weight: 700;
+      border: none; border-radius: 999px; padding: 16px;
+      cursor: pointer; text-align: center; text-decoration: none;
+    }
+    .sheet-cta:hover { background: var(--brand-strong); }
+
+    @media (max-width: 560px) {
+      .split { grid-template-columns: 1fr; }
       .proposal-footer { flex-direction: column; }
-      .ads-split { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -406,125 +421,153 @@
 
   <main class="proposal-page">
 
-    <!-- LANGUAGE TOGGLE -->
-    <div class="lang-toggle">
+    <!-- TOPBAR -->
+    <div class="topbar">
       <button class="lang-btn" onclick="toggleLang()" id="langBtn">
         🌐 <span id="langBtnText">Ver en Español</span>
       </button>
     </div>
 
-    <!-- FOR TAG -->
-    <div class="for-tag">
-      <span class="for-dot"></span>
-      <span class="t" data-en="Prepared for Eimy Martinez" data-es="Preparado para Eimy Martinez">Prepared for Eimy Martinez</span>
-    </div>
+    <!-- GREETING -->
+    <div class="greeting-from t" data-en="Hey Eimy — from Shawn at Say It Marketing" data-es="Hola Eimy — de parte de Shawn en Say It Marketing">Hey Eimy — from Shawn at Say It Marketing</div>
+    <p class="greeting-msg t" data-en="I did the research after our call. I looked at your market, your competition in Glendale, and how people find groomers in your area. Here's exactly what I recommend — and why." data-es="Hice la investigación después de nuestra llamada. Analicé tu mercado, tu competencia en Glendale y cómo encuentran groomers en tu área. Esto es exactamente lo que recomiendo — y por qué.">I did the research after our call. I looked at your market, your competition in Glendale, and how people find groomers in your area. Here's exactly what I recommend — and why.</p>
 
     <!-- HERO -->
-    <h1 class="proposal-h1">
-      <span class="t" data-en="Google is the right move " data-es="Google es el primer paso ">Google is the right move </span><em class="t" data-en="first." data-es="correcto.">first.</em>
+    <h1 class="hero-hed">
+      <span class="t" data-en="Let's fill your books " data-es="Llenemos tu agenda ">Let's fill your books </span><em class="t" data-en="from day one." data-es="desde el primer día.">from day one.</em>
     </h1>
-    <p class="proposal-intro t" data-en="I looked at your market and your competition in Glendale. The research confirmed exactly what we talked about on the phone. Here's the short version — and how to get started today." data-es="Analicé tu mercado y tu competencia en Glendale. La investigación confirmó exactamente lo que hablamos por teléfono. Aquí está el resumen — y cómo empezar hoy.">I looked at your market and your competition in Glendale. The research confirmed exactly what we talked about on the phone. Here's the short version — and how to get started today.</p>
+    <p class="hero-sub t" data-en="You open May 4th. Here's the three-part plan that gets your phone ringing, builds your reputation, and makes sure Glendale knows you're open." data-es="Abres el 4 de mayo. Aquí está el plan de tres partes que hará sonar tu teléfono, construirá tu reputación y asegurará que Glendale sepa que estás abierta.">You open May 4th. Here's the three-part plan that gets your phone ringing, builds your reputation, and makes sure Glendale knows you're open.</p>
 
-    <hr class="rule">
+    <!-- ══ STEP 1 — SEO ══ -->
+    <div class="sec-divider"><span class="t" data-en="Step 1 — The Foundation" data-es="Paso 1 — La Base">Step 1 — The Foundation</span></div>
 
-    <!-- VERDICT -->
-    <div class="verdict-card">
-      <div class="card-eyebrow t" data-en="Our Recommendation" data-es="Nuestra Recomendación">Our Recommendation</div>
-      <h2 class="t" data-en="Start with SEO — On the Map." data-es="Empieza con SEO — En el Mapa.">Start with SEO — On the Map.</h2>
-      <p class="t" data-en="People in Glendale are searching for a groomer right now. This plan puts Dog &amp; Cat Groomer in front of them at that exact moment — when they're ready to book. That's the fastest way to fill your schedule." data-es="Hay personas en Glendale buscando un groomer ahora mismo. Este plan pone a Dog &amp; Cat Groomer frente a ellos en ese momento exacto — cuando están listos para reservar. Es la forma más rápida de llenar tu agenda.">People in Glendale are searching for a groomer right now. This plan puts Dog &amp; Cat Groomer in front of them at that exact moment — when they're ready to book. That's the fastest way to fill your schedule.</p>
+    <div class="pcard blue">
+      <div class="pcard-step blue t" data-en="Monthly · $199/mo" data-es="Mensual · $199/mes">Monthly · $199/mo</div>
+      <h2 class="pcard-title t" data-en="Get found on Google — every single day." data-es="Aparece en Google — todos los días.">Get found on Google — every single day.</h2>
+      <p class="pcard-body t" data-en="93% of people search Google before choosing a groomer. This plan makes sure Dog & Cat Groomer shows up first when someone in Glendale searches for you — and keeps you there." data-es="El 93% de las personas busca en Google antes de elegir un groomer. Este plan asegura que Dog & Cat Groomer aparezca primero cuando alguien en Glendale te busque — y se quede ahí.">93% of people search Google before choosing a groomer. This plan makes sure Dog &amp; Cat Groomer shows up first when someone in Glendale searches for you — and keeps you there.</p>
+
+      <div class="reasons">
+        <div class="reason">
+          <div class="reason-icon">🎯</div>
+          <div>
+            <div class="reason-title t" data-en="They're already searching for you" data-es="Ya te están buscando">They're already searching for you</div>
+            <p class="reason-body t" data-en="People type "dog groomer Glendale AZ" every single day. SEO puts you in front of them at the exact moment they're ready to book." data-es='La gente escribe "dog groomer Glendale AZ" todos los días. El SEO te pone frente a ellos en el momento exacto en que están listos para reservar.'>People type "dog groomer Glendale AZ" every single day. SEO puts you in front of them at the exact moment they're ready to book.</p>
+          </div>
+        </div>
+        <div class="reason">
+          <div class="reason-icon">📍</div>
+          <div>
+            <div class="reason-title t" data-en="Google Maps = free advertising 24/7" data-es="Google Maps = publicidad gratis 24/7">Google Maps = free advertising 24/7</div>
+            <p class="reason-body t" data-en="Once you're in the map pack, every search is free. It works nights, weekends, and while you're with a client." data-es="Una vez en el mapa, cada búsqueda es gratis. Funciona de noche, los fines de semana y mientras atiendes clientes.">Once you're in the map pack, every search is free. It works nights, weekends, and while you're with a client.</p>
+          </div>
+        </div>
+        <div class="reason">
+          <div class="reason-icon">⭐</div>
+          <div>
+            <div class="reason-title t" data-en="Reviews = trust = more bookings" data-es="Reseñas = confianza = más clientes">Reviews = trust = more bookings</div>
+            <p class="reason-body t" data-en="5-star reviews are the #1 reason someone picks one groomer over another. We build a system to get them consistently." data-es="Las reseñas de 5 estrellas son la razón #1 por la que eligen un groomer. Construimos un sistema para obtenerlas constantemente.">5-star reviews are the #1 reason someone picks one groomer over another. We build a system to get them consistently.</p>
+          </div>
+        </div>
+      </div>
+
+      <button class="see-more-btn t" onclick="openSheet('seo')" data-en="See everything included →" data-es="Ver todo lo incluido →">See everything included →</button>
     </div>
 
-    <!-- REASONS -->
-    <div class="reasons">
-      <div class="reason-card">
-        <div class="r-icon">🎯</div>
+    <!-- ══ STEP 2 — ADS ══ -->
+    <div class="sec-divider"><span class="t" data-en="Step 2 — Day One Boost" data-es="Paso 2 — Impulso desde el Día Uno">Step 2 — Day One Boost</span></div>
+
+    <div class="pcard orange">
+      <div class="pcard-step orange t" data-en="Optional Add-On · Your ad budget" data-es="Complemento Opcional · Tu presupuesto">Optional Add-On · Your ad budget</div>
+      <h2 class="pcard-title t" data-en="Google Ads — so your phone rings May 4th." data-es="Google Ads — para que suene tu teléfono el 4 de mayo.">Google Ads — so your phone rings May 4th.</h2>
+      <p class="pcard-body t" data-en="SEO is the long game — it takes 60–90 days to build momentum. Google Ads gives you instant visibility from day one while SEO is warming up. Think of it as your grand opening announcement on Google." data-es="El SEO es a largo plazo — tarda 60–90 días en ganar impulso. Google Ads te da visibilidad inmediata desde el primer día mientras el SEO se activa. Piénsalo como el anuncio de tu gran apertura en Google.">SEO is the long game — it takes 60–90 days to build momentum. Google Ads gives you instant visibility from day one while SEO is warming up. Think of it as your grand opening announcement on Google.</p>
+
+      <div class="split">
+        <div class="split-col">
+          <div class="split-label seo t" data-en="SEO — Builds Over Time" data-es="SEO — Crece con el Tiempo">SEO — Builds Over Time</div>
+          <p class="t" data-en="Permanent rankings. Free traffic that compounds every month." data-es="Posicionamiento permanente. Tráfico gratuito que crece cada mes.">Permanent rankings. Free traffic that compounds every month.</p>
+        </div>
+        <div class="split-col">
+          <div class="split-label ads t" data-en="Ads — Works Right Now" data-es="Ads — Funciona Ahora Mismo">Ads — Works Right Now</div>
+          <p class="t" data-en="Instant visibility on day one. Pause or adjust anytime." data-es="Visibilidad instantánea desde el primer día. Pausa o ajusta cuando quieras.">Instant visibility on day one. Pause or adjust anytime.</p>
+        </div>
+      </div>
+
+      <div class="orange-callout">
+        <p class="t" data-en="A budget of $150–$200/mo is plenty to compete for grooming searches in Glendale. Say It Marketing builds and manages your first campaign — ask Shawn when you sign up." data-es="Un presupuesto de $150–$200/mes es suficiente para competir en búsquedas de grooming en Glendale. Say It Marketing crea y administra tu primera campaña — pregúntale a Shawn cuando te registres.">A budget of $150–$200/mo is plenty to compete for grooming searches in Glendale. Say It Marketing builds and manages your first campaign — ask Shawn when you sign up.</p>
+      </div>
+    </div>
+
+    <!-- ══ STEP 3 — SOCIAL ══ -->
+    <div class="sec-divider"><span class="t" data-en="Step 3 — Show Your Work" data-es="Paso 3 — Muestra tu Trabajo">Step 3 — Show Your Work</span></div>
+
+    <div class="pcard teal">
+      <div class="pcard-step teal t" data-en="One-Time Setup · $250" data-es="Configuración Única · $250">One-Time Setup · $250</div>
+      <h2 class="pcard-title t" data-en="Social media that looks like you mean business." data-es="Redes sociales que muestran que vas en serio.">Social media that looks like you mean business.</h2>
+      <p class="pcard-body t" data-en="SEO gets you found. Social media makes them trust you before they even call. Before/afters, happy pets, your personality — that's what turns a search into a booked appointment." data-es="El SEO hace que te encuentren. Las redes sociales hacen que confíen en ti antes de llamar. Fotos de antes/después, mascotas felices, tu personalidad — eso convierte una búsqueda en una cita reservada.">SEO gets you found. Social media makes them trust you before they even call. Before/afters, happy pets, your personality — that's what turns a search into a booked appointment.</p>
+
+      <div class="platform-row">
+        <span class="plt-chip">Instagram</span>
+        <span class="plt-chip">Facebook</span>
+        <span class="plt-chip">TikTok</span>
+      </div>
+
+      <p class="pcard-body t" style="margin-bottom:0;" data-en="You send us photos and videos from the week — we design everything, write the captions, and post on schedule. You just groom." data-es="Nos mandas fotos y videos de la semana — nosotros diseñamos todo, escribimos los textos y publicamos según el horario. Tú solo haz el grooming.">You send us photos and videos from the week — we design everything, write the captions, and post on schedule. You just groom.</p>
+
+      <button class="see-more-btn t" onclick="openSheet('social')" data-en="See everything included →" data-es="Ver todo lo incluido →">See everything included →</button>
+    </div>
+
+    <!-- ══ WHAT YOU PAY ══ -->
+    <div class="sec-divider"><span class="t" data-en="What You Pay" data-es="Lo Que Pagas">What You Pay</span></div>
+
+    <div class="billing-card">
+      <div class="billing-head">
+        <div class="billing-head-title t" data-en="Clear & simple." data-es="Claro y simple.">Clear &amp; simple.</div>
+        <p class="billing-head-sub t" data-en="One monthly charge. One one-time setup. One optional ad budget you control." data-es="Un cargo mensual. Una configuración única. Un presupuesto de anuncios opcional que tú controlas.">One monthly charge. One one-time setup. One optional ad budget you control.</p>
+      </div>
+      <div class="billing-line">
         <div>
-          <div class="r-title t" data-en="They're already looking for you" data-es="Ya te están buscando">They're already looking for you</div>
-          <p class="r-body t" data-en="93% of people search Google before choosing a local business. SEO reaches people who are actively searching for a groomer — not just scrolling a feed." data-es="El 93% de las personas busca en Google antes de elegir un negocio local. El SEO llega a personas que están buscando activamente un groomer — no solo viendo el feed.">93% of people search Google before choosing a local business. SEO reaches people who are actively searching for a groomer — not just scrolling a feed.</p>
+          <div class="bl-type monthly t" data-en="📅 Monthly — recurring" data-es="📅 Mensual — recurrente">📅 Monthly — recurring</div>
+          <div class="bl-name t" data-en="SEO — On the Map" data-es="SEO — En el Mapa">SEO — On the Map</div>
+          <div class="bl-desc t" data-en="Cancel anytime. No contracts." data-es="Cancela cuando quieras. Sin contratos.">Cancel anytime. No contracts.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-price">$199</div>
+          <div class="bl-freq t" data-en="per month" data-es="por mes">per month</div>
         </div>
       </div>
-      <div class="reason-card">
-        <div class="r-icon">📍</div>
+      <div class="billing-line">
         <div>
-          <div class="r-title t" data-en="Google Maps = free advertising every day" data-es="Google Maps = publicidad gratis todos los días">Google Maps = free advertising every day</div>
-          <p class="r-body t" data-en="Once you're in the local map pack, every search costs you nothing. It works on weekends, at night, while you're with a client — always on." data-es="Una vez que apareces en el mapa local, cada búsqueda no te cuesta nada. Funciona los fines de semana, de noche, mientras atiendes clientes — siempre activo.">Once you're in the local map pack, every search costs you nothing. It works on weekends, at night, while you're with a client — always on.</p>
+          <div class="bl-type onetime t" data-en="1️⃣ One-time — paid once" data-es="1️⃣ Único — se paga una vez">1️⃣ One-time — paid once</div>
+          <div class="bl-name t" data-en="Social Media Setup" data-es="Configuración de Redes Sociales">Social Media Setup</div>
+          <div class="bl-desc t" data-en="IG + Facebook + TikTok. Branded and ready." data-es="IG + Facebook + TikTok. Con tu marca y listo.">IG + Facebook + TikTok. Branded and ready.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-price orange">$250</div>
+          <div class="bl-freq t" data-en="one time" data-es="una sola vez">one time</div>
         </div>
       </div>
-      <div class="reason-card">
-        <div class="r-icon">⭐</div>
+      <div class="billing-line">
         <div>
-          <div class="r-title t" data-en="Reviews build trust and rankings" data-es="Las reseñas generan confianza y posición">Reviews build trust and rankings</div>
-          <p class="r-body t" data-en="A steady flow of 5-star reviews is the #1 reason someone picks one groomer over another — and they directly boost how high you show up on Google." data-es="Un flujo constante de reseñas de 5 estrellas es la razón #1 por la que eligen un groomer — y suben directamente tu posición en Google.">A steady flow of 5-star reviews is the #1 reason someone picks one groomer over another — and they directly boost how high you show up on Google.</p>
+          <div class="bl-type optional t" data-en="⚡ Optional — your budget" data-es="⚡ Opcional — tu presupuesto">⚡ Optional — your budget</div>
+          <div class="bl-name t" data-en="Google Ads Spend" data-es="Presupuesto de Google Ads">Google Ads Spend</div>
+          <div class="bl-desc t" data-en="You control it. Pause anytime." data-es="Tú lo controlas. Pausa cuando quieras.">You control it. Pause anytime.</div>
+        </div>
+        <div class="bl-right">
+          <div class="bl-price" style="color:#e37400; font-size:1.2rem;">$150–200</div>
+          <div class="bl-freq t" data-en="suggested/mo" data-es="sugerido/mes">suggested/mo</div>
         </div>
       </div>
     </div>
 
-    <!-- INCLUDED -->
-    <div class="included-card">
-      <div class="card-eyebrow t" data-en="What's included every month" data-es="Qué incluye cada mes">What's included every month</div>
-      <ul class="inc-list">
-        <li><span class="inc-check">✓</span><span class="t" data-en="Google Business Profile setup &amp; full optimization" data-es="Configuración y optimización completa de Google Business Profile">Google Business Profile setup &amp; full optimization</span></li>
-        <li><span class="inc-check">✓</span><span class="t" data-en="Monthly profile updates &amp; photo management" data-es="Actualizaciones mensuales del perfil y manejo de fotos">Monthly profile updates &amp; photo management</span></li>
-        <li><span class="inc-check">✓</span><span class="t" data-en="Review request strategy to grow your star rating" data-es="Estrategia para solicitar reseñas y mejorar tu calificación">Review request strategy to grow your star rating</span></li>
-        <li><span class="inc-check">✓</span><span class="t" data-en="Weekly Google posts to keep your profile active" data-es="Publicaciones semanales en Google para mantener tu perfil activo">Weekly Google posts to keep your profile active</span></li>
-        <li><span class="inc-check">✓</span><span class="t" data-en="Listed on Yelp, Apple Maps &amp; local directories" data-es="Listado en Yelp, Apple Maps y directorios locales">Listed on Yelp, Apple Maps &amp; local directories</span></li>
-        <li><span class="inc-check">✓</span><span class="t" data-en="Keyword ranking tracking — we watch your position" data-es="Seguimiento de palabras clave — monitoreamos tu posición">Keyword ranking tracking — we watch your position</span></li>
-        <li><span class="inc-check">✓</span><span class="t" data-en="Monthly performance report so you see the results" data-es="Reporte mensual de rendimiento para que veas los resultados">Monthly performance report so you see the results</span></li>
-      </ul>
-      <p class="inc-note t" data-en="We handle all of it. You stay focused on your clients and their pets." data-es="Nosotros nos encargamos de todo. Tú te enfocas en tus clientes y sus mascotas.">We handle all of it. You stay focused on your clients and their pets.</p>
-    </div>
-
-    <!-- GOOGLE ADS -->
-    <div class="ads-card">
-      <div class="card-eyebrow t" style="color:#e37400;" data-en="Want clients on day one? — Opens May 4th" data-es="¿Quieres clientes desde el primer día? — Abres el 4 de Mayo">Want clients on day one? — Opens May 4th</div>
-      <h2 class="t" data-en="Add Google Ads for instant visibility." data-es="Agrega Google Ads para visibilidad inmediata.">Add Google Ads for instant visibility.</h2>
-      <p class="ads-intro t" data-en="SEO builds your permanent Google presence — but it takes 60–90 days to kick in. A small Google Ads budget gets your phone ringing on opening day while SEO builds in the background." data-es="El SEO construye tu presencia permanente en Google — pero tarda 60–90 días en activarse. Un pequeño presupuesto en Google Ads hace que tu teléfono suene desde el día de apertura mientras el SEO se desarrolla.">SEO builds your permanent Google presence — but it takes 60–90 days to kick in. A small Google Ads budget gets your phone ringing on opening day while SEO builds in the background.</p>
-      <div class="ads-split">
-        <div class="ads-col">
-          <div class="ads-col-label label-seo t" data-en="SEO — Long Term" data-es="SEO — Largo Plazo">SEO — Long Term</div>
-          <p class="t" data-en="Permanent rankings. Free traffic every month. Builds momentum over 60–90 days." data-es="Posicionamiento permanente. Tráfico gratuito cada mes. Gana impulso en 60–90 días.">Permanent rankings. Free traffic every month. Builds momentum over 60–90 days.</p>
-        </div>
-        <div class="ads-col">
-          <div class="ads-col-label label-ads t" data-en="Google Ads — Right Now" data-es="Google Ads — Ahora Mismo">Google Ads — Right Now</div>
-          <p class="t" data-en="Instant visibility on day one. Shows up while SEO is building. Pause anytime." data-es="Visibilidad instantánea desde el primer día. Apareces mientras el SEO se construye. Pausa cuando quieras.">Instant visibility on day one. Shows up while SEO is building. Pause anytime.</p>
-        </div>
-      </div>
-      <div class="ads-callout">
-        <p class="t" data-en="A budget of $150–$200/mo is enough to compete for grooming searches in Glendale. Ask Shawn about adding a Google Ads campaign when you sign up." data-es="Un presupuesto de $150–$200/mes es suficiente para competir en búsquedas de grooming en Glendale. Pregúntale a Shawn sobre agregar una campaña de Google Ads al registrarte.">A budget of $150–$200/mo is enough to compete for grooming searches in Glendale. Ask Shawn about adding a Google Ads campaign when you sign up.</p>
-      </div>
-    </div>
-
-    <!-- BILLING CLARITY -->
-    <div class="included-card">
-      <div class="card-eyebrow t" data-en="What You Pay — Clear &amp; Simple" data-es="Lo Que Pagas — Claro y Simple">What You Pay — Clear &amp; Simple</div>
-      <div class="billing-row">
-        <div class="billing-item">
-          <div class="billing-type t" data-en="📅 Monthly" data-es="📅 Mensual">📅 Monthly</div>
-          <div class="billing-name t" data-en="SEO — On the Map" data-es="SEO — En el Mapa">SEO — On the Map</div>
-          <div class="billing-amount">$199<span class="billing-per t" data-en="/mo" data-es="/mes">/mo</span></div>
-          <div class="billing-desc t" data-en="Recurring monthly. Cancel anytime." data-es="Mensual recurrente. Cancela cuando quieras.">Recurring monthly. Cancel anytime.</div>
-          <a href="/local-seo.html" class="billing-link t" data-en="See full plan details →" data-es="Ver detalles del plan →">See full plan details →</a>
-        </div>
-        <div class="billing-divider"></div>
-        <div class="billing-item">
-          <div class="billing-type t" data-en="1️⃣ One-Time (Optional)" data-es="1️⃣ Único (Opcional)">1️⃣ One-Time (Optional)</div>
-          <div class="billing-name t" data-en="Social Media Setup" data-es="Configuración de Redes Sociales">Social Media Setup</div>
-          <div class="billing-amount">$250<span class="billing-per t" data-en=" once" data-es=" único"> once</span></div>
-          <div class="billing-desc t" data-en="Paid once. We set up &amp; brand your IG, Facebook &amp; TikTok." data-es="Se paga una vez. Configuramos y branding en IG, Facebook y TikTok.">Paid once. We set up &amp; brand your IG, Facebook &amp; TikTok.</div>
-          <a href="/social-media.html" class="billing-link t" data-en="See what's included →" data-es="Ver qué incluye →">See what's included →</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- CTA -->
+    <!-- ══ CTA ══ -->
     <div class="cta-card">
-      <div class="cta-plan-label t" data-en="SEO — On the Map" data-es="SEO — En el Mapa">SEO — On the Map</div>
+      <div class="cta-eyebrow t" data-en="Ready to go" data-es="Lista para empezar">Ready to go</div>
+      <div class="cta-hed t" data-en="Start On the Map today." data-es="Empieza En el Mapa hoy.">Start On the Map today.</div>
+      <p class="cta-sub t" data-en="Tap below to get started with SEO. Add social setup and we'll reach out to get everything set up before May 4th." data-es="Toca abajo para empezar con SEO. Agrega la configuración social y te contactaremos para tenerlo todo listo antes del 4 de mayo.">Tap below to get started with SEO. Add social setup and we'll reach out to get everything set up before May 4th.</p>
       <div class="cta-price">$199</div>
-      <div class="cta-mo t" data-en="per month · cancel anytime" data-es="por mes · cancela cuando quieras">per month · cancel anytime</div>
-      <a class="btn btn-primary t" href="https://pay.sayitmarketing.com/b/4gM6oI5TE2oFfZab5GbV60M" data-en="Yes — Let's Get Started" data-es="Sí — ¡Empecemos!">
-        Yes — Let's Get Started
-      </a>
-      <p class="cta-btn-note t" data-en="Tap to pay securely online. Questions? Call or text Shawn · (520) 222-6308" data-es="Toca para pagar de forma segura. ¿Preguntas? Llama o escríbele a Shawn · (520) 222-6308">Tap to pay securely online.<br>Questions? Call or text Shawn · (520) 222-6308</p>
+      <div class="cta-freq t" data-en="per month · cancel anytime" data-es="por mes · cancela cuando quieras">per month · cancel anytime</div>
+      <a class="btn btn-primary t" href="https://pay.sayitmarketing.com/b/4gM6oI5TE2oFfZab5GbV60M" data-en="Yes — Start On the Map" data-es="Sí — Empezar En el Mapa">Yes — Start On the Map</a>
+      <p class="cta-note t" data-en="Tap to pay securely. Questions? Call or text Shawn · (520) 222-6308" data-es="Toca para pagar de forma segura. ¿Preguntas? Llama o escríbele a Shawn · (520) 222-6308">Tap to pay securely. Questions? Call or text Shawn · (520) 222-6308</p>
     </div>
 
     <div class="proposal-footer">
@@ -534,18 +577,168 @@
 
   </main>
 
+  <!-- ══════════════════════════════
+       SEO BOTTOM SHEET
+  ══════════════════════════════ -->
+  <div class="sheet-overlay" id="seo-overlay" onclick="closeSheet('seo')"></div>
+  <div class="sheet" id="seo-sheet">
+    <div class="sheet-handle-row">
+      <div class="sheet-handle"></div>
+      <button class="sheet-close" onclick="closeSheet('seo')">✕</button>
+    </div>
+    <div class="sheet-content">
+      <div class="pcard-step blue" style="margin-bottom:6px;" id="seo-sheet-step">Monthly · $199/mo</div>
+      <h2 class="sheet-title" id="seo-sheet-title">SEO — On the Map</h2>
+      <p class="sheet-sub" id="seo-sheet-sub">Everything we do for your business every single month. You don't touch any of it.</p>
+
+      <div class="sheet-section-title" id="seo-inc-label">What's included every month</div>
+      <ul class="sheet-checklist" id="seo-checklist">
+        <li>Google Business Profile setup &amp; full optimization</li>
+        <li>Monthly profile updates &amp; photo management</li>
+        <li>Review request strategy to grow your star rating</li>
+        <li>Weekly Google posts to keep your profile active</li>
+        <li>Listed on Yelp, Apple Maps &amp; local directories</li>
+        <li>Keyword ranking tracking — we watch your position</li>
+        <li>Monthly performance report so you see the results</li>
+      </ul>
+
+      <div class="sheet-price-row">
+        <div>
+          <div class="sheet-price-label" id="seo-price-label">Monthly plan</div>
+          <div style="font-size:0.78rem; color:var(--text-3);" id="seo-price-note">Cancel anytime · no contracts</div>
+        </div>
+        <div class="sheet-price-amt">$199/mo</div>
+      </div>
+      <a href="https://pay.sayitmarketing.com/b/4gM6oI5TE2oFfZab5GbV60M" class="sheet-cta" id="seo-cta-btn">Yes — Start On the Map</a>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════
+       SOCIAL BOTTOM SHEET
+  ══════════════════════════════ -->
+  <div class="sheet-overlay" id="social-overlay" onclick="closeSheet('social')"></div>
+  <div class="sheet" id="social-sheet">
+    <div class="sheet-handle-row">
+      <div class="sheet-handle"></div>
+      <button class="sheet-close" onclick="closeSheet('social')">✕</button>
+    </div>
+    <div class="sheet-content">
+      <div class="pcard-step teal" style="margin-bottom:6px;" id="social-sheet-step">One-Time Setup · $250</div>
+      <h2 class="sheet-title" id="social-sheet-title">Social Media Setup</h2>
+      <p class="sheet-sub" id="social-sheet-sub">We build out all three platforms, brand everything, and hand you a launch pack so you're posting from day one.</p>
+
+      <div class="sheet-section-title" id="social-inc-label">What's included</div>
+      <ul class="sheet-checklist" id="social-checklist">
+        <li>Instagram + Facebook + TikTok setup</li>
+        <li>Branded cover photos &amp; profile images</li>
+        <li>Bio written with phone, website &amp; booking link</li>
+        <li>6 branded posts designed &amp; ready to publish</li>
+        <li>2 Reels/short videos included</li>
+        <li>Captions + hashtag strategy for each post</li>
+        <li>30-day content schedule so you know what to post</li>
+      </ul>
+
+      <div class="sheet-section-title" id="social-how-label">How it works after setup</div>
+      <ul class="sheet-checklist">
+        <li id="social-hw1">You send photos &amp; videos from the week — we design everything</li>
+        <li id="social-hw2">We write captions, schedule posts, and publish on time</li>
+        <li id="social-hw3">Add ongoing monthly management at any time for $250/mo</li>
+      </ul>
+
+      <div class="sheet-price-row" style="border-color: rgba(0,85,179,0.2); background: linear-gradient(160deg,#f5faff,#eef5ff);">
+        <div>
+          <div class="sheet-price-label" id="social-price-label">One-time setup fee</div>
+          <div style="font-size:0.78rem; color:var(--text-3);" id="social-price-note">Paid once — yours forever</div>
+        </div>
+        <div class="sheet-price-amt" style="color:#0055b3;">$250</div>
+      </div>
+      <button class="sheet-cta" style="background:#0055b3;" onclick="closeSheet('social'); window.location.href='tel:+15202226308'" id="social-cta-btn">Call Shawn to Add This → (520) 222-6308</button>
+    </div>
+  </div>
+
   <script>
+    /* ── Sheet open/close ── */
+    function openSheet(id) {
+      document.getElementById(id+'-overlay').classList.add('open');
+      document.getElementById(id+'-sheet').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeSheet(id) {
+      document.getElementById(id+'-overlay').classList.remove('open');
+      document.getElementById(id+'-sheet').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    /* ── Language toggle ── */
     var isSpanish = false;
+    var translations = {
+      en: {
+        langBtn: 'Ver en Español',
+        /* SEO sheet */
+        'seo-sheet-step': 'Monthly · $199/mo',
+        'seo-sheet-title': 'SEO — On the Map',
+        'seo-sheet-sub': 'Everything we do for your business every single month. You don\'t touch any of it.',
+        'seo-inc-label': 'What\'s included every month',
+        'seo-price-label': 'Monthly plan',
+        'seo-price-note': 'Cancel anytime · no contracts',
+        'seo-cta-btn': 'Yes — Start On the Map',
+        /* Social sheet */
+        'social-sheet-step': 'One-Time Setup · $250',
+        'social-sheet-title': 'Social Media Setup',
+        'social-sheet-sub': 'We build out all three platforms, brand everything, and hand you a launch pack so you\'re posting from day one.',
+        'social-inc-label': 'What\'s included',
+        'social-how-label': 'How it works after setup',
+        'social-hw1': 'You send photos & videos from the week — we design everything',
+        'social-hw2': 'We write captions, schedule posts, and publish on time',
+        'social-hw3': 'Add ongoing monthly management at any time for $250/mo',
+        'social-price-label': 'One-time setup fee',
+        'social-price-note': 'Paid once — yours forever',
+        'social-cta-btn': 'Call Shawn to Add This → (520) 222-6308'
+      },
+      es: {
+        langBtn: 'View in English',
+        'seo-sheet-step': 'Mensual · $199/mes',
+        'seo-sheet-title': 'SEO — En el Mapa',
+        'seo-sheet-sub': 'Todo lo que hacemos para tu negocio cada mes. Tú no tienes que hacer nada.',
+        'seo-inc-label': 'Qué incluye cada mes',
+        'seo-price-label': 'Plan mensual',
+        'seo-price-note': 'Cancela cuando quieras · sin contratos',
+        'seo-cta-btn': 'Sí — Empezar En el Mapa',
+        'social-sheet-step': 'Configuración Única · $250',
+        'social-sheet-title': 'Configuración de Redes Sociales',
+        'social-sheet-sub': 'Configuramos las tres plataformas, todo con tu marca, y te entregamos un paquete de lanzamiento para que publiques desde el primer día.',
+        'social-inc-label': 'Qué incluye',
+        'social-how-label': 'Cómo funciona después de la configuración',
+        'social-hw1': 'Nos mandas fotos y videos de la semana — nosotros diseñamos todo',
+        'social-hw2': 'Escribimos los textos, programamos y publicamos a tiempo',
+        'social-hw3': 'Agrega gestión mensual continua en cualquier momento por $250/mes',
+        'social-price-label': 'Tarifa de configuración única',
+        'social-price-note': 'Se paga una vez — tuyo para siempre',
+        'social-cta-btn': 'Llama a Shawn para agregar esto → (520) 222-6308'
+      }
+    };
+
     function toggleLang() {
       isSpanish = !isSpanish;
       var lang = isSpanish ? 'es' : 'en';
+      var t = translations[lang];
+
+      /* Inline translatable elements */
       document.querySelectorAll('.t').forEach(function(el) {
         var val = el.getAttribute('data-' + lang);
         if (!val) return;
-        if (el.tagName === 'A') { el.textContent = val; }
+        if (el.tagName === 'A' || el.tagName === 'BUTTON') { el.textContent = val; }
         else { el.innerHTML = val; }
       });
-      document.getElementById('langBtnText').textContent = isSpanish ? 'View in English' : 'Ver en Español';
+
+      /* Sheet static elements */
+      Object.keys(t).forEach(function(id) {
+        if (id === 'langBtn') return;
+        var el = document.getElementById(id);
+        if (el) el.innerHTML = t[id];
+      });
+
+      document.getElementById('langBtnText').textContent = t.langBtn;
       document.documentElement.lang = isSpanish ? 'es' : 'en';
     }
   </script>
