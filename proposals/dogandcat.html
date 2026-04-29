@@ -396,6 +396,123 @@
     }
     .sheet-cta:hover { background: var(--brand-strong); }
 
+
+    /* ══ PLAN BUILDER ══ */
+    .bucket-label {
+      font-size: 0.75rem; font-weight: 800;
+      letter-spacing: 0.06em;
+      color: var(--text-2);
+      margin: 0 0 8px 4px;
+    }
+    .bucket-label.orange-bucket { color: #c45f00; margin-top: 16px; }
+
+    .builder-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(16,24,40,0.04), 0 8px 24px rgba(16,24,40,0.06);
+      margin-bottom: 8px;
+    }
+    .builder-card.orange-card {
+      border-color: rgba(227,116,0,0.25);
+      background: linear-gradient(160deg, #fffaf4, #fff5e8);
+    }
+    .builder-row {
+      display: flex; justify-content: space-between;
+      align-items: center; padding: 16px 20px; gap: 14px;
+    }
+    .builder-row.toggleable.off { opacity: 0.38; }
+    .builder-row-left { flex: 1; min-width: 0; }
+    .builder-row-right { display: flex; align-items: center; gap: 12px; flex-shrink: 0; }
+    .builder-locked-badge {
+      display: inline-block;
+      background: rgba(0,113,227,0.1); color: var(--brand);
+      font-size: 0.56rem; font-weight: 800;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 3px 8px; border-radius: 999px; margin-bottom: 3px;
+    }
+    .builder-toggle-label {
+      font-size: 0.56rem; font-weight: 800;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--text-3); margin-bottom: 3px;
+    }
+    .builder-toggle-label.orange-label { color: #c45f00; }
+    .builder-name { font-size: 0.95rem; font-weight: 700; color: var(--text-1); margin-bottom: 2px; }
+    .builder-desc { font-size: 0.76rem; color: var(--text-3); line-height: 1.4; }
+    .builder-price {
+      font-size: 1.15rem; font-weight: 800;
+      letter-spacing: -0.02em; color: var(--brand); text-align: right;
+    }
+    .builder-price.blue-price { color: #0055b3; }
+    .builder-price.orange-price { color: #c45f00; }
+    .builder-per { font-size: 0.68rem; font-weight: 500; color: var(--text-3); }
+    .builder-divider { height: 1px; background: var(--line); margin: 0 20px; }
+
+    /* Toggle */
+    .toggle-switch { position: relative; display: inline-block; width: 44px; height: 26px; flex-shrink: 0; }
+    .toggle-switch input { opacity: 0; width: 0; height: 0; }
+    .toggle-track {
+      position: absolute; inset: 0;
+      background: #d0d8e4; border-radius: 999px;
+      cursor: pointer; transition: background 0.22s;
+    }
+    .toggle-track::before {
+      content: ''; position: absolute;
+      width: 20px; height: 20px; border-radius: 50%;
+      background: #fff; top: 3px; left: 3px;
+      transition: transform 0.22s;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.18);
+    }
+    input:checked + .toggle-track { background: var(--brand); }
+    input:checked + .toggle-track.orange-track { background: #e37400; }
+    input:checked + .toggle-track::before { transform: translateX(18px); }
+
+    /* Budget selector */
+    .budget-selector { padding: 14px 20px 16px; }
+    .budget-selector-label {
+      font-size: 0.72rem; font-weight: 700;
+      color: var(--text-2); margin-bottom: 10px;
+    }
+    .budget-options { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
+    .budget-opt {
+      background: #fff; border: 1.5px solid var(--line);
+      border-radius: 999px; padding: 7px 14px;
+      font-size: 0.8rem; font-weight: 700;
+      color: var(--text-2); cursor: pointer;
+      font-family: inherit; transition: all 0.15s;
+    }
+    .budget-opt:hover { border-color: #e37400; color: #e37400; }
+    .budget-opt.active { background: #e37400; border-color: #e37400; color: #fff; }
+    .budget-note {
+      font-size: 0.75rem; color: var(--text-3); line-height: 1.5;
+    }
+
+    /* Subtotals */
+    .builder-subtotal {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 14px 20px;
+      background: linear-gradient(160deg, #f0f7ff, #e8f2ff);
+    }
+    .builder-subtotal.orange-subtotal {
+      background: rgba(227,116,0,0.07);
+    }
+    .builder-subtotal-label {
+      font-size: 0.68rem; font-weight: 800;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--brand);
+    }
+    .orange-subtotal .builder-subtotal-label { color: #c45f00; }
+    .builder-subtotal-right { text-align: right; }
+    .builder-subtotal-mo {
+      font-size: 1.1rem; font-weight: 800;
+      color: var(--brand); letter-spacing: -0.02em;
+    }
+    .builder-subtotal-plus {
+      font-size: 0.78rem; color: #0055b3;
+      font-weight: 700; margin-left: 6px;
+    }
+    .orange-text { color: #c45f00 !important; }
     @media (max-width: 560px) {
       .split { grid-template-columns: 1fr; }
       .proposal-footer { flex-direction: column; }
@@ -516,57 +633,106 @@
       <button class="see-more-btn t" onclick="openSheet('social')" data-en="See everything included →" data-es="Ver todo lo incluido →">See everything included →</button>
     </div>
 
-    <!-- ══ WHAT YOU PAY ══ -->
-    <div class="sec-divider"><span class="t" data-en="What You Pay" data-es="Lo Que Pagas">What You Pay</span></div>
+    <!-- ══ BUILD YOUR PLAN ══ -->
+    <div class="sec-divider"><span class="t" data-en="Build Your Plan" data-es="Arma Tu Plan">Build Your Plan</span></div>
 
-    <div class="billing-card">
-      <div class="billing-head">
-        <div class="billing-head-title t" data-en="Clear & simple." data-es="Claro y simple.">Clear &amp; simple.</div>
-        <p class="billing-head-sub t" data-en="One monthly charge. One one-time setup. One optional ad budget you control." data-es="Un cargo mensual. Una configuración única. Un presupuesto de anuncios opcional que tú controlas.">One monthly charge. One one-time setup. One optional ad budget you control.</p>
-      </div>
-      <div class="billing-line">
-        <div>
-          <div class="bl-type monthly t" data-en="📅 Monthly — recurring" data-es="📅 Mensual — recurrente">📅 Monthly — recurring</div>
-          <div class="bl-name t" data-en="SEO — On the Map" data-es="SEO — En el Mapa">SEO — On the Map</div>
-          <div class="bl-desc t" data-en="Cancel anytime. No contracts." data-es="Cancela cuando quieras. Sin contratos.">Cancel anytime. No contracts.</div>
+    <!-- BUCKET 1: PAY SAY IT MARKETING -->
+    <div class="bucket-label t" data-en="💳 You pay Say It Marketing" data-es="💳 Le pagas a Say It Marketing">💳 You pay Say It Marketing</div>
+    <div class="builder-card">
+
+      <!-- SEO — locked -->
+      <div class="builder-row">
+        <div class="builder-row-left">
+          <div class="builder-locked-badge t" data-en="Always included" data-es="Siempre incluido">Always included</div>
+          <div class="builder-name t" data-en="SEO — On the Map" data-es="SEO — En el Mapa">SEO — On the Map</div>
+          <div class="builder-desc t" data-en="Monthly · Google ranking, reviews &amp; visibility" data-es="Mensual · Posicionamiento, reseñas y visibilidad">Monthly · Google ranking, reviews &amp; visibility</div>
         </div>
-        <div class="bl-right">
-          <div class="bl-price">$199</div>
-          <div class="bl-freq t" data-en="per month" data-es="por mes">per month</div>
-        </div>
-      </div>
-      <div class="billing-line">
-        <div>
-          <div class="bl-type onetime t" data-en="1️⃣ One-time — paid once" data-es="1️⃣ Único — se paga una vez">1️⃣ One-time — paid once</div>
-          <div class="bl-name t" data-en="Social Media Setup" data-es="Configuración de Redes Sociales">Social Media Setup</div>
-          <div class="bl-desc t" data-en="IG + Facebook + TikTok. Branded and ready." data-es="IG + Facebook + TikTok. Con tu marca y listo.">IG + Facebook + TikTok. Branded and ready.</div>
-        </div>
-        <div class="bl-right">
-          <div class="bl-price orange">$250</div>
-          <div class="bl-freq t" data-en="one time" data-es="una sola vez">one time</div>
+        <div class="builder-row-right">
+          <div class="builder-price">$199<span class="builder-per t" data-en="/mo" data-es="/mes">/mo</span></div>
         </div>
       </div>
-      <div class="billing-line">
-        <div>
-          <div class="bl-type optional t" data-en="⚡ Optional — your budget" data-es="⚡ Opcional — tu presupuesto">⚡ Optional — your budget</div>
-          <div class="bl-name t" data-en="Google Ads Spend" data-es="Presupuesto de Google Ads">Google Ads Spend</div>
-          <div class="bl-desc t" data-en="You control it. Pause anytime." data-es="Tú lo controlas. Pausa cuando quieras.">You control it. Pause anytime.</div>
+
+      <div class="builder-divider"></div>
+
+      <!-- Social toggle -->
+      <div class="builder-row toggleable" id="social-row">
+        <div class="builder-row-left">
+          <div class="builder-toggle-label t" data-en="Optional add-on" data-es="Complemento opcional">Optional add-on</div>
+          <div class="builder-name t" data-en="Social Media Setup" data-es="Configuración de Redes Sociales">Social Media Setup</div>
+          <div class="builder-desc t" data-en="One-time · IG + Facebook + TikTok branded &amp; ready" data-es="Único · IG + Facebook + TikTok con tu marca">One-time · IG + Facebook + TikTok branded &amp; ready</div>
         </div>
-        <div class="bl-right">
-          <div class="bl-price" style="color:#e37400; font-size:1.2rem;">$150–200</div>
-          <div class="bl-freq t" data-en="suggested/mo" data-es="sugerido/mes">suggested/mo</div>
+        <div class="builder-row-right">
+          <div class="builder-price blue-price" id="social-price-display">$250<span class="builder-per t" data-en=" once" data-es=" único"> once</span></div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="social-toggle" onchange="updatePlan()" checked>
+            <span class="toggle-track"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="builder-divider"></div>
+
+      <!-- Sayit subtotal -->
+      <div class="builder-subtotal">
+        <div class="builder-subtotal-label t" data-en="Your Say It Marketing total" data-es="Tu total con Say It Marketing">Your Say It Marketing total</div>
+        <div class="builder-subtotal-right">
+          <span class="builder-subtotal-mo" id="sayit-mo-total">$199/mo</span>
+          <span class="builder-subtotal-plus" id="sayit-onetime-total"> + $250 once</span>
         </div>
       </div>
     </div>
 
-    <!-- ══ CTA ══ -->
+    <!-- BUCKET 2: PAY GOOGLE DIRECTLY -->
+    <div class="bucket-label orange-bucket t" data-en="⚡ You pay Google directly (optional)" data-es="⚡ Le pagas a Google directamente (opcional)">⚡ You pay Google directly (optional)</div>
+    <div class="builder-card orange-card">
+
+      <div class="builder-row toggleable" id="ads-row">
+        <div class="builder-row-left">
+          <div class="builder-toggle-label orange-label t" data-en="Add Google Ads" data-es="Agregar Google Ads">Add Google Ads</div>
+          <div class="builder-name t" data-en="Google Ads Budget" data-es="Presupuesto de Google Ads">Google Ads Budget</div>
+          <div class="builder-desc t" data-en="Your card. Your Google account. We set it up &amp; manage it." data-es="Tu tarjeta. Tu cuenta de Google. Nosotros lo configuramos y administramos.">Your card. Your Google account. We set it up &amp; manage it.</div>
+        </div>
+        <div class="builder-row-right">
+          <div class="builder-price orange-price" id="ads-price-display">~$175<span class="builder-per t" data-en="/mo" data-es="/mes">/mo</span></div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="ads-toggle" onchange="updatePlan()" checked>
+            <span class="toggle-track orange-track"></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Budget selector — shows when ads toggled on -->
+      <div id="ads-budget-section">
+        <div class="builder-divider"></div>
+        <div class="budget-selector">
+          <div class="budget-selector-label t" data-en="Choose your monthly ad budget" data-es="Elige tu presupuesto mensual de anuncios">Choose your monthly ad budget</div>
+          <div class="budget-options">
+            <button class="budget-opt" onclick="selectBudget(this, 100)" data-en="$100/mo" data-es="$100/mes">$100/mo</button>
+            <button class="budget-opt active" onclick="selectBudget(this, 175)" data-en="$175/mo ★" data-es="$175/mes ★">$175/mo ★</button>
+            <button class="budget-opt" onclick="selectBudget(this, 250)" data-en="$250/mo" data-es="$250/mes">$250/mo</button>
+            <button class="budget-opt" onclick="selectBudget(this, 350)" data-en="$350/mo" data-es="$350/mes">$350/mo</button>
+          </div>
+          <div class="budget-note t" data-en="★ Recommended for Glendale grooming market. Goes directly to Google — not to Say It Marketing." data-es="★ Recomendado para el mercado de grooming en Glendale. Va directamente a Google — no a Say It Marketing.">★ Recommended for Glendale grooming market. Goes directly to Google — not to Say It Marketing.</div>
+        </div>
+      </div>
+
+      <div class="builder-divider"></div>
+      <div class="builder-subtotal orange-subtotal">
+        <div class="builder-subtotal-label t" data-en="Paid directly to Google" data-es="Se paga directamente a Google">Paid directly to Google</div>
+        <div class="builder-subtotal-right">
+          <span class="builder-subtotal-mo orange-text" id="ads-budget-total">$175/mo</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA -->
     <div class="cta-card">
-      <div class="cta-eyebrow t" data-en="Ready to go" data-es="Lista para empezar">Ready to go</div>
-      <div class="cta-hed t" data-en="Start On the Map today." data-es="Empieza En el Mapa hoy.">Start On the Map today.</div>
-      <p class="cta-sub t" data-en="Tap below to get started with SEO. Add social setup and we'll reach out to get everything set up before May 4th." data-es="Toca abajo para empezar con SEO. Agrega la configuración social y te contactaremos para tenerlo todo listo antes del 4 de mayo.">Tap below to get started with SEO. Add social setup and we'll reach out to get everything set up before May 4th.</p>
-      <div class="cta-price">$199</div>
-      <div class="cta-freq t" data-en="per month · cancel anytime" data-es="por mes · cancela cuando quieras">per month · cancel anytime</div>
-      <a class="btn btn-primary t" href="https://pay.sayitmarketing.com/b/4gM6oI5TE2oFfZab5GbV60M" data-en="Yes — Start On the Map" data-es="Sí — Empezar En el Mapa">Yes — Start On the Map</a>
+      <div class="cta-eyebrow t" data-en="You're ready, Eimy." data-es="Estás lista, Eimy.">You're ready, Eimy.</div>
+      <div class="cta-hed" id="cta-headline">Start On the Map today.</div>
+      <p class="cta-sub" id="cta-sub">Tap below — we'll reach out within the hour to get everything set up before May 4th.</p>
+      <div class="cta-price" id="cta-price-big">$199</div>
+      <div class="cta-freq" id="cta-freq-note">per month to Say It Marketing</div>
+      <a class="btn btn-primary" id="cta-main-btn" href="https://pay.sayitmarketing.com/b/4gM6oI5TE2oFfZab5GbV60M">Yes — Start On the Map</a>
       <p class="cta-note t" data-en="Tap to pay securely. Questions? Call or text Shawn · (520) 222-6308" data-es="Toca para pagar de forma segura. ¿Preguntas? Llama o escríbele a Shawn · (520) 222-6308">Tap to pay securely. Questions? Call or text Shawn · (520) 222-6308</p>
     </div>
 
@@ -657,6 +823,62 @@
   </div>
 
   <script>
+
+    /* ── Plan Builder Logic ── */
+    var adsBudget = 175;
+
+    function selectBudget(btn, amount) {
+      document.querySelectorAll('.budget-opt').forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      adsBudget = amount;
+      updatePlan();
+    }
+
+    function updatePlan() {
+      var socialOn = document.getElementById('social-toggle').checked;
+      var adsOn    = document.getElementById('ads-toggle').checked;
+
+      // Toggle row opacity
+      document.getElementById('social-row').classList.toggle('off', !socialOn);
+      document.getElementById('ads-row').classList.toggle('off', !adsOn);
+
+      // Show/hide budget selector
+      var budgetSection = document.getElementById('ads-budget-section');
+      if (budgetSection) budgetSection.style.display = adsOn ? 'block' : 'none';
+
+      // Say It subtotal
+      var sayitMo   = '$199/mo';
+      var sayitOnce = socialOn ? '+ $250 once' : '';
+      document.getElementById('sayit-mo-total').textContent    = sayitMo;
+      document.getElementById('sayit-onetime-total').textContent = sayitOnce;
+
+      // Ads budget total
+      document.getElementById('ads-budget-total').textContent = adsOn ? ('$' + adsBudget + '/mo') : 'Not added';
+
+      // CTA
+      var lang = isSpanish ? 'es' : 'en';
+      if (adsOn) {
+        document.getElementById('cta-headline').textContent  = lang === 'es' ? 'Empieza hoy — hagámoslo.' : "Let's get you set up.";
+        document.getElementById('cta-sub').textContent       = lang === 'es'
+          ? 'Toca abajo para el SEO. Te llamamos en menos de una hora para configurar todo antes del 4 de mayo — incluyendo Google Ads.'
+          : "Tap below for SEO. We'll call you within the hour to get everything set up before May 4th — including your Google Ads account.";
+        document.getElementById('cta-main-btn').textContent  = lang === 'es' ? 'Sí — Empezar En el Mapa' : 'Yes — Start On the Map';
+        document.getElementById('cta-price-big').textContent = '$199';
+        document.getElementById('cta-freq-note').textContent = lang === 'es' ? 'por mes a Say It Marketing · Google Ads se paga directo a Google' : 'per month to Say It Marketing · Google Ads paid direct to Google';
+      } else {
+        document.getElementById('cta-headline').textContent  = lang === 'es' ? 'Empieza En el Mapa hoy.' : 'Start On the Map today.';
+        document.getElementById('cta-sub').textContent       = lang === 'es'
+          ? 'Toca abajo para empezar. Te contactaremos para tenerlo todo listo antes del 4 de mayo.'
+          : "Tap below to get started. We'll reach out to get everything set up before May 4th.";
+        document.getElementById('cta-main-btn').textContent  = lang === 'es' ? 'Sí — Empezar En el Mapa' : 'Yes — Start On the Map';
+        document.getElementById('cta-price-big').textContent = '$199';
+        document.getElementById('cta-freq-note').textContent = lang === 'es' ? 'por mes · cancela cuando quieras' : 'per month · cancel anytime';
+      }
+    }
+
+    // Init
+    updatePlan();
+
     /* ── Sheet open/close ── */
     function openSheet(id) {
       document.getElementById(id+'-overlay').classList.add('open');
