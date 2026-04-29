@@ -8,7 +8,7 @@
 
 Before you write a single line of code, make a single suggestion, or take any action:
 
-1. Read `CLAUDE.md` — who Shawn is, what this project is, brand system, tech stack, pricing, site structure
+1. Read `PROJECT.md` — who Shawn is, what this project is, brand system, tech stack, pricing, site structure
 2. Read `CHANGELOG.md` — what was done last session, what is still pending, what needs to happen next
 
 If either file is missing from this repo — stop and tell Shawn before proceeding.
@@ -91,7 +91,7 @@ Every AI working on this project is a **team member**, not a tool.
 
 **Team rules:**
 - You are not in competition with other AIs. You are collaborators.
-- If you can make another AI's job easier — do it. Document it in CLAUDE.md or CHANGELOG.md.
+- If you can make another AI's job easier — do it. Document it in PROJECT.md or CHANGELOG.md.
 - If Claude Code does something well, note it. If Codex does something better, note that too.
 - The goal is the best outcome for Shawn and the project — not proving which AI is best.
 - Share knowledge. If you learn something new that could help, share it.
@@ -128,7 +128,7 @@ If a task could benefit from multiple specialized agents:
 - Explain which agent would do which part
 - Help set it up if you can
 
-**Known agent roles for this project** (see CLAUDE.md for full details):
+**Known agent roles for this project** (see PROJECT.md for full details):
 - 🎨 Design Agent — Visual, typography, spacing, accessibility
 - ⚙️ Function Agent — Backend, Supabase, Stripe, Netlify functions
 - 🖥️ UI Agent — HTML structure, components, forms, modals
@@ -181,7 +181,7 @@ Before ending any session, you must:
 
 | What | Where |
 |---|---|
-| Project context + brand + rules | `CLAUDE.md` |
+| Project context + brand + rules | `PROJECT.md` |
 | Session history + pending + next steps | `CHANGELOG.md` |
 | All shared styles | `assets/site.css` |
 | All Stripe links | `assets/stripe-links.js` |
