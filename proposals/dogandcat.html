@@ -397,6 +397,45 @@
     .sheet-cta:hover { background: var(--brand-strong); }
 
 
+
+    /* ── Order summary ── */
+    .order-summary {
+      background: rgba(255,255,255,0.7);
+      border: 1px solid rgba(0,113,227,0.18);
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin: 0 auto 20px;
+      max-width: 340px;
+      text-align: left;
+    }
+    .order-line {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.85rem; color: var(--text-2);
+      font-weight: 500; padding: 4px 0;
+    }
+    .order-check {
+      color: var(--brand); font-weight: 800;
+      font-size: 0.75rem; flex-shrink: 0;
+    }
+    .order-check.orange-check { color: #e37400; }
+    .order-line-ads { color: #c45f00; }
+
+    /* ── Ads confirm message ── */
+    .ads-confirm {
+      background: rgba(227,116,0,0.08);
+      border: 1px solid rgba(227,116,0,0.25);
+      border-radius: 12px;
+      padding: 14px 16px;
+      margin: 0 auto 16px;
+      max-width: 340px;
+      display: flex; gap: 12px; align-items: flex-start;
+      text-align: left;
+    }
+    .ads-confirm-icon { font-size: 1.2rem; flex-shrink: 0; }
+    .ads-confirm-text {
+      font-size: 0.82rem; color: #8a4400;
+      line-height: 1.55; margin: 0; max-width: 100%;
+    }
     /* ══ PLAN BUILDER ══ */
     .bucket-label {
       font-size: 0.75rem; font-weight: 800;
@@ -726,13 +765,37 @@
     </div>
 
     <!-- CTA -->
-    <div class="cta-card">
+    <div class="cta-card" id="cta-card">
       <div class="cta-eyebrow t" data-en="You're ready, Eimy." data-es="Estás lista, Eimy.">You're ready, Eimy.</div>
       <div class="cta-hed" id="cta-headline">Start On the Map today.</div>
       <p class="cta-sub" id="cta-sub">Tap below — we'll reach out within the hour to get everything set up before May 4th.</p>
       <div class="cta-price" id="cta-price-big">$199</div>
-      <div class="cta-freq" id="cta-freq-note">per month to Say It Marketing</div>
+      <div class="cta-freq" id="cta-freq-note">per month · cancel anytime</div>
+
+      <!-- What she's getting — summary before she taps -->
+      <div class="order-summary" id="order-summary">
+        <div class="order-line" id="order-seo">
+          <span class="order-check">✓</span>
+          <span class="t" data-en="SEO — On the Map · $199/mo" data-es="SEO — En el Mapa · $199/mes">SEO — On the Map · $199/mo</span>
+        </div>
+        <div class="order-line" id="order-social" style="display:none;">
+          <span class="order-check">✓</span>
+          <span class="t" data-en="Social Media Setup · $250 one-time" data-es="Configuración Social · $250 único">Social Media Setup · $250 one-time</span>
+        </div>
+        <div class="order-line order-line-ads" id="order-ads" style="display:none;">
+          <span class="order-check orange-check">✓</span>
+          <span id="order-ads-text">Google Ads · $175/mo direct to Google</span>
+        </div>
+      </div>
+
       <a class="btn btn-primary" id="cta-main-btn" href="https://pay.sayitmarketing.com/b/4gM6oI5TE2oFfZab5GbV60M">Yes — Start On the Map</a>
+
+      <!-- Ads confirmation message — shows after tap when ads selected -->
+      <div class="ads-confirm" id="ads-confirm" style="display:none;">
+        <div class="ads-confirm-icon">📱</div>
+        <div class="ads-confirm-text" id="ads-confirm-text">After payment, Shawn will text you within the hour to get your Google Ads account set up — you'll be live before May 4th.</div>
+      </div>
+
       <p class="cta-note t" data-en="Tap to pay securely. Questions? Call or text Shawn · (520) 222-6308" data-es="Toca para pagar de forma segura. ¿Preguntas? Llama o escríbele a Shawn · (520) 222-6308">Tap to pay securely. Questions? Call or text Shawn · (520) 222-6308</p>
     </div>
 
@@ -837,43 +900,86 @@
     function updatePlan() {
       var socialOn = document.getElementById('social-toggle').checked;
       var adsOn    = document.getElementById('ads-toggle').checked;
+      var lang     = isSpanish ? 'es' : 'en';
 
       // Toggle row opacity
       document.getElementById('social-row').classList.toggle('off', !socialOn);
       document.getElementById('ads-row').classList.toggle('off', !adsOn);
 
-      // Show/hide budget selector
+      // Budget selector visibility
       var budgetSection = document.getElementById('ads-budget-section');
       if (budgetSection) budgetSection.style.display = adsOn ? 'block' : 'none';
 
-      // Say It subtotal
-      var sayitMo   = '$199/mo';
-      var sayitOnce = socialOn ? '+ $250 once' : '';
-      document.getElementById('sayit-mo-total').textContent    = sayitMo;
-      document.getElementById('sayit-onetime-total').textContent = sayitOnce;
+      // Sayit subtotal
+      document.getElementById('sayit-mo-total').textContent     = '$199/mo';
+      document.getElementById('sayit-onetime-total').textContent = socialOn ? (lang==='es' ? '+ $250 único' : '+ $250 once') : '';
 
-      // Ads budget total
-      document.getElementById('ads-budget-total').textContent = adsOn ? ('$' + adsBudget + '/mo') : 'Not added';
+      // Ads subtotal
+      document.getElementById('ads-budget-total').textContent = adsOn
+        ? ('$' + adsBudget + (lang==='es' ? '/mes' : '/mo'))
+        : (lang==='es' ? 'No agregado' : 'Not added');
 
-      // CTA
-      var lang = isSpanish ? 'es' : 'en';
+      // Order summary lines
+      document.getElementById('order-social').style.display = socialOn ? 'flex' : 'none';
+      document.getElementById('order-ads').style.display    = adsOn    ? 'flex' : 'none';
       if (adsOn) {
-        document.getElementById('cta-headline').textContent  = lang === 'es' ? 'Empieza hoy — hagámoslo.' : "Let's get you set up.";
-        document.getElementById('cta-sub').textContent       = lang === 'es'
-          ? 'Toca abajo para el SEO. Te llamamos en menos de una hora para configurar todo antes del 4 de mayo — incluyendo Google Ads.'
-          : "Tap below for SEO. We'll call you within the hour to get everything set up before May 4th — including your Google Ads account.";
-        document.getElementById('cta-main-btn').textContent  = lang === 'es' ? 'Sí — Empezar En el Mapa' : 'Yes — Start On the Map';
-        document.getElementById('cta-price-big').textContent = '$199';
-        document.getElementById('cta-freq-note').textContent = lang === 'es' ? 'por mes a Say It Marketing · Google Ads se paga directo a Google' : 'per month to Say It Marketing · Google Ads paid direct to Google';
-      } else {
-        document.getElementById('cta-headline').textContent  = lang === 'es' ? 'Empieza En el Mapa hoy.' : 'Start On the Map today.';
-        document.getElementById('cta-sub').textContent       = lang === 'es'
-          ? 'Toca abajo para empezar. Te contactaremos para tenerlo todo listo antes del 4 de mayo.'
-          : "Tap below to get started. We'll reach out to get everything set up before May 4th.";
-        document.getElementById('cta-main-btn').textContent  = lang === 'es' ? 'Sí — Empezar En el Mapa' : 'Yes — Start On the Map';
-        document.getElementById('cta-price-big').textContent = '$199';
-        document.getElementById('cta-freq-note').textContent = lang === 'es' ? 'por mes · cancela cuando quieras' : 'per month · cancel anytime';
+        document.getElementById('order-ads-text').textContent =
+          lang==='es'
+            ? 'Google Ads · $' + adsBudget + '/mes directo a Google'
+            : 'Google Ads · $' + adsBudget + '/mo direct to Google';
       }
+
+      // Ads confirm message
+      var adsConfirm = document.getElementById('ads-confirm');
+      adsConfirm.style.display = adsOn ? 'flex' : 'none';
+      if (adsOn) {
+        document.getElementById('ads-confirm-text').textContent = lang==='es'
+          ? 'Después del pago, Shawn te escribirá en menos de una hora para configurar tu cuenta de Google Ads — estarás activa antes del 4 de mayo.'
+          : 'After payment, Shawn will text you within the hour to get your Google Ads account set up — you'll be live before May 4th.';
+      }
+
+      // Stripe link — SEO only vs SEO+Social
+      // SEO only: existing link | SEO+Social: get-quote for now (bundle link TBD)
+      var btn = document.getElementById('cta-main-btn');
+      if (socialOn) {
+        btn.href = 'get-quote.html'; // TODO: replace with bundle Stripe link when created
+        btn.textContent = lang==='es' ? 'Sí — Empezar (SEO + Social)' : 'Yes — Start (SEO + Social)';
+      } else {
+        btn.href = 'https://pay.sayitmarketing.com/b/4gM6oI5TE2oFfZab5GbV60M';
+        btn.textContent = lang==='es' ? 'Sí — Empezar En el Mapa' : 'Yes — Start On the Map';
+      }
+
+      // CTA headline + sub
+      var headline, sub, priceNote;
+      if (socialOn && adsOn) {
+        headline  = lang==='es' ? 'Todo listo — empecemos.' : "You've got the full plan.";
+        sub       = lang==='es'
+          ? 'Un pago para SEO + Social. Shawn te escribirá para los Ads.'
+          : 'One payment for SEO + Social. Shawn will reach out for Ads.';
+        priceNote = lang==='es' ? '$199/mes + $250 único · Google Ads directo a Google' : '$199/mo + $250 once · Google Ads direct to Google';
+      } else if (socialOn) {
+        headline  = lang==='es' ? 'SEO + Social — perfecto.' : 'SEO + Social — great choice.';
+        sub       = lang==='es'
+          ? 'Un pago cubre todo. Estarás lista antes del 4 de mayo.'
+          : 'One payment covers everything. You'll be set up before May 4th.';
+        priceNote = lang==='es' ? '$199/mes + $250 único' : '$199/mo + $250 one-time';
+      } else if (adsOn) {
+        headline  = lang==='es' ? 'SEO + Google Ads — excelente.' : 'SEO + Google Ads — smart move.';
+        sub       = lang==='es'
+          ? 'Paga el SEO abajo. Shawn te escribe para configurar Google Ads.'
+          : 'Pay for SEO below. Shawn will text you to set up your Google Ads.';
+        priceNote = lang==='es' ? '$199/mes · Google Ads directo a Google' : '$199/mo · Google Ads paid direct to Google';
+      } else {
+        headline  = lang==='es' ? 'Empieza En el Mapa hoy.' : 'Start On the Map today.';
+        sub       = lang==='es'
+          ? 'Toca abajo para empezar. Todo listo antes del 4 de mayo.'
+          : "Tap below to get started. Everything set up before May 4th.";
+        priceNote = lang==='es' ? '$199/mes · cancela cuando quieras' : '$199/mo · cancel anytime';
+      }
+      document.getElementById('cta-headline').textContent  = headline;
+      document.getElementById('cta-sub').textContent       = sub;
+      document.getElementById('cta-freq-note').textContent = priceNote;
+      document.getElementById('cta-price-big').textContent = '$199';
     }
 
     // Init
