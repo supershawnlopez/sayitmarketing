@@ -41,7 +41,13 @@ exports.handler = async (event) => {
   const session = await res.json();
 
   if (session.error) {
+    console.error('[create-checkout-session] Stripe error:', JSON.stringify(session.error));
     return json(400, { error: session.error.message });
+  }
+
+  if (!session.client_secret) {
+    console.error('[create-checkout-session] No client_secret in response:', JSON.stringify(session));
+    return json(500, { error: 'No client_secret returned by Stripe' });
   }
 
   return json(200, {

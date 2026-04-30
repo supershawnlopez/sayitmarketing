@@ -1,3 +1,28 @@
+## Session: April 29, 2026 — Part 8
+**AI:** Claude Code (Sonnet 4.6)
+**Worked on:** Payment modal debug logging + Netlify redeploy trigger
+
+### ✅ Completed This Session
+- Added console.error logging to payment modal catch block (browser console now shows actual error)
+- Added server-side error logging in create-checkout-session.js (Netlify function logs now show exact Stripe error)
+- Added explicit check for missing client_secret in Stripe response
+- Pushed to trigger Netlify redeploy so new env vars (STRIPE_SECRET_KEY + STRIPE_PUBLISHABLE_KEY) are picked up
+
+### ⏳ Still Pending — REQUIRES ACTION BEFORE TESTING
+- Check Netlify function logs after tapping pay button: Netlify dashboard → Functions → create-checkout-session → logs
+- If error says "Stripe not configured" → env var names don't match (must be exactly STRIPE_SECRET_KEY and STRIPE_PUBLISHABLE_KEY)
+- If error says Stripe API error → check price IDs or key mismatch (live key with test prices or vice versa)
+- Send Eimy proposal link (opens May 4)
+- Google Business Profile — still showing as CLOSED, fix ASAP
+
+### 🔜 Next (In Order)
+1. Test payment modal — open browser console + Netlify function logs to see actual error
+2. Fix error based on log output
+3. Send Eimy proposal
+4. Fix Google Business Profile
+
+---
+
 ## Session: April 29, 2026 — Part 7
 **AI:** Claude Code (Sonnet 4.6)
 **Worked on:** Stripe embedded checkout popup + scroll fixes
