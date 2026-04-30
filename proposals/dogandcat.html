@@ -819,7 +819,7 @@
         </div>
       </div>
 
-      <a class="btn btn-primary" id="cta-main-btn" href="https://pay.sayitmarketing.com/b/4gM6oI5TE2oFfZab5GbV60M">Yes — Start On the Map</a>
+      <a class="btn btn-primary" id="cta-main-btn" href="#">Yes — Start On the Map</a>
 
       <!-- Ads confirmation message — shows after tap when ads selected -->
       <div class="ads-confirm" id="ads-confirm" style="display:none;">
@@ -938,6 +938,7 @@
     </div>
   </div>
 
+  <script src="../assets/stripe-links.js"></script>
   <script>
 
     /* ── Plan Builder Logic ── */
@@ -995,14 +996,14 @@
           : 'After payment, Shawn will reach out to get your Google Ads account set up before May 4th.';
       }
 
-      // Stripe link — SEO only vs SEO+Social
-      // SEO only: existing link | SEO+Social: get-quote for now (bundle link TBD)
+      // Stripe links pulled from stripe-links.js so any update there propagates here
+      var links = window.SAYIT_STRIPE_LINKS || {};
       var btn = document.getElementById('cta-main-btn');
       if (socialOn) {
-        btn.href = 'get-quote.html'; // TODO: replace with bundle Stripe link when created
+        btn.href = links.bundle_seo_pro_social_setup || '/get-quote.html';
         btn.textContent = lang==='es' ? 'Sí — Empezar (SEO + Social)' : 'Yes — Start (SEO + Social)';
       } else {
-        btn.href = 'https://pay.sayitmarketing.com/b/4gM6oI5TE2oFfZab5GbV60M';
+        btn.href = links.sub_seo_pro || '/get-quote.html';
         btn.textContent = lang==='es' ? 'Sí — Empezar En el Mapa' : 'Yes — Start On the Map';
       }
 

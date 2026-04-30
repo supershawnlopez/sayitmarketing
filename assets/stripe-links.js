@@ -24,7 +24,11 @@
     // Social media
     social_starter:            "https://pay.sayitmarketing.com/b/14A6oI1Dod3j14gc9KbV60H", // Launch Ready $150
     social_pro:                "https://pay.sayitmarketing.com/b/3cI00kci2aVbeV66PqbV60I", // Content Pro $250
-    social_elite:              "https://pay.sayitmarketing.com/b/14AfZi5TE5AR8wI1v6bV60J"  // Done For You $399
+    social_elite:              "https://pay.sayitmarketing.com/b/14AfZi5TE5AR8wI1v6bV60J", // Done For You $399
+    // Bundles — subscription + one-time in a single Stripe checkout
+    bundle_seo_pro_social_setup:      "https://pay.sayitmarketing.com/b/3cI4gA4PAfbraEQa1CbV60P", // SEO On the Map $199/mo + Social Setup $250
+    bundle_seo_starter_social_setup:  null, // SEO Get Listed $99/mo + Social Setup $250 — create when needed
+    bundle_seo_dominator_social_setup: null  // SEO Own the Block $299/mo + Social Setup $250 — create when needed
   };
 
   var links = window.SAYIT_STRIPE_LINKS || {};
