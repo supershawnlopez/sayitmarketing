@@ -1,3 +1,41 @@
+## Session: April 30, 2026
+**AI:** Claude Code + Claude (Sonnet)
+**Worked on:** Stripe checkout, welcome email, Eimy proposal — FIRST CLIENT CLOSED
+
+### Completed This Session
+- Stripe Embedded Checkout modal added to dogandcat proposal — no redirect, pays on page
+- Live Stripe price IDs wired up for SEO $199/mo + Social $250 one-time
+- Amazon Pay removed — card only
+- Welcome email via Resend fires automatically on payment (hello@sayitmarketing.com)
+- Success banner shows on page after payment completes
+- May 4th date references removed — proposal is now evergreen for any client
+- Sheet scroll behavior fixed
+- BRIEF.md, PROJECT.md, CHANGELOG.md all confirmed live in repo
+
+### WIN — FIRST CLIENT CLOSED
+- Eimy Martinez paid $199/mo SEO On the Map + $250 Social Media Setup = $449 total
+- Recurring revenue started: $199/mo
+- Welcome email fired automatically
+- Social media setup (IG + Facebook + TikTok) needs to be delivered
+
+### Pending
+- RESEND_API_KEY — must be set in Netlify env vars for welcome email to work
+- Social media setup delivery for Eimy — IG + Facebook + TikTok branded and ready
+- Remaining 11 Stripe links still placeholders (get-quote.html fallback)
+- Lead form → Supabase — confirm SUPABASE_SERVICE_ROLE_KEY set in Netlify
+- Google Business Profile — still showing as CLOSED
+- GitHub token — regenerate (was exposed in chat session April 29)
+
+### Next (In Order)
+1. Set RESEND_API_KEY in Netlify env vars — welcome email depends on it
+2. Deliver Eimy social media setup — IG + Facebook + TikTok
+3. Create remaining Stripe products and update stripe-links.js
+4. Verify lead form → Supabase working
+5. Fix Google Business Profile
+6. Regenerate GitHub token
+
+---
+
 ## Session: April 29, 2026 — Part 12
 **AI:** Claude Code (Sonnet 4.6)
 **Worked on:** Welcome email after payment via Resend
