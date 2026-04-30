@@ -1203,12 +1203,13 @@
       document.body.style.overflow = 'hidden';
 
       var socialOn = document.getElementById('social-toggle').checked;
+      var adsOn    = document.getElementById('ads-toggle').checked;
 
       try {
         var res = await fetch('/api/create-checkout-session', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ social: socialOn }),
+          body: JSON.stringify({ social: socialOn, ads: adsOn, adsBudget: adsBudget }),
         });
         var data = await res.json();
         if (data.error) throw new Error(data.error);

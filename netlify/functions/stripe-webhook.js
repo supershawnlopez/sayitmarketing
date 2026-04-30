@@ -192,6 +192,37 @@ async function upsertOrderAndPayment(session, state) {
   return { ok: true };
 }
 
+async function sendOwnerSummaryEmail(session) {
+  if (!RESEND_API_KEY) return;
+  const name    = session?.customer_details?.name  || 'Unknown';
+  const email   = session?.customer_details?.email || 'Unknown';
+  const amount  = ((Number(session?.amount_total  || 0)) / 100).toFixed(2);
+  const social  = session?.metadata?.social_setup       || 'unknown';
+  const ads     = session?.metadata?.google_ads         || 'unknown';
+  const budget  = session?.metadata?.google_ads_budget  || 'none';
+  const proposal = session?.metadata?.proposal          || 'unknown';
+
+  const lines = [
+    `<b>Client:</b> ${name} (${email})`,
+    `<b>Total charged:</b> $${amount}`,
+    `<b>Proposal:</b> ${proposal}`,
+    `<b>SEO On the Map:</b> yes — $199/mo`,
+    `<b>Social Media Setup:</b> ${social === 'yes' ? 'YES — $250 one-time' : 'No'}`,
+    `<b>Google Ads:</b> ${ads === 'yes' ? `YES — budget ${budget}` : 'No'}`,
+  ].join('<br>');
+
+  await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: { 'Authorization': `Bearer ${RESEND_API_KEY}`, 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      from: 'Say It Marketing Payments <hello@sayitmarketing.com>',
+      to: ['shawnlopez@me.com'],
+      subject: `💳 New payment — ${name} — $${amount}`,
+      html: `<p>${lines}</p><p>Check Stripe for full details.</p>`
+    })
+  });
+}
+
 async function sendWelcomeEmail(toEmail, toName) {
   if (!RESEND_API_KEY) {
     console.error('[welcome-email] RESEND_API_KEY not set');
@@ -260,6 +291,7 @@ exports.handler = async (event) => {
     const customerEmail = session?.customer_details?.email;
     const customerName = session?.customer_details?.name;
     if (customerEmail) await sendWelcomeEmail(customerEmail, customerName);
+    await sendOwnerSummaryEmail(session);
     return json(200, { ok: true, event: eventType, result });
   }
 

@@ -14,7 +14,7 @@ exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') return json(405, { error: 'Method not allowed' });
   if (!STRIPE_SECRET_KEY || !STRIPE_PUBLISHABLE_KEY) return json(500, { error: 'Stripe not configured' });
 
-  const { social } = JSON.parse(event.body || '{}');
+  const { social, ads, adsBudget } = JSON.parse(event.body || '{}');
 
   const params = new URLSearchParams();
   params.append('ui_mode', 'embedded');
@@ -27,6 +27,11 @@ exports.handler = async (event) => {
     params.append('line_items[1][price]', PRICES.social_setup);
     params.append('line_items[1][quantity]', '1');
   }
+
+  params.append('metadata[social_setup]', social ? 'yes' : 'no');
+  params.append('metadata[google_ads]', ads ? 'yes' : 'no');
+  params.append('metadata[google_ads_budget]', ads ? `$${adsBudget || 175}/mo` : 'none');
+  params.append('metadata[proposal]', 'dogandcat');
 
   const origin = event.headers.origin || 'https://sayitmarketing.com';
   params.append('return_url', `${origin}/proposals/dogandcat?payment=complete&session_id={CHECKOUT_SESSION_ID}`);
