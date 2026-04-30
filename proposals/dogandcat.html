@@ -814,48 +814,6 @@
       </div>
     </div>
 
-    <!-- BUCKET 2: PAY GOOGLE DIRECTLY -->
-    <div class="bucket-label orange-bucket t" data-en="⚡ You pay Google directly (optional)" data-es="⚡ Le pagas a Google directamente (opcional)">⚡ You pay Google directly (optional)</div>
-    <div class="builder-card orange-card">
-
-      <div class="builder-row toggleable" id="ads-row">
-        <div class="builder-row-left">
-          <div class="builder-toggle-label orange-label t" data-en="Add Google Ads" data-es="Agregar Google Ads">Add Google Ads</div>
-          <div class="builder-name t" data-en="Google Ads Budget" data-es="Presupuesto de Google Ads">Google Ads Budget</div>
-          <div class="builder-desc t" data-en="Your card. Your Google account. We set it up &amp; manage it." data-es="Tu tarjeta. Tu cuenta de Google. Nosotros lo configuramos y administramos.">Your card. Your Google account. We set it up &amp; manage it.</div>
-        </div>
-        <div class="builder-row-right">
-          <div class="builder-price orange-price" id="ads-price-display">~$175<span class="builder-per t" data-en="/mo" data-es="/mes">/mo</span></div>
-          <label class="toggle-switch">
-            <input type="checkbox" id="ads-toggle" onchange="updatePlan()" checked>
-            <span class="toggle-track orange-track"></span>
-          </label>
-        </div>
-      </div>
-
-      <!-- Budget selector — shows when ads toggled on -->
-      <div id="ads-budget-section">
-        <div class="builder-divider"></div>
-        <div class="budget-selector">
-          <div class="budget-selector-label t" data-en="Choose your monthly ad budget" data-es="Elige tu presupuesto mensual de anuncios">Choose your monthly ad budget</div>
-          <div class="budget-options">
-            <button class="budget-opt" onclick="selectBudget(this, 100)" data-en="$100/mo" data-es="$100/mes">$100/mo</button>
-            <button class="budget-opt active" onclick="selectBudget(this, 175)" data-en="$175/mo ★" data-es="$175/mes ★">$175/mo ★</button>
-            <button class="budget-opt" onclick="selectBudget(this, 250)" data-en="$250/mo" data-es="$250/mes">$250/mo</button>
-            <button class="budget-opt" onclick="selectBudget(this, 350)" data-en="$350/mo" data-es="$350/mes">$350/mo</button>
-          </div>
-          <div class="budget-note t" data-en="★ Recommended for Glendale grooming market. Goes directly to Google — not to Say It Marketing." data-es="★ Recomendado para el mercado de grooming en Glendale. Va directamente a Google — no a Say It Marketing.">★ Recommended for Glendale grooming market. Goes directly to Google — not to Say It Marketing.</div>
-        </div>
-      </div>
-
-      <div class="builder-divider"></div>
-      <div class="builder-subtotal orange-subtotal">
-        <div class="builder-subtotal-label t" data-en="Paid directly to Google" data-es="Se paga directamente a Google">Paid directly to Google</div>
-        <div class="builder-subtotal-right">
-          <span class="builder-subtotal-mo orange-text" id="ads-budget-total">$175/mo</span>
-        </div>
-      </div>
-    </div>
 
     <!-- CTA -->
     <div class="cta-card" id="cta-card">
@@ -1038,11 +996,6 @@
       // Sayit subtotal
       document.getElementById('sayit-mo-total').textContent     = '$199/mo';
       document.getElementById('sayit-onetime-total').textContent = socialOn ? (lang==='es' ? '+ $250 único' : '+ $250 once') : '';
-
-      // Ads subtotal
-      document.getElementById('ads-budget-total').textContent = adsOn
-        ? ('$' + adsBudget + (lang==='es' ? '/mes' : '/mo'))
-        : (lang==='es' ? 'No agregado' : 'Not added');
 
       // Order summary lines
       document.getElementById('order-social').style.display = socialOn ? 'flex' : 'none';
