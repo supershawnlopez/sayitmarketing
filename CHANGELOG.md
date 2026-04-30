@@ -1,3 +1,32 @@
+## Session: April 29, 2026 — Part 7
+**AI:** Claude Code (Sonnet 4.6)
+**Worked on:** Stripe embedded checkout popup + scroll fixes
+
+### ✅ Completed This Session
+- Fixed sheet scroll — SEO sheet → scrolls to Social section, Social sheet → scrolls to Plan Builder
+- Built Stripe Embedded Checkout modal (client never leaves the proposal page)
+- New Netlify function: `create-checkout-session.js` — builds Stripe session from toggle state
+- CTA button opens payment modal (bottom sheet) with Stripe form mounted inside
+- Loading spinner + error state with fallback to call Shawn
+- Success banner shows after Stripe payment completes
+- netlify.toml updated with `/api/create-checkout-session` route
+
+### ⏳ Still Pending — REQUIRES ACTION BEFORE TESTING
+- Add `STRIPE_SECRET_KEY` and `STRIPE_PUBLISHABLE_KEY` to Netlify env vars
+  → Netlify dashboard → Site settings → Environment variables
+  → `STRIPE_SECRET_KEY` = your sk_live key (Stripe dashboard → Developers → API Keys)
+  → `STRIPE_PUBLISHABLE_KEY` = your pk_live key (Stripe dashboard → Developers → API Keys)
+- Send Eimy proposal link (opens May 4)
+- Google Business Profile — still showing as CLOSED, fix ASAP
+
+### 🔜 Next (In Order)
+1. Add env vars to Netlify (STRIPE_SECRET_KEY + STRIPE_PUBLISHABLE_KEY)
+2. Test payment modal on proposal page
+3. Send Eimy proposal
+4. Fix Google Business Profile
+
+---
+
 ## Session: April 29, 2026 — Part 6
 **AI:** Claude Code (Sonnet 4.6)
 **Worked on:** Proposal sales machine rebuild + bug fixes
