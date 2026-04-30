@@ -1,3 +1,60 @@
+## Session: April 30, 2026 — Part 14
+**AI:** Claude Code (Sonnet 4.6)
+**Worked on:** Went live on Stripe, Eimy paid
+
+### ✅ Completed This Session
+- Confirmed Amazon Pay fix was never pushed — pushed it now (card only, `payment_method_types[0]=card`)
+- Shawn set live Stripe keys in Netlify (`STRIPE_PUBLISHABLE_KEY` + `STRIPE_SECRET_KEY`)
+- Flipped price IDs in `create-checkout-session.js` to live mode — test IDs removed
+- **Eimy Martinez paid** — SEO On the Map ($199/mo) + Social Media Setup ($250 one-time) ✅
+
+### ⏳ Still Pending — ACTION REQUIRED
+- **Shawn:** Call or text Eimy — confirm you got her payment and you're on it
+- **Shawn:** Ask Eimy to add you as Manager on her Google Business Profile (business.google.com → Settings → Managers)
+- **Shawn:** Set up Google Search Console for dogandcatgroomer.com
+- **Shawn:** Set up Whitespark rank tracker (free) — add 5 keywords (e.g. "dog groomer Glendale AZ")
+- **Shawn:** Submit her business to directory listings (Yelp, Apple Maps, Bing Places, Nextdoor — see seo-delivery-sop.md)
+- **Shawn:** Do social media setup (her $250 one-time — profiles, branding, bio copy)
+- Fix Google Business Profile for Say It Marketing — still showing CLOSED
+
+### 🔜 Next (In Order)
+1. Text Eimy — confirm payment received, tell her you'll be in touch within 24hrs
+2. Get GBP manager access from Eimy
+3. Set up Search Console + Whitespark for her domain
+4. Submit directory listings (2 hrs one-time work)
+5. Do social media setup ($250)
+6. Fix Say It Marketing Google Business Profile
+
+---
+
+## Session: April 30, 2026 — Part 13
+**AI:** Claude Code (Sonnet 4.6)
+**Worked on:** Amazon Pay removal, live Stripe mode prep, Resend confirmed
+
+### ✅ Completed This Session
+- Added `payment_method_types[0]=card` to `create-checkout-session.js` — removes Amazon Pay (and other wallets) from payment slide-up, card only
+- Confirmed RESEND_API_KEY is set in Netlify ✅
+- Confirmed sayitmarketing.com domain is verified in Resend ✅
+- Shawn briefed on live Stripe mode process — live price IDs already in code as comments, ready to flip
+
+### ⏳ Still Pending — ACTION REQUIRED
+- **Shawn:** Swap Stripe keys in Netlify env vars → `STRIPE_PUBLISHABLE_KEY` = pk_live_ key, `STRIPE_SECRET_KEY` = sk_live_ key (Stripe Dashboard → Live mode → Developers → API Keys)
+- **Shawn:** Update brand color in Stripe Dashboard → Settings → Branding → set to `#4BA6DC` (makes Stripe submit button match site color)
+- **Claude Code:** Flip live price IDs in `create-checkout-session.js` once Shawn says "go" — live IDs already in file as comments (lines 11–12), just uncomment and remove test IDs
+- Test full payment → welcome email flow end to end with live keys
+- Send Eimy proposal (opens May 4 — 4 days away)
+- Fix Google Business Profile — still showing CLOSED
+
+### 🔜 Next (In Order)
+1. Shawn swaps Stripe keys to live in Netlify
+2. Shawn updates Stripe Dashboard branding color
+3. Tell Claude Code "go" → live price IDs get swapped in `create-checkout-session.js` + pushed
+4. Test full flow: pay → success banner → welcome email
+5. Send Eimy proposal
+6. Fix Google Business Profile
+
+---
+
 ## Session: April 29, 2026 — Part 12
 **AI:** Claude Code (Sonnet 4.6)
 **Worked on:** Welcome email after payment via Resend
