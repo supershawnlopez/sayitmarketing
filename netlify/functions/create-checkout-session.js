@@ -22,6 +22,7 @@ exports.handler = async (event) => {
   const params = new URLSearchParams();
   params.append('ui_mode', 'embedded');
   params.append('mode', 'subscription');
+  params.append('payment_method_types[0]', 'card');
   params.append('line_items[0][price]', PRICES.seo_pro);
   params.append('line_items[0][quantity]', '1');
 
