@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eimy — Here's Your Growth Plan</title>
   <link rel="stylesheet" href="../assets/site.css">
+  <script src="https://js.stripe.com/v3/"></script>
   <style>
     body { background: #f4f6f9; }
 
@@ -641,6 +642,44 @@
       font-size: 0.81rem; color: #991b1b; line-height: 1.55;
     }
 
+    /* ── Payment modal ── */
+    .payment-sheet { max-height: 95vh; }
+    .payment-loading {
+      padding: 48px 24px; text-align: center;
+    }
+    .payment-spinner {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 3px solid rgba(0,113,227,0.15);
+      border-top-color: var(--brand);
+      animation: spin 0.7s linear infinite;
+      margin: 0 auto 16px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .payment-loading-text {
+      font-size: 0.95rem; font-weight: 600; color: var(--text-2);
+    }
+    .payment-error {
+      padding: 32px 24px; text-align: center;
+      font-size: 0.9rem; color: #991b1b; line-height: 1.6;
+    }
+    #stripe-checkout-container { min-height: 200px; }
+
+    /* ── Success state ── */
+    .payment-success-banner {
+      display: none;
+      background: linear-gradient(160deg, #f0fff4, #e6ffed);
+      border: 1.5px solid rgba(22,163,74,0.3);
+      border-radius: 20px; padding: 32px 24px;
+      text-align: center; margin-bottom: 20px;
+    }
+    .payment-success-banner.visible { display: block; }
+    .success-icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .success-hed {
+      font-size: 1.5rem; font-weight: 700;
+      color: #15803d; margin-bottom: 8px;
+    }
+    .success-sub { font-size: 0.9rem; color: #166534; line-height: 1.6; }
+
     /* ── Next steps ── */
     .next-steps-note {
       font-size: 0.82rem; color: var(--text-3); line-height: 1.65;
@@ -839,7 +878,7 @@
         </div>
       </div>
 
-      <a class="btn btn-primary" id="cta-main-btn" href="#" target="_blank" rel="noopener">Yes — I'm In. Let's Do This →</a>
+      <button class="btn btn-primary" id="cta-main-btn" onclick="openPaymentModal()">Yes — I'm In. Let's Do This →</button>
 
       <p class="next-steps-note t" data-en="After you tap, Shawn will call or text you within the hour to get everything set up." data-es="Después de tocar, Shawn te llamará o escribirá en menos de una hora para configurar todo.">After you tap, Shawn will call or text you within the hour to get everything set up.</p>
 
@@ -852,12 +891,38 @@
       <p class="cta-note t" data-en="Tap to pay securely. Questions? Call or text Shawn · (520) 222-6308" data-es="Toca para pagar de forma segura. ¿Preguntas? Llama o escríbele a Shawn · (520) 222-6308">Tap to pay securely. Questions? Call or text Shawn · (520) 222-6308</p>
     </div>
 
+    <!-- SUCCESS BANNER — shown after payment redirect -->
+    <div class="payment-success-banner" id="success-banner">
+      <div class="success-icon">🎉</div>
+      <div class="success-hed">You're all set!</div>
+      <div class="success-sub">Payment confirmed. Shawn will call or text you within the hour to get everything set up before May 4th.</div>
+    </div>
+
     <div class="proposal-footer">
       <span>Say It Marketing · sayitmarketing.com</span>
       <span>hello@sayitmarketing.com · (520) 222-6308</span>
     </div>
 
   </main>
+
+  <!-- ══════════════════════════════
+       PAYMENT MODAL
+  ══════════════════════════════ -->
+  <div class="sheet-overlay" id="payment-overlay" onclick="closePaymentModal()"></div>
+  <div class="sheet payment-sheet" id="payment-sheet">
+    <div class="sheet-handle-row">
+      <div class="sheet-handle"></div>
+      <button class="sheet-close" onclick="closePaymentModal()">✕</button>
+    </div>
+    <div id="payment-loading" class="payment-loading">
+      <div class="payment-spinner"></div>
+      <div class="payment-loading-text">Setting up your payment...</div>
+    </div>
+    <div id="payment-error" class="payment-error" style="display:none;">
+      Something went wrong. <br><a href="tel:+15202226308" style="color:var(--brand);font-weight:700;">Call or text Shawn · (520) 222-6308</a>
+    </div>
+    <div id="stripe-checkout-container"></div>
+  </div>
 
   <!-- ══════════════════════════════
        SEO BOTTOM SHEET
@@ -1019,15 +1084,12 @@
         }
       }
 
-      // Stripe links pulled from stripe-links.js so any update there propagates here
-      var links = window.SAYIT_STRIPE_LINKS || {};
+      // Update CTA button text based on selection
       var btn = document.getElementById('cta-main-btn');
-      if (socialOn) {
-        btn.href = links.bundle_seo_pro_social_setup || '/get-quote.html';
-        btn.textContent = lang==='es' ? 'Sí — Estoy Lista. Vamos →' : 'Yes — I\'m In. Let\'s Do This →';
-      } else {
-        btn.href = links.sub_seo_pro || '/get-quote.html';
-        btn.textContent = lang==='es' ? 'Sí — Empezar En el Mapa →' : 'Yes — Start On the Map →';
+      if (btn) {
+        btn.textContent = socialOn
+          ? (lang==='es' ? 'Sí — Estoy Lista. Vamos →' : 'Yes — I\'m In. Let\'s Do This →')
+          : (lang==='es' ? 'Sí — Empezar En el Mapa →' : 'Yes — Start On the Map →');
       }
 
       // CTA headline + sub
@@ -1120,6 +1182,69 @@
         if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 340);
     }
+
+    /* ── Payment Modal ── */
+    var stripeInstance = null;
+    var embeddedCheckout = null;
+
+    async function openPaymentModal() {
+      var overlay = document.getElementById('payment-overlay');
+      var sheet   = document.getElementById('payment-sheet');
+      var loading = document.getElementById('payment-loading');
+      var errDiv  = document.getElementById('payment-error');
+      var container = document.getElementById('stripe-checkout-container');
+
+      // Reset state
+      loading.style.display = 'block';
+      errDiv.style.display  = 'none';
+      container.innerHTML   = '';
+      overlay.classList.add('open');
+      sheet.classList.add('open');
+      document.body.style.overflow = 'hidden';
+
+      var socialOn = document.getElementById('social-toggle').checked;
+
+      try {
+        var res = await fetch('/api/create-checkout-session', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ social: socialOn }),
+        });
+        var data = await res.json();
+        if (data.error) throw new Error(data.error);
+
+        loading.style.display = 'none';
+
+        if (!stripeInstance) stripeInstance = Stripe(data.publishableKey);
+
+        embeddedCheckout = await stripeInstance.initEmbeddedCheckout({
+          clientSecret: data.clientSecret,
+        });
+        embeddedCheckout.mount('#stripe-checkout-container');
+
+      } catch (err) {
+        loading.style.display = 'none';
+        errDiv.style.display  = 'block';
+      }
+    }
+
+    function closePaymentModal() {
+      document.getElementById('payment-overlay').classList.remove('open');
+      document.getElementById('payment-sheet').classList.remove('open');
+      document.body.style.overflow = '';
+      if (embeddedCheckout) { embeddedCheckout.destroy(); embeddedCheckout = null; }
+    }
+
+    // Show success banner if returning from Stripe
+    (function() {
+      if (window.location.search.indexOf('payment=complete') !== -1) {
+        var banner = document.getElementById('success-banner');
+        if (banner) {
+          banner.classList.add('visible');
+          banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }
+    })();
 
     /* ── Language toggle ── */
     var translations = {
