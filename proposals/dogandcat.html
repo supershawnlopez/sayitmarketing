@@ -744,7 +744,7 @@
     </div>
 
     <!-- ══ STEP 3 — SOCIAL ══ -->
-    <div class="sec-divider"><span class="t" data-en="Then — make them trust you before they call." data-es="Luego — haz que confíen en ti antes de llamar.">Then — make them trust you before they call.</span></div>
+    <div class="sec-divider" id="social-section"><span class="t" data-en="Then — make them trust you before they call." data-es="Luego — haz que confíen en ti antes de llamar.">Then — make them trust you before they call.</span></div>
 
     <div class="pcard teal">
       <div class="pcard-step teal t" data-en="One-Time Setup · $250" data-es="Configuración Única · $250">One-Time Setup · $250</div>
@@ -1106,15 +1106,17 @@
       closeSheet(id);
       if (action === 'add-social') {
         var t = document.getElementById('social-toggle');
-        if (t) { t.checked = true; }
+        if (t) t.checked = true;
         var st = document.getElementById('social-sheet-toggle');
         if (st) st.checked = true;
         var sst = document.getElementById('seo-sheet-social-toggle');
         if (sst) sst.checked = true;
         updatePlan();
       }
+      // Scroll to the NEXT section, not the bottom
+      var scrollTargetId = (id === 'seo') ? 'social-section' : 'plan-builder-section';
       setTimeout(function() {
-        var target = document.getElementById('plan-builder-section') || document.getElementById('cta-card');
+        var target = document.getElementById(scrollTargetId);
         if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }, 340);
     }
