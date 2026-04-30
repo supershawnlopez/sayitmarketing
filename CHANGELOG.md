@@ -1,3 +1,31 @@
+## Session: April 29, 2026 — Part 3
+**AI:** Claude Code (Sonnet 4.6)
+**Worked on:** Stripe payment link audit and full wiring
+
+### ✅ Completed This Session
+- Pulled latest from GitHub (BRIEF.md, CHANGELOG.md, PROJECT.md, new pages all synced)
+- Audited all 49 Stripe payment links via API — matched products to keys
+- Created 2 new Stripe products: SEO - Get Listed ($99/mo) and SEO - Own the Block ($299/mo)
+- Created payment links for both new products on pay.sayitmarketing.com
+- Updated `assets/stripe-links.js` — all 19 keys now point to real live Stripe links, zero placeholders
+- Committed and pushed to main (auto-deploys via Netlify)
+
+### ⏳ Still Pending
+- Stripe bundle link — $199/mo SEO + $250 one-time social in ONE checkout (for Eimy dogandcat proposal)
+- Netlify `SUPABASE_SERVICE_ROLE_KEY` — confirm set in dashboard
+- Lead form → Supabase test — submit get-quote.html and verify Supabase receives it
+- DNS / site loading — confirm sayitmarketing.com is resolving correctly
+- Google Business Profile — still showing as CLOSED, fix ASAP
+
+### 🔜 Next (In Order)
+1. Stripe bundle link for Eimy proposal (SEO $199/mo + Social $250 one-time)
+2. Verify site loads at sayitmarketing.com
+3. Test lead form → Supabase
+4. Send Eimy proposal link (opens May 4)
+5. Fix Google Business Profile
+
+---
+
 ## Session: April 29, 2026 — Part 2
 **AI:** Claude (Sonnet)
 **Worked on:** BRIEF.md system, PROJECT.md rename, CHANGELOG rules, Stripe prep
