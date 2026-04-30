@@ -4,12 +4,9 @@ const STRIPE_SECRET_KEY     = process.env.STRIPE_SECRET_KEY;
 const STRIPE_PUBLISHABLE_KEY = process.env.STRIPE_PUBLISHABLE_KEY;
 
 const PRICES = {
-  // TEST MODE — swap to live price IDs before going live
-  seo_pro:      'price_1TRmU6LiXNZOJsPhP9u1G1D7', // SEO On the Map $199/mo (test)
-  social_setup: 'price_1TRmUpLiXNZOJsPh3vZvChkv', // Social Setup $250 one-time (test)
-  // LIVE MODE (uncomment when ready)
-  // seo_pro:      'price_1TRLN5LiXNZOJsPhKZ8NvCJw',
-  // social_setup: 'price_1TOfn9LiXNZOJsPhA7RccCsj',
+  // LIVE MODE
+  seo_pro:      'price_1TRLN5LiXNZOJsPhKZ8NvCJw',  // SEO On the Map $199/mo (live)
+  social_setup: 'price_1TOfn9LiXNZOJsPhA7RccCsj',  // Social Setup $250 one-time (live)
 };
 
 exports.handler = async (event) => {
