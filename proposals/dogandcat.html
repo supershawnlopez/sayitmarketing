@@ -583,6 +583,70 @@
       font-weight: 700; margin-left: 6px;
     }
     .orange-text { color: #c45f00 !important; }
+
+    /* ── Market Insights ── */
+    .market-insights { display: flex; flex-direction: column; gap: 8px; margin: 20px 0 36px; }
+    .mi-item {
+      display: flex; gap: 12px; align-items: flex-start;
+      background: rgba(0,113,227,0.04); border: 1px solid rgba(0,113,227,0.1);
+      border-radius: 12px; padding: 12px 14px;
+      font-size: 0.88rem; color: var(--text-2); line-height: 1.5;
+    }
+    .mi-icon { font-size: 1rem; flex-shrink: 0; margin-top: 1px; }
+
+    /* ── Punchy stat rows ── */
+    .punch-list { display: flex; flex-direction: column; gap: 8px; margin-top: 18px; }
+    .punch-item {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 0.9rem; font-weight: 600; color: var(--text-1);
+    }
+    .punch-item::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--brand); flex-shrink: 0;
+    }
+
+    /* ── Google Ads Aside ── */
+    .ads-aside-wrap { margin: 8px 0 20px; }
+    .aside-intro {
+      font-size: 0.65rem; font-weight: 800; letter-spacing: 0.18em;
+      text-transform: uppercase; color: var(--text-3);
+      margin-bottom: 10px; padding-left: 2px;
+    }
+    .ads-aside-card {
+      background: rgba(255,255,255,0.5);
+      border: 1px dashed rgba(0,0,0,0.13);
+      border-radius: 16px; padding: clamp(1.1rem, 3vw, 1.4rem);
+    }
+    .aside-opener {
+      font-size: 0.92rem; color: var(--text-2);
+      line-height: 1.72; margin: 0 0 16px;
+    }
+    .ads-aside-toggle-row {
+      display: flex; justify-content: space-between;
+      align-items: center; gap: 14px;
+    }
+    .ads-aside-name { font-size: 0.92rem; font-weight: 700; color: var(--text-1); margin-bottom: 2px; }
+    .ads-aside-desc { font-size: 0.76rem; color: var(--text-3); }
+    .ads-aside-footer {
+      font-size: 0.78rem; color: var(--text-3); line-height: 1.55;
+      margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--line);
+    }
+
+    /* ── Fight-back warnings ── */
+    .toggle-warning {
+      display: none;
+      background: rgba(185,28,28,0.06); border: 1px solid rgba(185,28,28,0.18);
+      border-radius: 10px; padding: 10px 14px;
+      margin: 6px 20px 10px;
+      font-size: 0.81rem; color: #991b1b; line-height: 1.55;
+    }
+
+    /* ── Next steps ── */
+    .next-steps-note {
+      font-size: 0.82rem; color: var(--text-3); line-height: 1.65;
+      margin: 14px auto 0; max-width: 38ch; text-align: center;
+    }
+
     @media (max-width: 560px) {
       .split { grid-template-columns: 1fr; }
       .proposal-footer { flex-direction: column; }
@@ -596,13 +660,7 @@
   <nav class="nav">
     <div class="wrap nav-inner">
       <a class="brand" href="/index.html"><img src="../assets/sayit-logo.png" alt="SayIt logo"></a>
-      <div class="nav-links">
-        <a href="/index.html">Home</a>
-        <a href="/website-design-services.html">Services</a>
-        <a href="/pricing.html">Pricing</a>
-        <a href="/contact.html">Contact</a>
-      </div>
-      <a class="btn btn-primary" href="/get-quote.html">Start My Plan</a>
+      <a href="tel:+15202226308" style="font-size:0.85rem;font-weight:700;color:var(--text-2);text-decoration:none;">Call or text · (520) 222-6308</a>
     </div>
   </nav>
 
@@ -625,67 +683,68 @@
     </h1>
     <p class="hero-sub t" data-en="You open May 4th. Here's the three-part plan that gets your phone ringing, builds your reputation, and makes sure Glendale knows you're open." data-es="Abres el 4 de mayo. Aquí está el plan de tres partes que hará sonar tu teléfono, construirá tu reputación y asegurará que Glendale sepa que estás abierta.">You open May 4th. Here's the three-part plan that gets your phone ringing, builds your reputation, and makes sure Glendale knows you're open.</p>
 
+    <!-- MARKET INSIGHTS -->
+    <div class="market-insights">
+      <div class="mi-item t" data-en="🔍 People are searching "dog groomer Glendale AZ" every day — and right now, none of them are finding Dog &amp; Cat Groomer." data-es="🔍 La gente busca &quot;dog groomer Glendale AZ&quot; todos los días — y ahora mismo, ninguno está encontrando Dog &amp; Cat Groomer.">
+        <span class="mi-icon">🔍</span>People are searching "dog groomer Glendale AZ" every day — and right now, none of them are finding Dog &amp; Cat Groomer.
+      </div>
+      <div class="mi-item t" data-en="🏆 Your top competitors already have 50–80 Google reviews and hold the map pack. That's the gap we close first." data-es="🏆 Tus competidores ya tienen 50–80 reseñas en Google y dominan el mapa. Esa es la brecha que cerramos primero.">
+        <span class="mi-icon">🏆</span>Your top competitors already have 50–80 Google reviews and hold the map pack. That's the gap we close first.
+      </div>
+      <div class="mi-item t" data-en="📱 No groomer in your area has a strong, branded social presence. That's your opening to own it before anyone else does." data-es="📱 Ningún groomer en tu área tiene una presencia social fuerte y con marca. Esa es tu oportunidad de dominarlo antes que nadie.">
+        <span class="mi-icon">📱</span>No groomer in your area has a strong, branded social presence. That's your opening to own it before anyone else does.
+      </div>
+    </div>
+
     <!-- ══ STEP 1 — SEO ══ -->
-    <div class="sec-divider"><span class="t" data-en="Step 1 — The Foundation" data-es="Paso 1 — La Base">Step 1 — The Foundation</span></div>
+    <div class="sec-divider"><span class="t" data-en="First — you need to be found." data-es="Primero — necesitas ser encontrada.">First — you need to be found.</span></div>
 
     <div class="pcard blue">
       <div class="pcard-step blue t" data-en="Monthly · $199/mo" data-es="Mensual · $199/mes">Monthly · $199/mo</div>
       <h2 class="pcard-title t" data-en="Get found on Google — every single day." data-es="Aparece en Google — todos los días.">Get found on Google — every single day.</h2>
       <p class="pcard-body t" data-en="93% of people search Google before choosing a groomer. This plan makes sure Dog & Cat Groomer shows up first when someone in Glendale searches for you — and keeps you there." data-es="El 93% de las personas busca en Google antes de elegir un groomer. Este plan asegura que Dog & Cat Groomer aparezca primero cuando alguien en Glendale te busque — y se quede ahí.">93% of people search Google before choosing a groomer. This plan makes sure Dog &amp; Cat Groomer shows up first when someone in Glendale searches for you — and keeps you there.</p>
 
-      <div class="reasons">
-        <div class="reason">
-          <div class="reason-icon">🎯</div>
-          <div>
-            <div class="reason-title t" data-en="They're already searching for you" data-es="Ya te están buscando">They're already searching for you</div>
-            <p class="reason-body t" data-en="People type "dog groomer Glendale AZ" every single day. SEO puts you in front of them at the exact moment they're ready to book." data-es='La gente escribe "dog groomer Glendale AZ" todos los días. El SEO te pone frente a ellos en el momento exacto en que están listos para reservar.'>People type "dog groomer Glendale AZ" every single day. SEO puts you in front of them at the exact moment they're ready to book.</p>
-          </div>
-        </div>
-        <div class="reason">
-          <div class="reason-icon">📍</div>
-          <div>
-            <div class="reason-title t" data-en="Google Maps = free advertising 24/7" data-es="Google Maps = publicidad gratis 24/7">Google Maps = free advertising 24/7</div>
-            <p class="reason-body t" data-en="Once you're in the map pack, every search is free. It works nights, weekends, and while you're with a client." data-es="Una vez en el mapa, cada búsqueda es gratis. Funciona de noche, los fines de semana y mientras atiendes clientes.">Once you're in the map pack, every search is free. It works nights, weekends, and while you're with a client.</p>
-          </div>
-        </div>
-        <div class="reason">
-          <div class="reason-icon">⭐</div>
-          <div>
-            <div class="reason-title t" data-en="Reviews = trust = more bookings" data-es="Reseñas = confianza = más clientes">Reviews = trust = more bookings</div>
-            <p class="reason-body t" data-en="5-star reviews are the #1 reason someone picks one groomer over another. We build a system to get them consistently." data-es="Las reseñas de 5 estrellas son la razón #1 por la que eligen un groomer. Construimos un sistema para obtenerlas constantemente.">5-star reviews are the #1 reason someone picks one groomer over another. We build a system to get them consistently.</p>
-          </div>
-        </div>
+      <div class="punch-list">
+        <div class="punch-item t" data-en="Show up first when someone in Glendale searches for a groomer" data-es="Aparece primero cuando alguien en Glendale busca un groomer">Show up first when someone in Glendale searches for a groomer</div>
+        <div class="punch-item t" data-en="Get into the Google map pack — free traffic, every single day" data-es="Entra al mapa de Google — tráfico gratis, todos los días">Get into the Google map pack — free traffic, every single day</div>
+        <div class="punch-item t" data-en="Build reviews consistently — reviews are why people choose you over anyone else" data-es="Acumula reseñas — las reseñas son la razón por la que te eligen a ti">Build reviews consistently — reviews are why people choose you over anyone else</div>
       </div>
 
       <button class="see-more-btn t" onclick="openSheet('seo')" data-en="See everything included →" data-es="Ver todo lo incluido →">See everything included →</button>
     </div>
 
-    <!-- ══ STEP 2 — ADS ══ -->
-    <div class="sec-divider"><span class="t" data-en="Step 2 — Day One Boost" data-es="Paso 2 — Impulso desde el Día Uno">Step 2 — Day One Boost</span></div>
-
-    <div class="pcard orange">
-      <div class="pcard-step orange t" data-en="Optional Add-On · Your ad budget" data-es="Complemento Opcional · Tu presupuesto">Optional Add-On · Your ad budget</div>
-      <h2 class="pcard-title t" data-en="Google Ads — so your phone rings May 4th." data-es="Google Ads — para que suene tu teléfono el 4 de mayo.">Google Ads — so your phone rings May 4th.</h2>
-      <p class="pcard-body t" data-en="SEO is the long game — it takes 60–90 days to build momentum. Google Ads gives you instant visibility from day one while SEO is warming up. Think of it as your grand opening announcement on Google." data-es="El SEO es a largo plazo — tarda 60–90 días en ganar impulso. Google Ads te da visibilidad inmediata desde el primer día mientras el SEO se activa. Piénsalo como el anuncio de tu gran apertura en Google.">SEO is the long game — it takes 60–90 days to build momentum. Google Ads gives you instant visibility from day one while SEO is warming up. Think of it as your grand opening announcement on Google.</p>
-
-      <div class="split">
-        <div class="split-col">
-          <div class="split-label seo t" data-en="SEO — Builds Over Time" data-es="SEO — Crece con el Tiempo">SEO — Builds Over Time</div>
-          <p class="t" data-en="Permanent rankings. Free traffic that compounds every month." data-es="Posicionamiento permanente. Tráfico gratuito que crece cada mes.">Permanent rankings. Free traffic that compounds every month.</p>
+    <!-- ══ ADS ASIDE ══ -->
+    <div class="ads-aside-wrap">
+      <div class="aside-intro t" data-en="One more thing worth knowing..." data-es="Algo más que vale la pena saber...">One more thing worth knowing...</div>
+      <div class="ads-aside-card">
+        <p class="aside-opener t" data-en="SEO takes 60–90 days to build. If you want your phone ringing on May 4th — the day you open — Google Ads gets you there instantly. It's completely optional, the budget goes straight to Google (not to me), and you can start or stop anytime." data-es="El SEO tarda 60–90 días en construirse. Si quieres que tu teléfono suene el 4 de mayo — el día que abres — Google Ads te da visibilidad inmediata. Es completamente opcional, el presupuesto va directo a Google (no a mí), y puedes empezar o detenerlo cuando quieras.">SEO takes 60–90 days to build. If you want your phone ringing on May 4th — the day you open — Google Ads gets you there instantly. It's completely optional, the budget goes straight to Google (not to me), and you can start or stop anytime.</p>
+        <div class="ads-aside-toggle-row">
+          <div>
+            <div class="ads-aside-name t" data-en="Add Google Ads" data-es="Agregar Google Ads">Add Google Ads</div>
+            <div class="ads-aside-desc t" data-en="Your card · your Google account · I set it up and manage it" data-es="Tu tarjeta · tu cuenta de Google · yo lo configuro y administro">Your card · your Google account · I set it up and manage it</div>
+          </div>
+          <label class="toggle-switch">
+            <input type="checkbox" id="ads-toggle" onchange="updatePlan()">
+            <span class="toggle-track orange-track"></span>
+          </label>
         </div>
-        <div class="split-col">
-          <div class="split-label ads t" data-en="Ads — Works Right Now" data-es="Ads — Funciona Ahora Mismo">Ads — Works Right Now</div>
-          <p class="t" data-en="Instant visibility on day one. Pause or adjust anytime." data-es="Visibilidad instantánea desde el primer día. Pausa o ajusta cuando quieras.">Instant visibility on day one. Pause or adjust anytime.</p>
+        <div id="ads-budget-section" style="display:none;">
+          <div style="height:14px;"></div>
+          <div class="budget-selector-label t" data-en="Choose your monthly ad budget" data-es="Elige tu presupuesto mensual">Choose your monthly ad budget</div>
+          <div class="budget-options" style="margin-top:8px;">
+            <button class="budget-opt" onclick="selectBudget(this, 100)" data-en="$100/mo" data-es="$100/mes">$100/mo</button>
+            <button class="budget-opt active" onclick="selectBudget(this, 175)" data-en="$175/mo ★" data-es="$175/mes ★">$175/mo ★</button>
+            <button class="budget-opt" onclick="selectBudget(this, 250)" data-en="$250/mo" data-es="$250/mes">$250/mo</button>
+            <button class="budget-opt" onclick="selectBudget(this, 350)" data-en="$350/mo" data-es="$350/mes">$350/mo</button>
+          </div>
+          <div class="budget-note" style="margin-top:8px;" id="ads-budget-note">★ Recommended for the Glendale grooming market · goes directly to Google</div>
         </div>
-      </div>
-
-      <div class="orange-callout">
-        <p class="t" data-en="A budget of $150–$200/mo is plenty to compete for grooming searches in Glendale. Say It Marketing builds and manages your first campaign — ask Shawn when you sign up." data-es="Un presupuesto de $150–$200/mes es suficiente para competir en búsquedas de grooming en Glendale. Say It Marketing crea y administra tu primera campaña — pregúntale a Shawn cuando te registres.">A budget of $150–$200/mo is plenty to compete for grooming searches in Glendale. Say It Marketing builds and manages your first campaign — ask Shawn when you sign up.</p>
+        <div class="ads-aside-footer t" data-en="Most clients start with SEO + Social and add Google Ads at month 2 once they see traction. Either way, I've got you." data-es="La mayoría de los clientes comienzan con SEO + Social y agregan Google Ads en el mes 2 una vez que ven resultados. De cualquier manera, estoy aquí para ayudarte.">Most clients start with SEO + Social and add Google Ads at month 2 once they see traction. Either way, I've got you.</div>
       </div>
     </div>
 
     <!-- ══ STEP 3 — SOCIAL ══ -->
-    <div class="sec-divider"><span class="t" data-en="Step 3 — Show Your Work" data-es="Paso 3 — Muestra tu Trabajo">Step 3 — Show Your Work</span></div>
+    <div class="sec-divider"><span class="t" data-en="Then — make them trust you before they call." data-es="Luego — haz que confíen en ti antes de llamar.">Then — make them trust you before they call.</span></div>
 
     <div class="pcard teal">
       <div class="pcard-step teal t" data-en="One-Time Setup · $250" data-es="Configuración Única · $250">One-Time Setup · $250</div>
@@ -704,7 +763,7 @@
     </div>
 
     <!-- ══ BUILD YOUR PLAN ══ -->
-    <div class="sec-divider"><span class="t" data-en="Build Your Plan" data-es="Arma Tu Plan">Build Your Plan</span></div>
+    <div class="sec-divider"><span class="t" data-en="Here's everything I've set up for you." data-es="Esto es todo lo que he preparado para ti.">Here's everything I've set up for you.</span></div>
 
     <!-- BUCKET 1: PAY SAY IT MARKETING -->
     <div class="bucket-label t" data-en="💳 You pay Say It Marketing" data-es="💳 Le pagas a Say It Marketing">💳 You pay Say It Marketing</div>
@@ -739,6 +798,9 @@
           </label>
         </div>
       </div>
+
+      <!-- Fight-back warning -->
+      <div class="toggle-warning" id="social-warning">Heads up — people who find you on Google will check your Instagram before they call. Without a branded profile, most won't book. You can add this anytime, but it's harder to catch up once competitors take that space.</div>
 
       <div class="builder-divider"></div>
 
@@ -819,7 +881,9 @@
         </div>
       </div>
 
-      <a class="btn btn-primary" id="cta-main-btn" href="#">Yes — Start On the Map</a>
+      <a class="btn btn-primary" id="cta-main-btn" href="#">Yes — I'm In. Let's Do This →</a>
+
+      <p class="next-steps-note t" data-en="After you tap, Shawn will call or text you within the hour to get everything set up." data-es="Después de tocar, Shawn te llamará o escribirá en menos de una hora para configurar todo.">After you tap, Shawn will call or text you within the hour to get everything set up.</p>
 
       <!-- Ads confirmation message — shows after tap when ads selected -->
       <div class="ads-confirm" id="ads-confirm" style="display:none;">
@@ -962,9 +1026,12 @@
 
       // Toggle row opacity
       document.getElementById('social-row').classList.toggle('off', !socialOn);
-      document.getElementById('ads-row').classList.toggle('off', !adsOn);
 
-      // Budget selector visibility
+      // Fight-back warning — social
+      var socialWarning = document.getElementById('social-warning');
+      if (socialWarning) socialWarning.style.display = socialOn ? 'none' : 'block';
+
+      // Budget selector visibility (ads aside)
       var budgetSection = document.getElementById('ads-budget-section');
       if (budgetSection) budgetSection.style.display = adsOn ? 'block' : 'none';
 
@@ -1001,37 +1068,37 @@
       var btn = document.getElementById('cta-main-btn');
       if (socialOn) {
         btn.href = links.bundle_seo_pro_social_setup || '/get-quote.html';
-        btn.textContent = lang==='es' ? 'Sí — Empezar (SEO + Social)' : 'Yes — Start (SEO + Social)';
+        btn.textContent = lang==='es' ? 'Sí — Estoy Lista. Vamos →' : 'Yes — I\'m In. Let\'s Do This →';
       } else {
         btn.href = links.sub_seo_pro || '/get-quote.html';
-        btn.textContent = lang==='es' ? 'Sí — Empezar En el Mapa' : 'Yes — Start On the Map';
+        btn.textContent = lang==='es' ? 'Sí — Empezar En el Mapa →' : 'Yes — Start On the Map →';
       }
 
       // CTA headline + sub
       var headline, sub, priceNote;
       if (socialOn && adsOn) {
-        headline  = lang==='es' ? 'Todo listo — empecemos.' : "You've got the full plan.";
+        headline  = lang==='es' ? 'Todo listo — empecemos.' : "You're all in. Let's go.";
         sub       = lang==='es'
-          ? 'Un pago para SEO + Social. Shawn te escribirá para los Ads.'
-          : 'One payment for SEO + Social. Shawn will reach out for Ads.';
-        priceNote = lang==='es' ? '$199/mes + $250 único · Google Ads directo a Google' : '$199/mo + $250 once · Google Ads direct to Google';
+          ? 'Un pago para SEO + Social. Shawn te contactará para los Ads de Google.'
+          : "One payment for SEO + Social. Shawn will reach out to get Google Ads running.";
+        priceNote = lang==='es' ? '$199/mes + $250 único · Google Ads directo a Google' : '$199/mo + $250 one-time · Google Ads goes directly to Google';
       } else if (socialOn) {
-        headline  = lang==='es' ? 'SEO + Social — perfecto.' : 'SEO + Social — great choice.';
+        headline  = lang==='es' ? 'Listo. Empecemos.' : "Ready. Let's build this.";
         sub       = lang==='es'
-          ? 'Un pago cubre todo. Estarás lista antes del 4 de mayo.'
-          : "One payment covers everything. You'll be set up before May 4th.";
+          ? 'Un pago cubre SEO + Social. Estarás lista antes del 4 de mayo.'
+          : "One payment covers SEO + Social. You'll be set up before May 4th.";
         priceNote = lang==='es' ? '$199/mes + $250 único' : '$199/mo + $250 one-time';
       } else if (adsOn) {
-        headline  = lang==='es' ? 'SEO + Google Ads — excelente.' : 'SEO + Google Ads — smart move.';
+        headline  = lang==='es' ? 'SEO + Google Ads — buena decisión.' : 'SEO + Google Ads — solid move.';
         sub       = lang==='es'
           ? 'Paga el SEO abajo. Shawn te escribe para configurar Google Ads.'
-          : 'Pay for SEO below. Shawn will text you to set up your Google Ads.';
+          : 'Pay for SEO below. Shawn will text you to get Google Ads going.';
         priceNote = lang==='es' ? '$199/mes · Google Ads directo a Google' : '$199/mo · Google Ads paid direct to Google';
       } else {
-        headline  = lang==='es' ? 'Empieza En el Mapa hoy.' : 'Start On the Map today.';
+        headline  = lang==='es' ? 'Empieza En el Mapa hoy.' : "Start getting found today.";
         sub       = lang==='es'
-          ? 'Toca abajo para empezar. Todo listo antes del 4 de mayo.'
-          : "Tap below to get started. Everything set up before May 4th.";
+          ? 'Todo listo antes del 4 de mayo. Shawn te contacta en menos de una hora.'
+          : "Everything set up before May 4th. Shawn reaches out within the hour.";
         priceNote = lang==='es' ? '$199/mes · cancela cuando quieras' : '$199/mo · cancel anytime';
       }
       document.getElementById('cta-headline').textContent  = headline;
