@@ -1,3 +1,27 @@
+## Session: April 29, 2026 — Part 5
+**AI:** Claude Code (Sonnet 4.6)
+**Worked on:** DNS migration to Netlify, site go-live
+
+### ✅ Completed This Session
+- Diagnosed DNS setup — domain registered at GoDaddy, was pointing to Namecheap BasicDNS
+- Captured existing MX records (jellyfish.systems × 3) before making any changes
+- Switched nameservers at GoDaddy to Netlify DNS (dns1-4.p05.nsone.net)
+- Added 3 MX records in Netlify DNS — email preserved, Spark email client required zero changes
+- sayitmarketing.com is fully live on Netlify with SSL provisioned
+- DNS propagated instantly — A record, nameservers, and MX all confirmed via lookup
+
+### ⏳ Still Pending
+- Lead form → Supabase test — submit get-quote.html and verify data lands in Supabase
+- Send Eimy proposal link (opens May 4)
+- Google Business Profile — still showing as CLOSED, fix ASAP
+
+### 🔜 Next (In Order)
+1. Test lead form — submit get-quote.html, check Supabase leads table
+2. Send Eimy proposal once site confirmed stable
+3. Fix Google Business Profile
+
+---
+
 ## Session: April 29, 2026 — Part 4
 **AI:** Claude Code (Sonnet 4.6)
 **Worked on:** Stripe bundle system — scalable for all proposals
