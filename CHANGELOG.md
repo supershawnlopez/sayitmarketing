@@ -1,3 +1,32 @@
+## Session: April 29, 2026 — Part 4
+**AI:** Claude Code (Sonnet 4.6)
+**Worked on:** Stripe bundle system — scalable for all proposals
+
+### ✅ Completed This Session
+- Created Stripe bundle payment link: SEO On the Map ($199/mo) + Social Setup ($250) = one checkout
+  → `https://pay.sayitmarketing.com/b/3cI4gA4PAfbraEQa1CbV60P`
+- Added `bundles` section to `stripe-links.js` with scalable naming convention
+  - `bundle_seo_pro_social_setup` — live and wired
+  - `bundle_seo_starter_social_setup` — stubbed, create when needed
+  - `bundle_seo_dominator_social_setup` — stubbed, create when needed
+- Updated `dogandcat.html` to load `stripe-links.js` and use key lookups — no more hardcoded URLs
+- Removed last TODO/fallback in proposal CTA — both button states (SEO only, SEO+Social) now fully wired
+- Committed and pushed to main — Netlify auto-deployed
+
+### ⏳ Still Pending
+- Netlify `SUPABASE_SERVICE_ROLE_KEY` — confirm set in dashboard
+- Lead form → Supabase test — submit get-quote.html and verify Supabase receives it
+- DNS / site loading — confirm sayitmarketing.com is resolving correctly
+- Google Business Profile — still showing as CLOSED, fix ASAP
+
+### 🔜 Next (In Order)
+1. Verify site loads at sayitmarketing.com
+2. Test lead form → Supabase (need SUPABASE_SERVICE_ROLE_KEY confirmed in Netlify)
+3. Send Eimy proposal link (opens May 4)
+4. Fix Google Business Profile
+
+---
+
 ## Session: April 29, 2026 — Part 3
 **AI:** Claude Code (Sonnet 4.6)
 **Worked on:** Stripe payment link audit and full wiring
