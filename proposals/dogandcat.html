@@ -858,7 +858,7 @@
     <div class="cta-card" id="cta-card">
       <div class="cta-eyebrow t" data-en="You're ready, Eimy." data-es="Estás lista, Eimy.">You're ready, Eimy.</div>
       <div class="cta-hed" id="cta-headline">Start On the Map today.</div>
-      <p class="cta-sub" id="cta-sub">Tap below — we'll reach out within the hour to get everything set up before May 4th.</p>
+      <p class="cta-sub" id="cta-sub">Tap below — we'll reach out within the hour to get everything set up.</p>
       <div class="cta-price" id="cta-price-big">$199</div>
       <div class="cta-freq" id="cta-freq-note">per month · cancel anytime</div>
 
@@ -885,7 +885,7 @@
       <!-- Ads confirmation message — shows after tap when ads selected -->
       <div class="ads-confirm" id="ads-confirm" style="display:none;">
         <div class="ads-confirm-icon">📱</div>
-        <div class="ads-confirm-text" id="ads-confirm-text">After payment, Shawn will reach out to get your Google Ads account set up before May 4th.</div>
+        <div class="ads-confirm-text" id="ads-confirm-text">After payment, Shawn will reach out to get your Google Ads account set up.</div>
       </div>
 
       <p class="cta-note t" data-en="Tap to pay securely. Questions? Call or text Shawn · (520) 222-6308" data-es="Toca para pagar de forma segura. ¿Preguntas? Llama o escríbele a Shawn · (520) 222-6308">Tap to pay securely. Questions? Call or text Shawn · (520) 222-6308</p>
@@ -895,7 +895,7 @@
     <div class="payment-success-banner" id="success-banner">
       <div class="success-icon">🎉</div>
       <div class="success-hed">You're all set!</div>
-      <div class="success-sub">Payment confirmed. Shawn will call or text you within the hour to get everything set up before May 4th.</div>
+      <div class="success-sub">Payment confirmed. Shawn will call or text you within the hour to get everything set up.</div>
     </div>
 
     <div class="proposal-footer">
@@ -1079,8 +1079,8 @@
         if (adsOn) {
           var adsConfirmText = document.getElementById('ads-confirm-text');
           if (adsConfirmText) adsConfirmText.textContent = lang==='es'
-            ? 'Después del pago, Shawn te contactará para configurar tu cuenta de Google Ads antes del 4 de mayo.'
-            : 'After payment, Shawn will reach out to get your Google Ads account set up before May 4th.';
+            ? 'Después del pago, Shawn te contactará para configurar tu cuenta de Google Ads.'
+            : 'After payment, Shawn will reach out to get your Google Ads account set up.';
         }
       }
 
@@ -1103,8 +1103,8 @@
       } else if (socialOn) {
         headline  = lang==='es' ? 'Listo. Empecemos.' : "Ready. Let's build this.";
         sub       = lang==='es'
-          ? 'Un pago cubre SEO + Social. Estarás lista antes del 4 de mayo.'
-          : "One payment covers SEO + Social. You'll be set up before May 4th.";
+          ? 'Un pago cubre SEO + Social. Shawn te contacta en menos de una hora.'
+          : "One payment covers SEO + Social. Shawn reaches out within the hour.";
         priceNote = lang==='es' ? '$199/mes + $250 único' : '$199/mo + $250 one-time';
       } else if (adsOn) {
         headline  = lang==='es' ? 'SEO + Google Ads — buena decisión.' : 'SEO + Google Ads — solid move.';
@@ -1115,8 +1115,8 @@
       } else {
         headline  = lang==='es' ? 'Empieza En el Mapa hoy.' : "Start getting found today.";
         sub       = lang==='es'
-          ? 'Todo listo antes del 4 de mayo. Shawn te contacta en menos de una hora.'
-          : "Everything set up before May 4th. Shawn reaches out within the hour.";
+          ? 'Shawn te contacta en menos de una hora para dejarte todo listo.'
+          : "Shawn reaches out within the hour to get everything set up.";
         priceNote = lang==='es' ? '$199/mes · cancela cuando quieras' : '$199/mo · cancel anytime';
       }
       document.getElementById('cta-headline').textContent  = headline;

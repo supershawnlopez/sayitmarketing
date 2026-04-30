@@ -1,3 +1,24 @@
+## Session: April 29, 2026 — Part 10
+**AI:** Claude Code (Sonnet 4.6)
+**Worked on:** Remove "before May 4th" from all proposal copy
+
+### ✅ Completed This Session
+- Removed "before May 4th" from success banner, CTA sub, ads-confirm text, and all updatePlan() JS strings (EN + ES)
+- Copy now reads: "Shawn will call or text you within the hour to get everything set up."
+- Safe to send to any client at any time — no date-specific language in post-payment flow
+
+### ⏳ Still Pending
+- Swap to live Stripe keys + live price IDs before sending Eimy the link
+- Send Eimy proposal (opens May 4)
+- Fix Google Business Profile — still showing CLOSED
+
+### 🔜 Next (In Order)
+1. Swap STRIPE_SECRET_KEY + STRIPE_PUBLISHABLE_KEY to live keys in Netlify
+2. Update create-checkout-session.js to use live price IDs (lines already commented in)
+3. Send Eimy proposal
+
+---
+
 ## Session: April 29, 2026 — Part 9
 **AI:** Claude Code (Sonnet 4.6)
 **Worked on:** Stripe test mode setup for payment modal testing
