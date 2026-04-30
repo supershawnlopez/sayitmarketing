@@ -1,3 +1,36 @@
+## Session: April 29, 2026 — Part 6
+**AI:** Claude Code (Sonnet 4.6)
+**Worked on:** Proposal sales machine rebuild + bug fixes
+
+### ✅ Completed This Session
+- Rebuilt dogandcat.html as a "sales machine" — consults, doesn't pitch
+- Stripped nav to logo + phone only (zero escape routes)
+- Added market diagnosis section (3 punchy insights that create urgency before any services)
+- Replaced Step 1/2/3 headers with conversational copy
+- Cut SEO reason paragraphs to 3 punchy bullet lines
+- Google Ads redesigned as low-pressure conversational aside — starts unchecked
+- Fight-back toggle: turning off Social shows a consequence warning
+- CTA: "Yes — I'm In. Let's Do This →" + "Shawn texts you within the hour"
+- Fixed JS crash (null reference on ads-confirm) that was blocking pay button
+- Removed duplicate ads builder card (had duplicate IDs breaking everything)
+- Pay button now opens Stripe in new tab (target="_blank")
+- Sheet buttons now close + smooth scroll to plan builder
+- Social sheet button turns social toggle ON before scrolling (machine behavior)
+- Fixed "Call Shawn" translation bug in social sheet button
+
+### ⏳ Still Pending
+- Send Eimy proposal link (opens May 4)
+- Google Business Profile — still showing as CLOSED, fix ASAP
+- Portfolio — add 3–5 real client screenshots
+- Testimonials — add 2–3 real client quotes to homepage
+
+### 🔜 Next (In Order)
+1. Send Eimy proposal once fully tested
+2. Fix Google Business Profile
+3. Portfolio + testimonials
+
+---
+
 ## Session: April 29, 2026 — Part 5
 **AI:** Claude Code (Sonnet 4.6)
 **Worked on:** DNS migration to Netlify, site go-live
