@@ -763,7 +763,7 @@
     </div>
 
     <!-- ══ BUILD YOUR PLAN ══ -->
-    <div class="sec-divider"><span class="t" data-en="Here's everything I've set up for you." data-es="Esto es todo lo que he preparado para ti.">Here's everything I've set up for you.</span></div>
+    <div class="sec-divider" id="plan-builder-section"><span class="t" data-en="Here's everything I've set up for you." data-es="Esto es todo lo que he preparado para ti.">Here's everything I've set up for you.</span></div>
 
     <!-- BUCKET 1: PAY SAY IT MARKETING -->
     <div class="bucket-label t" data-en="💳 You pay Say It Marketing" data-es="💳 Le pagas a Say It Marketing">💳 You pay Say It Marketing</div>
@@ -839,7 +839,7 @@
         </div>
       </div>
 
-      <a class="btn btn-primary" id="cta-main-btn" href="#">Yes — I'm In. Let's Do This →</a>
+      <a class="btn btn-primary" id="cta-main-btn" href="#" target="_blank" rel="noopener">Yes — I'm In. Let's Do This →</a>
 
       <p class="next-steps-note t" data-en="After you tap, Shawn will call or text you within the hour to get everything set up." data-es="Después de tocar, Shawn te llamará o escribirá en menos de una hora para configurar todo.">After you tap, Shawn will call or text you within the hour to get everything set up.</p>
 
@@ -902,7 +902,7 @@
           <span class="toggle-track"></span>
         </label>
       </div>
-      <button class="sheet-cta" onclick="closeSheet('seo')" id="seo-cta-btn">Got it — close</button>
+      <button class="sheet-cta" onclick="closeSheetAndContinue('seo')" id="seo-cta-btn">Got it — show me the plan ↓</button>
     </div>
   </div>
 
@@ -956,7 +956,7 @@
           <span class="toggle-track"></span>
         </label>
       </div>
-      <button class="sheet-cta" style="background:#0055b3;" onclick="closeSheet('social')" id="social-cta-btn">Got it — close</button>
+      <button class="sheet-cta" style="background:#0055b3;" onclick="closeSheetAndContinue('social', 'add-social')" id="social-cta-btn">Yes — add this to my plan ↓</button>
     </div>
   </div>
 
@@ -1009,11 +1009,14 @@
 
       // Ads confirm message
       var adsConfirm = document.getElementById('ads-confirm');
-      adsConfirm.style.display = adsOn ? 'flex' : 'none';
-      if (adsOn) {
-        document.getElementById('ads-confirm-text').textContent = lang==='es'
-          ? 'Después del pago, Shawn te contactará para configurar tu cuenta de Google Ads antes del 4 de mayo.'
-          : 'After payment, Shawn will reach out to get your Google Ads account set up before May 4th.';
+      if (adsConfirm) {
+        adsConfirm.style.display = adsOn ? 'flex' : 'none';
+        if (adsOn) {
+          var adsConfirmText = document.getElementById('ads-confirm-text');
+          if (adsConfirmText) adsConfirmText.textContent = lang==='es'
+            ? 'Después del pago, Shawn te contactará para configurar tu cuenta de Google Ads antes del 4 de mayo.'
+            : 'After payment, Shawn will reach out to get your Google Ads account set up before May 4th.';
+        }
       }
 
       // Stripe links pulled from stripe-links.js so any update there propagates here
@@ -1099,6 +1102,23 @@
       document.body.style.overflow = '';
     }
 
+    function closeSheetAndContinue(id, action) {
+      closeSheet(id);
+      if (action === 'add-social') {
+        var t = document.getElementById('social-toggle');
+        if (t) { t.checked = true; }
+        var st = document.getElementById('social-sheet-toggle');
+        if (st) st.checked = true;
+        var sst = document.getElementById('seo-sheet-social-toggle');
+        if (sst) sst.checked = true;
+        updatePlan();
+      }
+      setTimeout(function() {
+        var target = document.getElementById('plan-builder-section') || document.getElementById('cta-card');
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 340);
+    }
+
     /* ── Language toggle ── */
     var translations = {
       en: {
@@ -1110,7 +1130,7 @@
         'seo-inc-label': 'What\'s included every month',
         'seo-price-label': 'Monthly plan',
         'seo-price-note': 'Cancel anytime · no contracts',
-        'seo-cta-btn': 'Yes — Start On the Map',
+        'seo-cta-btn': 'Got it — show me the plan ↓',
         /* Social sheet */
         'social-sheet-step': 'One-Time Setup · $250',
         'social-sheet-title': 'Social Media Setup',
@@ -1122,7 +1142,7 @@
         'social-hw3': 'Add ongoing monthly management at any time for $250/mo',
         'social-price-label': 'One-time setup fee',
         'social-price-note': 'Paid once — yours forever',
-        'social-cta-btn': 'Call Shawn to Add This → (520) 222-6308'
+        'social-cta-btn': 'Yes — add this to my plan ↓'
       },
       es: {
         langBtn: 'View in English',
@@ -1132,7 +1152,7 @@
         'seo-inc-label': 'Qué incluye cada mes',
         'seo-price-label': 'Plan mensual',
         'seo-price-note': 'Cancela cuando quieras · sin contratos',
-        'seo-cta-btn': 'Sí — Empezar En el Mapa',
+        'seo-cta-btn': 'Entendido — ver mi plan ↓',
         'social-sheet-step': 'Configuración Única · $250',
         'social-sheet-title': 'Configuración de Redes Sociales',
         'social-sheet-sub': 'Configuramos las tres plataformas, todo con tu marca, y te entregamos un paquete de lanzamiento para que publiques desde el primer día.',
@@ -1143,7 +1163,7 @@
         'social-hw3': 'Agrega gestión mensual continua en cualquier momento por $250/mes',
         'social-price-label': 'Tarifa de configuración única',
         'social-price-note': 'Se paga una vez — tuyo para siempre',
-        'social-cta-btn': 'Llama a Shawn para agregar esto → (520) 222-6308'
+        'social-cta-btn': 'Sí — agregar esto a mi plan ↓'
       }
     };
 
