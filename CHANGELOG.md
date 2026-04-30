@@ -1,3 +1,30 @@
+## Session: April 29, 2026 — Part 12
+**AI:** Claude Code (Sonnet 4.6)
+**Worked on:** Welcome email after payment via Resend
+
+### ✅ Completed This Session
+- Added sendWelcomeEmail() to stripe-webhook.js — fires on checkout.session.completed
+- Uses Resend REST API (no npm) from hello@sayitmarketing.com
+- Email: "Payment went through — you're all set! I'll call or text you within 24 hours."
+- RESEND_API_KEY read from Netlify env var (never in code)
+
+### ⏳ Still Pending — ACTION REQUIRED
+- Add RESEND_API_KEY to Netlify → Site settings → Environment variables
+- Verify sayitmarketing.com domain in Resend dashboard → Domains (required to send from hello@sayitmarketing.com)
+- Add DNS records Resend gives you into Netlify DNS
+- Swap Stripe keys to live (sk_live + pk_live) + live price IDs before sending Eimy link
+- Send Eimy proposal (opens May 4)
+- Fix Google Business Profile — still showing CLOSED
+
+### 🔜 Next (In Order)
+1. Add RESEND_API_KEY to Netlify env vars
+2. Verify domain in Resend + add DNS records
+3. Swap to live Stripe keys + live price IDs
+4. Test full flow end to end
+5. Send Eimy proposal
+
+---
+
 ## Session: April 29, 2026 — Part 11
 **AI:** Claude Code (Sonnet 4.6)
 **Worked on:** Success banner copy update

@@ -3,6 +3,7 @@ const { json, supabase } = require("./_shared");
 
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET || "";
 const STRIPE_PLACEHOLDER_MODE = (process.env.STRIPE_PLACEHOLDER_MODE || "true").toLowerCase() === "true";
+const RESEND_API_KEY = process.env.RESEND_API_KEY || "";
 
 function verifySignature(rawBody, signatureHeader, secret) {
   // Placeholder-compatible HMAC verification for local/mock testing.
@@ -191,6 +192,31 @@ async function upsertOrderAndPayment(session, state) {
   return { ok: true };
 }
 
+async function sendWelcomeEmail(toEmail, toName) {
+  if (!RESEND_API_KEY) {
+    console.error('[welcome-email] RESEND_API_KEY not set');
+    return;
+  }
+  const firstName = toName ? toName.split(' ')[0] : 'there';
+  const res = await fetch('https://api.resend.com/emails', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${RESEND_API_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      from: 'Shawn at Say It Marketing <hello@sayitmarketing.com>',
+      to: [toEmail],
+      subject: "You're in! Talk soon.",
+      html: `<p>Hey ${firstName},</p><p>Payment went through — you're all set!</p><p>I'll call or text you within 24 hours to get everything going.</p><p>Talk soon,<br><br>Shawn<br>Say It Marketing · (520) 222-6308</p>`
+    })
+  });
+  if (!res.ok) {
+    const err = await res.json();
+    console.error('[welcome-email] Resend error:', JSON.stringify(err));
+  }
+}
+
 exports.handler = async (event) => {
   if (event.httpMethod === "OPTIONS") return json(200, { ok: true });
   if (event.httpMethod !== "POST") return json(405, { error: "Method not allowed" });
@@ -231,6 +257,9 @@ exports.handler = async (event) => {
 
   if (eventType === "checkout.session.completed") {
     const result = await upsertOrderAndPayment(session, "paid");
+    const customerEmail = session?.customer_details?.email;
+    const customerName = session?.customer_details?.name;
+    if (customerEmail) await sendWelcomeEmail(customerEmail, customerName);
     return json(200, { ok: true, event: eventType, result });
   }
 
