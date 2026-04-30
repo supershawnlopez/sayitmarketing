@@ -1,3 +1,28 @@
+## Session: April 29, 2026 — Part 9
+**AI:** Claude Code (Sonnet 4.6)
+**Worked on:** Stripe test mode setup for payment modal testing
+
+### ✅ Completed This Session
+- Created test mode products + prices in Stripe: SEO On the Map ($199/mo) + Social Setup ($250 one-time)
+- Updated create-checkout-session.js to use test price IDs
+- Live price IDs kept as comments — swap back when ready to go live
+
+### ⏳ Still Pending
+- Set STRIPE_PUBLISHABLE_KEY in Netlify to your pk_test_ key (Stripe → Developers → API keys → Test mode)
+- Test payment modal with Stripe test card: 4242 4242 4242 4242, any future exp, any CVC
+- After test passes: swap price IDs back to live + change STRIPE_SECRET_KEY + STRIPE_PUBLISHABLE_KEY to live keys
+- Send Eimy proposal (opens May 4)
+- Fix Google Business Profile — still showing CLOSED
+
+### 🔜 Next (In Order)
+1. Add pk_test_ key to Netlify as STRIPE_PUBLISHABLE_KEY → triggers redeploy
+2. Test pay button with test card
+3. Confirm success banner shows after payment
+4. Swap to live keys + live price IDs
+5. Send Eimy proposal
+
+---
+
 ## Session: April 29, 2026 — Part 8
 **AI:** Claude Code (Sonnet 4.6)
 **Worked on:** Payment modal debug logging + Netlify redeploy trigger
