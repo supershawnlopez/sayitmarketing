@@ -44,9 +44,10 @@ This is not a brochure. This is a **sales and revenue engine** that runs while S
 | Database | Supabase | `https://hclptwixokdjtvtdgyfw.supabase.co` |
 | Payments | Stripe | Payment links + subscriptions |
 | Forms | Netlify Functions → Supabase | Lead capture with scoring + automation queue |
-| Email | Google Workspace | hello@sayitmarketing.com |
+| Email | Namecheap Private Email (Roundcube) | hello@sayitmarketing.com · DNS on Netlify |
+| Transactional Email | Resend | Lead notifications → shawnlopez@me.com via RESEND_API_KEY |
 | Fonts | Outfit (Google Fonts) | Primary font across all pages |
-| Domain | sayitmarketing.com | DNS on Namecheap |
+| Domain | sayitmarketing.com | DNS managed on Netlify (NOT Namecheap DNS) |
 
 **Never add:** Cloudflare, WordPress, paid SSL, custom payment systems, unnecessary npm packages, or any tool that requires ongoing maintenance without a clear revenue reason.
 

@@ -1,3 +1,35 @@
+## Session: May 26, 2026 (continued) — UX Fixes + DNS Audit
+**AI:** Claude Code (Sonnet 4.6)
+**Worked on:** advertising-management.html UX fixes, DNS troubleshooting
+
+### ✅ Completed This Session
+- Fixed auto-scroll on platform selection (no more page jump on mobile)
+- Added Spanish toggle (`Ver en Español`) — full bilingual support via data-en/data-es
+- Budget buttons no longer pre-selected — summary shows "You choose" until user taps
+- Step 3 now styled as numbered step label (matching Steps 1, 2, 4)
+- Lang toggle made prominent: filled brand-blue pill button
+- DNS audit for sayitmarketing.com:
+  - Confirmed Namecheap Private Email (Roundcube) is active — NOT Google Workspace
+  - MX records (jellyfish.systems) are correct for Namecheap ✅
+  - SPF record added: `v=spf1 include:spf.privateemail.com include:amazonses.com ~all` ✅
+  - Resend DKIM confirmed live ✅
+  - Updated PROJECT.md: corrected "Google Workspace" → "Namecheap Private Email"
+
+### ⏳ Still Pending
+- Namecheap DKIM missing: `default._domainkey.sayitmarketing.com` returns NXDOMAIN
+  → Get DKIM record from Namecheap Private Email admin → add to Netlify DNS
+- Link advertising-management.html from main site nav or homepage
+- RESEND_API_KEY — verify it's set in Netlify environment variables
+- Stripe signed webhook validation (still open from May 1)
+
+### 🔜 Next (In Order)
+1. Namecheap DKIM: log into Namecheap Private Email → enable DKIM → add TXT record to Netlify DNS
+2. Verify RESEND_API_KEY is set in Netlify dashboard
+3. Link advertising-management.html from homepage
+4. Run Stripe signed webhook test
+
+---
+
 ## Session: May 26, 2026 — Ad Management Page + Eimy Review
 **AI:** Claude Code (Sonnet 4.6)
 **Worked on:** New advertising-management.html page + dogandcat.html review
