@@ -2,15 +2,47 @@ const crypto = require("crypto");
 const { json, supabase } = require("./_shared");
 
 const STRIPE_WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET || "";
-const STRIPE_PLACEHOLDER_MODE = (process.env.STRIPE_PLACEHOLDER_MODE || "true").toLowerCase() === "true";
+const STRIPE_PLACEHOLDER_MODE = (process.env.STRIPE_PLACEHOLDER_MODE || "false").toLowerCase() === "true";
+const SIG_TOLERANCE_SECONDS = Number(process.env.STRIPE_SIG_TOLERANCE_SECONDS || 300);
 const RESEND_API_KEY = process.env.RESEND_API_KEY || "";
 
-function verifySignature(rawBody, signatureHeader, secret) {
-  // Placeholder-compatible HMAC verification for local/mock testing.
-  // Real Stripe verification should be switched to stripe.webhooks.constructEvent once Stripe SDK is added.
+function parseStripeSignatureHeader(signatureHeader) {
+  const parts = String(signatureHeader || "")
+    .split(",")
+    .map((p) => p.trim())
+    .filter(Boolean);
+  const parsed = { t: null, v1: [] };
+  for (const part of parts) {
+    const [k, v] = part.split("=");
+    if (!k || !v) continue;
+    if (k === "t") parsed.t = v;
+    if (k === "v1") parsed.v1.push(v);
+  }
+  return parsed;
+}
+
+function timingSafeEqualHex(a, b) {
+  if (!a || !b || a.length !== b.length) return false;
+  return crypto.timingSafeEqual(Buffer.from(a, "utf8"), Buffer.from(b, "utf8"));
+}
+
+function verifyStripeSignature(rawBody, signatureHeader, secret) {
   if (!secret || !signatureHeader) return false;
-  const digest = crypto.createHmac("sha256", secret).update(rawBody, "utf8").digest("hex");
-  return crypto.timingSafeEqual(Buffer.from(digest), Buffer.from(signatureHeader));
+  const parsed = parseStripeSignatureHeader(signatureHeader);
+  if (!parsed.t || !parsed.v1.length) return false;
+
+  const ts = Number(parsed.t);
+  if (!Number.isFinite(ts)) return false;
+  const age = Math.abs(Math.floor(Date.now() / 1000) - ts);
+  if (age > SIG_TOLERANCE_SECONDS) return false;
+
+  const signedPayload = `${parsed.t}.${rawBody}`;
+  const expected = crypto
+    .createHmac("sha256", secret)
+    .update(signedPayload, "utf8")
+    .digest("hex");
+
+  return parsed.v1.some((sig) => timingSafeEqualHex(expected, sig));
 }
 
 async function eventSeen(eventId) {
@@ -252,6 +284,13 @@ exports.handler = async (event) => {
   if (event.httpMethod === "OPTIONS") return json(200, { ok: true });
   if (event.httpMethod !== "POST") return json(405, { error: "Method not allowed" });
 
+  if (process.env.NODE_ENV === "production" && STRIPE_PLACEHOLDER_MODE) {
+    return json(500, { error: "Unsafe Stripe placeholder mode in production" });
+  }
+  if (!STRIPE_WEBHOOK_SECRET) {
+    return json(500, { error: "Stripe webhook secret not configured" });
+  }
+
   const rawBody = event.body || "";
   let payload;
   try {
@@ -266,14 +305,9 @@ exports.handler = async (event) => {
     event.headers["x-stripe-placeholder-signature"] ||
     "";
 
-  const verified = verifySignature(rawBody, signatureHeader, STRIPE_WEBHOOK_SECRET);
-  if (!verified && !STRIPE_PLACEHOLDER_MODE) {
+  const verified = verifyStripeSignature(rawBody, signatureHeader, STRIPE_WEBHOOK_SECRET);
+  if (!verified) {
     return json(401, { error: "Signature verification failed" });
-  }
-
-  if (!STRIPE_WEBHOOK_SECRET && STRIPE_PLACEHOLDER_MODE) {
-    // Placeholder mode expected until Stripe is configured.
-    // Accept event JSON directly.
   }
 
   const eventId = payload.id || `placeholder-${Date.now()}`;

@@ -5,11 +5,11 @@ function getAdminKey(event) {
 }
 
 exports.handler = async (event) => {
-  if (event.httpMethod === "OPTIONS") return json(200, { ok: true });
-  if (event.httpMethod !== "GET") return json(405, { error: "Method not allowed" });
+  if (event.httpMethod === "OPTIONS") return json(200, { ok: true }, event, "admin");
+  if (event.httpMethod !== "GET") return json(405, { error: "Method not allowed" }, event, "admin");
 
   if (getAdminKey(event) !== process.env.ADMIN_API_KEY) {
-    return json(401, { error: "Unauthorized" });
+    return json(401, { error: "Unauthorized" }, event, "admin");
   }
 
   const params = new URLSearchParams(event.queryStringParameters || {});
@@ -32,7 +32,7 @@ exports.handler = async (event) => {
       supabase("leads?select=id", { method: "GET", headers: { Prefer: "count=exact", Range: "0-0" } })
     ]);
 
-    if (!itemsRes.ok) return json(500, { error: "Failed pipeline query", detail: await itemsRes.text() });
+    if (!itemsRes.ok) return json(500, { error: "Failed pipeline query" }, event, "admin");
     const total = Number(totalRes.headers.get("content-range")?.split("/")[1] || 0);
     const items = await itemsRes.json();
 
@@ -45,8 +45,8 @@ exports.handler = async (event) => {
     const newRes = await supabase("leads?select=id&status=eq.new", { method: "GET" });
     if (newRes.ok) summary.new = (await newRes.json()).length;
 
-    return json(200, { items, page, page_size: pageSize, total, summary });
+    return json(200, { items, page, page_size: pageSize, total, summary }, event, "admin");
   } catch (err) {
-    return json(500, { error: "Unhandled error", detail: err.message });
+    return json(500, { error: "Unhandled error" }, event, "admin");
   }
 };

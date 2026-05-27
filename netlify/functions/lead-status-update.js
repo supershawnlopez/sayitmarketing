@@ -5,21 +5,21 @@ function getAdminKey(event) {
 }
 
 exports.handler = async (event) => {
-  if (event.httpMethod === "OPTIONS") return json(200, { ok: true });
-  if (event.httpMethod !== "PATCH") return json(405, { error: "Method not allowed" });
-  if (getAdminKey(event) !== process.env.ADMIN_API_KEY) return json(401, { error: "Unauthorized" });
+  if (event.httpMethod === "OPTIONS") return json(200, { ok: true }, event, "admin");
+  if (event.httpMethod !== "PATCH") return json(405, { error: "Method not allowed" }, event, "admin");
+  if (getAdminKey(event) !== process.env.ADMIN_API_KEY) return json(401, { error: "Unauthorized" }, event, "admin");
 
   let payload;
   try {
     payload = JSON.parse(event.body || "{}");
   } catch {
-    return json(400, { error: "Invalid JSON payload" });
+    return json(400, { error: "Invalid JSON payload" }, event, "admin");
   }
 
   const path = event.path || "";
   const match = path.match(/\/api\/leads\/(\d+)\/status$/);
   const leadId = match ? Number(match[1]) : 0;
-  if (!leadId || !payload.status) return json(400, { error: "lead id and status are required" });
+  if (!leadId || !payload.status) return json(400, { error: "lead id and status are required" }, event, "admin");
 
   const update = {
     status: String(payload.status).toLowerCase().trim(),
@@ -31,10 +31,10 @@ exports.handler = async (event) => {
       method: "PATCH",
       body: JSON.stringify(update)
     });
-    if (!res.ok) return json(500, { error: "Failed to update lead", detail: await res.text() });
+    if (!res.ok) return json(500, { error: "Failed to update lead" }, event, "admin");
     const rows = await res.json();
-    return json(200, rows[0] || { updated: true });
+    return json(200, rows[0] || { updated: true }, event, "admin");
   } catch (err) {
-    return json(500, { error: "Unhandled error", detail: err.message });
+    return json(500, { error: "Unhandled error" }, event, "admin");
   }
 };

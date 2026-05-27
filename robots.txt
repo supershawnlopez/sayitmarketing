@@ -1,4 +1,8 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /tmp/
+Disallow: /proposals/
+Disallow: /thank-you.html
 
 Sitemap: https://sayitmarketing.com/sitemap.xml

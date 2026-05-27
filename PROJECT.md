@@ -87,6 +87,7 @@ Light Gray:     #F3F4F4  — Card backgrounds, subtle dividers
 | `contact.html` | Contact page | Live |
 | `print-services.html` | Print + branded merchandise brokerage | Live |
 | `thank-you.html` | Post-form submission confirmation | Live |
+| `advertising-management.html` | Paid ad management — Google + Social interactive selector, pricing, lead form | Live |
 | `proposals/dogandcat.html` | Client proposal — Eimy Martinez, Dog & Cat Groomer | Live |
 
 **Assets:**
@@ -240,6 +241,8 @@ Follow-up queue. Each lead gets jobs at day 1, 3, 7 after submission.
 
 ## AGENT ROLES — FOR MULTI-AGENT WORKFLOWS
 
+Full operating workflow and handoff format are defined in `AGENTS.md`.
+
 When multiple AI agents work on this codebase, assign roles clearly:
 
 ### 🎨 Design Agent
@@ -335,3 +338,5 @@ Rules: Never commit secrets. Always validate inputs server-side. Always sanitize
 *This file lives at the root of the sayitmarketing GitHub repo.*
 *Every AI working on this project reads this first.*
 *Keep it updated. Keep it honest. Keep it focused on revenue.*
+
+

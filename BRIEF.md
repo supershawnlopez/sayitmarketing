@@ -10,8 +10,10 @@ Before you write a single line of code, make a single suggestion, or take any ac
 
 1. Read `PROJECT.md` — who Shawn is, what this project is, brand system, tech stack, pricing, site structure
 2. Read `CHANGELOG.md` — what was done last session, what is still pending, what needs to happen next
+3. Read `AGENTS.md` — which agent owns what, handoff format, and execution workflow
+4. Read `TASKS.md` — current phase, what is in NOW, what is NEXT, what is BACKLOG
 
-If either file is missing from this repo — stop and tell Shawn before proceeding.
+If any required file is missing from this repo — stop and tell Shawn before proceeding.
 
 ---
 
@@ -31,6 +33,10 @@ If Shawn wants to move to something new but there are unfinished critical items,
 > "Before we move on — we still have [X] pending that could block [Y]. Do you want to finish that first, or proceed anyway? I'll follow your lead."
 
 Never silently skip pending items. Never assume they've been handled. Always surface them.
+
+Before starting implementation, confirm work aligns with `TASKS.md`:
+- If task is in `NOW`, proceed after approval.
+- If task is not in `NOW`, add it to `BACKLOG` first (or re-rank `NOW` with Shawn approval).
 
 ---
 
@@ -128,6 +134,8 @@ If a task could benefit from multiple specialized agents:
 - Explain which agent would do which part
 - Help set it up if you can
 
+Execution details live in `AGENTS.md` and are mandatory for multi-agent work.
+
 **Known agent roles for this project** (see PROJECT.md for full details):
 - 🎨 Design Agent — Visual, typography, spacing, accessibility
 - ⚙️ Function Agent — Backend, Supabase, Stripe, Netlify functions
@@ -155,6 +163,8 @@ Before ending any session, you must:
 
 3. **Confirm** the next steps are clear:
    > "Next session, start by reading BRIEF.md and we'll pick up from [X]."
+
+4. **Update `AGENTS.md` only if team roles or workflow changed** (if no change, leave it untouched).
 
 **No session ends without an updated CHANGELOG. No exceptions.**
 
@@ -195,3 +205,5 @@ Before ending any session, you must:
 *BRIEF.md is the standard entry point for every project Shawn works on.*
 *Every project has one. Every AI reads it first. Every session starts here.*
 *Copy this template to new projects and update the project-specific sections.*
+
+

@@ -2,6 +2,11 @@ const { json } = require('./_shared');
 
 const STRIPE_SECRET_KEY     = process.env.STRIPE_SECRET_KEY;
 const STRIPE_PUBLISHABLE_KEY = process.env.STRIPE_PUBLISHABLE_KEY;
+const SITE_URL = (process.env.SITE_URL || "https://sayitmarketing.com").replace(/\/$/, "");
+const ALLOWED_RETURN_ORIGINS = (process.env.ALLOWED_RETURN_ORIGINS || "https://sayitmarketing.com,https://www.sayitmarketing.com")
+  .split(",")
+  .map((v) => v.trim().replace(/\/$/, ""))
+  .filter(Boolean);
 
 const PRICES = {
   // LIVE MODE
@@ -33,8 +38,9 @@ exports.handler = async (event) => {
   params.append('metadata[google_ads_budget]', ads ? `$${adsBudget || 175}/mo` : 'none');
   params.append('metadata[proposal]', 'dogandcat');
 
-  const origin = event.headers.origin || 'https://sayitmarketing.com';
-  params.append('return_url', `${origin}/proposals/dogandcat?payment=complete&session_id={CHECKOUT_SESSION_ID}`);
+  const requestOrigin = (event.headers.origin || event.headers.Origin || "").trim().replace(/\/$/, "");
+  const returnOrigin = ALLOWED_RETURN_ORIGINS.includes(requestOrigin) ? requestOrigin : SITE_URL;
+  params.append('return_url', `${returnOrigin}/proposals/dogandcat?payment=complete&session_id={CHECKOUT_SESSION_ID}`);
 
   const res = await fetch('https://api.stripe.com/v1/checkout/sessions', {
     method: 'POST',

@@ -1,3 +1,162 @@
+## Session: May 26, 2026 — Ad Management Page + Eimy Review
+**AI:** Claude Code (Sonnet 4.6)
+**Worked on:** New advertising-management.html page + dogandcat.html review
+
+### ✅ Completed This Session
+- Reviewed dogandcat.html — identified stale May 4th copy, missing Google Ads builder bucket, duplicate success banner text
+- Confirmed Eimy paid $449 total ($199/mo SEO + $250 social setup) — deal closed
+- Clarified Eimy did NOT get Google Ads (was never charged, flow was for Shawn to set up separately)
+- Built `advertising-management.html` — public page for any prospect:
+  - Interactive platform selector (Google / Social / Both)
+  - Two-bucket pricing model clearly labeled (platform budget vs. Shawn's fee)
+  - Pricing: $125/mo single · $199/mo both · Existing client: $99/$149
+  - Budget selector (platform spend: $100–$500/mo)
+  - Professional video upgrade ($599 one-time — Shawn on-site, 1 hero + 3 short cuts)
+  - Live summary card updates as they make selections
+  - Form submits to /api/lead-create → Supabase with full plan details
+  - Full SEO/AEO/GEO: title, meta, canonical, OG, JSON-LD schema + FAQ schema
+  - Added to sitemap.xml (priority 0.9)
+  - Added to PROJECT.md site structure
+
+### ⏳ Still Pending
+- Push to GitHub → triggers Netlify deploy
+- Add advertising-management.html link to main site nav or homepage
+- Fix stale copy on dogandcat.html (May 4th references) — low priority since deal is closed
+- Text Eimy about Google Ads interest (do it manually, not through page)
+- Phase 1 NOW task still open: Stripe signed webhook validation
+
+### 🔜 Next (In Order)
+1. Push to GitHub (Shawn approval required)
+2. Link advertising-management.html from homepage or nav
+3. Send Eimy a text about Google Ads
+4. Run Stripe signed webhook validation test
+
+## Session: May 1, 2026 — Part 20 — Pause Point
+**AI:** Codex (GPT-5)
+**Worked on:** Session wrap + handoff state
+
+### ? Completed This Session
+- Repo sync verified against GitHub (`0 behind / 0 ahead` before new local edits)
+- Phase 1 hardening implemented across webhook/CORS/dedupe/return URL controls
+- Task control system added (`TASKS.md`) and wired into `BRIEF.md`
+
+### ? Still Pending
+- Stripe signed webhook live validation has not been run yet (final NOW task)
+
+### ?? Next (In Order)
+1. Run Stripe test event from Stripe dashboard to webhook endpoint
+2. Check Netlify `stripe-webhook` logs for signature pass + single processing
+3. If pass, move to NEXT queue item: quote flow conversion cleanup
+
+### Start Here Tomorrow
+- Read `BRIEF.md` -> `PROJECT.md` -> `CHANGELOG.md` -> `AGENTS.md` -> `TASKS.md`
+- Then execute `TASKS.md` NOW item #1 only (Stripe signed webhook validation)
+## Session: May 1, 2026 � Part 19 � Return URL Hardening
+**AI:** Codex (GPT-5)
+**Worked on:** Stripe checkout return URL origin allowlist
+
+### ? Completed This Session
+- Updated `netlify/functions/create-checkout-session.js` to stop trusting arbitrary request origin
+- Added strict allowlist logic for return URL origin selection
+  - `SITE_URL` fallback used when request origin is not allowlisted
+  - `ALLOWED_RETURN_ORIGINS` env var supported for explicit allowed domains
+- Updated `.env.example` with `SITE_URL` and `ALLOWED_RETURN_ORIGINS`
+- Updated `TASKS.md` to mark return URL hardening done
+
+### ? Still Pending
+- TASKS NOW #1: Validate webhook with real signed Stripe test event in deployed environment
+
+### ?? Next (In Order)
+1. Run Stripe signed-event validation and verify Netlify logs
+2. Continue NEXT queue conversion fixes (quote flow + thank-you CTA + OG metadata)
+## Session: May 1, 2026 � Part 18 � Phase 1 (Security + Dedupe Pass)
+**AI:** Codex (GPT-5)
+**Worked on:** TASKS Phase 1 items #2 and #3
+
+### ? Completed This Session
+- Implemented endpoint-scoped CORS and safer response behavior in functions
+  - Updated shared response helper in `netlify/functions/_shared.js`
+  - Public endpoints now use public origin allowlist behavior
+  - Admin endpoints now use restricted admin CORS scope
+- Sanitized server error responses on admin/public function paths (removed raw backend detail leakage)
+- Added lead duplicate guard in `netlify/functions/lead-create.js`
+  - 10-minute dedupe check by email and phone
+  - Duplicate submissions return existing lead response with `duplicate: true`
+- Changed spam handling in `lead-create.js` to accept-and-drop (`202`) instead of persisting honeypot spam rows
+- Added queued-job claim step in `netlify/functions/automation-runner.js` before processing to reduce race-based duplicate runs
+- Updated `.env.example` with safer defaults (`STRIPE_PLACEHOLDER_MODE=false`) and `ALLOWED_PUBLIC_ORIGINS`
+- Updated `TASKS.md` statuses to reflect completed items
+
+### ? Still Pending
+- TASKS NOW #1: Validate webhook with real signed Stripe test event against deployed Netlify function
+
+### ?? Next (In Order)
+1. Run Stripe signed-event validation and confirm logs
+2. Harden checkout return URL allowlist in `create-checkout-session.js`
+3. Continue Phase 1 conversion fixes from NEXT queue
+## Session: May 1, 2026 � Part 17 � Task Control System
+**AI:** Codex (GPT-5)
+**Worked on:** Anti-drift phase/task process
+
+### ? Completed This Session
+- Created `TASKS.md` as execution board and single source of truth for active work
+- Added operating constraints: one active phase, max 3 tasks in NOW, backlog capture rule
+- Seeded `TASKS.md` with current Phase 1 priorities (webhook validation, CORS tightening, dedupe/race hardening)
+- Updated `BRIEF.md` Step 1 to require reading `TASKS.md`
+- Updated `BRIEF.md` with rule to align implementation to `TASKS.md` (`NOW` vs `BACKLOG`)
+
+### ? Still Pending
+- Execute remaining Phase 1 NOW tasks in `TASKS.md`
+
+### ?? Next (In Order)
+1. Run Stripe webhook signed-event validation
+2. Tighten CORS by endpoint class
+3. Implement lead/job duplication protections
+## Session: May 1, 2026 � Part 16 � Phase 1 Hardening + Conversion Fixes
+**AI:** Codex (GPT-5)
+**Worked on:** Sync check + Phase 1 implementation
+
+### ? Completed This Session
+- Verified repo sync with GitHub: `origin/main...main` = `0 behind / 0 ahead`
+- Hardened Stripe webhook verification in `netlify/functions/stripe-webhook.js`
+  - Replaced non-standard signature check with Stripe-style `t=,v1=` verification
+  - Added signature timestamp tolerance (`STRIPE_SIG_TOLERANCE_SECONDS`, default 300s)
+  - Disabled permissive default for placeholder mode (`false` by default)
+  - Added production guard to reject placeholder mode in production
+  - Added hard fail when `STRIPE_WEBHOOK_SECRET` is missing
+- Fixed homepage conversion path: Full Launch tile now routes to `website-design-services.html` (not print)
+- Wired Growth Care CTAs to direct Stripe key mapping (`sub_care_standard`) in `monthly-plans.html`
+- Improved crawl hygiene in `robots.txt` by disallowing `/admin/`, `/tmp/`, `/proposals/`, and `/thank-you.html`
+- Added missing commercial pages to `sitemap.xml`: `local-seo.html`, `social-media.html`
+
+### ? Still Pending
+- Validate webhook against real Stripe test event from dashboard/CLI to confirm signature parsing with live headers
+- Apply remaining Phase 1 hardening items (CORS tightening, lead dedupe/idempotency, automation runner claim/race fix)
+
+### ?? Next (In Order)
+1. Run Stripe webhook live signature test and confirm pass/fail behavior
+2. Tighten CORS policy by endpoint (public vs admin)
+3. Add lead dedupe/idempotency controls
+4. Add job-claim lock pattern to `automation-runner.js`
+## Session: April 30, 2026 � Part 15
+**AI:** Codex (GPT-5)
+**Worked on:** Multi-agent workflow standardization
+
+### ? Completed This Session
+- Created `AGENTS.md` at repo root as the multi-agent execution playbook
+- Added `AGENTS.md` to required startup reading in `BRIEF.md` (Step 1)
+- Added explicit `AGENTS.md` execution reference in `BRIEF.md` Step 7
+- Added end-of-session maintenance rule in `BRIEF.md` Step 8 (update AGENTS only when workflow/roles change)
+- Added pointer in `PROJECT.md` Agent Roles section to use `AGENTS.md` for operating workflow + handoffs
+
+### ? Still Pending
+- Implement tonight's audit fixes (security hardening, conversion leaks, SEO hygiene)
+
+### ?? Next (In Order)
+1. Patch Stripe webhook auth hardening (critical)
+2. Fix homepage Full Launch CTA destination
+3. Wire Growth Care direct checkout path
+4. Update robots/sitemap for crawl hygiene
 ## Session: April 30, 2026 — Part 14 — 🎉 FIRST CLIENT CLOSED
 **AI:** Claude Code (Sonnet 4.6)
 **Worked on:** Went live on Stripe, Eimy paid
@@ -413,3 +572,9 @@ At the end of every AI session, update this file with a new entry:
 
 *This file is the memory of the project.*
 *Read it before you start. Update it before you stop.*
+
+
+
+
+
+

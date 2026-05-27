@@ -1,0 +1,894 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO / AEO / GEO -->
+  <title>Social Media & Google Ads Management for Local Businesses | Say It Marketing – Tucson, AZ</title>
+  <meta name="description" content="Stop guessing where your next customer is coming from. Say It Marketing manages your Google Ads and Facebook/Instagram ads so you show up everywhere your customers are looking. Flat monthly fee. You control the budget. No contracts.">
+  <link rel="canonical" href="https://sayitmarketing.com/advertising-management.html">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Social Media & Google Ads Management | Say It Marketing">
+  <meta property="og:description" content="Managed Google Ads + Facebook/Instagram advertising for local businesses. You control the budget — we run the ads. Flat monthly fee. No contracts.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sayitmarketing.com/advertising-management.html">
+
+  <!-- Schema: Service + FAQ (AEO/GEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Social Media & Google Ads Management",
+    "description": "Managed advertising on Google, Facebook, and Instagram for local businesses in Tucson, AZ and surrounding areas.",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Say It Marketing",
+      "url": "https://sayitmarketing.com",
+      "telephone": "+15202226308",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tucson",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      }
+    },
+    "areaServed": { "@type": "State", "name": "Arizona" },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Ad Management Plans",
+      "itemListElement": [
+        { "@type": "Offer", "name": "Single Platform Ad Management", "price": "125", "priceCurrency": "USD" },
+        { "@type": "Offer", "name": "Both Platforms Ad Management", "price": "199", "priceCurrency": "USD" }
+      ]
+    },
+    "mainEntityOfPage": {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the difference between Google Ads and social media ads?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Google Ads catch people actively searching for your service — high intent, ready to buy. Social media ads on Facebook and Instagram reach people who match your ideal customer before they ever search. Together they cover every stage of how customers find and choose you." }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does Facebook advertising cost for a small business?",
+          "acceptedAnswer": { "@type": "Answer", "text": "You set the budget — $100 to $500/mo is typical for local businesses. That money goes directly to Meta (Facebook/Instagram) under your account. Say It Marketing charges a flat $125/mo management fee to set up, run, and optimize your ads." }
+        },
+        {
+          "@type": "Question",
+          "name": "Should I use Google Ads or Facebook Ads for my local business?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Both, if budget allows. Google Ads deliver immediate results for people actively searching. Facebook and Instagram build brand awareness and trust over time. Businesses running both consistently outperform those on a single channel." }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to sign a contract for ad management?",
+          "acceptedAnswer": { "@type": "Answer", "text": "No contracts. Say It Marketing charges a flat monthly management fee — cancel anytime. Your ad budget stays in your account so you always own and control it." }
+        },
+        {
+          "@type": "Question",
+          "name": "How fast will I see results from Google Ads?",
+          "acceptedAnswer": { "@type": "Answer", "text": "Google Ads can start driving calls and clicks within 24–48 hours of launch. Social ads typically take 2–4 weeks to optimize and hit their stride. We monitor both daily and adjust as we learn what works for your market." }
+        }
+      ]
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="assets/site.css">
+  <style>
+    body { background: #f4f6f9; }
+
+    .adm-page {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 4vw, 1.5rem) 6rem;
+    }
+
+    /* ── Hero ── */
+    .adm-eyebrow {
+      font-size: 0.68rem; font-weight: 800;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--brand); margin-bottom: 10px;
+    }
+    .adm-h1 {
+      font-size: clamp(2.6rem, 7vw, 4.4rem);
+      font-weight: 700; letter-spacing: -0.042em;
+      line-height: 1.02; color: var(--text-1);
+      margin: 0 0 18px; max-width: 16ch;
+    }
+    .adm-h1 em { font-style: normal; color: var(--brand); }
+    .adm-hero-sub {
+      font-size: 1.08rem; color: var(--text-3);
+      line-height: 1.68; max-width: 52ch; margin: 0 0 36px;
+    }
+
+    /* ── Truth cards ── */
+    .truth-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 10px; margin: 0 0 44px;
+    }
+    .truth-card {
+      background: #fff; border: 1px solid var(--line);
+      border-radius: 16px; padding: 18px;
+      box-shadow: var(--shadow-soft);
+    }
+    .truth-card.full { grid-column: 1 / -1; }
+    .truth-icon { font-size: 1.25rem; margin-bottom: 8px; }
+    .truth-title { font-size: 0.9rem; font-weight: 700; color: var(--text-1); margin-bottom: 4px; }
+    .truth-body { font-size: 0.82rem; color: var(--text-3); line-height: 1.55; margin: 0; }
+
+    /* ── Step label ── */
+    .step-label { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .step-num {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--brand); color: #fff;
+      font-size: 0.75rem; font-weight: 800;
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .step-title { font-size: 1.05rem; font-weight: 700; color: var(--text-1); }
+
+    /* ── Platform selector ── */
+    .platform-cards { display: flex; flex-direction: column; gap: 10px; margin-bottom: 32px; }
+    .psel-card {
+      background: #fff; border: 2px solid var(--line);
+      border-radius: 18px; padding: 18px 20px;
+      cursor: pointer; box-shadow: var(--shadow-soft);
+      display: flex; align-items: center; gap: 16px;
+      transition: border-color 0.18s, box-shadow 0.18s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .psel-card:hover { border-color: rgba(0,113,227,0.4); box-shadow: 0 4px 16px rgba(0,113,227,0.1); }
+    .psel-card.selected {
+      border-color: var(--brand);
+      background: linear-gradient(160deg, #f0f7ff, #e8f2ff);
+      box-shadow: 0 8px 28px rgba(0,113,227,0.14);
+    }
+    .psel-card.recommended { border-color: rgba(0,113,227,0.28); background: linear-gradient(160deg, #f5f9ff, #eef4ff); }
+    .psel-card.recommended.selected { border-color: var(--brand); background: linear-gradient(160deg, #e6f0ff, #dae8ff); box-shadow: 0 12px 36px rgba(0,113,227,0.18); }
+    .psel-icon {
+      width: 48px; height: 48px; border-radius: 13px;
+      background: rgba(0,113,227,0.08);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem; flex-shrink: 0;
+    }
+    .psel-card.selected .psel-icon { background: rgba(0,113,227,0.15); }
+    .psel-body { flex: 1; }
+    .psel-name {
+      font-size: 1rem; font-weight: 700; color: var(--text-1);
+      margin-bottom: 3px; display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+    }
+    .rec-badge {
+      font-size: 0.52rem; font-weight: 800; letter-spacing: 0.14em;
+      text-transform: uppercase; background: var(--brand); color: #fff;
+      padding: 3px 8px; border-radius: 999px;
+    }
+    .psel-desc { font-size: 0.8rem; color: var(--text-3); line-height: 1.45; }
+    .psel-right { text-align: right; flex-shrink: 0; }
+    .psel-price { font-size: 1.2rem; font-weight: 800; letter-spacing: -0.02em; color: var(--brand); }
+    .psel-price-note { font-size: 0.68rem; color: var(--text-3); margin-top: 1px; }
+    .psel-check {
+      width: 22px; height: 22px; border-radius: 50%;
+      border: 2px solid var(--line); display: flex;
+      align-items: center; justify-content: center;
+      flex-shrink: 0; transition: all 0.18s; font-size: 0.65rem; font-weight: 800;
+    }
+    .psel-card.selected .psel-check { background: var(--brand); border-color: var(--brand); color: #fff; }
+
+    /* ── Details section (reveals on selection) ── */
+    .details-section {
+      max-height: 0; overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.55s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.38s ease;
+    }
+    .details-section.open { max-height: 4000px; opacity: 1; }
+
+    /* ── Section divider ── */
+    .sec-div { display: flex; align-items: center; gap: 14px; margin: 32px 0 22px; }
+    .sec-div::before, .sec-div::after { content: ''; flex: 1; height: 1px; background: var(--line); }
+    .sec-div span {
+      font-size: 0.58rem; font-weight: 800; letter-spacing: 0.24em;
+      text-transform: uppercase; color: var(--text-3); white-space: nowrap;
+    }
+
+    /* ── Pricing buckets ── */
+    .bucket-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+    .bucket { border-radius: 16px; padding: 18px 18px; }
+    .bucket.platform-bucket { background: rgba(0,0,0,0.03); border: 1px dashed rgba(0,0,0,0.15); }
+    .bucket.shawn-bucket { background: linear-gradient(160deg, #eef6ff, #e4f0ff); border: 1px solid rgba(0,113,227,0.22); }
+    .bucket-label {
+      font-size: 0.58rem; font-weight: 800; letter-spacing: 0.18em;
+      text-transform: uppercase; margin-bottom: 8px;
+    }
+    .platform-bucket .bucket-label { color: var(--text-3); }
+    .shawn-bucket .bucket-label { color: var(--brand); }
+    .bucket-price { font-size: 1.7rem; font-weight: 800; letter-spacing: -0.03em; line-height: 1; margin-bottom: 6px; }
+    .platform-bucket .bucket-price { color: var(--text-2); }
+    .shawn-bucket .bucket-price { color: var(--brand); }
+    .bucket-note { font-size: 0.75rem; color: var(--text-3); line-height: 1.5; }
+
+    /* ── Existing client row ── */
+    .client-row {
+      display: flex; align-items: center; gap: 12px;
+      background: rgba(0,113,227,0.06); border: 1px solid rgba(0,113,227,0.18);
+      border-radius: 12px; padding: 14px 16px; margin-bottom: 28px; cursor: pointer;
+    }
+    .client-row input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--brand); cursor: pointer; flex-shrink: 0; }
+    .client-row-label { font-size: 0.9rem; font-weight: 700; color: var(--text-1); }
+    .client-row-desc { font-size: 0.76rem; color: var(--text-3); margin-top: 1px; }
+    .client-savings { font-size: 0.8rem; font-weight: 800; color: #15803d; flex-shrink: 0; white-space: nowrap; }
+
+    /* ── Budget selector ── */
+    .budget-section { margin-bottom: 28px; }
+    .budget-label { font-size: 0.9rem; font-weight: 700; color: var(--text-1); margin-bottom: 5px; }
+    .budget-sub { font-size: 0.8rem; color: var(--text-3); line-height: 1.5; margin-bottom: 12px; }
+    .budget-row-label { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-3); margin-bottom: 8px; margin-top: 14px; }
+    .budget-btns { display: flex; gap: 8px; flex-wrap: wrap; }
+    .bopt {
+      background: #fff; border: 1.5px solid var(--line);
+      border-radius: 999px; padding: 8px 16px;
+      font-size: 0.82rem; font-weight: 700; color: var(--text-2);
+      cursor: pointer; font-family: inherit; transition: all 0.15s;
+    }
+    .bopt:hover { border-color: var(--brand); color: var(--brand); }
+    .bopt.active { background: var(--brand); border-color: var(--brand); color: #fff; }
+    .budget-hint { font-size: 0.75rem; color: var(--text-3); margin-top: 10px; }
+
+    /* ── Video upgrade ── */
+    .video-card {
+      background: #fff; border: 1.5px solid var(--line);
+      border-radius: 20px; overflow: hidden; box-shadow: var(--shadow-soft); margin-bottom: 28px;
+    }
+    .video-card-top { display: flex; gap: 16px; align-items: flex-start; padding: 20px; }
+    .video-icon {
+      width: 50px; height: 50px; border-radius: 13px;
+      background: rgba(227,116,0,0.1);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; flex-shrink: 0;
+    }
+    .video-tag { font-size: 0.55rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: #e37400; margin-bottom: 4px; }
+    .video-title { font-size: 1rem; font-weight: 700; color: var(--text-1); margin-bottom: 4px; }
+    .video-desc { font-size: 0.82rem; color: var(--text-3); line-height: 1.55; margin: 0; }
+    .video-deliverables { background: #fafbfc; border-top: 1px solid var(--line); padding: 14px 20px 16px; display: flex; flex-direction: column; gap: 7px; }
+    .vd-item { display: flex; gap: 10px; align-items: flex-start; font-size: 0.83rem; color: var(--text-2); line-height: 1.45; }
+    .vd-item::before { content: '✓'; color: #e37400; font-weight: 800; font-size: 0.72rem; flex-shrink: 0; margin-top: 2px; }
+    .video-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 20px; gap: 12px; border-top: 1px solid var(--line);
+    }
+    .video-price { font-size: 1.35rem; font-weight: 800; color: #e37400; letter-spacing: -0.02em; }
+    .video-price-note { font-size: 0.72rem; color: var(--text-3); margin-top: 1px; }
+    .video-add-btn {
+      background: #e37400; color: #fff; border: none; border-radius: 999px;
+      padding: 10px 20px; font-size: 0.85rem; font-weight: 700;
+      font-family: inherit; cursor: pointer; transition: background 0.15s; white-space: nowrap;
+    }
+    .video-add-btn:hover { background: #c45f00; }
+    .video-add-btn.added { background: #15803d; }
+    .video-add-btn.added:hover { background: #166534; }
+
+    /* ── Summary card ── */
+    .summary-card {
+      background: linear-gradient(160deg, #101828, #1a2740);
+      border-radius: 20px; padding: clamp(1.5rem, 4vw, 2rem);
+      margin-bottom: 32px; box-shadow: 0 16px 48px rgba(0,0,0,0.22);
+    }
+    .summary-eyebrow { font-size: 0.58rem; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 4px; }
+    .summary-title { font-size: 1.3rem; font-weight: 700; color: #fff; margin-bottom: 20px; line-height: 1.2; }
+    .summary-line {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .summary-line:last-child { border-bottom: none; }
+    .sl-label { font-size: 0.75rem; color: rgba(255,255,255,0.4); margin-bottom: 1px; }
+    .sl-name { font-size: 0.92rem; font-weight: 600; color: #fff; }
+    .sl-amount { font-size: 1rem; font-weight: 800; letter-spacing: -0.015em; text-align: right; flex-shrink: 0; }
+    .sl-amount.to-platform { color: rgba(255,255,255,0.45); }
+    .sl-amount.to-shawn { color: #60a5fa; }
+    .sl-amount.to-video { color: #fb923c; }
+    .summary-total-row {
+      margin-top: 18px; padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.14);
+      display: flex; justify-content: space-between; align-items: flex-end;
+    }
+    .summary-total-label { font-size: 0.8rem; color: rgba(255,255,255,0.45); margin-bottom: 2px; }
+    .summary-total-platform { font-size: 0.72rem; color: rgba(255,255,255,0.3); margin-top: 3px; }
+    .summary-total-amount { font-size: 1.9rem; font-weight: 800; letter-spacing: -0.04em; color: #fff; line-height: 1; }
+
+    /* ── Form ── */
+    .form-card {
+      background: #fff; border: 1px solid var(--line);
+      border-radius: 20px; padding: clamp(1.4rem, 4vw, 2rem);
+      box-shadow: var(--shadow-soft);
+    }
+    .form-hed { font-size: 1.25rem; font-weight: 700; color: var(--text-1); margin-bottom: 4px; }
+    .form-sub { font-size: 0.88rem; color: var(--text-3); line-height: 1.55; margin-bottom: 22px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+    .form-group { display: flex; flex-direction: column; gap: 5px; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-label { font-size: 0.75rem; font-weight: 700; color: var(--text-2); }
+    .form-input {
+      background: #f8f9fa; border: 1.5px solid var(--line);
+      border-radius: 10px; padding: 10px 14px;
+      font-size: 0.93rem; font-family: inherit; color: var(--text-1); outline: none;
+      transition: border-color 0.15s, box-shadow 0.15s;
+    }
+    .form-input:focus { border-color: var(--brand); box-shadow: 0 0 0 3px rgba(0,113,227,0.1); background: #fff; }
+    .form-input::placeholder { color: var(--text-3); }
+    textarea.form-input { resize: vertical; min-height: 88px; }
+    .consent-row { display: flex; gap: 10px; align-items: flex-start; margin: 16px 0; }
+    .consent-row input { margin-top: 2px; accent-color: var(--brand); flex-shrink: 0; cursor: pointer; }
+    .consent-text { font-size: 0.77rem; color: var(--text-3); line-height: 1.55; }
+    .submit-btn {
+      width: 100%; padding: 16px; background: var(--brand); color: #fff;
+      border: none; border-radius: 999px; font-size: 1rem; font-weight: 700;
+      font-family: inherit; cursor: pointer; transition: background 0.15s, transform 0.1s;
+    }
+    .submit-btn:hover { background: var(--brand-strong); }
+    .submit-btn:active { transform: scale(0.98); }
+    .submit-btn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+    .form-success { display: none; text-align: center; padding: 36px 16px; }
+    .form-success.visible { display: block; }
+    .success-icon { font-size: 2.5rem; margin-bottom: 14px; }
+    .success-hed { font-size: 1.45rem; font-weight: 700; color: #15803d; margin-bottom: 8px; }
+    .success-sub { font-size: 0.9rem; color: var(--text-3); line-height: 1.65; }
+
+    /* ── FAQ ── */
+    .faq-section { margin-top: 56px; }
+    .faq-hed { font-size: 1.35rem; font-weight: 700; color: var(--text-1); margin-bottom: 20px; }
+    .faq-item { border-bottom: 1px solid var(--line); padding: 16px 0; }
+    .faq-q { font-size: 0.95rem; font-weight: 700; color: var(--text-1); margin-bottom: 6px; }
+    .faq-a { font-size: 0.88rem; color: var(--text-3); line-height: 1.65; margin: 0; }
+
+    /* ── Footer ── */
+    .adm-footer {
+      margin-top: 48px; padding-top: 20px;
+      border-top: 1px solid var(--line);
+      display: flex; justify-content: space-between;
+      flex-wrap: wrap; gap: 6px;
+      font-size: 0.78rem; color: var(--text-3);
+    }
+
+    @media (max-width: 540px) {
+      .truth-grid { grid-template-columns: 1fr; }
+      .bucket-grid { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .psel-right { display: none; }
+    }
+  </style>
+</head>
+<body class="home-apple">
+
+  <div class="top-contact">Call/Text <a href="tel:+15202226308">520-222-6308</a> | Say It Marketing</div>
+
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="/index.html"><img src="assets/sayit-logo.png" alt="Say It Marketing"></a>
+      <a href="tel:+15202226308" style="font-size:0.85rem;font-weight:700;color:var(--text-2);text-decoration:none;">Call or text · (520) 222-6308</a>
+    </div>
+  </nav>
+
+  <main class="adm-page">
+
+    <!-- HERO -->
+    <div class="adm-eyebrow">Advertising Management</div>
+    <h1 class="adm-h1">Show up <em>everywhere</em> your customers are looking.</h1>
+    <p class="adm-hero-sub">Most local businesses are invisible on at least one channel. The ones growing fastest show up on Google when someone searches — and on social media before they ever search. We manage both. You run your business.</p>
+
+    <!-- TRUTH CARDS -->
+    <div class="truth-grid">
+      <div class="truth-card">
+        <div class="truth-icon">🔍</div>
+        <div class="truth-title">Google = ready to buy</div>
+        <p class="truth-body">Someone searches "dog groomer near me" and wants to book today. Google Ads put you at the top before they find a competitor.</p>
+      </div>
+      <div class="truth-card">
+        <div class="truth-icon">📱</div>
+        <div class="truth-title">Social = building trust</div>
+        <p class="truth-body">Facebook and Instagram reach people before they're even searching. They see your work and remember you when they're ready.</p>
+      </div>
+      <div class="truth-card full">
+        <div class="truth-icon">🚀</div>
+        <div class="truth-title">Together = you win every stage</div>
+        <p class="truth-body">Businesses running both Google and social ads consistently outperform those running only one. You cover search intent <em>and</em> brand awareness — that's how you stop losing customers to competitors who invest more.</p>
+      </div>
+    </div>
+
+    <!-- STEP 1: PLATFORM SELECTOR -->
+    <div class="step-label">
+      <div class="step-num">1</div>
+      <div class="step-title">What do you want to do?</div>
+    </div>
+
+    <div class="platform-cards">
+
+      <div class="psel-card" id="card-google" onclick="selectPlatform('google')">
+        <div class="psel-icon">🔍</div>
+        <div class="psel-body">
+          <div class="psel-name">Google Ads only</div>
+          <div class="psel-desc">Show up first when someone searches for your service. Best for fast bookings — high intent traffic right when they're ready to buy.</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
+          <div class="psel-right">
+            <div class="psel-price" id="price-google">$125<span style="font-size:0.7rem;font-weight:500;color:var(--text-3)">/mo</span></div>
+            <div class="psel-price-note">+ your Google budget</div>
+          </div>
+          <div class="psel-check" id="check-google"></div>
+        </div>
+      </div>
+
+      <div class="psel-card" id="card-social" onclick="selectPlatform('social')">
+        <div class="psel-icon">📱</div>
+        <div class="psel-body">
+          <div class="psel-name">Social Media Ads only</div>
+          <div class="psel-desc">Facebook and Instagram ads that reach your ideal customer and build trust before they ever search for you.</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
+          <div class="psel-right">
+            <div class="psel-price" id="price-social">$125<span style="font-size:0.7rem;font-weight:500;color:var(--text-3)">/mo</span></div>
+            <div class="psel-price-note">+ your Meta budget</div>
+          </div>
+          <div class="psel-check" id="check-social"></div>
+        </div>
+      </div>
+
+      <div class="psel-card recommended" id="card-both" onclick="selectPlatform('both')">
+        <div class="psel-icon">🚀</div>
+        <div class="psel-body">
+          <div class="psel-name">
+            Both Platforms
+            <span class="rec-badge">Best Results</span>
+          </div>
+          <div class="psel-desc">Google + Facebook/Instagram. You're covered at every stage — discovery, consideration, and ready-to-buy. Most clients see 3× the results vs. a single channel.</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;flex-shrink:0;">
+          <div class="psel-right">
+            <div class="psel-price" id="price-both">$199<span style="font-size:0.7rem;font-weight:500;color:var(--text-3)">/mo</span></div>
+            <div class="psel-price-note">+ your ad budgets</div>
+          </div>
+          <div class="psel-check" id="check-both"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- DETAILS: reveals after selection -->
+    <div class="details-section" id="details-section">
+
+      <!-- STEP 2: HOW THE MONEY WORKS -->
+      <div class="step-label">
+        <div class="step-num">2</div>
+        <div class="step-title">How the money works</div>
+      </div>
+
+      <div class="bucket-grid">
+        <div class="bucket platform-bucket">
+          <div class="bucket-label">Your ad budget → Platform</div>
+          <div class="bucket-price" id="bucket-platform-price">$150</div>
+          <div class="bucket-note">Goes directly to Google or Meta under your own account. You own it. You control it. Start, pause, or scale anytime.</div>
+        </div>
+        <div class="bucket shawn-bucket">
+          <div class="bucket-label">Management fee → Say It</div>
+          <div class="bucket-price" id="bucket-mgmt-price">$125</div>
+          <div class="bucket-note">We set up every campaign, write the ads, design the creative, optimize weekly, and send you a monthly results report.</div>
+        </div>
+      </div>
+
+      <!-- EXISTING CLIENT LOYALTY -->
+      <label class="client-row">
+        <input type="checkbox" id="existing-client-check" onchange="updateAll()">
+        <div style="flex:1;">
+          <div class="client-row-label">I'm already on a Say It Marketing plan</div>
+          <div class="client-row-desc">SEO, hosting, or care plan — existing clients get a loyalty rate</div>
+        </div>
+        <div class="client-savings" id="savings-badge">Save up to $50/mo</div>
+      </label>
+
+      <!-- STEP 3: BUDGET -->
+      <div class="sec-div"><span>Step 3 — Choose your monthly ad budget</span></div>
+
+      <div class="budget-section">
+        <div class="budget-label" id="budget-label">How much do you want to put toward ads each month?</div>
+        <p class="budget-sub">This goes directly to the platform — not to Say It Marketing. You can adjust it anytime.</p>
+
+        <div id="budget-block-google">
+          <div class="budget-row-label" id="budget-row-label-google">Google Ads budget</div>
+          <div class="budget-btns" id="budget-btns-google">
+            <button class="bopt" onclick="selectBudget('google', 100, this)">$100/mo</button>
+            <button class="bopt active" onclick="selectBudget('google', 150, this)">$150/mo ★</button>
+            <button class="bopt" onclick="selectBudget('google', 250, this)">$250/mo</button>
+            <button class="bopt" onclick="selectBudget('google', 500, this)">$500/mo</button>
+          </div>
+        </div>
+
+        <div id="budget-block-social">
+          <div class="budget-row-label" id="budget-row-label-social" style="margin-top:16px;">Facebook + Instagram budget</div>
+          <div class="budget-btns" id="budget-btns-social">
+            <button class="bopt" onclick="selectBudget('social', 100, this)">$100/mo</button>
+            <button class="bopt active" onclick="selectBudget('social', 150, this)">$150/mo ★</button>
+            <button class="bopt" onclick="selectBudget('social', 250, this)">$250/mo</button>
+            <button class="bopt" onclick="selectBudget('social', 500, this)">$500/mo</button>
+          </div>
+        </div>
+
+        <p class="budget-hint">★ Recommended starting point for most local markets · scale up as you see results</p>
+      </div>
+
+      <!-- VIDEO UPGRADE -->
+      <div class="sec-div"><span>Optional upgrade</span></div>
+
+      <div class="video-card">
+        <div class="video-card-top">
+          <div class="video-icon">🎬</div>
+          <div>
+            <div class="video-tag">Professional Video Production</div>
+            <div class="video-title">We come to you. Film it. Deliver 4 ready-to-run assets.</div>
+            <p class="video-desc">Most people scroll past a graphic. Nobody skips a 15-second video of your work in action. We show up at your business, shoot on-site, and hand you a complete video package ready to run as ads the same week.</p>
+          </div>
+        </div>
+        <div class="video-deliverables">
+          <div class="vd-item">1 full-length brand video (60–90 sec) — your story, your work, your personality</div>
+          <div class="vd-item">3 short-form cuts (15–30 sec each) — formatted for Reels, TikTok, and Google display</div>
+          <div class="vd-item">Branded with your logo, colors, and a clear call to action</div>
+          <div class="vd-item">Delivered and ready to publish the same week we film</div>
+        </div>
+        <div class="video-footer">
+          <div>
+            <div class="video-price">$599</div>
+            <div class="video-price-note">one-time · includes all 4 video assets</div>
+          </div>
+          <button class="video-add-btn" id="video-btn" onclick="toggleVideo()">Add professional video</button>
+        </div>
+        <div style="padding: 10px 20px 14px; background: #fafbfc; border-top: 1px solid var(--line);">
+          <p style="font-size:0.72rem; color:var(--text-3); line-height:1.55; margin:0;">
+            📍 <strong>Tucson metro area included.</strong> Clients outside the Tucson area (Phoenix, Glendale, Scottsdale, etc.) — a travel fee applies. Shawn will quote you the exact amount before anything is scheduled. No surprises.
+          </p>
+        </div>
+      </div>
+
+      <!-- LIVE SUMMARY -->
+      <div class="sec-div"><span>Your plan summary</span></div>
+
+      <div class="summary-card">
+        <div class="summary-eyebrow">Your Investment</div>
+        <div class="summary-title" id="summary-title">Both Platforms — Google + Social</div>
+        <div id="summary-lines"></div>
+        <div class="summary-total-row">
+          <div>
+            <div class="summary-total-label">Total to Say It Marketing</div>
+            <div class="summary-total-platform" id="summary-platform-note"></div>
+          </div>
+          <div style="text-align:right;">
+            <div class="summary-total-amount" id="summary-total">$199<span style="font-size:1rem;font-weight:500;opacity:0.55">/mo</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- STEP 4: FORM -->
+      <div class="step-label">
+        <div class="step-num">4</div>
+        <div class="step-title">Send me your plan — I'll reach out within the hour</div>
+      </div>
+
+      <div class="form-card">
+        <div id="form-wrap">
+          <div class="form-hed">You're one step away.</div>
+          <p class="form-sub">Tell me who you are and what you're building. I'll already know your plan when I call — no repeating yourself.</p>
+
+          <!-- Honeypot -->
+          <input type="text" name="website" id="honeypot-field" style="display:none;" tabindex="-1" autocomplete="off">
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="inp-name">Your name *</label>
+              <input class="form-input" type="text" id="inp-name" placeholder="Maria" autocomplete="given-name">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="inp-biz">Business name *</label>
+              <input class="form-input" type="text" id="inp-biz" placeholder="Main Street Salon" autocomplete="organization">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="inp-phone">Phone *</label>
+              <input class="form-input" type="tel" id="inp-phone" placeholder="(520) 555-0100" autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="inp-email">Email *</label>
+              <input class="form-input" type="email" id="inp-email" placeholder="you@yourbusiness.com" autocomplete="email">
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group full">
+              <label class="form-label" for="inp-notes">Anything you want me to know before I call?</label>
+              <textarea class="form-input" id="inp-notes" placeholder="Tell me about your business, what you're trying to grow, or any questions you have..."></textarea>
+            </div>
+          </div>
+
+          <div class="consent-row">
+            <input type="checkbox" id="consent-check">
+            <span class="consent-text">I agree to receive a call or text from Say It Marketing about my advertising plan. No spam — just Shawn.</span>
+          </div>
+
+          <button class="submit-btn" id="submit-btn" onclick="submitForm()">Send My Plan to Shawn →</button>
+          <p style="font-size:0.76rem;color:var(--text-3);text-align:center;margin-top:12px;">
+            Prefer to talk now? <a href="tel:+15202226308" style="color:var(--brand);font-weight:700;">(520) 222-6308</a>
+          </p>
+        </div>
+
+        <div class="form-success" id="form-success">
+          <div class="success-icon">🎉</div>
+          <div class="success-hed">Plan received!</div>
+          <p class="success-sub">Shawn will call or text you within the hour. He'll already know your plan — no need to explain it again.</p>
+        </div>
+      </div>
+
+      <!-- FAQ (AEO/GEO) -->
+      <div class="faq-section">
+        <div class="faq-hed">Common questions</div>
+
+        <div class="faq-item">
+          <div class="faq-q">What's the difference between Google Ads and social media ads?</div>
+          <p class="faq-a">Google Ads catch people who are actively searching for your service right now — high intent, ready to book. Facebook and Instagram ads reach people who match your ideal customer profile, even before they start searching. Together they cover every stage of how customers discover and choose you.</p>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">How much does it cost to advertise on Facebook or Google?</div>
+          <p class="faq-a">You set the budget — $100 to $500/mo is typical for most local businesses. That money goes directly to the platform (Google or Meta) under your account. Say It Marketing's flat monthly management fee covers setup, strategy, ad creative, ongoing optimization, and monthly reporting.</p>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">Do I need to sign a contract?</div>
+          <p class="faq-a">No contracts. Month to month. Your ad budget stays in your own account — you always own it. Cancel anytime, no penalties, no headaches.</p>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">How fast will I see results?</div>
+          <p class="faq-a">Google Ads can start driving calls and clicks within 24–48 hours of launch. Social ads typically take 2–4 weeks to find their stride as the algorithm learns your audience. We monitor both daily and optimize as we learn what works in your specific market.</p>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">I'm already on a Say It Marketing SEO or hosting plan — does that change my price?</div>
+          <p class="faq-a">Yes. Existing clients get a loyalty rate: $99/mo for one platform (instead of $125) or $149/mo for both (instead of $199). Just check the box when you submit your plan above.</p>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-q">What's included in the professional video production?</div>
+          <p class="faq-a">Shawn comes to your business, films on-site, and delivers four finished video assets: one full-length brand video (60–90 sec) and three short-form cuts (15–30 sec each) formatted for Reels, TikTok, and Google. Everything branded, captioned, and ready to run as ads. One-time fee of $599.</p>
+        </div>
+      </div>
+
+    </div><!-- /details-section -->
+
+    <div class="adm-footer">
+      <span>Say It Marketing · sayitmarketing.com</span>
+      <span>hello@sayitmarketing.com · (520) 222-6308</span>
+    </div>
+
+  </main>
+
+  <script>
+    /* ── State ── */
+    var selectedPlatform = null;
+    var googleBudget = 150;
+    var socialBudget = 150;
+    var includesVideo = false;
+
+    var prices = {
+      google: { standard: 125, client: 99 },
+      social: { standard: 125, client: 99 },
+      both:   { standard: 199, client: 149 }
+    };
+
+    /* ── Platform selection ── */
+    function selectPlatform(platform) {
+      selectedPlatform = platform;
+
+      ['google', 'social', 'both'].forEach(function(p) {
+        document.getElementById('card-' + p).classList.toggle('selected', p === platform);
+        document.getElementById('check-' + p).textContent = p === platform ? '✓' : '';
+      });
+
+      updateBudgetVisibility();
+      updateAll();
+
+      var det = document.getElementById('details-section');
+      det.classList.add('open');
+      setTimeout(function() {
+        det.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 80);
+    }
+
+    /* ── Budget visibility ── */
+    function updateBudgetVisibility() {
+      var gBlock = document.getElementById('budget-block-google');
+      var sBlock = document.getElementById('budget-block-social');
+      var lbl    = document.getElementById('budget-label');
+
+      if (selectedPlatform === 'google') {
+        gBlock.style.display = 'block';
+        sBlock.style.display = 'none';
+        lbl.textContent = 'How much do you want to put toward Google Ads each month?';
+      } else if (selectedPlatform === 'social') {
+        gBlock.style.display = 'none';
+        sBlock.style.display = 'block';
+        lbl.textContent = 'How much do you want to put toward Facebook/Instagram Ads each month?';
+        document.getElementById('budget-row-label-social').style.marginTop = '0';
+      } else {
+        gBlock.style.display = 'block';
+        sBlock.style.display = 'block';
+        lbl.textContent = 'How much per month for each platform?';
+        document.getElementById('budget-row-label-social').style.marginTop = '16px';
+      }
+    }
+
+    /* ── Budget select ── */
+    function selectBudget(type, amount, btn) {
+      if (type === 'google') googleBudget = amount;
+      else socialBudget = amount;
+
+      document.getElementById('budget-btns-' + type)
+        .querySelectorAll('.bopt')
+        .forEach(function(b) { b.classList.remove('active'); });
+      btn.classList.add('active');
+      updateAll();
+    }
+
+    /* ── Video toggle ── */
+    function toggleVideo() {
+      includesVideo = !includesVideo;
+      var btn = document.getElementById('video-btn');
+      btn.textContent = includesVideo ? '✓ Added to plan' : 'Add professional video';
+      btn.classList.toggle('added', includesVideo);
+      updateAll();
+    }
+
+    /* ── Master update ── */
+    function updateAll() {
+      if (!selectedPlatform) return;
+
+      var isClient = document.getElementById('existing-client-check').checked;
+      var mgmt     = prices[selectedPlatform][isClient ? 'client' : 'standard'];
+      var saving   = prices[selectedPlatform].standard - prices[selectedPlatform].client;
+
+      var platformBudget = selectedPlatform === 'both'
+        ? googleBudget + socialBudget
+        : (selectedPlatform === 'google' ? googleBudget : socialBudget);
+
+      /* Card prices */
+      ['google', 'social', 'both'].forEach(function(p) {
+        var el = document.getElementById('price-' + p);
+        if (el) el.innerHTML = '$' + prices[p][isClient ? 'client' : 'standard'] +
+          '<span style="font-size:0.7rem;font-weight:500;color:var(--text-3)">/mo</span>';
+      });
+
+      /* Buckets */
+      document.getElementById('bucket-platform-price').textContent = '$' + platformBudget;
+      document.getElementById('bucket-mgmt-price').textContent = '$' + mgmt;
+
+      /* Savings badge */
+      document.getElementById('savings-badge').textContent = isClient
+        ? 'Saving $' + saving + '/mo'
+        : 'Save $' + saving + '/mo';
+
+      /* Summary title */
+      var titles = {
+        google: 'Google Ads Management',
+        social: 'Social Media Ads Management',
+        both:   'Both Platforms — Google + Social'
+      };
+      document.getElementById('summary-title').textContent = titles[selectedPlatform];
+
+      /* Summary lines */
+      var lines = [];
+      if (selectedPlatform === 'google' || selectedPlatform === 'both') {
+        lines.push({ label: 'Ad budget → Google (your account)', name: 'Google Ads', amount: '$' + googleBudget + '/mo', cls: 'to-platform' });
+      }
+      if (selectedPlatform === 'social' || selectedPlatform === 'both') {
+        lines.push({ label: 'Ad budget → Meta (your account)', name: 'Facebook + Instagram Ads', amount: '$' + socialBudget + '/mo', cls: 'to-platform' });
+      }
+      lines.push({ label: 'Management fee → Say It Marketing', name: 'Setup, campaigns, creative & reporting', amount: '$' + mgmt + '/mo', cls: 'to-shawn' });
+      if (includesVideo) {
+        lines.push({ label: 'One-time · video production', name: 'On-site filming + 4 video assets', amount: '$599', cls: 'to-video' });
+      }
+
+      document.getElementById('summary-lines').innerHTML = lines.map(function(l) {
+        return '<div class="summary-line">' +
+          '<div><div class="sl-label">' + l.label + '</div><div class="sl-name">' + l.name + '</div></div>' +
+          '<div class="sl-amount ' + l.cls + '">' + l.amount + '</div>' +
+          '</div>';
+      }).join('');
+
+      /* Total */
+      var totalEl = document.getElementById('summary-total');
+      if (includesVideo) {
+        totalEl.innerHTML = '$' + mgmt + '<span style="font-size:1rem;font-weight:500;opacity:0.55">/mo</span>' +
+          '<br><span style="font-size:0.88rem;opacity:0.65">+ $599 one-time</span>';
+      } else {
+        totalEl.innerHTML = '$' + mgmt + '<span style="font-size:1rem;font-weight:500;opacity:0.55">/mo</span>';
+      }
+
+      /* Platform note */
+      var noteText = selectedPlatform === 'both'
+        ? '+ $' + (googleBudget + socialBudget) + '/mo goes directly to Google & Meta'
+        : '+ $' + platformBudget + '/mo goes directly to ' + (selectedPlatform === 'google' ? 'Google' : 'Meta');
+      document.getElementById('summary-platform-note').textContent = noteText;
+    }
+
+    /* ── Form submission ── */
+    async function submitForm() {
+      var name     = document.getElementById('inp-name').value.trim();
+      var biz      = document.getElementById('inp-biz').value.trim();
+      var phone    = document.getElementById('inp-phone').value.trim();
+      var email    = document.getElementById('inp-email').value.trim();
+      var notes    = document.getElementById('inp-notes').value.trim();
+      var consent  = document.getElementById('consent-check').checked;
+      var honeypot = document.getElementById('honeypot-field').value;
+
+      if (!name || !email || !phone) {
+        alert('Please fill in your name, phone, and email so Shawn can reach you.');
+        return;
+      }
+      if (!consent) {
+        alert('Please check the box to agree to be contacted.');
+        return;
+      }
+
+      var isClient = document.getElementById('existing-client-check').checked;
+      var mgmt = selectedPlatform ? prices[selectedPlatform][isClient ? 'client' : 'standard'] : null;
+      var platformBudget = !selectedPlatform ? 0 :
+        selectedPlatform === 'both' ? googleBudget + socialBudget :
+        selectedPlatform === 'google' ? googleBudget : socialBudget;
+
+      var serviceMap = { google: 'Google Ads Management', social: 'Social Media Ads Management', both: 'Google + Social Ads Management' };
+      var serviceInterest = (selectedPlatform ? serviceMap[selectedPlatform] : 'Ad Management — no platform selected');
+      if (includesVideo) serviceInterest += ' + Professional Video Production';
+
+      var notesBody = [
+        notes,
+        '--- Selections ---',
+        'Platform: ' + (selectedPlatform || 'not selected'),
+        'Management fee: $' + (mgmt || '—') + '/mo',
+        selectedPlatform === 'both' || selectedPlatform === 'google' ? 'Google budget: $' + googleBudget + '/mo' : null,
+        selectedPlatform === 'both' || selectedPlatform === 'social' ? 'Social budget: $' + socialBudget + '/mo' : null,
+        'Existing client discount: ' + (isClient ? 'Yes' : 'No'),
+        'Video production: ' + (includesVideo ? 'Yes — $599' : 'No'),
+      ].filter(Boolean).join('\n');
+
+      var btn = document.getElementById('submit-btn');
+      btn.disabled = true;
+      btn.textContent = 'Sending...';
+
+      try {
+        await fetch('/api/lead-create', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            full_name: name,
+            business_name: biz,
+            email: email,
+            mobile_phone: phone,
+            service_interest: serviceInterest,
+            monthly_plan_interest: mgmt ? '$' + mgmt + '/mo ad management' : null,
+            budget_range: platformBudget ? '$' + platformBudget + '/mo platform budget' : null,
+            notes: notesBody,
+            consent_sms_email: consent,
+            landing_page: '/advertising-management.html',
+            website: honeypot
+          })
+        });
+
+        document.getElementById('form-wrap').style.display = 'none';
+        document.getElementById('form-success').classList.add('visible');
+
+      } catch (err) {
+        btn.disabled = false;
+        btn.textContent = 'Send My Plan to Shawn →';
+        alert('Something went wrong. Please call or text Shawn directly at (520) 222-6308.');
+      }
+    }
+  </script>
+
+</body>
+</html>
