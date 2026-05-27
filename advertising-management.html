@@ -47,14 +47,14 @@
     /* ── Lang toggle ── */
     .topbar { display: flex; justify-content: flex-end; margin-bottom: 32px; }
     .lang-btn {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: #fff; border: 1px solid var(--line);
-      border-radius: 999px; padding: 7px 16px;
-      font-size: 0.75rem; font-weight: 700;
-      color: var(--text-2); cursor: pointer; font-family: inherit;
-      transition: border-color 0.15s, color 0.15s;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--brand); border: none;
+      border-radius: 999px; padding: 11px 24px;
+      font-size: 0.85rem; font-weight: 700;
+      color: #fff; cursor: pointer; font-family: inherit;
+      transition: background 0.15s; box-shadow: 0 3px 12px rgba(75,166,220,0.38);
     }
-    .lang-btn:hover { border-color: var(--brand); color: var(--brand); }
+    .lang-btn:hover { background: #3a90c4; }
 
     /* ── Hero ── */
     .adm-eyebrow { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brand); margin-bottom: 10px; }
@@ -345,7 +345,10 @@
         <div class="client-savings" id="savings-badge">Save up to $50/mo</div>
       </label>
 
-      <div class="sec-div"><span class="t" data-en="Step 3 — Choose your monthly ad budget" data-es="Paso 3 — Elige tu presupuesto mensual de anuncios">Step 3 — Choose your monthly ad budget</span></div>
+      <div class="step-label" style="margin-top:28px;">
+        <div class="step-num">3</div>
+        <div class="step-title t" data-en="Choose your monthly ad budget" data-es="Elige tu presupuesto mensual de anuncios">Choose your monthly ad budget</div>
+      </div>
 
       <div class="budget-section">
         <div class="budget-label" id="budget-label">How much do you want to put toward ads each month?</div>
@@ -354,7 +357,7 @@
           <div class="budget-row-label" id="budget-row-label-google">Google Ads budget</div>
           <div class="budget-btns" id="budget-btns-google">
             <button class="bopt" onclick="selectBudget('google', 100, this)">$100/mo</button>
-            <button class="bopt active" onclick="selectBudget('google', 150, this)">$150/mo ★</button>
+            <button class="bopt" onclick="selectBudget('google', 150, this)">$150/mo ★</button>
             <button class="bopt" onclick="selectBudget('google', 250, this)">$250/mo</button>
             <button class="bopt" onclick="selectBudget('google', 500, this)">$500/mo</button>
           </div>
@@ -363,7 +366,7 @@
           <div class="budget-row-label" id="budget-row-label-social" style="margin-top:16px;">Facebook + Instagram budget</div>
           <div class="budget-btns" id="budget-btns-social">
             <button class="bopt" onclick="selectBudget('social', 100, this)">$100/mo</button>
-            <button class="bopt active" onclick="selectBudget('social', 150, this)">$150/mo ★</button>
+            <button class="bopt" onclick="selectBudget('social', 150, this)">$150/mo ★</button>
             <button class="bopt" onclick="selectBudget('social', 250, this)">$250/mo</button>
             <button class="bopt" onclick="selectBudget('social', 500, this)">$500/mo</button>
           </div>
@@ -510,8 +513,8 @@
 
   <script>
     var selectedPlatform = null;
-    var googleBudget = 150;
-    var socialBudget = 150;
+    var googleBudget = null;
+    var socialBudget = null;
     var includesVideo = false;
     var isSpanish = false;
 
@@ -628,9 +631,12 @@
       var mgmt     = prices[selectedPlatform][isClient ? 'client' : 'standard'];
       var saving   = prices[selectedPlatform].standard - prices[selectedPlatform].client;
 
+      var gB = googleBudget;
+      var sB = socialBudget;
+      var noSel = isSpanish ? 'Tú decides' : 'You choose';
       var platformBudget = selectedPlatform === 'both'
-        ? googleBudget + socialBudget
-        : (selectedPlatform === 'google' ? googleBudget : socialBudget);
+        ? (gB !== null && sB !== null ? gB + sB : null)
+        : (selectedPlatform === 'google' ? gB : sB);
 
       /* Card prices */
       ['google', 'social', 'both'].forEach(function(p) {
@@ -639,7 +645,7 @@
       });
 
       /* Buckets */
-      document.getElementById('bucket-platform-price').textContent = '$' + platformBudget;
+      document.getElementById('bucket-platform-price').textContent = platformBudget !== null ? '$' + platformBudget : noSel;
       document.getElementById('bucket-mgmt-price').textContent = '$' + mgmt;
 
       /* Savings */
@@ -659,14 +665,14 @@
         lines.push({
           label: isSpanish ? 'Presupuesto de anuncios → Google (tu cuenta)' : 'Ad budget → Google (your account)',
           name:  'Google Ads',
-          amount: '$' + googleBudget + '/mo', cls: 'to-platform'
+          amount: gB !== null ? '$' + gB + '/mo' : noSel, cls: 'to-platform'
         });
       }
       if (selectedPlatform === 'social' || selectedPlatform === 'both') {
         lines.push({
           label: isSpanish ? 'Presupuesto de anuncios → Meta (tu cuenta)' : 'Ad budget → Meta (your account)',
-          name:  isSpanish ? 'Facebook + Instagram Ads' : 'Facebook + Instagram Ads',
-          amount: '$' + socialBudget + '/mo', cls: 'to-platform'
+          name:  'Facebook + Instagram Ads',
+          amount: sB !== null ? '$' + sB + '/mo' : noSel, cls: 'to-platform'
         });
       }
       lines.push({
@@ -695,13 +701,10 @@
       }
 
       /* Platform note */
-      var noteText = isSpanish
-        ? (selectedPlatform === 'both'
-            ? '+ $' + (googleBudget + socialBudget) + '/mes va directamente a Google y Meta'
-            : '+ $' + platformBudget + '/mes va directamente a ' + (selectedPlatform === 'google' ? 'Google' : 'Meta'))
-        : (selectedPlatform === 'both'
-            ? '+ $' + (googleBudget + socialBudget) + '/mo goes directly to Google & Meta'
-            : '+ $' + platformBudget + '/mo goes directly to ' + (selectedPlatform === 'google' ? 'Google' : 'Meta'));
+      var platform = selectedPlatform === 'both' ? (isSpanish ? 'Google y Meta' : 'Google & Meta') : (selectedPlatform === 'google' ? 'Google' : 'Meta');
+      var noteText = platformBudget !== null
+        ? (isSpanish ? '+ $' + platformBudget + '/mes va directamente a ' + platform : '+ $' + platformBudget + '/mo goes directly to ' + platform)
+        : (isSpanish ? '+ tu presupuesto va directamente a ' + platform : '+ your ad budget goes directly to ' + platform);
       document.getElementById('summary-platform-note').textContent = noteText;
 
       updateBudgetVisibility();
