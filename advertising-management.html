@@ -756,7 +756,7 @@
       btn.textContent = isSpanish ? 'Enviando...' : 'Sending...';
 
       try {
-        await fetch('/api/lead-create', {
+        await fetch('/api/leads', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({

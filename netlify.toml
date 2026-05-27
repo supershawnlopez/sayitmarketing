@@ -31,3 +31,6 @@
   from = "/print-services-tucson.html"
   to = "/print-services.html"
   status = 301
+
+[functions."supabase-keepalive"]
+  schedule = "0 9 */3 * *"
