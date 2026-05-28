@@ -268,10 +268,10 @@ async function sendWelcomeEmail(toEmail, toName) {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      from: 'Shawn at Say It Marketing <hello@sayitmarketing.com>',
+      from: 'Say It Marketing <hello@sayitmarketing.com>',
       to: [toEmail],
-      subject: "You're in! Talk soon.",
-      html: `<p>Hey ${firstName},</p><p>Payment went through — you're all set!</p><p>I'll call or text you within 24 hours to get everything going.</p><p>Talk soon,<br><br>Shawn<br>Say It Marketing · (520) 222-6308</p>`
+      subject: "You're in! We'll be in touch soon.",
+      html: `<p>Hey ${firstName},</p><p>Payment went through — you're all set!</p><p>We'll call or text you within 24 hours to get everything going.</p><p>Talk soon,<br><br>Say It Marketing<br>(520) 222-6308</p>`
     })
   });
   if (!res.ok) {
