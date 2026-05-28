@@ -196,6 +196,47 @@
     .plan-features li.missing::before { content: '—'; color: var(--line); }
     .plan-card .btn { width: 100%; justify-content: center; }
 
+    /* ── Video add-on toggle ──────────────────────── */
+    .addon-toggle-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #f4f8ff;
+      border: 1px solid rgba(0,113,227,0.18);
+      border-radius: 10px;
+      padding: 10px 14px;
+      margin-bottom: 14px;
+      cursor: pointer;
+      user-select: none;
+    }
+    .addon-toggle-row:hover { background: #eaf2ff; }
+    .addon-toggle-row input[type="checkbox"] {
+      width: 16px;
+      height: 16px;
+      accent-color: var(--brand);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+    .addon-toggle-label {
+      flex: 1;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-2);
+      line-height: 1.3;
+    }
+    .addon-toggle-label span {
+      display: block;
+      font-size: 0.72rem;
+      font-weight: 400;
+      color: var(--text-3);
+    }
+    .addon-toggle-price {
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: var(--brand);
+      white-space: nowrap;
+    }
+
     /* ── Setup-only 2-col grid ────────────────────── */
     .setup-grid {
       display: grid;
@@ -374,9 +415,13 @@
               <li>Instagram + Facebook</li>
               <li>Branded graphics + captions</li>
               <li>You send photos &mdash; we design &amp; post</li>
-              <li class="missing">TikTok</li>
-              <li class="missing">Reels / short-form video</li>
+              <li class="missing">TikTok / Reels</li>
             </ul>
+            <label class="addon-toggle-row">
+              <input type="checkbox" class="addon-check">
+              <div class="addon-toggle-label">Add Video &amp; TikTok<span>TikTok posts + Reels — you send clips</span></div>
+              <div class="addon-toggle-price">+$75/mo</div>
+            </label>
             <button class="btn btn-secondary checkout-btn" data-plan="keep_fresh" data-plan-name="Keep It Fresh" data-plan-price="$149/mo">Start Keep It Fresh</button>
           </div>
 
@@ -393,12 +438,17 @@
             <hr class="plan-divider">
             <ul class="plan-features">
               <li>16 posts per month (4&times;/week)</li>
-              <li>Instagram + Facebook + TikTok</li>
+              <li>Instagram + Facebook</li>
               <li>Branded graphics + captions</li>
-              <li>You send photos/videos &mdash; we do the rest</li>
-              <li>Reels + short-form video</li>
+              <li>You send photos &mdash; we do the rest</li>
               <li>Monthly content calendar</li>
+              <li class="missing">TikTok / Reels</li>
             </ul>
+            <label class="addon-toggle-row">
+              <input type="checkbox" class="addon-check">
+              <div class="addon-toggle-label">Add Video &amp; TikTok<span>TikTok posts + Reels — you send clips</span></div>
+              <div class="addon-toggle-price">+$75/mo</div>
+            </label>
             <button class="btn btn-primary checkout-btn" data-plan="stay_active" data-plan-name="Stay Active" data-plan-price="$249/mo">Start Stay Active</button>
           </div>
 
@@ -413,12 +463,18 @@
             <hr class="plan-divider">
             <ul class="plan-features">
               <li>30 posts per month (daily)</li>
-              <li>All platforms including Stories</li>
+              <li>Instagram + Facebook</li>
               <li>Everything in Stay Active</li>
               <li>Comment &amp; DM monitoring</li>
               <li>Monthly performance report</li>
               <li>Priority turnaround on all content</li>
+              <li class="missing">TikTok / Reels</li>
             </ul>
+            <label class="addon-toggle-row">
+              <input type="checkbox" class="addon-check">
+              <div class="addon-toggle-label">Add Video &amp; TikTok<span>TikTok posts + Reels — you send clips</span></div>
+              <div class="addon-toggle-price">+$75/mo</div>
+            </label>
             <button class="btn btn-secondary checkout-btn" data-plan="always_on" data-plan-name="Always On" data-plan-price="$399/mo">Start Always On</button>
           </div>
 
@@ -722,14 +778,20 @@
 
       document.querySelectorAll('.checkout-btn').forEach(function (btn) {
         btn.addEventListener('click', function () {
-          var plan      = btn.dataset.plan;
-          var planName  = btn.dataset.planName + ' — ' + btn.dataset.planPrice;
+          var plan       = btn.dataset.plan;
+          var addonCheck = btn.closest('.plan-card').querySelector('.addon-check');
+          var videoAddon = addonCheck ? addonCheck.checked : false;
+          var basePrice  = btn.dataset.planPrice;
+          var totalPrice = videoAddon
+            ? '$' + (parseInt(basePrice.replace(/\D/g,'')) + 75) + '/mo'
+            : basePrice;
+          var planName   = btn.dataset.planName + (videoAddon ? ' + Video & TikTok' : '') + ' — ' + totalPrice;
           openModal(planName);
 
           fetch('/api/create-social-checkout', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ plan: plan }),
+            body: JSON.stringify({ plan: plan, videoAddon: videoAddon }),
           })
           .then(function (r) { return r.json(); })
           .then(function (data) {

@@ -10,6 +10,7 @@ const PRICES = {
   keep_fresh:  'price_1TbsKHLiXNZOJsPhG4li3HVY', // Keep It Fresh  $149/mo
   stay_active: 'price_1TbsKLLiXNZOJsPhqci7kLZT', // Stay Active    $249/mo
   always_on:   'price_1TbsKPLiXNZOJsPhPNlAHNB1', // Always On      $399/mo
+  video_addon: 'price_1TbsUsLiXNZOJsPh1MvT15YY', // Video & TikTok Add-On $75/mo
 };
 
 exports.handler = async (event) => {
@@ -17,7 +18,7 @@ exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') return json(405, { error: 'Method not allowed' });
   if (!STRIPE_SECRET_KEY || !STRIPE_PUBLISHABLE_KEY) return json(500, { error: 'Stripe not configured' });
 
-  const { plan } = JSON.parse(event.body || '{}');
+  const { plan, videoAddon } = JSON.parse(event.body || '{}');
   const priceId = PRICES[plan];
   if (!priceId) return json(400, { error: 'Invalid plan' });
 
@@ -30,7 +31,12 @@ exports.handler = async (event) => {
   params.append('payment_method_types[0]', 'card');
   params.append('line_items[0][price]', priceId);
   params.append('line_items[0][quantity]', '1');
+  if (videoAddon) {
+    params.append('line_items[1][price]', PRICES.video_addon);
+    params.append('line_items[1][quantity]', '1');
+  }
   params.append('metadata[plan]', plan);
+  params.append('metadata[video_addon]', videoAddon ? 'yes' : 'no');
   params.append('metadata[source]', 'social-media-page');
   params.append('return_url', `${returnOrigin}/thank-you.html?payment=complete&session_id={CHECKOUT_SESSION_ID}`);
 
