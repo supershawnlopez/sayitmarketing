@@ -1933,7 +1933,7 @@ body.page-audit .page-hero--light {
     position: fixed;
     inset: 0;
     top: 72px;
-    z-index: 45;
+    z-index: 9999;
     display: grid;
     align-content: start;
     background: rgba(238, 244, 251, 0.95);
@@ -1943,6 +1943,7 @@ body.page-audit .page-hero--light {
   .nav-panel[hidden] {
     display: none;
   }
+  body.nav-open .mobile-sticky { display: none !important; }
   .nav-panel-inner {
     margin-top: 0.75rem;
     background: rgba(248, 251, 255, 0.96);
