@@ -1,3 +1,40 @@
+## Session: May 28, 2026 (continued) — Apple Design Overhaul + Email Fix
+**AI:** Claude Code (Sonnet 4.6)
+**Worked on:** Full site typography system, Quick Picker UX, hero spacing, Spark email setup
+
+### ✅ Completed This Session
+- **Email:** Fixed Spark iOS setup — correct server is `host55.registrar-servers.com` port 993/465 SSL (not mail.privateemail.com — DNS moved to Netlify)
+- **Email:** Confirmed DKIM was already fixed (not recorded previously) — all DNS records now live
+- **Email routing:** Set to Remote Mail Exchanger in cPanel (correct for Namecheap hosted on external server)
+- **Homepage chip row:** Made 5 chips clickable (SEO, Social, Print, Monthly Plans, Google & Social Ads)
+- **advertising-management.html:** Moved lang button to top bar (matching all other pages)
+- **Quick Picker overhaul:** Options rewritten in customer language ("I need a website", "I want to show up on Google", etc.), badge bug fixed, sub-labels readable, arrow affordance added
+- **Floating button:** "What Do You Need?" → "Find My Plan"
+- **Hero typography — root cause fixed:** `--fs-h1` was 44px min (too large for container) causing every word to wrap on its own line
+- **Apple design system overhaul:** Unified type scale — h1 > h2 > h3 > body at ALL breakpoints. Killed 4 competing token systems. Removed hardcoded rogue font sizes from 6 components.
+- **Responsive hero breaks:** Added `br.br-mobile` CSS utility — 4-line mobile heroes, 2-line desktop
+- **Hero line breaks:** Added intentional `<br>` tags to all 8 page heroes
+- **Hero spacing:** Reduced excessive top padding (~100px saved on mobile)
+- **RESEND_API_KEY:** Confirmed set in Netlify ✅
+- **DKIM:** Confirmed live ✅
+
+### Final type scale (Apple-style, single source of truth):
+| Element | Mobile | Desktop |
+|---|---|---|
+| Hero H1 | 36px | 52px |
+| Section H2 | 24px | 36px |
+| Card H3 | 18px | 22px |
+| Body | 16px | 18px |
+
+### ⏳ Still Pending
+- Stripe signed webhook validation (open since May 1)
+
+### 🔜 Next (In Order)
+1. Run Stripe signed webhook test (Stripe dashboard → test event → check Netlify logs)
+2. Visual QA pass on all pages after design overhaul
+
+---
+
 ## Session: May 28, 2026 — Homepage Chip Row + Quick Picker Links
 **AI:** Claude Code (Sonnet 4.6)
 **Worked on:** Linking advertising-management.html + making chip row clickable
@@ -9,15 +46,10 @@
 - Pushed to GitHub → Netlify auto-deploy triggered (commit cbde7df)
 
 ### ⏳ Still Pending
-- Namecheap DKIM missing: `default._domainkey.sayitmarketing.com` returns NXDOMAIN
-  → Log into Namecheap Private Email admin → enable DKIM → add TXT record to Netlify DNS
-- RESEND_API_KEY — verify it's set in Netlify environment variables
 - Stripe signed webhook validation (open since May 1)
 
 ### 🔜 Next (In Order)
-1. Namecheap DKIM: log into Namecheap Private Email → enable DKIM → add TXT record to Netlify DNS
-2. Verify RESEND_API_KEY is set in Netlify dashboard
-3. Run Stripe signed webhook test
+1. Run Stripe signed webhook test
 
 ---
 
