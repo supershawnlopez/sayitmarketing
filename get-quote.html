@@ -1,44 +1,59 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Start My Plan | SayIt Marketing</title><meta name="description" content="Request a quote for website, monthly support, or print services."><link rel="canonical" href="https://sayitmarketing.com/get-quote.html"><link rel="stylesheet" href="assets/site.css"><script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"SayIt Marketing","url":"https://sayitmarketing.com/","telephone":"+1-520-222-6308","areaServed":"US","description":"Website design, monthly support, and print services for small businesses nationwide."}</script>
 <style>
-  /* Multi-step form */
-  .guided-progress {
-    display: flex;
-    gap: 0;
-    margin-bottom: 2rem;
+  /* ── Progress bar ── */
+  .form-progress-track {
+    height: 3px;
+    background: var(--line);
     border-radius: 999px;
+    margin-bottom: 2.5rem;
     overflow: hidden;
-    border: 1px solid var(--line);
-    background: #f0f4f8;
   }
-  .guided-progress span {
-    flex: 1;
-    text-align: center;
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    padding: 0.6rem 0.5rem;
-    color: var(--text-3);
-    transition: background 0.2s, color 0.2s;
-  }
-  .guided-progress span.active {
+  .form-progress-fill {
+    height: 100%;
     background: var(--brand);
-    color: #fff;
+    border-radius: 999px;
+    width: 25%;
+    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .guided-progress span.done {
-    background: #d0e8ff;
-    color: var(--brand);
-  }
+
+  /* ── Step shell ── */
+  .form-shell-premium { max-width: 560px; margin: 0 auto; }
   .guided-step { display: none; border: none; margin: 0; padding: 0; }
   .guided-step.active { display: block; }
-  .guided-step legend {
-    font-size: 1.05rem;
+
+  /* ── Step header ── */
+  .step-header {
+    margin-bottom: 1.75rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .step-eyebrow {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--brand);
+    margin-bottom: 0.5rem;
+  }
+  .step-header h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
     font-weight: 700;
     color: var(--text-1);
-    margin-bottom: 1.25rem;
-    padding: 0;
+    margin: 0 0 0.4rem;
+    letter-spacing: -0.025em;
+    line-height: 1.1;
   }
+  .step-header p {
+    font-size: 0.9rem;
+    color: var(--text-3);
+    margin: 0;
+    max-width: none;
+    line-height: 1.5;
+  }
+
+  /* ── Fields ── */
   .form-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -49,10 +64,10 @@
   .form-grid select,
   .form-grid textarea {
     width: 100%;
-    padding: 0.75rem 1rem;
+    padding: 0.8rem 1rem;
     border: 1.5px solid var(--line);
     border-radius: 10px;
-    font-size: 0.95rem;
+    font-size: 1rem;
     font-family: inherit;
     color: var(--text-1);
     background: #fff;
@@ -66,50 +81,40 @@
     box-shadow: 0 0 0 3px rgba(0,113,227,0.1);
   }
   .form-grid input.error,
-  .form-grid select.error { border-color: #e53e3e; }
-  .form-grid textarea { grid-column: 1 / -1; min-height: 88px; resize: vertical; }
+  .form-grid select.error,
+  .form-grid textarea.error { border-color: #e53e3e; }
+  .form-grid textarea { grid-column: 1 / -1; min-height: 96px; resize: vertical; }
+
+  /* ── Nav buttons ── */
   .step-actions {
     display: flex;
     gap: 0.75rem;
-    margin-top: 1.5rem;
+    margin-top: 1.75rem;
     flex-wrap: wrap;
+    align-items: center;
   }
-  .step-actions .btn { min-width: 120px; }
+  .step-actions .btn-primary { flex: 1; min-width: 140px; }
+  .step-actions .btn-secondary { flex-shrink: 0; }
+
+  /* ── Consent ── */
   .consent-row {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     align-items: flex-start;
-    margin: 1rem 0 1.5rem;
+    margin: 1.25rem 0 1.75rem;
+    padding: 1rem;
+    background: #f4f8ff;
+    border: 1px solid #d0e4ff;
+    border-radius: 12px;
   }
   .consent-row input { margin-top: 3px; accent-color: var(--brand); flex-shrink: 0; cursor: pointer; }
-  .consent-row span { font-size: 0.82rem; color: var(--text-3); line-height: 1.55; }
-  .form-shell-premium { max-width: 600px; margin: 0 auto; }
+  .consent-row span { font-size: 0.83rem; color: var(--text-2); line-height: 1.55; }
+
   #form-status { margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-3); }
-  /* Mobile step counter — replaces tab bar on small screens */
-  .step-counter { display: none; }
-  @media (max-width: 580px) {
-    .guided-progress { display: none; }
-    .step-counter {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 1.5rem;
-    }
-    .step-counter-label {
-      font-size: 0.82rem;
-      font-weight: 700;
-      color: var(--text-2);
-    }
-    .step-dots { display: flex; gap: 6px; align-items: center; }
-    .step-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--line);
-      transition: background 0.2s, width 0.2s, border-radius 0.2s;
-    }
-    .step-dot.active { width: 24px; border-radius: 4px; background: var(--brand); }
-    .step-dot.done { background: #93c5fd; }
+
+  @media (max-width: 520px) {
     .form-grid { grid-template-columns: 1fr; }
+    .step-actions .btn-primary { flex: none; width: 100%; }
   }
 </style>
 </head>
@@ -135,27 +140,18 @@
 <section class="section-page-tight">
   <div class="wrap form-shell-premium">
 
-    <div class="step-counter" id="step-counter">
-      <span class="step-counter-label" id="step-counter-label">Step 1 of 4 — Your Business</span>
-      <div class="step-dots">
-        <div class="step-dot active"></div>
-        <div class="step-dot"></div>
-        <div class="step-dot"></div>
-        <div class="step-dot"></div>
-      </div>
-    </div>
-
-    <div class="guided-progress" id="step-progress" aria-label="Form progress">
-      <span class="active">Your Business</span>
-      <span>Scope</span>
-      <span>Budget</span>
-      <span>Submit</span>
+    <div class="form-progress-track">
+      <div class="form-progress-fill" id="form-progress-fill"></div>
     </div>
 
     <form data-lead-form data-lead-type="quote" data-api="/api/leads">
 
       <fieldset class="guided-step active">
-        <legend>Step 1 — Tell us about your business</legend>
+        <div class="step-header">
+          <span class="step-eyebrow">Step 1 of 4</span>
+          <h2>Your Business</h2>
+          <p>Tell us who you are so we know how to reach you.</p>
+        </div>
         <div class="form-grid">
           <input name="full_name" placeholder="Your name" required autocomplete="given-name">
           <input name="business_name" placeholder="Business name" autocomplete="organization">
@@ -163,15 +159,19 @@
           <input name="mobile_phone" type="tel" placeholder="Mobile phone" required autocomplete="tel">
         </div>
         <div class="step-actions">
-          <button type="button" class="btn btn-primary step-next">Next →</button>
+          <button type="button" class="btn btn-primary step-next">Continue →</button>
         </div>
       </fieldset>
 
       <fieldset class="guided-step">
-        <legend>Step 2 — What do you need?</legend>
+        <div class="step-header">
+          <span class="step-eyebrow">Step 2 of 4</span>
+          <h2>What Do You Need?</h2>
+          <p>Pick the service that fits your situation right now.</p>
+        </div>
         <div class="form-grid">
           <select name="service_interest" required>
-            <option value="">What do you need?</option>
+            <option value="">Choose a service</option>
             <option>Website</option>
             <option>Monthly Support</option>
             <option>Local SEO</option>
@@ -182,7 +182,7 @@
             <option>Website + Print</option>
           </select>
           <select name="timeline">
-            <option value="">Preferred timeline</option>
+            <option value="">When do you need it?</option>
             <option>ASAP</option>
             <option>1–2 weeks</option>
             <option>2–4 weeks</option>
@@ -191,13 +191,17 @@
           <textarea name="primary_goal" placeholder="What's your main goal? (more calls, more leads, better branding, etc.)"></textarea>
         </div>
         <div class="step-actions">
-          <button type="button" class="btn btn-primary step-next">Next →</button>
+          <button type="button" class="btn btn-primary step-next">Continue →</button>
           <button type="button" class="btn btn-secondary step-back">← Back</button>
         </div>
       </fieldset>
 
       <fieldset class="guided-step">
-        <legend>Step 3 — Budget &amp; contact preference</legend>
+        <div class="step-header">
+          <span class="step-eyebrow">Step 3 of 4</span>
+          <h2>Budget &amp; Contact</h2>
+          <p>Help us match the right plan to your budget.</p>
+        </div>
         <div class="form-grid">
           <select name="budget_range" required>
             <option value="">Monthly budget range</option>
@@ -207,22 +211,25 @@
             <option>$2,500+</option>
           </select>
           <select name="preferred_contact">
-            <option value="">How should we reach you?</option>
+            <option value="">Best way to reach you</option>
             <option>Text</option>
             <option>Call</option>
             <option>Email</option>
           </select>
-          <textarea name="notes" placeholder="Anything else we should know before we call?"></textarea>
+          <textarea name="notes" placeholder="Anything we should know before we reach out?"></textarea>
         </div>
         <div class="step-actions">
-          <button type="button" class="btn btn-primary step-next">Next →</button>
+          <button type="button" class="btn btn-primary step-next">Continue →</button>
           <button type="button" class="btn btn-secondary step-back">← Back</button>
         </div>
       </fieldset>
 
       <fieldset class="guided-step">
-        <legend>Step 4 — Confirm and send</legend>
-        <p style="font-size:0.95rem;color:var(--text-2);margin-bottom:1rem;line-height:1.55;">You're almost done. We'll review your plan and reach out within 1 business day with a clear next step.</p>
+        <div class="step-header">
+          <span class="step-eyebrow">Step 4 of 4</span>
+          <h2>You're Almost Done</h2>
+          <p>We'll review your plan and reach out within 1 business day with a clear next step.</p>
+        </div>
         <div class="consent-row">
           <input type="checkbox" name="consent_sms_email" id="consent-check" required>
           <span>I agree to receive a call or text from Say It Marketing about my plan request. No spam, ever.</span>
@@ -247,23 +254,12 @@
 <script>
 (function () {
   var steps = Array.from(document.querySelectorAll('.guided-step'));
-  var indicators = Array.from(document.querySelectorAll('#step-progress span'));
-  var dots = Array.from(document.querySelectorAll('.step-dot'));
-  var counterLabel = document.getElementById('step-counter-label');
-  var labels = ['Your Business', 'Scope', 'Budget', 'Submit'];
+  var fill = document.getElementById('form-progress-fill');
   var current = 0;
 
   function showStep(n) {
     steps.forEach(function (s, i) { s.classList.toggle('active', i === n); });
-    indicators.forEach(function (ind, i) {
-      ind.classList.toggle('active', i === n);
-      ind.classList.toggle('done', i < n);
-    });
-    dots.forEach(function (dot, i) {
-      dot.classList.toggle('active', i === n);
-      dot.classList.toggle('done', i < n);
-    });
-    if (counterLabel) counterLabel.textContent = 'Step ' + (n + 1) + ' of 4 — ' + labels[n];
+    if (fill) fill.style.width = ((n + 1) / steps.length * 100) + '%';
     current = n;
     document.querySelector('.form-shell-premium').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
@@ -272,8 +268,8 @@
     var valid = true;
     steps[n].querySelectorAll('[required]').forEach(function (el) {
       el.classList.remove('error');
-      var isEmpty = el.type === 'checkbox' ? !el.checked : !el.value.trim();
-      if (isEmpty) { el.classList.add('error'); valid = false; }
+      var empty = el.type === 'checkbox' ? !el.checked : !el.value.trim();
+      if (empty) { el.classList.add('error'); valid = false; }
     });
     return valid;
   }
