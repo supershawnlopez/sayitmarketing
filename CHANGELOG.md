@@ -1,3 +1,31 @@
+## Session: May 28, 2026 (continued 3) — Quote Form Conversion Polish
+**AI:** Claude Code (Sonnet 4.6)
+**Worked on:** Quote form UX — Apple onboarding style + conversion header
+
+### ✅ Completed This Session
+- Quote form progress: replaced squished tab bar with thin brand progress bar (fills 25→50→75→100%)
+- Each step has large Apple-style header: eyebrow (Step X of 4) + h2 title + sub copy
+- Added conversion header above the form: eyebrow, headline, sub, trust chips
+  - "Free Plan Review" eyebrow
+  - "Tell Us What You Need." headline
+  - 1-day response + no contracts + no sales call trust chips
+- Fixed Netlify build error: removed tmp/ embedded git repos, added tmp/ to .gitignore
+- Mobile step counter removed — unified layout works on all screen sizes
+
+### ⏳ Still Pending
+- Stripe webhook CLI live test
+- Open Graph / Twitter metadata on money pages
+- Privacy + Terms pages + footer links
+- Visual QA pass on all pages
+
+### 🔜 Next (In Order)
+1. Open Graph metadata on core money pages
+2. Privacy + Terms pages
+3. Stripe webhook CLI test
+4. Visual QA
+
+---
+
 ## Session: May 28, 2026 (continued 2) — Phase 2 Brand + Buttons + Quote Form
 **AI:** Claude Code (Sonnet 4.6)
 **Worked on:** Brand voice, Call/Text split buttons, multi-step quote form
