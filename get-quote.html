@@ -85,7 +85,30 @@
   .consent-row span { font-size: 0.82rem; color: var(--text-3); line-height: 1.55; }
   .form-shell-premium { max-width: 600px; margin: 0 auto; }
   #form-status { margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-3); }
-  @media (max-width: 540px) {
+  /* Mobile step counter — replaces tab bar on small screens */
+  .step-counter { display: none; }
+  @media (max-width: 580px) {
+    .guided-progress { display: none; }
+    .step-counter {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+    .step-counter-label {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-2);
+    }
+    .step-dots { display: flex; gap: 6px; align-items: center; }
+    .step-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--line);
+      transition: background 0.2s, width 0.2s, border-radius 0.2s;
+    }
+    .step-dot.active { width: 24px; border-radius: 4px; background: var(--brand); }
+    .step-dot.done { background: #93c5fd; }
     .form-grid { grid-template-columns: 1fr; }
   }
 </style>
@@ -111,6 +134,16 @@
 
 <section class="section-page-tight">
   <div class="wrap form-shell-premium">
+
+    <div class="step-counter" id="step-counter">
+      <span class="step-counter-label" id="step-counter-label">Step 1 of 4 — Your Business</span>
+      <div class="step-dots">
+        <div class="step-dot active"></div>
+        <div class="step-dot"></div>
+        <div class="step-dot"></div>
+        <div class="step-dot"></div>
+      </div>
+    </div>
 
     <div class="guided-progress" id="step-progress" aria-label="Form progress">
       <span class="active">Your Business</span>
@@ -215,6 +248,9 @@
 (function () {
   var steps = Array.from(document.querySelectorAll('.guided-step'));
   var indicators = Array.from(document.querySelectorAll('#step-progress span'));
+  var dots = Array.from(document.querySelectorAll('.step-dot'));
+  var counterLabel = document.getElementById('step-counter-label');
+  var labels = ['Your Business', 'Scope', 'Budget', 'Submit'];
   var current = 0;
 
   function showStep(n) {
@@ -223,6 +259,11 @@
       ind.classList.toggle('active', i === n);
       ind.classList.toggle('done', i < n);
     });
+    dots.forEach(function (dot, i) {
+      dot.classList.toggle('active', i === n);
+      dot.classList.toggle('done', i < n);
+    });
+    if (counterLabel) counterLabel.textContent = 'Step ' + (n + 1) + ' of 4 — ' + labels[n];
     current = n;
     document.querySelector('.form-shell-premium').scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
