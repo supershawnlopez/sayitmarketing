@@ -1,3 +1,31 @@
+## Session: May 28, 2026 (continued 2) — Phase 2 Brand + Buttons + Quote Form
+**AI:** Claude Code (Sonnet 4.6)
+**Worked on:** Brand voice, Call/Text split buttons, multi-step quote form
+
+### ✅ Completed This Session
+- **Brand voice:** Removed all "Shawn" personal references sitewide — replaced with "we/us/Say It Marketing" throughout all HTML, JS, and the Stripe welcome email
+- **Call/Text split buttons:** Every page now has separate Call (tel:) and Text (sms:) actions
+  - Top-contact bar on all 11 pages: "Call · Text · 520-222-6308"
+  - contact.html, thank-you.html, get-quote.html: dedicated Call Us + Text Us buttons
+- **Quote form — real multi-step:** Was fake 4-label decoration, now fully functional
+  - Step 1: Business basics (name, business, email, phone)
+  - Step 2: Scope (service, timeline, goal)
+  - Step 3: Budget + contact preference
+  - Step 4: Consent + submit
+  - Per-step field validation, Next/Back navigation, progress bar with active/done states
+- **Stripe webhook:** Endpoint created in Stripe, whsec_ secret updated in Netlify ✅
+
+### ⏳ Still Pending
+- Stripe webhook CLI live test (endpoint + secret wired, test not yet run)
+
+### 🔜 Next (In Order)
+1. Open Graph / Twitter metadata on core money pages (website-design-services, local-seo, social-media, advertising-management, pricing)
+2. Privacy + Terms pages — create and link in sitewide footer
+3. Visual QA pass on all pages
+4. Stripe webhook CLI test
+
+---
+
 ## Session: May 28, 2026 (continued) — Apple Design Overhaul + Email Fix
 **AI:** Claude Code (Sonnet 4.6)
 **Worked on:** Full site typography system, Quick Picker UX, hero spacing, Spark email setup
