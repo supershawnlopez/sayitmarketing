@@ -2204,20 +2204,26 @@ body.page-audit .page-hero--light {
 .hero-text-link:hover { color: #fff; }
 
 .proof-ribbon {
-  margin-top: 1.4rem;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.6rem;
+  margin-top: 1.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 1.75rem;
+  row-gap: 0.4rem;
 }
 .proof-chip {
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  background: rgba(255, 255, 255, 0.12);
-  padding: 0.56rem 0.75rem;
-  text-align: center;
-  font-size: 0.84rem;
+  font-size: 0.82rem;
   font-weight: 600;
-  letter-spacing: 0.03em;
+  color: rgba(255,255,255,0.68);
+  letter-spacing: 0.02em;
+  position: relative;
+}
+.proof-chip + .proof-chip::before {
+  content: '·';
+  position: absolute;
+  left: -1rem;
+  color: rgba(255,255,255,0.28);
 }
 
 .home-proof-band {
@@ -2231,6 +2237,9 @@ body.page-audit .page-hero--light {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 0.9rem;
+}
+@media (max-width: 640px) {
+  .home-proof-grid { grid-template-columns: 1fr; }
 }
 .home-proof-item {
   background: #fff;
@@ -2273,10 +2282,16 @@ body.page-audit .page-hero--light {
   border-radius: 999px;
   border: 1px solid #c8d8ea;
   background: #f7fbff;
-  padding: 0.4rem 0.7rem;
+  padding: 0.4rem 0.9rem;
   font-size: 0.82rem;
   color: #30475f;
   font-weight: 600;
+  transition: border-color 0.15s, background 0.15s, color 0.15s;
+}
+a.addon-chip:hover {
+  border-color: var(--brand);
+  background: #e4f0ff;
+  color: var(--brand);
 }
 
 .services-diagnose {
