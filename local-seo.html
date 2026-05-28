@@ -429,10 +429,25 @@
     </div>
   </footer>
 
-  <div class="mobile-sticky"><a class="btn btn-primary" href="get-quote.html">Start My Plan</a></div>
+  <div class="mobile-sticky">
+    <button class="btn btn-primary" id="sticky-cta" onclick="QuickPicker.open(window._QP_CONFIG)">Start SEO</button>
+  </div>
 
   <script src="assets/stripe-links.js"></script>
+  <script src="assets/quick-picker.js"></script>
   <script src="assets/motion.js"></script>
   <script src="assets/nav.js"></script>
+  <script>
+    var L = window.SAYIT_STRIPE_LINKS || {};
+    window._QP_CONFIG = {
+      headline: 'Choose Your SEO Plan',
+      note: 'Month-to-month. Cancel anytime.',
+      options: [
+        { label: 'Get Listed', sub: '$99/mo', href: L.sub_seo_starter },
+        { label: 'On the Map', sub: '$199/mo', href: L.sub_seo_pro, highlight: true, badge: '★ Most Popular' },
+        { label: 'Own the Block', sub: '$299/mo', href: L.sub_seo_dominator },
+      ]
+    };
+  </script>
 </body>
 </html>

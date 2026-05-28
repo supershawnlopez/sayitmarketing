@@ -797,21 +797,23 @@ textarea { min-height: 120px; resize: vertical; }
 .footer .line2 { margin-top: 6px; }
 
 .mobile-sticky {
-  display: none;
+  display: flex;
   position: fixed;
-  left: 10px;
-  right: 10px;
-  bottom: 10px;
-  z-index: 70;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-  background: rgba(13, 20, 28, 0.96);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 14px;
-  padding: 8px;
+  right: 24px;
+  bottom: 24px;
+  left: auto;
+  z-index: 998;
+  background: none;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  gap: 0;
 }
 
-.mobile-sticky .btn { width: 100%; }
+.mobile-sticky .btn {
+  width: auto;
+  box-shadow: 0 4px 24px rgba(0, 113, 227, 0.4);
+}
 
 /* Non-home page component set aligned with homepage visual language */
 :root {
@@ -2111,7 +2113,16 @@ body.page-audit .page-hero--light {
 @media (max-width: 47.5rem) {
   .hero-cta { display: grid; grid-template-columns: 1fr; }
   .hero-cta .btn { width: 100%; }
-  .mobile-sticky { display: grid; }
+  .mobile-sticky {
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: rgba(13, 20, 28, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 8px;
+  }
+  .mobile-sticky .btn { width: 100%; box-shadow: none; }
   body { padding-bottom: 86px; }
 }
 

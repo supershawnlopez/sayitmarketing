@@ -46,5 +46,24 @@
   </section>
 
   <footer class="footer"><div>SayIt Marketing | Monthly Support</div></footer>
-  <script src="assets/stripe-links.js"></script><script src="assets/nav.js"></script>
+
+  <div class="mobile-sticky">
+    <button class="btn btn-primary" id="sticky-cta" onclick="QuickPicker.open(window._QP_CONFIG)">Start My Plan</button>
+  </div>
+
+  <script src="assets/stripe-links.js"></script>
+  <script src="assets/quick-picker.js"></script>
+  <script src="assets/nav.js"></script>
+  <script>
+    var L = window.SAYIT_STRIPE_LINKS || {};
+    window._QP_CONFIG = {
+      headline: 'Choose Your Monthly Plan',
+      note: 'Month-to-month. Cancel anytime.',
+      options: [
+        { label: 'Basic Care', sub: '$99/mo', href: L.sub_care_basic },
+        { label: 'Standard Care', sub: '$199/mo', href: L.sub_care_standard, highlight: true, badge: '★ Most Popular' },
+        { label: 'Advanced Care', sub: '$299/mo', href: L.sub_care_advanced },
+      ]
+    };
+  </script>
 </body></html>

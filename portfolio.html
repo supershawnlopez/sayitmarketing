@@ -69,7 +69,26 @@
   </section>
 
   <footer class="footer"><div>SayIt Marketing | Portfolio</div></footer>
+
+  <div class="mobile-sticky">
+    <button class="btn btn-primary" id="sticky-cta" onclick="QuickPicker.open(window._QP_CONFIG)">Start My Site</button>
+  </div>
+
+  <script src="assets/stripe-links.js"></script>
+  <script src="assets/quick-picker.js"></script>
   <script src="assets/motion.js"></script>
   <script src="assets/nav.js"></script>
+  <script>
+    var L = window.SAYIT_STRIPE_LINKS || {};
+    window._QP_CONFIG = {
+      headline: 'Choose Your Website Package',
+      note: '50% deposit to start — rest due on launch.',
+      options: [
+        { label: 'Get Found', sub: '$199 deposit', href: L.deposit_get_found },
+        { label: 'Look Pro', sub: '$299 deposit', href: L.deposit_look_pro, highlight: true, badge: '★ Most Popular' },
+        { label: 'Full Launch', sub: '$399 deposit', href: L.deposit_full_launch },
+      ]
+    };
+  </script>
 </body>
 </html>

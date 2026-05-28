@@ -89,8 +89,27 @@
   </section>
 
   <footer class="footer"><div>SayIt Marketing | FAQ</div></footer>
+
+  <div class="mobile-sticky">
+    <button class="btn btn-primary" id="sticky-cta" onclick="QuickPicker.open(window._QP_CONFIG)">Get Started</button>
+  </div>
+
+  <script src="assets/stripe-links.js"></script>
+  <script src="assets/quick-picker.js"></script>
   <script src="assets/faq.js"></script>
   <script src="assets/motion.js"></script>
   <script src="assets/nav.js"></script>
+  <script>
+    window._QP_CONFIG = {
+      headline: 'Ready to get started?',
+      note: 'No long contracts. No guesswork.',
+      options: [
+        { label: 'Website Design', sub: 'from $399', href: 'website-design-services.html' },
+        { label: 'Social Media', sub: 'from $149/mo', href: 'social-media.html', highlight: true, badge: '★ Most Popular' },
+        { label: 'Local SEO', sub: 'from $99/mo', href: 'local-seo.html' },
+        { label: 'See All Pricing', sub: '→', href: 'pricing.html' },
+      ]
+    };
+  </script>
 </body>
 </html>
