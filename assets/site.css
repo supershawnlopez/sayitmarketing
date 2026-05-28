@@ -17,7 +17,7 @@
   --btn-radius: 62.4375rem;
   --btn-font-size: 1rem;
   --btn-line: 1.2;
-  --fs-h1: clamp(1.5rem, 5.5vw, 3.25rem);
+  --fs-h1: clamp(1.75rem, 5.5vw, 3.25rem);
   --fs-h2: clamp(2rem, 4.2vw, 3.4rem);
   --fs-h3: clamp(1.25rem, 1.6vw, 1.6rem);
   --fs-body: clamp(1.0625rem, 0.25vw + 1rem, 1.2rem);
@@ -106,6 +106,8 @@ p {
 }
 
 .wrap { width: min(var(--max), calc(100% - 28px)); margin: 0 auto; }
+br.br-mobile { display: none; }
+@media (max-width: 640px) { br.br-mobile { display: block; } }
 
 .top-contact {
   background: #0f1419;
