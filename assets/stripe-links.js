@@ -21,10 +21,14 @@
     sub_seo_starter:           "https://pay.sayitmarketing.com/b/aFa00kci2d3jaEQ5LmbV60N", // Get Listed $99/mo
     sub_seo_pro:               "https://pay.sayitmarketing.com/b/4gM6oI5TE2oFfZab5GbV60M", // On the Map $199/mo
     sub_seo_dominator:         "https://pay.sayitmarketing.com/b/8x2cN60zkgfv6oA1v6bV60O", // Own the Block $299/mo
-    // Social media
-    social_starter:            "https://pay.sayitmarketing.com/b/14A6oI1Dod3j14gc9KbV60H", // Launch Ready $150
-    social_pro:                "https://pay.sayitmarketing.com/b/3cI00kci2aVbeV66PqbV60I", // Content Pro $250
-    social_elite:              "https://pay.sayitmarketing.com/b/14AfZi5TE5AR8wI1v6bV60J", // Done For You $399
+    // Social media — one-time setup
+    social_starter:            "https://pay.sayitmarketing.com/b/14A6oI1Dod3j14gc9KbV60H", // Profile Setup $150
+    social_pro:                "https://pay.sayitmarketing.com/b/3cI00kci2aVbeV66PqbV60I", // Full Launch Pack $250
+    social_elite:              "https://pay.sayitmarketing.com/b/14AfZi5TE5AR8wI1v6bV60J", // (legacy) Done For You $399
+    // Social media — monthly management subscriptions (create products in Stripe, then replace nulls)
+    sub_social_keep_fresh:     null, // Keep It Fresh $149/mo — 8 posts, IG + FB
+    sub_social_stay_active:    null, // Stay Active $249/mo — 16 posts, IG + FB + TikTok ★
+    sub_social_always_on:      null, // Always On $399/mo — 30 posts (daily), all platforms
     // Bundles — subscription + one-time in a single Stripe checkout
     bundle_seo_pro_social_setup:      "https://pay.sayitmarketing.com/b/3cI4gA4PAfbraEQa1CbV60P", // SEO On the Map $199/mo + Social Setup $250
     bundle_seo_starter_social_setup:  null, // SEO Get Listed $99/mo + Social Setup $250 — create when needed

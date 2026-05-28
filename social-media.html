@@ -3,58 +3,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Social Media Plans | SayIt Marketing</title>
-  <meta name="description" content="Social media setup and monthly management for small businesses. We brand, launch, and grow your Instagram, Facebook, and TikTok.">
+  <title>Social Media Management Plans | SayIt Marketing</title>
+  <meta name="description" content="Monthly social media management for small businesses in Arizona. We post for you every week on Instagram, Facebook, and TikTok. Starting at $149/mo.">
   <link rel="canonical" href="https://sayitmarketing.com/social-media.html">
+  <meta property="og:title" content="Social Media Management Plans | SayIt Marketing">
+  <meta property="og:description" content="We post for you every week. Instagram, Facebook, TikTok. Starting at $149/mo.">
+  <meta property="og:url" content="https://sayitmarketing.com/social-media.html">
+  <meta property="og:type" content="website">
   <link rel="stylesheet" href="assets/site.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Social Media Management",
+    "provider": { "@type": "LocalBusiness", "name": "Say It Marketing", "url": "https://sayitmarketing.com" },
+    "description": "Monthly social media management for small businesses. We post for you on Instagram, Facebook, and TikTok.",
+    "areaServed": "Arizona",
+    "offers": [
+      { "@type": "Offer", "name": "Keep It Fresh", "price": "149", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Stay Active",   "price": "249", "priceCurrency": "USD" },
+      { "@type": "Offer", "name": "Always On",     "price": "399", "priceCurrency": "USD" }
+    ]
+  }
+  </script>
   <style>
-    .social-hero {
+    /* ── Hero ─────────────────────────────────────── */
+    .sm-hero {
       padding: clamp(3.5rem, 8vw, 6rem) 0 clamp(2rem, 4vw, 3rem);
       text-align: center;
     }
-    .social-hero h1 {
-      max-width: 18ch;
-      margin-inline: auto;
-      margin-bottom: 16px;
-    }
-    .social-hero h1 em { font-style: normal; color: var(--brand); }
-    .social-hero p {
-      max-width: 50ch;
+    .sm-hero h1 { max-width: 20ch; margin-inline: auto; margin-bottom: 16px; }
+    .sm-hero h1 em { font-style: normal; color: var(--brand); }
+    .sm-hero p {
+      max-width: 46ch;
       margin-inline: auto;
       font-size: clamp(1rem, 1.8vw, 1.2rem);
       color: var(--text-3);
     }
-    .social-hero .hero-links { margin-top: 28px; }
+    .hero-btns { margin-top: 28px; display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
-    /* ── Platform pills ── */
+    /* ── Platform pills ───────────────────────────── */
     .platform-row {
       display: flex;
       justify-content: center;
-      gap: 12px;
+      gap: 10px;
       flex-wrap: wrap;
       margin-top: 28px;
     }
     .platform-pill {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: #fff;
+      gap: 7px;
+      background: var(--surface);
       border: 1px solid var(--line);
       border-radius: 999px;
-      padding: 8px 18px;
-      font-size: 0.85rem;
+      padding: 7px 16px;
+      font-size: 0.8rem;
       font-weight: 600;
       color: var(--text-2);
       box-shadow: var(--shadow-soft);
     }
-    .platform-pill svg { width: 18px; height: 18px; }
+    .platform-pill svg { width: 16px; height: 16px; flex-shrink: 0; }
 
-    /* ── Plans ── */
+    /* ── Tab switcher ─────────────────────────────── */
+    .tab-bar {
+      display: flex;
+      gap: 4px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 4px;
+      width: fit-content;
+      margin: 0 auto 2.5rem;
+      box-shadow: var(--shadow-soft);
+    }
+    .tab-btn {
+      padding: 9px 24px;
+      border-radius: 999px;
+      border: none;
+      background: transparent;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-3);
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .tab-btn.active {
+      background: var(--brand);
+      color: #fff;
+      box-shadow: 0 2px 8px rgba(0,113,227,0.28);
+    }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* ── Plan cards ───────────────────────────────── */
     .plans-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 0.75rem;
-      margin-top: 2.5rem;
     }
     .plan-card {
       border: 1px solid var(--line);
@@ -65,8 +111,8 @@
       display: flex;
       flex-direction: column;
     }
-    .plan-card.recommended {
-      border-color: rgba(0,113,227,0.4);
+    .plan-card.featured {
+      border-color: rgba(0,113,227,0.35);
       background: linear-gradient(160deg, #eff7ff 0%, #e4f0ff 100%);
       box-shadow: 0 12px 32px rgba(0,113,227,0.14);
     }
@@ -74,71 +120,53 @@
       display: inline-block;
       background: var(--brand);
       color: #fff;
-      font-size: 0.6rem;
+      font-size: 0.58rem;
       font-weight: 800;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      padding: 5px 12px;
+      padding: 4px 11px;
       border-radius: 999px;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
       width: fit-content;
     }
     .plan-tier {
-      font-size: 0.62rem;
+      font-size: 0.6rem;
       font-weight: 800;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--brand);
-      margin-bottom: 6px;
+      margin-bottom: 5px;
     }
     .plan-name {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       font-weight: 800;
       letter-spacing: -0.02em;
       color: var(--text-1);
       margin-bottom: 4px;
     }
     .plan-tagline {
-      font-size: 0.85rem;
+      font-size: 0.83rem;
       color: var(--text-3);
-      margin-bottom: 12px;
+      margin-bottom: 16px;
       line-height: 1.45;
     }
-    .plan-type-row {
-      display: flex;
-      gap: 6px;
-      flex-wrap: wrap;
-      margin-bottom: 16px;
-    }
-    .plan-type-badge {
-      font-size: 0.62rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      padding: 3px 10px;
-      border-radius: 999px;
-      background: rgba(0,113,227,0.08);
-      color: var(--brand);
-      border: 1px solid rgba(0,113,227,0.15);
-    }
     .plan-price {
-      font-size: clamp(2.2rem, 5vw, 2.8rem);
+      font-size: clamp(2.2rem, 4.5vw, 2.8rem);
       font-weight: 800;
       letter-spacing: -0.04em;
       color: var(--text-1);
       line-height: 1;
-      margin-bottom: 2px;
     }
-    .plan-price.recommended { color: var(--brand); }
-    .plan-price-note {
-      font-size: 0.78rem;
-      color: var(--text-3);
+    .plan-price.featured { color: var(--brand); }
+    .plan-price-note { font-size: 0.76rem; color: var(--text-3); margin-bottom: 4px; }
+    .plan-daily {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--brand);
       margin-bottom: 20px;
     }
-    .plan-divider {
-      border: none;
-      border-top: 1px solid var(--line);
-      margin-bottom: 16px;
-    }
+    .plan-setup-note { font-size: 0.72rem; color: var(--text-3); margin-bottom: 20px; }
+    .plan-divider { border: none; border-top: 1px solid var(--line); margin-bottom: 16px; }
     .plan-features {
       list-style: none;
       margin: 0 0 24px;
@@ -151,8 +179,8 @@
     .plan-features li {
       display: flex;
       align-items: flex-start;
-      gap: 10px;
-      font-size: 0.85rem;
+      gap: 9px;
+      font-size: 0.84rem;
       color: var(--text-2);
       line-height: 1.4;
     }
@@ -160,80 +188,96 @@
       content: '✓';
       color: var(--brand);
       font-weight: 800;
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       flex-shrink: 0;
-      margin-top: 1px;
+      margin-top: 2px;
     }
+    .plan-features li.missing { color: var(--text-3); }
+    .plan-features li.missing::before { content: '—'; color: var(--line); }
     .plan-card .btn { width: 100%; justify-content: center; }
 
-    /* ── Setup vs Monthly clarity ── */
-    .billing-explainer {
+    /* ── Setup-only 2-col grid ────────────────────── */
+    .setup-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 0.75rem;
-      margin-top: 2rem;
+      max-width: 780px;
+      margin: 0 auto;
     }
-    .billing-block {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: var(--radius-sm);
-      padding: 1.25rem;
-      box-shadow: var(--shadow-soft);
+    .setup-upsell {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      font-size: 0.79rem;
+      color: var(--text-3);
+      line-height: 1.5;
     }
-    .billing-label {
-      font-size: 0.62rem;
-      font-weight: 800;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--brand);
-      margin-bottom: 8px;
-    }
-    .billing-title {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text-1);
-      margin-bottom: 6px;
-    }
-    .billing-body {
+    .setup-upsell a { color: var(--brand); font-weight: 600; }
+
+    /* ── Already a client link ────────────────────── */
+    .client-link {
+      text-align: center;
+      margin-top: 1.5rem;
       font-size: 0.85rem;
       color: var(--text-3);
-      line-height: 1.6;
-      margin: 0;
-      max-width: 100%;
     }
+    .client-link a { color: var(--brand); font-weight: 600; }
 
-    /* ── What we need from you ── */
-    .needs-grid {
+    /* ── How it works ─────────────────────────────── */
+    .steps-row {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 0.75rem;
       margin-top: 2rem;
     }
-    .need-item {
-      background: #fff;
+    .step-card {
+      background: var(--surface);
       border: 1px solid var(--line);
       border-radius: var(--radius-sm);
-      padding: 1.25rem;
+      padding: 1.5rem;
       box-shadow: var(--shadow-soft);
       text-align: center;
     }
-    .need-icon { font-size: 1.6rem; margin-bottom: 8px; }
-    .need-title {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--text-1);
-      margin-bottom: 4px;
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      background: var(--brand);
+      color: #fff;
+      font-size: 0.85rem;
+      font-weight: 800;
+      margin-bottom: 12px;
     }
-    .need-body {
-      font-size: 0.8rem;
-      color: var(--text-3);
-      line-height: 1.5;
-      margin: 0;
-      max-width: 100%;
-    }
+    .step-title { font-size: 0.95rem; font-weight: 700; color: var(--text-1); margin-bottom: 6px; }
+    .step-body { font-size: 0.82rem; color: var(--text-3); line-height: 1.55; margin: 0; }
 
-    /* ── CTA ── */
-    .social-cta {
+    /* ── Social proof ─────────────────────────────── */
+    .proof-block {
+      background: linear-gradient(135deg, #eff7ff 0%, #e4f0ff 100%);
+      border: 1px solid rgba(0,113,227,0.18);
+      border-radius: var(--radius);
+      padding: 2rem;
+      margin-top: 2rem;
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+    .proof-icon { font-size: 2rem; flex-shrink: 0; line-height: 1; }
+    .proof-quote {
+      font-size: clamp(1rem, 1.6vw, 1.15rem);
+      font-weight: 600;
+      color: var(--text-1);
+      line-height: 1.4;
+      margin-bottom: 8px;
+    }
+    .proof-attr { font-size: 0.8rem; color: var(--text-3); }
+    .proof-attr strong { color: var(--brand); }
+
+    /* ── CTA block ────────────────────────────────── */
+    .sm-cta {
       background: linear-gradient(165deg, #f3f8ff 0%, #eaf2fc 100%);
       border: 1px solid #d6e2ef;
       border-radius: var(--radius);
@@ -242,20 +286,23 @@
       box-shadow: var(--shadow-soft);
       margin-top: 2rem;
     }
-    .social-cta h2 { max-width: 22ch; margin-inline: auto; margin-bottom: 10px; }
-    .social-cta p { max-width: 46ch; margin-inline: auto; color: var(--text-3); margin-bottom: 28px; }
+    .sm-cta h2 { max-width: 22ch; margin-inline: auto; margin-bottom: 10px; }
+    .sm-cta p { max-width: 46ch; margin-inline: auto; color: var(--text-3); margin-bottom: 28px; }
+    .cta-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
-    .sec-head {
-      text-align: center;
-      margin-bottom: 0;
-    }
+    .sec-head { text-align: center; margin-bottom: 0; }
     .sec-head .eyebrow { color: var(--brand); }
     .sec-head h2 { max-width: 26ch; margin-inline: auto; margin-bottom: 8px; }
-    .sec-head p { max-width: 50ch; margin-inline: auto; color: var(--text-3); }
+    .sec-head p { max-width: 52ch; margin-inline: auto; color: var(--text-3); }
 
     @media (max-width: 860px) {
-      .plans-grid, .needs-grid { grid-template-columns: 1fr; }
-      .billing-explainer { grid-template-columns: 1fr; }
+      .plans-grid { grid-template-columns: 1fr; }
+      .setup-grid { grid-template-columns: 1fr; max-width: 480px; }
+      .steps-row { grid-template-columns: 1fr; }
+      .proof-block { flex-direction: column; gap: 1rem; }
+    }
+    @media (max-width: 540px) {
+      .tab-btn { padding: 8px 16px; font-size: 0.8rem; }
     }
   </style>
 </head>
@@ -269,6 +316,7 @@
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="website-design-services.html">Services</a>
+        <a href="social-media.html" aria-current="page">Social Media</a>
         <a href="pricing.html">Pricing</a>
         <a href="portfolio.html">Portfolio</a>
         <a href="faq.html">FAQ</a>
@@ -288,51 +336,28 @@
   </nav>
 
   <!-- HERO -->
-  <section class="section social-hero">
+  <section class="section sm-hero">
     <div class="wrap">
-      <p class="eyebrow">Social Media Plans</p>
-      <h1>Your business.<br><em>On every screen.</em></h1>
-      <p>We set up, brand, and manage your social media — you just show up and do what you do best.</p>
-      <div class="hero-links">
-        <a class="btn btn-primary" href="get-quote.html">Start My Plan</a>
-        <a class="btn btn-secondary" href="#plans">See Plans</a>
+      <p class="eyebrow">Social Media Management</p>
+      <h1>We post for you.<br><em>Every week. Every day.</em></h1>
+      <p>You run your business. We keep your social media active, branded, and converting — on every platform that matters.</p>
+      <div class="hero-btns">
+        <a class="btn btn-primary" href="#plans">See Monthly Plans</a>
+        <a class="btn btn-secondary" href="get-quote.html">Ask a Question</a>
       </div>
       <div class="platform-row">
         <span class="platform-pill">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
           Instagram
         </span>
         <span class="platform-pill">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
           Facebook
         </span>
         <span class="platform-pill">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
           TikTok
         </span>
-      </div>
-    </div>
-  </section>
-
-  <!-- BILLING CLARITY -->
-  <section class="section">
-    <div class="wrap">
-      <div class="sec-head">
-        <p class="eyebrow">How It Works</p>
-        <h2>One-time setup. Optional monthly management.</h2>
-        <p>Start with setup to get everything built and branded. Add monthly management when you're ready to grow.</p>
-      </div>
-      <div class="billing-explainer">
-        <div class="billing-block">
-          <div class="billing-label">One-Time</div>
-          <div class="billing-title">Social Media Setup</div>
-          <p class="billing-body">We build out your profiles, brand everything, and hand you a content launch pack. You're ready to post from day one. Paid once — yours forever.</p>
-        </div>
-        <div class="billing-block">
-          <div class="billing-label">Monthly (Optional)</div>
-          <div class="billing-title">Ongoing Management</div>
-          <p class="billing-body">You send us photos and videos weekly. We design the posts, write the captions, and publish everything on schedule. You just show up and groom.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -340,107 +365,178 @@
   <!-- PLANS -->
   <section class="section" id="plans">
     <div class="wrap">
-      <div class="sec-head">
-        <p class="eyebrow">Social Media Plans</p>
-        <h2>Pick your level.</h2>
-        <p>All plans start with a one-time setup fee. Add monthly management at any tier.</p>
+      <div class="sec-head" style="margin-bottom:2rem;">
+        <p class="eyebrow">Plans &amp; Pricing</p>
+        <h2>Pick your posting pace.</h2>
+        <p>Monthly plans include everything. New clients pay a one-time $150 setup fee — we build your profiles, brand everything, and get you launch-ready before your first post goes live.</p>
       </div>
-      <div class="plans-grid">
 
-        <!-- STARTER -->
-        <div class="plan-card">
-          <div class="plan-tier">Starter</div>
-          <div class="plan-name">Launch Ready</div>
-          <div class="plan-tagline">Get set up and ready to post on your own.</div>
-          <div class="plan-type-row">
-            <span class="plan-type-badge">One-Time</span>
-            <span class="plan-type-badge">IG + Facebook</span>
-          </div>
-          <div class="plan-price">$150</div>
-          <div class="plan-price-note">one-time setup fee</div>
-          <hr class="plan-divider">
-          <ul class="plan-features">
-            <li>Instagram + Facebook setup</li>
-            <li>Branded cover photo &amp; profile image</li>
-            <li>Bio with phone &amp; website link</li>
-            <li>3 posts designed &amp; ready to publish</li>
-          </ul>
-          <a class="btn btn-secondary" data-stripe-key="social_starter" href="get-quote.html">Start Launch Ready</a>
-        </div>
-
-        <!-- PRO -->
-        <div class="plan-card recommended">
-          <div class="rec-badge">★ Most Popular</div>
-          <div class="plan-tier">Pro</div>
-          <div class="plan-name">Content Pro</div>
-          <div class="plan-tagline">Full setup plus monthly content we create for you.</div>
-          <div class="plan-type-row">
-            <span class="plan-type-badge">Setup + Monthly</span>
-            <span class="plan-type-badge">IG + FB + TikTok</span>
-          </div>
-          <div class="plan-price recommended">$250</div>
-          <div class="plan-price-note">one-time setup · then $250/mo</div>
-          <hr class="plan-divider">
-          <ul class="plan-features">
-            <li>Everything in Launch Ready</li>
-            <li>TikTok added</li>
-            <li>6 branded posts + 2 Reels/month</li>
-            <li>Captions + hashtag strategy</li>
-            <li>30-day content schedule</li>
-            <li>You send photos/videos — we do the rest</li>
-          </ul>
-          <a class="btn btn-primary" data-stripe-key="social_pro" href="get-quote.html">Start Content Pro</a>
-        </div>
-
-        <!-- ELITE -->
-        <div class="plan-card">
-          <div class="plan-tier">Elite</div>
-          <div class="plan-name">Done For You</div>
-          <div class="plan-tagline">Full management — we handle everything, every month.</div>
-          <div class="plan-type-row">
-            <span class="plan-type-badge">Setup + Monthly</span>
-            <span class="plan-type-badge">All Platforms</span>
-          </div>
-          <div class="plan-price">$399</div>
-          <div class="plan-price-note">one-time setup · then $399/mo</div>
-          <hr class="plan-divider">
-          <ul class="plan-features">
-            <li>Everything in Content Pro</li>
-            <li>We post everything for you</li>
-            <li>Comment &amp; DM engagement</li>
-            <li>Monthly insights report</li>
-            <li>Monthly strategy call</li>
-          </ul>
-          <a class="btn btn-secondary" data-stripe-key="social_elite" href="get-quote.html">Start Done For You</a>
-        </div>
-
+      <!-- TAB BAR -->
+      <div class="tab-bar" role="tablist" aria-label="Plan type">
+        <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="tab-monthly" data-tab="monthly">Monthly Plans</button>
+        <button class="tab-btn" role="tab" aria-selected="false" aria-controls="tab-setup" data-tab="setup">Setup Only</button>
       </div>
+
+      <!-- ─── TAB: MONTHLY PLANS ─────────────────── -->
+      <div class="tab-content active" id="tab-monthly" role="tabpanel">
+        <div class="plans-grid">
+
+          <!-- KEEP IT FRESH -->
+          <div class="plan-card">
+            <div class="plan-tier">Starter</div>
+            <div class="plan-name">Keep It Fresh</div>
+            <div class="plan-tagline">Stay visible with steady, consistent weekly posts.</div>
+            <div class="plan-price">$149</div>
+            <div class="plan-price-note">/month &middot; cancel anytime</div>
+            <div class="plan-setup-note">+ $150 one-time setup for new clients</div>
+            <hr class="plan-divider">
+            <ul class="plan-features">
+              <li>8 posts per month (2&times;/week)</li>
+              <li>Instagram + Facebook</li>
+              <li>Branded graphics + captions</li>
+              <li>You send photos &mdash; we design &amp; post</li>
+              <li class="missing">TikTok</li>
+              <li class="missing">Reels / short-form video</li>
+            </ul>
+            <a class="btn btn-secondary" data-stripe-key="sub_social_keep_fresh" href="get-quote.html">Start Keep It Fresh</a>
+          </div>
+
+          <!-- STAY ACTIVE -->
+          <div class="plan-card featured">
+            <div class="rec-badge">&#9733; Most Popular</div>
+            <div class="plan-tier">Pro</div>
+            <div class="plan-name">Stay Active</div>
+            <div class="plan-tagline">The sweet spot. Consistent, high-quality content on every platform that matters.</div>
+            <div class="plan-price featured">$249</div>
+            <div class="plan-price-note">/month &middot; cancel anytime</div>
+            <div class="plan-daily">That&rsquo;s $8/day.</div>
+            <div class="plan-setup-note">+ $150 one-time setup for new clients</div>
+            <hr class="plan-divider">
+            <ul class="plan-features">
+              <li>16 posts per month (4&times;/week)</li>
+              <li>Instagram + Facebook + TikTok</li>
+              <li>Branded graphics + captions</li>
+              <li>You send photos/videos &mdash; we do the rest</li>
+              <li>Reels + short-form video</li>
+              <li>Monthly content calendar</li>
+            </ul>
+            <a class="btn btn-primary" data-stripe-key="sub_social_stay_active" href="get-quote.html">Start Stay Active</a>
+          </div>
+
+          <!-- ALWAYS ON -->
+          <div class="plan-card">
+            <div class="plan-tier">Elite</div>
+            <div class="plan-name">Always On</div>
+            <div class="plan-tagline">Daily presence. Built for businesses that compete hard for local attention.</div>
+            <div class="plan-price">$399</div>
+            <div class="plan-price-note">/month &middot; cancel anytime</div>
+            <div class="plan-setup-note">+ $150 one-time setup for new clients</div>
+            <hr class="plan-divider">
+            <ul class="plan-features">
+              <li>30 posts per month (daily)</li>
+              <li>All platforms including Stories</li>
+              <li>Everything in Stay Active</li>
+              <li>Comment &amp; DM monitoring</li>
+              <li>Monthly performance report</li>
+              <li>Priority turnaround on all content</li>
+            </ul>
+            <a class="btn btn-secondary" data-stripe-key="sub_social_always_on" href="get-quote.html">Start Always On</a>
+          </div>
+
+        </div>
+        <p class="client-link">Already a client? <a href="get-quote.html?upgrade=social">Upgrade your plan &rarr;</a></p>
+      </div>
+
+      <!-- ─── TAB: SETUP ONLY ────────────────────── -->
+      <div class="tab-content" id="tab-setup" role="tabpanel">
+        <div class="setup-grid">
+
+          <!-- PROFILE SETUP -->
+          <div class="plan-card">
+            <div class="plan-tier">One-Time</div>
+            <div class="plan-name">Profile Setup</div>
+            <div class="plan-tagline">Get your profiles built and branded. You post on your own schedule from day one.</div>
+            <div class="plan-price">$150</div>
+            <div class="plan-price-note">one-time &middot; yours forever</div>
+            <hr class="plan-divider" style="margin-top:20px;">
+            <ul class="plan-features">
+              <li>Instagram + Facebook setup</li>
+              <li>Branded cover photo + profile image</li>
+              <li>Bio with phone, website + booking link</li>
+              <li>3 launch posts designed and ready</li>
+              <li>Hashtag starter kit</li>
+            </ul>
+            <a class="btn btn-secondary" data-stripe-key="social_starter" href="get-quote.html">Get Profile Setup</a>
+            <div class="setup-upsell">
+              Want us to keep posting after launch? <a href="#plans" data-tab-trigger="monthly">Add a monthly plan from $149/mo &rarr;</a>
+            </div>
+          </div>
+
+          <!-- FULL LAUNCH PACK -->
+          <div class="plan-card featured">
+            <div class="rec-badge">&#9733; Most Complete</div>
+            <div class="plan-tier">One-Time</div>
+            <div class="plan-name">Full Launch Pack</div>
+            <div class="plan-tagline">Every platform built, branded, and loaded with a full month of content to hit the ground running.</div>
+            <div class="plan-price featured">$250</div>
+            <div class="plan-price-note">one-time &middot; yours forever</div>
+            <hr class="plan-divider" style="margin-top:20px;">
+            <ul class="plan-features">
+              <li>Everything in Profile Setup</li>
+              <li>TikTok added</li>
+              <li>8 posts + 2 Reels designed &amp; scheduled</li>
+              <li>30-day content calendar handed off to you</li>
+              <li>Caption + hashtag strategy doc</li>
+            </ul>
+            <a class="btn btn-primary" data-stripe-key="social_pro" href="get-quote.html">Get Full Launch Pack</a>
+            <div class="setup-upsell">
+              Want us to keep posting for you every week? <a href="#plans" data-tab-trigger="monthly">Add a monthly plan from $149/mo &rarr;</a>
+            </div>
+          </div>
+
+        </div>
+        <p class="client-link">Ready to hand it all off? <a href="#plans" data-tab-trigger="monthly">See monthly management plans &rarr;</a></p>
+      </div>
+
     </div>
   </section>
 
-  <!-- WHAT WE NEED FROM YOU -->
+  <!-- HOW IT WORKS -->
   <section class="section">
     <div class="wrap">
       <div class="sec-head">
         <p class="eyebrow">How We Work Together</p>
-        <h2>Simple process. Real results.</h2>
-        <p>Here's what we need from you each month to make the content work.</p>
+        <h2>Three steps. Zero stress.</h2>
+        <p>You send us the raw material. We handle everything else — design, copy, scheduling, and posting.</p>
       </div>
-      <div class="needs-grid">
-        <div class="need-item">
-          <div class="need-icon">📸</div>
-          <div class="need-title">Weekly Photos &amp; Videos</div>
-          <p class="need-body">Send us your best shots from the week. Before/afters, happy pets, your space. We turn them into designed posts.</p>
+      <div class="steps-row">
+        <div class="step-card">
+          <div class="step-num">1</div>
+          <div class="step-title">You send photos &amp; videos</div>
+          <p class="step-body">Text or share a quick album each week &mdash; before/afters, your work, your space. Whatever you&rsquo;ve got. Raw is fine.</p>
         </div>
-        <div class="need-item">
-          <div class="need-icon">✅</div>
-          <div class="need-title">Quick Approvals</div>
-          <p class="need-body">We send you the content before it goes live. One quick thumbs up and it posts on schedule.</p>
+        <div class="step-card">
+          <div class="step-num">2</div>
+          <div class="step-title">We design, write &amp; schedule</div>
+          <p class="step-body">We turn your content into branded posts with captions, hashtags, and a publishing schedule. You get a preview before anything goes live.</p>
         </div>
-        <div class="need-item">
-          <div class="need-icon">💬</div>
-          <div class="need-title">Any Updates or Promos</div>
-          <p class="need-body">Running a special? New service? Just text us and we'll work it into that month's content calendar.</p>
+        <div class="step-card">
+          <div class="step-num">3</div>
+          <div class="step-title">It posts. You grow.</div>
+          <p class="step-body">Your accounts stay active and consistent &mdash; whether you&rsquo;re with a client, on the road, or just taking a day off.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL PROOF -->
+  <section class="section">
+    <div class="wrap">
+      <div class="proof-block">
+        <div class="proof-icon">🐾</div>
+        <div>
+          <p class="proof-quote">&ldquo;Eimy at Dog &amp; Cat Groomer went from zero posts to showing up 4&times; a week on Instagram and Facebook &mdash; in her first month working with us.&rdquo;</p>
+          <p class="proof-attr"><strong>Real client. Real results.</strong> &mdash; Glendale, AZ &middot; Dog &amp; Cat Groomer</p>
         </div>
       </div>
     </div>
@@ -449,11 +545,11 @@
   <!-- CTA -->
   <section class="section">
     <div class="wrap">
-      <div class="social-cta">
+      <div class="sm-cta">
         <p class="eyebrow">Ready to get started</p>
-        <h2>Your business deserves to be seen.</h2>
-        <p>Let's get your social media set up right. Start with any plan — we'll handle the rest.</p>
-        <div class="hero-links">
+        <h2>Your business deserves to be seen every day.</h2>
+        <p>Start with any plan. Cancel anytime. We handle the content &mdash; you handle the clients.</p>
+        <div class="cta-btns">
           <a class="btn btn-primary" href="get-quote.html">Start My Social Plan</a>
           <a class="btn btn-secondary" href="contact.html">Ask a Question</a>
         </div>
@@ -476,5 +572,34 @@
   <script src="assets/stripe-links.js"></script>
   <script src="assets/motion.js"></script>
   <script src="assets/nav.js"></script>
+  <script>
+    (function () {
+      var tabs   = document.querySelectorAll('.tab-btn');
+      var panels = document.querySelectorAll('.tab-content');
+
+      function activate(tabName) {
+        tabs.forEach(function (t) {
+          var isTarget = t.dataset.tab === tabName;
+          t.classList.toggle('active', isTarget);
+          t.setAttribute('aria-selected', isTarget ? 'true' : 'false');
+        });
+        panels.forEach(function (p) {
+          p.classList.toggle('active', p.id === 'tab-' + tabName);
+        });
+      }
+
+      tabs.forEach(function (tab) {
+        tab.addEventListener('click', function () { activate(tab.dataset.tab); });
+      });
+
+      document.querySelectorAll('[data-tab-trigger]').forEach(function (el) {
+        el.addEventListener('click', function (e) {
+          e.preventDefault();
+          activate(el.dataset.tabTrigger);
+          document.getElementById('plans').scrollIntoView({ behavior: 'smooth' });
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
