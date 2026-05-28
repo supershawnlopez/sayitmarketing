@@ -1,3 +1,26 @@
+## Session: May 28, 2026 — Homepage Chip Row + Quick Picker Links
+**AI:** Claude Code (Sonnet 4.6)
+**Worked on:** Linking advertising-management.html + making chip row clickable
+
+### ✅ Completed This Session
+- Added "Google & Social Ads" chip (linked to advertising-management.html) to homepage Growth Add-On Engine section
+- Wired 4 existing chips to their destination pages: SEO Options → local-seo.html, Social Content → social-media.html, Flyers/Banners/Cards → print-services.html, Monthly Support → monthly-plans.html
+- Added "Google & Social Ads" option (from $125/mo) to Quick Picker mobile menu
+- Pushed to GitHub → Netlify auto-deploy triggered (commit cbde7df)
+
+### ⏳ Still Pending
+- Namecheap DKIM missing: `default._domainkey.sayitmarketing.com` returns NXDOMAIN
+  → Log into Namecheap Private Email admin → enable DKIM → add TXT record to Netlify DNS
+- RESEND_API_KEY — verify it's set in Netlify environment variables
+- Stripe signed webhook validation (open since May 1)
+
+### 🔜 Next (In Order)
+1. Namecheap DKIM: log into Namecheap Private Email → enable DKIM → add TXT record to Netlify DNS
+2. Verify RESEND_API_KEY is set in Netlify dashboard
+3. Run Stripe signed webhook test
+
+---
+
 ## Session: May 26, 2026 (continued) — UX Fixes + DNS Audit
 **AI:** Claude Code (Sonnet 4.6)
 **Worked on:** advertising-management.html UX fixes, DNS troubleshooting
