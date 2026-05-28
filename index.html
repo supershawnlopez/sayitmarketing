@@ -34,7 +34,7 @@
   <header class="home-wow">
     <div class="wrap hero-center" data-stagger>
       <p class="eyebrow reveal">Launch Your Business Machine</p>
-      <h1 class="reveal">If this site feels premium, imagine what yours will do.</h1>
+      <h1 class="reveal">If this site feels premium,<br>imagine what yours will do.</h1>
       <p class="hero-sub reveal">SayIt builds a modern lead engine that makes your business look sharp, credible, and built to grow.</p>
       <div class="hero-links reveal">
         <a class="btn btn-primary" href="get-quote.html">Start My Plan</a>
@@ -127,7 +127,7 @@
   </footer>
 
   <div class="mobile-sticky">
-    <button class="btn btn-primary" id="sticky-cta" onclick="QuickPicker.open(window._QP_CONFIG)">What Do You Need?</button>
+    <button class="btn btn-primary" id="sticky-cta" onclick="QuickPicker.open(window._QP_CONFIG)">Find My Plan</button>
   </div>
 
   <script src="assets/stripe-links.js"></script>
@@ -166,17 +166,17 @@
       ['.cta-feature .cta-lead',    'Sin presión. Solo el siguiente paso más claro para tu etapa y presupuesto.'],
       ['.cta-feature .btn-primary', 'Comenzar Mi Plan'],
       ['.cta-feature .cta-inline',  'Comparar paquetes de sitios web &rsaquo;'],
-      ['.sticky-cta',               '¿Qué necesitas?'],
+      ['.sticky-cta',               'Encuentra Mi Plan'],
     ];
     window._QP_CONFIG = {
-      headline: 'What are you looking for?',
-      note: 'No commitment. Choose what fits.',
+      headline: 'Where are you right now?',
+      note: 'Pick the one that sounds like you.',
       options: [
-        { label: 'Website Design', sub: 'from $399', href: 'website-design-services.html' },
-        { label: 'Social Media', sub: 'from $149/mo', href: 'social-media.html', highlight: true, badge: '★ Most Popular' },
-        { label: 'Local SEO', sub: 'from $99/mo', href: 'local-seo.html' },
-        { label: 'Google & Social Ads', sub: 'from $125/mo', href: 'advertising-management.html' },
-        { label: 'See All Pricing', sub: '→', href: 'pricing.html' },
+        { label: 'I need a website', sub: 'Design + launch from $399', href: 'website-design-services.html' },
+        { label: 'I want to grow on social media', sub: 'Managed content from $149/mo', href: 'social-media.html', highlight: true },
+        { label: 'I want to show up on Google', sub: 'Local SEO from $99/mo', href: 'local-seo.html' },
+        { label: 'I want to run ads', sub: 'Google + Social from $125/mo', href: 'advertising-management.html' },
+        { label: "Not sure? Let’s figure it out", sub: 'Quick form → Shawn calls you', href: 'get-quote.html' },
       ]
     };
   </script>

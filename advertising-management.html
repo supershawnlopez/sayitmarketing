@@ -44,18 +44,6 @@
       padding: clamp(2rem, 5vw, 4rem) clamp(1rem, 4vw, 1.5rem) 6rem;
     }
 
-    /* ── Lang toggle ── */
-    .topbar { display: flex; justify-content: flex-end; margin-bottom: 32px; }
-    .lang-btn {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--brand); border: none;
-      border-radius: 999px; padding: 11px 24px;
-      font-size: 0.85rem; font-weight: 700;
-      color: #fff; cursor: pointer; font-family: inherit;
-      transition: background 0.15s; box-shadow: 0 3px 12px rgba(75,166,220,0.38);
-    }
-    .lang-btn:hover { background: #3a90c4; }
-
     /* ── Hero ── */
     .adm-eyebrow { font-size: 0.68rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; color: var(--brand); margin-bottom: 10px; }
     .adm-h1 { font-size: clamp(2.6rem, 7vw, 4.4rem); font-weight: 700; letter-spacing: -0.042em; line-height: 1.02; color: var(--text-1); margin: 0 0 18px; max-width: 16ch; }
@@ -215,7 +203,7 @@
 </head>
 <body class="home-apple">
 
-  <div class="top-contact">Call/Text <a href="tel:+15202226308">520-222-6308</a> | Say It Marketing</div>
+  <div class="top-contact"><span>Call/Text <a href="tel:+15202226308">520-222-6308</a></span><button class="lang-btn" onclick="toggleLang()">&#127760; <span id="lang-btn-text">Ver en Español</span></button></div>
 
   <nav class="nav">
     <div class="wrap nav-inner">
@@ -225,11 +213,6 @@
   </nav>
 
   <main class="adm-page">
-
-    <!-- LANG TOGGLE -->
-    <div class="topbar">
-      <button class="lang-btn" onclick="toggleLang()">🌐 <span id="lang-btn-text">Ver en Español</span></button>
-    </div>
 
     <!-- HERO -->
     <div class="adm-eyebrow t" data-en="Advertising Management" data-es="Gestión de Publicidad">Advertising Management</div>

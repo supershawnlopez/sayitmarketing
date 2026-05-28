@@ -61,11 +61,11 @@
         'box-sizing:border-box',
       ].join(';');
       row.innerHTML = [
-        '<div>',
-          '<span style="display:block;font-size:0.95rem;font-weight:600;color:#fff;">' + opt.label + '</span>',
-          opt.badge ? '<span style="display:inline-block;font-size:0.68rem;font-weight:700;color:#fff;background:#0071e3;border-radius:4px;padding:2px 6px;margin-top:4px;">' + opt.badge + '</span>' : '',
+        '<div style="flex:1;min-width:0;">',
+          '<span style="display:block;font-size:0.95rem;font-weight:600;color:#fff;line-height:1.3;">' + opt.label + '</span>',
+          opt.sub ? '<span style="display:block;font-size:0.8rem;font-weight:500;color:' + (opt.highlight ? '#93c5fd' : 'rgba(255,255,255,0.62)') + ';margin-top:3px;">' + opt.sub + '</span>' : '',
         '</div>',
-        '<span style="font-size:0.88rem;font-weight:600;color:' + (opt.highlight ? '#60a5fa' : 'rgba(255,255,255,0.55)') + ';white-space:nowrap;margin-left:12px;">' + (opt.sub || '') + '</span>',
+        '<span style="font-size:1rem;color:rgba(255,255,255,0.35);margin-left:12px;flex-shrink:0;">›</span>',
       ].join('');
       row.addEventListener('click', function () {
         close();
