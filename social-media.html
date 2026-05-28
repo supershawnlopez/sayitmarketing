@@ -377,7 +377,7 @@
               <li class="missing">TikTok</li>
               <li class="missing">Reels / short-form video</li>
             </ul>
-            <a class="btn btn-secondary" data-stripe-key="sub_social_keep_fresh" href="get-quote.html">Start Keep It Fresh</a>
+            <button class="btn btn-secondary checkout-btn" data-plan="keep_fresh" data-plan-name="Keep It Fresh" data-plan-price="$149/mo">Start Keep It Fresh</button>
           </div>
 
           <!-- STAY ACTIVE -->
@@ -399,7 +399,7 @@
               <li>Reels + short-form video</li>
               <li>Monthly content calendar</li>
             </ul>
-            <a class="btn btn-primary" data-stripe-key="sub_social_stay_active" href="get-quote.html">Start Stay Active</a>
+            <button class="btn btn-primary checkout-btn" data-plan="stay_active" data-plan-name="Stay Active" data-plan-price="$249/mo">Start Stay Active</button>
           </div>
 
           <!-- ALWAYS ON -->
@@ -419,7 +419,7 @@
               <li>Monthly performance report</li>
               <li>Priority turnaround on all content</li>
             </ul>
-            <a class="btn btn-secondary" data-stripe-key="sub_social_always_on" href="get-quote.html">Start Always On</a>
+            <button class="btn btn-secondary checkout-btn" data-plan="always_on" data-plan-name="Always On" data-plan-price="$399/mo">Start Always On</button>
           </div>
 
         </div>
@@ -535,11 +535,224 @@
 
   <div class="mobile-sticky"><a class="btn btn-primary" href="get-quote.html">Start My Plan</a></div>
 
+  <!-- CHECKOUT MODAL -->
+  <div id="checkout-overlay" role="dialog" aria-modal="true" aria-labelledby="checkout-modal-title" hidden>
+    <div id="checkout-modal">
+      <div id="checkout-modal-header">
+        <div id="checkout-modal-brand">
+          <img src="assets/sayit-logo.png" alt="SayIt Marketing" id="checkout-modal-logo">
+          <div id="checkout-modal-titles">
+            <div id="checkout-modal-title">Social Media Plan</div>
+            <div id="checkout-modal-plan-name"></div>
+          </div>
+        </div>
+        <button id="checkout-modal-close" aria-label="Close checkout">&times;</button>
+      </div>
+      <div id="checkout-modal-body">
+        <div id="checkout-loading">
+          <div class="checkout-spinner"></div>
+          <p>Preparing your checkout&hellip;</p>
+        </div>
+        <div id="stripe-checkout-container"></div>
+        <div id="checkout-error" hidden>
+          <p>Something went wrong. Please <a href="contact.html">contact us</a> or call <a href="tel:+15202226308">520-222-6308</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    #checkout-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 15, 30, 0.72);
+      backdrop-filter: blur(6px);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      animation: overlayIn 200ms ease;
+    }
+    #checkout-overlay[hidden] { display: none; }
+    @keyframes overlayIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+    #checkout-modal {
+      background: #fff;
+      border-radius: 20px;
+      width: min(560px, 100%);
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.28);
+      animation: modalIn 220ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    @keyframes modalIn {
+      from { transform: translateY(24px) scale(0.97); opacity: 0; }
+      to   { transform: translateY(0) scale(1); opacity: 1; }
+    }
+    #checkout-modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 1.5rem 1rem;
+      border-bottom: 1px solid #e8edf3;
+    }
+    #checkout-modal-brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    #checkout-modal-logo {
+      height: 28px;
+      width: auto;
+    }
+    #checkout-modal-titles {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+    #checkout-modal-title {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #5d6c7d;
+    }
+    #checkout-modal-plan-name {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #0071e3;
+      letter-spacing: -0.01em;
+    }
+    #checkout-modal-close {
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid #d7dee8;
+      background: #f4f6f9;
+      font-size: 1.2rem;
+      line-height: 1;
+      color: #344252;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    #checkout-modal-close:hover { background: #e8edf3; }
+    #checkout-modal-body {
+      padding: 1.5rem;
+    }
+    #checkout-loading {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+      padding: 2.5rem 0;
+      color: #5d6c7d;
+      font-size: 0.9rem;
+    }
+    #checkout-loading p { margin: 0; }
+    .checkout-spinner {
+      width: 36px;
+      height: 36px;
+      border: 3px solid #e4f0ff;
+      border-top-color: #0071e3;
+      border-radius: 50%;
+      animation: spin 700ms linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    #checkout-error {
+      padding: 1rem;
+      background: #fff5f5;
+      border: 1px solid #fcc;
+      border-radius: 10px;
+      font-size: 0.875rem;
+      color: #c0392b;
+      text-align: center;
+    }
+    #checkout-error a { color: #c0392b; font-weight: 600; text-decoration: underline; }
+    #stripe-checkout-container iframe { border-radius: 12px; }
+    @media (max-width: 600px) {
+      #checkout-modal { border-radius: 16px; max-height: 95vh; }
+      #checkout-modal-body { padding: 1rem; }
+    }
+  </style>
+
+  <script src="https://js.stripe.com/v3/"></script>
   <script src="assets/stripe-links.js"></script>
   <script src="assets/motion.js"></script>
   <script src="assets/nav.js"></script>
   <script>
+    // ── Checkout modal ──────────────────────────────
     (function () {
+      var overlay   = document.getElementById('checkout-overlay');
+      var planLabel = document.getElementById('checkout-modal-plan-name');
+      var loading   = document.getElementById('checkout-loading');
+      var container = document.getElementById('stripe-checkout-container');
+      var errorBox  = document.getElementById('checkout-error');
+      var closeBtn  = document.getElementById('checkout-modal-close');
+      var checkout  = null;
+
+      function openModal(planName) {
+        planLabel.textContent = planName;
+        loading.style.display = 'flex';
+        container.style.display = 'none';
+        errorBox.hidden = true;
+        overlay.hidden = false;
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeModal() {
+        overlay.hidden = true;
+        document.body.style.overflow = '';
+        if (checkout) { checkout.destroy(); checkout = null; }
+        container.innerHTML = '';
+      }
+
+      closeBtn.addEventListener('click', closeModal);
+      overlay.addEventListener('click', function (e) {
+        if (e.target === overlay) closeModal();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !overlay.hidden) closeModal();
+      });
+
+      document.querySelectorAll('.checkout-btn').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var plan      = btn.dataset.plan;
+          var planName  = btn.dataset.planName + ' — ' + btn.dataset.planPrice;
+          openModal(planName);
+
+          fetch('/api/create-social-checkout', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ plan: plan }),
+          })
+          .then(function (r) { return r.json(); })
+          .then(function (data) {
+            if (data.error) throw new Error(data.error);
+            var stripe = Stripe(data.publishableKey);
+            return stripe.initEmbeddedCheckout({ clientSecret: data.clientSecret });
+          })
+          .then(function (co) {
+            checkout = co;
+            loading.style.display = 'none';
+            container.style.display = 'block';
+            co.mount('#stripe-checkout-container');
+          })
+          .catch(function (err) {
+            console.error('[checkout]', err);
+            loading.style.display = 'none';
+            errorBox.hidden = false;
+          });
+        });
+      });
+    })();
+
+  (function () {
       var tabs   = document.querySelectorAll('.tab-btn');
       var panels = document.querySelectorAll('.tab-content');
 
