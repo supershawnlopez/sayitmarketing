@@ -260,7 +260,6 @@ h1 {
   font-size: var(--fs-h1);
   letter-spacing: -0.038em;
   line-height: 1.08;
-  max-width: 12ch;
 }
 
 h2 {
@@ -335,7 +334,7 @@ p { margin: 0; color: #36485b; max-width: 62ch; font-size: var(--fs-body); line-
 .hero-billboard h1 {
   font-size: clamp(2.5rem, 7vw, 5.2rem);
   line-height: 1.02;
-  max-width: 11.5ch;
+  max-width: 22rem;
 }
 
 .hero-billboard h2 {
@@ -900,7 +899,7 @@ textarea { min-height: 120px; resize: vertical; }
 
 .page-hero h1,
 .page-hero h2 {
-  max-width: 12ch;
+  max-width: 22rem;
 }
 
 .page-hero p {
@@ -918,7 +917,7 @@ textarea { min-height: 120px; resize: vertical; }
 body.page-pricing .page-hero h1,
 body.page-portfolio .page-hero h1,
 body.page-websites .page-hero h1 {
-  max-width: 10ch;
+  max-width: 22rem;
 }
 
 .page-hero--compact {
@@ -2195,7 +2194,7 @@ body.page-audit .page-hero--light {
   color: #fff;
 }
 .home-wow .hero-center { position: relative; z-index: 2; }
-.home-wow h1 { max-width: 10.5ch; }
+.home-wow h1 { max-width: 22rem; margin-inline: auto; text-align: center; }
 .home-wow .hero-sub { max-width: 58ch; }
 
 .proof-ribbon {
