@@ -17,9 +17,9 @@
   --btn-radius: 62.4375rem;
   --btn-font-size: 1rem;
   --btn-line: 1.2;
-  --fs-h1: clamp(1.75rem, 5.5vw, 3.25rem);
-  --fs-h2: clamp(2rem, 4.2vw, 3.4rem);
-  --fs-h3: clamp(1.25rem, 1.6vw, 1.6rem);
+  --fs-h1: clamp(2rem, 5.5vw, 3.5rem);
+  --fs-h2: clamp(1.375rem, 3vw, 2.25rem);
+  --fs-h3: clamp(1.05rem, 1.4vw, 1.35rem);
   --fs-body: clamp(1.0625rem, 0.25vw + 1rem, 1.2rem);
   --lh-h1: 1.06;
   --lh-h2: 1.12;
@@ -322,7 +322,7 @@ p { margin: 0; color: #36485b; max-width: 62ch; font-size: var(--fs-body); line-
 
 .hero-center {
   max-width: 760px;
-  padding: clamp(4rem, 8vh, 5.5rem) 0;
+  padding: clamp(1.75rem, 6vh, 4rem) 0;
 }
 
 .hero-billboard h1,
@@ -2162,7 +2162,7 @@ body.page-audit .page-hero--light {
 }
 /* === 2026 Design Reset: page personalities + guided flow + subtle motion === */
 :root {
-  --rhythm-hero: clamp(4.5rem, 8vw, 7.5rem);
+  --rhythm-hero: clamp(2rem, 8vw, 7.5rem);
   --rhythm-section-xl: clamp(3.5rem, 6vw, 5.5rem);
   --rhythm-section-lg: clamp(2.5rem, 4vw, 4rem);
   --rhythm-section-md: clamp(1.75rem, 3vw, 2.75rem);
