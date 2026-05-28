@@ -2114,15 +2114,11 @@ body.page-audit .page-hero--light {
   .hero-cta { display: grid; grid-template-columns: 1fr; }
   .hero-cta .btn { width: 100%; }
   .mobile-sticky {
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-    background: rgba(13, 20, 28, 0.96);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 14px;
-    padding: 8px;
+    left: 16px;
+    right: 16px;
+    bottom: 16px;
   }
-  .mobile-sticky .btn { width: 100%; box-shadow: none; }
+  .mobile-sticky .btn { width: 100%; }
   body { padding-bottom: 86px; }
 }
 
