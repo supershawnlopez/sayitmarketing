@@ -17,7 +17,7 @@
   --btn-radius: 62.4375rem;
   --btn-font-size: 1rem;
   --btn-line: 1.2;
-  --fs-h1: clamp(2.75rem, 6.5vw, 5rem);
+  --fs-h1: clamp(1.5rem, 5.5vw, 3.25rem);
   --fs-h2: clamp(2rem, 4.2vw, 3.4rem);
   --fs-h3: clamp(1.25rem, 1.6vw, 1.6rem);
   --fs-body: clamp(1.0625rem, 0.25vw + 1rem, 1.2rem);
@@ -332,9 +332,9 @@ p { margin: 0; color: #36485b; max-width: 62ch; font-size: var(--fs-body); line-
 }
 
 .hero-billboard h1 {
-  font-size: clamp(2.5rem, 7vw, 5.2rem);
+  font-size: clamp(1.5rem, 5.5vw, 3.25rem);
   line-height: 1.02;
-  max-width: 22rem;
+  max-width: 100%;
 }
 
 .hero-billboard h2 {
@@ -899,7 +899,7 @@ textarea { min-height: 120px; resize: vertical; }
 
 .page-hero h1,
 .page-hero h2 {
-  max-width: 22rem;
+  max-width: 100%;
 }
 
 .page-hero p {
@@ -917,7 +917,7 @@ textarea { min-height: 120px; resize: vertical; }
 body.page-pricing .page-hero h1,
 body.page-portfolio .page-hero h1,
 body.page-websites .page-hero h1 {
-  max-width: 22rem;
+  max-width: 100%;
 }
 
 .page-hero--compact {
@@ -2194,7 +2194,7 @@ body.page-audit .page-hero--light {
   color: #fff;
 }
 .home-wow .hero-center { position: relative; z-index: 2; }
-.home-wow h1 { max-width: 22rem; margin-inline: auto; text-align: center; }
+.home-wow h1 { max-width: 100%; margin-inline: auto; text-align: center; }
 .home-wow .hero-sub { max-width: 58ch; }
 
 .proof-ribbon {
