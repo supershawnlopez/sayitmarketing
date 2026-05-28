@@ -110,10 +110,13 @@ p {
 .top-contact {
   background: #0f1419;
   color: #f5f8fc;
-  text-align: center;
   font-size: 12px;
   font-weight: 700;
-  padding: 7px 10px;
+  padding: 6px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
 }
 
 .top-contact a {
@@ -121,6 +124,26 @@ p {
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+
+.lang-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.15s;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.lang-btn:hover { background: rgba(255, 255, 255, 0.2); }
 
 .nav {
   position: sticky;
