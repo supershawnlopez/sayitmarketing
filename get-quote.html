@@ -112,6 +112,53 @@
 
   #form-status { margin-top: 0.75rem; font-size: 0.9rem; color: var(--text-3); }
 
+  /* ── Form card header ── */
+  .form-card-header {
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .form-card-header .eyebrow {
+    text-align: left;
+    margin-inline: 0;
+    width: auto;
+    margin-bottom: 0.6rem;
+    color: var(--brand);
+  }
+  .form-card-header h2 {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: 700;
+    color: var(--text-1);
+    margin: 0 0 0.6rem;
+    letter-spacing: -0.028em;
+    line-height: 1.1;
+  }
+  .form-card-header p {
+    font-size: 0.95rem;
+    color: var(--text-3);
+    line-height: 1.6;
+    margin: 0 0 1.25rem;
+    max-width: none;
+  }
+  .trust-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .trust-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text-2);
+    background: #f0f5ff;
+    border: 1px solid #d0e2ff;
+    border-radius: 999px;
+    padding: 0.35rem 0.85rem;
+  }
+  .trust-chip-icon { font-size: 0.85rem; }
+
   @media (max-width: 520px) {
     .form-grid { grid-template-columns: 1fr; }
     .step-actions .btn-primary { flex: none; width: 100%; }
@@ -139,6 +186,17 @@
 
 <section class="section-page-tight">
   <div class="wrap form-shell-premium">
+
+    <div class="form-card-header">
+      <p class="eyebrow">Free Plan Review</p>
+      <h2>Tell Us What You Need.</h2>
+      <p>We'll review your details and come back within 1 business day with a clear recommendation — no contracts, no pressure.</p>
+      <div class="trust-chips">
+        <span class="trust-chip"><span class="trust-chip-icon">⚡</span>Responds in 1 business day</span>
+        <span class="trust-chip"><span class="trust-chip-icon">✓</span>No contracts</span>
+        <span class="trust-chip"><span class="trust-chip-icon">✓</span>No sales call</span>
+      </div>
+    </div>
 
     <div class="form-progress-track">
       <div class="form-progress-fill" id="form-progress-fill"></div>
