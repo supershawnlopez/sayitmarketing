@@ -35,8 +35,8 @@ Exit criteria:
 
 1. Validate Stripe webhook with real signed test event
 - Owner: Function + Security Agent
-- Status: Ready
-- Notes: Confirm signature verification and tolerance behavior in Netlify logs
+- Status: ⚠️ Deferred — endpoint + secret now wired (2026-05-28), but CLI test not yet run
+- Notes: Stripe endpoint created, whsec_ secret set in Netlify. Next step: install Stripe CLI → run `stripe trigger checkout.session.completed` → confirm 200 in Netlify function logs. OR wait for next real payment and verify logs.
 
 2. Tighten function boundary security
 - Owner: Security Agent

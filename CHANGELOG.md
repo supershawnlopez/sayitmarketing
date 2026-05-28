@@ -27,10 +27,10 @@
 | Body | 16px | 18px |
 
 ### ⏳ Still Pending
-- Stripe signed webhook validation (open since May 1)
+- Stripe webhook live test — endpoint + secret are wired, but Stripe CLI test not yet run. Next payment will auto-test it. Or run manually: install Stripe CLI → `stripe trigger checkout.session.completed` → check Netlify → Functions → stripe-webhook logs for 200.
 
 ### 🔜 Next (In Order)
-1. Run Stripe signed webhook test (Stripe dashboard → test event → check Netlify logs)
+1. Stripe webhook CLI test (or confirm via next real payment in Netlify logs)
 2. Visual QA pass on all pages after design overhaul
 
 ---
