@@ -52,11 +52,11 @@ Exit criteria:
 
 ## NEXT
 
-1. Convert quote form from fake 4-step into real step flow (or simplify UI)
-2. Fix thank-you CTA to direct phone intent (`tel:`)
-3. Add Open Graph/Twitter metadata on core money pages
-4. Add Privacy/Terms pages and link sitewide footer
-5. Harden checkout return URL allowlist in `create-checkout-session.js` (Done: May 1, 2026)
+1. Convert quote form from fake 4-step into real step flow (or simplify UI) — Done: 2026-05-28
+2. Fix thank-you CTA to direct phone intent (`tel:`) — Done: 2026-05-28
+3. Add Open Graph/Twitter metadata on core money pages — Done: 2026-05-28
+4. Add Privacy/Terms pages and link sitewide footer — Done: 2026-05-28
+5. Harden checkout return URL allowlist in `create-checkout-session.js` — Done: May 1, 2026
 
 ---
 

@@ -1,3 +1,30 @@
+## Session: May 28, 2026 (continued 4) — OG Metadata, Privacy/Terms, Visual QA
+**AI:** Claude Code (Sonnet 4.6)
+**Worked on:** Open Graph metadata sitewide, Privacy + Terms pages, Steve Jobs QA pass
+
+### ✅ Completed This Session
+- **Open Graph + Twitter metadata** — Added `og:image`, `twitter:title`, `twitter:description`, `twitter:image` to all 5 core money pages (website-design-services, local-seo, social-media, pricing, advertising-management)
+- **social-media.html** — Fixed "SayIt Marketing" typo in og:title → "Say It Marketing"
+- **advertising-management.html** — Added missing `og:site_name`, full Twitter block
+- **privacy.html** — Created full Privacy Policy page: plain English, covers data collection, Resend email, Stripe payments, cookie policy, user rights
+- **terms.html** — Created full Terms of Service page: month-to-month plans, cancellation policy, IP rights, limitation of liability, Arizona governing law
+- **Footer sitewide** — Added Privacy | Terms links to every page footer (all 14 pages)
+- **Consent checkboxes** — Linked "Privacy Policy" on get-quote.html and free-website-audit.html consent text
+- **free-website-audit.html** — Added full OG + Twitter meta block; fixed title/description "SayIt" → "Say It Marketing"; fixed JSON-LD brand name
+- **thank-you.html** — Fixed "SayIt Marketing" → "Say It Marketing" in title and description
+- **sitemap.xml** — Added privacy.html, terms.html, free-website-audit.html
+- **TASKS.md** — All NEXT queue items marked done
+
+### ⏳ Still Pending
+- Stripe webhook CLI test — endpoint + secret wired, but `stripe trigger checkout.session.completed` test not yet run
+
+### 🔜 Next (In Order)
+1. Stripe webhook CLI test (or confirm via next real payment in Netlify logs)
+2. Visual QA on mobile device — check new privacy/terms pages render correctly
+3. Consider creating a proper 1200×630 OG social card image to replace logo placeholder
+
+---
+
 ## Session: May 28, 2026 (continued 3) — Quote Form Conversion Polish
 **AI:** Claude Code (Sonnet 4.6)
 **Worked on:** Quote form UX — Apple onboarding style + conversion header
