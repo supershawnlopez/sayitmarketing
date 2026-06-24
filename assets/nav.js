@@ -1,8 +1,14 @@
-(function () {
+﻿(function () {
+  function closeAllMenus() {
+    Array.prototype.forEach.call(document.querySelectorAll('.nav.nav-open'), closeMenu);
+  }
+
   function closeMenu(nav) {
     var toggle = nav.querySelector('.nav-toggle');
     var panel = nav.querySelector('.nav-panel');
-    if (!toggle || !panel) return;
+    if (!toggle || !panel) {
+      return;
+    }
 
     nav.classList.remove('nav-open');
     toggle.setAttribute('aria-expanded', 'false');
@@ -14,7 +20,9 @@
   function openMenu(nav) {
     var toggle = nav.querySelector('.nav-toggle');
     var panel = nav.querySelector('.nav-panel');
-    if (!toggle || !panel) return;
+    if (!toggle || !panel) {
+      return;
+    }
 
     nav.classList.add('nav-open');
     toggle.setAttribute('aria-expanded', 'true');
@@ -23,11 +31,7 @@
     document.body.classList.add('nav-open');
   }
 
-  function closeAllMenus() {
-    Array.prototype.forEach.call(document.querySelectorAll('.nav.nav-open'), closeMenu);
-  }
-
-  function initNav(nav) {
+  function initNav(nav, index) {
     var toggle = nav.querySelector('.nav-toggle');
     var panel = nav.querySelector('.nav-panel');
     var links = nav.querySelector('.nav-links');
@@ -35,7 +39,13 @@
     var panelLinks = nav.querySelector('.nav-panel-links');
     var panelCta = nav.querySelector('.nav-panel-cta');
 
-    if (!toggle || !panel || !links || !panelLinks || !panelCta) return;
+    if (!toggle || !panel || !links || !panelLinks || !panelCta) {
+      return;
+    }
+
+    var panelId = 'mobile-nav-panel-' + (index + 1);
+    panel.id = panelId;
+    toggle.setAttribute('aria-controls', panelId);
 
     panelLinks.innerHTML = '';
     panelCta.innerHTML = '';
@@ -50,40 +60,46 @@
       panelCta.appendChild(ctaClone);
     }
 
-    var contact = document.createElement('p');
-    contact.className = 'nav-panel-contact';
-    contact.innerHTML = '<a href="tel:+15202226308">Call or Text · 520-222-6308</a>';
-    panelCta.appendChild(contact);
-
     closeMenu(nav);
 
     toggle.addEventListener('click', function () {
       if (nav.classList.contains('nav-open')) {
         closeMenu(nav);
-      } else {
-        closeAllMenus();
-        openMenu(nav);
+        return;
+      }
+
+      closeAllMenus();
+      openMenu(nav);
+    });
+
+    panel.addEventListener('click', function (event) {
+      if (event.target === panel) {
+        closeMenu(nav);
       }
     });
 
-    panel.addEventListener('click', function (e) {
-      if (e.target === panel) closeMenu(nav);
+    panel.addEventListener('click', function (event) {
+      if (event.target.closest('a')) {
+        closeMenu(nav);
+      }
     });
+  }
 
-    panel.addEventListener('click', function (e) {
-      if (e.target.closest('a')) closeMenu(nav);
-    });
+  function onEscape(event) {
+    if (event.key !== 'Escape') {
+      return;
+    }
+
+    closeAllMenus();
   }
 
   document.addEventListener('DOMContentLoaded', function () {
     Array.prototype.forEach.call(document.querySelectorAll('.nav'), initNav);
-
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeAllMenus();
-    });
-
+    document.addEventListener('keydown', onEscape);
     window.addEventListener('resize', function () {
-      if (window.innerWidth > 980) closeAllMenus();
+      if (window.innerWidth > 980) {
+        closeAllMenus();
+      }
     });
   });
 })();
