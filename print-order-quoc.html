@@ -7,29 +7,8 @@
   <meta name="robots" content="noindex, nofollow">
   <link rel="stylesheet" href="assets/site.css">
   <style>
-    .order-shell {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .order-header {
-      background: #0f1419;
-      padding: 1.5rem 1.5rem 1.25rem;
-      text-align: center;
-    }
-
-    .order-header img {
-      height: 40px;
-      margin: 0 auto;
-      filter: brightness(0) invert(1);
-      opacity: 0.92;
-    }
-
     .order-hero {
-      background: #fff;
-      border-bottom: 1px solid var(--line);
-      padding: 2.5rem 1.5rem 2rem;
+      padding: 3rem 1rem 2rem;
       text-align: center;
     }
 
@@ -65,8 +44,7 @@
     }
 
     .order-body {
-      flex: 1;
-      padding: 2.5rem 1rem;
+      padding: 1rem 1rem 4rem;
     }
 
     .order-grid {
@@ -78,9 +56,7 @@
     }
 
     @media (max-width: 680px) {
-      .order-grid {
-        grid-template-columns: 1fr;
-      }
+      .order-grid { grid-template-columns: 1fr; }
     }
 
     .order-card {
@@ -141,9 +117,7 @@
       font-variant-numeric: tabular-nums;
     }
 
-    .line-items .item-name {
-      color: var(--text-2);
-    }
+    .line-items .item-name { color: var(--text-2); }
 
     .line-items .item-desc {
       display: block;
@@ -192,14 +166,7 @@
       transform: translateY(-1px);
     }
 
-    .pay-btn:active {
-      transform: translateY(0);
-    }
-
-    .pay-lock {
-      font-size: 0.875rem;
-      opacity: 0.85;
-    }
+    .pay-btn:active { transform: translateY(0); }
 
     .secure-note {
       display: flex;
@@ -210,129 +177,112 @@
       color: var(--text-3);
       margin-top: 0.625rem;
     }
-
-    .order-footer {
-      background: #f8fafc;
-      border-top: 1px solid var(--line);
-      padding: 1.5rem 1rem;
-      text-align: center;
-    }
-
-    .order-footer p {
-      font-size: 0.8rem;
-      color: var(--text-3);
-      margin: 0 0 0.3rem;
-    }
-
-    .order-footer a {
-      color: var(--brand);
-    }
   </style>
 </head>
-<body>
-  <div class="order-shell">
+<body class="home-apple page-print-order">
+  <div class="top-contact"><span><a href="tel:+15202226308">Call</a> · <a href="sms:+15202226308">Text</a> · 520-222-6308</span><button class="lang-btn" onclick="toggleLang()">&#127760; <span id="lang-btn-text">Ver en Español</span></button></div>
 
-    <header class="order-header">
-      <img src="assets/sayit-logo.png" alt="Say It Marketing">
-    </header>
+  <nav class="nav"><div class="wrap nav-inner"><a class="brand" href="index.html"><img src="assets/sayit-logo.png" alt="SayIt logo"></a><div class="nav-links"><a href="index.html">Home</a><a href="website-design-services.html">Services</a><a href="social-media.html">Social Media</a><a href="pricing.html">Pricing</a><a href="portfolio.html">Portfolio</a><a href="faq.html">FAQ</a><a href="contact.html">Contact</a></div><a class="btn btn-primary" href="get-quote.html">Start My Plan</a><button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav-panel" aria-label="Open navigation menu"><span class="nav-toggle-line"></span><span class="nav-toggle-line"></span><span class="nav-toggle-line"></span></button></div><div class="nav-panel" id="mobile-nav-panel" hidden><div class="wrap nav-panel-inner"><div class="nav-panel-links" aria-label="Mobile"></div><div class="nav-panel-cta"></div></div></div></nav>
 
-    <div class="order-hero">
-      <span class="order-badge">Print Order</span>
-      <h1>Order for Quoc Wong</h1>
-      <p class="order-meta">Prepared by <strong>Say It Marketing</strong> &nbsp;·&nbsp; June 24, 2026</p>
-    </div>
-
-    <div class="order-body">
-      <div class="order-grid">
-
-        <!-- ORDER 1: Nails of the World & Spa -->
-        <article class="order-card">
-          <div class="order-card-head">
-            <p class="biz-label">Business 1 of 2</p>
-            <h2>Nails of the World &amp; Spa</h2>
-          </div>
-          <div class="order-card-body">
-            <table class="line-items">
-              <tbody>
-                <tr>
-                  <td class="item-name">
-                    Business Cards — 10,000 qty
-                    <span class="item-desc">Full Color Both Sides (4/4) · Standard 14pt card stock</span>
-                  </td>
-                  <td>$195.00</td>
-                </tr>
-                <tr>
-                  <td class="item-name">Print Setup &amp; File Prep</td>
-                  <td>$12.00</td>
-                </tr>
-                <tr>
-                  <td class="item-name">Shipping &amp; Handling</td>
-                  <td>$6.59</td>
-                </tr>
-                <tr class="divider-row"><td colspan="2"></td></tr>
-                <tr class="total-row">
-                  <td>Order Total</td>
-                  <td>$213.59</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="order-card-foot">
-            <a class="pay-btn" href="https://buy.stripe.com/8x28wQabR7an8jc0NLfnO01" id="pay-nails">
-              <span class="pay-lock">🔒</span> Pay $213.59
-            </a>
-            <p class="secure-note">Secured by Stripe · Card data never touches our servers</p>
-          </div>
-        </article>
-
-        <!-- ORDER 2: Top Tier Tires Co. -->
-        <article class="order-card">
-          <div class="order-card-head">
-            <p class="biz-label">Business 2 of 2</p>
-            <h2>Top Tier Tires Co.</h2>
-          </div>
-          <div class="order-card-body">
-            <table class="line-items">
-              <tbody>
-                <tr>
-                  <td class="item-name">
-                    Business Cards — 10,000 qty
-                    <span class="item-desc">Full Color Both Sides (4/4) · Standard 14pt card stock</span>
-                  </td>
-                  <td>$195.00</td>
-                </tr>
-                <tr>
-                  <td class="item-name">Print Setup &amp; File Prep</td>
-                  <td>$12.00</td>
-                </tr>
-                <tr>
-                  <td class="item-name">Shipping &amp; Handling</td>
-                  <td>$6.59</td>
-                </tr>
-                <tr class="divider-row"><td colspan="2"></td></tr>
-                <tr class="total-row">
-                  <td>Order Total</td>
-                  <td>$213.59</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="order-card-foot">
-            <a class="pay-btn" href="https://buy.stripe.com/cNi14o6ZFcuHbvofIFfnO02" id="pay-tires">
-              <span class="pay-lock">🔒</span> Pay $213.59
-            </a>
-            <p class="secure-note">Secured by Stripe · Card data never touches our servers</p>
-          </div>
-        </article>
-
-      </div>
-    </div>
-
-    <footer class="order-footer">
-      <p>Questions? <a href="tel:+15202226308">Call or text 520-222-6308</a> · <a href="mailto:hello@sayitmarketing.com">hello@sayitmarketing.com</a></p>
-      <p>Say It Marketing · Tucson, AZ · In business since 1999</p>
-    </footer>
-
+  <div class="order-hero">
+    <span class="order-badge">Print Order</span>
+    <h1>Order for Quoc Wong</h1>
+    <p class="order-meta">Prepared by <strong>Say It Marketing</strong> &nbsp;·&nbsp; June 24, 2026</p>
   </div>
+
+  <div class="order-body">
+    <div class="order-grid">
+
+      <!-- ORDER 1: Nails of the World & Spa -->
+      <article class="order-card">
+        <div class="order-card-head">
+          <p class="biz-label">Business 1 of 2</p>
+          <h2>Nails of the World &amp; Spa</h2>
+        </div>
+        <div class="order-card-body">
+          <table class="line-items">
+            <tbody>
+              <tr>
+                <td class="item-name">
+                  Business Cards — 10,000 qty
+                  <span class="item-desc">Full Color Both Sides (4/4) · Standard 14pt card stock</span>
+                </td>
+                <td>$195.00</td>
+              </tr>
+              <tr>
+                <td class="item-name">Print Setup &amp; File Prep</td>
+                <td>$12.00</td>
+              </tr>
+              <tr>
+                <td class="item-name">Shipping &amp; Handling</td>
+                <td>$6.59</td>
+              </tr>
+              <tr class="divider-row"><td colspan="2"></td></tr>
+              <tr class="total-row">
+                <td>Order Total</td>
+                <td>$213.59</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="order-card-foot">
+          <a class="pay-btn" href="https://pay.sayitmarketing.com/b/dRm28s4PA9R78wI3DebV60W" id="pay-nails">
+            <span>🔒</span> Pay $213.59
+          </a>
+          <p class="secure-note">Secured by Stripe · Card data never touches our servers</p>
+        </div>
+      </article>
+
+      <!-- ORDER 2: Top Tier Tires Co. -->
+      <article class="order-card">
+        <div class="order-card-head">
+          <p class="biz-label">Business 2 of 2</p>
+          <h2>Top Tier Tires Co.</h2>
+        </div>
+        <div class="order-card-body">
+          <table class="line-items">
+            <tbody>
+              <tr>
+                <td class="item-name">
+                  Business Cards — 10,000 qty
+                  <span class="item-desc">Full Color Both Sides (4/4) · Standard 14pt card stock</span>
+                </td>
+                <td>$195.00</td>
+              </tr>
+              <tr>
+                <td class="item-name">Print Setup &amp; File Prep</td>
+                <td>$12.00</td>
+              </tr>
+              <tr>
+                <td class="item-name">Shipping &amp; Handling</td>
+                <td>$6.59</td>
+              </tr>
+              <tr class="divider-row"><td colspan="2"></td></tr>
+              <tr class="total-row">
+                <td>Order Total</td>
+                <td>$213.59</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="order-card-foot">
+          <a class="pay-btn" href="https://pay.sayitmarketing.com/b/aFa9AU4PAfbrbIU4HibV60X" id="pay-tires">
+            <span>🔒</span> Pay $213.59
+          </a>
+          <p class="secure-note">Secured by Stripe · Card data never touches our servers</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div>Say It Marketing | Print Services</div>
+    <div class="line2"><a href="privacy.html">Privacy</a> | <a href="terms.html">Terms</a></div>
+  </footer>
+
+  <script src="assets/motion.js"></script>
+  <script src="assets/lang.js"></script>
+  <script src="assets/nav.js"></script>
 </body>
 </html>
