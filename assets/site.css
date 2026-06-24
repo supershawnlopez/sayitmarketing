@@ -1963,7 +1963,7 @@ body.page-audit .page-hero--light {
     top: 80px;
     left: 0;
     right: 0;
-    bottom: 0;
+    height: calc(100vh - 80px);
     z-index: 9999;
     display: grid;
     align-content: start;
