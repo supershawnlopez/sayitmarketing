@@ -7,11 +7,8 @@
     nav.classList.remove('nav-open');
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-label', 'Open navigation menu');
+    panel.hidden = true;
     document.body.classList.remove('nav-open');
-
-    setTimeout(function () {
-      if (!nav.classList.contains('nav-open')) panel.hidden = true;
-    }, 380);
   }
 
   function openMenu(nav) {
@@ -19,11 +16,10 @@
     var panel = nav.querySelector('.nav-panel');
     if (!toggle || !panel) return;
 
-    panel.hidden = false;
-    panel.getBoundingClientRect(); // force reflow so transition fires
     nav.classList.add('nav-open');
     toggle.setAttribute('aria-expanded', 'true');
     toggle.setAttribute('aria-label', 'Close navigation menu');
+    panel.hidden = false;
     document.body.classList.add('nav-open');
   }
 
@@ -54,13 +50,12 @@
       panelCta.appendChild(ctaClone);
     }
 
-    // Add phone number below CTA
     var contact = document.createElement('p');
     contact.className = 'nav-panel-contact';
     contact.innerHTML = '<a href="tel:+15202226308">Call or Text · 520-222-6308</a>';
     panelCta.appendChild(contact);
 
-    panel.hidden = true;
+    closeMenu(nav);
 
     toggle.addEventListener('click', function () {
       if (nav.classList.contains('nav-open')) {
