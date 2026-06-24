@@ -1960,12 +1960,15 @@ body.page-audit .page-hero--light {
   .nav-toggle { display: inline-flex; }
   .nav-panel {
     position: fixed;
-    inset: 0;
     top: 80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 9999;
     display: grid;
     align-content: start;
     background: #09111e;
+    overflow-y: auto;
   }
   .nav-panel[hidden] {
     display: none;
