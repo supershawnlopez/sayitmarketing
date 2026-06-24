@@ -1958,56 +1958,122 @@ body.page-audit .page-hero--light {
   .nav-links { display: none; }
   .nav-inner > .btn { display: none; }
   .nav-toggle { display: inline-flex; }
+  /* ── Full-screen mobile nav ── */
+  body.nav-open .nav { z-index: 10000; }
+  body.nav-open .mobile-sticky { display: none !important; }
+
+  /* Keep panel always display:flex so CSS transitions work — visibility handles show/hide */
+  .nav-panel[hidden] { display: flex; }
   .nav-panel {
     position: fixed;
     inset: 0;
-    top: 80px;
     z-index: 9999;
-    display: grid;
-    align-content: start;
-    background: rgba(238, 244, 251, 0.95);
-    backdrop-filter: blur(8px);
-    border-top: 1px solid rgba(215, 222, 232, 0.88);
+    display: flex;
+    flex-direction: column;
+    background: #09111e;
+    overflow-y: auto;
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-14px);
+    transition:
+      opacity    0.38s cubic-bezier(0.22, 1, 0.36, 1),
+      transform  0.38s cubic-bezier(0.22, 1, 0.36, 1),
+      visibility 0s   linear 0.38s;
   }
-  .nav-panel[hidden] {
-    display: none;
+  .nav-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(700px 600px at 110% -5%,  rgba(0, 113, 227, 0.2), transparent 65%),
+      radial-gradient(500px 500px at -10% 110%, rgba(0, 90, 200, 0.1), transparent 70%);
+    pointer-events: none;
   }
-  body.nav-open .mobile-sticky { display: none !important; }
+  .nav.nav-open .nav-panel {
+    pointer-events: auto;
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+      opacity    0.38s cubic-bezier(0.22, 1, 0.36, 1),
+      transform  0.38s cubic-bezier(0.22, 1, 0.36, 1),
+      visibility 0s   linear 0s;
+  }
   .nav-panel-inner {
-    margin-top: 0.75rem;
-    background: rgba(248, 251, 255, 0.96);
-    border: 1px solid #d8e2ee;
-    border-radius: 1.25rem;
-    padding: 1.1rem 0.9rem 1rem;
-    box-shadow: 0 20px 32px rgba(8, 25, 44, 0.14);
+    position: relative;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 5.5rem 2rem 2.5rem;
   }
   .nav-panel-links {
-    display: grid;
-    gap: 0.25rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 1rem;
+  }
+  @keyframes navLinkIn {
+    from { opacity: 0; transform: translateX(-28px); }
+    to   { opacity: 1; transform: translateX(0); }
   }
   .nav-panel-links a {
     display: block;
-    padding: 0.72rem 0.75rem;
-    border-radius: 0.75rem;
-    color: #152232;
-    font-size: 1.0625rem;
-    line-height: 1.2;
-    letter-spacing: -0.01em;
+    font-size: clamp(2rem, 8vw, 2.75rem);
+    font-weight: 700;
+    letter-spacing: -0.04em;
+    color: rgba(255, 255, 255, 0.85);
+    padding: 0.55rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+    line-height: 1.1;
+    opacity: 0;
+    text-decoration: none;
+    transition: color 0.18s ease;
   }
+  .nav-panel-links a:last-child { border-bottom: none; }
+  .nav.nav-open .nav-panel-links a {
+    animation: navLinkIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .nav.nav-open .nav-panel-links a:nth-child(1) { animation-delay: 0.10s; }
+  .nav.nav-open .nav-panel-links a:nth-child(2) { animation-delay: 0.16s; }
+  .nav.nav-open .nav-panel-links a:nth-child(3) { animation-delay: 0.22s; }
+  .nav.nav-open .nav-panel-links a:nth-child(4) { animation-delay: 0.28s; }
+  .nav.nav-open .nav-panel-links a:nth-child(5) { animation-delay: 0.34s; }
+  .nav.nav-open .nav-panel-links a:nth-child(6) { animation-delay: 0.40s; }
+  .nav.nav-open .nav-panel-links a:nth-child(7) { animation-delay: 0.46s; }
   .nav-panel-links a:hover,
   .nav-panel-links a:focus-visible {
-    background: rgba(0, 113, 227, 0.08);
+    color: #5aabff;
     outline: none;
   }
-  .nav-panel-cta {
-    margin-top: 0.9rem;
-    padding-top: 0.9rem;
-    border-top: 1px solid #d8e2ee;
+  .nav-panel-footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
   .nav-panel-cta .btn {
     width: 100%;
-    min-height: 2.5rem;
+    min-height: 3.25rem;
+    font-size: 1.0625rem;
   }
+  .nav-panel-contact {
+    text-align: center;
+    font-size: 0.8125rem;
+    letter-spacing: 0.01em;
+    color: rgba(255, 255, 255, 0.3);
+    margin: 0;
+  }
+  .nav-panel-contact a {
+    color: rgba(255, 255, 255, 0.4);
+    transition: color 0.18s;
+  }
+  .nav-panel-contact a:hover { color: rgba(255, 255, 255, 0.75); }
+
+  /* Burger → X */
+  .nav.nav-open .nav-toggle-line { background: #0f1720; }
   .nav.nav-open .nav-toggle-line:nth-child(1) {
     transform: translateY(0.4375rem) rotate(45deg);
   }
