@@ -1,4 +1,6 @@
 (function () {
+  var CLOSE_MS = 380;
+
   function closeMenu(nav) {
     var toggle = nav.querySelector('.nav-toggle');
     var panel = nav.querySelector('.nav-panel');
@@ -8,6 +10,11 @@
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-label', 'Open navigation menu');
     document.body.classList.remove('nav-open');
+
+    // Hide after CSS transition finishes
+    setTimeout(function () {
+      if (!nav.classList.contains('nav-open')) panel.hidden = true;
+    }, CLOSE_MS);
   }
 
   function openMenu(nav) {
@@ -15,7 +22,11 @@
     var panel = nav.querySelector('.nav-panel');
     if (!toggle || !panel) return;
 
-    nav.classList.add('nav-open');
+    // Unhide first so display:flex takes effect, then add class on next frame
+    panel.hidden = false;
+    requestAnimationFrame(function () {
+      nav.classList.add('nav-open');
+    });
     toggle.setAttribute('aria-expanded', 'true');
     toggle.setAttribute('aria-label', 'Close navigation menu');
     document.body.classList.add('nav-open');
@@ -35,9 +46,6 @@
 
     if (!toggle || !panel || !links || !panelLinks || !panelCta) return;
 
-    // Remove HTML hidden attr — CSS (visibility/opacity) controls show/hide now
-    panel.removeAttribute('hidden');
-
     panelLinks.innerHTML = '';
     panelCta.innerHTML = '';
 
@@ -51,7 +59,7 @@
       panelCta.appendChild(ctaClone);
     }
 
-    // Wrap cta + phone in footer
+    // Wrap CTA + phone number in a footer section
     var footer = document.createElement('div');
     footer.className = 'nav-panel-footer';
     panelCta.parentNode.replaceChild(footer, panelCta);
@@ -62,6 +70,9 @@
     contact.innerHTML = '<a href="tel:+15202226308">Call or Text · 520-222-6308</a>';
     footer.appendChild(contact);
 
+    // Ensure panel starts hidden
+    panel.hidden = true;
+
     toggle.addEventListener('click', function () {
       if (nav.classList.contains('nav-open')) {
         closeMenu(nav);
@@ -71,12 +82,10 @@
       }
     });
 
-    // Close on backdrop click
     panel.addEventListener('click', function (e) {
       if (e.target === panel) closeMenu(nav);
     });
 
-    // Close on any link click
     panel.addEventListener('click', function (e) {
       if (e.target.closest('a')) closeMenu(nav);
     });
