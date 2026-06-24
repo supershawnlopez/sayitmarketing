@@ -2033,12 +2033,12 @@ body.page-audit .page-hero--light {
     color: #5aabff;
     outline: none;
   }
-  .nav-panel-footer {
+  .nav-panel-cta {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     display: flex;
     flex-direction: column;
     gap: 0.875rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
   }
   .nav-panel-cta .btn {
     width: 100%;
