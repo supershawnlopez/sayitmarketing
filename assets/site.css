@@ -1968,7 +1968,6 @@ body.page-audit .page-hero--light {
     display: grid;
     align-content: start;
     background: #09111e;
-    overflow-y: auto;
   }
   .nav-panel[hidden] {
     display: none;
