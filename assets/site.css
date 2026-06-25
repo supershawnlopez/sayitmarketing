@@ -1990,7 +1990,7 @@ body.page-audit .page-hero--light {
   }
   body.nav-open .mobile-sticky { display: none !important; }
   .nav-panel-inner {
-    padding: 5.5rem 2rem 2.5rem;
+    padding: 7.5rem 2rem 2.5rem;
     display: grid;
     gap: 0;
   }
