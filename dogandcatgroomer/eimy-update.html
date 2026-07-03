@@ -74,11 +74,13 @@
   .lang-btn-mini:hover { background: rgba(56,119,171,0.08); }
   .lang-btn-mini:focus-visible, .tab-link:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 
-  .hero { text-align: center; margin: 36px 0 44px; scroll-margin-top: 6.5rem; }
-  .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 0.84rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--mauve); margin-bottom: 16px; }
+  .hero { text-align: center; margin: 36px 0 44px; scroll-margin-top: 6.5rem; background: linear-gradient(155deg, var(--navy), var(--navy-dark)); border-radius: 24px; padding: clamp(32px,7vw,48px) clamp(20px,5vw,32px); box-shadow: var(--shadow); position: relative; overflow: hidden; }
+  .hero::after { content: ""; position: absolute; left: -90px; bottom: -90px; width: 240px; height: 240px; border-radius: 999px; background: rgba(111,168,216,0.14); pointer-events: none; }
+  .hero > * { position: relative; z-index: 1; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 0.84rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--blue-light); margin-bottom: 16px; }
   h1 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: clamp(2rem, 8vw, 2.7rem); line-height: 1.1; letter-spacing: -0.015em; margin: 0 0 16px; text-wrap: balance; color: var(--text-page); }
-  .hero p { max-width: 480px; margin: 0 auto; color: var(--gray); font-size: 1.05rem; }
-  .signoff { margin-top: 20px; font-size: 0.9rem; color: var(--gray); font-style: italic; }
+  .hero h1 { color: #fff; }
+  .signoff { margin-top: 4px; font-size: 0.9rem; color: rgba(242,244,249,0.7); font-style: italic; }
 
   section { margin-top: 48px; scroll-margin-top: 6.5rem; }
   .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; letter-spacing: 0.11em; text-transform: uppercase; font-weight: 700; color: var(--blue); margin-bottom: 10px; }
@@ -202,7 +204,6 @@
   <div class="hero" id="top">
     <span class="hero-eyebrow t" data-en="For Eimy · Dog &amp; Cat Groomer" data-es="Para Eimy · Dog &amp; Cat Groomer">For Eimy · Dog &amp; Cat Groomer</span>
     <h1 class="t" data-en="Here's exactly what's been done for you — and what happens next." data-es="Esto es exactamente lo que se ha hecho por ti — y qué sigue después.">Here's exactly what's been done for you — and what happens next.</h1>
-    <p class="t" data-en="No jargon, just a real look at what's already working, what's still holding you back, and why it's worth staying the course." data-es="Sin tecnicismos, solo una mirada real a lo que ya está funcionando, lo que todavía te está deteniendo, y por qué vale la pena seguir con el plan.">No jargon, just a real look at what's already working, what's still holding you back, and why it's worth staying the course.</p>
     <p class="signoff">— Shawn</p>
   </div>
 
