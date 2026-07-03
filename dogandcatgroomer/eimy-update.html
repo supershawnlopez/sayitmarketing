@@ -53,7 +53,8 @@
     }
   }
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; font-size: 106.25%; }
+  @media (max-width: 480px) { html { font-size: 112.5%; } }
   body {
     margin: 0;
     background: var(--bg-page);
@@ -61,27 +62,26 @@
     font-family: "Jost", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.65;
   }
-  .page { max-width: 640px; margin: 0 auto; padding: clamp(28px,6vw,52px) clamp(20px,5vw,28px) 80px; }
+  .page { max-width: 640px; margin: 0 auto; padding: clamp(28px,6vw,52px) clamp(18px,5vw,28px) 80px; }
 
   .tabbar { position: sticky; top: 0; z-index: 50; background: var(--bg-page); border-bottom: 1px solid var(--rule); }
-  .tabbar-inner { max-width: 640px; margin: 0 auto; padding: 0 clamp(12px,4vw,20px); display: flex; align-items: center; gap: 10px; }
-  .tabbar-scroll { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; padding: 10px 0; -webkit-overflow-scrolling: touch; }
-  .tabbar-scroll::-webkit-scrollbar { display: none; }
-  .tab-link { flex-shrink: 0; scroll-snap-align: start; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.01em; color: var(--gray); text-decoration: none; padding: 7px 12px; border-radius: 999px; white-space: nowrap; transition: color 0.15s, background 0.15s; }
+  .tabbar-inner { max-width: 640px; margin: 0 auto; padding: 10px clamp(12px,4vw,20px); display: flex; align-items: center; gap: 10px; }
+  .tabbar-scroll { flex: 1 1 auto; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; }
+  .tab-link { display: inline-flex; align-items: center; justify-content: center; min-height: 2.4rem; flex-shrink: 0; font-size: 0.92rem; font-weight: 600; letter-spacing: 0.01em; color: var(--gray); text-decoration: none; padding: 0 0.9rem; border-radius: 999px; white-space: nowrap; transition: color 0.15s, background 0.15s; }
   .tab-link:hover { color: var(--text-page); }
   .tab-link.active { color: var(--blue); background: rgba(56,119,171,0.1); }
-  .lang-btn-mini { flex-shrink: 0; margin-left: auto; border: 1px solid var(--blue); color: var(--blue); background: transparent; border-radius: 999px; width: 34px; height: 34px; font-family: "Jost", sans-serif; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.02em; cursor: pointer; }
+  .lang-btn-mini { flex-shrink: 0; border: 1px solid var(--blue); color: var(--blue); background: transparent; border-radius: 999px; width: 2.4rem; height: 2.4rem; font-family: "Jost", sans-serif; font-size: 0.78rem; font-weight: 800; letter-spacing: 0.02em; cursor: pointer; }
   .lang-btn-mini:hover { background: rgba(56,119,171,0.08); }
   .lang-btn-mini:focus-visible, .tab-link:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
 
   .hero { text-align: center; margin: 36px 0 44px; }
-  .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--mauve); margin-bottom: 16px; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 0.84rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 700; color: var(--mauve); margin-bottom: 16px; }
   h1 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: clamp(2rem, 8vw, 2.7rem); line-height: 1.1; letter-spacing: -0.015em; margin: 0 0 16px; text-wrap: balance; color: var(--text-page); }
   .hero p { max-width: 480px; margin: 0 auto; color: var(--gray); font-size: 1.05rem; }
   .signoff { margin-top: 20px; font-size: 0.9rem; color: var(--gray); font-style: italic; }
 
-  section { margin-top: 48px; scroll-margin-top: 64px; }
-  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 0.68rem; letter-spacing: 0.13em; text-transform: uppercase; font-weight: 700; color: var(--blue); margin-bottom: 10px; }
+  section { margin-top: 48px; scroll-margin-top: 6.5rem; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 0.8rem; letter-spacing: 0.11em; text-transform: uppercase; font-weight: 700; color: var(--blue); margin-bottom: 10px; }
   h2 { font-family: "Cormorant Garamond", serif; font-weight: 500; font-size: clamp(1.5rem, 5vw, 1.85rem); line-height: 1.15; margin: 0 0 12px; text-wrap: balance; }
   section > p.intro { color: var(--gray); font-size: 1rem; margin: 0 0 22px; max-width: 540px; }
 
@@ -123,7 +123,7 @@
   .value-item span { color: var(--gray); font-size: 0.95rem; }
   .value-item b { color: var(--text-page); }
 
-  .sub-label { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 800; color: var(--mauve); margin: 26px 0 10px; }
+  .sub-label { font-size: 0.8rem; letter-spacing: 0.09em; text-transform: uppercase; font-weight: 800; color: var(--mauve); margin: 26px 0 10px; }
   .sub-label:first-of-type { margin-top: 4px; }
   .next-item { display: flex; gap: 14px; align-items: flex-start; background: var(--card); border: 1px solid var(--rule); border-radius: 16px; padding: 16px 18px; box-shadow: var(--shadow); margin-bottom: 12px; }
   .next-item:last-child { margin-bottom: 0; }
@@ -137,7 +137,7 @@
   .ad-card.recommend { border: 1.5px solid var(--blue); background: linear-gradient(180deg, rgba(111,168,216,0.08), var(--card)); }
   .ad-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
   .ad-name { font-family: "Cormorant Garamond", serif; font-size: 1.3rem; font-weight: 600; }
-  .ad-pick { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 800; color: var(--blue); background: rgba(56,119,171,0.1); border-radius: 999px; padding: 5px 10px; }
+  .ad-pick { font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 800; color: var(--blue); background: rgba(56,119,171,0.1); border-radius: 999px; padding: 5px 10px; }
   .ad-cost { font-family: "Cormorant Garamond", serif; font-size: 1.5rem; color: var(--mauve); margin-bottom: 8px; }
   .ad-cost span { font-family: "Jost", sans-serif; font-size: 0.85rem; color: var(--gray); }
   .ad-card p { margin: 0; color: var(--gray); font-size: 0.92rem; }
@@ -149,18 +149,21 @@
   .growth-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
   .growth-card { background: var(--card); border: 1px solid var(--rule); border-radius: 16px; padding: 18px 18px 16px; box-shadow: var(--shadow); }
   .growth-num { font-family: "Cormorant Garamond", serif; font-size: 2.3rem; color: var(--blue); line-height: 1; font-variant-numeric: tabular-nums; }
-  .growth-label { font-size: 0.78rem; color: var(--gray); margin: 4px 0 14px; }
+  .growth-label { font-size: 0.86rem; color: var(--gray); margin: 4px 0 14px; }
   .growth-spark { display: flex; align-items: flex-end; gap: 6px; height: 46px; }
   .growth-bar { flex: 1; background: var(--blue); border-radius: 3px 3px 0 0; }
   .growth-months { display: flex; gap: 6px; margin-top: 6px; }
-  .growth-months span { flex: 1; text-align: center; font-size: 0.62rem; color: var(--gray); letter-spacing: 0.03em; }
+  .growth-months span { flex: 1; text-align: center; font-size: 0.75rem; color: var(--gray); letter-spacing: 0.02em; }
   .growth-note { margin-top: 16px; color: var(--gray); font-size: 0.92rem; }
   .growth-note strong { color: var(--text-page); }
 
   .timeline { display: flex; flex-direction: column; gap: 0; }
-  .tl-item { display: grid; grid-template-columns: 84px 1fr; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+  .tl-item { display: grid; grid-template-columns: 6.5rem 1fr; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
   .tl-item:last-child { border-bottom: 0; }
-  .tl-when { font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: var(--mauve); padding-top: 2px; }
+  @media (max-width: 520px) {
+    .tl-item { grid-template-columns: 1fr; gap: 4px; }
+  }
+  .tl-when { font-size: 0.78rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 700; color: var(--mauve); padding-top: 2px; }
   .tl-body b { display: block; margin-bottom: 3px; }
   .tl-body span { color: var(--gray); font-size: 0.9rem; }
 
