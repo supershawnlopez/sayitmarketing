@@ -1,3 +1,28 @@
+## Session: July 3, 2026 — Eimy (Dog & Cat Groomer) Client Retention Page
+**AI:** Claude Code (Sonnet 5)
+**Worked on:** Built and iterated a private, client-facing retention page for Shawn's Dog & Cat Groomer client, hosted on sayitmarketing.com
+
+### ✅ Completed This Session
+- Created `/dogandcatgroomer/eimy-update.html` — private, noindex client-facing page addressing Eimy considering canceling her $199/mo Google Business Profile retainer
+- Added `Disallow: /dogandcatgroomer/` to robots.txt, matching the existing `/proposals/` pattern
+- Built bilingual EN/ES toggle using the same `data-en`/`data-es` pattern already established in `proposals/dogandcat.html`
+- Embedded real Google Business Profile performance data (33 calls, 137 direction requests, 63 website clicks, 234 total interactions, Apr→June 2026 trend, 468 monthly views) as branded stat cards rather than raw screenshots
+- Corrected retainer bullets to match Eimy's actual "On the Map" $199/mo tier as defined in `local-seo.html` — removed an inaccurate "review response management" claim (that's actually a $299 "Own the Block" tier feature) and replaced with what her plan really includes: weekly posts, review request reminders, rank tracking/reporting, backend freshness updates
+- Added a sticky, wrapping section-nav tab bar with active-section highlighting (IntersectionObserver)
+- Mobile responsive pass: root font-size scaling (17px baseline, 18px under 480px), tab bar wraps into rows with larger tap targets, timeline stacks vertically under 520px
+- Redesigned hero as a dark navy gradient card (matching the closing section's treatment) with white text; removed subtext line
+- Fixed page-load/anchor bug: "Done" tab and any incoming URL hash now land at the top of the page (hero) instead of skipping past it
+
+### ⏳ Still Pending
+- Shawn to present the page to Eimy
+- Shawn to manually correct the Google Business Profile map pin (Suite #8 vs. the Glendale Towne Center plaza it's currently drifting toward) and check for an old ghost listing at the same address — referenced on the page but requires GBP dashboard access Claude doesn't have
+- The page's map-pin/backend-fix language should be revisited once the corresponding dogandcatgroomer.com code fix (in that repo's `index.html`/`contact.json`) is actually pushed live
+
+### 🔜 Next Session Should Start With
+- Confirm with Shawn how the conversation with Eimy went and whether any messaging needs revision
+
+---
+
 ## Session: May 28, 2026 (continued 4) — OG Metadata, Privacy/Terms, Visual QA
 **AI:** Claude Code (Sonnet 4.6)
 **Worked on:** Open Graph metadata sitewide, Privacy + Terms pages, Steve Jobs QA pass
