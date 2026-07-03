@@ -123,6 +123,15 @@
   .value-item span { color: var(--gray); font-size: 0.95rem; }
   .value-item b { color: var(--text-page); }
 
+  .sub-label { font-size: 0.68rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 800; color: var(--mauve); margin: 26px 0 10px; }
+  .sub-label:first-of-type { margin-top: 4px; }
+  .next-item { display: flex; gap: 14px; align-items: flex-start; background: var(--card); border: 1px solid var(--rule); border-radius: 16px; padding: 16px 18px; box-shadow: var(--shadow); margin-bottom: 12px; }
+  .next-item:last-child { margin-bottom: 0; }
+  .next-item .icon { flex-shrink: 0; font-family: "Cormorant Garamond", serif; font-size: 1.3rem; color: var(--blue); line-height: 1.4; }
+  .next-item b { display: block; font-size: 0.98rem; margin-bottom: 3px; color: var(--text-page); }
+  .next-item span { color: var(--gray); font-size: 0.9rem; }
+  .done-list.compact { margin-bottom: 4px; }
+
   .ad-grid { display: flex; flex-direction: column; gap: 14px; }
   .ad-card { background: var(--card); border: 1px solid var(--rule); border-radius: 18px; padding: 20px 22px; box-shadow: var(--shadow); }
   .ad-card.recommend { border: 1.5px solid var(--blue); background: linear-gradient(180deg, rgba(111,168,216,0.08), var(--card)); }
@@ -268,6 +277,10 @@
       </div>
     </div>
     <p class="growth-note t" data-en="Your listing was also seen <strong>468 times</strong> in a single recent month. Every one of these numbers has grown since we started — this is the foundation actually turning into real activity." data-es="Tu perfil también fue visto <strong>468 veces</strong> en un solo mes reciente. Cada uno de estos números ha crecido desde que empezamos — esta es la base realmente convirtiéndose en actividad real.">Your listing was also seen <strong>468 times</strong> in a single recent month. Every one of these numbers has grown since we started — this is the foundation actually turning into real activity.</p>
+    <div class="fix-card">
+      <span class="icon">→</span>
+      <div><b class="t" data-en="This is early. It gets stronger from here." data-es="Esto apenas comienza. Se pone más fuerte desde aquí.">This is early. It gets stronger from here.</b><p class="t" data-en="Google doesn't reward big jumps — it rewards consistency. The climb you're seeing from April to June isn't a ceiling, it's a floor. The longer we keep doing this work every month, the higher and faster it climbs. Stopping now doesn't just pause the growth — it lets it fade." data-es="Google no premia los saltos grandes — premia la constancia. El crecimiento que ves de abril a junio no es un techo, es una base. Mientras más tiempo sigamos haciendo este trabajo cada mes, más alto y más rápido sube. Detenernos ahora no solo pausa el crecimiento — lo deja apagarse.">Google doesn't reward big jumps — it rewards consistency. The climb you're seeing from April to June isn't a ceiling, it's a floor. The longer we keep doing this work every month, the higher and faster it climbs. Stopping now doesn't just pause the growth — it lets it fade.</p></div>
+    </div>
   </section>
 
   <section id="reviews">
@@ -297,12 +310,30 @@
 
   <section id="retainer">
     <span class="eyebrow t" data-en="What The $199/Month Covers" data-es="Qué Cubre El Pago Mensual De $199">What The $199/Month Covers</span>
-    <h2 class="t" data-en="What that monthly retainer is actually doing" data-es="Qué está haciendo realmente ese pago mensual">What that monthly retainer is actually doing</h2>
+    <h2 class="t" data-en="This isn't a passive check-in — here's the real work" data-es="Esto no es solo un chequeo pasivo — aquí está el trabajo real">This isn't a passive check-in — here's the real work</h2>
+    <p class="intro t" data-en="Exactly what's already been delivered, what runs every single month without you lifting a finger, and what I'm specifically pushing on right now." data-es="Exactamente lo que ya se ha entregado, lo que se hace cada mes sin que tengas que mover un dedo, y en qué estoy trabajando específicamente ahora mismo.">Exactly what's already been delivered, what runs every single month without you lifting a finger, and what I'm specifically pushing on right now.</p>
+
+    <div class="sub-label t" data-en="Delivered This Cycle" data-es="Entregado En Este Ciclo">Delivered This Cycle</div>
+    <div class="done-list compact">
+      <div class="done-item"><span class="check">✓</span><div><b class="t" data-en="Corrected your citations across the entire web" data-es="Corregimos tus citaciones en toda la web">Corrected your citations across the entire web</b><span class="t" data-en="Your business name, address, and phone number now match correctly across Yelp, Facebook, and every directory Google cross-checks. Mismatched info on even one of these can quietly make Google trust your listing less." data-es="Tu nombre, dirección y teléfono ahora coinciden correctamente en Yelp, Facebook y cada directorio que Google revisa. Información que no coincide en aunque sea uno de estos lugares puede hacer que Google confíe menos en tu perfil, sin que te des cuenta.">Your business name, address, and phone number now match correctly across Yelp, Facebook, and every directory Google cross-checks. Mismatched info on even one of these can quietly make Google trust your listing less.</span></div></div>
+      <div class="done-item"><span class="check">✓</span><div><b class="t" data-en="Rebuilt the technical backend so Google's bots read your site correctly" data-es="Reconstruimos la parte técnica de tu sitio para que los robots de Google lo lean correctamente">Rebuilt the technical backend so Google's bots read your site correctly</b><span class="t" data-en="Added the structured technical groundwork search engines and AI tools rely on to understand exactly who you are, where you are, and what you do — invisible to visitors, but exactly what search engines are looking for." data-es="Agregamos la base técnica estructurada que los motores de búsqueda y las herramientas de IA usan para entender exactamente quién eres, dónde estás y qué haces — invisible para tus visitantes, pero justo lo que buscan los motores de búsqueda.">Added the structured technical groundwork search engines and AI tools rely on to understand exactly who you are, where you are, and what you do — invisible to visitors, but exactly what search engines are looking for.</span></div></div>
+    </div>
+
+    <div class="sub-label t" data-en="Every Month, Automatically" data-es="Cada Mes, Automáticamente">Every Month, Automatically</div>
     <div class="value-list">
-      <div class="value-item"><span class="value-dot"></span><span class="t" data-en="<b>Keeping your Google listing fresh</b> — hours, photos, and posts updated every month so it never looks abandoned." data-es="<b>Mantener tu perfil de Google actualizado</b> — horarios, fotos y publicaciones actualizadas cada mes para que nunca se vea abandonado."><b>Keeping your Google listing fresh</b> — hours, photos, and posts updated every month so it never looks abandoned.</span></div>
-      <div class="value-item"><span class="value-dot"></span><span class="t" data-en="<b>Watching for problems most owners never see</b> — the kind of small, invisible fixes that quietly cost bookings if nobody catches them." data-es="<b>Estar atentos a problemas que la mayoría de los dueños nunca ven</b> — el tipo de arreglos pequeños e invisibles que silenciosamente cuestan citas si nadie los detecta."><b>Watching for problems most owners never see</b> — the kind of small, invisible fixes that quietly cost bookings if nobody catches them.</span></div>
-      <div class="value-item"><span class="value-dot"></span><span class="t" data-en="<b>Responding to reviews and questions</b> so Google sees an active, cared-for business." data-es="<b>Responder reseñas y preguntas</b> para que Google vea un negocio activo y bien cuidado."><b>Responding to reviews and questions</b> so Google sees an active, cared-for business.</span></div>
-      <div class="value-item"><span class="value-dot"></span><span class="t" data-en="<b>Making sure Google keeps recommending you</b> over shops that have simply been open longer." data-es="<b>Asegurarnos de que Google te siga recomendando</b> por encima de negocios que simplemente llevan más tiempo abiertos."><b>Making sure Google keeps recommending you</b> over shops that have simply been open longer.</span></div>
+      <div class="value-item"><span class="value-dot"></span><span class="t" data-en="<b>Your Google listing stays current</b> — hours, photos, posts, and holiday closures updated so it never reads as abandoned. An inactive-looking listing quietly loses Google's trust over time." data-es="<b>Tu perfil de Google se mantiene actualizado</b> — horarios, fotos, publicaciones y cierres por días festivos actualizados para que nunca se vea abandonado. Un perfil que parece inactivo pierde la confianza de Google poco a poco."><b>Your Google listing stays current</b> — hours, photos, posts, and holiday closures updated so it never reads as abandoned. An inactive-looking listing quietly loses Google's trust over time.</span></div>
+      <div class="value-item"><span class="value-dot"></span><span class="t" data-en="<b>Every review and question gets a response</b> — within 48 hours. Google factors in how actively a business responds, not just the reviews themselves." data-es="<b>Cada reseña y pregunta recibe respuesta</b> — dentro de 48 horas. Google toma en cuenta qué tan activamente responde un negocio, no solo las reseñas en sí."><b>Every review and question gets a response</b> — within 48 hours. Google factors in how actively a business responds, not just the reviews themselves.</span></div>
+      <div class="value-item"><span class="value-dot"></span><span class="t" data-en="<b>Ongoing technical fixes</b> — the kind of small, invisible problems, like the map pin and service-area mix-up we just caught, that quietly cost bookings until someone catches them." data-es="<b>Correcciones técnicas continuas</b> — el tipo de problemas pequeños e invisibles, como el pin del mapa y la confusión del área de servicio que acabamos de corregir, que cuestan citas silenciosamente hasta que alguien los detecta."><b>Ongoing technical fixes</b> — the kind of small, invisible problems, like the map pin and service-area mix-up we just caught, that quietly cost bookings until someone catches them.</span></div>
+    </div>
+
+    <div class="sub-label t" data-en="This Month's Focus" data-es="El Enfoque De Este Mes">This Month's Focus</div>
+    <div class="next-item">
+      <span class="icon">→</span>
+      <div><b class="t" data-en="Getting you recommended by AI, not just Google search" data-es="Lograr que la IA te recomiende, no solo la búsqueda de Google">Getting you recommended by AI, not just Google search</b><span class="t" data-en="People are starting to ask ChatGPT and Google's AI answers questions like &quot;who's the best cat groomer near me&quot; instead of typing a search. You're already winning some of these (see above) — this month's work is expanding that to more searches." data-es="La gente está empezando a preguntarle a ChatGPT y a las respuestas de IA de Google cosas como &quot;quién es el mejor groomer de gatos cerca de mí&quot; en lugar de escribir una búsqueda normal. Ya estás ganando algunas de estas búsquedas (ver arriba) — el trabajo de este mes es ampliar eso a más búsquedas.">People are starting to ask ChatGPT and Google's AI answers questions like "who's the best cat groomer near me" instead of typing a search. You're already winning some of these (see above) — this month's work is expanding that to more searches.</span></div>
+    </div>
+    <div class="next-item">
+      <span class="icon">→</span>
+      <div><b class="t" data-en="More core SEO work on the site itself" data-es="Más trabajo de SEO en el sitio mismo">More core SEO work on the site itself</b><span class="t" data-en="Continuing to build out the technical and content side of the site so the numbers above keep climbing, not just holding steady." data-es="Seguimos construyendo la parte técnica y de contenido del sitio para que los números de arriba sigan subiendo, no solo se mantengan.">Continuing to build out the technical and content side of the site so the numbers above keep climbing, not just holding steady.</span></div>
     </div>
   </section>
 
