@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What We've Built For You — Dog & Cat Groomer</title>
+<meta name="description" content="A simple look at what's been done for your Google listing and website, what it's already doing, and the one thing that will help the most next.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue: #3877AB;
+    --blue-light: #6FA8D8;
+    --mauve: #98759E;
+    --navy: #20273D;
+    --navy-dark: #151A2A;
+    --warm-white: #F7F9FC;
+    --gray: #566071;
+    --rule: #D9E2EC;
+    --green: #2f7a5c;
+    --green-bg: rgba(47,122,92,0.09);
+    --gold: #b98a3e;
+    --gold-bg: rgba(185,138,62,0.1);
+    --bg-page: var(--warm-white);
+    --text-page: var(--navy);
+    --card: #ffffff;
+    --shadow: 0 14px 34px rgba(32,39,61,0.07);
+  }
+  :root[data-theme="dark"] {
+    --bg-page: #14182a;
+    --text-page: #eef1f8;
+    --card: #1c2238;
+    --gray: #b7c0d6;
+    --rule: rgba(217,226,236,0.14);
+    --warm-white: #14182a;
+    --shadow: 0 14px 34px rgba(0,0,0,0.35);
+    --green-bg: rgba(47,122,92,0.22);
+    --gold-bg: rgba(185,138,62,0.2);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg-page: #14182a;
+      --text-page: #eef1f8;
+      --card: #1c2238;
+      --gray: #b7c0d6;
+      --rule: rgba(217,226,236,0.14);
+      --warm-white: #14182a;
+      --shadow: 0 14px 34px rgba(0,0,0,0.35);
+      --green-bg: rgba(47,122,92,0.22);
+      --gold-bg: rgba(185,138,62,0.2);
+    }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg-page);
+    color: var(--text-page);
+    font-family: "Jost", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.65;
+  }
+  .page { max-width: 640px; margin: 0 auto; padding: clamp(28px,6vw,52px) clamp(20px,5vw,28px) 80px; }
+
+  .tabbar { position: sticky; top: 0; z-index: 50; background: var(--bg-page); border-bottom: 1px solid var(--rule); }
+  .tabbar-inner { max-width: 640px; margin: 0 auto; padding: 0 clamp(12px,4vw,20px); display: flex; align-items: center; gap: 10px; }
+  .tabbar-scroll { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; padding: 10px 0; -webkit-overflow-scrolling: touch; }
+  .tabbar-scroll::-webkit-scrollbar { display: none; }
+  .tab-link { flex-shrink: 0; scroll-snap-align: start; font-size: 0.74rem; font-weight: 600; letter-spacing: 0.01em; color: var(--gray); text-decoration: none; padding: 7px 12px; border-radius: 999px; white-space: nowrap; transition: color 0.15s, background 0.15s; }
+  .tab-link:hover { color: var(--text-page); }
+  .tab-link.active { color: var(--blue); background: rgba(56,119,171,0.1); }
+  .lang-btn-mini { flex-shrink: 0; margin-left: auto; border: 1px solid var(--blue); color: var(--blue); background: transparent; border-radius: 999px; width: 34px; height: 34px; font-family: "Jost", sans-serif; font-size: 0.68rem; font-weight: 800; letter-spacing: 0.02em; cursor: pointer; }
+  .lang-btn-mini:hover { background: rgba(56,119,171,0.08); }
+  .lang-btn-mini:focus-visible, .tab-link:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+
+  .hero { text-align: center; margin: 36px 0 44px; }
+  .hero-eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; font-weight: 700; color: var(--mauve); margin-bottom: 16px; }
+  h1 { font-family: "Cormorant Garamond", Georgia, serif; font-weight: 500; font-size: clamp(2rem, 8vw, 2.7rem); line-height: 1.1; letter-spacing: -0.015em; margin: 0 0 16px; text-wrap: balance; color: var(--text-page); }
+  .hero p { max-width: 480px; margin: 0 auto; color: var(--gray); font-size: 1.05rem; }
+  .signoff { margin-top: 20px; font-size: 0.9rem; color: var(--gray); font-style: italic; }
+
+  section { margin-top: 48px; scroll-margin-top: 64px; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: 0.68rem; letter-spacing: 0.13em; text-transform: uppercase; font-weight: 700; color: var(--blue); margin-bottom: 10px; }
+  h2 { font-family: "Cormorant Garamond", serif; font-weight: 500; font-size: clamp(1.5rem, 5vw, 1.85rem); line-height: 1.15; margin: 0 0 12px; text-wrap: balance; }
+  section > p.intro { color: var(--gray); font-size: 1rem; margin: 0 0 22px; max-width: 540px; }
+
+  .done-list { display: flex; flex-direction: column; gap: 12px; }
+  .done-item { display: flex; gap: 14px; align-items: flex-start; background: var(--card); border: 1px solid var(--rule); border-radius: 16px; padding: 16px 18px; box-shadow: var(--shadow); }
+  .check { flex-shrink: 0; width: 26px; height: 26px; border-radius: 50%; background: var(--green-bg); color: var(--green); display: flex; align-items: center; justify-content: center; font-size: 0.85rem; font-weight: 800; margin-top: 1px; }
+  .done-item b { display: block; font-size: 0.98rem; margin-bottom: 3px; color: var(--text-page); }
+  .done-item span { color: var(--gray); font-size: 0.9rem; }
+
+  .proof-card { background: var(--navy); color: #f2f4f9; border-radius: 20px; padding: 28px 26px; box-shadow: var(--shadow); position: relative; overflow: hidden; }
+  .proof-card::after { content: ""; position: absolute; right: -80px; top: -80px; width: 220px; height: 220px; border-radius: 999px; background: rgba(111,168,216,0.18); }
+  .proof-card * { position: relative; z-index: 1; }
+  .proof-search { font-family: "Cormorant Garamond", serif; font-size: 1.35rem; color: #fff; margin-bottom: 14px; }
+  .proof-search::before, .proof-search::after { color: var(--blue-light); }
+  .proof-search::before { content: "\201C"; }
+  .proof-search::after { content: "\201D"; }
+  .proof-result { display: flex; align-items: center; gap: 12px; background: rgba(111,168,216,0.14); border: 1px solid rgba(111,168,216,0.32); border-radius: 14px; padding: 14px 16px; }
+  .proof-result .num { font-family: "Cormorant Garamond", serif; font-size: 2.1rem; color: var(--blue-light); line-height: 1; }
+  .proof-result span { color: rgba(242,244,249,0.82); font-size: 0.92rem; }
+
+  .gap-card { background: var(--card); border: 1px solid var(--rule); border-radius: 20px; padding: 26px; box-shadow: var(--shadow); }
+  .review-compare { display: flex; align-items: flex-end; gap: 22px; margin: 20px 0 18px; padding-top: 6px; }
+  .rc-bar { flex: 1; text-align: center; }
+  .rc-track { background: var(--rule); border-radius: 8px 8px 0 0; display: flex; align-items: flex-end; justify-content: center; height: 130px; overflow: hidden; }
+  .rc-fill { width: 100%; border-radius: 8px 8px 0 0; }
+  .rc-fill.you { background: var(--mauve); height: 6%; }
+  .rc-fill.them { background: var(--blue); height: 92%; }
+  .rc-label { margin-top: 10px; font-size: 0.82rem; color: var(--gray); }
+  .rc-num { font-family: "Cormorant Garamond", serif; font-size: 1.7rem; color: var(--text-page); display: block; }
+
+  .fix-card { display: flex; gap: 14px; background: var(--gold-bg); border: 1px solid rgba(185,138,62,0.3); border-radius: 16px; padding: 18px; margin-top: 16px; }
+  .fix-card .icon { flex-shrink: 0; font-family: "Cormorant Garamond", serif; font-size: 1.5rem; color: var(--gold); }
+  .fix-card b { display: block; margin-bottom: 4px; }
+  .fix-card p { margin: 0; color: var(--gray); font-size: 0.92rem; }
+
+  .value-list { display: flex; flex-direction: column; gap: 10px; }
+  .value-item { display: flex; gap: 12px; align-items: flex-start; padding: 4px 0; }
+  .value-dot { flex-shrink: 0; width: 8px; height: 8px; border-radius: 50%; background: var(--blue); margin-top: 8px; }
+  .value-item span { color: var(--gray); font-size: 0.95rem; }
+  .value-item b { color: var(--text-page); }
+
+  .ad-grid { display: flex; flex-direction: column; gap: 14px; }
+  .ad-card { background: var(--card); border: 1px solid var(--rule); border-radius: 18px; padding: 20px 22px; box-shadow: var(--shadow); }
+  .ad-card.recommend { border: 1.5px solid var(--blue); background: linear-gradient(180deg, rgba(111,168,216,0.08), var(--card)); }
+  .ad-top { display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+  .ad-name { font-family: "Cormorant Garamond", serif; font-size: 1.3rem; font-weight: 600; }
+  .ad-pick { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; font-weight: 800; color: var(--blue); background: rgba(56,119,171,0.1); border-radius: 999px; padding: 5px 10px; }
+  .ad-cost { font-family: "Cormorant Garamond", serif; font-size: 1.5rem; color: var(--mauve); margin-bottom: 8px; }
+  .ad-cost span { font-family: "Jost", sans-serif; font-size: 0.85rem; color: var(--gray); }
+  .ad-card p { margin: 0; color: var(--gray); font-size: 0.92rem; }
+  .ad-rec { display: flex; gap: 14px; background: var(--gold-bg); border: 1px solid rgba(185,138,62,0.3); border-radius: 16px; padding: 18px; margin-top: 4px; }
+  .ad-rec .icon { flex-shrink: 0; font-family: "Cormorant Garamond", serif; font-size: 1.5rem; color: var(--gold); }
+  .ad-rec b { display: block; margin-bottom: 4px; }
+  .ad-rec p { margin: 0; color: var(--gray); font-size: 0.92rem; }
+
+  .growth-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+  .growth-card { background: var(--card); border: 1px solid var(--rule); border-radius: 16px; padding: 18px 18px 16px; box-shadow: var(--shadow); }
+  .growth-num { font-family: "Cormorant Garamond", serif; font-size: 2.3rem; color: var(--blue); line-height: 1; font-variant-numeric: tabular-nums; }
+  .growth-label { font-size: 0.78rem; color: var(--gray); margin: 4px 0 14px; }
+  .growth-spark { display: flex; align-items: flex-end; gap: 6px; height: 46px; }
+  .growth-bar { flex: 1; background: var(--blue); border-radius: 3px 3px 0 0; }
+  .growth-months { display: flex; gap: 6px; margin-top: 6px; }
+  .growth-months span { flex: 1; text-align: center; font-size: 0.62rem; color: var(--gray); letter-spacing: 0.03em; }
+  .growth-note { margin-top: 16px; color: var(--gray); font-size: 0.92rem; }
+  .growth-note strong { color: var(--text-page); }
+
+  .timeline { display: flex; flex-direction: column; gap: 0; }
+  .tl-item { display: grid; grid-template-columns: 84px 1fr; gap: 14px; padding: 16px 0; border-bottom: 1px solid var(--rule); }
+  .tl-item:last-child { border-bottom: 0; }
+  .tl-when { font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 700; color: var(--mauve); padding-top: 2px; }
+  .tl-body b { display: block; margin-bottom: 3px; }
+  .tl-body span { color: var(--gray); font-size: 0.9rem; }
+
+  .closing { background: linear-gradient(155deg, var(--navy), var(--navy-dark)); color: #f2f4f9; border-radius: 24px; padding: clamp(30px,6vw,40px); text-align: center; margin-top: 52px; box-shadow: var(--shadow); }
+  .closing h2 { color: #fff; }
+  .closing p { color: rgba(242,244,249,0.78); max-width: 460px; margin: 0 auto 6px; }
+  .closing .signature { margin-top: 22px; font-family: "Cormorant Garamond", serif; font-size: 1.2rem; color: var(--blue-light); }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .done-item, .gap-card, .proof-card, .fix-card { animation: rise 0.5s ease both; }
+  }
+  @keyframes rise { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+  @media (prefers-reduced-motion: reduce) { * { animation: none !important; } html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<nav class="tabbar" aria-label="Section navigation">
+  <div class="tabbar-inner">
+    <div class="tabbar-scroll">
+      <a class="tab-link t" href="#done" data-en="Done" data-es="Hecho">Done</a>
+      <a class="tab-link t" href="#proof" data-en="Proof" data-es="Prueba">Proof</a>
+      <a class="tab-link t" href="#growth" data-en="Growth" data-es="Crecimiento">Growth</a>
+      <a class="tab-link t" href="#reviews" data-en="Reviews" data-es="Reseñas">Reviews</a>
+      <a class="tab-link" href="#retainer">$199</a>
+      <a class="tab-link t" href="#ads" data-en="Ads" data-es="Anuncios">Ads</a>
+      <a class="tab-link t" href="#mappin" data-en="Map Fix" data-es="Mapa">Map Fix</a>
+      <a class="tab-link t" href="#next" data-en="Next" data-es="Siguiente">Next</a>
+    </div>
+    <button class="lang-btn-mini" type="button" onclick="toggleLang()" id="langBtn" title="Ver en Español">ES</button>
+  </div>
+</nav>
+
+<div class="page">
+
+  <div class="hero">
+    <span class="hero-eyebrow t" data-en="For Eimy · Dog &amp; Cat Groomer" data-es="Para Eimy · Dog &amp; Cat Groomer">For Eimy · Dog &amp; Cat Groomer</span>
+    <h1 class="t" data-en="Here's exactly what's been done for you — and what happens next." data-es="Esto es exactamente lo que se ha hecho por ti — y qué sigue después.">Here's exactly what's been done for you — and what happens next.</h1>
+    <p class="t" data-en="No jargon, just a real look at what's already working, what's still holding you back, and why it's worth staying the course." data-es="Sin tecnicismos, solo una mirada real a lo que ya está funcionando, lo que todavía te está deteniendo, y por qué vale la pena seguir con el plan.">No jargon, just a real look at what's already working, what's still holding you back, and why it's worth staying the course.</p>
+    <p class="signoff">— Shawn</p>
+  </div>
+
+  <section id="done">
+    <span class="eyebrow t" data-en="Already Done" data-es="Ya Está Hecho">Already Done</span>
+    <h2 class="t" data-en="Here's what's already been fixed and built" data-es="Esto es lo que ya se ha corregido y construido">Here's what's already been fixed and built</h2>
+    <p class="intro t" data-en="Over the last few weeks, this is the real work that's gone into your Google listing and website:" data-es="En las últimas semanas, este es el trabajo real que se ha hecho en tu perfil de Google y tu sitio web:">Over the last few weeks, this is the real work that's gone into your Google listing and website:</p>
+    <div class="done-list">
+      <div class="done-item"><span class="check">✓</span><div><b class="t" data-en="Your Google listing is clean and accurate" data-es="Tu perfil de Google está limpio y correcto">Your Google listing is clean and accurate</b><span class="t" data-en="Fixed old, incorrect info tied to your address so customers see the right business — you, not a shop that closed years ago." data-es="Corregimos información vieja e incorrecta asociada a tu dirección, para que los clientes vean el negocio correcto — tú, no un negocio que cerró hace años.">Fixed old, incorrect info tied to your address so customers see the right business — you, not a shop that closed years ago.</span></div></div>
+      <div class="done-item"><span class="check">✓</span><div><b class="t" data-en="Your reviews now show up with gold stars" data-es="Tus reseñas ahora aparecen con estrellas doradas">Your reviews now show up with gold stars</b><span class="t" data-en="Your Google reviews are now built into your website in a way that lets Google display star ratings right in search results — the little yellow stars people trust." data-es="Tus reseñas de Google ahora están integradas en tu sitio web para que Google pueda mostrar las estrellas directamente en los resultados de búsqueda — esas estrellitas amarillas en las que la gente confía.">Your Google reviews are now built into your website in a way that lets Google display star ratings right in search results — the little yellow stars people trust.</span></div></div>
+      <div class="done-item"><span class="check">✓</span><div><b class="t" data-en="Google can actually find and show your pages" data-es="Google ahora puede encontrar y mostrar tus páginas">Google can actually find and show your pages</b><span class="t" data-en="Before this, some pages on your site weren't fully saved in Google's system — meaning they couldn't show up in search at all, no matter how good they looked. That's fixed and confirmed." data-es="Antes de esto, algunas páginas de tu sitio no estaban completamente guardadas en el sistema de Google — es decir, no podían aparecer en las búsquedas sin importar qué tan bien se vieran. Eso ya está corregido y confirmado.">Before this, some pages on your site weren't fully saved in Google's system — meaning they couldn't show up in search at all, no matter how good they looked. That's fixed and confirmed.</span></div></div>
+      <div class="done-item"><span class="check">✓</span><div><b class="t" data-en="Instagram, Facebook &amp; TikTok links all work now" data-es="Los enlaces de Instagram, Facebook y TikTok ya funcionan">Instagram, Facebook &amp; TikTok links all work now</b><span class="t" data-en="They were pointing to the wrong pages or missing your handle. Anyone who clicks now lands on your real pages." data-es="Antes apuntaban a las páginas equivocadas o les faltaba tu usuario. Ahora cualquiera que haga clic llega directo a tus páginas reales.">They were pointing to the wrong pages or missing your handle. Anyone who clicks now lands on your real pages.</span></div></div>
+      <div class="done-item"><span class="check">✓</span><div><b class="t" data-en="Your logo and buttons look right on phones" data-es="Tu logo y botones se ven bien en el celular">Your logo and buttons look right on phones</b><span class="t" data-en="Fixed display issues that were making the site look unpolished on mobile — which is how almost everyone finds you." data-es="Corregimos problemas de visualización que hacían que el sitio se viera descuidado en el celular — que es como casi todos te encuentran.">Fixed display issues that were making the site look unpolished on mobile — which is how almost everyone finds you.</span></div></div>
+      <div class="done-item"><span class="check">✓</span><div><b class="t" data-en="Your website now says Glendale, clearly" data-es="Tu sitio web ahora dice Glendale, claramente">Your website now says Glendale, clearly</b><span class="t" data-en="Made sure your site tells Google plainly that you're in Glendale — not scattered across the whole Phoenix metro — so you show up for the searches that actually matter to you." data-es="Nos aseguramos de que tu sitio le diga claramente a Google que estás en Glendale — no repartido por toda el área de Phoenix — para que aparezcas en las búsquedas que realmente te importan.">Made sure your site tells Google plainly that you're in Glendale — not scattered across the whole Phoenix metro — so you show up for the searches that actually matter to you.</span></div></div>
+    </div>
+  </section>
+
+  <section id="proof">
+    <span class="eyebrow t" data-en="Proof It's Working" data-es="Prueba De Que Está Funcionando">Proof It's Working</span>
+    <h2 class="t" data-en="We tested it live — and you're already winning some searches" data-es="Lo probamos en vivo — y ya estás ganando algunas búsquedas">We tested it live — and you're already winning some searches</h2>
+    <p class="intro t" data-en="We searched Google exactly the way a pet parent would, to see who actually shows up first." data-es="Buscamos en Google exactamente como lo haría el dueño de una mascota, para ver quién aparece primero de verdad.">We searched Google exactly the way a pet parent would, to see who actually shows up first.</p>
+    <div class="proof-card">
+      <div class="proof-search t" data-en="who is the best cat groomer near Glendale AZ 85302" data-es="quién es el mejor groomer de gatos cerca de Glendale AZ 85302">who is the best cat groomer near Glendale AZ 85302</div>
+      <div class="proof-result">
+        <span class="num">#1</span>
+        <span class="t" data-en="Dog &amp; Cat Groomer came up <strong>first</strong> — ahead of every other groomer in the area. Having &quot;Cat Groomer&quot; right in your name is a real advantage, and it's already paying off." data-es="Dog &amp; Cat Groomer apareció <strong>primero</strong> — antes que cualquier otro groomer de la zona. Tener &quot;Cat Groomer&quot; en el nombre de tu negocio es una ventaja real, y ya está dando resultado.">Dog &amp; Cat Groomer came up <strong>first</strong> — ahead of every other groomer in the area. Having "Cat Groomer" right in your name is a real advantage, and it's already paying off.</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="growth">
+    <span class="eyebrow t" data-en="Real Numbers, Real Growth" data-es="Números Reales, Crecimiento Real">Real Numbers, Real Growth</span>
+    <h2 class="t" data-en="Straight from your Google listing — and it's climbing every month" data-es="Directo de tu perfil de Google — y sigue subiendo cada mes">Straight from your Google listing — and it's climbing every month</h2>
+    <p class="intro t" data-en="These aren't projections. This is the actual activity on your Google Business Profile since April, pulled directly from your account." data-es="Esto no son proyecciones. Es la actividad real de tu Perfil de Negocio de Google desde abril, sacada directamente de tu cuenta.">These aren't projections. This is the actual activity on your Google Business Profile since April, pulled directly from your account.</p>
+    <div class="growth-grid">
+      <div class="growth-card">
+        <div class="growth-num">33</div>
+        <div class="growth-label t" data-en="Calls made from your listing" data-es="Llamadas hechas desde tu perfil">Calls made from your listing</div>
+        <div class="growth-spark">
+          <div class="growth-bar" style="height:2%;opacity:0.35;"></div>
+          <div class="growth-bar" style="height:65%;opacity:0.65;"></div>
+          <div class="growth-bar" style="height:100%;"></div>
+        </div>
+        <div class="growth-months"><span class="t" data-en="Apr" data-es="Abr">Apr</span><span>May</span><span class="t" data-en="Jun" data-es="Jun">Jun</span></div>
+      </div>
+      <div class="growth-card">
+        <div class="growth-num">137</div>
+        <div class="growth-label t" data-en="People asking Google for directions to you" data-es="Personas pidiéndole a Google direcciones hacia ti">People asking Google for directions to you</div>
+        <div class="growth-spark">
+          <div class="growth-bar" style="height:22%;opacity:0.35;"></div>
+          <div class="growth-bar" style="height:79%;opacity:0.65;"></div>
+          <div class="growth-bar" style="height:100%;"></div>
+        </div>
+        <div class="growth-months"><span class="t" data-en="Apr" data-es="Abr">Apr</span><span>May</span><span class="t" data-en="Jun" data-es="Jun">Jun</span></div>
+      </div>
+      <div class="growth-card">
+        <div class="growth-num">63</div>
+        <div class="growth-label t" data-en="Clicks from Google straight to your website" data-es="Clics desde Google directo a tu sitio web">Clicks from Google straight to your website</div>
+        <div class="growth-spark">
+          <div class="growth-bar" style="height:2%;opacity:0.35;"></div>
+          <div class="growth-bar" style="height:85%;opacity:0.65;"></div>
+          <div class="growth-bar" style="height:100%;"></div>
+        </div>
+        <div class="growth-months"><span class="t" data-en="Apr" data-es="Abr">Apr</span><span>May</span><span class="t" data-en="Jun" data-es="Jun">Jun</span></div>
+      </div>
+      <div class="growth-card">
+        <div class="growth-num">234</div>
+        <div class="growth-label t" data-en="Total actions taken on your listing" data-es="Total de acciones en tu perfil">Total actions taken on your listing</div>
+        <div class="growth-spark">
+          <div class="growth-bar" style="height:16%;opacity:0.35;"></div>
+          <div class="growth-bar" style="height:78%;opacity:0.65;"></div>
+          <div class="growth-bar" style="height:100%;"></div>
+        </div>
+        <div class="growth-months"><span class="t" data-en="Apr" data-es="Abr">Apr</span><span>May</span><span class="t" data-en="Jun" data-es="Jun">Jun</span></div>
+      </div>
+    </div>
+    <p class="growth-note t" data-en="Your listing was also seen <strong>468 times</strong> in a single recent month. Every one of these numbers has grown since we started — this is the foundation actually turning into real activity." data-es="Tu perfil también fue visto <strong>468 veces</strong> en un solo mes reciente. Cada uno de estos números ha crecido desde que empezamos — esta es la base realmente convirtiéndose en actividad real.">Your listing was also seen <strong>468 times</strong> in a single recent month. Every one of these numbers has grown since we started — this is the foundation actually turning into real activity.</p>
+  </section>
+
+  <section id="reviews">
+    <span class="eyebrow t" data-en="The One Thing Holding You Back" data-es="Lo Único Que Te Está Deteniendo">The One Thing Holding You Back</span>
+    <h2 class="t" data-en="It's not your work. It's your review count." data-es="No es tu trabajo. Es tu número de reseñas.">It's not your work. It's your review count.</h2>
+    <p class="intro t" data-en="Google decides who to recommend partly based on how many people have vouched for a business. Right now, that's the biggest gap between you and the shops nearby." data-es="Google decide a quién recomendar en parte según cuántas personas han hablado bien de un negocio. Ahora mismo, esa es la brecha más grande entre tú y los negocios cercanos.">Google decides who to recommend partly based on how many people have vouched for a business. Right now, that's the biggest gap between you and the shops nearby.</p>
+    <div class="gap-card">
+      <div class="review-compare">
+        <div class="rc-bar">
+          <div class="rc-track"><div class="rc-fill you" style="height:9%;"></div></div>
+          <span class="rc-num">7</span>
+          <div class="rc-label t" data-en="Your reviews" data-es="Tus reseñas">Your reviews</div>
+        </div>
+        <div class="rc-bar">
+          <div class="rc-track"><div class="rc-fill them"></div></div>
+          <span class="rc-num">28–141</span>
+          <div class="rc-label t" data-en="Nearby competitors" data-es="Competencia cercana">Nearby competitors</div>
+        </div>
+      </div>
+      <p class="t" style="margin:0;color:var(--gray);font-size:0.95rem;" data-en="These aren't better groomers than you — they've just had more customers tell Google about their experience. Your 5.0 rating proves the quality is already there. Google just needs more people confirming it." data-es="No son mejores groomers que tú — simplemente han tenido más clientes que le cuentan a Google su experiencia. Tu calificación de 5.0 ya demuestra que la calidad está ahí. Google solo necesita que más gente lo confirme.">These aren't better groomers than you — they've just had more customers tell Google about their experience. Your 5.0 rating proves the quality is already there. Google just needs more people confirming it.</p>
+      <div class="fix-card">
+        <span class="icon">→</span>
+        <div><b class="t" data-en="The fix is simple, and it's the highest-impact thing we can do together" data-es="La solución es simple, y es lo que más impacto puede tener de todo lo que hagamos juntos">The fix is simple, and it's the highest-impact thing we can do together</b><p class="t" data-en="A quick ask at checkout, plus a text or QR code your clients can tap right there — no app, no login. If we can add even 15–20 reviews over the next couple months, you'll start passing shops that have been open years longer." data-es="Una pregunta rápida al momento de cobrar, más un mensaje de texto o un código QR que tus clientes puedan usar ahí mismo — sin apps, sin iniciar sesión. Si logramos sumar aunque sean 15 a 20 reseñas en los próximos meses, empezarás a superar a negocios que llevan años más abiertos.">A quick ask at checkout, plus a text or QR code your clients can tap right there — no app, no login. If we can add even 15–20 reviews over the next couple months, you'll start passing shops that have been open years longer.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="retainer">
+    <span class="eyebrow t" data-en="What The $199/Month Covers" data-es="Qué Cubre El Pago Mensual De $199">What The $199/Month Covers</span>
+    <h2 class="t" data-en="What that monthly retainer is actually doing" data-es="Qué está haciendo realmente ese pago mensual">What that monthly retainer is actually doing</h2>
+    <div class="value-list">
+      <div class="value-item"><span class="value-dot"></span><span class="t" data-en="<b>Keeping your Google listing fresh</b> — hours, photos, and posts updated every month so it never looks abandoned." data-es="<b>Mantener tu perfil de Google actualizado</b> — horarios, fotos y publicaciones actualizadas cada mes para que nunca se vea abandonado."><b>Keeping your Google listing fresh</b> — hours, photos, and posts updated every month so it never looks abandoned.</span></div>
+      <div class="value-item"><span class="value-dot"></span><span class="t" data-en="<b>Watching for problems most owners never see</b> — the kind of small, invisible fixes that quietly cost bookings if nobody catches them." data-es="<b>Estar atentos a problemas que la mayoría de los dueños nunca ven</b> — el tipo de arreglos pequeños e invisibles que silenciosamente cuestan citas si nadie los detecta."><b>Watching for problems most owners never see</b> — the kind of small, invisible fixes that quietly cost bookings if nobody catches them.</span></div>
+      <div class="value-item"><span class="value-dot"></span><span class="t" data-en="<b>Responding to reviews and questions</b> so Google sees an active, cared-for business." data-es="<b>Responder reseñas y preguntas</b> para que Google vea un negocio activo y bien cuidado."><b>Responding to reviews and questions</b> so Google sees an active, cared-for business.</span></div>
+      <div class="value-item"><span class="value-dot"></span><span class="t" data-en="<b>Making sure Google keeps recommending you</b> over shops that have simply been open longer." data-es="<b>Asegurarnos de que Google te siga recomendando</b> por encima de negocios que simplemente llevan más tiempo abiertos."><b>Making sure Google keeps recommending you</b> over shops that have simply been open longer.</span></div>
+    </div>
+  </section>
+
+  <section id="ads">
+    <span class="eyebrow t" data-en="Where To Spend Advertising Money" data-es="Dónde Invertir En Publicidad">Where To Spend Advertising Money</span>
+    <h2 class="t" data-en="If you ever want to run paid ads, here's where they'd work hardest" data-es="Si alguna vez quieres invertir en anuncios pagados, aquí es donde rendirían más">If you ever want to run paid ads, here's where they'd work hardest</h2>
+    <p class="intro t" data-en="You don't have to spend a dollar on ads to benefit from everything above. But you asked where your money would go furthest if you did — so here's an honest look at the real options, in plain terms, with real costs." data-es="No tienes que gastar ni un dólar en anuncios para beneficiarte de todo lo anterior. Pero preguntaste dónde rendiría más tu dinero si lo hicieras — así que aquí tienes una mirada honesta a las opciones reales, en términos simples, con costos reales.">You don't have to spend a dollar on ads to benefit from everything above. But you asked where your money would go furthest if you did — so here's an honest look at the real options, in plain terms, with real costs.</p>
+    <div class="ad-grid">
+      <div class="ad-card recommend">
+        <div class="ad-top"><span class="ad-name">Google "Screened" Ads</span><span class="ad-pick t" data-en="Best fit for you" data-es="La mejor opción para ti">Best fit for you</span></div>
+        <div class="ad-cost">~$60 <span class="t" data-en="per real customer inquiry" data-es="por cada consulta real de un cliente">per real customer inquiry</span></div>
+        <p class="t" data-en="You only pay when someone actually calls or messages you — not just for someone clicking around. It also puts a green &quot;Google Screened&quot; checkmark next to your listing, which makes people trust it faster." data-es="Solo pagas cuando alguien realmente te llama o te escribe — no solo por que alguien haga clic. También pone una marca verde de &quot;Google Screened&quot; junto a tu perfil, lo cual hace que la gente confíe más rápido.">You only pay when someone actually calls or messages you — not just for someone clicking around. It also puts a green "Google Screened" checkmark next to your listing, which makes people trust it faster.</p>
+      </div>
+      <div class="ad-card">
+        <div class="ad-top"><span class="ad-name t" data-en="Regular Google Search Ads" data-es="Anuncios Normales de Búsqueda de Google">Regular Google Search Ads</span></div>
+        <div class="ad-cost">~$3 <span class="t" data-en="every time someone clicks" data-es="cada vez que alguien hace clic">every time someone clicks</span></div>
+        <p class="t" data-en="Shows up when someone searches &quot;dog groomer near me.&quot; You pay per click whether they book or not, so it needs a real budget — around $300–500/month — to bring in enough traffic to be worth it." data-es="Aparece cuando alguien busca &quot;groomer de perros cerca de mí&quot;. Pagas por cada clic, reserven o no, así que necesita un presupuesto real — entre $300 y $500 al mes — para traer suficiente tráfico y que valga la pena.">Shows up when someone searches "dog groomer near me." You pay per click whether they book or not, so it needs a real budget — around $300–500/month — to bring in enough traffic to be worth it.</p>
+      </div>
+      <div class="ad-card">
+        <div class="ad-top"><span class="ad-name">Facebook / Instagram Ads</span></div>
+        <div class="ad-cost">$6–30 <span class="t" data-en="per lead" data-es="por cliente potencial">per lead</span></div>
+        <p class="t" data-en="Works best once your Instagram is posting regularly — running ads to a quiet page wastes the click. Makes the most sense after we finalize the social media plan we've talked about." data-es="Funciona mejor cuando tu Instagram publica con regularidad — poner anuncios hacia una página inactiva desperdicia el clic. Tiene más sentido después de que definamos el plan de redes sociales del que hemos hablado.">Works best once your Instagram is posting regularly — running ads to a quiet page wastes the click. Makes the most sense after we finalize the social media plan we've talked about.</p>
+      </div>
+    </div>
+    <div class="ad-rec">
+      <span class="icon">→</span>
+      <div><b class="t" data-en="My recommendation" data-es="Mi recomendación">My recommendation</b><p class="t" data-en="Start with Google's pay-per-lead option once your reviews catch up a bit — it's the lowest-risk way to test paid advertising because you only pay for real potential customers, not clicks. We can add Search or Instagram ads later if it's working." data-es="Empezar con la opción de pago-por-cliente-potencial de Google una vez que tus reseñas suban un poco — es la forma de menor riesgo para probar publicidad pagada porque solo pagas por clientes potenciales reales, no por clics. Podemos agregar anuncios de Búsqueda o Instagram después si está funcionando.">Start with Google's pay-per-lead option once your reviews catch up a bit — it's the lowest-risk way to test paid advertising because you only pay for real potential customers, not clicks. We can add Search or Instagram ads later if it's working.</p></div>
+    </div>
+  </section>
+
+  <section id="mappin">
+    <span class="eyebrow t" data-en="Answering Your Question" data-es="Respondiendo Tu Pregunta">Answering Your Question</span>
+    <h2 class="t" data-en="Why some clients land in the wrong spot on Google Maps — solved" data-es="Por qué algunos clientes llegan al lugar equivocado en Google Maps — resuelto">Why some clients land in the wrong spot on Google Maps — solved</h2>
+    <p class="intro t" data-en="You've asked me about this before, and I finally tracked down the real reason. I checked your Google profile first, and your address was set up correctly from day one — that was never the issue." data-es="Me has preguntado esto antes, y finalmente encontré la razón real. Primero revisé tu perfil de Google, y tu dirección estaba configurada correctamente desde el primer día — eso nunca fue el problema.">You've asked me about this before, and I finally tracked down the real reason. I checked your Google profile first, and your address was set up correctly from day one — that was never the issue.</p>
+    <p class="intro t" data-en="After digging further, I found the actual cause: your shop sits inside a larger plaza, Glendale Towne Center, with several other businesses sharing that same street address. Google sometimes drops its map pin toward the plaza in general instead of your exact front door — that's what's been sending people to the wrong spot." data-es="Después de investigar más a fondo, encontré la causa real: tu negocio está dentro de una plaza más grande, Glendale Towne Center, donde varios negocios comparten esa misma dirección. A veces Google coloca el pin del mapa hacia la plaza en general en lugar de la puerta exacta de tu negocio — eso es lo que ha estado enviando a la gente al lugar equivocado.">After digging further, I found the actual cause: your shop sits inside a larger plaza, Glendale Towne Center, with several other businesses sharing that same street address. Google sometimes drops its map pin toward the plaza in general instead of your exact front door — that's what's been sending people to the wrong spot.</p>
+    <div class="fix-card">
+      <span class="icon">→</span>
+      <div><b class="t" data-en="Good news — I have a fix, and I'm starting it this month" data-es="Buenas noticias — tengo una solución, y la empiezo este mes">Good news — I have a fix, and I'm starting it this month</b><p class="t" data-en="I can correct the map pin so it points directly to your door instead of the plaza in general. I'll also add extra details in your website's backend so Google's search bots pick up a clearer, more precise signal about exactly where you are — reinforcing the correct location everywhere Google looks, not just on the map." data-es="Puedo corregir el pin del mapa para que apunte directamente a tu puerta en lugar de la plaza en general. También voy a agregar más detalles en la parte técnica de tu sitio web para que los robots de búsqueda de Google reciban una señal más clara y precisa de exactamente dónde estás — reforzando la ubicación correcta en todos los lugares donde Google la busca, no solo en el mapa.">I can correct the map pin so it points directly to your door instead of the plaza in general. I'll also add extra details in your website's backend so Google's search bots pick up a clearer, more precise signal about exactly where you are — reinforcing the correct location everywhere Google looks, not just on the map.</p></div>
+    </div>
+  </section>
+
+  <section id="next">
+    <span class="eyebrow t" data-en="What's Coming Next" data-es="Lo Que Sigue">What's Coming Next</span>
+    <h2 class="t" data-en="The next 90 days" data-es="Los próximos 90 días">The next 90 days</h2>
+    <div class="timeline">
+      <div class="tl-item"><span class="tl-when t" data-en="This month" data-es="Este mes">This month</span><div class="tl-body"><b class="t" data-en="Correct the map pin + reinforce it on the website backend" data-es="Corregir el pin del mapa + reforzarlo en la parte técnica del sitio">Correct the map pin + reinforce it on the website backend</b><span class="t" data-en="Gets clients dropped at your actual door, not the wrong end of the plaza — and gives Google's bots the same clear signal." data-es="Hace que los clientes lleguen directo a tu puerta, no al otro extremo de la plaza — y le da a los robots de Google la misma señal clara.">Gets clients dropped at your actual door, not the wrong end of the plaza — and gives Google's bots the same clear signal.</span></div></div>
+      <div class="tl-item"><span class="tl-when t" data-en="This month" data-es="Este mes">This month</span><div class="tl-body"><b class="t" data-en="Launch the simple review-ask system" data-es="Lanzar el sistema simple para pedir reseñas">Launch the simple review-ask system</b><span class="t" data-en="A quick, no-hassle way for happy clients to leave you a review on the spot." data-es="Una forma rápida y sin complicaciones para que tus clientes felices dejen una reseña en el momento.">A quick, no-hassle way for happy clients to leave you a review on the spot.</span></div></div>
+      <div class="tl-item"><span class="tl-when t" data-en="Weeks 2–4" data-es="Semanas 2 a 4">Weeks 2–4</span><div class="tl-body"><b class="t" data-en="Add a Q&amp;A section to your site" data-es="Agregar una sección de preguntas y respuestas a tu sitio">Add a Q&amp;A section to your site</b><span class="t" data-en="Copy is already written — answers the questions pet parents have before they even call." data-es="El texto ya está escrito — responde las preguntas que tienen los dueños de mascotas antes de llamar.">Copy is already written — answers the questions pet parents have before they even call.</span></div></div>
+      <div class="tl-item"><span class="tl-when t" data-en="After reviews grow" data-es="Cuando crezcan las reseñas">After reviews grow</span><div class="tl-body"><b class="t" data-en="Test the Google pay-per-lead ads above" data-es="Probar los anuncios de pago-por-cliente-potencial de Google mencionados arriba">Test the Google pay-per-lead ads above</b><span class="t" data-en="Aimed only at Glendale and the West Valley — not wasted on far-away searches." data-es="Dirigidos solo a Glendale y el West Valley — sin desperdiciarse en búsquedas lejanas.">Aimed only at Glendale and the West Valley — not wasted on far-away searches.</span></div></div>
+    </div>
+  </section>
+
+  <div class="closing">
+    <h2 class="t" data-en="This is more like tending a garden than flipping a switch." data-es="Esto se parece más a cuidar un jardín que a encender un interruptor.">This is more like tending a garden than flipping a switch.</h2>
+    <p class="t" data-en="Google slowly builds trust in a business over months of steady care — it doesn't happen overnight, and it doesn't happen by accident. We're right at the point where the biggest fixes are about to kick in. I'd hate for you to stop now, right before it starts showing." data-es="Google construye confianza en un negocio poco a poco, con meses de cuidado constante — no pasa de la noche a la mañana, y no pasa por accidente. Estamos justo en el punto donde los cambios más importantes están por dar resultado. Me dolería que te detuvieras ahora, justo antes de que empiece a notarse.">Google slowly builds trust in a business over months of steady care — it doesn't happen overnight, and it doesn't happen by accident. We're right at the point where the biggest fixes are about to kick in. I'd hate for you to stop now, right before it starts showing.</p>
+    <div class="signature">— Shawn, Say It Marketing</div>
+  </div>
+
+</div>
+
+<script>
+  var isEnglish = true;
+  function toggleLang() {
+    isEnglish = !isEnglish;
+    var lang = isEnglish ? "en" : "es";
+    document.querySelectorAll(".t").forEach(function(el) {
+      var value = el.getAttribute("data-" + lang);
+      if (value) el.innerHTML = value;
+    });
+    var btn = document.getElementById("langBtn");
+    btn.textContent = isEnglish ? "ES" : "EN";
+    btn.title = isEnglish ? "Ver en Español" : "View in English";
+    document.documentElement.lang = lang;
+  }
+
+  if ("IntersectionObserver" in window) {
+    var tabLinks = Array.prototype.slice.call(document.querySelectorAll(".tab-link"));
+    var sections = tabLinks
+      .map(function(link) { return document.querySelector(link.getAttribute("href")); })
+      .filter(Boolean);
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (!entry.isIntersecting) return;
+        var id = "#" + entry.target.id;
+        tabLinks.forEach(function(link) {
+          link.classList.toggle("active", link.getAttribute("href") === id);
+        });
+      });
+    }, { rootMargin: "-72px 0px -70% 0px", threshold: 0 });
+    sections.forEach(function(s) { observer.observe(s); });
+  }
+</script>
+</body>
+</html>
