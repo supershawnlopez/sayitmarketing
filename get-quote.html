@@ -185,10 +185,31 @@
   .quote-print-context .split-media img {
     object-position: center;
   }
+  .quote-alt-call {
+    margin: 0.7rem 0 0;
+    font-size: 0.9rem;
+    color: var(--text-3);
+  }
+  .quote-alt-call[hidden] { display: none; }
+  .quote-alt-call a {
+    color: var(--text-2);
+    font-weight: 700;
+    text-decoration: underline;
+    text-underline-offset: 0.18em;
+  }
 
   @media (max-width: 520px) {
     .form-grid { grid-template-columns: 1fr; }
     .step-actions .btn-primary { flex: none; width: 100%; }
+    .quote-print-context .nav + .section-page {
+      padding-block: 1.75rem 0.75rem;
+    }
+    .quote-print-context .split-section {
+      gap: 1rem;
+    }
+    .quote-print-context .split-media {
+      display: none;
+    }
   }
 </style>
 </head>
@@ -203,15 +224,16 @@
       <h1 id="quote-hero-title">Tell us your goal<br>and we'll map your next move.</h1>
       <p id="quote-hero-sub">Simple form. Clear response. No pressure.</p>
       <div class="hero-cta">
-        <a class="btn btn-primary" href="tel:+15202226308">Call Us</a>
-        <a class="btn btn-secondary" href="sms:+15202226308">Text Us</a>
+        <a class="btn btn-primary" id="quote-primary-action" href="tel:+15202226308">Call Us</a>
+        <a class="btn btn-secondary" id="quote-secondary-action" href="sms:+15202226308">Text Us</a>
       </div>
+      <p class="quote-alt-call" id="quote-alt-call" hidden>Need to talk first? <a href="tel:+15202226308">Call 520-222-6308</a>.</p>
     </div>
     <figure class="split-media media-ratio-16x10 img-premium media-overlay-soft"><img id="quote-hero-image" src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80" alt="Planning conversation for small business growth"></figure>
   </div>
 </section>
 
-<section class="section-page-tight">
+<section class="section-page-tight" id="quote-form">
   <div class="wrap form-shell-premium">
 
     <div class="form-card-header">

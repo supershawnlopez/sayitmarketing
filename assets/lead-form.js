@@ -44,6 +44,13 @@
     if (el) el.textContent = text;
   }
 
+  function updateLink(id, text, href) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.textContent = text;
+    el.href = href;
+  }
+
   function setHeroTitle(id, firstLine, secondLine) {
     const el = document.getElementById(id);
     if (!el) return;
@@ -78,11 +85,15 @@
     setText("quote-step-one-copy", "Tell us who to contact about this print quote.");
     setText("quote-step-two-title", "Print Details");
     setText("quote-step-two-copy", "We already marked the print category. Add timing and anything specific you know.");
+    updateLink("quote-primary-action", "Fill Out Print Quote", "#quote-form");
+    updateLink("quote-secondary-action", "Text Details", "sms:+15202226308");
 
     if (contextCard && contextValue) {
       contextValue.textContent = meta.title;
       contextCard.hidden = false;
     }
+    const altCall = document.getElementById("quote-alt-call");
+    if (altCall) altCall.hidden = false;
     if (heroImage) {
       heroImage.src = "assets/print-hero-premium.jpg";
       heroImage.alt = "Premium printed business cards, flyers, and marketing materials on a clean worktable";
