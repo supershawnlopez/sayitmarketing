@@ -14,7 +14,7 @@ Shawn wants Say It Marketing to catch up to the operating style used on Found an
 - decision records
 - Apple-style team review before product, design, copy, architecture, or tracking changes
 
-This session created the missing handoff/decision docs, updated the active task board, built the first approved Trade Show Displays hub, made the print/display path visible from the main site navigation, upgraded the main print page hero/panels after Shawn's review, and made print category quote links feel context-aware on the quote page.
+This session created the missing handoff/decision docs, updated the active task board, built the first approved Trade Show Displays hub, made the print/display path visible from the main site navigation, upgraded the main print page hero/panels after Shawn's review, made print category quote links feel context-aware on the quote page, and completed the approved three-pillar homepage/nav pass around custom websites, custom apps, and print/displays.
 
 ---
 
@@ -39,6 +39,9 @@ Team recommendation already discussed:
 - Print quote traffic should push visitors toward the form first, then text; phone calls should be available but not prominent.
 - Do not send print category buttons to `#quote-form`; it feels broken on mobile. Land at the top of the quote page and let the contextual hero guide visitors down.
 - `Text Details` on print quote pages must open an item-specific Say It SMS draft. Never leave it as a bare SMS link that can expose a stale Found/domain message.
+- Say It's public homepage and nav now use three branches: `Websites`, `Apps`, and `Print & Displays`.
+- Homepage OG/meta should match the three-branch positioning: `Custom Websites, Apps, Print & Displays`.
+- Supporting services such as SEO, social, ads, hosting, and monthly care should stay below the main branches.
 
 ---
 
@@ -69,6 +72,12 @@ Team recommendation already discussed:
 5. **Existing critical item**
    - Stripe webhook signed-event validation is still deferred from earlier sessions.
 
+6. **Three pillar review**
+   - Homepage now leads with custom websites, custom apps, and print/displays.
+   - Public nav now shows `Websites`, `Apps`, and `Print & Displays`.
+   - New page: `custom-apps.html`.
+   - Quote page now responds to `?service=website`, `?service=custom-app`, and `?service=print`.
+
 ---
 
 ## Shawn Test Steps After Next Implementation
@@ -82,6 +91,14 @@ When reviewing print/display pages:
 5. Tap `Text Details` from business cards, flyers, menus, and signs contexts and confirm the SMS draft names the matching print item and says Say It, not Found.
 6. Tap `Browse Display Catalog` on the trade show page and confirm it opens the non-branded catalog cleanly.
 7. Search the pages for obvious print/display terms and make sure the copy sounds human.
+
+When reviewing the three-pillar pass:
+
+1. Share `https://sayitmarketing.com/` by text and confirm the preview title says `Custom Websites, Apps, Print & Displays`.
+2. Open the homepage on iPhone and confirm the first service choice is clearly `Custom Websites`, `Custom Apps`, and `Print & Displays`.
+3. Tap `Apps` in the nav and confirm `custom-apps.html` feels like a real Say It service page.
+4. Tap `Start An App Quote` and confirm the quote page headline says `Custom App Quote`.
+5. Tap a website quote link and confirm the quote page headline says `Custom Website Quote`.
 
 When tracking is built:
 
@@ -97,4 +114,4 @@ Start with `TASKS.md` NOW item #2:
 
 **Scope Blue Luna-style tracking/reporting for Say It.**
 
-The display hub and print page upgrade are live-ready. Tracking comes next so future traffic and print/display campaigns are measurable.
+The display hub, print page upgrade, and three-pillar architecture pass are live-ready. Tracking comes next so future traffic and website/app/print campaigns are measurable.

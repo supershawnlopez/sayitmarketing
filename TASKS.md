@@ -19,24 +19,26 @@
 **Phase 2: Print/Display Growth + Tracking**
 
 Goal:
+- Make Say It's public offer clear around three branches: custom websites, custom apps, and print/displays
 - Turn print and trade show displays into a Say It-owned SEO/AEO/GEO revenue channel
 - Borrow the Blue Luna reporting pattern so Shawn can see which pages and channels create leads
 - Keep the WSDisplay/ExhibitBook resource useful without making the customer feel handed off
 
 Exit criteria:
-1. Say It branded trade show display hub is live-ready and linked from print services
-2. Display/print SEO page plan is defined with first support pages queued
-3. Session/UTM/referral tracking implementation is scoped for the static Netlify/Supabase stack
-4. Admin traffic report spec mirrors the useful Blue Luna report: leads by channel, pages that led to leads, and top lead paths
+1. Homepage, nav, and quote path clearly reflect Websites / Apps / Print & Displays
+2. Say It branded trade show display hub is live-ready and linked from print services
+3. Display/print SEO page plan is defined with first support pages queued
+4. Session/UTM/referral tracking implementation is scoped for the static Netlify/Supabase stack
+5. Admin traffic report spec mirrors the useful Blue Luna report: leads by channel, pages that led to leads, and top lead paths
 
 ---
 
 ## NOW (MAX 3)
 
-1. Build Say It branded Trade Show Displays hub
+1. Three pillar architecture pass
 - Owner: Steve + Jony + Phil + Angela + Marcus
-- Status: Done and linked (August 27, 2026)
-- Notes: Created `trade-show-displays.html`, linked from `print-services.html`, added sitemap entry, used ExhibitBook as secondary catalog link, routed quote interest through Say It, exposed the print/display branch in the main navigation as `Print & Displays`, and upgraded the main print page hero/category panels after Shawn's review.
+- Status: Done and pending Shawn visual review (August 27, 2026)
+- Notes: Homepage OG/meta, hero, first service tiles, public nav, `custom-apps.html`, sitemap, and quote context now support `Websites`, `Apps`, and `Print & Displays`.
 
 2. Scope Blue Luna-style tracking/reporting for Say It
 - Owner: Priya + Craig + Phil
@@ -47,6 +49,15 @@ Exit criteria:
 - Owner: Phil + Angela
 - Status: Ready for content architecture
 - Notes: Candidate pages should use exact buyer terms: `banner-stands.html`, `custom-table-covers.html`, `custom-canopy-tents.html`, `step-and-repeat-backdrops.html`, `trade-show-booth-displays.html`.
+
+---
+
+## RECENTLY COMPLETED
+
+1. Build Say It branded Trade Show Displays hub
+- Owner: Steve + Jony + Phil + Angela + Marcus
+- Status: Done and linked (August 27, 2026)
+- Notes: Created `trade-show-displays.html`, linked from `print-services.html`, added sitemap entry, used ExhibitBook as secondary catalog link, routed quote interest through Say It, exposed the print/display branch in the main navigation as `Print & Displays`, and upgraded the main print page hero/category panels after Shawn's review.
 
 ---
 

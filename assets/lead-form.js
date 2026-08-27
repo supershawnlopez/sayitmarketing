@@ -55,6 +55,34 @@
       "website-print-bundle": {
         title: "Website + Print Bundle Quote",
         sms: "Hi Say It, I am interested in a website and print bundle. Please text me back with pricing and next steps."
+      },
+      "display-general": {
+        title: "Trade Show Display Quote",
+        sms: "Hi Say It, I am interested in trade show displays. Please text me back with pricing and next steps."
+      },
+      "banner-stands": {
+        title: "Banner Stands Quote",
+        sms: "Hi Say It, I am interested in banner stands. Please text me back with pricing and next steps."
+      },
+      "table-covers": {
+        title: "Table Covers Quote",
+        sms: "Hi Say It, I am interested in branded table covers. Please text me back with pricing and next steps."
+      },
+      "backdrops": {
+        title: "Backdrops Quote",
+        sms: "Hi Say It, I am interested in event backdrops. Please text me back with pricing and next steps."
+      },
+      "canopy-tents": {
+        title: "Canopy Tents Quote",
+        sms: "Hi Say It, I am interested in custom canopy tents. Please text me back with pricing and next steps."
+      },
+      "booth-kits": {
+        title: "Booth Kits Quote",
+        sms: "Hi Say It, I am interested in trade show booth kits. Please text me back with pricing and next steps."
+      },
+      "flags-signs": {
+        title: "Flags & Event Signs Quote",
+        sms: "Hi Say It, I am interested in flags or event signs. Please text me back with pricing and next steps."
       }
     };
     const fallbackTitle = String(item || "")
@@ -69,6 +97,50 @@
       request: meta.title.replace(/ Quote$/, "").toLowerCase(),
       sms: meta.sms
     };
+  }
+
+  function getServiceMeta(service) {
+    const labels = {
+      website: {
+        eyebrow: "Website Quote",
+        title: "Custom Website Quote",
+        sub: "Tell us what your website needs to say, sell, or capture. We will map the cleanest launch path.",
+        formEyebrow: "Website Quote Request",
+        formCopy: "This is the right place. Start with your contact details, then we will confirm the pages, timing, and best launch path.",
+        chipOne: "Lead-ready structure",
+        chipTwo: "No pressure",
+        chipThree: "Clear launch path",
+        stepOneCopy: "Tell us who to contact about this website quote.",
+        stepTwoTitle: "Website Details",
+        stepTwoCopy: "Share what the site needs to do and when you want to launch.",
+        primaryText: "Fill Out Website Quote",
+        serviceValue: "Website",
+        goalValue: "Website request: Custom website.",
+        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1400&q=80",
+        imageAlt: "Custom website design work on a laptop",
+        sms: "Hi Say It, I am interested in a custom website. Please text me back with next steps."
+      },
+      "custom-app": {
+        eyebrow: "Custom App Quote",
+        title: "Custom App Quote",
+        sub: "Tell us the workflow, portal, dashboard, booking flow, or tool you want to build. We will help decide the right first version.",
+        formEyebrow: "Custom App Request",
+        formCopy: "This is the right place. Start with your contact details, then describe the workflow, users, and problem the app should solve.",
+        chipOne: "Workflow first",
+        chipTwo: "Phased build",
+        chipThree: "Clear next step",
+        stepOneCopy: "Tell us who to contact about this custom app.",
+        stepTwoTitle: "App Details",
+        stepTwoCopy: "Share the workflow, users, and anything you are currently doing by hand.",
+        primaryText: "Fill Out App Quote",
+        serviceValue: "Custom Business App",
+        goalValue: "Custom app request: portal, dashboard, intake, booking, or internal tool.",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1400&q=80",
+        imageAlt: "Dashboard and analytics interface for a custom business app",
+        sms: "Hi Say It, I am interested in a custom business app. Please text me back with next steps."
+      }
+    };
+    return labels[service] || null;
   }
 
   function getSmsLink(message) {
@@ -99,29 +171,33 @@
   function applyUrlContext(form) {
     const service = getParam("service");
     const item = getParam("item");
-    if (service !== "print" || !item) return;
+    if (!service) return;
 
     const serviceField = form.elements.namedItem("service_interest");
     const goalField = form.elements.namedItem("primary_goal");
-    const meta = getPrintItemMeta(item);
+    const meta = service === "print" ? getPrintItemMeta(item || "general-print") : getServiceMeta(service);
+    if (!meta) return;
+
     const contextCard = document.getElementById("quote-context-card");
     const contextValue = document.getElementById("quote-context-value");
     const heroImage = document.getElementById("quote-hero-image");
 
-    document.body.classList.add("quote-print-context");
-    setText("quote-hero-eyebrow", "Print Quote");
+    if (service === "print") {
+      document.body.classList.add("quote-print-context");
+    }
+    setText("quote-hero-eyebrow", meta.eyebrow || "Print Quote");
     setHeroTitle("quote-hero-title", meta.title, "through Say It.");
-    setText("quote-hero-sub", "Tell us what you need printed, when you need it, and where it is going. We will help with options, proofing, and next steps.");
-    setText("quote-form-eyebrow", "Print Quote Request");
+    setText("quote-hero-sub", meta.sub || "Tell us what you need printed, when you need it, and where it is going. We will help with options, proofing, and next steps.");
+    setText("quote-form-eyebrow", meta.formEyebrow || "Print Quote Request");
     setText("quote-form-title", meta.title);
-    setText("quote-form-copy", "This is the right place. Start with your contact details, then we will confirm the print item, timing, and budget.");
-    setText("quote-chip-one", "Proof before production");
-    setText("quote-chip-two", "No payment yet");
-    setText("quote-chip-three", "Clear quote path");
-    setText("quote-step-one-copy", "Tell us who to contact about this print quote.");
-    setText("quote-step-two-title", "Print Details");
-    setText("quote-step-two-copy", "We already marked the print category. Add timing and anything specific you know.");
-    updateLink("quote-primary-action", "Fill Out Print Quote", "#quote-form");
+    setText("quote-form-copy", meta.formCopy || "This is the right place. Start with your contact details, then we will confirm the print item, timing, and budget.");
+    setText("quote-chip-one", meta.chipOne || "Proof before production");
+    setText("quote-chip-two", meta.chipTwo || "No payment yet");
+    setText("quote-chip-three", meta.chipThree || "Clear quote path");
+    setText("quote-step-one-copy", meta.stepOneCopy || "Tell us who to contact about this print quote.");
+    setText("quote-step-two-title", meta.stepTwoTitle || "Print Details");
+    setText("quote-step-two-copy", meta.stepTwoCopy || "We already marked the print category. Add timing and anything specific you know.");
+    updateLink("quote-primary-action", meta.primaryText || "Fill Out Print Quote", "#quote-form");
     updateLink("quote-secondary-action", "Text Details", getSmsLink(meta.sms));
 
     if (contextCard && contextValue) {
@@ -131,15 +207,15 @@
     const altCall = document.getElementById("quote-alt-call");
     if (altCall) altCall.hidden = false;
     if (heroImage) {
-      heroImage.src = "assets/print-hero-premium.jpg";
-      heroImage.alt = "Premium printed business cards, flyers, and marketing materials on a clean worktable";
+      heroImage.src = meta.image || "assets/print-hero-premium.jpg";
+      heroImage.alt = meta.imageAlt || "Premium printed business cards, flyers, and marketing materials on a clean worktable";
     }
 
     if (serviceField && !serviceField.value) {
-      serviceField.value = "Business Print & Trade Show Displays";
+      serviceField.value = meta.serviceValue || "Business Print & Trade Show Displays";
     }
     if (goalField && !goalField.value) {
-      goalField.value = `Print request: ${meta.title.replace(/ Quote$/, "")}.`;
+      goalField.value = meta.goalValue || `Print request: ${meta.title.replace(/ Quote$/, "")}.`;
     }
   }
 

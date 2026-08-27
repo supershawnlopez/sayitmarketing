@@ -97,3 +97,16 @@ Primary files:
 - Print quote CTA hierarchy: form first, text second, call as a quiet urgent-only link. Do not make phone calls the dominant print-quote action.
 - Print category buttons should land at the top of the context-aware quote page, not jump into the middle of the form.
 - Print quote `Text Details` links must prefill item-specific Say It copy so business cards, flyers, menus, signs, and bundle requests never inherit unrelated draft text.
+
+---
+
+## 2026-08-27 — Homepage Three Pillar Pass
+
+**Decision:** The homepage should make the first decision feel simple: website, app, or print/display.
+
+**Approved UX direction:**
+- Hero and OG copy should match the same positioning phrase: `Custom Websites, Apps, Print & Displays`.
+- First service tiles should be three strong branches, not a mixed list of services and proof links.
+- Navigation labels should be short and clear: `Websites`, `Apps`, `Print & Displays`.
+- Supporting services should sit below the main branches as add-ons/support, not compete with the first decision.
+- The app pillar should get its own focused landing page before deeper SEO support pages are created.

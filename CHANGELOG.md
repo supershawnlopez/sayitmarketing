@@ -1,3 +1,31 @@
+## Session: August 27, 2026 — Three Pillar Homepage Architecture
+**AI:** Codex (GPT-5)
+**Worked on:** Implemented Shawn-approved Say It positioning around custom websites, custom apps, and print/displays
+
+### ✅ Completed This Session
+- Updated homepage title, meta description, OG title/description, and Twitter preview copy to `Custom Websites, Apps, Print & Displays`
+- Reworked the homepage hero and first service tiles around the three branches:
+  - `Custom Websites`
+  - `Custom Apps`
+  - `Print & Displays`
+- Added `custom-apps.html` as the new app pillar landing page
+- Updated public navigation across static pages to show `Websites`, `Apps`, and `Print & Displays`
+- Extended quote-page context handling for `?service=website`, `?service=custom-app`, and generic/specific print quote links
+- Added `custom-apps.html` to `sitemap.xml`
+- Updated `DECISIONS.md`, `DESIGN_DECISIONS.md`, `TASKS.md`, `PROJECT.md`, and `SESSION_HANDOFF.md`
+
+### ⏳ Pending / In Progress
+- Shawn mobile/social-preview review of the new homepage positioning and app page
+- Scope and implement Blue Luna-style tracking/reporting
+- Define first print/display SEO support pages
+
+### 🔜 What To Work On Next
+1. Scope Blue Luna-style tracking/reporting for Websites / Apps / Print leads
+2. Build the first print/display SEO support page plan
+3. Replace generated print/display imagery with approved WSDisplay assets when available
+
+---
+
 ## Session: August 27, 2026 — Business Print Hero Upgrade
 **AI:** Codex (GPT-5)
 **Worked on:** Upgraded the approved Print & Displays page after Shawn's review

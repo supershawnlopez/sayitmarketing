@@ -73,3 +73,18 @@ Rules:
 - Print page title/H1 language: `Business Printing & Trade Show Displays`.
 - Display SEO support terms: banner stands, table covers, backdrops, canopy tents, booth kits, signs, and trade show booth displays.
 - Found may be offered only after qualification as a sister-company referral when Say It is not the right fit.
+
+---
+
+## 2026-08-27 — Three Pillar Public Architecture
+
+**Decision:** Say It's public homepage and navigation should present three primary branches: custom websites, custom apps, and print/displays.
+
+**Context:** Shawn approved moving Say It away from a generic website/design/add-on list and toward a clearer business structure that matches what the company now sells.
+
+**Approved direction:**
+- Homepage OG/meta and first-screen copy should say `Custom Websites, Apps, Print & Displays`.
+- Public navigation should use `Websites`, `Apps`, and `Print & Displays` as the main service branches.
+- Social media, SEO, ads, hosting, and monthly care are supporting services, not the first decision.
+- Quote links should preserve branch context with `?service=website`, `?service=custom-app`, or `?service=print`.
+- Found remains off the public Say It offer and is only a sister-company fallback after qualification.

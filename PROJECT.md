@@ -77,6 +77,7 @@ Light Gray:     #F3F4F4  — Card backgrounds, subtle dividers
 |---|---|---|
 | `index.html` | Homepage — main entry point, hero, services overview | Live |
 | `website-design-services.html` | Website design service detail | Live |
+| `custom-apps.html` | Custom business apps, portals, dashboards, booking, intake, and internal tools | Live |
 | `pricing.html` | Pricing overview — packages + add-ons | Live |
 | `monthly-plans.html` | Hosting + care plan recurring subscriptions | Live |
 | `local-seo.html` | Local SEO plans (Get Listed / On the Map / Own the Block) | Live |
@@ -171,6 +172,19 @@ Planned growth direction:
 - Public navigation uses `Print & Displays`; homepage/page copy uses `Business Print & Trade Show Displays`
 - Found is not promoted on Say It. It is a sister-company fallback only after a custom website/app lead is qualified and determined not to fit Say It.
 
+### Custom Business Apps
+Custom apps are now a public Say It pillar alongside custom websites and print/displays.
+
+Current app positioning:
+- Client portals
+- Internal dashboards
+- Intake and quote tools
+- Booking/request flows
+- Member areas
+- Follow-up systems
+
+Quote links use `get-quote.html?service=custom-app` so the quote page changes the headline, form copy, service field, and SMS draft around the app request.
+
 ---
 
 ## REVENUE MODEL — HOW THIS SITE MAKES MONEY
@@ -228,6 +242,7 @@ Follow-up queue. Each lead gets jobs at day 1, 3, 7 after submission.
 - [ ] Testimonials section with real client names and results
 - [ ] Portfolio expanded with 5+ live client sites
 - [ ] Print catalog — 12 curated products with quote request flow
+- [x] Three-pillar homepage architecture: custom websites, custom apps, and print/displays
 - [ ] Blue Luna-style traffic report for Say It: leads by channel, pages that led to leads, top lead paths
 
 ### Long-term vision
