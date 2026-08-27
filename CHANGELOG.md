@@ -4,6 +4,11 @@
 
 ### ✅ Completed This Session
 - Updated homepage title, meta description, OG title/description, and Twitter preview copy to `Custom Websites, Apps, Print & Displays`
+- Reworked the homepage OG split after team review:
+  - title carries the category: `Custom Websites, Apps & Print | Say It Marketing`
+  - description explains the offer
+  - image sells the feeling with `Look ready everywhere.`
+- Added `assets/sayit-og-pillars.png` using the real Say It logo for social previews
 - Reworked the homepage hero and first service tiles around the three branches:
   - `Custom Websites`
   - `Custom Apps`

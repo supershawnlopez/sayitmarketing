@@ -105,7 +105,9 @@ Primary files:
 **Decision:** The homepage should make the first decision feel simple: website, app, or print/display.
 
 **Approved UX direction:**
-- Hero and OG copy should match the same positioning phrase: `Custom Websites, Apps, Print & Displays`.
+- Hero copy should make the three branches obvious: custom websites, custom apps, and print/displays.
+- OG title, OG description, and OG image should not repeat the same sentence. Title carries the category, description explains the offer, and image sells the feeling.
+- Homepage OG image should use the real Say It logo asset and short copy: `Look ready everywhere.` with `Websites · Apps · Print`.
 - First service tiles should be three strong branches, not a mixed list of services and proof links.
 - Navigation labels should be short and clear: `Websites`, `Apps`, `Print & Displays`.
 - Supporting services should sit below the main branches as add-ons/support, not compete with the first decision.

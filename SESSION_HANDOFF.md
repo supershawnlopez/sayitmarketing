@@ -40,7 +40,7 @@ Team recommendation already discussed:
 - Do not send print category buttons to `#quote-form`; it feels broken on mobile. Land at the top of the quote page and let the contextual hero guide visitors down.
 - `Text Details` on print quote pages must open an item-specific Say It SMS draft. Never leave it as a bare SMS link that can expose a stale Found/domain message.
 - Say It's public homepage and nav now use three branches: `Websites`, `Apps`, and `Print & Displays`.
-- Homepage OG/meta should match the three-branch positioning: `Custom Websites, Apps, Print & Displays`.
+- Homepage OG should avoid redundancy: title says `Custom Websites, Apps & Print | Say It Marketing`, description explains the offer, and image says `Look ready everywhere.` with the real Say It logo.
 - Supporting services such as SEO, social, ads, hosting, and monthly care should stay below the main branches.
 
 ---
@@ -94,11 +94,12 @@ When reviewing print/display pages:
 
 When reviewing the three-pillar pass:
 
-1. Share `https://sayitmarketing.com/` by text and confirm the preview title says `Custom Websites, Apps, Print & Displays`.
-2. Open the homepage on iPhone and confirm the first service choice is clearly `Custom Websites`, `Custom Apps`, and `Print & Displays`.
-3. Tap `Apps` in the nav and confirm `custom-apps.html` feels like a real Say It service page.
-4. Tap `Start An App Quote` and confirm the quote page headline says `Custom App Quote`.
-5. Tap a website quote link and confirm the quote page headline says `Custom Website Quote`.
+1. Share `https://sayitmarketing.com/` by text and confirm the preview title says `Custom Websites, Apps & Print | Say It Marketing`.
+2. Confirm the preview image uses the real Say It logo and says `Look ready everywhere.` plus `Websites · Apps · Print`.
+3. Open the homepage on iPhone and confirm the first service choice is clearly `Custom Websites`, `Custom Apps`, and `Print & Displays`.
+4. Tap `Apps` in the nav and confirm `custom-apps.html` feels like a real Say It service page.
+5. Tap `Start An App Quote` and confirm the quote page headline says `Custom App Quote`.
+6. Tap a website quote link and confirm the quote page headline says `Custom Website Quote`.
 
 When tracking is built:
 
