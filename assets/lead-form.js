@@ -20,23 +20,59 @@
 
   function getPrintItemMeta(item) {
     const labels = {
-      "general-print": "Print Quote",
-      "everyday-business-print": "Everyday Business Print Quote",
-      "event-signs-displays": "Events, Signs & Displays Quote",
-      "business-cards": "Business Cards Quote",
-      "flyers-door-hangers": "Flyers & Door Hangers Quote",
-      "menus-service-sheets": "Menus & Service Sheets Quote",
-      "signs-banners": "Signs & Banners Quote",
-      "direct-mail-pieces": "Direct Mail Pieces Quote",
-      "website-print-bundle": "Website + Print Bundle Quote"
+      "general-print": {
+        title: "Print Quote",
+        sms: "Hi Say It, I need a print quote. Please text me back with pricing and next steps."
+      },
+      "everyday-business-print": {
+        title: "Everyday Business Print Quote",
+        sms: "Hi Say It, I am interested in business cards, flyers, menus, or other everyday print. Please text me back with pricing and next steps."
+      },
+      "event-signs-displays": {
+        title: "Events, Signs & Displays Quote",
+        sms: "Hi Say It, I am interested in signs, banners, or event displays. Please text me back with pricing and next steps."
+      },
+      "business-cards": {
+        title: "Business Cards Quote",
+        sms: "Hi Say It, I am interested in business cards. Please text me back with pricing and next steps."
+      },
+      "flyers-door-hangers": {
+        title: "Flyers & Door Hangers Quote",
+        sms: "Hi Say It, I am interested in flyers or door hangers. Please text me back with pricing and next steps."
+      },
+      "menus-service-sheets": {
+        title: "Menus & Service Sheets Quote",
+        sms: "Hi Say It, I am interested in menus or service sheets. Please text me back with pricing and next steps."
+      },
+      "signs-banners": {
+        title: "Signs & Banners Quote",
+        sms: "Hi Say It, I am interested in signs or banners. Please text me back with pricing and next steps."
+      },
+      "direct-mail-pieces": {
+        title: "Direct Mail Pieces Quote",
+        sms: "Hi Say It, I am interested in direct mail pieces. Please text me back with pricing and next steps."
+      },
+      "website-print-bundle": {
+        title: "Website + Print Bundle Quote",
+        sms: "Hi Say It, I am interested in a website and print bundle. Please text me back with pricing and next steps."
+      }
     };
-    const title = labels[item] || String(item || "")
+    const fallbackTitle = String(item || "")
       .replace(/-/g, " ")
       .replace(/\b\w/g, function (letter) { return letter.toUpperCase(); }) + " Quote";
-    return {
-      title,
-      request: title.replace(/ Quote$/, "").toLowerCase()
+    const meta = labels[item] || {
+      title: fallbackTitle,
+      sms: "Hi Say It, I need a print quote. Please text me back with pricing and next steps."
     };
+    return {
+      title: meta.title,
+      request: meta.title.replace(/ Quote$/, "").toLowerCase(),
+      sms: meta.sms
+    };
+  }
+
+  function getSmsLink(message) {
+    return `sms:+15202226308?&body=${encodeURIComponent(message)}`;
   }
 
   function setText(id, text) {
@@ -86,7 +122,7 @@
     setText("quote-step-two-title", "Print Details");
     setText("quote-step-two-copy", "We already marked the print category. Add timing and anything specific you know.");
     updateLink("quote-primary-action", "Fill Out Print Quote", "#quote-form");
-    updateLink("quote-secondary-action", "Text Details", "sms:+15202226308");
+    updateLink("quote-secondary-action", "Text Details", getSmsLink(meta.sms));
 
     if (contextCard && contextValue) {
       contextValue.textContent = meta.title;

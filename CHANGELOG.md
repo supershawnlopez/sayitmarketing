@@ -15,6 +15,7 @@
 - Updated `get-quote.html` so print quote links change the visible hero, form header, trust chips, and request context immediately
 - Rebalanced print quote CTAs: form is primary, text is secondary, phone call is a small urgent-only link
 - Reverted `#quote-form` anchor jumps so print quote buttons land at the top of the quote page with context instead of dropping into the middle of the form
+- Fixed the `Text Details` SMS CTA so each print quote item opens a Say It-specific prefilled message instead of a stale Found/domain message
 
 ### ⏳ Pending / In Progress
 - Replace generated placeholder imagery with Shawn/WSDisplay-approved product images when exact ZIP assets are available

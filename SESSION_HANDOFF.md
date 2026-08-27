@@ -38,6 +38,7 @@ Team recommendation already discussed:
 - Print category quote links may use the same quote form, but the quote page must visibly confirm the exact item request on arrival.
 - Print quote traffic should push visitors toward the form first, then text; phone calls should be available but not prominent.
 - Do not send print category buttons to `#quote-form`; it feels broken on mobile. Land at the top of the quote page and let the contextual hero guide visitors down.
+- `Text Details` on print quote pages must open an item-specific Say It SMS draft. Never leave it as a bare SMS link that can expose a stale Found/domain message.
 
 ---
 
@@ -78,8 +79,9 @@ When reviewing print/display pages:
 2. Confirm both pages feel like Say It, not WSDisplay.
 3. Tap a print category button and confirm the quote page headline/form header says the exact request, such as `Menus & Service Sheets Quote`.
 4. Confirm the print quote page lands at the top, prioritizes `Fill Out Print Quote`, with `Text Details` second and phone as a small link.
-5. Tap `Browse Display Catalog` on the trade show page and confirm it opens the non-branded catalog cleanly.
-6. Search the pages for obvious print/display terms and make sure the copy sounds human.
+5. Tap `Text Details` from business cards, flyers, menus, and signs contexts and confirm the SMS draft names the matching print item and says Say It, not Found.
+6. Tap `Browse Display Catalog` on the trade show page and confirm it opens the non-branded catalog cleanly.
+7. Search the pages for obvious print/display terms and make sure the copy sounds human.
 
 When tracking is built:
 
