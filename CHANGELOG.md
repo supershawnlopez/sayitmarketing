@@ -1,3 +1,55 @@
+## Session: August 27, 2026 — Documentation Parity With Found + Blue Luna
+**AI:** Codex (GPT-5)
+**Worked on:** Brought Say It Marketing's operating docs up to the newer Found/Blue Luna workflow pattern, then built the approved Trade Show Displays hub locally
+
+### ✅ Completed This Session
+- Created `SESSION_HANDOFF.md` as the current source of truth for future sessions: what changed, what is open, and Shawn's test steps
+- Created `DECISIONS.md` for approved product/business/data decisions
+- Created `DESIGN_DECISIONS.md` for approved visual/UX decisions
+- Updated `BRIEF.md` startup order to match the newer workflow:
+  - read handoff first
+  - check `TASKS.md`
+  - read changelog/team/project/decision docs
+  - run `git status` before trusting docs as fully current
+- Updated `BRIEF.md` to require visible Apple-team review for product/design/process decisions before implementation
+- Added the simplify-first change rule from Blue Luna's workflow
+- Updated `AGENTS.md` so Phil, Angela, Craig, Priya, and Marcus explicitly own display SEO, tracking/reporting, and WSDisplay/ExhibitBook integration decisions
+- Updated `PROJECT.md` with the planned `trade-show-displays.html` page, docs references, print/display growth direction, and new handoff rule
+- Updated `TASKS.md` from the old Phase 1 board to the new Phase 2 focus: Print/Display Growth + Tracking
+- Captured the agreed ExhibitBook/WSDisplay direction:
+  - Say It branded display hub first
+  - ExhibitBook as secondary catalog resource
+  - use reseller-approved WSDisplay assets
+  - avoid blind scraping and avoid making an iframe the main experience
+- Captured the Blue Luna reporting direction:
+  - leads by channel over raw visits
+  - session/UTM preservation
+  - pages that led to leads
+  - top lead paths
+- Built `trade-show-displays.html` as a Say It branded Arizona display hub
+- Positioned the page around Arizona businesses, Tucson/Phoenix reach, and nationwide delivery
+- Added display categories: banner stands, table covers, backdrops, canopy tents, booth kits, flags/signs
+- Added ExhibitBook as secondary catalog access, not the primary page experience
+- Added Service + FAQPage JSON-LD to support SEO/AEO/GEO discovery
+- Linked the display page from `print-services.html`
+- Added `trade-show-displays.html` to `sitemap.xml`
+- Updated `TASKS.md`, `SESSION_HANDOFF.md`, and `PROJECT.md` to reflect the page is built locally
+
+### ⏳ Still Pending
+- Shawn visual/content review of `trade-show-displays.html`
+- Push/deploy after approval
+- Scope and implement Say It tracking/reporting based on the Blue Luna pattern
+- Add “Where did you hear about us?” to Say It forms
+- Stripe webhook signed-event validation remains deferred from the earlier hardening phase
+
+### 🔜 Next (In Order)
+1. Review `trade-show-displays.html` on mobile and desktop
+2. Push/deploy after Shawn approval
+3. Scope the tracking schema/function/admin report before implementation
+4. Add the first print/display SEO support page plan
+
+---
+
 ## Session: July 3, 2026 — Eimy (Dog & Cat Groomer) Client Retention Page
 **AI:** Claude Code (Sonnet 5)
 **Worked on:** Built and iterated a private, client-facing retention page for Shawn's Dog & Cat Groomer client, hosted on sayitmarketing.com
@@ -767,9 +819,6 @@ At the end of every AI session, update this file with a new entry:
 
 *This file is the memory of the project.*
 *Read it before you start. Update it before you stop.*
-
-
-
 
 
 

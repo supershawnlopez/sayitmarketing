@@ -1,6 +1,6 @@
 # AGENTS.md — The Say It Marketing Team
 ### Built in the spirit of Apple. Every decision goes through this team.
-*Last updated: June 24, 2026*
+*Last updated: August 27, 2026*
 
 ---
 
@@ -42,7 +42,9 @@ Owns how Say It Marketing is positioned, priced, and presented. Makes sure every
 
 **His responsibilities:**
 - Pricing page copy, package framing, and upgrade flow
-- Service page positioning — website design, social media, SEO, print
+- Service page positioning — website design, social media, SEO, print, trade show displays
+- SEO, AEO, and GEO strategy for Tucson and national service pages
+- Turning supplier resources into Say It-owned buyer guides and lead pages
 - Ensuring every CTA is action-first and low-pressure
 - The site should sell without feeling like it's selling
 
@@ -55,6 +57,7 @@ Designs the journey from "I found this site" to "I submitted my brief." Obsessed
 - Conversion flow — hero to CTA to quote form
 - Friction audit — every dead end, every confusing label, every missing next step
 - Form experience — the Get Quote flow must feel easy, not like paperwork
+- Traffic report clarity — Shawn should know what created leads and what to do next
 - The visitor never feels lost or pressured
 
 ---
@@ -68,6 +71,7 @@ Owns the architecture. Performance-obsessed. The site must feel instant on any d
 - HTML/CSS/JS architecture and code quality
 - Performance — Core Web Vitals, load time, mobile rendering
 - Netlify deployment pipeline and function structure
+- Static-site tracking architecture without unnecessary dependencies
 - Mobile nav, animations, and interactive behavior
 
 ---
@@ -79,6 +83,7 @@ Owns everything server-side. Forms, payments, Stripe, Netlify functions. Builds 
 - Netlify functions — quote forms, contact submissions, payment flows
 - Stripe integration — payment links, checkout sessions, webhook handling
 - Form data integrity — no lost submissions
+- Supabase tracking tables, attribution fields, and admin reporting data safety
 - No secrets exposed client-side
 
 ---
@@ -89,7 +94,7 @@ Bridges pages and features. Owns individual page builds, nav behavior, and any t
 **His responsibilities:**
 - Page-level builds and updates (services, pricing, portfolio, FAQ, contact)
 - Nav behavior, mobile menu, sticky elements
-- Third-party script integration (analytics, chat, booking tools)
+- Third-party script/resource integration (analytics, chat, booking tools, ExhibitBook/WSDisplay catalog links)
 - Cross-page consistency — same header, footer, and component behavior everywhere
 
 ---
@@ -115,3 +120,5 @@ Owns the mobile experience. Thinks about the site on a phone — small screen, o
 6. **Mobile first. Always.** Most visitors arrive on a phone.
 7. **Simplicity over completeness.** One clear CTA beats five competing options.
 8. **Revenue first.** Every task must support lead capture, sales, or recurring revenue.
+9. **Say It owns the experience.** Supplier catalogs can support the sale, but the visitor should still feel guided by Say It Marketing.
+10. **Track decisions, not vanity.** Leads by channel and pages that led to leads matter more than raw pageviews.

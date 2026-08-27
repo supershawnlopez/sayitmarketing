@@ -1,6 +1,6 @@
-# BRIEF.md
+# BRIEF.md — Say It Marketing
 ### Say this to any AI at the start of any session: "Read BRIEF.md"
-### This file is the entry point. It tells you everything you need to know before touching anything.
+### This file is the entry point. Read this before touching anything.
 
 ---
 
@@ -8,23 +8,29 @@
 
 Before you write a single line of code, make a single suggestion, or take any action:
 
-1. Read `PROJECT.md` — who Shawn is, what this project is, brand system, tech stack, pricing, site structure
-2. Read `CHANGELOG.md` — what was done last session, what is still pending, what needs to happen next
-3. Read `AGENTS.md` — which agent owns what, handoff format, and execution workflow
-4. Read `TASKS.md` — current phase, what is in NOW, what is NEXT, what is BACKLOG
+1. Read `SESSION_HANDOFF.md` — current truth: what changed, what is open, and Shawn's test steps
+2. Read `TASKS.md` — active task board: NOW, NEXT, BACKLOG
+3. Read `CHANGELOG.md` — session history and unresolved older work
+4. Read `AGENTS.md` — the Say It team and approval rules
+5. Read `PROJECT.md` — who Shawn is, what this project is, brand system, tech stack, pricing, site structure
+6. Read `DECISIONS.md` — approved product/business/data decisions
+7. Read `DESIGN_DECISIONS.md` — approved visual/UX decisions
+8. Read relevant files in `docs/` for the task at hand
 
 If any required file is missing from this repo — stop and tell Shawn before proceeding.
 
+Also run `git status` before trusting any handoff as fully current. A prior session can end mid-work before docs are committed. If there are uncommitted changes, inspect them before editing.
+
 ---
 
-## STEP 2 — CHECK WHAT'S PENDING BEFORE MOVING FORWARD
+## STEP 2 — START EVERY SESSION WITH CURRENT STATUS
 
-After reading CHANGELOG.md, your first message to Shawn must include:
+After reading `SESSION_HANDOFF.md`, your first useful response must include:
 
 **"Here's where we left off:"**
-- ✅ What was completed last session
-- ⏳ What is still pending or unfinished
-- 🔜 What the next priority is
+- What changed / finished
+- What is still pending or unfinished
+- What Shawn needs to test next
 
 **Then ask:** "Would you like to continue where we left off, or is there something new you'd like to work on?"
 
@@ -61,9 +67,27 @@ Web design, branding, SEO, hosting, social media, print brokerage.
 
 ---
 
-## STEP 4 — THE APPROVAL RULE (NON-NEGOTIABLE)
+## STEP 4 — TEAM AND APPROVAL RULE (NON-NEGOTIABLE)
 
-**No AI makes any decision without Shawn's approval first.**
+No AI makes product, design, process, pricing, copy, data, or architecture decisions alone.
+
+For product/design/process decisions, hold a visible team meeting before changing anything:
+
+- **Steve** leads product judgment and final approval.
+- **Jony** leads visual/UX design.
+- **Phil** leads marketing, SEO, AEO, GEO, positioning, and revenue framing.
+- **Angela** leads the customer journey, lead flow, form clarity, and quote path.
+- **Craig** leads architecture, performance, Netlify/static site structure, and technical process.
+- **Priya** leads data, Supabase schema, forms, Stripe, and tracking safety.
+- **Marcus** leads page builds, integrations, catalog/embed behavior, and nav consistency.
+- **Chris** leads mobile behavior and phone-first testing.
+
+**The pattern:**
+1. Let the right team lead speak first.
+2. Let the rest of the team add concerns.
+3. Summarize the recommended direction.
+4. Wait for Shawn's approval.
+5. Only then implement.
 
 This includes:
 - Pushing code to GitHub
@@ -73,12 +97,6 @@ This includes:
 - Changing any pricing, copy, or design
 - Installing dependencies
 - Changing configuration
-
-**The right pattern:**
-1. Recommend what you think should be done
-2. Explain why briefly
-3. Ask for approval
-4. Wait for a "yes" or "go ahead" before acting
 
 **You may strongly recommend.** Say things like:
 > "I strongly recommend we fix X before doing Y — if we skip it, Z will break. Want me to handle that first?"
@@ -149,24 +167,51 @@ If you're an agent reading this — know your role, stay in your lane, and colla
 
 ---
 
-## STEP 8 — END OF SESSION RULES
+## STEP 8 — SIMPLIFY-FIRST CHANGE RULE
 
-Before ending any session, you must:
+When fixing bugs or regressions, default to remove/revert/simplify before adding layers.
 
-1. **Update CHANGELOG.md** with:
+Required order:
+1. Identify the last known good behavior from git history, changelog, or handoff.
+2. Remove or simplify suspicious recent code first where appropriate.
+3. Re-test.
+4. Only add new code when the simpler path cannot solve it.
+
+Rules:
+- No stacked band-aids for one behavior.
+- No duplicate logic paths for one UI.
+- Prefer one authoritative source of truth per feature.
+- Every fix should reduce or preserve complexity unless Shawn explicitly approves more.
+
+---
+
+## STEP 9 — END OF SESSION RULES
+
+Before ending any meaningful work session, you must:
+
+1. **Update `SESSION_HANDOFF.md`** with:
+   - What changed
+   - What remains open
+   - Shawn's plain-English test steps
+
+2. **Update `TASKS.md`** if priorities, NOW/NEXT/BACKLOG, or blockers changed.
+
+3. **Update `CHANGELOG.md`** with:
    - What was completed this session
    - What is still pending
    - What should be worked on next (in priority order)
 
-2. **Remind Shawn** of any unfinished critical items:
+4. **Update `DECISIONS.md` or `DESIGN_DECISIONS.md`** if a product/design decision was approved.
+
+5. **Remind Shawn** of any unfinished critical items:
    > "Before we wrap up — here's what's still open: [list]. The most important thing to handle next is [X]."
 
-3. **Confirm** the next steps are clear:
+6. **Confirm** the next steps are clear:
    > "Next session, start by reading BRIEF.md and we'll pick up from [X]."
 
-4. **Update `AGENTS.md` only if team roles or workflow changed** (if no change, leave it untouched).
+7. **Update `AGENTS.md` only if team roles or workflow changed** (if no change, leave it untouched).
 
-**No session ends without an updated CHANGELOG. No exceptions.**
+**No meaningful session ends without an updated `SESSION_HANDOFF.md`. No exceptions.**
 
 ---
 
@@ -191,8 +236,12 @@ Before ending any session, you must:
 
 | What | Where |
 |---|---|
+| Current handoff: changed, open, tests | `SESSION_HANDOFF.md` |
+| Active task board | `TASKS.md` |
 | Project context + brand + rules | `PROJECT.md` |
 | Session history + pending + next steps | `CHANGELOG.md` |
+| Approved product/business decisions | `DECISIONS.md` |
+| Approved design/UX decisions | `DESIGN_DECISIONS.md` |
 | All shared styles | `assets/site.css` |
 | All Stripe links | `assets/stripe-links.js` |
 | Lead capture function | `netlify/functions/lead-create.js` |

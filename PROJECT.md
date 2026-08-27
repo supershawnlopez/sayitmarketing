@@ -1,6 +1,6 @@
 # PROJECT.md — Say It Marketing Site Intelligence File
 ### Read this first. Every AI, every session, every time.
-*Last updated: April 2026*
+*Last updated: August 27, 2026*
 
 ---
 
@@ -89,6 +89,7 @@ Light Gray:     #F3F4F4  — Card backgrounds, subtle dividers
 | `print-services.html` | Print + branded merchandise brokerage | Live |
 | `thank-you.html` | Post-form submission confirmation | Live |
 | `advertising-management.html` | Paid ad management — Google + Social interactive selector, pricing, lead form | Live |
+| `trade-show-displays.html` | Trade show displays hub — Say It branded WSDisplay/ExhibitBook reseller path | Built locally |
 | `proposals/dogandcat.html` | Client proposal — Eimy Martinez, Dog & Cat Groomer | Live |
 
 **Assets:**
@@ -108,6 +109,10 @@ Light Gray:     #F3F4F4  — Card backgrounds, subtle dividers
 - `netlify/functions/_shared.js` — Shared utilities, Supabase client, lead scoring
 
 **Docs:**
+- `SESSION_HANDOFF.md` — Current handoff: what changed, what is open, and Shawn's test steps
+- `TASKS.md` — Active task board
+- `DECISIONS.md` — Approved product/business/data decisions
+- `DESIGN_DECISIONS.md` — Approved visual/UX decisions
 - `docs/seo-delivery-sop.md` — Local SEO service delivery playbook
 - `docs/30-day-execution-plan.md` — 30-day launch plan
 - `docs/stripe-placeholder-setup.md` — Stripe product setup guide
@@ -154,6 +159,15 @@ Light Gray:     #F3F4F4  — Card backgrounds, subtle dividers
 | Advanced Care | $299/mo |
 
 **★ = recommended / most popular tier**
+
+### Print + Trade Show Displays
+Current print services include everyday print, promo/event materials, banners, signs, and bundled website + print kits.
+
+Planned growth direction:
+- Say It branded trade show display hub
+- WSDisplay/ExhibitBook used as a non-branded reseller catalog and asset source
+- Curated display categories: banner stands, table throws, tents, backdrops, flags, lightboxes, and booth kits
+- Quote-first flow so Say It owns the customer relationship
 
 ---
 
@@ -203,6 +217,7 @@ Follow-up queue. Each lead gets jobs at day 1, 3, 7 after submission.
 - [ ] sayitmarketing.com DNS fully switched and stable
 - [ ] Eimy Martinez (Dog & Cat Groomer) on recurring SEO plan
 - [ ] Google Business Profile for Say It Marketing corrected (currently shows as closed)
+- [ ] Trade show display hub page live-ready and linked from print services
 
 ### In the next 90 days
 - [ ] 10 recurring hosting/SEO clients
@@ -211,6 +226,7 @@ Follow-up queue. Each lead gets jobs at day 1, 3, 7 after submission.
 - [ ] Testimonials section with real client names and results
 - [ ] Portfolio expanded with 5+ live client sites
 - [ ] Print catalog — 12 curated products with quote request flow
+- [ ] Blue Luna-style traffic report for Say It: leads by channel, pages that led to leads, top lead paths
 
 ### Long-term vision
 - [ ] 20–30 recurring clients = $1,200–$6,000/mo baseline passive revenue
@@ -237,6 +253,7 @@ Follow-up queue. Each lead gets jobs at day 1, 3, 7 after submission.
 7. Automation follow-up emails — wire up automation-runner to send actual emails
 8. Blog section — first 2 SEO posts targeting Tucson
 9. Bundle Stripe link — $199/mo SEO + $250 one-time social in one checkout
+10. Trade show display SEO/AEO/GEO hub + tracking report
 
 ---
 
@@ -330,9 +347,10 @@ Rules: Never commit secrets. Always validate inputs server-side. Always sanitize
 - The `proposals/` folder is for client-specific pages — keep them separate from main site pages
 - Shawn communicates via WhatsApp in Tucson Spanglish with some clients — match that tone in client-facing copy when appropriate
 - This file should be updated every time a significant change is made to the site
-- **ALWAYS update `CHANGELOG.md` at the end of every session** — what was done, what's pending, what's next
-- Read `CHANGELOG.md` at the START of every session so you know exactly where things left off
-- No session ends without a CHANGELOG update. No exceptions.
+- **ALWAYS update `SESSION_HANDOFF.md` at the end of meaningful work** — what changed, what's open, and Shawn's test steps
+- Update `CHANGELOG.md` when code, QA, product, or process work changed
+- Read `BRIEF.md` at the START of every session so the docs are opened in the right order
+- No meaningful session ends without a handoff update. No exceptions.
 
 ---
 

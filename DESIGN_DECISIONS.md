@@ -1,0 +1,70 @@
+# DESIGN_DECISIONS.md — Say It Marketing
+### Approved visual, UX, and content presentation decisions
+*Created: August 27, 2026*
+
+---
+
+## Purpose
+
+This file records design and UX decisions so future sessions do not re-litigate the same calls.
+
+Rules:
+- Jony owns visual quality.
+- Angela owns customer journey clarity.
+- Chris owns mobile behavior.
+- If a design direction changes, add a dated entry with the reason.
+
+---
+
+## Current Design System
+
+Say It uses the existing Apple-clean agency style:
+
+- high contrast
+- generous whitespace
+- simple type hierarchy
+- pill-shaped buttons
+- direct customer language
+- mobile-first layouts
+- one clear primary CTA per page
+
+Primary files:
+- `assets/site.css`
+- static HTML pages in repo root
+
+---
+
+## 2026-08-27 — Trade Show Displays Presentation
+
+**Decision:** The display catalog experience should feel like Say It first, supplier second.
+
+**Approved UX direction:**
+- First screen: Say It branded display offer.
+- Page structure: clear categories, proof/usage guidance, FAQ, quote CTA.
+- Catalog access: secondary button, not the whole page.
+- Copy: plain-English buying help, not supplier spec dumping.
+- Images: use reseller-approved WSDisplay product imagery when available.
+
+**Do not do:**
+- Do not make a plain iframe the hero.
+- Do not paste large supplier descriptions into the page.
+- Do not show a wall of products before explaining how Say It helps.
+
+---
+
+## 2026-08-27 — Blue Luna Cues To Borrow
+
+**Decision:** Borrow the parts of Blue Luna that are creating local trust and leads, adapted to Say It's business audience.
+
+**Useful cues:**
+- Local first line: Tucson / Southern Arizona / nationwide where relevant.
+- Specific service pages rather than one generic service list.
+- Real visual proof where possible.
+- One obvious lead path.
+- Plain-English forms with only useful questions.
+- Admin report that tells Shawn what to do next, not just what happened.
+
+**Say It adaptation:**
+- For print/display pages, lead with business outcomes: look professional at events, get noticed, order without confusion.
+- Keep the quote path low pressure: no payment on the first request.
+- Make product category pages answer buyer questions for SEO and AI answer engines.
