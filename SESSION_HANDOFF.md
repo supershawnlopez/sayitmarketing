@@ -41,6 +41,7 @@ Team recommendation already discussed:
 - `Text Details` on print quote pages must open an item-specific Say It SMS draft. Never leave it as a bare SMS link that can expose a stale Found/domain message.
 - Say It's public homepage and nav now use three branches: `Websites`, `Apps`, and `Print & Displays`.
 - Homepage OG should avoid redundancy: title says `Custom Websites, Apps & Print | Say It Marketing`, description explains the offer, and image says `Look ready everywhere.` with the real Say It logo.
+- Favicon/apple-touch/share-sheet icon should be a separate icon-only system: blue rounded-square field with white message bubble, no words.
 - Supporting services such as SEO, social, ads, hosting, and monthly care should stay below the main branches.
 
 ---
@@ -77,6 +78,7 @@ Team recommendation already discussed:
    - Public nav now shows `Websites`, `Apps`, and `Print & Displays`.
    - New page: `custom-apps.html`.
    - Quote page now responds to `?service=website`, `?service=custom-app`, and `?service=print`.
+   - New icon files are wired sitewide: `apple-touch-icon`, 32/16 PNG favicons, root `favicon.ico`, and `site.webmanifest`.
 
 ---
 
@@ -96,10 +98,11 @@ When reviewing the three-pillar pass:
 
 1. Share `https://sayitmarketing.com/` by text and confirm the preview title says `Custom Websites, Apps & Print | Say It Marketing`.
 2. Confirm the preview image uses the real Say It logo and says `Look ready everywhere.` plus `Websites · Apps · Print`.
-3. Open the homepage on iPhone and confirm the first service choice is clearly `Custom Websites`, `Custom Apps`, and `Print & Displays`.
-4. Tap `Apps` in the nav and confirm `custom-apps.html` feels like a real Say It service page.
-5. Tap `Start An App Quote` and confirm the quote page headline says `Custom App Quote`.
-6. Tap a website quote link and confirm the quote page headline says `Custom Website Quote`.
+3. Confirm the small share-sheet/site icon is a blue icon-only message bubble, not the old orange favicon and not the full wordmark.
+4. Open the homepage on iPhone and confirm the first service choice is clearly `Custom Websites`, `Custom Apps`, and `Print & Displays`.
+5. Tap `Apps` in the nav and confirm `custom-apps.html` feels like a real Say It service page.
+6. Tap `Start An App Quote` and confirm the quote page headline says `Custom App Quote`.
+7. Tap a website quote link and confirm the quote page headline says `Custom Website Quote`.
 
 When tracking is built:
 

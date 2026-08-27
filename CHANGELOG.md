@@ -9,6 +9,15 @@
   - description explains the offer
   - image sells the feeling with `Look ready everywhere.`
 - Added `assets/sayit-og-pillars.png` using the real Say It logo for social previews
+- Added the approved icon-only favicon/apple-touch system:
+  - `assets/apple-touch-icon.png`
+  - `assets/favicon-32x32.png`
+  - `assets/favicon-16x16.png`
+  - `assets/icon-192x192.png`
+  - `assets/icon-512x512.png`
+  - `favicon.ico`
+  - `site.webmanifest`
+- Wired the new icon tags across public, admin, and proposal HTML pages so the small share/browser icon uses the blue message bubble instead of old/default artwork
 - Reworked the homepage hero and first service tiles around the three branches:
   - `Custom Websites`
   - `Custom Apps`

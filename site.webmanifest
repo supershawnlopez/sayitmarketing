@@ -1,0 +1,19 @@
+{
+  "name": "Say It Marketing",
+  "short_name": "Say It",
+  "icons": [
+    {
+      "src": "/assets/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#4BA6DC",
+  "background_color": "#FFFFFF",
+  "display": "standalone"
+}

@@ -100,6 +100,7 @@ Light Gray:     #F3F4F4  — Card backgrounds, subtle dividers
 - `assets/lead-form.js` — Form submission handler
 - `assets/stripe-links.js` — All Stripe payment link mappings
 - `assets/faq.js` — FAQ accordion
+- `assets/apple-touch-icon.png`, favicon PNGs, `favicon.ico`, and `site.webmanifest` — Icon-only blue message bubble system for browser/share icons
 
 **Backend (Netlify Functions):**
 - `netlify/functions/lead-create.js` — Captures leads → Supabase
