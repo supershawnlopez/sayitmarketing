@@ -14,7 +14,7 @@
 - Added URL context handling to `assets/lead-form.js` for print quote links like `get-quote.html?service=print&item=business-cards`
 - Updated `get-quote.html` so print quote links change the visible hero, form header, trust chips, and request context immediately
 - Rebalanced print quote CTAs: form is primary, text is secondary, phone call is a small urgent-only link
-- Sent print quote buttons directly to the quote form anchor with `#quote-form`
+- Reverted `#quote-form` anchor jumps so print quote buttons land at the top of the quote page with context instead of dropping into the middle of the form
 
 ### ⏳ Pending / In Progress
 - Replace generated placeholder imagery with Shawn/WSDisplay-approved product images when exact ZIP assets are available

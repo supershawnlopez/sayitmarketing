@@ -95,3 +95,4 @@ Primary files:
 - Category CTAs: every button should carry item intent into the quote form instead of all behaving like one generic quote link.
 - Quote page: if a visitor arrives from a print category button, the first visible hero/form copy must acknowledge the exact print quote request.
 - Print quote CTA hierarchy: form first, text second, call as a quiet urgent-only link. Do not make phone calls the dominant print-quote action.
+- Print category buttons should land at the top of the context-aware quote page, not jump into the middle of the form.
