@@ -86,10 +86,10 @@ Light Gray:     #F3F4F4  — Card backgrounds, subtle dividers
 | `free-website-audit.html` | Lead magnet — free audit offer | Live |
 | `get-quote.html` | Main lead capture form | Live |
 | `contact.html` | Contact page | Live |
-| `print-services.html` | Print + branded merchandise brokerage | Live |
+| `print-services.html` | Business printing + trade show display brokerage | Live |
 | `thank-you.html` | Post-form submission confirmation | Live |
 | `advertising-management.html` | Paid ad management — Google + Social interactive selector, pricing, lead form | Live |
-| `trade-show-displays.html` | Trade show displays hub — Say It branded WSDisplay/ExhibitBook reseller path | Built locally |
+| `trade-show-displays.html` | Trade show displays hub — Say It branded WSDisplay/ExhibitBook reseller path | Live |
 | `proposals/dogandcat.html` | Client proposal — Eimy Martinez, Dog & Cat Groomer | Live |
 
 **Assets:**
@@ -160,14 +160,16 @@ Light Gray:     #F3F4F4  — Card backgrounds, subtle dividers
 
 **★ = recommended / most popular tier**
 
-### Print + Trade Show Displays
-Current print services include everyday print, promo/event materials, banners, signs, and bundled website + print kits.
+### Business Print + Trade Show Displays
+Current print services include everyday print, promo/event materials, banners, signs, trade show displays, and bundled website + print kits.
 
 Planned growth direction:
 - Say It branded trade show display hub
 - WSDisplay/ExhibitBook used as a non-branded reseller catalog and asset source
-- Curated display categories: banner stands, table throws, tents, backdrops, flags, lightboxes, and booth kits
+- Curated display categories: banner stands, table covers, custom canopy tents, step and repeat backdrops, flags, lightboxes, and booth kits
 - Quote-first flow so Say It owns the customer relationship
+- Public navigation uses `Print & Displays`; homepage/page copy uses `Business Print & Trade Show Displays`
+- Found is not promoted on Say It. It is a sister-company fallback only after a custom website/app lead is qualified and determined not to fit Say It.
 
 ---
 
@@ -217,7 +219,7 @@ Follow-up queue. Each lead gets jobs at day 1, 3, 7 after submission.
 - [ ] sayitmarketing.com DNS fully switched and stable
 - [ ] Eimy Martinez (Dog & Cat Groomer) on recurring SEO plan
 - [ ] Google Business Profile for Say It Marketing corrected (currently shows as closed)
-- [ ] Trade show display hub page live-ready and linked from print services
+- [x] Trade show display hub page live and linked from print services/main navigation
 
 ### In the next 90 days
 - [ ] 10 recurring hosting/SEO clients

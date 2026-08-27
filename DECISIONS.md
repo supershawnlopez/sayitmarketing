@@ -54,3 +54,22 @@ Rules:
 - Label unclear traffic honestly as “Unknown / Direct / DMs.”
 
 **Not yet implemented:** This is approved as a direction, but code/schema changes still need a scoped implementation pass.
+
+---
+
+## 2026-08-27 — Say It Service Branches And Print Wording
+
+**Decision:** Say It's main public offer should be organized around three primary business branches: custom websites, custom apps, and print. Found is not advertised as a Say It service.
+
+**Team call:**
+- Steve: Say It should feel like the premium custom agency. Found is a fallback when a prospect is not a fit for custom work.
+- Phil: Use buyer/search language for print: `Print & Displays` in navigation, `Business Print & Trade Show Displays` on the homepage, and exact SEO terms on support pages.
+- Angela: The print path must be visible from the main navigation, not buried inside add-ons.
+- Craig/Marcus: Link the existing print destination before building new page architecture.
+
+**Approved direction:**
+- Main navigation label: `Print & Displays`.
+- Homepage branch/chip label: `Business Print & Trade Show Displays`.
+- Print page title/H1 language: `Business Printing & Trade Show Displays`.
+- Display SEO support terms: banner stands, table covers, backdrops, canopy tents, booth kits, signs, and trade show booth displays.
+- Found may be offered only after qualification as a sister-company referral when Say It is not the right fit.

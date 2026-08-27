@@ -68,3 +68,16 @@ Primary files:
 - For print/display pages, lead with business outcomes: look professional at events, get noticed, order without confusion.
 - Keep the quote path low pressure: no payment on the first request.
 - Make product category pages answer buyer questions for SEO and AI answer engines.
+
+---
+
+## 2026-08-27 — Print Navigation Label
+
+**Decision:** Use `Print & Displays` as the short public navigation label.
+
+**Reason:** It is clear enough for desktop/mobile nav, keeps the door open for everyday print and trade show display orders, and avoids a vague label like `Print Services` that hides the event/display opportunity.
+
+**Applied UX rule:**
+- Navigation stays short: `Print & Displays`.
+- Homepage and page copy can be more descriptive: `Business Print & Trade Show Displays`.
+- Supplier catalog access remains secondary to Say It-owned guidance and quote capture.

@@ -1,3 +1,29 @@
+## Session: August 27, 2026 — Print & Displays Navigation Pass
+**AI:** Codex (GPT-5)
+**Worked on:** Made the approved print/display branch visible and updated Say It wording around business print and trade show displays
+
+### ✅ Completed This Session
+- Added `Print & Displays` to the shared public navigation across the main Say It pages
+- Updated the homepage add-on chip from weak product fragments to `Business Print & Trade Show Displays`
+- Updated `print-services.html` title, meta description, hero eyebrow, H1, and supporting copy to use the approved SEO/AEO/GEO language
+- Updated `get-quote.html` service option to `Business Print & Trade Show Displays`
+- Updated `trade-show-displays.html` supporting CTA from `View Print Services` to `View Print & Displays`
+- Fixed an existing homepage quick-picker JavaScript quote typo while touching the file
+- Recorded the Say It / Found boundary: Found is a sister-company referral after qualification, not a public Say It offer
+- Updated `DECISIONS.md`, `DESIGN_DECISIONS.md`, `SESSION_HANDOFF.md`, `TASKS.md`, and `PROJECT.md`
+
+### ⏳ Pending / In Progress
+- Build the first product-specific display SEO support pages
+- Scope and implement Blue Luna-style tracking/reporting for Say It
+- Add “Where did you hear about us?” to Say It forms
+
+### 🔜 What To Work On Next
+1. Scope Blue Luna-style tracking/reporting for Say It before coding it
+2. Define the first product-specific support page architecture
+3. Build the first support page after team approval
+
+---
+
 ## Session: August 27, 2026 — Documentation Parity With Found + Blue Luna
 **AI:** Codex (GPT-5)
 **Worked on:** Brought Say It Marketing's operating docs up to the newer Found/Blue Luna workflow pattern, then built the approved Trade Show Displays hub locally
@@ -819,6 +845,5 @@ At the end of every AI session, update this file with a new entry:
 
 *This file is the memory of the project.*
 *Read it before you start. Update it before you stop.*
-
 
 

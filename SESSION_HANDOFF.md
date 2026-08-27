@@ -14,7 +14,7 @@ Shawn wants Say It Marketing to catch up to the operating style used on Found an
 - decision records
 - Apple-style team review before product, design, copy, architecture, or tracking changes
 
-This session created the missing handoff/decision docs, updated the active task board, and built the first approved Trade Show Displays hub page locally.
+This session created the missing handoff/decision docs, updated the active task board, built the first approved Trade Show Displays hub, and made the print/display path visible from the main site navigation.
 
 ---
 
@@ -32,17 +32,20 @@ Team recommendation already discussed:
 - Do not scrape supplier content blindly.
 - Do not make a raw iframe the main experience.
 - Build a Say It-owned display hub with curated categories, rewritten copy, approved WSDisplay assets, and a catalog button.
+- Use `Print & Displays` in navigation and `Business Print & Trade Show Displays` for fuller page/homepage language.
+- Keep Found off the public Say It offer; use it only as a sister-company referral after qualification.
 
 ---
 
 ## Open Items
 
 1. **Trade Show Displays page**
-   - Created locally: `trade-show-displays.html`.
+   - Live page: `trade-show-displays.html`.
    - Linked from `print-services.html`.
+   - Linked from the main public navigation through `Print & Displays`.
    - Added to `sitemap.xml`.
    - Includes FAQ/schema-ready copy for Arizona, Tucson, Phoenix, and nationwide display orders.
-   - Needs Shawn visual/content review before push/deploy.
+   - Needs future support pages for individual product categories.
 
 2. **Display/print SEO support pages**
    - Candidate pages: banner stands, table throws, canopy tents, step-and-repeat backdrops, trade show booths.
@@ -79,7 +82,7 @@ When tracking is built:
 
 ## Next Best Move
 
-Start with `TASKS.md` NEXT item #1:
+Start with `TASKS.md` NOW item #2:
 
 **Scope Blue Luna-style tracking/reporting for Say It.**
 
