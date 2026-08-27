@@ -18,6 +18,38 @@
     return String(el.value || "").trim();
   }
 
+  function getPrintItemLabel(item) {
+    const labels = {
+      "general-print": "general print quote",
+      "everyday-business-print": "everyday business print",
+      "event-signs-displays": "events, signs, and displays",
+      "business-cards": "business cards",
+      "flyers-door-hangers": "flyers and door hangers",
+      "menus-service-sheets": "menus and service sheets",
+      "signs-banners": "signs and banners",
+      "direct-mail-pieces": "direct mail pieces",
+      "website-print-bundle": "website and print bundle"
+    };
+    return labels[item] || String(item || "").replace(/-/g, " ");
+  }
+
+  function applyUrlContext(form) {
+    const service = getParam("service");
+    const item = getParam("item");
+    if (service !== "print" || !item) return;
+
+    const serviceField = form.elements.namedItem("service_interest");
+    const goalField = form.elements.namedItem("primary_goal");
+    const itemLabel = getPrintItemLabel(item);
+
+    if (serviceField && !serviceField.value) {
+      serviceField.value = "Business Print & Trade Show Displays";
+    }
+    if (goalField && !goalField.value) {
+      goalField.value = `Print request: ${itemLabel}.`;
+    }
+  }
+
   async function handleSubmit(event) {
     event.preventDefault();
     const form = event.currentTarget;
@@ -81,6 +113,7 @@
   }
 
   document.querySelectorAll("form[data-lead-form]").forEach(function (form) {
+    applyUrlContext(form);
     form.addEventListener("submit", handleSubmit);
   });
 })();

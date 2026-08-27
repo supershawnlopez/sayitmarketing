@@ -36,7 +36,7 @@ Exit criteria:
 1. Build Say It branded Trade Show Displays hub
 - Owner: Steve + Jony + Phil + Angela + Marcus
 - Status: Done and linked (August 27, 2026)
-- Notes: Created `trade-show-displays.html`, linked from `print-services.html`, added sitemap entry, used ExhibitBook as secondary catalog link, routed quote interest through Say It, and exposed the print/display branch in the main navigation as `Print & Displays`.
+- Notes: Created `trade-show-displays.html`, linked from `print-services.html`, added sitemap entry, used ExhibitBook as secondary catalog link, routed quote interest through Say It, exposed the print/display branch in the main navigation as `Print & Displays`, and upgraded the main print page hero/category panels after Shawn's review.
 
 2. Scope Blue Luna-style tracking/reporting for Say It
 - Owner: Priya + Craig + Phil

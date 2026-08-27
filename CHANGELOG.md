@@ -1,3 +1,30 @@
+## Session: August 27, 2026 — Business Print Hero Upgrade
+**AI:** Codex (GPT-5)
+**Worked on:** Upgraded the approved Print & Displays page after Shawn's review
+
+### ✅ Completed This Session
+- Reworked the `print-services.html` hero to feel closer to the stronger trade show page
+- Added two compressed local generated visual assets:
+  - `assets/print-hero-premium.jpg`
+  - `assets/print-display-booth.jpg`
+- Replaced the weak `Everyday Print` and `Promo + Events` panels with stronger buyer-focused sections:
+  - `Everyday Business Print`
+  - `Events, Signs & Displays`
+- Updated the bottom print category buttons so each carries item intent into the quote form
+- Added URL context handling to `assets/lead-form.js` for print quote links like `get-quote.html?service=print&item=business-cards`
+
+### ⏳ Pending / In Progress
+- Replace generated placeholder imagery with Shawn/WSDisplay-approved product images when exact ZIP assets are available
+- Build first product-specific display SEO support pages after team approval
+- Scope and implement Blue Luna-style tracking/reporting
+
+### 🔜 What To Work On Next
+1. Scope Blue Luna-style tracking/reporting for Say It
+2. Define the first product-specific display/print support page architecture
+3. Swap in WSDisplay-approved product images when Shawn provides the downloaded image folders
+
+---
+
 ## Session: August 27, 2026 — Print & Displays Navigation Pass
 **AI:** Codex (GPT-5)
 **Worked on:** Made the approved print/display branch visible and updated Say It wording around business print and trade show displays
@@ -845,5 +872,3 @@ At the end of every AI session, update this file with a new entry:
 
 *This file is the memory of the project.*
 *Read it before you start. Update it before you stop.*
-
-

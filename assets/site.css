@@ -1205,8 +1205,12 @@ body.page-portfolio .page-hero--dark {
 
 body.page-print .page-hero--dark {
   background:
-    linear-gradient(180deg, rgba(33, 16, 8, 0.62), rgba(33, 16, 8, 0.62)),
-    url("https://images.unsplash.com/photo-1586704849707-a72eb0e4c2f0?auto=format&fit=crop&w=2200&q=80") center/cover no-repeat;
+    linear-gradient(90deg, rgba(5, 17, 29, 0.84) 0%, rgba(5, 17, 29, 0.7) 46%, rgba(5, 17, 29, 0.28) 100%),
+    url("print-hero-premium.jpg") center/cover no-repeat;
+}
+
+body.page-print .chapter-panel::before {
+  background: linear-gradient(180deg, rgba(7, 18, 31, 0.22), rgba(7, 18, 31, 0.72));
 }
 
 body.page-faq .page-hero--light {
@@ -1825,7 +1829,11 @@ body.page-audit .page-hero--light {
 }
 
 .panel-print {
-  background-image: url("https://images.unsplash.com/photo-1572044162444-ad60f128bdea?auto=format&fit=crop&w=2200&q=80");
+  background-image: url("print-hero-premium.jpg");
+}
+
+body.page-print .panel-social {
+  background-image: url("print-display-booth.jpg");
 }
 
 .panel-portfolio {

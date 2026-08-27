@@ -81,3 +81,15 @@ Primary files:
 - Navigation stays short: `Print & Displays`.
 - Homepage and page copy can be more descriptive: `Business Print & Trade Show Displays`.
 - Supplier catalog access remains secondary to Say It-owned guidance and quote capture.
+
+---
+
+## 2026-08-27 — Business Print Page Visual Upgrade
+
+**Decision:** The main print page should match the confidence of the trade show page, not feel like a placeholder print list.
+
+**Approved UX direction:**
+- Hero headline: lead with readiness and business outcome, not a generic service label.
+- Feature panels: split into `Everyday Business Print` and `Events, Signs & Displays`.
+- Images: use Say It-owned generated visuals for now; replace with WSDisplay-approved product assets when Shawn provides exact downloads.
+- Category CTAs: every button should carry item intent into the quote form instead of all behaving like one generic quote link.
