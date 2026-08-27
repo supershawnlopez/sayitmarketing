@@ -35,17 +35,12 @@ Exit criteria:
 
 ## NOW (MAX 3)
 
-1. Three pillar architecture pass
-- Owner: Steve + Jony + Phil + Angela + Marcus
-- Status: Done and pending Shawn visual review (August 27, 2026)
-- Notes: Homepage OG/meta, hero, first service tiles, public nav, `custom-apps.html`, sitemap, and quote context now support `Websites`, `Apps`, and `Print & Displays`.
-
-2. Scope Blue Luna-style tracking/reporting for Say It
+1. Scope Blue Luna-style tracking/reporting for Say It
 - Owner: Priya + Craig + Phil
 - Status: Ready for implementation plan
 - Notes: Port the concept, not the Next.js code directly. Say It is static HTML + Netlify Functions + Supabase. Need `site_visits`, `/api/track`, `assets/visit-tracker.js`, UTM/session preservation, referral question, and `/admin/traffic.html`.
 
-3. Define first display/print SEO support pages
+2. Define first display/print SEO support pages
 - Owner: Phil + Angela
 - Status: Ready for content architecture
 - Notes: Candidate pages should use exact buyer terms: `banner-stands.html`, `custom-table-covers.html`, `custom-canopy-tents.html`, `step-and-repeat-backdrops.html`, `trade-show-booth-displays.html`.
@@ -54,7 +49,17 @@ Exit criteria:
 
 ## RECENTLY COMPLETED
 
-1. Build Say It branded Trade Show Displays hub
+1. Three pillar architecture pass
+- Owner: Steve + Jony + Phil + Angela + Marcus
+- Status: Done and visually approved (August 27, 2026)
+- Notes: Homepage OG/meta, hero, first service tiles, public nav, `custom-apps.html`, sitemap, quote context, and refreshed share card/icon system now support `Websites`, `Apps`, and `Print & Displays`.
+
+2. Refresh homepage share card and site icons
+- Owner: Steve + Jony + Phil + Craig
+- Status: Done and pushed (August 27, 2026)
+- Notes: Replaced the homepage OG image with a premium three-pillar visual composition, kept the OG image copy to `Look ready everywhere.`, removed duplicate domain/icon clutter inside the image, and replaced favicon/apple-touch/manifest icons with the approved Fav1 blue message-bubble icon.
+
+3. Build Say It branded Trade Show Displays hub
 - Owner: Steve + Jony + Phil + Angela + Marcus
 - Status: Done and linked (August 27, 2026)
 - Notes: Created `trade-show-displays.html`, linked from `print-services.html`, added sitemap entry, used ExhibitBook as secondary catalog link, routed quote interest through Say It, exposed the print/display branch in the main navigation as `Print & Displays`, and upgraded the main print page hero/category panels after Shawn's review.
