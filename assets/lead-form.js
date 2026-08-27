@@ -18,19 +18,39 @@
     return String(el.value || "").trim();
   }
 
-  function getPrintItemLabel(item) {
+  function getPrintItemMeta(item) {
     const labels = {
-      "general-print": "general print quote",
-      "everyday-business-print": "everyday business print",
-      "event-signs-displays": "events, signs, and displays",
-      "business-cards": "business cards",
-      "flyers-door-hangers": "flyers and door hangers",
-      "menus-service-sheets": "menus and service sheets",
-      "signs-banners": "signs and banners",
-      "direct-mail-pieces": "direct mail pieces",
-      "website-print-bundle": "website and print bundle"
+      "general-print": "Print Quote",
+      "everyday-business-print": "Everyday Business Print Quote",
+      "event-signs-displays": "Events, Signs & Displays Quote",
+      "business-cards": "Business Cards Quote",
+      "flyers-door-hangers": "Flyers & Door Hangers Quote",
+      "menus-service-sheets": "Menus & Service Sheets Quote",
+      "signs-banners": "Signs & Banners Quote",
+      "direct-mail-pieces": "Direct Mail Pieces Quote",
+      "website-print-bundle": "Website + Print Bundle Quote"
     };
-    return labels[item] || String(item || "").replace(/-/g, " ");
+    const title = labels[item] || String(item || "")
+      .replace(/-/g, " ")
+      .replace(/\b\w/g, function (letter) { return letter.toUpperCase(); }) + " Quote";
+    return {
+      title,
+      request: title.replace(/ Quote$/, "").toLowerCase()
+    };
+  }
+
+  function setText(id, text) {
+    const el = document.getElementById(id);
+    if (el) el.textContent = text;
+  }
+
+  function setHeroTitle(id, firstLine, secondLine) {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.textContent = "";
+    el.appendChild(document.createTextNode(firstLine));
+    el.appendChild(document.createElement("br"));
+    el.appendChild(document.createTextNode(secondLine));
   }
 
   function applyUrlContext(form) {
@@ -40,13 +60,39 @@
 
     const serviceField = form.elements.namedItem("service_interest");
     const goalField = form.elements.namedItem("primary_goal");
-    const itemLabel = getPrintItemLabel(item);
+    const meta = getPrintItemMeta(item);
+    const contextCard = document.getElementById("quote-context-card");
+    const contextValue = document.getElementById("quote-context-value");
+    const heroImage = document.getElementById("quote-hero-image");
+
+    document.body.classList.add("quote-print-context");
+    setText("quote-hero-eyebrow", "Print Quote");
+    setHeroTitle("quote-hero-title", meta.title, "through Say It.");
+    setText("quote-hero-sub", "Tell us what you need printed, when you need it, and where it is going. We will help with options, proofing, and next steps.");
+    setText("quote-form-eyebrow", "Print Quote Request");
+    setText("quote-form-title", meta.title);
+    setText("quote-form-copy", "This is the right place. Start with your contact details, then we will confirm the print item, timing, and budget.");
+    setText("quote-chip-one", "Proof before production");
+    setText("quote-chip-two", "No payment yet");
+    setText("quote-chip-three", "Clear quote path");
+    setText("quote-step-one-copy", "Tell us who to contact about this print quote.");
+    setText("quote-step-two-title", "Print Details");
+    setText("quote-step-two-copy", "We already marked the print category. Add timing and anything specific you know.");
+
+    if (contextCard && contextValue) {
+      contextValue.textContent = meta.title;
+      contextCard.hidden = false;
+    }
+    if (heroImage) {
+      heroImage.src = "assets/print-hero-premium.jpg";
+      heroImage.alt = "Premium printed business cards, flyers, and marketing materials on a clean worktable";
+    }
 
     if (serviceField && !serviceField.value) {
       serviceField.value = "Business Print & Trade Show Displays";
     }
     if (goalField && !goalField.value) {
-      goalField.value = `Print request: ${itemLabel}.`;
+      goalField.value = `Print request: ${meta.title.replace(/ Quote$/, "")}.`;
     }
   }
 

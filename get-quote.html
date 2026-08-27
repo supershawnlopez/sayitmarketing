@@ -158,6 +158,33 @@
     padding: 0.35rem 0.85rem;
   }
   .trust-chip-icon { font-size: 0.85rem; }
+  .quote-context-card {
+    display: grid;
+    gap: 0.25rem;
+    margin: 0 0 1.5rem;
+    padding: 0.95rem 1rem;
+    border: 1px solid #cfe2ff;
+    border-radius: 14px;
+    background: linear-gradient(180deg, #f4f9ff 0%, #edf6ff 100%);
+    color: var(--text-2);
+  }
+  .quote-context-card[hidden] { display: none; }
+  .quote-context-label {
+    font-size: 0.67rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--brand);
+  }
+  .quote-context-value {
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--text-1);
+  }
+  .quote-print-context .split-media img {
+    object-position: center;
+  }
 
   @media (max-width: 520px) {
     .form-grid { grid-template-columns: 1fr; }
@@ -172,15 +199,15 @@
 <section class="section-page">
   <div class="wrap split-section">
     <div class="split-content">
-      <p class="eyebrow">Start My Plan</p>
-      <h1>Tell us your goal<br>and we'll map your next move.</h1>
-      <p>Simple form. Clear response. No pressure.</p>
+      <p class="eyebrow" id="quote-hero-eyebrow">Start My Plan</p>
+      <h1 id="quote-hero-title">Tell us your goal<br>and we'll map your next move.</h1>
+      <p id="quote-hero-sub">Simple form. Clear response. No pressure.</p>
       <div class="hero-cta">
         <a class="btn btn-primary" href="tel:+15202226308">Call Us</a>
         <a class="btn btn-secondary" href="sms:+15202226308">Text Us</a>
       </div>
     </div>
-    <figure class="split-media media-ratio-16x10 img-premium media-overlay-soft"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80" alt="Planning conversation for small business growth"></figure>
+    <figure class="split-media media-ratio-16x10 img-premium media-overlay-soft"><img id="quote-hero-image" src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1400&q=80" alt="Planning conversation for small business growth"></figure>
   </div>
 </section>
 
@@ -188,14 +215,18 @@
   <div class="wrap form-shell-premium">
 
     <div class="form-card-header">
-      <p class="eyebrow">Free Plan Review</p>
-      <h2>Tell Us What You Need.</h2>
-      <p>We'll review your details and come back within 1 business day with a clear recommendation — no contracts, no pressure.</p>
+      <p class="eyebrow" id="quote-form-eyebrow">Free Plan Review</p>
+      <h2 id="quote-form-title">Tell Us What You Need.</h2>
+      <p id="quote-form-copy">We'll review your details and come back within 1 business day with a clear recommendation — no contracts, no pressure.</p>
       <div class="trust-chips">
-        <span class="trust-chip"><span class="trust-chip-icon">⚡</span>Responds in 1 business day</span>
-        <span class="trust-chip"><span class="trust-chip-icon">✓</span>No contracts</span>
-        <span class="trust-chip"><span class="trust-chip-icon">✓</span>No sales call</span>
+        <span class="trust-chip"><span class="trust-chip-icon">⚡</span><span id="quote-chip-one">Responds in 1 business day</span></span>
+        <span class="trust-chip"><span class="trust-chip-icon">✓</span><span id="quote-chip-two">No contracts</span></span>
+        <span class="trust-chip"><span class="trust-chip-icon">✓</span><span id="quote-chip-three">No sales call</span></span>
       </div>
+    </div>
+    <div class="quote-context-card" id="quote-context-card" hidden>
+      <span class="quote-context-label">You're requesting</span>
+      <span class="quote-context-value" id="quote-context-value"></span>
     </div>
 
     <div class="form-progress-track">
@@ -208,7 +239,7 @@
         <div class="step-header">
           <span class="step-eyebrow">Step 1 of 4</span>
           <h2>Your Business</h2>
-          <p>Tell us who you are so we know how to reach you.</p>
+          <p id="quote-step-one-copy">Tell us who you are so we know how to reach you.</p>
         </div>
         <div class="form-grid">
           <input name="full_name" placeholder="Your name" required autocomplete="given-name">
@@ -224,8 +255,8 @@
       <fieldset class="guided-step">
         <div class="step-header">
           <span class="step-eyebrow">Step 2 of 4</span>
-          <h2>What Do You Need?</h2>
-          <p>Pick the service that fits your situation right now.</p>
+          <h2 id="quote-step-two-title">What Do You Need?</h2>
+          <p id="quote-step-two-copy">Pick the service that fits your situation right now.</p>
         </div>
         <div class="form-grid">
           <select name="service_interest" required>

@@ -12,6 +12,7 @@
   - `Events, Signs & Displays`
 - Updated the bottom print category buttons so each carries item intent into the quote form
 - Added URL context handling to `assets/lead-form.js` for print quote links like `get-quote.html?service=print&item=business-cards`
+- Updated `get-quote.html` so print quote links change the visible hero, form header, trust chips, and request context immediately
 
 ### ⏳ Pending / In Progress
 - Replace generated placeholder imagery with Shawn/WSDisplay-approved product images when exact ZIP assets are available

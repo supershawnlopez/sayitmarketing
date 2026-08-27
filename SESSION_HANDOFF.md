@@ -14,7 +14,7 @@ Shawn wants Say It Marketing to catch up to the operating style used on Found an
 - decision records
 - Apple-style team review before product, design, copy, architecture, or tracking changes
 
-This session created the missing handoff/decision docs, updated the active task board, built the first approved Trade Show Displays hub, made the print/display path visible from the main site navigation, and upgraded the main print page hero/panels after Shawn's review.
+This session created the missing handoff/decision docs, updated the active task board, built the first approved Trade Show Displays hub, made the print/display path visible from the main site navigation, upgraded the main print page hero/panels after Shawn's review, and made print category quote links feel context-aware on the quote page.
 
 ---
 
@@ -35,6 +35,7 @@ Team recommendation already discussed:
 - Use `Print & Displays` in navigation and `Business Print & Trade Show Displays` for fuller page/homepage language.
 - Keep Found off the public Say It offer; use it only as a sister-company referral after qualification.
 - Main `print-services.html` hero should feel premium like the trade show page, with stronger imagery and buyer-focused category panels.
+- Print category quote links may use the same quote form, but the quote page must visibly confirm the exact item request on arrival.
 
 ---
 
@@ -73,7 +74,7 @@ When reviewing print/display pages:
 
 1. Open `print-services.html` and `trade-show-displays.html` on iPhone at 375px width or real phone.
 2. Confirm both pages feel like Say It, not WSDisplay.
-3. Tap a print category button and confirm the quote form preselects `Business Print & Trade Show Displays`.
+3. Tap a print category button and confirm the quote page headline/form header says the exact request, such as `Menus & Service Sheets Quote`.
 4. Tap `Browse Display Catalog` on the trade show page and confirm it opens the non-branded catalog cleanly.
 5. Search the pages for obvious print/display terms and make sure the copy sounds human.
 

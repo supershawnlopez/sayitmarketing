@@ -93,3 +93,4 @@ Primary files:
 - Feature panels: split into `Everyday Business Print` and `Events, Signs & Displays`.
 - Images: use Say It-owned generated visuals for now; replace with WSDisplay-approved product assets when Shawn provides exact downloads.
 - Category CTAs: every button should carry item intent into the quote form instead of all behaving like one generic quote link.
+- Quote page: if a visitor arrives from a print category button, the first visible hero/form copy must acknowledge the exact print quote request.
