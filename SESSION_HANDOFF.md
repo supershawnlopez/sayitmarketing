@@ -78,6 +78,11 @@ Latest continuation:
 - Verified representative live hero assets returned `200`.
 - Verified `/api/traffic` still rejects unauthenticated requests with `401`.
 - Re-ranked the next work: add service/page filtering to `/admin/traffic.html`, validate the Stripe webhook with a real signed test event, then expand structured data.
+- Team approved the admin traffic filtering scope.
+- Added service, page/path, page-family, and date-range filters to `/admin/traffic.html`.
+- Added visible admin report sections for Leads By Service and Visits By Device.
+- Updated `/api/traffic` so filtering happens server-side against existing live tracking data; no Supabase migration was needed.
+- Local verification passed: `netlify/functions/traffic.js` syntax check, `admin/traffic.html` inline script parse, `git diff --check`, and mocked filtered traffic API behavior.
 
 Important Supabase access note:
 - Fresh Codex sessions can now use the Supabase connector for Say It.
@@ -155,6 +160,8 @@ Team recommendation already discussed:
    - Live verification after Supabase setup: `/api/track` returns `201 {"id":3,"stored":true}`.
    - Fresh verification on August 28, 2026: `/api/track` returns `201 {"id":6,"stored":true}`, and the matching `site_visits` row is visible in Supabase.
    - `/api/traffic` correctly returns `401 Unauthorized` without the admin key.
+   - `/admin/traffic.html` now has filters for date range, service interest, page/path, and page family. Display support pages can be filtered as a family, and the report now exposes Leads By Service and Visits By Device.
+   - `/api/traffic` filters leads and visits server-side against the already-live tracking tables; this did not require a new Supabase migration.
    - Current long-running session cannot directly inspect Supabase anymore because its connector session is stale; use a fresh Supabase-connected task for database changes.
 
 5. **Existing critical item**
@@ -207,13 +214,15 @@ When reviewing tracking:
 2. Submit a test lead.
 3. Confirm `/admin/traffic.html` shows the right source and page path.
 4. Confirm `/admin/leads.html` shows the lead's service and source.
-5. If Supabase access is needed, first confirm the connector can list `SAYIT -> website` (`hclptwixokdjtvtdgyfw`).
+5. In `/admin/traffic.html`, test Page Family = `Display support pages`, Service, and Page Contains filters against a known print/display lead.
+6. Confirm Leads By Service, Visits By Device, Top Pageviews, Pages That Led To Leads, and Recent Lead Paths update with the selected filters.
+7. If Supabase access is needed, first confirm the connector can list `SAYIT -> website` (`hclptwixokdjtvtdgyfw`).
 
 ---
 
 ## Next Best Move
 
-Add service/page filtering to `/admin/traffic.html`; then validate the Stripe webhook with a real signed test event.
+Validate the Stripe webhook with a real signed test event; then expand structured data.
 
 Suggested prompt for the next task:
 
@@ -222,7 +231,7 @@ We are working in C:\Users\SuperShawn\Documents\GitHub\sayitmarketing.
 
 Read BRIEF.md, AGENTS.md, TASKS.md, and SESSION_HANDOFF.md.
 
-Add service/page filtering to `/admin/traffic.html`, then validate the Stripe webhook with a real signed test event.
+Validate the Stripe webhook with a real signed test event, then expand structured data.
 ```
 
-The display hub, print page upgrade, three-pillar architecture pass, OG/icon work, traffic-tracking backend, first display/print support-page architecture, live `banner-stands.html`, live `custom-table-covers.html`, live `step-and-repeat-backdrops.html`, live `custom-canopy-tents.html`, and live `trade-show-booth-displays.html` pages are complete. Next, add service/page filtering to the admin traffic report, then validate the Stripe webhook with a real signed test event.
+The display hub, print page upgrade, three-pillar architecture pass, OG/icon work, traffic-tracking backend, admin traffic filters, first display/print support-page architecture, live `banner-stands.html`, live `custom-table-covers.html`, live `step-and-repeat-backdrops.html`, live `custom-canopy-tents.html`, and live `trade-show-booth-displays.html` pages are complete. Next, validate the Stripe webhook with a real signed test event, then expand structured data.

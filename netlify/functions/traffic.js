@@ -25,6 +25,13 @@ function pathFromUrl(value) {
   }
 }
 
+function canonicalPath(value) {
+  const raw = pathFromUrl(value).split("#")[0].split("?")[0] || "";
+  if (!raw) return "";
+  if (raw === "/index.html") return "/";
+  return raw.replace(/\.html$/, "");
+}
+
 function normalizeSource(lead) {
   const heard = String(lead.heard_about_us || "").trim();
   if (heard) return heard;
@@ -47,6 +54,68 @@ function sortTop(map, limit = 12) {
   return Array.from(map.values()).sort((a, b) => b.count - a.count || a.name.localeCompare(b.name)).slice(0, limit);
 }
 
+const DISPLAY_SUPPORT_PATHS = new Set([
+  "/banner-stands",
+  "/custom-table-covers",
+  "/step-and-repeat-backdrops",
+  "/custom-canopy-tents",
+  "/trade-show-booth-displays"
+]);
+
+function pageFamilyForPath(value) {
+  const path = canonicalPath(value);
+  if (!path) return "";
+  if (DISPLAY_SUPPORT_PATHS.has(path)) return "display_support";
+  if (path === "/trade-show-displays") return "display_hub";
+  if (path === "/print-services") return "print_services";
+  if (path === "/get-quote") return "quote";
+  if (path === "/" || path === "/website-design-services" || path === "/custom-apps") return "core_services";
+  return "other";
+}
+
+function matchesFamily(value, family) {
+  if (!family) return true;
+  const resolved = pageFamilyForPath(value);
+  if (family === "print_display") {
+    return resolved === "display_support" || resolved === "display_hub" || resolved === "print_services";
+  }
+  return resolved === family;
+}
+
+function leadPathValues(lead, pathRows) {
+  const values = [
+    lead.first_landing_page,
+    lead.landing_page,
+    lead.last_page_path
+  ];
+  for (const row of pathRows || []) {
+    values.push(row.page_path, row.page_url, row.page_title);
+  }
+  return values.filter(Boolean);
+}
+
+function includesText(values, text) {
+  if (!text) return true;
+  return values.some((value) => String(value || "").toLowerCase().includes(text));
+}
+
+function leadMatchesFilters(lead, pathRows, filters) {
+  const service = String(lead.service_interest || lead.lead_type || "").toLowerCase();
+  if (filters.service && !service.includes(filters.service)) return false;
+
+  const values = leadPathValues(lead, pathRows);
+  if (filters.page && !includesText(values, filters.page)) return false;
+  if (filters.family && !values.some((value) => matchesFamily(value, filters.family))) return false;
+  return true;
+}
+
+function visitMatchesFilters(visit, filters) {
+  const values = [visit.page_path, visit.page_url, visit.page_title].filter(Boolean);
+  if (filters.page && !includesText(values, filters.page)) return false;
+  if (filters.family && !values.some((value) => matchesFamily(value, filters.family))) return false;
+  return true;
+}
+
 exports.handler = async (event) => {
   if (event.httpMethod === "OPTIONS") return json(200, { ok: true }, event, "admin");
   if (event.httpMethod !== "GET") return json(405, { error: "Method not allowed" }, event, "admin");
@@ -58,6 +127,11 @@ exports.handler = async (event) => {
   const params = new URLSearchParams(event.queryStringParameters || {});
   const days = Math.min(365, Math.max(1, Number(params.get("days") || 30)));
   const start = getPeriodStart(days);
+  const filters = {
+    service: String(params.get("service") || "").trim().toLowerCase(),
+    page: String(params.get("page") || "").trim().toLowerCase(),
+    family: String(params.get("family") || "").trim().toLowerCase()
+  };
 
   try {
     const extendedLeadsPath = [
@@ -113,6 +187,14 @@ exports.handler = async (event) => {
       pathsByLead.get(row.lead_id).push(row);
     }
 
+    const availableServiceMap = new Map();
+    for (const lead of leads) {
+      bump(availableServiceMap, lead.service_interest || lead.lead_type || "Unknown");
+    }
+
+    const filteredLeads = leads.filter((lead) => leadMatchesFilters(lead, pathsByLead.get(lead.id) || [], filters));
+    const filteredVisits = visits.filter((visit) => visitMatchesFilters(visit, filters));
+
     const sourceMap = new Map();
     const landingMap = new Map();
     const leadPageMap = new Map();
@@ -121,21 +203,15 @@ exports.handler = async (event) => {
     const visitPageMap = new Map();
     const deviceMap = new Map();
 
-    for (const visit of visits) {
+    for (const visit of filteredVisits) {
       bump(visitPageMap, visit.page_path || pathFromUrl(visit.page_url));
       bump(deviceMap, visit.device_type || "unknown");
     }
 
-    const recentLeads = leads.slice(0, 50).map((lead) => {
+    for (const lead of filteredLeads) {
       const source = normalizeSource(lead);
       const landing = lead.first_landing_page || lead.landing_page || "";
       const pathRows = pathsByLead.get(lead.id) || [];
-      const path = pathRows.map((row) => ({
-        page_path: row.page_path,
-        page_title: row.page_title,
-        visited_at: row.visited_at,
-        sequence: row.sequence
-      }));
 
       bump(sourceMap, source);
       bump(landingMap, pathFromUrl(landing || lead.landing_page) || "Unknown");
@@ -147,6 +223,18 @@ exports.handler = async (event) => {
       } else {
         bump(leadPageMap, lead.last_page_path || pathFromUrl(lead.landing_page) || "Unknown");
       }
+    }
+
+    const recentLeads = filteredLeads.slice(0, 50).map((lead) => {
+      const source = normalizeSource(lead);
+      const landing = lead.first_landing_page || lead.landing_page || "";
+      const pathRows = pathsByLead.get(lead.id) || [];
+      const path = pathRows.map((row) => ({
+        page_path: row.page_path,
+        page_title: row.page_title,
+        visited_at: row.visited_at,
+        sequence: row.sequence
+      }));
 
       return {
         id: lead.id,
@@ -171,11 +259,19 @@ exports.handler = async (event) => {
       period_days: days,
       since: start,
       schema_ready,
+      filters: {
+        service: params.get("service") || "",
+        page: params.get("page") || "",
+        family: params.get("family") || ""
+      },
+      available_filters: {
+        services: sortTop(availableServiceMap, 50)
+      },
       summary: {
-        leads: leads.length,
-        visits: visits.length,
-        tracked_sessions: new Set(visits.map((visit) => visit.session_id).filter(Boolean)).size,
-        unknown_or_direct_leads: leads.filter((lead) => normalizeSource(lead) === "Unknown / Direct / DMs").length
+        leads: filteredLeads.length,
+        visits: filteredVisits.length,
+        tracked_sessions: new Set(filteredVisits.map((visit) => visit.session_id).filter(Boolean)).size,
+        unknown_or_direct_leads: filteredLeads.filter((lead) => normalizeSource(lead) === "Unknown / Direct / DMs").length
       },
       leads_by_source: sortTop(sourceMap),
       leads_by_landing_page: sortTop(landingMap),

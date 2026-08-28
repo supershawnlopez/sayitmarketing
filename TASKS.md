@@ -42,8 +42,8 @@ Exit criteria:
 
 2. Add service/page filtering to the admin traffic report
 - Owner: Priya + Angela + Phil
-- Status: Recommended next
-- Notes: Add filters for `service_interest`, `page_path`, and display-page family so Shawn can quickly see which print/display pages are driving leads, not just overall channel/source.
+- Status: Done locally (August 28, 2026)
+- Notes: Added date range, service, page/path, and page-family filters to `/admin/traffic.html`; added visible Leads By Service and Visits By Device sections; updated `/api/traffic` filtering without a new database migration. Local function syntax and mocked filtered-report checks passed. Pending push/live deploy verification.
 
 3. Validate Stripe webhook with real signed test event
 - Owner: Priya + Craig
@@ -53,6 +53,11 @@ Exit criteria:
 ---
 
 ## RECENTLY COMPLETED
+
+1. Admin traffic report filtering
+- Owner: Priya + Angela + Phil + Craig
+- Status: Done locally (August 28, 2026)
+- Notes: `/admin/traffic.html` now supports date range, service, page/path, and page-family filters, including the display-support family for the new print/display SEO pages. `/api/traffic` now filters leads and visits server-side and returns available service options, Leads By Service, Visits By Device, Top Pageviews, Pages That Led To Leads, and Recent Lead Paths from the filtered data.
 
 1. Display/print SEO support-page architecture
 - Owner: Phil + Angela + Steve + Jony + Craig + Priya + Marcus + Chris
@@ -108,9 +113,9 @@ Exit criteria:
 
 ## NEXT
 
-1. Add service/page filtering to `/admin/traffic.html`
-2. Validate Stripe webhook with real signed test event
-3. Structured data expansion (`sameAs`, serviceArea, geo, openingHours`)
+1. Validate Stripe webhook with real signed test event
+2. Structured data expansion (`sameAs`, serviceArea, geo, openingHours`)
+3. Replace generated print/display imagery with approved WSDisplay assets when available
 
 ---
 

@@ -84,20 +84,29 @@
 - Verified representative live hero assets returned `200`
 - Verified `/api/traffic` still returns `401` without `ADMIN_API_KEY`
 - Re-ranked the next work toward admin traffic filtering, Stripe webhook signed-event validation, and structured data expansion
+- Team approved the admin traffic filtering scope
+- Added date range, service, page/path, and page-family filters to `/admin/traffic.html`
+- Added visible report sections for Leads By Service and Visits By Device
+- Updated `/api/traffic` so lead/visit filtering happens server-side against existing tracking data
+- Confirmed no new Supabase migration was needed for the admin filtering pass
+- Verified local traffic report changes with:
+  - `node --check netlify/functions/traffic.js`
+  - inline admin script parse
+  - mocked filtered `/api/traffic` response
+  - `git diff --check`
 - Updated `TASKS.md` so the next `NOW` item is reviewing and approving local `step-and-repeat-backdrops.html`
 - Updated `PROJECT.md` so the new architecture doc is discoverable from the main docs list
 - Updated `PROJECT.md` site structure with live `banner-stands.html`, live `custom-table-covers.html`, and local `step-and-repeat-backdrops.html`
 - Updated `SESSION_HANDOFF.md` with the latest Supabase verification and next move
 
 ### ⏳ Pending / In Progress
-- Add service/page filtering to `/admin/traffic.html`
 - Replace generated print/display imagery with approved WSDisplay assets when available
 - Stripe webhook signed-event validation remains deferred from Phase 1
 
 ### 🔜 What To Work On Next
-1. Add service/page filtering to `/admin/traffic.html`
-2. Validate Stripe webhook with a real signed test event
-3. Expand structured data with `sameAs`, service-area detail, geo, and opening hours
+1. Validate Stripe webhook with a real signed test event
+2. Expand structured data with `sameAs`, service-area detail, geo, and opening hours
+3. Replace generated print/display imagery with approved WSDisplay assets when available
 
 ---
 
