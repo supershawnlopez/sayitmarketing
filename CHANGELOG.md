@@ -56,20 +56,31 @@
 - Updated `trade-show-displays.html` so the Backdrops card links to `step-and-repeat-backdrops.html`
 - Added `step-and-repeat-backdrops.html` to `sitemap.xml`
 - Updated the quote form context so `item=backdrops` displays `Step And Repeat Backdrops Quote`
+- Shawn approved `step-and-repeat-backdrops.html` from live review
+- Pushed commit `4abbc9b Add step and repeat backdrops page` to `origin/main`
+- Verified live `https://sayitmarketing.com/step-and-repeat-backdrops.html` and clean URL `https://sayitmarketing.com/step-and-repeat-backdrops` returned `200`
+- Verified live backdrop image assets returned `200`
+- Added local `custom-canopy-tents.html` as the fourth product-specific print/display SEO support page
+- Generated and compressed two local canopy-specific images:
+  - `assets/canopy-tents-hero.jpg`
+  - `assets/canopy-tents-detail.jpg`
+- Updated `trade-show-displays.html` so the Canopy Tents card links to `custom-canopy-tents.html`
+- Added `custom-canopy-tents.html` to `sitemap.xml`
+- Updated the quote form context so `item=canopy-tents` displays `Custom Canopy Tents Quote`
 - Updated `TASKS.md` so the next `NOW` item is reviewing and approving local `step-and-repeat-backdrops.html`
 - Updated `PROJECT.md` so the new architecture doc is discoverable from the main docs list
 - Updated `PROJECT.md` site structure with live `banner-stands.html`, live `custom-table-covers.html`, and local `step-and-repeat-backdrops.html`
 - Updated `SESSION_HANDOFF.md` with the latest Supabase verification and next move
 
 ### ⏳ Pending / In Progress
-- Review and approve local `step-and-repeat-backdrops.html` before push
+- Review and approve local `custom-canopy-tents.html` before push
 - Replace generated print/display imagery with approved WSDisplay assets when available
 - Stripe webhook signed-event validation remains deferred from Phase 1
 
 ### 🔜 What To Work On Next
-1. Review local `step-and-repeat-backdrops.html`
-2. Push the backdrop page after Shawn approval
-3. Build `custom-canopy-tents.html` next using the approved page pattern
+1. Review local `custom-canopy-tents.html`
+2. Push the canopy page after Shawn approval
+3. Build `trade-show-booth-displays.html` next using the approved page pattern
 
 ---
 

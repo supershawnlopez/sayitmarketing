@@ -50,9 +50,18 @@ Latest continuation:
 - Updated `trade-show-displays.html` so the Backdrops card links to `step-and-repeat-backdrops.html`.
 - Added `step-and-repeat-backdrops.html` to `sitemap.xml`.
 - Updated `assets/lead-form.js` so `item=backdrops` displays `Step And Repeat Backdrops Quote`.
-- Updated `PROJECT.md` with the live banner stands and table covers pages.
-- Updated `PROJECT.md` with the local step and repeat backdrops page.
-- Updated `TASKS.md` so the backdrop page is ready for Shawn review and `custom-canopy-tents.html` is queued next.
+- Shawn approved `step-and-repeat-backdrops.html` from live review.
+- Pushed commit `4abbc9b Add step and repeat backdrops page` to `origin/main`.
+- Verified live page after Netlify deploy: `https://sayitmarketing.com/step-and-repeat-backdrops.html` returned `200`.
+- Verified clean Netlify URL: `https://sayitmarketing.com/step-and-repeat-backdrops` returned `200`.
+- Verified live backdrop image assets returned `200`: `assets/backdrops-hero.jpg` and `assets/backdrops-detail.jpg`.
+- Added `custom-canopy-tents.html` locally as the fourth product-specific print/display SEO support page.
+- Generated and compressed two local canopy-specific images: `assets/canopy-tents-hero.jpg` and `assets/canopy-tents-detail.jpg`.
+- Updated `trade-show-displays.html` so the Canopy Tents card links to `custom-canopy-tents.html`.
+- Added `custom-canopy-tents.html` to `sitemap.xml`.
+- Updated `assets/lead-form.js` so `item=canopy-tents` displays `Custom Canopy Tents Quote`.
+- Updated `PROJECT.md` with live banner stands, table covers, backdrops, and local canopy tents page.
+- Updated `TASKS.md` so the canopy page is ready for Shawn review and `trade-show-booth-displays.html` is queued next.
 
 Important Supabase access note:
 - Fresh Codex sessions can now use the Supabase connector for Say It.
@@ -111,7 +120,8 @@ Team recommendation already discussed:
    - Screenshot polish fixed the desktop process row alignment and added clickable-row chevrons to the FAQ.
    - Banner stands live deploy verified after GitHub push.
    - `custom-table-covers.html` was pushed and live-verified.
-   - `step-and-repeat-backdrops.html` is built locally and ready for Shawn review before push.
+   - `step-and-repeat-backdrops.html` was pushed and live-verified.
+   - `custom-canopy-tents.html` is built locally and ready for Shawn review before push.
 
 3. **WSDisplay-approved image replacement**
    - Current print hero/panel images are local generated placeholders: `assets/print-hero-premium.jpg` and `assets/print-display-booth.jpg`.
@@ -157,7 +167,9 @@ When reviewing print/display pages:
 10. On iPad Pro/tablet width, confirm the "Before Ordering" spotlight uses the horizontal image/copy layout, keeps the buttons visible without a long scroll, and does not let the image cover the text. The media should stay inside the capped left column.
 11. From `step-and-repeat-backdrops.html`, tap `Request A Backdrop Quote` and confirm the quote page headline/form header says `Step And Repeat Backdrops Quote`.
 12. Tap `Text Details` on the backdrop quote page and confirm the SMS draft says Say It and names a step and repeat backdrop.
-13. Search the pages for obvious print/display terms and make sure the copy sounds human.
+13. From `custom-canopy-tents.html`, tap `Request A Canopy Tent Quote` and confirm the quote page headline/form header says `Custom Canopy Tents Quote`.
+14. Tap `Text Details` on the canopy quote page and confirm the SMS draft says Say It and names a custom canopy tent.
+15. Search the pages for obvious print/display terms and make sure the copy sounds human.
 
 When reviewing the three-pillar pass:
 
@@ -181,7 +193,7 @@ When reviewing tracking:
 
 ## Next Best Move
 
-Review local `step-and-repeat-backdrops.html`; after Shawn approval, push it live and then start `custom-canopy-tents.html`.
+Review local `custom-canopy-tents.html`; after Shawn approval, push it live and then start `trade-show-booth-displays.html`.
 
 Suggested prompt for the next task:
 
@@ -190,7 +202,7 @@ We are working in C:\Users\SuperShawn\Documents\GitHub\sayitmarketing.
 
 Read BRIEF.md, AGENTS.md, TASKS.md, and SESSION_HANDOFF.md.
 
-Review local `step-and-repeat-backdrops.html`. If Shawn approves it, push it live and then start `custom-canopy-tents.html` using `docs/print-display-seo-support-pages.md` and the approved support-page pattern.
+Review local `custom-canopy-tents.html`. If Shawn approves it, push it live and then start `trade-show-booth-displays.html` using `docs/print-display-seo-support-pages.md` and the approved support-page pattern.
 ```
 
-The display hub, print page upgrade, three-pillar architecture pass, OG/icon work, traffic-tracking backend, first display/print support-page architecture, live `banner-stands.html` page, and live `custom-table-covers.html` page are complete. Local `step-and-repeat-backdrops.html` is ready for Shawn review. The next growth task after approval is `custom-canopy-tents.html`.
+The display hub, print page upgrade, three-pillar architecture pass, OG/icon work, traffic-tracking backend, first display/print support-page architecture, live `banner-stands.html`, live `custom-table-covers.html`, and live `step-and-repeat-backdrops.html` pages are complete. Local `custom-canopy-tents.html` is ready for Shawn review. The next growth task after approval is `trade-show-booth-displays.html`.

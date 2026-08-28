@@ -37,13 +37,18 @@ Exit criteria:
 
 1. Build next display/print SEO support page
 - Owner: Phil + Angela + Marcus + Chris
-- Status: Local build ready for Shawn review
-- Notes: Built `step-and-repeat-backdrops.html` locally using the approved support-page pattern: product-specific hero, backdrop-specific imagery, practical use cases, controlled horizontal spotlight layout, mid-page CTA, centered process cards, FAQ rows with chevrons, tracking script, quote link context, display hub link, and sitemap entry.
+- Status: Done and live-verified (August 28, 2026)
+- Notes: Built and pushed `step-and-repeat-backdrops.html` using the approved support-page pattern. Live page, clean URL, and image assets returned `200`.
 
 2. Build next display/print SEO support page after backdrop review
 - Owner: Phil + Angela + Marcus + Chris
+- Status: Local build ready for Shawn review
+- Notes: Built `custom-canopy-tents.html` locally using the approved support-page pattern: product-specific hero, canopy-specific imagery, practical use cases, controlled horizontal spotlight layout, mid-page CTA, centered process cards, FAQ rows with chevrons, tracking script, quote link context, display hub link, and sitemap entry.
+
+3. Build final first-cluster display/print SEO support page
+- Owner: Phil + Angela + Marcus + Chris
 - Status: Queued
-- Notes: Build `custom-canopy-tents.html` next after Shawn approves and pushes the backdrop page.
+- Notes: Build `trade-show-booth-displays.html` next after Shawn approves and pushes the canopy page.
 
 ---
 
@@ -66,8 +71,13 @@ Exit criteria:
 
 4. Third display/print SEO support page build
 - Owner: Phil + Angela + Marcus + Chris
+- Status: Done and live-verified (August 28, 2026)
+- Notes: Added `step-and-repeat-backdrops.html`, compressed local backdrop imagery, product-specific quote context, sitemap entry, and display hub link from `trade-show-displays.html`. Shawn approved, page was pushed, and live page/assets returned `200`.
+
+5. Fourth display/print SEO support page build
+- Owner: Phil + Angela + Marcus + Chris
 - Status: Built locally for Shawn review (August 28, 2026)
-- Notes: Added `step-and-repeat-backdrops.html`, compressed local backdrop imagery, product-specific quote context, sitemap entry, and display hub link from `trade-show-displays.html`. Pending Shawn review before push.
+- Notes: Added `custom-canopy-tents.html`, compressed local canopy imagery, product-specific quote context, sitemap entry, and display hub link from `trade-show-displays.html`. Pending Shawn review before push.
 
 1. Three pillar architecture pass
 - Owner: Steve + Jony + Phil + Angela + Marcus

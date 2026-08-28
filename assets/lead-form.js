@@ -97,8 +97,8 @@
         sms: "Hi Say It, I am interested in a step and repeat backdrop. Please text me back with pricing and next steps."
       },
       "canopy-tents": {
-        title: "Canopy Tents Quote",
-        sms: "Hi Say It, I am interested in custom canopy tents. Please text me back with pricing and next steps."
+        title: "Custom Canopy Tents Quote",
+        sms: "Hi Say It, I am interested in a custom canopy tent. Please text me back with pricing and next steps."
       },
       "booth-kits": {
         title: "Booth Kits Quote",
