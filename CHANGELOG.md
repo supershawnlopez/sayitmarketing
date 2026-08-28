@@ -48,6 +48,7 @@
 - Verified the new support pages and display hub have valid JSON-LD and no missing local links
 - Fixed the tablet-width spotlight layout on `custom-table-covers.html` and `banner-stands.html` so the product image stacks above the "Before Ordering" copy instead of overlapping it
 - Follow-up correction after iPad Pro review: restored the horizontal support-page spotlight on tablet/desktop, capped the media height, and kept stacking only for smaller screens
+- Final spotlight containment fix: reset the `figure` margin, capped the left media column at `34rem`, and explicitly assigned media/copy grid columns so the image cannot overlap the text
 - Updated `TASKS.md` so the next `NOW` item is reviewing and approving local `custom-table-covers.html`
 - Updated `PROJECT.md` so the new architecture doc is discoverable from the main docs list
 - Updated `PROJECT.md` site structure with live `banner-stands.html` and local `custom-table-covers.html`

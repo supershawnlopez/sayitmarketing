@@ -57,7 +57,7 @@ Exit criteria:
 3. Second display/print SEO support page build
 - Owner: Phil + Angela + Marcus + Chris
 - Status: Done and live-verified (August 28, 2026)
-- Notes: Added `custom-table-covers.html`, compressed local table cover imagery, sitemap entry, and hub links from `trade-show-displays.html`. Live page and clean URL returned `200`. Spotlight layout was restored to a controlled horizontal layout on tablet/desktop with capped media height and mobile-only stacking.
+- Notes: Added `custom-table-covers.html`, compressed local table cover imagery, sitemap entry, and hub links from `trade-show-displays.html`. Live page and clean URL returned `200`. Spotlight layout now uses explicit left/right columns, a capped media column, reset `figure` margins, and mobile-only stacking.
 
 1. Three pillar architecture pass
 - Owner: Steve + Jony + Phil + Angela + Marcus
