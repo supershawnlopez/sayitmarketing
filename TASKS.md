@@ -28,19 +28,14 @@ Exit criteria:
 1. Homepage, nav, and quote path clearly reflect Websites / Apps / Print & Displays
 2. Say It branded trade show display hub is live-ready and linked from print services
 3. Display/print SEO page plan is defined with first support pages queued
-4. Session/UTM/referral tracking implementation is scoped for the static Netlify/Supabase stack
-5. Admin traffic report spec mirrors the useful Blue Luna report: leads by channel, pages that led to leads, and top lead paths
+4. Session/UTM/referral tracking is live on the static Netlify/Supabase stack
+5. Admin traffic report mirrors the useful Blue Luna report: leads by channel, pages that led to leads, and top lead paths
 
 ---
 
 ## NOW (MAX 3)
 
-1. Scope Blue Luna-style tracking/reporting for Say It
-- Owner: Priya + Craig + Phil
-- Status: Implemented in repo; pending Say It Supabase migration application and live verification
-- Notes: Added `site_visits`, `lead_page_paths`, `/api/track`, `/api/traffic`, `assets/visit-tracker.js`, UTM/session preservation, `heard_about_us` form field, path snapshotting, and `/admin/traffic.html`. Pushed in commit `7ba4a64`. Live homepage includes the tracker, `/admin/traffic.html` returns 200, `/api/traffic` rejects unauthenticated requests correctly, and `/api/track` returns `stored:false` until the Say It Supabase migration is applied. Supabase CLI currently exposes only the SPA MAMBO project, so the Say It tracking migration was not applied remotely.
-
-2. Define first display/print SEO support pages
+1. Define first display/print SEO support pages
 - Owner: Phil + Angela
 - Status: Ready for content architecture
 - Notes: Candidate pages should use exact buyer terms: `banner-stands.html`, `custom-table-covers.html`, `custom-canopy-tents.html`, `step-and-repeat-backdrops.html`, `trade-show-booth-displays.html`.
@@ -54,12 +49,17 @@ Exit criteria:
 - Status: Done and visually approved (August 27, 2026)
 - Notes: Homepage OG/meta, hero, first service tiles, public nav, `custom-apps.html`, sitemap, quote context, and refreshed share card/icon system now support `Websites`, `Apps`, and `Print & Displays`.
 
-2. Refresh homepage share card and site icons
+2. Blue Luna-style tracking/reporting for Say It
+- Owner: Priya + Craig + Phil
+- Status: Done and live-verified (August 28, 2026)
+- Notes: Added `site_visits`, `lead_page_paths`, `/api/track`, `/api/traffic`, `assets/visit-tracker.js`, UTM/session preservation, `heard_about_us` form field, path snapshotting, and `/admin/traffic.html`. Applied live to Supabase organization `SAYIT` (`cvwuerqyenegvjynczww`), project `website` (`hclptwixokdjtvtdgyfw`) with migrations `005_tracking_reporting` and `tracking_reporting_indexes`. Pushed follow-up commit `ccfe11f`. Live `/api/track` returned `stored:true`; `/api/traffic` correctly rejects unauthenticated requests. Use a fresh Supabase-connected task for future database changes because this long-running session has stale connector access.
+
+3. Refresh homepage share card and site icons
 - Owner: Steve + Jony + Phil + Craig
 - Status: Done and pushed (August 27, 2026)
 - Notes: Replaced the homepage OG image with a premium three-pillar visual composition, kept the OG image copy to `Look ready everywhere.`, removed duplicate domain/icon clutter inside the image, and replaced favicon/apple-touch/manifest icons with the approved Fav1 blue message-bubble icon.
 
-3. Build Say It branded Trade Show Displays hub
+4. Build Say It branded Trade Show Displays hub
 - Owner: Steve + Jony + Phil + Angela + Marcus
 - Status: Done and linked (August 27, 2026)
 - Notes: Created `trade-show-displays.html`, linked from `print-services.html`, added sitemap entry, used ExhibitBook as secondary catalog link, routed quote interest through Say It, exposed the print/display branch in the main navigation as `Print & Displays`, and upgraded the main print page hero/category panels after Shawn's review.
@@ -68,8 +68,8 @@ Exit criteria:
 
 ## NEXT
 
-1. Apply `supabase/migrations/005_tracking_reporting.sql` to the correct Say It Supabase project
-2. Live-test `/api/track`, `/api/traffic`, `/admin/traffic.html`, and a form submission after the migration is applied
+1. Create architecture/copy plan for first display/print SEO support pages
+2. Build the first approved support page after team review and Shawn approval
 3. Validate Stripe webhook with real signed test event — deferred from Phase 1
 
 ---

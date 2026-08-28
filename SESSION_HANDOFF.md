@@ -1,6 +1,6 @@
 # SESSION_HANDOFF.md — Say It Marketing
 ### Current truth for the next AI session
-*Last updated: August 27, 2026*
+*Last updated: August 28, 2026*
 
 ---
 
@@ -14,7 +14,12 @@ Shawn wants Say It Marketing to catch up to the operating style used on Found an
 - decision records
 - Apple-style team review before product, design, copy, architecture, or tracking changes
 
-This session created the missing handoff/decision docs, updated the active task board, built the first approved Trade Show Displays hub, made the print/display path visible from the main site navigation, upgraded the main print page hero/panels after Shawn's review, made print category quote links feel context-aware on the quote page, and completed the approved three-pillar homepage/nav pass around custom websites, custom apps, and print/displays.
+This session created the missing handoff/decision docs, updated the active task board, built the first approved Trade Show Displays hub, made the print/display path visible from the main site navigation, upgraded the main print page hero/panels after Shawn's review, made print category quote links feel context-aware on the quote page, completed the approved three-pillar homepage/nav pass around custom websites, custom apps, and print/displays, and completed the first Say It traffic-tracking backend setup.
+
+Important session-access note:
+- This long-running Codex session does not have refreshed Supabase connector access. Its Supabase tool call returns `Unknown tool`.
+- A separate fresh Codex task successfully connected to Supabase organization `SAYIT` (`cvwuerqyenegvjynczww`) and project `website` (`hclptwixokdjtvtdgyfw`).
+- Future Supabase work should continue in the fresh Supabase-connected task, or in a new task that first confirms it can see `SAYIT -> website`.
 
 ---
 
@@ -65,11 +70,15 @@ Team recommendation already discussed:
    - Replace them with approved supplier/product images once Shawn provides downloaded ZIP folders or exact files.
 
 4. **Blue Luna-style tracking**
-   - Implemented in repo: `assets/visit-tracker.js`, `/api/track`, `/api/traffic`, `/admin/traffic.html`, `site_visits`, `lead_page_paths`, preserved UTM/session fields, and `heard_about_us` on the quote/audit forms.
-   - `lead-create.js` snapshots page paths into `lead_page_paths` when the tracking schema exists and falls back safely if the migration has not been applied yet.
-   - Supabase migration file: `supabase/migrations/005_tracking_reporting.sql`.
-   - Remote migration not applied yet because the local Supabase CLI only listed the `SPA MAMBO` project, not a Say It project. Do not apply this migration to SPA MAMBO.
-   - Live verification after commit `7ba4a64`: homepage includes `assets/visit-tracker.js`, `/admin/traffic.html` returns 200, `/api/traffic` returns 401 without the admin key, and `/api/track` returns `202 {"accepted":true,"stored":false}` until the correct Say It Supabase schema is available.
+   - Implemented in repo and applied live: `assets/visit-tracker.js`, `/api/track`, `/api/traffic`, `/admin/traffic.html`, `site_visits`, `lead_page_paths`, preserved UTM/session fields, and `heard_about_us` on the quote/audit forms.
+   - `lead-create.js` snapshots page paths into `lead_page_paths` and falls back safely if a future environment is missing the tracking schema.
+   - Supabase project: organization `SAYIT` (`cvwuerqyenegvjynczww`), project `website` (`hclptwixokdjtvtdgyfw`), status reported as `ACTIVE_HEALTHY`, Postgres `17.6`.
+   - Applied migrations on live Supabase: `005_tracking_reporting` and `tracking_reporting_indexes`.
+   - Repo migration files: `supabase/migrations/005_tracking_reporting.sql` and `supabase/migrations/20260828064426_tracking_reporting_indexes.sql`.
+   - Follow-up commit pushed: `ccfe11f Add tracking reporting index migration`.
+   - Live verification after Supabase setup: `/api/track` returns `201 {"id":3,"stored":true}`.
+   - `/api/traffic` correctly returns `401 Unauthorized` without the admin key.
+   - Current long-running session cannot directly inspect Supabase anymore because its connector session is stale; use a fresh Supabase-connected task for database changes.
 
 5. **Existing critical item**
    - Stripe webhook signed-event validation is still deferred from earlier sessions.
@@ -105,19 +114,32 @@ When reviewing the three-pillar pass:
 6. Tap `Start An App Quote` and confirm the quote page headline says `Custom App Quote`.
 7. Tap a website quote link and confirm the quote page headline says `Custom Website Quote`.
 
-When tracking is deployed:
+When reviewing tracking:
 
 1. Open a tagged test link.
 2. Submit a test lead.
 3. Confirm `/admin/traffic.html` shows the right source and page path.
 4. Confirm `/admin/leads.html` shows the lead's service and source.
+5. If Supabase access is needed, first confirm the connector can list `SAYIT -> website` (`hclptwixokdjtvtdgyfw`).
 
 ---
 
 ## Next Best Move
 
-Start with the remaining tracking deployment dependency:
+Continue from the Supabase-connected task, not this stale connector session.
 
-**Apply `supabase/migrations/005_tracking_reporting.sql` to the correct Say It Supabase project, then live-test `/api/track`, `/api/traffic`, `/admin/traffic.html`, and a real form submission.**
+Suggested prompt for the next task:
 
-The display hub, print page upgrade, three-pillar architecture pass, and tracking code are repo-ready. The full traffic report needs the correct Supabase project schema applied before it can collect visit/path data.
+```text
+We are working in C:\Users\SuperShawn\Documents\GitHub\sayitmarketing.
+
+Read BRIEF.md, AGENTS.md, TASKS.md, and SESSION_HANDOFF.md.
+
+Use the Supabase connector and confirm access to organization SAYIT (`cvwuerqyenegvjynczww`) and project `website` (`hclptwixokdjtvtdgyfw`).
+
+Traffic tracking has already been applied live with migrations `005_tracking_reporting` and `tracking_reporting_indexes`. Repo commit `ccfe11f` pushed the follow-up index migration.
+
+Verify live tracking still returns `stored:true`, then continue with the next open Say It item from TASKS.md. Follow the Say It team rules in AGENTS.md before product/design/copy/backend decisions.
+```
+
+The display hub, print page upgrade, three-pillar architecture pass, OG/icon work, and traffic-tracking backend are complete. The next open growth task is the first display/print SEO support-page architecture.
