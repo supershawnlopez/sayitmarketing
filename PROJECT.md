@@ -91,6 +91,7 @@ Light Gray:     #F3F4F4  — Card backgrounds, subtle dividers
 | `thank-you.html` | Post-form submission confirmation | Live |
 | `advertising-management.html` | Paid ad management — Google + Social interactive selector, pricing, lead form | Live |
 | `trade-show-displays.html` | Trade show displays hub — Say It branded WSDisplay/ExhibitBook reseller path | Live |
+| `banner-stands.html` | Banner stands SEO support page — product-specific print/display quote path | Approved / deploying |
 | `proposals/dogandcat.html` | Client proposal — Eimy Martinez, Dog & Cat Groomer | Live |
 
 **Assets:**
@@ -116,6 +117,7 @@ Light Gray:     #F3F4F4  — Card backgrounds, subtle dividers
 - `DECISIONS.md` — Approved product/business/data decisions
 - `DESIGN_DECISIONS.md` — Approved visual/UX decisions
 - `docs/seo-delivery-sop.md` — Local SEO service delivery playbook
+- `docs/print-display-seo-support-pages.md` — First print/display SEO support-page architecture
 - `docs/30-day-execution-plan.md` — 30-day launch plan
 - `docs/stripe-placeholder-setup.md` — Stripe product setup guide
 - `docs/system-architecture.md` — Full technical architecture

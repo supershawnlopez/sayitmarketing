@@ -16,10 +16,26 @@ Shawn wants Say It Marketing to catch up to the operating style used on Found an
 
 This session created the missing handoff/decision docs, updated the active task board, built the first approved Trade Show Displays hub, made the print/display path visible from the main site navigation, upgraded the main print page hero/panels after Shawn's review, made print category quote links feel context-aware on the quote page, completed the approved three-pillar homepage/nav pass around custom websites, custom apps, and print/displays, and completed the first Say It traffic-tracking backend setup.
 
-Important session-access note:
-- This long-running Codex session does not have refreshed Supabase connector access. Its Supabase tool call returns `Unknown tool`.
-- A separate fresh Codex task successfully connected to Supabase organization `SAYIT` (`cvwuerqyenegvjynczww`) and project `website` (`hclptwixokdjtvtdgyfw`).
-- Future Supabase work should continue in the fresh Supabase-connected task, or in a new task that first confirms it can see `SAYIT -> website`.
+Latest continuation:
+- Pulled latest `main`; repo was already current at `52c78cf`.
+- Fresh Supabase connector access is working.
+- Confirmed Supabase organization `SAYIT` (`cvwuerqyenegvjynczww`) and project `website` (`hclptwixokdjtvtdgyfw`) are visible.
+- Confirmed live migrations `005_tracking_reporting` and `tracking_reporting_indexes` are present.
+- Verified live `/api/track` still stores events: `201 {"id":6,"stored":true}`.
+- Added `docs/print-display-seo-support-pages.md` to define the first print/display SEO support-page cluster.
+- Added `banner-stands.html` as the first product-specific print/display SEO support page.
+- Added `banner-stands.html` to `sitemap.xml`.
+- Replaced the original generic event-room imagery on `banner-stands.html` with two local banner-stand-specific compressed assets: `assets/banner-stands-hero.jpg` and `assets/banner-stands-booth.jpg`.
+- Polished `banner-stands.html` after Shawn's desktop review: added action buttons to the "Before Ordering" section, centered the "How Say It Helps" process cards on desktop, and changed "Buying Help" into a clearer FAQ section for human readers and SEO/AEO support.
+- Polished `banner-stands.html` after Shawn's screenshot review: fixed the full process-card row centering and added CSS chevrons to FAQ rows so they read as clickable.
+- Shawn approved the local `banner-stands.html` page and asked Codex to push it.
+- Updated `PROJECT.md` with the local banner stands page.
+- Updated `TASKS.md` so the next `NOW` item is building `custom-table-covers.html` after the banner stands deploy is verified.
+
+Important Supabase access note:
+- Fresh Codex sessions can now use the Supabase connector for Say It.
+- This session successfully connected to Supabase organization `SAYIT` (`cvwuerqyenegvjynczww`) and project `website` (`hclptwixokdjtvtdgyfw`).
+- Future Supabase work should still begin by confirming it can see `SAYIT -> website` before making database changes.
 
 ---
 
@@ -64,6 +80,14 @@ Team recommendation already discussed:
 2. **Display/print SEO support pages**
    - Candidate pages: banner stands, table covers, canopy tents, step-and-repeat backdrops, trade show booths.
    - Each page should answer buyer questions and route to one quote CTA.
+   - Architecture is now defined in `docs/print-display-seo-support-pages.md`.
+   - Recommended build order: `banner-stands.html`, `custom-table-covers.html`, `step-and-repeat-backdrops.html`, `custom-canopy-tents.html`, `trade-show-booth-displays.html`.
+   - First page built locally: `banner-stands.html`.
+   - Banner stands page imagery now shows actual retractable banner stands instead of generic event-room stock photos.
+   - Latest polish adds the missing CTA in the mid-page guidance block and presents buying questions as an FAQ.
+   - Screenshot polish fixed the desktop process row alignment and added clickable-row chevrons to the FAQ.
+   - Shawn approved the page and requested push.
+   - Pending: live Netlify deploy verification after GitHub push.
 
 3. **WSDisplay-approved image replacement**
    - Current print hero/panel images are local generated placeholders: `assets/print-hero-premium.jpg` and `assets/print-display-booth.jpg`.
@@ -77,6 +101,7 @@ Team recommendation already discussed:
    - Repo migration files: `supabase/migrations/005_tracking_reporting.sql` and `supabase/migrations/20260828064426_tracking_reporting_indexes.sql`.
    - Follow-up commit pushed: `ccfe11f Add tracking reporting index migration`.
    - Live verification after Supabase setup: `/api/track` returns `201 {"id":3,"stored":true}`.
+   - Fresh verification on August 28, 2026: `/api/track` returns `201 {"id":6,"stored":true}`, and the matching `site_visits` row is visible in Supabase.
    - `/api/traffic` correctly returns `401 Unauthorized` without the admin key.
    - Current long-running session cannot directly inspect Supabase anymore because its connector session is stale; use a fresh Supabase-connected task for database changes.
 
@@ -96,13 +121,15 @@ Team recommendation already discussed:
 
 When reviewing print/display pages:
 
-1. Open `print-services.html` and `trade-show-displays.html` on iPhone at 375px width or real phone.
+1. Open `print-services.html`, `trade-show-displays.html`, and local `banner-stands.html` on iPhone at 375px width or real phone.
 2. Confirm both pages feel like Say It, not WSDisplay.
 3. Tap a print category button and confirm the quote page headline/form header says the exact request, such as `Menus & Service Sheets Quote`.
 4. Confirm the print quote page lands at the top, prioritizes `Fill Out Print Quote`, with `Text Details` second and phone as a small link.
 5. Tap `Text Details` from business cards, flyers, menus, and signs contexts and confirm the SMS draft names the matching print item and says Say It, not Found.
 6. Tap `Browse Display Catalog` on the trade show page and confirm it opens the non-branded catalog cleanly.
-7. Search the pages for obvious print/display terms and make sure the copy sounds human.
+7. From `banner-stands.html`, tap `Request A Banner Stand Quote` and confirm the quote page headline/form header says `Banner Stands Quote`.
+8. Tap `Text Details` on the banner stand quote page and confirm the SMS draft says Say It and names banner stands.
+9. Search the pages for obvious print/display terms and make sure the copy sounds human.
 
 When reviewing the three-pillar pass:
 
@@ -126,7 +153,7 @@ When reviewing tracking:
 
 ## Next Best Move
 
-Continue from the Supabase-connected task, not this stale connector session.
+Verify the live `banner-stands.html` Netlify deploy, then start `custom-table-covers.html`.
 
 Suggested prompt for the next task:
 
@@ -135,11 +162,7 @@ We are working in C:\Users\SuperShawn\Documents\GitHub\sayitmarketing.
 
 Read BRIEF.md, AGENTS.md, TASKS.md, and SESSION_HANDOFF.md.
 
-Use the Supabase connector and confirm access to organization SAYIT (`cvwuerqyenegvjynczww`) and project `website` (`hclptwixokdjtvtdgyfw`).
-
-Traffic tracking has already been applied live with migrations `005_tracking_reporting` and `tracking_reporting_indexes`. Repo commit `ccfe11f` pushed the follow-up index migration.
-
-Verify live tracking still returns `stored:true`, then continue with the next open Say It item from TASKS.md. Follow the Say It team rules in AGENTS.md before product/design/copy/backend decisions.
+Verify `https://sayitmarketing.com/banner-stands.html` after Netlify deploy. Then start `custom-table-covers.html` using `docs/print-display-seo-support-pages.md` and the approved banner stands pattern.
 ```
 
-The display hub, print page upgrade, three-pillar architecture pass, OG/icon work, and traffic-tracking backend are complete. The next open growth task is the first display/print SEO support-page architecture.
+The display hub, print page upgrade, three-pillar architecture pass, OG/icon work, traffic-tracking backend, first display/print support-page architecture, and approved local `banner-stands.html` build are complete. The next open growth task is verifying the live banner stands deploy, then building `custom-table-covers.html`.

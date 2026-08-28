@@ -1,3 +1,55 @@
+## Session: August 28, 2026 — Print/Display SEO Support Architecture
+**AI:** Codex (GPT-5)
+**Worked on:** Verified live Supabase tracking, defined the first print/display SEO support-page cluster, and built the banner stands page locally
+
+### ✅ Completed This Session
+- Pulled latest `main`; repo was already current at `52c78cf`
+- Confirmed Supabase connector access to organization `SAYIT` (`cvwuerqyenegvjynczww`) and project `website` (`hclptwixokdjtvtdgyfw`)
+- Confirmed live Supabase migrations are present:
+  - `005_tracking_reporting`
+  - `tracking_reporting_indexes`
+- Verified live `/api/track` still returns `stored:true`: `201 {"id":6,"stored":true}`
+- Confirmed the verification event exists in `public.site_visits`
+- Added `docs/print-display-seo-support-pages.md` with:
+  - first support-page cluster
+  - recommended build order
+  - reusable page structure
+  - quote link rules
+  - SEO target terms
+  - internal linking rules
+  - first-page recommendation
+- Added `banner-stands.html` as the first product-specific print/display SEO support page
+- Added `banner-stands.html` to `sitemap.xml`
+- Replaced generic event-room stock imagery on `banner-stands.html` with two local banner-stand-specific compressed images:
+  - `assets/banner-stands-hero.jpg`
+  - `assets/banner-stands-booth.jpg`
+- Polished `banner-stands.html` after Shawn's desktop review:
+  - added a mid-page CTA in the "Before Ordering" section
+  - centered the "How Say It Helps" process cards on desktop
+  - changed "Buying Help" into a FAQ-style section for reader clarity and SEO/AEO support
+- Polished `banner-stands.html` after Shawn's screenshot review:
+  - fixed the full process-card row centering
+  - added CSS chevrons to FAQ rows so they feel clickable
+- Shawn approved `banner-stands.html` and requested push
+- Verified the new page has valid JSON-LD and no missing local links
+- Updated `TASKS.md` so the next `NOW` item is building `custom-table-covers.html` after live deploy verification
+- Updated `PROJECT.md` so the new architecture doc is discoverable from the main docs list
+- Updated `PROJECT.md` site structure with `banner-stands.html` as built locally
+- Updated `SESSION_HANDOFF.md` with the latest Supabase verification and next move
+
+### ⏳ Pending / In Progress
+- Live Netlify deploy verification for `banner-stands.html`
+- Build `custom-table-covers.html` next if the live banner page checks out
+- Replace generated print/display imagery with approved WSDisplay assets when available
+- Stripe webhook signed-event validation remains deferred from Phase 1
+
+### 🔜 What To Work On Next
+1. Verify `https://sayitmarketing.com/banner-stands.html` after Netlify deploy
+2. Confirm the banner stand quote buttons preserve `Banner Stands Quote` context
+3. Build `custom-table-covers.html` next using the approved page pattern
+
+---
+
 ## Session: August 27, 2026 — Three Pillar Homepage Architecture
 **AI:** Codex (GPT-5)
 **Worked on:** Implemented Shawn-approved Say It positioning around custom websites, custom apps, and print/displays
