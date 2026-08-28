@@ -94,7 +94,8 @@ Light Gray:     #F3F4F4  — Card backgrounds, subtle dividers
 | `banner-stands.html` | Banner stands SEO support page — product-specific print/display quote path | Live |
 | `custom-table-covers.html` | Custom table covers SEO support page — product-specific print/display quote path | Live |
 | `step-and-repeat-backdrops.html` | Step and repeat backdrops SEO support page — product-specific print/display quote path | Live |
-| `custom-canopy-tents.html` | Custom canopy tents SEO support page — product-specific print/display quote path | Local |
+| `custom-canopy-tents.html` | Custom canopy tents SEO support page — product-specific print/display quote path | Live |
+| `trade-show-booth-displays.html` | Trade show booth displays SEO support page — product-specific print/display quote path | Live |
 | `proposals/dogandcat.html` | Client proposal — Eimy Martinez, Dog & Cat Groomer | Live |
 
 **Assets:**

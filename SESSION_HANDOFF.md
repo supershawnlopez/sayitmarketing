@@ -60,8 +60,18 @@ Latest continuation:
 - Updated `trade-show-displays.html` so the Canopy Tents card links to `custom-canopy-tents.html`.
 - Added `custom-canopy-tents.html` to `sitemap.xml`.
 - Updated `assets/lead-form.js` so `item=canopy-tents` displays `Custom Canopy Tents Quote`.
-- Updated `PROJECT.md` with live banner stands, table covers, backdrops, and local canopy tents page.
-- Updated `TASKS.md` so the canopy page is ready for Shawn review and `trade-show-booth-displays.html` is queued next.
+- Shawn approved `custom-canopy-tents.html` from live review.
+- Pushed commit `53b2332 Add custom canopy tents page` to `origin/main`.
+- Verified live page after Netlify deploy: `https://sayitmarketing.com/custom-canopy-tents.html` returned `200`.
+- Verified clean Netlify URL: `https://sayitmarketing.com/custom-canopy-tents` returned `200`.
+- Verified live canopy image assets returned `200`: `assets/canopy-tents-hero.jpg` and `assets/canopy-tents-detail.jpg`.
+- Added `trade-show-booth-displays.html` as the fifth product-specific print/display SEO support page.
+- Generated and compressed two local booth-display-specific images: `assets/booth-displays-hero.jpg` and `assets/booth-displays-detail.jpg`.
+- Updated `trade-show-displays.html` so the Booth Kits card links to `trade-show-booth-displays.html`.
+- Added `trade-show-booth-displays.html` to `sitemap.xml`.
+- Updated `assets/lead-form.js` so `item=booth-kits` displays `Trade Show Booth Displays Quote`.
+- Updated `PROJECT.md` with live banner stands, table covers, backdrops, canopy tents, and booth displays page.
+- Updated `TASKS.md` so the first support-page cluster is complete and Stripe webhook validation is the next engineering item.
 
 Important Supabase access note:
 - Fresh Codex sessions can now use the Supabase connector for Say It.
@@ -121,7 +131,8 @@ Team recommendation already discussed:
    - Banner stands live deploy verified after GitHub push.
    - `custom-table-covers.html` was pushed and live-verified.
    - `step-and-repeat-backdrops.html` was pushed and live-verified.
-   - `custom-canopy-tents.html` is built locally and ready for Shawn review before push.
+   - `custom-canopy-tents.html` was pushed and live-verified.
+   - `trade-show-booth-displays.html` is built and ready for live review after push.
 
 3. **WSDisplay-approved image replacement**
    - Current print hero/panel images are local generated placeholders: `assets/print-hero-premium.jpg` and `assets/print-display-booth.jpg`.
@@ -169,7 +180,9 @@ When reviewing print/display pages:
 12. Tap `Text Details` on the backdrop quote page and confirm the SMS draft says Say It and names a step and repeat backdrop.
 13. From `custom-canopy-tents.html`, tap `Request A Canopy Tent Quote` and confirm the quote page headline/form header says `Custom Canopy Tents Quote`.
 14. Tap `Text Details` on the canopy quote page and confirm the SMS draft says Say It and names a custom canopy tent.
-15. Search the pages for obvious print/display terms and make sure the copy sounds human.
+15. From `trade-show-booth-displays.html`, tap `Request A Booth Kit Quote` and confirm the quote page headline/form header says `Trade Show Booth Displays Quote`.
+16. Tap `Text Details` on the booth quote page and confirm the SMS draft says Say It and names a trade show booth display or booth kit.
+17. Search the pages for obvious print/display terms and make sure the copy sounds human.
 
 When reviewing the three-pillar pass:
 
@@ -193,7 +206,7 @@ When reviewing tracking:
 
 ## Next Best Move
 
-Review local `custom-canopy-tents.html`; after Shawn approval, push it live and then start `trade-show-booth-displays.html`.
+Review live `trade-show-booth-displays.html`; then validate the Stripe webhook with a real signed test event.
 
 Suggested prompt for the next task:
 
@@ -202,7 +215,7 @@ We are working in C:\Users\SuperShawn\Documents\GitHub\sayitmarketing.
 
 Read BRIEF.md, AGENTS.md, TASKS.md, and SESSION_HANDOFF.md.
 
-Review local `custom-canopy-tents.html`. If Shawn approves it, push it live and then start `trade-show-booth-displays.html` using `docs/print-display-seo-support-pages.md` and the approved support-page pattern.
+Review live `trade-show-booth-displays.html`. If Shawn approves it, validate the Stripe webhook with a real signed test event.
 ```
 
-The display hub, print page upgrade, three-pillar architecture pass, OG/icon work, traffic-tracking backend, first display/print support-page architecture, live `banner-stands.html`, live `custom-table-covers.html`, and live `step-and-repeat-backdrops.html` pages are complete. Local `custom-canopy-tents.html` is ready for Shawn review. The next growth task after approval is `trade-show-booth-displays.html`.
+The display hub, print page upgrade, three-pillar architecture pass, OG/icon work, traffic-tracking backend, first display/print support-page architecture, live `banner-stands.html`, live `custom-table-covers.html`, live `step-and-repeat-backdrops.html`, live `custom-canopy-tents.html`, and `trade-show-booth-displays.html` pages are complete. After booth review, validate the Stripe webhook with a real signed test event.

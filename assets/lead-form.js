@@ -101,8 +101,8 @@
         sms: "Hi Say It, I am interested in a custom canopy tent. Please text me back with pricing and next steps."
       },
       "booth-kits": {
-        title: "Booth Kits Quote",
-        sms: "Hi Say It, I am interested in trade show booth kits. Please text me back with pricing and next steps."
+        title: "Trade Show Booth Displays Quote",
+        sms: "Hi Say It, I am interested in a trade show booth display or booth kit. Please text me back with pricing and next steps."
       },
       "flags-signs": {
         title: "Flags & Event Signs Quote",

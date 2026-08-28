@@ -35,20 +35,15 @@ Exit criteria:
 
 ## NOW (MAX 3)
 
-1. Build next display/print SEO support page
+1. Complete first display/print SEO support-page cluster
 - Owner: Phil + Angela + Marcus + Chris
 - Status: Done and live-verified (August 28, 2026)
-- Notes: Built and pushed `step-and-repeat-backdrops.html` using the approved support-page pattern. Live page, clean URL, and image assets returned `200`.
+- Notes: Built the first support-page cluster: `banner-stands.html`, `custom-table-covers.html`, `step-and-repeat-backdrops.html`, `custom-canopy-tents.html`, and `trade-show-booth-displays.html`. All use the approved support-page pattern, product-specific imagery, quote context, tracking script, sitemap entries, and display hub links.
 
-2. Build next display/print SEO support page after backdrop review
-- Owner: Phil + Angela + Marcus + Chris
-- Status: Local build ready for Shawn review
-- Notes: Built `custom-canopy-tents.html` locally using the approved support-page pattern: product-specific hero, canopy-specific imagery, practical use cases, controlled horizontal spotlight layout, mid-page CTA, centered process cards, FAQ rows with chevrons, tracking script, quote link context, display hub link, and sitemap entry.
-
-3. Build final first-cluster display/print SEO support page
-- Owner: Phil + Angela + Marcus + Chris
-- Status: Queued
-- Notes: Build `trade-show-booth-displays.html` next after Shawn approves and pushes the canopy page.
+2. Validate Stripe webhook with real signed test event
+- Owner: Priya + Craig
+- Status: Deferred from Phase 1
+- Notes: Confirm the webhook rejects unsigned/fake payloads and accepts a real signed Stripe test event before relying on payment automation.
 
 ---
 
@@ -76,8 +71,13 @@ Exit criteria:
 
 5. Fourth display/print SEO support page build
 - Owner: Phil + Angela + Marcus + Chris
-- Status: Built locally for Shawn review (August 28, 2026)
-- Notes: Added `custom-canopy-tents.html`, compressed local canopy imagery, product-specific quote context, sitemap entry, and display hub link from `trade-show-displays.html`. Pending Shawn review before push.
+- Status: Done and live-verified (August 28, 2026)
+- Notes: Added `custom-canopy-tents.html`, compressed local canopy imagery, product-specific quote context, sitemap entry, and display hub link from `trade-show-displays.html`. Shawn approved, page was pushed, and live page/assets returned `200`.
+
+6. Fifth display/print SEO support page build
+- Owner: Phil + Angela + Marcus + Chris
+- Status: Built and queued for live review (August 28, 2026)
+- Notes: Added `trade-show-booth-displays.html`, compressed local booth display imagery, product-specific quote context, sitemap entry, and display hub link from `trade-show-displays.html`. Push and live verification are the immediate next step.
 
 1. Three pillar architecture pass
 - Owner: Steve + Jony + Phil + Angela + Marcus
@@ -103,9 +103,9 @@ Exit criteria:
 
 ## NEXT
 
-1. Create architecture/copy plan for first display/print SEO support pages
-2. Build the first approved support page after team review and Shawn approval
-3. Validate Stripe webhook with real signed test event — deferred from Phase 1
+1. Live review `trade-show-booth-displays.html` after push
+2. Replace generated print/display imagery with approved WSDisplay assets when available
+3. Structured data expansion (`sameAs`, serviceArea, geo, openingHours`)
 
 ---
 

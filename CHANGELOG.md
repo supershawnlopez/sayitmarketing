@@ -67,20 +67,31 @@
 - Updated `trade-show-displays.html` so the Canopy Tents card links to `custom-canopy-tents.html`
 - Added `custom-canopy-tents.html` to `sitemap.xml`
 - Updated the quote form context so `item=canopy-tents` displays `Custom Canopy Tents Quote`
+- Shawn approved `custom-canopy-tents.html` from live review
+- Pushed commit `53b2332 Add custom canopy tents page` to `origin/main`
+- Verified live `https://sayitmarketing.com/custom-canopy-tents.html` and clean URL `https://sayitmarketing.com/custom-canopy-tents` returned `200`
+- Verified live canopy image assets returned `200`
+- Added `trade-show-booth-displays.html` as the fifth product-specific print/display SEO support page
+- Generated and compressed two local booth-display-specific images:
+  - `assets/booth-displays-hero.jpg`
+  - `assets/booth-displays-detail.jpg`
+- Updated `trade-show-displays.html` so the Booth Kits card links to `trade-show-booth-displays.html`
+- Added `trade-show-booth-displays.html` to `sitemap.xml`
+- Updated the quote form context so `item=booth-kits` displays `Trade Show Booth Displays Quote`
 - Updated `TASKS.md` so the next `NOW` item is reviewing and approving local `step-and-repeat-backdrops.html`
 - Updated `PROJECT.md` so the new architecture doc is discoverable from the main docs list
 - Updated `PROJECT.md` site structure with live `banner-stands.html`, live `custom-table-covers.html`, and local `step-and-repeat-backdrops.html`
 - Updated `SESSION_HANDOFF.md` with the latest Supabase verification and next move
 
 ### ⏳ Pending / In Progress
-- Review and approve local `custom-canopy-tents.html` before push
+- Review live `trade-show-booth-displays.html`
 - Replace generated print/display imagery with approved WSDisplay assets when available
 - Stripe webhook signed-event validation remains deferred from Phase 1
 
 ### 🔜 What To Work On Next
-1. Review local `custom-canopy-tents.html`
-2. Push the canopy page after Shawn approval
-3. Build `trade-show-booth-displays.html` next using the approved page pattern
+1. Review live `trade-show-booth-displays.html`
+2. Validate Stripe webhook with a real signed test event
+3. Re-rank the next Phase 2 growth item now that the first display support-page cluster is complete
 
 ---
 
