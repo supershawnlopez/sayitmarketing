@@ -29,6 +29,9 @@ Latest continuation:
 - Polished `banner-stands.html` after Shawn's desktop review: added action buttons to the "Before Ordering" section, centered the "How Say It Helps" process cards on desktop, and changed "Buying Help" into a clearer FAQ section for human readers and SEO/AEO support.
 - Polished `banner-stands.html` after Shawn's screenshot review: fixed the full process-card row centering and added CSS chevrons to FAQ rows so they read as clickable.
 - Shawn approved the local `banner-stands.html` page and asked Codex to push it.
+- Pushed commit `070db94 Add banner stands SEO support page` to `origin/main`.
+- Verified live page after Netlify deploy: `https://sayitmarketing.com/banner-stands.html` returned `200`.
+- Verified live banner stand image assets returned `200`: `assets/banner-stands-hero.jpg` and `assets/banner-stands-booth.jpg`.
 - Updated `PROJECT.md` with the local banner stands page.
 - Updated `TASKS.md` so the next `NOW` item is building `custom-table-covers.html` after the banner stands deploy is verified.
 
@@ -87,7 +90,7 @@ Team recommendation already discussed:
    - Latest polish adds the missing CTA in the mid-page guidance block and presents buying questions as an FAQ.
    - Screenshot polish fixed the desktop process row alignment and added clickable-row chevrons to the FAQ.
    - Shawn approved the page and requested push.
-   - Pending: live Netlify deploy verification after GitHub push.
+   - Live deploy verified after GitHub push.
 
 3. **WSDisplay-approved image replacement**
    - Current print hero/panel images are local generated placeholders: `assets/print-hero-premium.jpg` and `assets/print-display-booth.jpg`.
@@ -153,7 +156,7 @@ When reviewing tracking:
 
 ## Next Best Move
 
-Verify the live `banner-stands.html` Netlify deploy, then start `custom-table-covers.html`.
+Start `custom-table-covers.html` using the approved banner stands pattern.
 
 Suggested prompt for the next task:
 
@@ -162,7 +165,7 @@ We are working in C:\Users\SuperShawn\Documents\GitHub\sayitmarketing.
 
 Read BRIEF.md, AGENTS.md, TASKS.md, and SESSION_HANDOFF.md.
 
-Verify `https://sayitmarketing.com/banner-stands.html` after Netlify deploy. Then start `custom-table-covers.html` using `docs/print-display-seo-support-pages.md` and the approved banner stands pattern.
+Start `custom-table-covers.html` using `docs/print-display-seo-support-pages.md` and the approved banner stands pattern.
 ```
 
-The display hub, print page upgrade, three-pillar architecture pass, OG/icon work, traffic-tracking backend, first display/print support-page architecture, and approved local `banner-stands.html` build are complete. The next open growth task is verifying the live banner stands deploy, then building `custom-table-covers.html`.
+The display hub, print page upgrade, three-pillar architecture pass, OG/icon work, traffic-tracking backend, first display/print support-page architecture, and live `banner-stands.html` page are complete. The next open growth task is building `custom-table-covers.html`.

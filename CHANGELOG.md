@@ -31,6 +31,9 @@
   - fixed the full process-card row centering
   - added CSS chevrons to FAQ rows so they feel clickable
 - Shawn approved `banner-stands.html` and requested push
+- Pushed commit `070db94 Add banner stands SEO support page` to `origin/main`
+- Verified live `https://sayitmarketing.com/banner-stands.html` returned `200` after Netlify deploy
+- Verified live banner stand image assets returned `200`
 - Verified the new page has valid JSON-LD and no missing local links
 - Updated `TASKS.md` so the next `NOW` item is building `custom-table-covers.html` after live deploy verification
 - Updated `PROJECT.md` so the new architecture doc is discoverable from the main docs list
@@ -38,15 +41,14 @@
 - Updated `SESSION_HANDOFF.md` with the latest Supabase verification and next move
 
 ### ⏳ Pending / In Progress
-- Live Netlify deploy verification for `banner-stands.html`
-- Build `custom-table-covers.html` next if the live banner page checks out
+- Build `custom-table-covers.html` next using the approved banner page pattern
 - Replace generated print/display imagery with approved WSDisplay assets when available
 - Stripe webhook signed-event validation remains deferred from Phase 1
 
 ### 🔜 What To Work On Next
-1. Verify `https://sayitmarketing.com/banner-stands.html` after Netlify deploy
-2. Confirm the banner stand quote buttons preserve `Banner Stands Quote` context
-3. Build `custom-table-covers.html` next using the approved page pattern
+1. Build `custom-table-covers.html` next using the approved page pattern
+2. Confirm the table cover quote buttons preserve item-specific quote context
+3. Link support pages from the display hub once the cluster has enough child pages
 
 ---
 
