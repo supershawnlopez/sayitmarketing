@@ -46,6 +46,7 @@
 - Verified live table cover image assets returned `200`
 - Verified the live display hub links to `/banner-stands` and `/custom-table-covers`
 - Verified the new support pages and display hub have valid JSON-LD and no missing local links
+- Fixed the tablet-width spotlight layout on `custom-table-covers.html` and `banner-stands.html` so the product image stacks above the "Before Ordering" copy instead of overlapping it
 - Updated `TASKS.md` so the next `NOW` item is reviewing and approving local `custom-table-covers.html`
 - Updated `PROJECT.md` so the new architecture doc is discoverable from the main docs list
 - Updated `PROJECT.md` site structure with live `banner-stands.html` and local `custom-table-covers.html`

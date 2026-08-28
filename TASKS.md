@@ -57,7 +57,7 @@ Exit criteria:
 3. Second display/print SEO support page build
 - Owner: Phil + Angela + Marcus + Chris
 - Status: Done and live-verified (August 28, 2026)
-- Notes: Added `custom-table-covers.html`, compressed local table cover imagery, sitemap entry, and hub links from `trade-show-displays.html`. Live page and clean URL returned `200`.
+- Notes: Added `custom-table-covers.html`, compressed local table cover imagery, sitemap entry, and hub links from `trade-show-displays.html`. Live page and clean URL returned `200`. Tablet-width spotlight layout was corrected so the product image no longer overlaps the "Before Ordering" copy.
 
 1. Three pillar architecture pass
 - Owner: Steve + Jony + Phil + Angela + Marcus
