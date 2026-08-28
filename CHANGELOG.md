@@ -78,20 +78,26 @@
 - Updated `trade-show-displays.html` so the Booth Kits card links to `trade-show-booth-displays.html`
 - Added `trade-show-booth-displays.html` to `sitemap.xml`
 - Updated the quote form context so `item=booth-kits` displays `Trade Show Booth Displays Quote`
+- Shawn approved `trade-show-booth-displays.html` from live review
+- Team review found no required final page design/copy changes for the first display support-page cluster
+- Live smoke test passed for the display hub and all five support pages; each returned `200` and included the tracking script
+- Verified representative live hero assets returned `200`
+- Verified `/api/traffic` still returns `401` without `ADMIN_API_KEY`
+- Re-ranked the next work toward admin traffic filtering, Stripe webhook signed-event validation, and structured data expansion
 - Updated `TASKS.md` so the next `NOW` item is reviewing and approving local `step-and-repeat-backdrops.html`
 - Updated `PROJECT.md` so the new architecture doc is discoverable from the main docs list
 - Updated `PROJECT.md` site structure with live `banner-stands.html`, live `custom-table-covers.html`, and local `step-and-repeat-backdrops.html`
 - Updated `SESSION_HANDOFF.md` with the latest Supabase verification and next move
 
 ### ⏳ Pending / In Progress
-- Review live `trade-show-booth-displays.html`
+- Add service/page filtering to `/admin/traffic.html`
 - Replace generated print/display imagery with approved WSDisplay assets when available
 - Stripe webhook signed-event validation remains deferred from Phase 1
 
 ### 🔜 What To Work On Next
-1. Review live `trade-show-booth-displays.html`
+1. Add service/page filtering to `/admin/traffic.html`
 2. Validate Stripe webhook with a real signed test event
-3. Re-rank the next Phase 2 growth item now that the first display support-page cluster is complete
+3. Expand structured data with `sameAs`, service-area detail, geo, and opening hours
 
 ---
 

@@ -72,6 +72,12 @@ Latest continuation:
 - Updated `assets/lead-form.js` so `item=booth-kits` displays `Trade Show Booth Displays Quote`.
 - Updated `PROJECT.md` with live banner stands, table covers, backdrops, canopy tents, and booth displays page.
 - Updated `TASKS.md` so the first support-page cluster is complete and Stripe webhook validation is the next engineering item.
+- Shawn approved `trade-show-booth-displays.html` from live review.
+- Team review found no required final page design/copy changes for the first display support-page cluster.
+- Live smoke test passed for `trade-show-displays.html`, `banner-stands.html`, `custom-table-covers.html`, `step-and-repeat-backdrops.html`, `custom-canopy-tents.html`, and `trade-show-booth-displays.html`; each returned `200` and included `assets/visit-tracker.js`.
+- Verified representative live hero assets returned `200`.
+- Verified `/api/traffic` still rejects unauthenticated requests with `401`.
+- Re-ranked the next work: add service/page filtering to `/admin/traffic.html`, validate the Stripe webhook with a real signed test event, then expand structured data.
 
 Important Supabase access note:
 - Fresh Codex sessions can now use the Supabase connector for Say It.
@@ -132,7 +138,8 @@ Team recommendation already discussed:
    - `custom-table-covers.html` was pushed and live-verified.
    - `step-and-repeat-backdrops.html` was pushed and live-verified.
    - `custom-canopy-tents.html` was pushed and live-verified.
-   - `trade-show-booth-displays.html` is built and ready for live review after push.
+   - `trade-show-booth-displays.html` was pushed and live-verified.
+   - Team review found no required final design/copy changes to the first support-page cluster.
 
 3. **WSDisplay-approved image replacement**
    - Current print hero/panel images are local generated placeholders: `assets/print-hero-premium.jpg` and `assets/print-display-booth.jpg`.
@@ -206,7 +213,7 @@ When reviewing tracking:
 
 ## Next Best Move
 
-Review live `trade-show-booth-displays.html`; then validate the Stripe webhook with a real signed test event.
+Add service/page filtering to `/admin/traffic.html`; then validate the Stripe webhook with a real signed test event.
 
 Suggested prompt for the next task:
 
@@ -215,7 +222,7 @@ We are working in C:\Users\SuperShawn\Documents\GitHub\sayitmarketing.
 
 Read BRIEF.md, AGENTS.md, TASKS.md, and SESSION_HANDOFF.md.
 
-Review live `trade-show-booth-displays.html`. If Shawn approves it, validate the Stripe webhook with a real signed test event.
+Add service/page filtering to `/admin/traffic.html`, then validate the Stripe webhook with a real signed test event.
 ```
 
-The display hub, print page upgrade, three-pillar architecture pass, OG/icon work, traffic-tracking backend, first display/print support-page architecture, live `banner-stands.html`, live `custom-table-covers.html`, live `step-and-repeat-backdrops.html`, live `custom-canopy-tents.html`, and `trade-show-booth-displays.html` pages are complete. After booth review, validate the Stripe webhook with a real signed test event.
+The display hub, print page upgrade, three-pillar architecture pass, OG/icon work, traffic-tracking backend, first display/print support-page architecture, live `banner-stands.html`, live `custom-table-covers.html`, live `step-and-repeat-backdrops.html`, live `custom-canopy-tents.html`, and live `trade-show-booth-displays.html` pages are complete. Next, add service/page filtering to the admin traffic report, then validate the Stripe webhook with a real signed test event.

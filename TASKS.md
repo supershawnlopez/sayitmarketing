@@ -38,9 +38,14 @@ Exit criteria:
 1. Complete first display/print SEO support-page cluster
 - Owner: Phil + Angela + Marcus + Chris
 - Status: Done and live-verified (August 28, 2026)
-- Notes: Built the first support-page cluster: `banner-stands.html`, `custom-table-covers.html`, `step-and-repeat-backdrops.html`, `custom-canopy-tents.html`, and `trade-show-booth-displays.html`. All use the approved support-page pattern, product-specific imagery, quote context, tracking script, sitemap entries, and display hub links.
+- Notes: Built the first support-page cluster: `banner-stands.html`, `custom-table-covers.html`, `step-and-repeat-backdrops.html`, `custom-canopy-tents.html`, and `trade-show-booth-displays.html`. Shawn reviewed and approved the live pages. All use the approved support-page pattern, product-specific imagery, quote context, tracking script, sitemap entries, and display hub links.
 
-2. Validate Stripe webhook with real signed test event
+2. Add service/page filtering to the admin traffic report
+- Owner: Priya + Angela + Phil
+- Status: Recommended next
+- Notes: Add filters for `service_interest`, `page_path`, and display-page family so Shawn can quickly see which print/display pages are driving leads, not just overall channel/source.
+
+3. Validate Stripe webhook with real signed test event
 - Owner: Priya + Craig
 - Status: Deferred from Phase 1
 - Notes: Confirm the webhook rejects unsigned/fake payloads and accepts a real signed Stripe test event before relying on payment automation.
@@ -76,8 +81,8 @@ Exit criteria:
 
 6. Fifth display/print SEO support page build
 - Owner: Phil + Angela + Marcus + Chris
-- Status: Built and queued for live review (August 28, 2026)
-- Notes: Added `trade-show-booth-displays.html`, compressed local booth display imagery, product-specific quote context, sitemap entry, and display hub link from `trade-show-displays.html`. Push and live verification are the immediate next step.
+- Status: Done and live-verified (August 28, 2026)
+- Notes: Added `trade-show-booth-displays.html`, compressed local booth display imagery, product-specific quote context, sitemap entry, and display hub link from `trade-show-displays.html`. Shawn approved the live page; page, clean URL, assets, tracking, and quote context were verified.
 
 1. Three pillar architecture pass
 - Owner: Steve + Jony + Phil + Angela + Marcus
@@ -103,8 +108,8 @@ Exit criteria:
 
 ## NEXT
 
-1. Live review `trade-show-booth-displays.html` after push
-2. Replace generated print/display imagery with approved WSDisplay assets when available
+1. Add service/page filtering to `/admin/traffic.html`
+2. Validate Stripe webhook with real signed test event
 3. Structured data expansion (`sameAs`, serviceArea, geo, openingHours`)
 
 ---
