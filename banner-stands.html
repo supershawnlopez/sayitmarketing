@@ -113,19 +113,25 @@
     body.page-banner-stands .process-step p {
       margin-inline: auto;
     }
+    body.page-banner-stands .spotlight-card {
+      grid-template-columns: 1fr;
+    }
     body.page-banner-stands .spotlight-card > * {
       min-width: 0;
     }
-    @media (max-width: 80rem) {
-      body.page-banner-stands .spotlight-card {
-        grid-template-columns: 1fr;
-      }
-      body.page-banner-stands .spotlight-copy {
-        padding: 0.35rem 0.25rem 0;
-      }
-      body.page-banner-stands .spotlight-copy h2 {
-        max-width: 18ch;
-      }
+    body.page-banner-stands .spotlight-card .split-media {
+      width: 100%;
+      max-width: 100%;
+      transform: none;
+    }
+    body.page-banner-stands .spotlight-card .split-media:hover {
+      transform: none;
+    }
+    body.page-banner-stands .spotlight-copy {
+      padding: 0.35rem 0.25rem 0;
+    }
+    body.page-banner-stands .spotlight-copy h2 {
+      max-width: 18ch;
     }
     body.page-banner-stands .faq-accordion {
       max-width: 56rem;

@@ -121,19 +121,25 @@
     body.page-table-covers .process-step p {
       margin-inline: auto;
     }
+    body.page-table-covers .spotlight-card {
+      grid-template-columns: 1fr;
+    }
     body.page-table-covers .spotlight-card > * {
       min-width: 0;
     }
-    @media (max-width: 80rem) {
-      body.page-table-covers .spotlight-card {
-        grid-template-columns: 1fr;
-      }
-      body.page-table-covers .spotlight-copy {
-        padding: 0.35rem 0.25rem 0;
-      }
-      body.page-table-covers .spotlight-copy h2 {
-        max-width: 18ch;
-      }
+    body.page-table-covers .spotlight-card .split-media {
+      width: 100%;
+      max-width: 100%;
+      transform: none;
+    }
+    body.page-table-covers .spotlight-card .split-media:hover {
+      transform: none;
+    }
+    body.page-table-covers .spotlight-copy {
+      padding: 0.35rem 0.25rem 0;
+    }
+    body.page-table-covers .spotlight-copy h2 {
+      max-width: 18ch;
     }
     body.page-table-covers .faq-accordion {
       max-width: 56rem;
