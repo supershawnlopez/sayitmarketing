@@ -32,8 +32,13 @@ Latest continuation:
 - Pushed commit `070db94 Add banner stands SEO support page` to `origin/main`.
 - Verified live page after Netlify deploy: `https://sayitmarketing.com/banner-stands.html` returned `200`.
 - Verified live banner stand image assets returned `200`: `assets/banner-stands-hero.jpg` and `assets/banner-stands-booth.jpg`.
-- Updated `PROJECT.md` with the local banner stands page.
-- Updated `TASKS.md` so the next `NOW` item is building `custom-table-covers.html` after the banner stands deploy is verified.
+- Added `custom-table-covers.html` locally as the second product-specific print/display SEO support page.
+- Generated and compressed two local table-cover-specific images: `assets/table-covers-hero.jpg` and `assets/table-covers-detail.jpg`.
+- Added `custom-table-covers.html` to `sitemap.xml`.
+- Updated `trade-show-displays.html` so the completed Banner Stands and Table Covers cards link to their support pages.
+- Shawn approved local `custom-table-covers.html` and asked Codex to push it.
+- Updated `PROJECT.md` with the live banner stands page and local table covers page.
+- Updated `TASKS.md` so the next `NOW` item is building `step-and-repeat-backdrops.html` after the table covers deploy is verified.
 
 Important Supabase access note:
 - Fresh Codex sessions can now use the Supabase connector for Say It.
@@ -86,11 +91,13 @@ Team recommendation already discussed:
    - Architecture is now defined in `docs/print-display-seo-support-pages.md`.
    - Recommended build order: `banner-stands.html`, `custom-table-covers.html`, `step-and-repeat-backdrops.html`, `custom-canopy-tents.html`, `trade-show-booth-displays.html`.
    - First page built locally: `banner-stands.html`.
+   - Second page built locally: `custom-table-covers.html`.
    - Banner stands page imagery now shows actual retractable banner stands instead of generic event-room stock photos.
    - Latest polish adds the missing CTA in the mid-page guidance block and presents buying questions as an FAQ.
    - Screenshot polish fixed the desktop process row alignment and added clickable-row chevrons to the FAQ.
-   - Shawn approved the page and requested push.
-   - Live deploy verified after GitHub push.
+   - Banner stands live deploy verified after GitHub push.
+   - Shawn approved `custom-table-covers.html` and requested push.
+   - Pending: live Netlify deploy verification after GitHub push.
 
 3. **WSDisplay-approved image replacement**
    - Current print hero/panel images are local generated placeholders: `assets/print-hero-premium.jpg` and `assets/print-display-booth.jpg`.
@@ -124,15 +131,16 @@ Team recommendation already discussed:
 
 When reviewing print/display pages:
 
-1. Open `print-services.html`, `trade-show-displays.html`, and local `banner-stands.html` on iPhone at 375px width or real phone.
+1. Open `print-services.html`, `trade-show-displays.html`, `banner-stands.html`, and local `custom-table-covers.html` on iPhone at 375px width or real phone.
 2. Confirm both pages feel like Say It, not WSDisplay.
 3. Tap a print category button and confirm the quote page headline/form header says the exact request, such as `Menus & Service Sheets Quote`.
 4. Confirm the print quote page lands at the top, prioritizes `Fill Out Print Quote`, with `Text Details` second and phone as a small link.
 5. Tap `Text Details` from business cards, flyers, menus, and signs contexts and confirm the SMS draft names the matching print item and says Say It, not Found.
 6. Tap `Browse Display Catalog` on the trade show page and confirm it opens the non-branded catalog cleanly.
 7. From `banner-stands.html`, tap `Request A Banner Stand Quote` and confirm the quote page headline/form header says `Banner Stands Quote`.
-8. Tap `Text Details` on the banner stand quote page and confirm the SMS draft says Say It and names banner stands.
-9. Search the pages for obvious print/display terms and make sure the copy sounds human.
+8. From `custom-table-covers.html`, tap `Request A Table Cover Quote` and confirm the quote page headline/form header says `Table Covers Quote`.
+9. Tap `Text Details` on the banner stand and table cover quote pages and confirm the SMS draft says Say It and names the right item.
+10. Search the pages for obvious print/display terms and make sure the copy sounds human.
 
 When reviewing the three-pillar pass:
 
@@ -156,7 +164,7 @@ When reviewing tracking:
 
 ## Next Best Move
 
-Start `custom-table-covers.html` using the approved banner stands pattern.
+Verify the live `custom-table-covers.html` Netlify deploy, then start `step-and-repeat-backdrops.html`.
 
 Suggested prompt for the next task:
 
@@ -165,7 +173,7 @@ We are working in C:\Users\SuperShawn\Documents\GitHub\sayitmarketing.
 
 Read BRIEF.md, AGENTS.md, TASKS.md, and SESSION_HANDOFF.md.
 
-Start `custom-table-covers.html` using `docs/print-display-seo-support-pages.md` and the approved banner stands pattern.
+Verify `https://sayitmarketing.com/custom-table-covers.html` after Netlify deploy. Then start `step-and-repeat-backdrops.html` using `docs/print-display-seo-support-pages.md` and the approved support-page pattern.
 ```
 
-The display hub, print page upgrade, three-pillar architecture pass, OG/icon work, traffic-tracking backend, first display/print support-page architecture, and live `banner-stands.html` page are complete. The next open growth task is building `custom-table-covers.html`.
+The display hub, print page upgrade, three-pillar architecture pass, OG/icon work, traffic-tracking backend, first display/print support-page architecture, live `banner-stands.html` page, and approved local `custom-table-covers.html` build are complete. The next open growth task is verifying the live table covers deploy, then building `step-and-repeat-backdrops.html`.

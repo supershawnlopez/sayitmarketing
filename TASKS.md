@@ -38,7 +38,7 @@ Exit criteria:
 1. Build next display/print SEO support page
 - Owner: Phil + Angela + Marcus + Chris
 - Status: Ready for next page architecture/build
-- Notes: Build `custom-table-covers.html` next using `docs/print-display-seo-support-pages.md`. Follow the approved `banner-stands.html` pattern: product-specific hero, practical use cases, mid-page CTA, centered process cards, FAQ rows with chevrons, tracking script, quote link context, and sitemap entry.
+- Notes: Build `step-and-repeat-backdrops.html` next using `docs/print-display-seo-support-pages.md`. Follow the approved support-page pattern: product-specific hero, practical use cases, mid-page CTA, centered process cards, FAQ rows with chevrons, tracking script, quote link context, and sitemap entry.
 
 ---
 
@@ -53,6 +53,11 @@ Exit criteria:
 - Owner: Phil + Angela + Marcus + Chris
 - Status: Approved by Shawn and pushed (August 28, 2026)
 - Notes: Added `banner-stands.html`, compressed local banner stand imagery, FAQ chevrons, centered process cards, quote CTAs, and sitemap entry. Pending live Netlify deploy verification.
+
+3. Second display/print SEO support page build
+- Owner: Phil + Angela + Marcus + Chris
+- Status: Approved by Shawn and pushed (August 28, 2026)
+- Notes: Added `custom-table-covers.html`, compressed local table cover imagery, sitemap entry, and hub links from `trade-show-displays.html`. Pending live Netlify deploy verification.
 
 1. Three pillar architecture pass
 - Owner: Steve + Jony + Phil + Angela + Marcus
