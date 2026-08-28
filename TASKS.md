@@ -38,7 +38,7 @@ Exit criteria:
 1. Scope Blue Luna-style tracking/reporting for Say It
 - Owner: Priya + Craig + Phil
 - Status: Implemented in repo; pending Say It Supabase migration application and live verification
-- Notes: Added `site_visits`, `lead_page_paths`, `/api/track`, `/api/traffic`, `assets/visit-tracker.js`, UTM/session preservation, `heard_about_us` form field, path snapshotting, and `/admin/traffic.html`. Supabase CLI currently exposes only the SPA MAMBO project, so the Say It tracking migration was not applied remotely.
+- Notes: Added `site_visits`, `lead_page_paths`, `/api/track`, `/api/traffic`, `assets/visit-tracker.js`, UTM/session preservation, `heard_about_us` form field, path snapshotting, and `/admin/traffic.html`. Pushed in commit `7ba4a64`. Live homepage includes the tracker, `/admin/traffic.html` returns 200, `/api/traffic` rejects unauthenticated requests correctly, and `/api/track` returns `stored:false` until the Say It Supabase migration is applied. Supabase CLI currently exposes only the SPA MAMBO project, so the Say It tracking migration was not applied remotely.
 
 2. Define first display/print SEO support pages
 - Owner: Phil + Angela

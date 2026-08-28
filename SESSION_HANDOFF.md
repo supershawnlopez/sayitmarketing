@@ -69,6 +69,7 @@ Team recommendation already discussed:
    - `lead-create.js` snapshots page paths into `lead_page_paths` when the tracking schema exists and falls back safely if the migration has not been applied yet.
    - Supabase migration file: `supabase/migrations/005_tracking_reporting.sql`.
    - Remote migration not applied yet because the local Supabase CLI only listed the `SPA MAMBO` project, not a Say It project. Do not apply this migration to SPA MAMBO.
+   - Live verification after commit `7ba4a64`: homepage includes `assets/visit-tracker.js`, `/admin/traffic.html` returns 200, `/api/traffic` returns 401 without the admin key, and `/api/track` returns `202 {"accepted":true,"stored":false}` until the correct Say It Supabase schema is available.
 
 5. **Existing critical item**
    - Stripe webhook signed-event validation is still deferred from earlier sessions.
