@@ -24,67 +24,157 @@
   <meta name="twitter:image" content="https://sayitmarketing.com/assets/website-card.png">
   <link rel="stylesheet" href="assets/site.css">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "name": "Say It Marketing",
-        "url": "https://sayitmarketing.com/",
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://sayitmarketing.com/#business",
+      "name": "Say It Marketing",
+      "url": "https://sayitmarketing.com/",
+      "logo": "https://sayitmarketing.com/assets/sayit-logo.png",
+      "image": "https://sayitmarketing.com/assets/sayit-og-premium-hero.png",
+      "telephone": "+1-520-222-6308",
+      "email": "hello@sayitmarketing.com",
+      "foundingDate": "1999",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tucson",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tucson"
+        },
+        {
+          "@type": "City",
+          "name": "Phoenix"
+        },
+        {
+          "@type": "State",
+          "name": "Arizona"
+        },
+        {
+          "@type": "Country",
+          "name": "United States"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/sayit.marketing",
+        "https://www.instagram.com/sayit.marketing"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
         "telephone": "+1-520-222-6308",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Tucson",
-          "addressRegion": "AZ",
-          "addressCountry": "US"
-        },
-        "areaServed": ["Arizona", "Tucson AZ", "Phoenix AZ", "United States"],
-        "description": "Website design, digital marketing, print services, and trade show display help for businesses."
-      },
-      {
-        "@type": "Service",
-        "name": "Trade Show Displays",
-        "provider": {
-          "@type": "LocalBusiness",
-          "name": "Say It Marketing",
-          "url": "https://sayitmarketing.com/"
-        },
-        "areaServed": ["Arizona", "Tucson AZ", "Phoenix AZ", "United States"],
-        "serviceType": "Trade show displays, banner stands, table covers, backdrops, canopy tents, and booth kits",
-        "description": "Trade show display planning, graphic design, proofing, production coordination, and delivery for Arizona businesses and nationwide orders."
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What trade show display should a small business start with?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Most small businesses should start with a retractable banner stand, branded table cover, and simple backdrop. It creates a professional booth without overbuying."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can Say It Marketing design the display graphics?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Say It Marketing can help with display layout, graphics, proof review, and production coordination so the final display looks consistent with your brand."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you serve Phoenix and the rest of Arizona?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Say It Marketing is Arizona-based and helps businesses in Tucson, Phoenix, Scottsdale, Mesa, Tempe, Chandler, Gilbert, Glendale, and nationwide."
-            }
-          }
+        "contactType": "sales",
+        "areaServed": "US",
+        "availableLanguage": [
+          "English",
+          "Spanish"
         ]
+      },
+      "knowsAbout": [
+        "custom website design",
+        "custom business apps",
+        "client portals",
+        "internal dashboards",
+        "business printing",
+        "trade show displays",
+        "local SEO",
+        "social media management",
+        "Google Ads management",
+        "website maintenance"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sayitmarketing.com/#website",
+      "url": "https://sayitmarketing.com/",
+      "name": "Say It Marketing",
+      "publisher": {
+        "@id": "https://sayitmarketing.com/#business"
       }
-    ]
-  }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://sayitmarketing.com/trade-show-displays.html#webpage",
+      "url": "https://sayitmarketing.com/trade-show-displays.html",
+      "name": "Trade Show Displays for Arizona Businesses",
+      "description": "Trade show displays for Arizona businesses, including banner stands, table covers, backdrops, canopy tents, booth kits, design, proofing, and nationwide delivery.",
+      "isPartOf": {
+        "@id": "https://sayitmarketing.com/#website"
+      },
+      "about": {
+        "@id": "https://sayitmarketing.com/#business"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://sayitmarketing.com/trade-show-displays.html#service",
+      "name": "Trade Show Displays",
+      "provider": {
+        "@id": "https://sayitmarketing.com/#business"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tucson"
+        },
+        {
+          "@type": "City",
+          "name": "Phoenix"
+        },
+        {
+          "@type": "State",
+          "name": "Arizona"
+        },
+        {
+          "@type": "Country",
+          "name": "United States"
+        }
+      ],
+      "serviceType": "Trade show displays, banner stands, table covers, backdrops, canopy tents, and booth kits",
+      "description": "Trade show display planning, graphic design, proofing, production coordination, and delivery for Arizona businesses and nationwide orders."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What trade show display should a small business start with?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most small businesses should start with a retractable banner stand, branded table cover, and simple backdrop. It creates a professional booth without overbuying."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Say It Marketing design the display graphics?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Say It Marketing can help with display layout, graphics, proof review, and production coordination so the final display looks consistent with your brand."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you serve Phoenix and the rest of Arizona?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Say It Marketing is Arizona-based and helps businesses in Tucson, Phoenix, Scottsdale, Mesa, Tempe, Chandler, Gilbert, Glendale, and nationwide."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
+
   <style>
     body.page-displays .page-hero--dark {
       background:

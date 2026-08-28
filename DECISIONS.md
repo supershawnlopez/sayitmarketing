@@ -88,3 +88,24 @@ Rules:
 - Social media, SEO, ads, hosting, and monthly care are supporting services, not the first decision.
 - Quote links should preserve branch context with `?service=website`, `?service=custom-app`, or `?service=print`.
 - Found remains off the public Say It offer and is only a sister-company fallback after qualification.
+
+---
+
+## 2026-08-28 — Structured Data Fact Safety
+
+**Decision:** Expand Say It structured data only with verified business facts already supported by the repo or Shawn approval.
+
+**Context:** The SEO/AEO/GEO task called for `sameAs`, service-area detail, `geo`, and `openingHours`. The repo confirms Say It's name, phone, email, Tucson/AZ base, nationwide service language, Facebook profile, Instagram profile, founding year, services, and page-level offers. It does not confirm a public street address, public office hours, or exact map coordinates.
+
+**Team call:**
+- Phil: Add structured data that helps search and AI answer engines understand the business and service pages.
+- Craig: Keep JSON-LD consistent across public pages and avoid conflicting page-by-page business identities.
+- Marcus: Apply this only to public sales/service pages, not admin or private proposal pages.
+- Priya: Do not publish unverified hours, street-level location details, or coordinates.
+- Steve: Invisible metadata is fine if it makes the site clearer without adding page clutter.
+
+**Approved direction:**
+- Add consistent `LocalBusiness` / `ProfessionalService`, `WebSite`, `WebPage`, service, offer, and FAQ schema where appropriate.
+- Include verified `sameAs` links for Facebook and Instagram.
+- Use Tucson, Phoenix, Arizona, and United States as structured `areaServed` where appropriate.
+- Do not add `openingHours`, `openingHoursSpecification`, or `geo` until Shawn confirms the exact public hours and coordinates.

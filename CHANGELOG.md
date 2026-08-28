@@ -94,7 +94,16 @@
   - inline admin script parse
   - mocked filtered `/api/traffic` response
   - `git diff --check`
-- Updated `TASKS.md` so the next `NOW` item is reviewing and approving local `step-and-repeat-backdrops.html`
+- Pushed admin traffic filters in commit `0e0860a Add admin traffic report filters`
+- Live `/admin/traffic.html` returned `200` and includes Page Family, Leads By Service, and Visits By Device
+- Live `/api/traffic?days=30&family=display_support` still returns `401` without the admin key
+- Shawn approved deferring Stripe signed-webhook validation for now after team review
+- Live Stripe webhook rejected an unsigned fake payload with `401`
+- Team approved the safe structured-data pass
+- Expanded JSON-LD on 20 public sales/service pages with consistent Say It identity, Facebook/Instagram `sameAs`, Tucson/Phoenix/Arizona/United States service area, `WebSite`, `WebPage`, service, offer, and FAQ schema where appropriate
+- Did not add `openingHours` or `geo` because public hours and exact coordinates are not confirmed in the repo
+- Added `DECISIONS.md` record for structured-data fact safety
+- Verified every updated page has one valid JSON-LD block and no unconfirmed `openingHours` or `geo` fields
 - Updated `PROJECT.md` so the new architecture doc is discoverable from the main docs list
 - Updated `PROJECT.md` site structure with live `banner-stands.html`, live `custom-table-covers.html`, and local `step-and-repeat-backdrops.html`
 - Updated `SESSION_HANDOFF.md` with the latest Supabase verification and next move
@@ -102,11 +111,12 @@
 ### ⏳ Pending / In Progress
 - Replace generated print/display imagery with approved WSDisplay assets when available
 - Stripe webhook signed-event validation remains deferred from Phase 1
+- Structured data expansion is done locally and pending push/live verification
 
 ### 🔜 What To Work On Next
-1. Validate Stripe webhook with a real signed test event
-2. Expand structured data with `sameAs`, service-area detail, geo, and opening hours
-3. Replace generated print/display imagery with approved WSDisplay assets when available
+1. Push and live-verify structured data expansion
+2. Validate Stripe webhook with a real signed test event when Shawn is ready
+3. Confirm public hours/map coordinates before adding `openingHours` or `geo`
 
 ---
 

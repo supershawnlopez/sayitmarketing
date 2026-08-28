@@ -24,75 +24,157 @@
   <meta name="twitter:image" content="https://sayitmarketing.com/assets/website-card.png">
   <link rel="stylesheet" href="assets/site.css">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "name": "Say It Marketing",
-        "url": "https://sayitmarketing.com/",
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://sayitmarketing.com/#business",
+      "name": "Say It Marketing",
+      "url": "https://sayitmarketing.com/",
+      "logo": "https://sayitmarketing.com/assets/sayit-logo.png",
+      "image": "https://sayitmarketing.com/assets/sayit-og-premium-hero.png",
+      "telephone": "+1-520-222-6308",
+      "email": "hello@sayitmarketing.com",
+      "foundingDate": "1999",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tucson",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tucson"
+        },
+        {
+          "@type": "City",
+          "name": "Phoenix"
+        },
+        {
+          "@type": "State",
+          "name": "Arizona"
+        },
+        {
+          "@type": "Country",
+          "name": "United States"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/sayit.marketing",
+        "https://www.instagram.com/sayit.marketing"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
         "telephone": "+1-520-222-6308",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Tucson",
-          "addressRegion": "AZ",
-          "addressCountry": "US"
-        },
-        "areaServed": ["Tucson AZ", "Arizona", "Phoenix AZ", "United States"],
-        "description": "Website design, digital marketing, business printing, and trade show display help for businesses."
-      },
-      {
-        "@type": "Service",
-        "name": "Custom Table Covers",
-        "provider": {
-          "@type": "LocalBusiness",
-          "name": "Say It Marketing",
-          "url": "https://sayitmarketing.com/"
-        },
-        "areaServed": ["Tucson AZ", "Arizona", "Phoenix AZ", "United States"],
-        "serviceType": "Custom table covers, branded table throws, fitted table covers, and printed event table covers",
-        "description": "Custom table cover planning, graphic design support, proofing, production coordination, and delivery for Tucson, Arizona, and nationwide business display orders."
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What are custom table covers used for?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Custom table covers are used for trade show booths, registration tables, markets, check-in areas, lobbies, recruiting events, and branded product displays."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Should I choose a fitted table cover or a table throw?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Fitted covers look tighter and more tailored. Table throws are flexible, simple to set up, and work well when table sizes may vary."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can Say It Marketing help design my table cover?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Say It Marketing can help with table cover layout, logo placement, brand consistency, print-ready artwork, proof review, and ordering."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you offer custom table covers for Tucson and Phoenix businesses?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Say It Marketing helps businesses in Tucson, Phoenix, Arizona, and nationwide with custom table cover quotes and display orders."
-            }
-          }
+        "contactType": "sales",
+        "areaServed": "US",
+        "availableLanguage": [
+          "English",
+          "Spanish"
         ]
+      },
+      "knowsAbout": [
+        "custom website design",
+        "custom business apps",
+        "client portals",
+        "internal dashboards",
+        "business printing",
+        "trade show displays",
+        "local SEO",
+        "social media management",
+        "Google Ads management",
+        "website maintenance"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sayitmarketing.com/#website",
+      "url": "https://sayitmarketing.com/",
+      "name": "Say It Marketing",
+      "publisher": {
+        "@id": "https://sayitmarketing.com/#business"
       }
-    ]
-  }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://sayitmarketing.com/custom-table-covers.html#webpage",
+      "url": "https://sayitmarketing.com/custom-table-covers.html",
+      "name": "Custom Table Covers for Tucson & Arizona",
+      "description": "Custom table cover planning, graphic design support, proofing, production coordination, and delivery for Tucson, Arizona, and nationwide business display orders.",
+      "isPartOf": {
+        "@id": "https://sayitmarketing.com/#website"
+      },
+      "about": {
+        "@id": "https://sayitmarketing.com/#business"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://sayitmarketing.com/custom-table-covers.html#service",
+      "name": "Custom Table Covers",
+      "provider": {
+        "@id": "https://sayitmarketing.com/#business"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tucson"
+        },
+        {
+          "@type": "City",
+          "name": "Phoenix"
+        },
+        {
+          "@type": "State",
+          "name": "Arizona"
+        },
+        {
+          "@type": "Country",
+          "name": "United States"
+        }
+      ],
+      "serviceType": "Custom table covers, branded table throws, fitted covers, and trade show table displays",
+      "description": "Custom table cover planning, graphic design support, proofing, production coordination, and delivery for Tucson, Arizona, and nationwide business display orders."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are custom table covers used for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Custom table covers help check-in tables, trade show booths, storefront events, open houses, and vendor tables look branded and professional."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Say It Marketing help design my table cover?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Say It Marketing can help with table cover layout, logo placement, print-ready artwork, proof review, and ordering."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer custom table covers for Tucson and Phoenix businesses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Say It Marketing helps businesses in Tucson, Phoenix, Arizona, and nationwide with custom table cover quotes and display orders."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
+
   <style>
     body.page-table-covers {
       --page-accent-1: 171 82 35;

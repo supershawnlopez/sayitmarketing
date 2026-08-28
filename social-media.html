@@ -24,20 +24,151 @@
   <meta name="twitter:image" content="https://sayitmarketing.com/assets/website-card.png">
   <link rel="stylesheet" href="assets/site.css">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Social Media Management",
-    "provider": { "@type": "LocalBusiness", "name": "Say It Marketing", "url": "https://sayitmarketing.com" },
-    "description": "Monthly social media management for small businesses. We post for you on Instagram, Facebook, and TikTok.",
-    "areaServed": "Arizona",
-    "offers": [
-      { "@type": "Offer", "name": "Keep It Fresh", "price": "149", "priceCurrency": "USD" },
-      { "@type": "Offer", "name": "Stay Active",   "price": "249", "priceCurrency": "USD" },
-      { "@type": "Offer", "name": "Always On",     "price": "399", "priceCurrency": "USD" }
-    ]
-  }
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://sayitmarketing.com/#business",
+      "name": "Say It Marketing",
+      "url": "https://sayitmarketing.com/",
+      "logo": "https://sayitmarketing.com/assets/sayit-logo.png",
+      "image": "https://sayitmarketing.com/assets/sayit-og-premium-hero.png",
+      "telephone": "+1-520-222-6308",
+      "email": "hello@sayitmarketing.com",
+      "foundingDate": "1999",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tucson",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tucson"
+        },
+        {
+          "@type": "City",
+          "name": "Phoenix"
+        },
+        {
+          "@type": "State",
+          "name": "Arizona"
+        },
+        {
+          "@type": "Country",
+          "name": "United States"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/sayit.marketing",
+        "https://www.instagram.com/sayit.marketing"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-520-222-6308",
+        "contactType": "sales",
+        "areaServed": "US",
+        "availableLanguage": [
+          "English",
+          "Spanish"
+        ]
+      },
+      "knowsAbout": [
+        "custom website design",
+        "custom business apps",
+        "client portals",
+        "internal dashboards",
+        "business printing",
+        "trade show displays",
+        "local SEO",
+        "social media management",
+        "Google Ads management",
+        "website maintenance"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sayitmarketing.com/#website",
+      "url": "https://sayitmarketing.com/",
+      "name": "Say It Marketing",
+      "publisher": {
+        "@id": "https://sayitmarketing.com/#business"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://sayitmarketing.com/social-media.html#webpage",
+      "url": "https://sayitmarketing.com/social-media.html",
+      "name": "Social Media Management",
+      "description": "Monthly social media management for small businesses, including content posted for Instagram, Facebook, and TikTok.",
+      "isPartOf": {
+        "@id": "https://sayitmarketing.com/#website"
+      },
+      "about": {
+        "@id": "https://sayitmarketing.com/#business"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://sayitmarketing.com/social-media.html#service",
+      "name": "Social Media Management",
+      "provider": {
+        "@id": "https://sayitmarketing.com/#business"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tucson"
+        },
+        {
+          "@type": "City",
+          "name": "Phoenix"
+        },
+        {
+          "@type": "State",
+          "name": "Arizona"
+        },
+        {
+          "@type": "Country",
+          "name": "United States"
+        }
+      ],
+      "serviceType": "Social media setup, content planning, Instagram, Facebook, and TikTok management",
+      "description": "Monthly social media management for small businesses, including content posted for Instagram, Facebook, and TikTok.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Keep It Fresh",
+          "price": "149",
+          "priceCurrency": "USD",
+          "description": "Monthly social media management"
+        },
+        {
+          "@type": "Offer",
+          "name": "Stay Active",
+          "price": "249",
+          "priceCurrency": "USD",
+          "description": "Monthly social media management"
+        },
+        {
+          "@type": "Offer",
+          "name": "Always On",
+          "price": "399",
+          "priceCurrency": "USD",
+          "description": "Monthly social media management"
+        }
+      ]
+    }
+  ]
+}
   </script>
+
   <style>
     /* ── Hero ─────────────────────────────────────── */
     .sm-hero {

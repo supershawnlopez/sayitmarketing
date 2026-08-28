@@ -29,44 +29,139 @@
   <meta name="twitter:image:alt" content="Say It Marketing premium social preview for custom websites, apps, print, and displays.">
   <link rel="stylesheet" href="assets/site.css">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "ProfessionalService"],
-    "name": "Say It Marketing",
-    "url": "https://sayitmarketing.com/",
-    "telephone": "+1-520-222-6308",
-    "email": "hello@sayitmarketing.com",
-    "foundingDate": "1999",
-    "priceRange": "$$",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Tucson",
-      "addressRegion": "AZ",
-      "addressCountry": "US"
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://sayitmarketing.com/#business",
+      "name": "Say It Marketing",
+      "url": "https://sayitmarketing.com/",
+      "logo": "https://sayitmarketing.com/assets/sayit-logo.png",
+      "image": "https://sayitmarketing.com/assets/sayit-og-premium-hero.png",
+      "telephone": "+1-520-222-6308",
+      "email": "hello@sayitmarketing.com",
+      "foundingDate": "1999",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tucson",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tucson"
+        },
+        {
+          "@type": "City",
+          "name": "Phoenix"
+        },
+        {
+          "@type": "State",
+          "name": "Arizona"
+        },
+        {
+          "@type": "Country",
+          "name": "United States"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/sayit.marketing",
+        "https://www.instagram.com/sayit.marketing"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-520-222-6308",
+        "contactType": "sales",
+        "areaServed": "US",
+        "availableLanguage": [
+          "English",
+          "Spanish"
+        ]
+      },
+      "knowsAbout": [
+        "custom website design",
+        "custom business apps",
+        "client portals",
+        "internal dashboards",
+        "business printing",
+        "trade show displays",
+        "local SEO",
+        "social media management",
+        "Google Ads management",
+        "website maintenance"
+      ]
     },
-    "areaServed": [
-      {"@type": "City", "name": "Tucson"},
-      {"@type": "State", "name": "Arizona"},
-      {"@type": "Country", "name": "United States"}
-    ],
-    "description": "Say It Marketing builds custom websites, custom business apps, and business print/display ordering paths for Arizona businesses and nationwide clients. Support services include local SEO, social media, Google Ads, hosting, and monthly care.",
-    "sameAs": [
-      "https://www.facebook.com/sayit.marketing",
-      "https://www.instagram.com/sayit.marketing"
-    ],
-    "knowsAbout": ["custom website design", "custom business apps", "client portals", "internal dashboards", "business printing", "trade show displays", "local SEO", "social media management", "Google Ads management", "website maintenance"],
-    "hasOfferCatalog": {
+    {
+      "@type": "WebSite",
+      "@id": "https://sayitmarketing.com/#website",
+      "url": "https://sayitmarketing.com/",
+      "name": "Say It Marketing",
+      "publisher": {
+        "@id": "https://sayitmarketing.com/#business"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://sayitmarketing.com/#webpage",
+      "url": "https://sayitmarketing.com/",
+      "name": "Custom Websites, Apps & Print | Say It Marketing",
+      "description": "Custom websites, business apps, and print/display ordering for Arizona businesses and nationwide clients.",
+      "isPartOf": {
+        "@id": "https://sayitmarketing.com/#website"
+      },
+      "about": {
+        "@id": "https://sayitmarketing.com/#business"
+      }
+    },
+    {
       "@type": "OfferCatalog",
+      "@id": "https://sayitmarketing.com/#services",
       "name": "Say It Marketing Services",
       "itemListElement": [
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Custom Website Design", "description": "Custom website design for businesses that need a premium online presence and clear lead path"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Custom Business Apps", "description": "Client portals, dashboards, booking flows, intake tools, and internal business apps"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Business Print & Trade Show Displays", "description": "Business cards, flyers, menus, signs, banners, and trade show display ordering through Say It"}},
-        {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Monthly Growth Support", "description": "Hosting, care plans, local SEO, social media, and advertising support"}}
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom Website Design",
+            "description": "Custom website design for businesses that need a premium online presence and clear lead path"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Custom Business Apps",
+            "description": "Client portals, dashboards, booking flows, intake tools, and internal business apps"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Business Print & Trade Show Displays",
+            "description": "Business cards, flyers, menus, signs, banners, and trade show display ordering through Say It"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Monthly Growth Support",
+            "description": "Hosting, care plans, local SEO, social media, and advertising support"
+          }
+        }
       ]
     }
-  }
+  ]
+}
   </script>
+
 </head>
 <body class="home-apple">
   <div class="top-contact"><span><a href="tel:+15202226308">Call</a> · <a href="sms:+15202226308">Text</a> · 520-222-6308</span><button class="lang-btn" onclick="toggleLang()">&#127760; <span id="lang-btn-text">Ver en Español</span></button></div>

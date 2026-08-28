@@ -24,75 +24,157 @@
   <meta name="twitter:image" content="https://sayitmarketing.com/assets/website-card.png">
   <link rel="stylesheet" href="assets/site.css">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "name": "Say It Marketing",
-        "url": "https://sayitmarketing.com/",
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://sayitmarketing.com/#business",
+      "name": "Say It Marketing",
+      "url": "https://sayitmarketing.com/",
+      "logo": "https://sayitmarketing.com/assets/sayit-logo.png",
+      "image": "https://sayitmarketing.com/assets/sayit-og-premium-hero.png",
+      "telephone": "+1-520-222-6308",
+      "email": "hello@sayitmarketing.com",
+      "foundingDate": "1999",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tucson",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tucson"
+        },
+        {
+          "@type": "City",
+          "name": "Phoenix"
+        },
+        {
+          "@type": "State",
+          "name": "Arizona"
+        },
+        {
+          "@type": "Country",
+          "name": "United States"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/sayit.marketing",
+        "https://www.instagram.com/sayit.marketing"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
         "telephone": "+1-520-222-6308",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Tucson",
-          "addressRegion": "AZ",
-          "addressCountry": "US"
-        },
-        "areaServed": ["Tucson AZ", "Arizona", "Phoenix AZ", "United States"],
-        "description": "Website design, digital marketing, business printing, and trade show display help for businesses."
-      },
-      {
-        "@type": "Service",
-        "name": "Step And Repeat Backdrops",
-        "provider": {
-          "@type": "LocalBusiness",
-          "name": "Say It Marketing",
-          "url": "https://sayitmarketing.com/"
-        },
-        "areaServed": ["Tucson AZ", "Arizona", "Phoenix AZ", "United States"],
-        "serviceType": "Step and repeat backdrops, event photo backdrops, fabric display walls, and custom backdrop graphics",
-        "description": "Step and repeat backdrop planning, graphic design support, proofing, production coordination, and delivery for Tucson, Arizona, and nationwide business display orders."
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is a step and repeat backdrop?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A step and repeat backdrop is a branded photo background with a repeating logo or pattern, often used at events, grand openings, conferences, galas, and media walls."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can Say It Marketing help design my backdrop?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Say It Marketing can help with logo spacing, backdrop layout, print-ready artwork, proof review, and ordering."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What should I send before ordering a backdrop?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Send the event date, backdrop size or space available, logo files, brand colors, and whether the backdrop needs to be freestanding, fabric, or used in photos."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you offer step and repeat backdrops for Tucson and Phoenix businesses?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Say It Marketing helps businesses in Tucson, Phoenix, Arizona, and nationwide with step and repeat backdrop quotes and display orders."
-            }
-          }
+        "contactType": "sales",
+        "areaServed": "US",
+        "availableLanguage": [
+          "English",
+          "Spanish"
         ]
+      },
+      "knowsAbout": [
+        "custom website design",
+        "custom business apps",
+        "client portals",
+        "internal dashboards",
+        "business printing",
+        "trade show displays",
+        "local SEO",
+        "social media management",
+        "Google Ads management",
+        "website maintenance"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sayitmarketing.com/#website",
+      "url": "https://sayitmarketing.com/",
+      "name": "Say It Marketing",
+      "publisher": {
+        "@id": "https://sayitmarketing.com/#business"
       }
-    ]
-  }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://sayitmarketing.com/step-and-repeat-backdrops.html#webpage",
+      "url": "https://sayitmarketing.com/step-and-repeat-backdrops.html",
+      "name": "Step and Repeat Backdrops for Tucson & Arizona",
+      "description": "Step and repeat backdrop planning, graphic design support, proofing, production coordination, and delivery for Tucson, Arizona, and nationwide business display orders.",
+      "isPartOf": {
+        "@id": "https://sayitmarketing.com/#website"
+      },
+      "about": {
+        "@id": "https://sayitmarketing.com/#business"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://sayitmarketing.com/step-and-repeat-backdrops.html#service",
+      "name": "Step and Repeat Backdrops",
+      "provider": {
+        "@id": "https://sayitmarketing.com/#business"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tucson"
+        },
+        {
+          "@type": "City",
+          "name": "Phoenix"
+        },
+        {
+          "@type": "State",
+          "name": "Arizona"
+        },
+        {
+          "@type": "Country",
+          "name": "United States"
+        }
+      ],
+      "serviceType": "Step and repeat backdrops, event photo walls, media walls, and branded display backgrounds",
+      "description": "Step and repeat backdrop planning, graphic design support, proofing, production coordination, and delivery for Tucson, Arizona, and nationwide business display orders."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is a step and repeat backdrop?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A step and repeat backdrop is a branded photo background with a repeating logo or pattern, often used at events, grand openings, conferences, galas, and media walls."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Say It Marketing help design my backdrop?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Say It Marketing can help with backdrop layout, logo spacing, print-ready artwork, proof review, and ordering."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer step and repeat backdrops for Tucson and Phoenix businesses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Say It Marketing helps businesses in Tucson, Phoenix, Arizona, and nationwide with step and repeat backdrop quotes and display orders."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
+
   <style>
     body.page-backdrops {
       --page-accent-1: 171 82 35;

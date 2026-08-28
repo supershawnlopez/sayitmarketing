@@ -22,31 +22,175 @@
   <meta name="twitter:title" content="Social Media &amp; Google Ads Management | Say It Marketing">
   <meta name="twitter:description" content="Managed Google Ads + Facebook/Instagram advertising for local businesses. You control the budget — we run the ads. Flat monthly fee. No contracts.">
   <meta name="twitter:image" content="https://sayitmarketing.com/assets/website-card.png">
+  <link rel="stylesheet" href="assets/site.css">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Social Media & Google Ads Management",
-    "description": "Managed advertising on Google, Facebook, and Instagram for local businesses in Tucson, AZ and surrounding areas.",
-    "provider": {
-      "@type": "LocalBusiness",
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://sayitmarketing.com/#business",
       "name": "Say It Marketing",
-      "url": "https://sayitmarketing.com",
-      "telephone": "+15202226308",
-      "address": { "@type": "PostalAddress", "addressLocality": "Tucson", "addressRegion": "AZ", "addressCountry": "US" }
+      "url": "https://sayitmarketing.com/",
+      "logo": "https://sayitmarketing.com/assets/sayit-logo.png",
+      "image": "https://sayitmarketing.com/assets/sayit-og-premium-hero.png",
+      "telephone": "+1-520-222-6308",
+      "email": "hello@sayitmarketing.com",
+      "foundingDate": "1999",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tucson",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tucson"
+        },
+        {
+          "@type": "City",
+          "name": "Phoenix"
+        },
+        {
+          "@type": "State",
+          "name": "Arizona"
+        },
+        {
+          "@type": "Country",
+          "name": "United States"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/sayit.marketing",
+        "https://www.instagram.com/sayit.marketing"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+1-520-222-6308",
+        "contactType": "sales",
+        "areaServed": "US",
+        "availableLanguage": [
+          "English",
+          "Spanish"
+        ]
+      },
+      "knowsAbout": [
+        "custom website design",
+        "custom business apps",
+        "client portals",
+        "internal dashboards",
+        "business printing",
+        "trade show displays",
+        "local SEO",
+        "social media management",
+        "Google Ads management",
+        "website maintenance"
+      ]
     },
-    "areaServed": { "@type": "State", "name": "Arizona" },
-    "mainEntityOfPage": {
+    {
+      "@type": "WebSite",
+      "@id": "https://sayitmarketing.com/#website",
+      "url": "https://sayitmarketing.com/",
+      "name": "Say It Marketing",
+      "publisher": {
+        "@id": "https://sayitmarketing.com/#business"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://sayitmarketing.com/advertising-management.html#webpage",
+      "url": "https://sayitmarketing.com/advertising-management.html",
+      "name": "Social Media & Google Ads Management",
+      "description": "Managed advertising on Google, Facebook, and Instagram for local businesses in Tucson, Arizona, and surrounding areas.",
+      "isPartOf": {
+        "@id": "https://sayitmarketing.com/#website"
+      },
+      "about": {
+        "@id": "https://sayitmarketing.com/#business"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://sayitmarketing.com/advertising-management.html#service",
+      "name": "Social Media & Google Ads Management",
+      "provider": {
+        "@id": "https://sayitmarketing.com/#business"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tucson"
+        },
+        {
+          "@type": "City",
+          "name": "Phoenix"
+        },
+        {
+          "@type": "State",
+          "name": "Arizona"
+        },
+        {
+          "@type": "Country",
+          "name": "United States"
+        }
+      ],
+      "serviceType": "Google Ads management, Facebook advertising, Instagram advertising, and local campaign management",
+      "description": "Managed advertising on Google, Facebook, and Instagram for local businesses in Tucson, Arizona, and surrounding areas.",
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Social Ads Management",
+          "price": "125",
+          "priceCurrency": "USD",
+          "description": "Flat monthly social ads management fee"
+        },
+        {
+          "@type": "Offer",
+          "name": "Google Ads Management",
+          "price": "175",
+          "priceCurrency": "USD",
+          "description": "Flat monthly Google Ads management fee"
+        }
+      ]
+    },
+    {
       "@type": "FAQPage",
       "mainEntity": [
-        { "@type": "Question", "name": "What is the difference between Google Ads and social media ads?", "acceptedAnswer": { "@type": "Answer", "text": "Google Ads catch people actively searching for your service — high intent, ready to buy. Social media ads on Facebook and Instagram reach people who match your ideal customer before they ever search. Together they cover every stage of how customers find and choose you." } },
-        { "@type": "Question", "name": "How much does Facebook advertising cost for a small business?", "acceptedAnswer": { "@type": "Answer", "text": "You set the budget — $100 to $500/mo is typical for local businesses. That money goes directly to Meta under your account. Say It Marketing charges a flat $125/mo management fee." } },
-        { "@type": "Question", "name": "Do I need to sign a contract for ad management?", "acceptedAnswer": { "@type": "Answer", "text": "No contracts. Month to month. Your ad budget stays in your own account — cancel anytime." } }
+        {
+          "@type": "Question",
+          "name": "What is the difference between Google Ads and social media ads?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Google Ads catch people actively searching for your service. Social media ads on Facebook and Instagram reach people who match your ideal customer before they ever search."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How much does Facebook advertising cost for a small business?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "You set the budget. Many local businesses start with $100 to $500 per month in ad spend, and Say It Marketing charges a flat monthly management fee."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to sign a contract for ad management?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Advertising management is month to month, and your ad budget stays in your own account."
+          }
+        }
       ]
     }
-  }
+  ]
+}
   </script>
-  <link rel="stylesheet" href="assets/site.css">
+
   <style>
     body { background: #f4f6f9; }
 

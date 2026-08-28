@@ -24,67 +24,157 @@
   <meta name="twitter:image" content="https://sayitmarketing.com/assets/website-card.png">
   <link rel="stylesheet" href="assets/site.css">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "name": "Say It Marketing",
-        "url": "https://sayitmarketing.com/",
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://sayitmarketing.com/#business",
+      "name": "Say It Marketing",
+      "url": "https://sayitmarketing.com/",
+      "logo": "https://sayitmarketing.com/assets/sayit-logo.png",
+      "image": "https://sayitmarketing.com/assets/sayit-og-premium-hero.png",
+      "telephone": "+1-520-222-6308",
+      "email": "hello@sayitmarketing.com",
+      "foundingDate": "1999",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tucson",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tucson"
+        },
+        {
+          "@type": "City",
+          "name": "Phoenix"
+        },
+        {
+          "@type": "State",
+          "name": "Arizona"
+        },
+        {
+          "@type": "Country",
+          "name": "United States"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/sayit.marketing",
+        "https://www.instagram.com/sayit.marketing"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
         "telephone": "+1-520-222-6308",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Tucson",
-          "addressRegion": "AZ",
-          "addressCountry": "US"
-        },
-        "areaServed": ["Tucson AZ", "Arizona", "Phoenix AZ", "United States"],
-        "description": "Website design, digital marketing, business printing, and trade show display help for businesses."
-      },
-      {
-        "@type": "Service",
-        "name": "Custom Banner Stands",
-        "provider": {
-          "@type": "LocalBusiness",
-          "name": "Say It Marketing",
-          "url": "https://sayitmarketing.com/"
-        },
-        "areaServed": ["Tucson AZ", "Arizona", "Phoenix AZ", "United States"],
-        "serviceType": "Retractable banner stands, portable display banners, and trade show banner displays",
-        "description": "Custom banner stand planning, graphic design support, proofing, production coordination, and delivery for Tucson, Arizona, and nationwide business display orders."
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What are banner stands used for?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Banner stands are portable displays used at trade shows, check-in tables, storefronts, lobbies, hiring events, presentations, and pop-up sales."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can Say It Marketing help design my banner stand?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Say It Marketing can help with banner layout, brand consistency, print-ready artwork, proof review, and ordering."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you offer banner stands for Tucson and Phoenix businesses?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Say It Marketing helps businesses in Tucson, Phoenix, Arizona, and nationwide with custom banner stand quotes and display orders."
-            }
-          }
+        "contactType": "sales",
+        "areaServed": "US",
+        "availableLanguage": [
+          "English",
+          "Spanish"
         ]
+      },
+      "knowsAbout": [
+        "custom website design",
+        "custom business apps",
+        "client portals",
+        "internal dashboards",
+        "business printing",
+        "trade show displays",
+        "local SEO",
+        "social media management",
+        "Google Ads management",
+        "website maintenance"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sayitmarketing.com/#website",
+      "url": "https://sayitmarketing.com/",
+      "name": "Say It Marketing",
+      "publisher": {
+        "@id": "https://sayitmarketing.com/#business"
       }
-    ]
-  }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://sayitmarketing.com/banner-stands.html#webpage",
+      "url": "https://sayitmarketing.com/banner-stands.html",
+      "name": "Custom Banner Stands for Tucson & Arizona",
+      "description": "Custom banner stand planning, graphic design support, proofing, production coordination, and delivery for Tucson, Arizona, and nationwide business display orders.",
+      "isPartOf": {
+        "@id": "https://sayitmarketing.com/#website"
+      },
+      "about": {
+        "@id": "https://sayitmarketing.com/#business"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://sayitmarketing.com/banner-stands.html#service",
+      "name": "Custom Banner Stands",
+      "provider": {
+        "@id": "https://sayitmarketing.com/#business"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tucson"
+        },
+        {
+          "@type": "City",
+          "name": "Phoenix"
+        },
+        {
+          "@type": "State",
+          "name": "Arizona"
+        },
+        {
+          "@type": "Country",
+          "name": "United States"
+        }
+      ],
+      "serviceType": "Retractable banner stands, portable display banners, and trade show banner displays",
+      "description": "Custom banner stand planning, graphic design support, proofing, production coordination, and delivery for Tucson, Arizona, and nationwide business display orders."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are banner stands used for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Banner stands are portable displays used at trade shows, check-in tables, storefronts, lobbies, hiring events, presentations, and pop-up sales."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Say It Marketing help design my banner stand?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Say It Marketing can help with banner layout, brand consistency, print-ready artwork, proof review, and ordering."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer banner stands for Tucson and Phoenix businesses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Say It Marketing helps businesses in Tucson, Phoenix, Arizona, and nationwide with custom banner stand quotes and display orders."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
+
   <style>
     body.page-banner-stands {
       --page-accent-1: 171 82 35;

@@ -24,75 +24,157 @@
   <meta name="twitter:image" content="https://sayitmarketing.com/assets/website-card.png">
   <link rel="stylesheet" href="assets/site.css">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "name": "Say It Marketing",
-        "url": "https://sayitmarketing.com/",
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://sayitmarketing.com/#business",
+      "name": "Say It Marketing",
+      "url": "https://sayitmarketing.com/",
+      "logo": "https://sayitmarketing.com/assets/sayit-logo.png",
+      "image": "https://sayitmarketing.com/assets/sayit-og-premium-hero.png",
+      "telephone": "+1-520-222-6308",
+      "email": "hello@sayitmarketing.com",
+      "foundingDate": "1999",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tucson",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tucson"
+        },
+        {
+          "@type": "City",
+          "name": "Phoenix"
+        },
+        {
+          "@type": "State",
+          "name": "Arizona"
+        },
+        {
+          "@type": "Country",
+          "name": "United States"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/sayit.marketing",
+        "https://www.instagram.com/sayit.marketing"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
         "telephone": "+1-520-222-6308",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Tucson",
-          "addressRegion": "AZ",
-          "addressCountry": "US"
-        },
-        "areaServed": ["Tucson AZ", "Arizona", "Phoenix AZ", "United States"],
-        "description": "Website design, digital marketing, business printing, and trade show display help for businesses."
-      },
-      {
-        "@type": "Service",
-        "name": "Custom Canopy Tents",
-        "provider": {
-          "@type": "LocalBusiness",
-          "name": "Say It Marketing",
-          "url": "https://sayitmarketing.com/"
-        },
-        "areaServed": ["Tucson AZ", "Arizona", "Phoenix AZ", "United States"],
-        "serviceType": "Custom canopy tents, printed pop-up tents, branded outdoor tents, and event booth tents",
-        "description": "Custom canopy tent planning, graphic design support, proofing, production coordination, and delivery for Tucson, Arizona, and nationwide business display orders."
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What are custom canopy tents used for?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Custom canopy tents are used for farmers markets, festivals, outdoor sales, school events, field events, recruiting tables, trade shows, and branded pop-up booths."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can Say It Marketing help design my canopy tent?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Say It Marketing can help with canopy artwork, logo placement, valance graphics, brand consistency, print-ready files, proof review, and ordering."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What should I send before ordering a canopy tent?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Send the event date, tent size, outdoor location, logo files, brand colors, and whether you need a printed top, valance, back wall, side wall, table cover, or weights."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you offer custom canopy tents for Tucson and Phoenix businesses?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Say It Marketing helps businesses in Tucson, Phoenix, Arizona, and nationwide with custom canopy tent quotes and display orders."
-            }
-          }
+        "contactType": "sales",
+        "areaServed": "US",
+        "availableLanguage": [
+          "English",
+          "Spanish"
         ]
+      },
+      "knowsAbout": [
+        "custom website design",
+        "custom business apps",
+        "client portals",
+        "internal dashboards",
+        "business printing",
+        "trade show displays",
+        "local SEO",
+        "social media management",
+        "Google Ads management",
+        "website maintenance"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sayitmarketing.com/#website",
+      "url": "https://sayitmarketing.com/",
+      "name": "Say It Marketing",
+      "publisher": {
+        "@id": "https://sayitmarketing.com/#business"
       }
-    ]
-  }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://sayitmarketing.com/custom-canopy-tents.html#webpage",
+      "url": "https://sayitmarketing.com/custom-canopy-tents.html",
+      "name": "Custom Canopy Tents for Tucson & Arizona",
+      "description": "Custom canopy tent planning, graphic design support, proofing, production coordination, and delivery for Tucson, Arizona, and nationwide business display orders.",
+      "isPartOf": {
+        "@id": "https://sayitmarketing.com/#website"
+      },
+      "about": {
+        "@id": "https://sayitmarketing.com/#business"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://sayitmarketing.com/custom-canopy-tents.html#service",
+      "name": "Custom Canopy Tents",
+      "provider": {
+        "@id": "https://sayitmarketing.com/#business"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tucson"
+        },
+        {
+          "@type": "City",
+          "name": "Phoenix"
+        },
+        {
+          "@type": "State",
+          "name": "Arizona"
+        },
+        {
+          "@type": "Country",
+          "name": "United States"
+        }
+      ],
+      "serviceType": "Custom canopy tents, printed pop-up tents, outdoor event tents, and branded booth tents",
+      "description": "Custom canopy tent planning, graphic design support, proofing, production coordination, and delivery for Tucson, Arizona, and nationwide business display orders."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What are custom canopy tents used for?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Custom canopy tents are used for outdoor events, markets, school events, festivals, registration areas, and branded pop-up booths."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Say It Marketing help design my canopy tent?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Say It Marketing can help with canopy tent layout, logo placement, print-ready artwork, proof review, and ordering."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer custom canopy tents for Tucson and Phoenix businesses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Say It Marketing helps businesses in Tucson, Phoenix, Arizona, and nationwide with custom canopy tent quotes and display orders."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
+
   <style>
     body.page-canopy-tents {
       --page-accent-1: 171 82 35;

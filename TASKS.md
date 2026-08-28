@@ -42,21 +42,26 @@ Exit criteria:
 
 2. Add service/page filtering to the admin traffic report
 - Owner: Priya + Angela + Phil
-- Status: Done locally (August 28, 2026)
-- Notes: Added date range, service, page/path, and page-family filters to `/admin/traffic.html`; added visible Leads By Service and Visits By Device sections; updated `/api/traffic` filtering without a new database migration. Local function syntax and mocked filtered-report checks passed. Pending push/live deploy verification.
+- Status: Done and live-verified (August 28, 2026)
+- Notes: Added date range, service, page/path, and page-family filters to `/admin/traffic.html`; added visible Leads By Service and Visits By Device sections; updated `/api/traffic` filtering without a new database migration. Commit `0e0860a` was pushed. Live admin page returned `200` with the new sections; live `/api/traffic` still returns `401` without the admin key.
 
 3. Validate Stripe webhook with real signed test event
 - Owner: Priya + Craig
-- Status: Deferred from Phase 1
-- Notes: Confirm the webhook rejects unsigned/fake payloads and accepts a real signed Stripe test event before relying on payment automation.
+- Status: Deferred by Shawn/team from Phase 1
+- Notes: Live Stripe appears configured with live price IDs and payment links. The webhook safely rejected an unsigned fake payload with `401`. Signed Stripe event validation is still recommended before relying on after-payment automation, but Shawn approved moving to structured data first.
 
 ---
 
 ## RECENTLY COMPLETED
 
+1. Structured data expansion
+- Owner: Phil + Craig + Marcus
+- Status: Done locally (August 28, 2026)
+- Notes: Expanded JSON-LD on 20 public sales/service pages with consistent Say It business identity, `sameAs`, richer Tucson/Phoenix/Arizona/US `areaServed`, `WebSite`, `WebPage`, service, offer, and FAQ schema where appropriate. Did not add `openingHours` or `geo` because public hours and exact coordinates are not confirmed in the repo. Local JSON parse and scope checks passed.
+
 1. Admin traffic report filtering
 - Owner: Priya + Angela + Phil + Craig
-- Status: Done locally (August 28, 2026)
+- Status: Done and live-verified (August 28, 2026)
 - Notes: `/admin/traffic.html` now supports date range, service, page/path, and page-family filters, including the display-support family for the new print/display SEO pages. `/api/traffic` now filters leads and visits server-side and returns available service options, Leads By Service, Visits By Device, Top Pageviews, Pages That Led To Leads, and Recent Lead Paths from the filtered data.
 
 1. Display/print SEO support-page architecture
@@ -114,7 +119,7 @@ Exit criteria:
 ## NEXT
 
 1. Validate Stripe webhook with real signed test event
-2. Structured data expansion (`sameAs`, serviceArea, geo, openingHours`)
+2. Confirm public business hours and exact map coordinates before adding `openingHours` or `geo` schema
 3. Replace generated print/display imagery with approved WSDisplay assets when available
 
 ---
@@ -128,7 +133,7 @@ Exit criteria:
 ## BACKLOG
 
 1. Weekly KPI instrumentation pass (lead -> sale funnel visibility)
-2. Structured data expansion (`sameAs`, serviceArea, geo, openingHours)
+2. Add `openingHours` and `geo` schema after Shawn confirms exact public hours and coordinates
 3. Portfolio/testimonials expansion with proof assets
 4. SLA/response-time messaging A/B copy pass
 5. WSDisplay reseller asset audit: identify approved images/catalog copy that can be used on Say It pages

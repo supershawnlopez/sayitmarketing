@@ -24,75 +24,157 @@
   <meta name="twitter:image" content="https://sayitmarketing.com/assets/website-card.png">
   <link rel="stylesheet" href="assets/site.css">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "LocalBusiness",
-        "name": "Say It Marketing",
-        "url": "https://sayitmarketing.com/",
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": [
+        "LocalBusiness",
+        "ProfessionalService"
+      ],
+      "@id": "https://sayitmarketing.com/#business",
+      "name": "Say It Marketing",
+      "url": "https://sayitmarketing.com/",
+      "logo": "https://sayitmarketing.com/assets/sayit-logo.png",
+      "image": "https://sayitmarketing.com/assets/sayit-og-premium-hero.png",
+      "telephone": "+1-520-222-6308",
+      "email": "hello@sayitmarketing.com",
+      "foundingDate": "1999",
+      "priceRange": "$$",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Tucson",
+        "addressRegion": "AZ",
+        "addressCountry": "US"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tucson"
+        },
+        {
+          "@type": "City",
+          "name": "Phoenix"
+        },
+        {
+          "@type": "State",
+          "name": "Arizona"
+        },
+        {
+          "@type": "Country",
+          "name": "United States"
+        }
+      ],
+      "sameAs": [
+        "https://www.facebook.com/sayit.marketing",
+        "https://www.instagram.com/sayit.marketing"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
         "telephone": "+1-520-222-6308",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Tucson",
-          "addressRegion": "AZ",
-          "addressCountry": "US"
-        },
-        "areaServed": ["Tucson AZ", "Arizona", "Phoenix AZ", "United States"],
-        "description": "Website design, digital marketing, business printing, and trade show display help for businesses."
-      },
-      {
-        "@type": "Service",
-        "name": "Trade Show Booth Displays",
-        "provider": {
-          "@type": "LocalBusiness",
-          "name": "Say It Marketing",
-          "url": "https://sayitmarketing.com/"
-        },
-        "areaServed": ["Tucson AZ", "Arizona", "Phoenix AZ", "United States"],
-        "serviceType": "Trade show booth displays, booth kits, exhibit displays, counters, backdrops, banners, and table covers",
-        "description": "Trade show booth display planning, graphic design support, proofing, production coordination, and delivery for Tucson, Arizona, and nationwide business display orders."
-      },
-      {
-        "@type": "FAQPage",
-        "mainEntity": [
-          {
-            "@type": "Question",
-            "name": "What is included in a trade show booth display?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "A trade show booth display can include a backdrop, banner stand, counter, table cover, literature rack, signs, graphics, and shipping or setup accessories."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Can Say It Marketing help choose the booth pieces?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Say It Marketing can help compare booth pieces, plan the layout, prepare artwork, review proofs, and coordinate ordering."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "What should I send before ordering a booth display?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Send the event date, booth size, venue rules, shipping deadline, logo files, brand colors, and any display pieces you already own or want to include."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Do you offer trade show booth displays for Tucson and Phoenix businesses?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Yes. Say It Marketing helps businesses in Tucson, Phoenix, Arizona, and nationwide with trade show booth display quotes and display orders."
-            }
-          }
+        "contactType": "sales",
+        "areaServed": "US",
+        "availableLanguage": [
+          "English",
+          "Spanish"
         ]
+      },
+      "knowsAbout": [
+        "custom website design",
+        "custom business apps",
+        "client portals",
+        "internal dashboards",
+        "business printing",
+        "trade show displays",
+        "local SEO",
+        "social media management",
+        "Google Ads management",
+        "website maintenance"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://sayitmarketing.com/#website",
+      "url": "https://sayitmarketing.com/",
+      "name": "Say It Marketing",
+      "publisher": {
+        "@id": "https://sayitmarketing.com/#business"
       }
-    ]
-  }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://sayitmarketing.com/trade-show-booth-displays.html#webpage",
+      "url": "https://sayitmarketing.com/trade-show-booth-displays.html",
+      "name": "Trade Show Booth Displays for Tucson & Arizona",
+      "description": "Trade show booth display planning, graphic design support, proofing, production coordination, and delivery for Tucson, Arizona, and nationwide business display orders.",
+      "isPartOf": {
+        "@id": "https://sayitmarketing.com/#website"
+      },
+      "about": {
+        "@id": "https://sayitmarketing.com/#business"
+      }
+    },
+    {
+      "@type": "Service",
+      "@id": "https://sayitmarketing.com/trade-show-booth-displays.html#service",
+      "name": "Trade Show Booth Displays",
+      "provider": {
+        "@id": "https://sayitmarketing.com/#business"
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Tucson"
+        },
+        {
+          "@type": "City",
+          "name": "Phoenix"
+        },
+        {
+          "@type": "State",
+          "name": "Arizona"
+        },
+        {
+          "@type": "Country",
+          "name": "United States"
+        }
+      ],
+      "serviceType": "Trade show booth displays, booth kits, event displays, and branded booth graphics",
+      "description": "Trade show booth display planning, graphic design support, proofing, production coordination, and delivery for Tucson, Arizona, and nationwide business display orders."
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is included in a trade show booth display?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A trade show booth display can include banner stands, table covers, backdrops, booth graphics, counters, signs, and other branded display pieces."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Say It Marketing help design my booth display?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Say It Marketing can help with booth layout, graphics, print-ready artwork, proof review, and ordering."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer trade show booth displays for Tucson and Phoenix businesses?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Say It Marketing helps businesses in Tucson, Phoenix, Arizona, and nationwide with trade show booth display quotes and display orders."
+          }
+        }
+      ]
+    }
+  ]
+}
   </script>
+
   <style>
     body.page-booth-displays {
       --page-accent-1: 171 82 35;
