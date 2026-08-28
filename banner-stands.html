@@ -114,7 +114,8 @@
       margin-inline: auto;
     }
     body.page-banner-stands .spotlight-card {
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 0.58fr) minmax(18rem, 0.42fr);
+      overflow: hidden;
     }
     body.page-banner-stands .spotlight-card > * {
       min-width: 0;
@@ -122,6 +123,7 @@
     body.page-banner-stands .spotlight-card .split-media {
       width: 100%;
       max-width: 100%;
+      height: clamp(18rem, 32vw, 24rem);
       transform: none;
     }
     body.page-banner-stands .spotlight-card .split-media:hover {
@@ -132,6 +134,14 @@
     }
     body.page-banner-stands .spotlight-copy h2 {
       max-width: 18ch;
+    }
+    @media (max-width: 58rem) {
+      body.page-banner-stands .spotlight-card {
+        grid-template-columns: 1fr;
+      }
+      body.page-banner-stands .spotlight-card .split-media {
+        height: clamp(14rem, 52vw, 20rem);
+      }
     }
     body.page-banner-stands .faq-accordion {
       max-width: 56rem;

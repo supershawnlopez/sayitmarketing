@@ -43,7 +43,7 @@ Latest continuation:
 - Verified live table cover image assets returned `200`: `assets/table-covers-hero.jpg` and `assets/table-covers-detail.jpg`.
 - Verified `trade-show-displays.html` now links to the completed support pages through clean URLs `/banner-stands` and `/custom-table-covers`.
 - Fixed the tablet-width spotlight layout on `custom-table-covers.html` and `banner-stands.html` so the image stacks above the "Before Ordering" copy instead of overlapping it.
-- Follow-up correction: made the support-page spotlight stack by default and disabled media hover movement inside that card after Shawn still saw overlap on both pages.
+- Follow-up correction after iPad Pro review: restored the horizontal support-page spotlight on tablet/desktop, capped the media height, and kept stacking only for smaller screens.
 - Updated `PROJECT.md` with the live banner stands and table covers pages.
 - Updated `TASKS.md` so the next `NOW` item is building `step-and-repeat-backdrops.html`.
 
@@ -146,7 +146,7 @@ When reviewing print/display pages:
 7. From `banner-stands.html`, tap `Request A Banner Stand Quote` and confirm the quote page headline/form header says `Banner Stands Quote`.
 8. From `custom-table-covers.html`, tap `Request A Table Cover Quote` and confirm the quote page headline/form header says `Table Covers Quote`.
 9. Tap `Text Details` on the banner stand and table cover quote pages and confirm the SMS draft says Say It and names the right item.
-10. On iPad/tablet width, confirm the "Before Ordering" spotlight image stacks above the copy without covering the headline, list, or buttons. The section should be stacked, not side-by-side.
+10. On iPad Pro/tablet width, confirm the "Before Ordering" spotlight uses the horizontal image/copy layout, keeps the buttons visible without a long scroll, and does not let the image cover the text.
 11. Search the pages for obvious print/display terms and make sure the copy sounds human.
 
 When reviewing the three-pillar pass:
