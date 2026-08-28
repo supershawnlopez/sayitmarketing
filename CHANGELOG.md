@@ -41,6 +41,10 @@
 - Added `custom-table-covers.html` to `sitemap.xml`
 - Updated `trade-show-displays.html` so the completed Banner Stands and Table Covers cards link to their support pages
 - Shawn approved `custom-table-covers.html` and requested push
+- Pushed commit `6f42139 Add custom table covers SEO support page` to `origin/main`
+- Verified live `https://sayitmarketing.com/custom-table-covers.html` and clean URL `https://sayitmarketing.com/custom-table-covers` returned `200`
+- Verified live table cover image assets returned `200`
+- Verified the live display hub links to `/banner-stands` and `/custom-table-covers`
 - Verified the new support pages and display hub have valid JSON-LD and no missing local links
 - Updated `TASKS.md` so the next `NOW` item is reviewing and approving local `custom-table-covers.html`
 - Updated `PROJECT.md` so the new architecture doc is discoverable from the main docs list
@@ -48,15 +52,14 @@
 - Updated `SESSION_HANDOFF.md` with the latest Supabase verification and next move
 
 ### ⏳ Pending / In Progress
-- Live Netlify deploy verification for `custom-table-covers.html`
-- Build `step-and-repeat-backdrops.html` next if the live table cover page checks out
+- Build `step-and-repeat-backdrops.html` next using the approved support-page pattern
 - Replace generated print/display imagery with approved WSDisplay assets when available
 - Stripe webhook signed-event validation remains deferred from Phase 1
 
 ### 🔜 What To Work On Next
-1. Verify `https://sayitmarketing.com/custom-table-covers.html` after Netlify deploy
-2. Confirm the table cover quote buttons preserve `Table Covers Quote` context
-3. Build `step-and-repeat-backdrops.html` next using the approved page pattern
+1. Build `step-and-repeat-backdrops.html` next using the approved page pattern
+2. Confirm the backdrop quote buttons preserve item-specific quote context
+3. Continue linking completed support pages from `trade-show-displays.html`
 
 ---
 

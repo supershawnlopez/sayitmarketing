@@ -41,7 +41,7 @@ These pages support Phase 2 by turning trade show displays and business print in
 Build these pages in this order:
 
 1. `banner-stands.html` — live
-2. `custom-table-covers.html` — approved and pushed, pending live deploy verification
+2. `custom-table-covers.html` — live
 3. `step-and-repeat-backdrops.html` — next
 4. `custom-canopy-tents.html`
 5. `trade-show-booth-displays.html`

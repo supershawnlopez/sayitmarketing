@@ -56,8 +56,8 @@ Exit criteria:
 
 3. Second display/print SEO support page build
 - Owner: Phil + Angela + Marcus + Chris
-- Status: Approved by Shawn and pushed (August 28, 2026)
-- Notes: Added `custom-table-covers.html`, compressed local table cover imagery, sitemap entry, and hub links from `trade-show-displays.html`. Pending live Netlify deploy verification.
+- Status: Done and live-verified (August 28, 2026)
+- Notes: Added `custom-table-covers.html`, compressed local table cover imagery, sitemap entry, and hub links from `trade-show-displays.html`. Live page and clean URL returned `200`.
 
 1. Three pillar architecture pass
 - Owner: Steve + Jony + Phil + Angela + Marcus

@@ -92,7 +92,7 @@ Light Gray:     #F3F4F4  — Card backgrounds, subtle dividers
 | `advertising-management.html` | Paid ad management — Google + Social interactive selector, pricing, lead form | Live |
 | `trade-show-displays.html` | Trade show displays hub — Say It branded WSDisplay/ExhibitBook reseller path | Live |
 | `banner-stands.html` | Banner stands SEO support page — product-specific print/display quote path | Live |
-| `custom-table-covers.html` | Custom table covers SEO support page — product-specific print/display quote path | Approved / deploying |
+| `custom-table-covers.html` | Custom table covers SEO support page — product-specific print/display quote path | Live |
 | `proposals/dogandcat.html` | Client proposal — Eimy Martinez, Dog & Cat Groomer | Live |
 
 **Assets:**

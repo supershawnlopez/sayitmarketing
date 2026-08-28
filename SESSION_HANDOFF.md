@@ -37,8 +37,13 @@ Latest continuation:
 - Added `custom-table-covers.html` to `sitemap.xml`.
 - Updated `trade-show-displays.html` so the completed Banner Stands and Table Covers cards link to their support pages.
 - Shawn approved local `custom-table-covers.html` and asked Codex to push it.
-- Updated `PROJECT.md` with the live banner stands page and local table covers page.
-- Updated `TASKS.md` so the next `NOW` item is building `step-and-repeat-backdrops.html` after the table covers deploy is verified.
+- Pushed commit `6f42139 Add custom table covers SEO support page` to `origin/main`.
+- Verified live page after Netlify deploy: `https://sayitmarketing.com/custom-table-covers.html` returned `200`.
+- Verified clean Netlify URL: `https://sayitmarketing.com/custom-table-covers` returned `200`.
+- Verified live table cover image assets returned `200`: `assets/table-covers-hero.jpg` and `assets/table-covers-detail.jpg`.
+- Verified `trade-show-displays.html` now links to the completed support pages through clean URLs `/banner-stands` and `/custom-table-covers`.
+- Updated `PROJECT.md` with the live banner stands and table covers pages.
+- Updated `TASKS.md` so the next `NOW` item is building `step-and-repeat-backdrops.html`.
 
 Important Supabase access note:
 - Fresh Codex sessions can now use the Supabase connector for Say It.
@@ -96,8 +101,7 @@ Team recommendation already discussed:
    - Latest polish adds the missing CTA in the mid-page guidance block and presents buying questions as an FAQ.
    - Screenshot polish fixed the desktop process row alignment and added clickable-row chevrons to the FAQ.
    - Banner stands live deploy verified after GitHub push.
-   - Shawn approved `custom-table-covers.html` and requested push.
-   - Pending: live Netlify deploy verification after GitHub push.
+   - `custom-table-covers.html` was pushed and live-verified.
 
 3. **WSDisplay-approved image replacement**
    - Current print hero/panel images are local generated placeholders: `assets/print-hero-premium.jpg` and `assets/print-display-booth.jpg`.
@@ -164,7 +168,7 @@ When reviewing tracking:
 
 ## Next Best Move
 
-Verify the live `custom-table-covers.html` Netlify deploy, then start `step-and-repeat-backdrops.html`.
+Start `step-and-repeat-backdrops.html` using the approved support-page pattern.
 
 Suggested prompt for the next task:
 
@@ -173,7 +177,7 @@ We are working in C:\Users\SuperShawn\Documents\GitHub\sayitmarketing.
 
 Read BRIEF.md, AGENTS.md, TASKS.md, and SESSION_HANDOFF.md.
 
-Verify `https://sayitmarketing.com/custom-table-covers.html` after Netlify deploy. Then start `step-and-repeat-backdrops.html` using `docs/print-display-seo-support-pages.md` and the approved support-page pattern.
+Start `step-and-repeat-backdrops.html` using `docs/print-display-seo-support-pages.md` and the approved support-page pattern.
 ```
 
-The display hub, print page upgrade, three-pillar architecture pass, OG/icon work, traffic-tracking backend, first display/print support-page architecture, live `banner-stands.html` page, and approved local `custom-table-covers.html` build are complete. The next open growth task is verifying the live table covers deploy, then building `step-and-repeat-backdrops.html`.
+The display hub, print page upgrade, three-pillar architecture pass, OG/icon work, traffic-tracking backend, first display/print support-page architecture, live `banner-stands.html` page, and live `custom-table-covers.html` page are complete. The next open growth task is building `step-and-repeat-backdrops.html`.
