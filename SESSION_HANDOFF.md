@@ -65,10 +65,10 @@ Team recommendation already discussed:
    - Replace them with approved supplier/product images once Shawn provides downloaded ZIP folders or exact files.
 
 4. **Blue Luna-style tracking**
-   - Add session-based visit tracking.
-   - Preserve UTM source/medium/campaign/content/term.
-   - Add “Where did you hear about us?” to Say It forms.
-   - Build admin traffic report showing leads by channel, marketing pages viewed, pages that led to leads, and top lead paths.
+   - Implemented in repo: `assets/visit-tracker.js`, `/api/track`, `/api/traffic`, `/admin/traffic.html`, `site_visits`, `lead_page_paths`, preserved UTM/session fields, and `heard_about_us` on the quote/audit forms.
+   - `lead-create.js` snapshots page paths into `lead_page_paths` when the tracking schema exists and falls back safely if the migration has not been applied yet.
+   - Supabase migration file: `supabase/migrations/005_tracking_reporting.sql`.
+   - Remote migration not applied yet because the local Supabase CLI only listed the `SPA MAMBO` project, not a Say It project. Do not apply this migration to SPA MAMBO.
 
 5. **Existing critical item**
    - Stripe webhook signed-event validation is still deferred from earlier sessions.
@@ -104,18 +104,19 @@ When reviewing the three-pillar pass:
 6. Tap `Start An App Quote` and confirm the quote page headline says `Custom App Quote`.
 7. Tap a website quote link and confirm the quote page headline says `Custom Website Quote`.
 
-When tracking is built:
+When tracking is deployed:
 
 1. Open a tagged test link.
 2. Submit a test lead.
-3. Confirm the admin traffic report shows the right source and page path.
+3. Confirm `/admin/traffic.html` shows the right source and page path.
+4. Confirm `/admin/leads.html` shows the lead's service and source.
 
 ---
 
 ## Next Best Move
 
-Start with `TASKS.md` NOW item #2:
+Start with the remaining tracking deployment dependency:
 
-**Scope Blue Luna-style tracking/reporting for Say It.**
+**Apply `supabase/migrations/005_tracking_reporting.sql` to the correct Say It Supabase project, then live-test `/api/track`, `/api/traffic`, `/admin/traffic.html`, and a real form submission.**
 
-The display hub, print page upgrade, and three-pillar architecture pass are live-ready. Tracking comes next so future traffic and website/app/print campaigns are measurable.
+The display hub, print page upgrade, three-pillar architecture pass, and tracking code are repo-ready. The full traffic report needs the correct Supabase project schema applied before it can collect visit/path data.

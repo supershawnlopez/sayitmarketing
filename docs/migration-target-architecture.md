@@ -15,7 +15,9 @@
 
 ## API Map
 - `POST /api/leads` -> `lead-create.js`
+- `POST /api/track` -> `track.js`
 - `GET /api/pipeline` -> `pipeline-list.js`
+- `GET /api/traffic` -> `traffic.js`
 - `PATCH /api/leads/:id/status` -> `lead-status-update.js`
 - `POST /api/automation/run` -> `automation-runner.js`
 

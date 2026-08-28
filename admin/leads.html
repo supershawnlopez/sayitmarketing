@@ -25,6 +25,7 @@
 <body>
   <div class="wrap">
     <h1>Leads</h1>
+    <p><a href="/admin/traffic.html">View Traffic Report</a></p>
     <div class="bar">
       <input id="adminKey" placeholder="Admin API Key">
       <select id="status">
@@ -46,11 +47,11 @@
     <table>
       <thead>
         <tr>
-          <th>Created</th><th>Name</th><th>Email</th><th>Phone</th><th>Type</th><th>Score</th><th>Tag</th><th>Status</th>
+          <th>Created</th><th>Name</th><th>Email</th><th>Phone</th><th>Service</th><th>Source</th><th>Score</th><th>Tag</th><th>Status</th>
         </tr>
       </thead>
       <tbody id="rows">
-        <tr><td colspan="8">No data loaded.</td></tr>
+        <tr><td colspan="9">No data loaded.</td></tr>
       </tbody>
     </table>
     <div class="muted">This page uses the Netlify pipeline API and requires `ADMIN_API_KEY`.</div>
@@ -66,12 +67,12 @@
       const res = await fetch("/api/pipeline?" + params.toString(), { headers: { "X-Admin-Key": key } });
       const rows = document.getElementById("rows");
       if (!res.ok) {
-        rows.innerHTML = "<tr><td colspan='8'>Failed to load leads.</td></tr>";
+        rows.innerHTML = "<tr><td colspan='9'>Failed to load leads.</td></tr>";
         return;
       }
       const data = await res.json();
       if (!data.items || data.items.length === 0) {
-        rows.innerHTML = "<tr><td colspan='8'>No leads found.</td></tr>";
+        rows.innerHTML = "<tr><td colspan='9'>No leads found.</td></tr>";
         return;
       }
       rows.innerHTML = data.items.map(item => (
@@ -80,7 +81,8 @@
           <td>${item.full_name || ""}</td>
           <td>${item.email || ""}</td>
           <td>${item.mobile_phone || ""}</td>
-          <td>${item.lead_type || ""}</td>
+          <td>${item.service_interest || item.lead_type || ""}</td>
+          <td>${item.heard_about_us || item.utm_source || "Unknown / Direct"}</td>
           <td>${item.score ?? ""}</td>
           <td>${item.tag || ""}</td>
           <td>${item.status || ""}</td>

@@ -13,6 +13,16 @@
   status = 200
 
 [[redirects]]
+  from = "/api/track"
+  to = "/.netlify/functions/track"
+  status = 200
+
+[[redirects]]
+  from = "/api/traffic"
+  to = "/.netlify/functions/traffic"
+  status = 200
+
+[[redirects]]
   from = "/api/leads/*/status"
   to = "/.netlify/functions/lead-status-update"
   status = 200

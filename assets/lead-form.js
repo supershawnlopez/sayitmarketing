@@ -18,6 +18,30 @@
     return String(el.value || "").trim();
   }
 
+  function getTrackingAttribution() {
+    if (window.SayItVisitTracker && typeof window.SayItVisitTracker.getAttribution === "function") {
+      return window.SayItVisitTracker.getAttribution();
+    }
+    return {
+      tracking_session_id: "",
+      utm_source: getParam("utm_source"),
+      utm_medium: getParam("utm_medium"),
+      utm_campaign: getParam("utm_campaign"),
+      utm_content: getParam("utm_content"),
+      utm_term: getParam("utm_term"),
+      landing_page: window.location.href,
+      first_landing_page: window.location.href,
+      last_page_path: window.location.pathname + window.location.search,
+      referrer: document.referrer || "",
+      page_path_history: [{
+        page_url: window.location.href,
+        page_path: window.location.pathname + window.location.search,
+        page_title: document.title || "",
+        visited_at: new Date().toISOString()
+      }]
+    };
+  }
+
   function getPrintItemMeta(item) {
     const labels = {
       "general-print": {
@@ -227,6 +251,7 @@
     const apiBase = getApiBase();
     const apiPath = form.dataset.api || "/api/leads";
     const apiUrl = apiBase ? `${apiBase}${apiPath}` : apiPath;
+    const attribution = getTrackingAttribution();
 
     const payload = {
       lead_type: form.dataset.leadType || "quote",
@@ -242,13 +267,20 @@
       preferred_contact: getFormValue(form, "preferred_contact"),
       website_url: getFormValue(form, "website_url"),
       notes: getFormValue(form, "notes"),
+      heard_about_us: getFormValue(form, "heard_about_us"),
       consent_sms_email: Boolean(getFormValue(form, "consent_sms_email")),
       website_field: getFormValue(form, "website_field"),
-      utm_source: getParam("utm_source"),
-      utm_medium: getParam("utm_medium"),
-      utm_campaign: getParam("utm_campaign"),
-      landing_page: window.location.href,
-      referrer: document.referrer || ""
+      tracking_session_id: attribution.tracking_session_id || "",
+      utm_source: attribution.utm_source || "",
+      utm_medium: attribution.utm_medium || "",
+      utm_campaign: attribution.utm_campaign || "",
+      utm_content: attribution.utm_content || "",
+      utm_term: attribution.utm_term || "",
+      landing_page: attribution.landing_page || window.location.href,
+      first_landing_page: attribution.first_landing_page || attribution.landing_page || window.location.href,
+      last_page_path: attribution.last_page_path || window.location.pathname + window.location.search,
+      referrer: attribution.referrer || document.referrer || "",
+      page_path_history: attribution.page_path_history || []
     };
 
     if (statusEl) statusEl.textContent = "";

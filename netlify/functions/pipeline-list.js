@@ -20,7 +20,7 @@ exports.handler = async (event) => {
   const leadType = (params.get("lead_type") || "").toLowerCase().trim();
   const q = (params.get("q") || "").trim();
 
-  let query = `leads?select=id,created_at,lead_type,status,score,tag,full_name,business_name,email,mobile_phone&order=created_at.desc&limit=${pageSize}&offset=${(page - 1) * pageSize}`;
+  let query = `leads?select=id,created_at,lead_type,status,score,tag,full_name,business_name,email,mobile_phone,service_interest,utm_source,utm_medium,utm_campaign,landing_page,referrer,heard_about_us,last_page_path&order=created_at.desc&limit=${pageSize}&offset=${(page - 1) * pageSize}`;
   if (status) query += `&status=eq.${encodeURIComponent(status)}`;
   if (tag) query += `&tag=eq.${encodeURIComponent(tag)}`;
   if (leadType) query += `&lead_type=eq.${encodeURIComponent(leadType)}`;

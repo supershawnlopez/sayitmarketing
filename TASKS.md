@@ -37,8 +37,8 @@ Exit criteria:
 
 1. Scope Blue Luna-style tracking/reporting for Say It
 - Owner: Priya + Craig + Phil
-- Status: Ready for implementation plan
-- Notes: Port the concept, not the Next.js code directly. Say It is static HTML + Netlify Functions + Supabase. Need `site_visits`, `/api/track`, `assets/visit-tracker.js`, UTM/session preservation, referral question, and `/admin/traffic.html`.
+- Status: Implemented in repo; pending Say It Supabase migration application and live verification
+- Notes: Added `site_visits`, `lead_page_paths`, `/api/track`, `/api/traffic`, `assets/visit-tracker.js`, UTM/session preservation, `heard_about_us` form field, path snapshotting, and `/admin/traffic.html`. Supabase CLI currently exposes only the SPA MAMBO project, so the Say It tracking migration was not applied remotely.
 
 2. Define first display/print SEO support pages
 - Owner: Phil + Angela
@@ -68,10 +68,9 @@ Exit criteria:
 
 ## NEXT
 
-1. Implement tracking schema and visit tracker after display hub ships
-2. Add “Where did you hear about us?” to quote/audit/display forms
-3. Build `/admin/traffic.html` report
-4. Validate Stripe webhook with real signed test event — deferred from Phase 1
+1. Apply `supabase/migrations/005_tracking_reporting.sql` to the correct Say It Supabase project
+2. Live-test `/api/track`, `/api/traffic`, `/admin/traffic.html`, and a form submission after the migration is applied
+3. Validate Stripe webhook with real signed test event — deferred from Phase 1
 
 ---
 

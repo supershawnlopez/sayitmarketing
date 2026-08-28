@@ -12,6 +12,7 @@ async function sendLeadNotification(payload, lead) {
   const budget  = payload.budget_range     || "—";
   const plan    = payload.monthly_plan_interest || "—";
   const page    = payload.landing_page  || "—";
+  const heard   = payload.heard_about_us || "—";
   const notes   = payload.notes         || "—";
   const tag     = lead.tag  || "—";
   const score   = lead.score != null ? lead.score : "—";
@@ -24,6 +25,7 @@ async function sendLeadNotification(payload, lead) {
     `<b>Service interest:</b> ${service}`,
     `<b>Budget:</b> ${budget}`,
     `<b>Plan interest:</b> ${plan}`,
+    `<b>Heard about us:</b> ${heard}`,
     `<b>Lead score:</b> ${score} · tag: ${tag}`,
     `<b>Page:</b> ${page}`,
     `<b>Notes:</b><br><pre style="font-size:0.85em;background:#f4f4f4;padding:8px;border-radius:6px;">${notes}</pre>`,
@@ -38,6 +40,119 @@ async function sendLeadNotification(payload, lead) {
       subject: `🔔 New lead — ${name}${biz !== "—" ? " · " + biz : ""}`,
       html: `<p style="font-family:sans-serif;line-height:1.7">${lines}</p>`
     })
+  });
+}
+
+function cleanString(value, max = 500) {
+  return String(value || "").trim().slice(0, max);
+}
+
+function normalizePathHistory(payload) {
+  if (!Array.isArray(payload.page_path_history)) return [];
+  return payload.page_path_history
+    .slice(0, 40)
+    .map((item, index) => ({
+      page_url: cleanString(item.page_url, 900) || null,
+      page_path: cleanString(item.page_path, 300) || null,
+      page_title: cleanString(item.page_title, 180) || null,
+      visited_at: cleanString(item.visited_at, 80) || null,
+      sequence: index + 1
+    }))
+    .filter((item) => item.page_url || item.page_path);
+}
+
+async function snapshotLeadPath(lead, payload) {
+  const sessionId = cleanString(payload.tracking_session_id, 80);
+  if (!lead?.id || !sessionId) return;
+
+  let pathRows = [];
+  try {
+    const visitsRes = await supabase(
+      `site_visits?select=id,created_at,page_url,page_path,page_title&session_id=eq.${encodeURIComponent(sessionId)}&order=created_at.asc&limit=40`,
+      { method: "GET" }
+    );
+    if (visitsRes.ok) {
+      const visits = await visitsRes.json();
+      pathRows = visits.map((visit, index) => ({
+        lead_id: lead.id,
+        session_id: sessionId,
+        site_visit_id: visit.id,
+        visited_at: visit.created_at,
+        page_url: visit.page_url || null,
+        page_path: visit.page_path || null,
+        page_title: visit.page_title || null,
+        sequence: index + 1
+      }));
+    }
+  } catch (err) {
+    console.error("[lead-path] visit lookup failed:", err);
+  }
+
+  if (!pathRows.length) {
+    pathRows = normalizePathHistory(payload).map((item) => ({
+      lead_id: lead.id,
+      session_id: sessionId,
+      site_visit_id: null,
+      visited_at: item.visited_at,
+      page_url: item.page_url,
+      page_path: item.page_path,
+      page_title: item.page_title,
+      sequence: item.sequence
+    }));
+  }
+
+  if (!pathRows.length) return;
+
+  try {
+    const insertRes = await supabase("lead_page_paths", {
+      method: "POST",
+      body: JSON.stringify(pathRows)
+    });
+    if (!insertRes.ok) console.error("[lead-path] insert failed:", await insertRes.text());
+  } catch (err) {
+    console.error("[lead-path] insert error:", err);
+  }
+}
+
+function getLegacyLeadRecord(record) {
+  const {
+    utm_content,
+    utm_term,
+    tracking_session_id,
+    first_landing_page,
+    last_page_path,
+    heard_about_us,
+    ...legacy
+  } = record;
+  return legacy;
+}
+
+async function insertLeadRecord(record) {
+  const insertRes = await supabase("leads", {
+    method: "POST",
+    body: JSON.stringify(record)
+  });
+  if (insertRes.ok) return insertRes;
+
+  const errorText = await insertRes.text();
+  const canRetryLegacy = [
+    "utm_content",
+    "utm_term",
+    "tracking_session_id",
+    "first_landing_page",
+    "last_page_path",
+    "heard_about_us"
+  ].some((column) => errorText.includes(column));
+
+  if (!canRetryLegacy) {
+    console.error("[lead-create] insert failed:", errorText);
+    return insertRes;
+  }
+
+  console.warn("[lead-create] retrying with legacy attribution columns:", errorText);
+  return supabase("leads", {
+    method: "POST",
+    body: JSON.stringify(getLegacyLeadRecord(record))
   });
 }
 
@@ -94,8 +209,14 @@ exports.handler = async (event) => {
     utm_source: payload.utm_source || null,
     utm_medium: payload.utm_medium || null,
     utm_campaign: payload.utm_campaign || null,
+    utm_content: payload.utm_content || null,
+    utm_term: payload.utm_term || null,
     landing_page: payload.landing_page || null,
+    first_landing_page: payload.first_landing_page || payload.landing_page || null,
+    last_page_path: payload.last_page_path || null,
     referrer: payload.referrer || null,
+    heard_about_us: payload.heard_about_us || null,
+    tracking_session_id: payload.tracking_session_id || null,
     consent_sms_email: Boolean(payload.consent_sms_email),
     consent_at: payload.consent_sms_email ? now : null,
     consent_ip: event.headers["x-forwarded-for"] || null,
@@ -129,15 +250,14 @@ exports.handler = async (event) => {
       }
     }
 
-    const insertRes = await supabase("leads", {
-      method: "POST",
-      body: JSON.stringify(record)
-    });
+    const insertRes = await insertLeadRecord(record);
     if (!insertRes.ok) {
       return json(500, { error: "Could not save lead" }, event, "public");
     }
     const rows = await insertRes.json();
     const lead = rows[0];
+
+    await snapshotLeadPath(lead, payload);
 
     sendLeadNotification(payload, lead).catch(function(err) {
       console.error("[lead-notify] Resend error:", err);

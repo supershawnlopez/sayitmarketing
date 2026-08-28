@@ -16,6 +16,8 @@
 - `timeline`
 - `consent_sms_email` (explicit)
 - hidden attribution: `utm_source`, `utm_medium`, `utm_campaign`, `referrer`, `landing_page`
+- preserved attribution: `tracking_session_id`, `utm_content`, `utm_term`, `first_landing_page`, `last_page_path`, `page_path_history`
+- manual attribution: `heard_about_us`
 - honeypot field
 
 ## Lead Scoring
@@ -47,4 +49,3 @@ Start at `0`, then:
 - per-IP rate limit
 - server validation
 - optional CAPTCHA only if abuse increases
-
