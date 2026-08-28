@@ -37,8 +37,13 @@ Exit criteria:
 
 1. Build next display/print SEO support page
 - Owner: Phil + Angela + Marcus + Chris
-- Status: Ready for next page architecture/build
-- Notes: Build `step-and-repeat-backdrops.html` next using `docs/print-display-seo-support-pages.md`. Follow the approved support-page pattern: product-specific hero, practical use cases, mid-page CTA, centered process cards, FAQ rows with chevrons, tracking script, quote link context, and sitemap entry.
+- Status: Local build ready for Shawn review
+- Notes: Built `step-and-repeat-backdrops.html` locally using the approved support-page pattern: product-specific hero, backdrop-specific imagery, practical use cases, controlled horizontal spotlight layout, mid-page CTA, centered process cards, FAQ rows with chevrons, tracking script, quote link context, display hub link, and sitemap entry.
+
+2. Build next display/print SEO support page after backdrop review
+- Owner: Phil + Angela + Marcus + Chris
+- Status: Queued
+- Notes: Build `custom-canopy-tents.html` next after Shawn approves and pushes the backdrop page.
 
 ---
 
@@ -58,6 +63,11 @@ Exit criteria:
 - Owner: Phil + Angela + Marcus + Chris
 - Status: Done and live-verified (August 28, 2026)
 - Notes: Added `custom-table-covers.html`, compressed local table cover imagery, sitemap entry, and hub links from `trade-show-displays.html`. Live page and clean URL returned `200`. Spotlight layout now uses explicit left/right columns, a capped media column, reset `figure` margins, and mobile-only stacking.
+
+4. Third display/print SEO support page build
+- Owner: Phil + Angela + Marcus + Chris
+- Status: Built locally for Shawn review (August 28, 2026)
+- Notes: Added `step-and-repeat-backdrops.html`, compressed local backdrop imagery, product-specific quote context, sitemap entry, and display hub link from `trade-show-displays.html`. Pending Shawn review before push.
 
 1. Three pillar architecture pass
 - Owner: Steve + Jony + Phil + Angela + Marcus

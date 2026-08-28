@@ -93,8 +93,8 @@
         sms: "Hi Say It, I am interested in branded table covers. Please text me back with pricing and next steps."
       },
       "backdrops": {
-        title: "Backdrops Quote",
-        sms: "Hi Say It, I am interested in event backdrops. Please text me back with pricing and next steps."
+        title: "Step And Repeat Backdrops Quote",
+        sms: "Hi Say It, I am interested in a step and repeat backdrop. Please text me back with pricing and next steps."
       },
       "canopy-tents": {
         title: "Canopy Tents Quote",

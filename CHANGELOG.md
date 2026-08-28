@@ -49,20 +49,27 @@
 - Fixed the tablet-width spotlight layout on `custom-table-covers.html` and `banner-stands.html` so the product image stacks above the "Before Ordering" copy instead of overlapping it
 - Follow-up correction after iPad Pro review: restored the horizontal support-page spotlight on tablet/desktop, capped the media height, and kept stacking only for smaller screens
 - Final spotlight containment fix: reset the `figure` margin, capped the left media column at `34rem`, and explicitly assigned media/copy grid columns so the image cannot overlap the text
-- Updated `TASKS.md` so the next `NOW` item is reviewing and approving local `custom-table-covers.html`
+- Added local `step-and-repeat-backdrops.html` as the third product-specific print/display SEO support page
+- Generated and compressed two local backdrop-specific images:
+  - `assets/backdrops-hero.jpg`
+  - `assets/backdrops-detail.jpg`
+- Updated `trade-show-displays.html` so the Backdrops card links to `step-and-repeat-backdrops.html`
+- Added `step-and-repeat-backdrops.html` to `sitemap.xml`
+- Updated the quote form context so `item=backdrops` displays `Step And Repeat Backdrops Quote`
+- Updated `TASKS.md` so the next `NOW` item is reviewing and approving local `step-and-repeat-backdrops.html`
 - Updated `PROJECT.md` so the new architecture doc is discoverable from the main docs list
-- Updated `PROJECT.md` site structure with live `banner-stands.html` and local `custom-table-covers.html`
+- Updated `PROJECT.md` site structure with live `banner-stands.html`, live `custom-table-covers.html`, and local `step-and-repeat-backdrops.html`
 - Updated `SESSION_HANDOFF.md` with the latest Supabase verification and next move
 
 ### ⏳ Pending / In Progress
-- Build `step-and-repeat-backdrops.html` next using the approved support-page pattern
+- Review and approve local `step-and-repeat-backdrops.html` before push
 - Replace generated print/display imagery with approved WSDisplay assets when available
 - Stripe webhook signed-event validation remains deferred from Phase 1
 
 ### 🔜 What To Work On Next
-1. Build `step-and-repeat-backdrops.html` next using the approved page pattern
-2. Confirm the backdrop quote buttons preserve item-specific quote context
-3. Continue linking completed support pages from `trade-show-displays.html`
+1. Review local `step-and-repeat-backdrops.html`
+2. Push the backdrop page after Shawn approval
+3. Build `custom-canopy-tents.html` next using the approved page pattern
 
 ---
 
