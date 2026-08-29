@@ -2457,6 +2457,120 @@ a.addon-chip:hover {
     url("https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=2200&q=80") center/cover;
   color: #fff;
 }
+
+.portfolio-proof-grid {
+  width: min(var(--max), calc(100% - 28px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.portfolio-proof-grid--featured {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.portfolio-proof-card {
+  min-height: 100%;
+  border: 1px solid #d7e2ee;
+  border-radius: 1.1rem;
+  overflow: hidden;
+  background: linear-gradient(180deg, #fff 0%, #f6fafd 100%);
+  box-shadow: var(--shadow-card-rest);
+}
+
+.portfolio-proof-card--compact {
+  padding: 1.05rem;
+}
+
+.portfolio-proof-visual {
+  min-height: 11rem;
+  display: grid;
+  place-items: center;
+  background:
+    radial-gradient(circle at 78% 16%, rgba(74, 166, 220, 0.38), rgba(74, 166, 220, 0) 32%),
+    linear-gradient(135deg, #0f2f4e 0%, #1a679d 100%);
+  color: #fff;
+}
+
+.portfolio-proof-visual--spa {
+  background:
+    radial-gradient(circle at 74% 18%, rgba(105, 190, 160, 0.42), rgba(105, 190, 160, 0) 34%),
+    linear-gradient(135deg, #14364a 0%, #2b826f 100%);
+}
+
+.portfolio-proof-visual--meal {
+  background:
+    radial-gradient(circle at 72% 18%, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0) 35%),
+    linear-gradient(135deg, #16394d 0%, #8a6234 100%);
+}
+
+.portfolio-proof-visual span {
+  width: 5rem;
+  height: 5rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.14);
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.portfolio-proof-copy {
+  display: grid;
+  gap: 0.6rem;
+}
+
+.portfolio-proof-card:not(.portfolio-proof-card--compact) .portfolio-proof-copy {
+  padding: 1.05rem;
+}
+
+.portfolio-proof-copy .eyebrow {
+  margin: 0;
+  text-align: left;
+}
+
+.portfolio-proof-copy h3,
+.portfolio-product-band h2,
+.portfolio-next-step h2 {
+  margin: 0;
+}
+
+.portfolio-proof-copy p,
+.portfolio-product-band p {
+  margin: 0;
+  color: #334a62;
+}
+
+.portfolio-product-band,
+.portfolio-next-step {
+  border: 1px solid #d6e2ef;
+  border-radius: 1.25rem;
+  background: linear-gradient(160deg, #f4f9ff 0%, #ffffff 100%);
+  box-shadow: var(--shadow-card-rest);
+  padding: clamp(1.15rem, 3vw, 1.8rem);
+}
+
+.portfolio-product-band {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr) auto;
+  gap: 1rem;
+  align-items: center;
+}
+
+.portfolio-next-step {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+  gap: 0.85rem;
+}
+
+.portfolio-next-step h2 {
+  max-width: 22ch;
+}
+
 .case-strip {
   width: min(var(--max), calc(100% - 28px));
   margin: 0 auto;
@@ -2584,14 +2698,20 @@ a.addon-chip:hover {
   .services-diagnose,
   .process-timeline,
   .guided-path,
+  .portfolio-proof-grid,
   .case-strip,
   .faq-confidence-grid {
     grid-template-columns: 1fr;
   }
 
   .contact-method-grid,
-  .outcome-grid {
+  .outcome-grid,
+  .portfolio-product-band {
     grid-template-columns: 1fr;
+  }
+
+  .portfolio-product-band {
+    align-items: start;
   }
 
   .persona-option {

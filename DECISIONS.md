@@ -111,3 +111,24 @@ Rules:
 - Shawn approved public availability as Monday-Friday, 9 AM-5 PM, by appointment.
 - Add `openingHoursSpecification` and appointment-first policy text.
 - Do not add a public street address or `geo` coordinates unless Shawn later confirms a real public location customers can visit.
+
+---
+
+## 2026-08-28 — Found As Portfolio Proof
+
+**Decision:** Found may be shown on the Say It portfolio as a Say It-built product, but it should not become the main public offer or compete with the custom Websites / Apps / Print & Displays branches.
+
+**Context:** Shawn approved using real portfolio proof from Blue Luna Events, Spa Mambo, MealFred, Found, and Found-powered small business sites. This supersedes the earlier hidden-Found portfolio stance while keeping Say It Marketing as the primary brand and lead-capture path.
+
+**Team call:**
+- Steve: Say It stays the front door. Found can be proof, not a confusing second brand fighting for attention.
+- Jony: The portfolio should feel like a clean proof wall, not a product directory.
+- Phil: This helps SEO/AEO/GEO by connecting Say It to real websites, apps, and owned products without keyword stuffing.
+- Angela: Label the categories plainly so visitors understand custom builds, Say It-built products, and Found-powered sites.
+- Craig/Marcus: Do not invent metrics or fake screenshots; use verified links and honest text-first cards until approved assets are available.
+
+**Approved direction:**
+- Portfolio headline may use `Real websites, apps, and platforms built under the Say It umbrella`.
+- Group proof into `Custom Builds`, `Say It-Built Product`, and `Found-Powered Sites`.
+- Mention Found as `a website platform built by Say It Marketing`.
+- Keep the main CTA pointed to Say It quote/contact flow.

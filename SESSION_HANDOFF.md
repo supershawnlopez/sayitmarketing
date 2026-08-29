@@ -98,6 +98,9 @@ Latest continuation:
 - Pushed appointment hours and prefilled SMS update in commit `1c6203d Add appointment hours to structured data`.
 - Live checks passed for `contact.html` and `get-quote.html`: both returned `200`, include the appointment wording/hours schema, and do not include `geo`.
 - Added TidyCal booking link follow-up to `TASKS.md` backlog; do not add a Book a Call CTA until Shawn creates the booking link.
+- Shawn approved the portfolio direction: use Blue Luna Events, Spa Mambo, MealFred, Found, and Found-powered sites as real proof.
+- Team approved mentioning Found as a Say It-built product on the portfolio page while keeping Say It as the main public brand and quote path.
+- Replaced the local `portfolio.html` placeholder stock case studies and invented metrics with honest categories: Custom Builds, Say It-Built Product, and Found-Powered Sites.
 
 Important Supabase access note:
 - Fresh Codex sessions can now use the Supabase connector for Say It.
@@ -121,7 +124,7 @@ Team recommendation already discussed:
 - Do not make a raw iframe the main experience.
 - Build a Say It-owned display hub with curated categories, rewritten copy, approved WSDisplay assets, and a catalog button.
 - Use `Print & Displays` in navigation and `Business Print & Trade Show Displays` for fuller page/homepage language.
-- Keep Found off the public Say It offer; use it only as a sister-company referral after qualification.
+- Found may appear on the portfolio as a Say It-built product and proof item, but it should not compete with the main Say It offer or primary quote path.
 - Main `print-services.html` hero should feel premium like the trade show page, with stronger imagery and buyer-focused category panels.
 - Print category quote links may use the same quote form, but the quote page must visibly confirm the exact item request on arrival.
 - Print quote traffic should push visitors toward the form first, then text; phone calls should be available but not prominent.

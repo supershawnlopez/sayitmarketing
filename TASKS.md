@@ -59,6 +59,11 @@ Exit criteria:
 - Status: Done and live-verified (August 28, 2026)
 - Notes: Expanded JSON-LD on 20 public sales/service pages with consistent Say It business identity, `sameAs`, richer Tucson/Phoenix/Arizona/US `areaServed`, `WebSite`, `WebPage`, service, offer, and FAQ schema where appropriate. Shawn approved Monday-Friday, 9 AM-5 PM availability by appointment, so `openingHoursSpecification` and appointment policy were added. No `geo` or street address was added because Say It is mobile/service-area without a public storefront. Contact SMS links now open a prefilled Say It message. Commits `8b995ef` and `1c6203d` were pushed and representative live pages returned `200`.
 
+1. Portfolio proof direction
+- Owner: Steve + Jony + Phil + Angela + Marcus
+- Status: In progress locally (August 28, 2026)
+- Notes: Shawn approved using real proof from Blue Luna Events, Spa Mambo, MealFred, Found, and Found-powered sites. The team approved mentioning Found as a Say It-built product while keeping Say It as the main brand and quote path. Initial local portfolio pass replaces stock case studies and invented metrics with honest proof categories.
+
 1. Admin traffic report filtering
 - Owner: Priya + Angela + Phil + Craig
 - Status: Done and live-verified (August 28, 2026)
@@ -135,7 +140,7 @@ Exit criteria:
 1. Weekly KPI instrumentation pass (lead -> sale funnel visibility)
 2. Add `geo` schema only if Shawn later confirms exact public storefront coordinates
 3. Add TidyCal booking link after Shawn creates the 15-minute discovery call calendar
-4. Portfolio/testimonials expansion with proof assets
+4. Add approved portfolio screenshots or thumbnails for Blue Luna Events, Spa Mambo, MealFred, Found, and Found-powered sites
 5. SLA/response-time messaging A/B copy pass
 6. WSDisplay reseller asset audit: identify approved images/catalog copy that can be used on Say It pages
 7. Branded reseller catalog/subdomain inquiry with WSDisplay/ExhibitBook

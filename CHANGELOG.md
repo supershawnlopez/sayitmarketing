@@ -1,3 +1,25 @@
+## Session: August 28, 2026 — Portfolio Proof Direction
+**AI:** Codex (GPT-5)
+**Worked on:** Started replacing the generic portfolio page with real Say It, Found, and product proof
+
+### Completed This Session
+- Recorded Shawn-approved portfolio proof direction:
+  - Blue Luna Events
+  - Spa Mambo
+  - MealFred
+  - Found
+  - Found-powered sites including RC Bicycles, MBJ Heating & Cooling, and Divine Remodel AZ
+- Added the new decision that Found may appear publicly as a Say It-built product and proof item, while Say It remains the main brand and quote path
+- Replaced local `portfolio.html` placeholder case studies, stock project cards, and invented metrics with honest proof categories
+- Added responsive portfolio card styling in `assets/site.css`
+
+### Next
+- Review the local portfolio page visually on desktop and mobile
+- Add approved screenshots/thumbnails later when the proof assets are ready
+- Push only after Shawn approves the portfolio page
+
+---
+
 ## Session: August 28, 2026 — Print/Display SEO Support Architecture
 **AI:** Codex (GPT-5)
 **Worked on:** Verified live Supabase tracking, defined the first print/display SEO support-page cluster, and built the banner stands page locally

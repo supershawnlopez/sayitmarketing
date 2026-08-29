@@ -177,7 +177,7 @@ Planned growth direction:
 - Curated display categories: banner stands, table covers, custom canopy tents, step and repeat backdrops, flags, lightboxes, and booth kits
 - Quote-first flow so Say It owns the customer relationship
 - Public navigation uses `Print & Displays`; homepage/page copy uses `Business Print & Trade Show Displays`
-- Found is not promoted on Say It. It is a sister-company fallback only after a custom website/app lead is qualified and determined not to fit Say It.
+- Found may appear on the Say It portfolio as a Say It-built product and proof item, but it should not compete with the main Websites / Apps / Print & Displays offer or quote path.
 
 ### Custom Business Apps
 Custom apps are now a public Say It pillar alongside custom websites and print/displays.
