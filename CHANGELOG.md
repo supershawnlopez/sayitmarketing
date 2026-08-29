@@ -12,6 +12,7 @@
 - Added the new decision that Found may appear publicly as a Say It-built product and proof item, while Say It remains the main brand and quote path
 - Replaced local `portfolio.html` placeholder case studies, stock project cards, and invented metrics with honest proof categories
 - Added responsive portfolio card styling in `assets/site.css`
+- Clarified the custom build cards so Blue Luna Events, Spa Mambo, and MealFred describe the actual systems instead of vague app direction language
 
 ### Next
 - Review the local portfolio page visually on desktop and mobile

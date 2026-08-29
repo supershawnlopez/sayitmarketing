@@ -62,7 +62,7 @@ Exit criteria:
 1. Portfolio proof direction
 - Owner: Steve + Jony + Phil + Angela + Marcus
 - Status: In progress locally (August 28, 2026)
-- Notes: Shawn approved using real proof from Blue Luna Events, Spa Mambo, MealFred, Found, and Found-powered sites. The team approved mentioning Found as a Say It-built product while keeping Say It as the main brand and quote path. Initial local portfolio pass replaces stock case studies and invented metrics with honest proof categories.
+- Notes: Shawn approved using real proof from Blue Luna Events, Spa Mambo, MealFred, Found, and Found-powered sites. The team approved mentioning Found as a Say It-built product while keeping Say It as the main brand and quote path. Initial portfolio pass replaced stock case studies and invented metrics with honest proof categories. Follow-up copy clarifies Blue Luna Events as a custom website plus business app, Spa Mambo as a spa management app, and MealFred as an AI fitness app.
 
 1. Admin traffic report filtering
 - Owner: Priya + Angela + Phil + Craig

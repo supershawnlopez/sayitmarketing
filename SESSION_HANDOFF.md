@@ -101,6 +101,7 @@ Latest continuation:
 - Shawn approved the portfolio direction: use Blue Luna Events, Spa Mambo, MealFred, Found, and Found-powered sites as real proof.
 - Team approved mentioning Found as a Say It-built product on the portfolio page while keeping Say It as the main public brand and quote path.
 - Replaced the local `portfolio.html` placeholder stock case studies and invented metrics with honest categories: Custom Builds, Say It-Built Product, and Found-Powered Sites.
+- Clarified portfolio proof copy: Blue Luna Events is a custom website plus business app for estimates, website updates, proposals, and traffic reporting; Spa Mambo is a spa management app covering POS, commissions, rentals, services/products, schedules, and website updates; MealFred is an AI generative fitness and nutrition app.
 
 Important Supabase access note:
 - Fresh Codex sessions can now use the Supabase connector for Say It.
