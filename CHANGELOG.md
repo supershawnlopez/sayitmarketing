@@ -1,3 +1,26 @@
+## Session: August 29, 2026 — Portfolio Screenshot Assets
+**AI:** Codex (GPT-5)
+**Worked on:** Added public-site screenshots to the portfolio proof cards
+
+### Completed This Session
+- Captured and compressed portfolio thumbnails for:
+  - Blue Luna Events
+  - Spa Mambo
+  - Found
+  - RC Bicycles
+  - MBJ Heating & Cooling
+  - Divine Remodel AZ
+- Updated `portfolio.html` so those proof cards now use real screenshots instead of monogram-only visuals
+- Kept MealFred text-only because `https://mealfred.fit/` currently resolves to a Netlify `Site not found` page
+- Removed raw PNG capture files and kept only web-friendly JPG thumbnails
+
+### Next
+- Review the updated portfolio page visually
+- Fix `mealfred.fit` in its own project/session before adding a MealFred screenshot
+- Push after Shawn approves
+
+---
+
 ## Session: August 28, 2026 — Response-Time Trust Copy
 **AI:** Codex (GPT-5)
 **Worked on:** Added plain-language contact and rush-timing expectations

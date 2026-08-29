@@ -103,6 +103,7 @@ Latest continuation:
 - Replaced the local `portfolio.html` placeholder stock case studies and invented metrics with honest categories: Custom Builds, Say It-Built Product, and Found-Powered Sites.
 - Clarified portfolio proof copy: Blue Luna Events is a custom website plus business app for estimates, website updates, proposals, and traffic reporting; Spa Mambo is a spa management app covering POS, commissions, rentals, services/products, schedules, and website updates; MealFred is an AI generative fitness and nutrition app.
 - Shawn approved the SLA / response-time messaging pass. Added plain-language contact expectations locally: most form requests get a clear reply within 1 business day, call/text is the fastest first step during weekday hours, and rush print/display timing depends on artwork, proof approval, production availability, and shipping.
+- Shawn approved adding portfolio screenshots. Captured and compressed public-site thumbnails locally for Blue Luna Events, Spa Mambo, Found, RC Bicycles, MBJ Heating & Cooling, and Divine Remodel AZ. Added them to `portfolio.html`. Do not add a MealFred public screenshot yet because `https://mealfred.fit/` currently resolves to a Netlify `Site not found` page.
 
 Important Supabase access note:
 - Fresh Codex sessions can now use the Supabase connector for Say It.

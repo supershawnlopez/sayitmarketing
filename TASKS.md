@@ -61,8 +61,8 @@ Exit criteria:
 
 1. Portfolio proof direction
 - Owner: Steve + Jony + Phil + Angela + Marcus
-- Status: In progress locally (August 28, 2026)
-- Notes: Shawn approved using real proof from Blue Luna Events, Spa Mambo, MealFred, Found, and Found-powered sites. The team approved mentioning Found as a Say It-built product while keeping Say It as the main brand and quote path. Initial portfolio pass replaced stock case studies and invented metrics with honest proof categories. Follow-up copy clarifies Blue Luna Events as a custom website plus business app, Spa Mambo as a spa management app, and MealFred as an AI fitness app.
+- Status: In progress locally (August 29, 2026)
+- Notes: Shawn approved using real proof from Blue Luna Events, Spa Mambo, MealFred, Found, and Found-powered sites. The team approved mentioning Found as a Say It-built product while keeping Say It as the main brand and quote path. Initial portfolio pass replaced stock case studies and invented metrics with honest proof categories. Follow-up copy clarifies Blue Luna Events as a custom website plus business app, Spa Mambo as a spa management app, and MealFred as an AI fitness app. Added compressed public-site thumbnails locally for Blue Luna Events, Spa Mambo, Found, RC Bicycles, MBJ Heating & Cooling, and Divine Remodel AZ. `mealfred.fit` currently shows a Netlify `Site not found` page, so MealFred remains text-only until that project is fixed.
 
 1. SLA / response-time messaging pass
 - Owner: Angela + Phil + Steve
@@ -145,7 +145,7 @@ Exit criteria:
 1. Weekly KPI instrumentation pass (lead -> sale funnel visibility)
 2. Add `geo` schema only if Shawn later confirms exact public storefront coordinates
 3. Add TidyCal booking link after Shawn creates the 15-minute discovery call calendar
-4. Add approved portfolio screenshots or thumbnails for Blue Luna Events, Spa Mambo, MealFred, Found, and Found-powered sites
+4. Fix `mealfred.fit` in its own project/session, then add an approved MealFred portfolio thumbnail
 5. Test SLA/response-time copy after traffic data accumulates
 6. WSDisplay reseller asset audit: identify approved images/catalog copy that can be used on Say It pages
 7. Branded reseller catalog/subdomain inquiry with WSDisplay/ExhibitBook
