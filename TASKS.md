@@ -64,6 +64,11 @@ Exit criteria:
 - Status: In progress locally (August 28, 2026)
 - Notes: Shawn approved using real proof from Blue Luna Events, Spa Mambo, MealFred, Found, and Found-powered sites. The team approved mentioning Found as a Say It-built product while keeping Say It as the main brand and quote path. Initial portfolio pass replaced stock case studies and invented metrics with honest proof categories. Follow-up copy clarifies Blue Luna Events as a custom website plus business app, Spa Mambo as a spa management app, and MealFred as an AI fitness app.
 
+1. SLA / response-time messaging pass
+- Owner: Angela + Phil + Steve
+- Status: Done locally (August 28, 2026)
+- Notes: Added plain-language response expectations to `contact.html` and `get-quote.html`: Monday-Friday, 9 AM-5 PM by appointment, call/text first, most form requests receive a clear reply within 1 business day. Added print/display timing caveats to `get-quote.html`, `print-services.html`, and `trade-show-displays.html` so rush timing depends on artwork, proof approval, production availability, and shipping.
+
 1. Admin traffic report filtering
 - Owner: Priya + Angela + Phil + Craig
 - Status: Done and live-verified (August 28, 2026)
@@ -141,7 +146,7 @@ Exit criteria:
 2. Add `geo` schema only if Shawn later confirms exact public storefront coordinates
 3. Add TidyCal booking link after Shawn creates the 15-minute discovery call calendar
 4. Add approved portfolio screenshots or thumbnails for Blue Luna Events, Spa Mambo, MealFred, Found, and Found-powered sites
-5. SLA/response-time messaging A/B copy pass
+5. Test SLA/response-time copy after traffic data accumulates
 6. WSDisplay reseller asset audit: identify approved images/catalog copy that can be used on Say It pages
 7. Branded reseller catalog/subdomain inquiry with WSDisplay/ExhibitBook
 8. Phase 1 archive cleanup: preserve completed hardening tasks and keep current board focused

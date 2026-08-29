@@ -1,3 +1,20 @@
+## Session: August 28, 2026 — Response-Time Trust Copy
+**AI:** Codex (GPT-5)
+**Worked on:** Added plain-language contact and rush-timing expectations
+
+### Completed This Session
+- Added consistent response-time copy to `contact.html` and `get-quote.html`
+- Clarified that most form requests receive a clear reply within 1 business day
+- Kept call/text as the fastest first step during weekday appointment hours
+- Added print/display rush-timing caveats to `get-quote.html`, `print-services.html`, and `trade-show-displays.html`
+- Updated `TASKS.md` and `SESSION_HANDOFF.md` with the approved messaging direction
+
+### Next
+- Review locally, then push after Shawn approves
+- Test the wording later against traffic and lead data
+
+---
+
 ## Session: August 28, 2026 — Portfolio Proof Direction
 **AI:** Codex (GPT-5)
 **Worked on:** Started replacing the generic portfolio page with real Say It, Found, and product proof

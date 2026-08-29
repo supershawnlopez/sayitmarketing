@@ -102,6 +102,7 @@ Latest continuation:
 - Team approved mentioning Found as a Say It-built product on the portfolio page while keeping Say It as the main public brand and quote path.
 - Replaced the local `portfolio.html` placeholder stock case studies and invented metrics with honest categories: Custom Builds, Say It-Built Product, and Found-Powered Sites.
 - Clarified portfolio proof copy: Blue Luna Events is a custom website plus business app for estimates, website updates, proposals, and traffic reporting; Spa Mambo is a spa management app covering POS, commissions, rentals, services/products, schedules, and website updates; MealFred is an AI generative fitness and nutrition app.
+- Shawn approved the SLA / response-time messaging pass. Added plain-language contact expectations locally: most form requests get a clear reply within 1 business day, call/text is the fastest first step during weekday hours, and rush print/display timing depends on artwork, proof approval, production availability, and shipping.
 
 Important Supabase access note:
 - Fresh Codex sessions can now use the Supabase connector for Say It.
@@ -136,6 +137,7 @@ Team recommendation already discussed:
 - Favicon/apple-touch/share-sheet icon is a separate icon-only system: blue field with white message bubble, no words, based on Shawn's Fav1 asset.
 - Supporting services such as SEO, social, ads, hosting, and monthly care should stay below the main branches.
 - Structured data should use only verified Say It facts. Public hours are Monday-Friday, 9 AM-5 PM, by appointment. Do not add exact `geo` coordinates unless Shawn confirms a real public storefront location.
+- Response-time language should stay simple and non-legal: `Most form requests receive a clear reply within 1 business day`; print/display rush timing depends on artwork, proof approval, production availability, and shipping.
 
 ---
 
