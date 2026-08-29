@@ -2502,6 +2502,17 @@ a.addon-chip:hover {
   object-fit: cover;
 }
 
+a.portfolio-proof-visual,
+a.portfolio-product-shot {
+  cursor: pointer;
+}
+
+a.portfolio-proof-visual:focus-visible,
+a.portfolio-product-shot:focus-visible {
+  outline: 0.1875rem solid rgba(0, 113, 227, 0.42);
+  outline-offset: 0.1875rem;
+}
+
 .portfolio-proof-visual--spa {
   background:
     radial-gradient(circle at 74% 18%, rgba(105, 190, 160, 0.42), rgba(105, 190, 160, 0) 34%),
