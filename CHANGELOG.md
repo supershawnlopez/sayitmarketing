@@ -108,6 +108,10 @@
 - Did not add `geo` because Say It is mobile/service-area and no public storefront coordinates were approved
 - Added `DECISIONS.md` record for structured-data fact safety
 - Verified every updated page has one valid JSON-LD block, approved weekday 9-5 hours, appointment policy, and no unconfirmed `geo` fields
+- Pushed structured-data expansion in commit `8b995ef Expand public structured data`
+- Pushed appointment hours and prefilled SMS update in commit `1c6203d Add appointment hours to structured data`
+- Live `contact.html` and `get-quote.html` checks returned `200`, include appointment/hours schema, and do not include `geo`
+- Added TidyCal booking link follow-up to `TASKS.md` backlog
 - Updated `PROJECT.md` so the new architecture doc is discoverable from the main docs list
 - Updated `PROJECT.md` site structure with live `banner-stands.html`, live `custom-table-covers.html`, and local `step-and-repeat-backdrops.html`
 - Updated `SESSION_HANDOFF.md` with the latest Supabase verification and next move
@@ -115,12 +119,12 @@
 ### ⏳ Pending / In Progress
 - Replace generated print/display imagery with approved WSDisplay assets when available
 - Stripe webhook signed-event validation remains deferred from Phase 1
-- Structured data expansion is done locally and pending push/live verification
+- TidyCal booking CTA is parked until Shawn creates the booking link
 
 ### 🔜 What To Work On Next
-1. Push and live-verify structured data expansion
+1. Pick the next non-Stripe task while Shawn is mobile
 2. Validate Stripe webhook with a real signed test event when Shawn is ready
-3. Add `geo` only if Shawn later confirms exact public storefront coordinates
+3. Add TidyCal booking CTA after Shawn creates the booking link
 
 ---
 

@@ -56,8 +56,8 @@ Exit criteria:
 
 1. Structured data expansion
 - Owner: Phil + Craig + Marcus
-- Status: Done locally (August 28, 2026)
-- Notes: Expanded JSON-LD on 20 public sales/service pages with consistent Say It business identity, `sameAs`, richer Tucson/Phoenix/Arizona/US `areaServed`, `WebSite`, `WebPage`, service, offer, and FAQ schema where appropriate. Shawn approved Monday-Friday, 9 AM-5 PM availability by appointment, so `openingHoursSpecification` and appointment policy were added. No `geo` or street address was added because Say It is mobile/service-area without a public storefront. Local JSON parse and scope checks passed.
+- Status: Done and live-verified (August 28, 2026)
+- Notes: Expanded JSON-LD on 20 public sales/service pages with consistent Say It business identity, `sameAs`, richer Tucson/Phoenix/Arizona/US `areaServed`, `WebSite`, `WebPage`, service, offer, and FAQ schema where appropriate. Shawn approved Monday-Friday, 9 AM-5 PM availability by appointment, so `openingHoursSpecification` and appointment policy were added. No `geo` or street address was added because Say It is mobile/service-area without a public storefront. Contact SMS links now open a prefilled Say It message. Commits `8b995ef` and `1c6203d` were pushed and representative live pages returned `200`.
 
 1. Admin traffic report filtering
 - Owner: Priya + Angela + Phil + Craig
@@ -134,11 +134,12 @@ Exit criteria:
 
 1. Weekly KPI instrumentation pass (lead -> sale funnel visibility)
 2. Add `geo` schema only if Shawn later confirms exact public storefront coordinates
-3. Portfolio/testimonials expansion with proof assets
-4. SLA/response-time messaging A/B copy pass
-5. WSDisplay reseller asset audit: identify approved images/catalog copy that can be used on Say It pages
-6. Branded reseller catalog/subdomain inquiry with WSDisplay/ExhibitBook
-7. Phase 1 archive cleanup: preserve completed hardening tasks and keep current board focused
+3. Add TidyCal booking link after Shawn creates the 15-minute discovery call calendar
+4. Portfolio/testimonials expansion with proof assets
+5. SLA/response-time messaging A/B copy pass
+6. WSDisplay reseller asset audit: identify approved images/catalog copy that can be used on Say It pages
+7. Branded reseller catalog/subdomain inquiry with WSDisplay/ExhibitBook
+8. Phase 1 archive cleanup: preserve completed hardening tasks and keep current board focused
 
 ---
 

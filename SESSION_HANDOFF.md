@@ -94,6 +94,10 @@ Latest continuation:
 - Added visible by-appointment wording to `contact.html` and `get-quote.html`.
 - Updated `contact.html` text links/buttons so SMS opens with a prefilled Say It message instead of a blank draft.
 - Local structured-data validation passed: every updated page has one valid JSON-LD block, includes the approved `sameAs` links, includes weekday 9-5 hours, includes the appointment policy, and does not include unconfirmed `geo`.
+- Pushed structured-data expansion in commit `8b995ef Expand public structured data`.
+- Pushed appointment hours and prefilled SMS update in commit `1c6203d Add appointment hours to structured data`.
+- Live checks passed for `contact.html` and `get-quote.html`: both returned `200`, include the appointment wording/hours schema, and do not include `geo`.
+- Added TidyCal booking link follow-up to `TASKS.md` backlog; do not add a Book a Call CTA until Shawn creates the booking link.
 
 Important Supabase access note:
 - Fresh Codex sessions can now use the Supabase connector for Say It.
@@ -183,10 +187,11 @@ Team recommendation already discussed:
    - Signed-event validation is still recommended before relying on automatic paid-lead/order/email processing.
 
 6. **Structured data**
-   - Expanded locally on 20 public sales/service pages.
+   - Expanded and pushed on 20 public sales/service pages.
    - Includes consistent Say It business identity, `sameAs`, service area, service, offer, page, and FAQ schema where appropriate.
    - Includes Monday-Friday, 9 AM-5 PM availability and an appointment-first policy.
    - Does not include `geo`; exact coordinates require a real public storefront location before publishing.
+   - Contact page SMS links open with a prefilled Say It message.
 
 7. **Three pillar review**
    - Homepage now leads with custom websites, custom apps, and print/displays.
@@ -251,7 +256,7 @@ When reviewing structured data:
 
 ## Next Best Move
 
-Push and live-verify the structured data expansion, then validate the Stripe webhook with a real signed test event when Shawn is ready.
+Pick the next non-Stripe task while Shawn is mobile, then validate the Stripe webhook with a real signed test event when Shawn is ready.
 
 Suggested prompt for the next task:
 
@@ -260,7 +265,7 @@ We are working in C:\Users\SuperShawn\Documents\GitHub\sayitmarketing.
 
 Read BRIEF.md, AGENTS.md, TASKS.md, and SESSION_HANDOFF.md.
 
-Push and live-verify the structured data expansion. Then validate the Stripe webhook with a real signed test event when Shawn is ready.
+Pick the next non-Stripe task while Shawn is mobile. Then validate the Stripe webhook with a real signed test event when Shawn is ready.
 ```
 
-The display hub, print page upgrade, three-pillar architecture pass, OG/icon work, traffic-tracking backend, admin traffic filters, structured-data expansion, first display/print support-page architecture, live `banner-stands.html`, live `custom-table-covers.html`, live `step-and-repeat-backdrops.html`, live `custom-canopy-tents.html`, and live `trade-show-booth-displays.html` pages are complete. Next, push/live-verify the structured-data expansion if it has not been pushed yet, then validate the Stripe webhook with a real signed test event when Shawn is ready.
+The display hub, print page upgrade, three-pillar architecture pass, OG/icon work, traffic-tracking backend, admin traffic filters, structured-data expansion, appointment hours, prefilled Contact SMS links, first display/print support-page architecture, live `banner-stands.html`, live `custom-table-covers.html`, live `step-and-repeat-backdrops.html`, live `custom-canopy-tents.html`, and live `trade-show-booth-displays.html` pages are complete. Next, pick a non-Stripe task while Shawn is mobile, then validate the Stripe webhook with a real signed test event when Shawn is ready.
