@@ -87,9 +87,13 @@ Latest continuation:
 - Verified live `/admin/traffic.html` returned `200` and includes Page Family, Leads By Service, and Visits By Device.
 - Verified live `/api/traffic?days=30&family=display_support` still returns `401` without the admin key.
 - Shawn approved deferring Stripe signed-webhook validation for now after team review; unsigned fake payload rejection was live-verified with `401`.
-- Team approved the safe structured-data pass: expand verified business/service schema now, but leave `openingHours` and `geo` out until Shawn confirms exact public hours and coordinates.
+- Team approved the safe structured-data pass: expand verified business/service schema now, add Shawn-approved public availability, and leave `geo` out unless Shawn later confirms a real public storefront location.
 - Added expanded JSON-LD to 20 public sales/service pages with consistent Say It business identity, Facebook/Instagram `sameAs`, Tucson/Phoenix/Arizona/US `areaServed`, `WebSite`, `WebPage`, service, offer, and FAQ schema where appropriate.
-- Local structured-data validation passed: every updated page has one valid JSON-LD block, includes the approved `sameAs` links, and does not include unconfirmed `openingHours` or `geo`.
+- Shawn approved public availability as Monday-Friday, 9 AM-5 PM, by appointment.
+- Added `openingHoursSpecification`, contact-point hours, and an appointment-first policy to the JSON-LD on 20 public sales/service pages.
+- Added visible by-appointment wording to `contact.html` and `get-quote.html`.
+- Updated `contact.html` text links/buttons so SMS opens with a prefilled Say It message instead of a blank draft.
+- Local structured-data validation passed: every updated page has one valid JSON-LD block, includes the approved `sameAs` links, includes weekday 9-5 hours, includes the appointment policy, and does not include unconfirmed `geo`.
 
 Important Supabase access note:
 - Fresh Codex sessions can now use the Supabase connector for Say It.
@@ -123,7 +127,7 @@ Team recommendation already discussed:
 - Homepage OG should avoid redundancy: title says `Custom Websites, Apps & Print | Say It Marketing`, description explains the offer, and image says `Look ready everywhere.` with the real Say It logo and visual website/app/print-display composition.
 - Favicon/apple-touch/share-sheet icon is a separate icon-only system: blue field with white message bubble, no words, based on Shawn's Fav1 asset.
 - Supporting services such as SEO, social, ads, hosting, and monthly care should stay below the main branches.
-- Structured data should use only verified Say It facts. Do not add public hours or exact `geo` coordinates until Shawn confirms them.
+- Structured data should use only verified Say It facts. Public hours are Monday-Friday, 9 AM-5 PM, by appointment. Do not add exact `geo` coordinates unless Shawn confirms a real public storefront location.
 
 ---
 
@@ -181,7 +185,8 @@ Team recommendation already discussed:
 6. **Structured data**
    - Expanded locally on 20 public sales/service pages.
    - Includes consistent Say It business identity, `sameAs`, service area, service, offer, page, and FAQ schema where appropriate.
-   - Does not include `openingHours` or `geo`; those require Shawn-confirmed public hours and exact coordinates before publishing.
+   - Includes Monday-Friday, 9 AM-5 PM availability and an appointment-first policy.
+   - Does not include `geo`; exact coordinates require a real public storefront location before publishing.
 
 7. **Three pillar review**
    - Homepage now leads with custom websites, custom apps, and print/displays.
@@ -239,7 +244,8 @@ When reviewing structured data:
 1. Open the live source for homepage, `local-seo.html`, `trade-show-displays.html`, and one display support page after deploy.
 2. Confirm each has one `application/ld+json` block.
 3. Confirm business identity includes Say It Marketing, Tucson/AZ, phone, email, Facebook, Instagram, and Tucson/Phoenix/Arizona/United States service area.
-4. Do not add hours or map coordinates until Shawn confirms the exact public-facing hours and location coordinates.
+4. Confirm the schema shows Monday-Friday, 9 AM-5 PM, by appointment.
+5. Do not add map coordinates unless Shawn confirms a real public storefront location.
 
 ---
 

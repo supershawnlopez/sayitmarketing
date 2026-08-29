@@ -57,7 +57,7 @@ Exit criteria:
 1. Structured data expansion
 - Owner: Phil + Craig + Marcus
 - Status: Done locally (August 28, 2026)
-- Notes: Expanded JSON-LD on 20 public sales/service pages with consistent Say It business identity, `sameAs`, richer Tucson/Phoenix/Arizona/US `areaServed`, `WebSite`, `WebPage`, service, offer, and FAQ schema where appropriate. Did not add `openingHours` or `geo` because public hours and exact coordinates are not confirmed in the repo. Local JSON parse and scope checks passed.
+- Notes: Expanded JSON-LD on 20 public sales/service pages with consistent Say It business identity, `sameAs`, richer Tucson/Phoenix/Arizona/US `areaServed`, `WebSite`, `WebPage`, service, offer, and FAQ schema where appropriate. Shawn approved Monday-Friday, 9 AM-5 PM availability by appointment, so `openingHoursSpecification` and appointment policy were added. No `geo` or street address was added because Say It is mobile/service-area without a public storefront. Local JSON parse and scope checks passed.
 
 1. Admin traffic report filtering
 - Owner: Priya + Angela + Phil + Craig
@@ -119,7 +119,7 @@ Exit criteria:
 ## NEXT
 
 1. Validate Stripe webhook with real signed test event
-2. Confirm public business hours and exact map coordinates before adding `openingHours` or `geo` schema
+2. Confirm exact map coordinates only if Shawn later wants to publish a real public storefront location
 3. Replace generated print/display imagery with approved WSDisplay assets when available
 
 ---
@@ -133,7 +133,7 @@ Exit criteria:
 ## BACKLOG
 
 1. Weekly KPI instrumentation pass (lead -> sale funnel visibility)
-2. Add `openingHours` and `geo` schema after Shawn confirms exact public hours and coordinates
+2. Add `geo` schema only if Shawn later confirms exact public storefront coordinates
 3. Portfolio/testimonials expansion with proof assets
 4. SLA/response-time messaging A/B copy pass
 5. WSDisplay reseller asset audit: identify approved images/catalog copy that can be used on Say It pages

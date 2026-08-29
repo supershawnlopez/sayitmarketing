@@ -108,4 +108,6 @@ Rules:
 - Add consistent `LocalBusiness` / `ProfessionalService`, `WebSite`, `WebPage`, service, offer, and FAQ schema where appropriate.
 - Include verified `sameAs` links for Facebook and Instagram.
 - Use Tucson, Phoenix, Arizona, and United States as structured `areaServed` where appropriate.
-- Do not add `openingHours`, `openingHoursSpecification`, or `geo` until Shawn confirms the exact public hours and coordinates.
+- Shawn approved public availability as Monday-Friday, 9 AM-5 PM, by appointment.
+- Add `openingHoursSpecification` and appointment-first policy text.
+- Do not add a public street address or `geo` coordinates unless Shawn later confirms a real public location customers can visit.

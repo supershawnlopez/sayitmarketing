@@ -101,9 +101,13 @@
 - Live Stripe webhook rejected an unsigned fake payload with `401`
 - Team approved the safe structured-data pass
 - Expanded JSON-LD on 20 public sales/service pages with consistent Say It identity, Facebook/Instagram `sameAs`, Tucson/Phoenix/Arizona/United States service area, `WebSite`, `WebPage`, service, offer, and FAQ schema where appropriate
-- Did not add `openingHours` or `geo` because public hours and exact coordinates are not confirmed in the repo
+- Shawn approved public availability as Monday-Friday, 9 AM-5 PM, by appointment
+- Added `openingHoursSpecification`, contact-point hours, and appointment-first policy to the JSON-LD on 20 public sales/service pages
+- Added visible by-appointment wording to `contact.html` and `get-quote.html`
+- Updated `contact.html` text links/buttons so SMS opens with a prefilled Say It message instead of a blank draft
+- Did not add `geo` because Say It is mobile/service-area and no public storefront coordinates were approved
 - Added `DECISIONS.md` record for structured-data fact safety
-- Verified every updated page has one valid JSON-LD block and no unconfirmed `openingHours` or `geo` fields
+- Verified every updated page has one valid JSON-LD block, approved weekday 9-5 hours, appointment policy, and no unconfirmed `geo` fields
 - Updated `PROJECT.md` so the new architecture doc is discoverable from the main docs list
 - Updated `PROJECT.md` site structure with live `banner-stands.html`, live `custom-table-covers.html`, and local `step-and-repeat-backdrops.html`
 - Updated `SESSION_HANDOFF.md` with the latest Supabase verification and next move
@@ -116,7 +120,7 @@
 ### 🔜 What To Work On Next
 1. Push and live-verify structured data expansion
 2. Validate Stripe webhook with a real signed test event when Shawn is ready
-3. Confirm public hours/map coordinates before adding `openingHours` or `geo`
+3. Add `geo` only if Shawn later confirms exact public storefront coordinates
 
 ---
 
