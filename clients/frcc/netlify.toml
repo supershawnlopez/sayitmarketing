@@ -1,0 +1,12 @@
+[build]
+  command = "FRCC_STATIC_EXPORT=1 npm run build"
+  publish = "out"
+
+[build.environment]
+  NODE_VERSION = "24"
+  NETLIFY_NEXT_PLUGIN_SKIP = "true"
+
+[[redirects]]
+  from = "/contact-us"
+  to = "/contact/"
+  status = 301

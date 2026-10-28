@@ -1,0 +1,52 @@
+import type { Metadata } from 'next';
+import { Geist, Geist_Mono } from 'next/font/google';
+import './globals.css';
+import { publicAsset } from '@/lib/public-asset';
+
+const geistSans = Geist({
+  variable: '--font-geist-sans',
+  subsets: ['latin'],
+});
+
+const geistMono = Geist_Mono({
+  variable: '--font-geist-mono',
+  subsets: ['latin'],
+});
+
+export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_PATH ? 'https://sayitmarketing.com' : 'https://frcctucson.org'),
+  title: 'FRCC Tucson | Family Restoration Community Church',
+  robots: process.env.NEXT_PUBLIC_BASE_PATH ? { index: false, follow: false } : { index: true, follow: true },
+  description:
+    'Family Restoration Community Church is a Tucson church community centered on faith, restoration, worship, and serving families.',
+  openGraph: {
+    title: 'FRCC Tucson | Family Restoration Community Church',
+    description: 'Faith. Family. Restoration. A church home in Tucson.',
+    type: 'website',
+    locale: 'en_US',
+    images: [
+      {
+        url: publicAsset('/images/stock-worship-hands.jpg'),
+        width: 2400,
+        height: 1600,
+        alt: 'Hands lifted in worship',
+      },
+    ],
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en">
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      >
+        {children}
+      </body>
+    </html>
+  );
+}
