@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { ministries } from '@/lib/church-content';
+import { siteUrl } from '@/lib/site-config';
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -12,5 +13,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/give',
     '/es',
     ...ministries.map((ministry) => '/ministries/' + ministry.slug),
-  ].map((path) => ({ url: 'https://frcctucson.org' + path }));
+  ].map((path) => ({ url: siteUrl(path) }));
 }

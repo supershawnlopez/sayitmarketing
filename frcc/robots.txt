@@ -1,4 +1,4 @@
 User-Agent: *
 Disallow: /
 
-Sitemap: https://frcctucson.org/sitemap.xml
+Sitemap: https://sayitmarketing.com/frcc/sitemap.xml

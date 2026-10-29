@@ -1,5 +1,5 @@
 {
-  "name": "sites-project",
+  "name": "frcc-tucson",
   "version": "0.1.0",
   "private": true,
   "engines": {
@@ -8,6 +8,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:static": "node scripts/build-static.mjs",
+    "build:preview": "node scripts/build-static.mjs --agency-preview",
+    "verify:export": "node scripts/verify-export.mjs",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
     "start": "next start",
     "typecheck": "next typegen && tsc --noEmit --incremental false",
     "lint": "oxlint",

@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { publicAsset } from '@/lib/public-asset';
+import { siteOrigin, siteNoIndex } from '@/lib/site-config';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -14,9 +15,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_PATH ? 'https://sayitmarketing.com' : 'https://frcctucson.org'),
+  metadataBase: new URL(siteOrigin),
   title: 'FRCC Tucson | Family Restoration Community Church',
-  robots: process.env.NEXT_PUBLIC_BASE_PATH ? { index: false, follow: false } : { index: true, follow: true },
+  robots: siteNoIndex ? { index: false, follow: false } : { index: true, follow: true },
   description:
     'Family Restoration Community Church is a Tucson church community centered on faith, restoration, worship, and serving families.',
   openGraph: {
