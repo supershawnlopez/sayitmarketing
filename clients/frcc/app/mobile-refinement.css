@@ -1,0 +1,390 @@
+/* PROPOSAL ONLY. Load after globals.css in an isolated review preview.
+   Component sizes assume the browser's default 16px root; never reset it.
+   Header, service band, image sources and hero composition retain their owners. */
+@media (max-width: 700px) {
+  /* Preserve the compact row normally; allow reflow when text needs space. */
+  .header-inner {
+    height: auto;
+    min-height: 72px;
+    flex-wrap: wrap;
+    gap: 8px 15px;
+    padding-block: 14px;
+  }
+
+  .header-actions {
+    min-width: 0;
+    max-width: 100%;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    margin-left: auto;
+  }
+
+  .header-actions .language-link {
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    min-height: 44px;
+    max-width: 100%;
+    padding-block: 10px;
+    overflow-wrap: anywhere;
+  }
+
+  .header-actions .menu-toggle {
+    width: 44px;
+    height: 44px;
+    flex-shrink: 0;
+  }
+
+  /* One scroll region includes the actual header height and every menu link.
+     The existing [hidden] rule still removes the closed menu from layout. */
+  .site-header .mobile-navigation {
+    position: static;
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 0;
+    max-height: none;
+    overflow: visible;
+    padding: 16px 0 25px;
+  }
+
+  .site-header:has(.mobile-navigation:not([hidden])) {
+    max-height: 100vh;
+    max-height: 100dvh;
+    overflow-y: auto;
+  }
+
+  /* Keep a predictable caption gutter without changing the header/service band. */
+  main
+    > section:not(.visit-band):not(.visit-details-band):not(.home-hero)
+    > .container,
+  main > .updates-links {
+    width: calc(100% - 40px);
+  }
+
+  .section-space,
+  .contact-prayer {
+    padding-block: 56px;
+  }
+
+  .welcome-layout,
+  .contact-layout,
+  .giving-layout,
+  .messages-welcome,
+  .leadership-layout {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
+
+  .welcome-layout > *,
+  .contact-layout > *,
+  .giving-layout > *,
+  .messages-welcome > *,
+  .leadership-layout > *,
+  .contact-details > a > div,
+  .contact-row > div,
+  .ministry-link > *,
+  .footer-top > * {
+    min-width: 0;
+  }
+
+  /* A short hierarchy, assigned to components rather than inherited globally. */
+  .home-hero h1 {
+    font-size: clamp(3rem, 17vw, 4.25rem);
+    overflow-wrap: anywhere;
+  }
+
+  .page-intro h1 {
+    font-size: 2.5rem;
+    line-height: 1.12;
+    overflow-wrap: anywhere;
+  }
+
+  main > :not(.visit-band):not(.visit-details-band) .eyebrow,
+  .site-footer .eyebrow {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .welcome-layout h2,
+  .leadership-layout h2,
+  .section-topline h2,
+  .updates-header h2,
+  .contact-layout h2,
+  .giving-layout h2,
+  .ministry-section h2,
+  .prayer-layout h2,
+  .connect-inner h2 {
+    font-size: 2rem;
+    line-height: 1.18;
+    overflow-wrap: anywhere;
+  }
+
+  .lead-copy {
+    font-size: 1.375rem;
+    line-height: 1.5;
+  }
+
+  .body-copy,
+  .hero-welcome,
+  .page-intro p:not(.eyebrow),
+  .story-caption p,
+  .updates-links p:not(.eyebrow),
+  .messages-welcome p,
+  .recording-copy p:not(.eyebrow),
+  .contact-details p,
+  .giving-panel > p:not(.eyebrow),
+  .spanish-details p,
+  .ministry-list p,
+  .empty-state,
+  .empty-state p,
+  .prayer-layout p:not(.eyebrow) {
+    font-size: 1.125rem;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+  }
+
+  .story-caption h3,
+  .messages-welcome h3,
+  .giving-panel h3,
+  .updates-links h2 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+
+  .contact-details h3,
+  .spanish-details h3,
+  .ministry-list h3,
+  .recording-copy h3,
+  .empty-state h3,
+  .update-item h3,
+  .message-dialog-heading h2 {
+    font-size: 1.25rem;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+  }
+
+  main > :not(.visit-band):not(.visit-details-band) .text-link,
+  main > :not(.visit-band):not(.visit-details-band) .button {
+    max-width: 100%;
+    min-height: 44px;
+    font-size: 1rem;
+    line-height: 1.5;
+    gap: 12px;
+    overflow-wrap: anywhere;
+  }
+
+  /* Full-width photographs, complete faces, original white caption treatment. */
+  .story-grid,
+  .recording-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+    margin-inline: -20px;
+  }
+
+  .photo-story,
+  .recording-item {
+    min-width: 0;
+  }
+
+  .story-image {
+    aspect-ratio: auto;
+  }
+
+  .story-image img {
+    height: auto;
+  }
+
+  .story-caption,
+  .recording-copy {
+    padding: 20px 20px 0;
+    background: white;
+    color: var(--ink);
+  }
+
+  .messages-welcome > img,
+  .leadership-layout > img {
+    width: calc(100% + 40px);
+    max-width: none;
+    height: auto;
+    margin-inline: -20px;
+  }
+
+  .worship-gallery.container {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .section-topline,
+  .messages-heading,
+  .connect-inner {
+    flex-direction: column;
+    align-items: start;
+    gap: 20px;
+  }
+
+  .section-topline > .text-link {
+    max-width: 100%;
+  }
+
+  .updates-links {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .updates-links > a {
+    padding: 28px 0;
+  }
+
+  .updates-links > a + a {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+
+  .giving-panel {
+    padding: 24px 20px;
+  }
+
+  .giving-panel > .giving-notice {
+    /* globals.css marks this declaration important; match only that notice. */
+    font-size: 1.125rem !important;
+  }
+
+  .ministry-link {
+    grid-template-columns: 24px minmax(0, 1fr) 22px;
+    gap: 12px;
+    padding: 24px 0;
+  }
+
+  .message-search input {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .messages-service-times p {
+    flex-wrap: wrap;
+    gap: 4px 16px;
+  }
+
+  .message-dialog-heading h2 {
+    min-width: 0;
+  }
+
+  .message-dialog-heading .icon-button {
+    flex-shrink: 0;
+  }
+
+  /* Agenda stays readable; retain the existing compact month indicators. */
+  .calendar-toolbar h3 {
+    min-width: 0;
+    font-size: 1.5rem;
+    line-height: 1.3;
+    overflow-wrap: anywhere;
+  }
+
+  .calendar-view-switch {
+    margin-left: 0;
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+
+  .calendar-view-switch button,
+  .calendar-details-hint,
+  .calendar-event-date {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .calendar-event-summary {
+    grid-template-columns: minmax(0, 1fr);
+    padding: 24px 0;
+    gap: 10px;
+    overflow-wrap: anywhere;
+  }
+
+  .calendar-event-summary > * {
+    grid-column: auto;
+    grid-row: auto;
+    min-width: 0;
+  }
+
+  .calendar-event-summary .eyebrow {
+    grid-column: auto;
+  }
+
+  .calendar-grid th {
+    font-size: 0.75rem;
+    overflow-wrap: anywhere;
+  }
+
+  .calendar-day {
+    height: auto;
+    min-height: 78px;
+    min-width: 0;
+    padding: 3px;
+  }
+
+  .calendar-day-number {
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    min-height: 1.5em;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+  }
+
+  .calendar-event-title,
+  .calendar-agenda-title {
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .calendar-event-body .body-copy {
+    display: block;
+  }
+
+  .calendar-event-body .body-copy svg {
+    display: inline-block;
+    vertical-align: text-bottom;
+    margin: 0 8px 0 0;
+  }
+
+  .footer-top {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .footer-top > div:first-child,
+  .footer-top nav {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .footer-name,
+  .footer-top > div:nth-child(2) a {
+    font-size: 1.125rem;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+  }
+
+  .footer-top nav a {
+    font-size: 1rem;
+    line-height: 1.65;
+    overflow-wrap: anywhere;
+    min-height: 44px;
+    padding-block: 9px;
+    max-width: 100%;
+  }
+
+  .footer-muted,
+  .footer-bottom {
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 12px;
+    overflow-wrap: anywhere;
+  }
+}

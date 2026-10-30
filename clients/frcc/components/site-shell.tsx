@@ -135,32 +135,33 @@ export function PageIntro({
 }
 export function VisitBand() {
   return (
-    <section className="visit-band" aria-label="Visit information">
-      <div className="container visit-inner">
-        <div className="visit-label">
-          <MapPin size={22} aria-hidden="true" />
-          <span>
-            A church home
-            <br />
-            <strong>right here in Tucson.</strong>
-          </span>
+    <section className="visit-details-band" aria-label="Visit information">
+      <div className="visit-details-inner">
+        <div className="visit-details-services">
+          <h2 className="visit-details-heading">Join us this week</h2>
+          <ul className="visit-details-schedule">
+            {church.serviceTimes.map((service) => (
+              <li className="visit-details-service" key={service.day + service.time}>
+                <span className="visit-details-day">{service.day}</span>
+                <strong className="visit-details-time">{service.time}</strong>
+              </li>
+            ))}
+          </ul>
+          <Link className="visit-details-link" href="/contact#service-times">
+            Service details
+            <ArrowUpRight size={18} aria-hidden="true" />
+          </Link>
         </div>
-        <a className="visit-address" href={church.mapUrl}>
-          2425 N Huachuca Dr<span>Tucson, AZ 85745</span>
-        </a>
-        <Link className="text-link" href="/contact#service-times">
-          <span>
-            Service times
-            <span className="visit-times">
-              {church.serviceTimes.map((service) => (
-                <span key={service.day + service.time}>
-                  {service.day} {service.time}
-                </span>
-              ))}
+        <a className="visit-details-location" href={church.mapUrl}>
+          <MapPin size={22} aria-hidden="true" />
+          <span className="visit-details-location-copy">
+            <span className="visit-details-address">{church.address}</span>
+            <span className="visit-details-map-label">
+              Get directions
+              <ArrowUpRight size={18} aria-hidden="true" />
             </span>
           </span>
-          <ArrowUpRight size={18} aria-hidden="true" />
-        </Link>
+        </a>
       </div>
     </section>
   );
