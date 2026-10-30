@@ -49,6 +49,8 @@ headers on that host. Do not use a blanket SPA rewrite: these are separate HTML 
 - Service schedule: `lib/service-times.ts`.
 - Events, recording entries, Facebook and eventual YouTube link: `lib/church-updates.ts`.
 - Page content/layouts: `app/` and `components/`.
+- English pages: `app/(english)/`; Spanish equivalents: `app/es/`.
+- Spanish ministry copy: `lib/spanish-content.ts`; shared navigation/schedule labels: `lib/locale.ts`.
 - Local images: `public/images/`; credits: `IMAGE-CREDITS.md`.
 
 Sunday 10 a.m./Wednesday 7 p.m. remain owner-provisional. Correct contact email,
@@ -63,6 +65,21 @@ in smaller supporting sections. Never generate or alter people's faces or room
 details. The optional photo-preparation script needs the owner's separate source
 photo archive; those originals are not required to build or move the website.
 
+## English and Spanish
+
+The language switch opens the equivalent page in the other language. English
+URLs stay at the root; Spanish URLs use `/es`. Both languages have complete
+home, about, contact, events, messages, giving and six ministry pages. Each has
+its own document language, metadata and alternate-language links. Separate root
+layouts make language changes a full page navigation, starting at the top.
+
+Update both language copies when changing editorial page content. Addresses,
+phone numbers, service times, events and recordings still come from shared
+church data. Calendar/message controls are translated; published recordings
+and custom event descriptions keep their original language. Translating the
+website does not promise Spanish-language services or translate video audio.
+No external translation widget, paid API or new account is required.
+
 ## Safe transfer order
 
 1. Copy this folder, preserving the lockfile, public images and credits; exclude
@@ -71,9 +88,10 @@ photo archive; those originals are not required to build or move the website.
    giving destination, mobile navigation, redirects and social metadata.
 3. Add both FRCC domain names to the new host. Use that project's actual DNS targets.
 4. Change only website DNS at its authoritative provider. FRCC currently uses
-   Cloudflare nameservers, even if registration is at GoDaddy. Preserve MX/TXT/email.
+   GoDaddy nameservers after the owner's DNS reset. Preserve MX/TXT/email.
 5. Verify HTTPS, apex and www redirects, and enable indexing on the final build.
 6. Retire old hosting only after the live site, mail dependencies and backups are checked.
 
-Current temporary site: https://sayitmarketing.com/frcc/ . This is a preview,
-not the custom-domain migration. DNS cannot target that URL's `/frcc` path.
+Production site: https://frcctucson.org/ on Netlify project `frcc-tucson`.
+The older https://sayitmarketing.com/frcc/ is a separate agency preview and
+does not automatically receive client production updates.

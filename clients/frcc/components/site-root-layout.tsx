@@ -1,10 +1,11 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
-import './globals.css';
-import './mobile-refinement.css';
-import './visit-band.css';
+import '@/app/globals.css';
+import '@/app/mobile-refinement.css';
+import '@/app/visit-band.css';
 import { publicAsset } from '@/lib/public-asset';
 import { siteOrigin, siteNoIndex } from '@/lib/site-config';
+import type { Locale } from '@/lib/locale';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -16,18 +17,28 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 });
 
-export const metadata: Metadata = {
+export const siteMetadata: Metadata = {
   metadataBase: new URL(siteOrigin),
   title: 'FRCC Tucson | Family Restoration Community Church',
   icons: {
     icon: [
       { url: publicAsset('/favicon.svg?v=frcc-1'), type: 'image/svg+xml' },
-      { url: publicAsset('/frcc-icon-32.png'), type: 'image/png', sizes: '32x32' },
+      {
+        url: publicAsset('/frcc-icon-32.png'),
+        type: 'image/png',
+        sizes: '32x32',
+      },
     ],
     shortcut: publicAsset('/favicon.ico?v=frcc-1'),
-    apple: { url: publicAsset('/frcc-apple-touch-icon.png'), sizes: '180x180', type: 'image/png' },
+    apple: {
+      url: publicAsset('/frcc-apple-touch-icon.png'),
+      sizes: '180x180',
+      type: 'image/png',
+    },
   },
-  robots: siteNoIndex ? { index: false, follow: false } : { index: true, follow: true },
+  robots: siteNoIndex
+    ? { index: false, follow: false }
+    : { index: true, follow: true },
   description:
     'Family Restoration Community Church is a Tucson church community centered on faith, restoration, worship, and serving families.',
   openGraph: {
@@ -46,13 +57,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export function RootLayout({
   children,
+  locale,
 }: Readonly<{
   children: React.ReactNode;
+  locale: Locale;
 }>) {
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

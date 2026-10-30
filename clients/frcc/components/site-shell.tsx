@@ -1,8 +1,11 @@
 import Link from 'next/link';
 import { ArrowRight, ArrowUpRight, MapPin } from 'lucide-react';
 import { church, navItems } from '@/lib/church-content';
-import { SiteNavigation } from '@/components/site-navigation';
+import { LanguageSwitch, SiteNavigation } from '@/components/site-navigation';
 import { heroImages, type HeroImage } from '@/lib/hero-images';
+import { localizedHref, localizedLabel, type Locale } from '@/lib/locale';
+
+type LocaleProps = { locale?: Locale };
 
 export function Wordmark() {
   return (
@@ -18,14 +21,20 @@ export function Wordmark() {
     </span>
   );
 }
-export function SiteHeader() {
+export function SiteHeader({ locale = 'en' }: LocaleProps = {}) {
   return (
-    <header className="site-header">
+    <header className="site-header" lang={locale}>
       <a className="skip-link" href="#main">
-        Skip to content
+        {locale === 'es' ? 'Saltar al contenido' : 'Skip to content'}
       </a>
       <div className="container header-inner">
-        <Link className="brand-link" href="/" aria-label="FRCC Tucson home">
+        <Link
+          className="brand-link"
+          href={localizedHref('/', locale)}
+          aria-label={
+            locale === 'es' ? 'Inicio de FRCC Tucson' : 'FRCC Tucson home'
+          }
+        >
           <Wordmark />
         </Link>
         <SiteNavigation />
@@ -33,12 +42,17 @@ export function SiteHeader() {
     </header>
   );
 }
-export function SiteFooter() {
+export function SiteFooter({ locale = 'en' }: LocaleProps = {}) {
   return (
-    <footer className="site-footer">
+    <footer className="site-footer" lang={locale}>
       <div className="container footer-top">
         <div>
-          <Link href="/" aria-label="FRCC Tucson home">
+          <Link
+            href={localizedHref('/', locale)}
+            aria-label={
+              locale === 'es' ? 'Inicio de FRCC Tucson' : 'FRCC Tucson home'
+            }
+          >
             <Wordmark />
           </Link>
           <p className="footer-name">
@@ -46,41 +60,65 @@ export function SiteFooter() {
             <br />
             Community Church
           </p>
-          <p className="footer-muted">Faith. Family. Restoration.</p>
+          <p className="footer-muted">
+            {locale === 'es'
+              ? 'Fe. Familia. Restauración.'
+              : 'Faith. Family. Restoration.'}
+          </p>
         </div>
         <div>
-          <p className="eyebrow">Come say hello</p>
+          <p className="eyebrow">
+            {locale === 'es' ? 'Ven a saludarnos' : 'Come say hello'}
+          </p>
           <a className="footer-address" href={church.mapUrl}>
             {church.address}
             <ArrowUpRight size={18} aria-hidden="true" />
           </a>
           <a href={'tel:' + church.phone.replace(/\D/g, '')}>{church.phone}</a>
         </div>
-        <nav aria-label="Footer navigation">
-          <p className="eyebrow">Find your way</p>
+        <nav
+          aria-label={
+            locale === 'es'
+              ? 'Navegación del pie de página'
+              : 'Footer navigation'
+          }
+        >
+          <p className="eyebrow">
+            {locale === 'es' ? 'Encuentra tu camino' : 'Find your way'}
+          </p>
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href}>
-              {item.label}
+            <Link key={item.href} href={localizedHref(item.href, locale)}>
+              {localizedLabel(item.label, locale)}
             </Link>
           ))}
-          <Link href="/es" lang="es">
-            Español
-          </Link>
+          <LanguageSwitch />
         </nav>
       </div>
       <div className="container footer-bottom">
         <span>&copy; {new Date().getFullYear()} FRCC Tucson</span>
-        <a href="https://sayitmarketing.com" target="_blank" rel="noopener noreferrer">Website by Say It Marketing — sayitmarketing.com</a>
+        <a
+          href="https://sayitmarketing.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {locale === 'es'
+            ? 'Sitio web por Say It Marketing'
+            : 'Website by Say It Marketing'}{' '}
+          — sayitmarketing.com
+        </a>
       </div>
     </footer>
   );
 }
-export function PageShell({ children }: { children: React.ReactNode }) {
+export function PageShell({
+  children,
+  locale = 'en',
+}: { children: React.ReactNode } & LocaleProps) {
   return (
     <>
-      <SiteHeader />
+      <SiteHeader locale={locale} />
       {children}
-      <SiteFooter />
+      <SiteFooter locale={locale} />
     </>
   );
 }
@@ -109,18 +147,20 @@ export function PageIntro({
   title,
   body,
   image = heroImages.welcome,
+  locale = 'en',
 }: {
   eyebrow: string;
   title: string;
   body: string;
   image?: HeroImage;
+  locale?: Locale;
 }) {
   return (
     <section className="page-intro">
       <img
         className="page-intro-photo"
         src={image.src}
-        alt={image.alt}
+        alt={localizedLabel(image.alt, locale)}
         style={{ objectPosition: image.position }}
         fetchPriority="high"
       />
@@ -133,22 +173,37 @@ export function PageIntro({
     </section>
   );
 }
-export function VisitBand() {
+export function VisitBand({ locale = 'en' }: LocaleProps = {}) {
   return (
-    <section className="visit-details-band" aria-label="Visit information">
+    <section
+      className="visit-details-band"
+      aria-label={
+        locale === 'es' ? 'Información para tu visita' : 'Visit information'
+      }
+    >
       <div className="visit-details-inner">
         <div className="visit-details-services">
-          <h2 className="visit-details-heading">Join us this week</h2>
+          <h2 className="visit-details-heading">
+            {locale === 'es' ? 'Acompáñanos esta semana' : 'Join us this week'}
+          </h2>
           <ul className="visit-details-schedule">
             {church.serviceTimes.map((service) => (
-              <li className="visit-details-service" key={service.day + service.time}>
-                <span className="visit-details-day">{service.day}</span>
+              <li
+                className="visit-details-service"
+                key={service.day + service.time}
+              >
+                <span className="visit-details-day">
+                  {localizedLabel(service.day, locale)}
+                </span>
                 <strong className="visit-details-time">{service.time}</strong>
               </li>
             ))}
           </ul>
-          <Link className="visit-details-link" href="/contact#service-times">
-            Service details
+          <Link
+            className="visit-details-link"
+            href={localizedHref('/contact#service-times', locale)}
+          >
+            {locale === 'es' ? 'Detalles de los servicios' : 'Service details'}
             <ArrowUpRight size={18} aria-hidden="true" />
           </Link>
         </div>
@@ -157,7 +212,7 @@ export function VisitBand() {
           <span className="visit-details-location-copy">
             <span className="visit-details-address">{church.address}</span>
             <span className="visit-details-map-label">
-              Get directions
+              {locale === 'es' ? 'Cómo llegar' : 'Get directions'}
               <ArrowUpRight size={18} aria-hidden="true" />
             </span>
           </span>
@@ -166,20 +221,29 @@ export function VisitBand() {
     </section>
   );
 }
-export function ConnectBand() {
+export function ConnectBand({ locale = 'en' }: LocaleProps = {}) {
   return (
     <section className="connect-band">
       <div className="container connect-inner">
         <div>
-          <Eyebrow>There is a place for you</Eyebrow>
+          <Eyebrow>
+            {locale === 'es'
+              ? 'Hay un lugar para ti'
+              : 'There is a place for you'}
+          </Eyebrow>
           <h2>
-            Let’s take the next step.
+            {locale === 'es'
+              ? 'Demos el siguiente paso.'
+              : 'Let’s take the next step.'}
             <br />
-            Together.
+            {locale === 'es' ? 'Juntos.' : 'Together.'}
           </h2>
         </div>
-        <Link href="/contact" className="button button-dark">
-          Get in touch
+        <Link
+          href={localizedHref('/contact', locale)}
+          className="button button-dark"
+        >
+          {locale === 'es' ? 'Contáctanos' : 'Get in touch'}
           <ArrowRight size={18} aria-hidden="true" />
         </Link>
       </div>

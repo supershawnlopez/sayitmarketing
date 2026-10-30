@@ -4,14 +4,21 @@ import { siteUrl } from '@/lib/site-config';
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
+  const englishPaths = [
     '/',
     '/about',
     '/contact',
     '/events',
     '/messages',
     '/give',
-    '/es',
     ...ministries.map((ministry) => '/ministries/' + ministry.slug),
-  ].map((path) => ({ url: siteUrl(path) }));
+  ];
+  return englishPaths.flatMap((path) => {
+    const spanishPath = path === '/' ? '/es' : `/es${path}`;
+    const languages = { en: siteUrl(path), es: siteUrl(spanishPath) };
+    return [path, spanishPath].map((localizedPath) => ({
+      url: siteUrl(localizedPath),
+      alternates: { languages },
+    }));
+  });
 }

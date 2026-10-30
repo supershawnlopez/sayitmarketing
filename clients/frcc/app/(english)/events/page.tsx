@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import { localizedMetadata } from '@/lib/localized-metadata';
 import {
   ConnectBand,
   Eyebrow,
@@ -9,11 +9,7 @@ import { ChurchCalendar } from '@/components/church-calendar';
 import { events } from '@/lib/church-updates';
 import { heroImages } from '@/lib/hero-images';
 
-export const metadata: Metadata = {
-  title: 'Events | FRCC Tucson',
-  description:
-    'Find upcoming events and regular weekly gatherings at Family Restoration Community Church in Tucson.',
-};
+export const metadata = localizedMetadata('/events', 'en', 'Events | FRCC Tucson', 'Find upcoming events and regular weekly gatherings at Family Restoration Community Church in Tucson.');
 
 export default function EventsPage() {
   return (

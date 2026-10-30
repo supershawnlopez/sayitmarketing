@@ -27,18 +27,22 @@ import {
   type CalendarEvent,
 } from '@/lib/calendar';
 
-const dateLabel = new Intl.DateTimeFormat('en-US', {
-  timeZone: CALENDAR_TIME_ZONE,
-  weekday: 'long',
-  month: 'long',
-  day: 'numeric',
-  year: 'numeric',
-});
-const timeLabel = new Intl.DateTimeFormat('en-US', {
-  timeZone: CALENDAR_TIME_ZONE,
-  hour: 'numeric',
-  minute: '2-digit',
-});
+function dateFormatter(locale: 'en' | 'es') {
+  return new Intl.DateTimeFormat(locale === 'es' ? 'es-US' : 'en-US', {
+    timeZone: CALENDAR_TIME_ZONE,
+    weekday: 'long',
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+  });
+}
+function timeFormatter(locale: 'en' | 'es') {
+  return new Intl.DateTimeFormat(locale === 'es' ? 'es-US' : 'en-US', {
+    timeZone: CALENDAR_TIME_ZONE,
+    hour: 'numeric',
+    minute: '2-digit',
+  });
+}
 const weekdays = [
   'Sunday',
   'Monday',
@@ -67,10 +71,46 @@ function downloadEvent(event: CalendarEvent) {
 export function ChurchCalendar({
   events,
   initialNow,
+  locale = 'en',
 }: {
   events: ChurchEvent[];
   initialNow: string;
+  locale?: 'en' | 'es';
 }) {
+  const text = (english: string, spanish: string) =>
+    locale === 'es' ? spanish : english;
+  const dateLabel = dateFormatter(locale);
+  const timeLabel = timeFormatter(locale);
+  // Grid dates represent local wall-clock dates, not event instants.
+  const wallDateLabel = (
+    day: Date,
+    pattern: string,
+    options: Intl.DateTimeFormatOptions,
+  ) =>
+    locale === 'es'
+      ? new Intl.DateTimeFormat('es-US', options).format(day)
+      : format(day, pattern);
+  const dayNames =
+    locale === 'es'
+      ? [
+          'domingo',
+          'lunes',
+          'martes',
+          'miércoles',
+          'jueves',
+          'viernes',
+          'sábado',
+        ]
+      : weekdays;
+  const recurringTitles: Record<string, string> = {
+    'Sunday gathering': 'Reunión dominical',
+    'Midweek gathering': 'Reunión de entre semana',
+  };
+  // Translate generated schedule labels only; preserve published event content.
+  const eventTitle = (event: CalendarEvent) =>
+    locale === 'es' && event.recurring
+      ? (recurringTitles[event.title] ?? event.title)
+      : event.title;
   const id = useId();
   const [today, setToday] = useState(() => phoenixDateKey(initialNow));
   const [cutoff, setCutoff] = useState(initialNow);
@@ -127,18 +167,27 @@ export function ChurchCalendar({
   return (
     <div className="church-calendar">
       <p className="body-copy calendar-timezone">
-        All times are Tucson time (MST).
+        {text(
+          'All times are Tucson time (MST).',
+          'Todos los horarios corresponden a la hora de Tucson (MST).',
+        )}
       </p>
       <div className="calendar-toolbar">
         <h3 id={`${id}-month`} aria-live="polite">
-          {format(month, 'MMMM yyyy')}
+          {wallDateLabel(month, 'MMMM yyyy', {
+            month: 'long',
+            year: 'numeric',
+          })}
         </h3>
-        <nav className="calendar-navigation" aria-label="Calendar navigation">
+        <nav
+          className="calendar-navigation"
+          aria-label={text('Calendar navigation', 'Navegación del calendario')}
+        >
           <button
             type="button"
             className="icon-button"
-            aria-label="Previous month"
-            title="Previous month"
+            aria-label={text('Previous month', 'Mes anterior')}
+            title={text('Previous month', 'Mes anterior')}
             onClick={() => changeMonth(-1)}
           >
             <ChevronLeft size={20} aria-hidden="true" />
@@ -146,8 +195,8 @@ export function ChurchCalendar({
           <button
             type="button"
             className="icon-button"
-            aria-label="Go to today"
-            title="Today"
+            aria-label={text('Go to today', 'Ir a hoy')}
+            title={text('Today', 'Hoy')}
             onClick={goToday}
           >
             <RotateCcw size={20} aria-hidden="true" />
@@ -155,14 +204,17 @@ export function ChurchCalendar({
           <button
             type="button"
             className="icon-button"
-            aria-label="Next month"
-            title="Next month"
+            aria-label={text('Next month', 'Mes siguiente')}
+            title={text('Next month', 'Mes siguiente')}
             onClick={() => changeMonth(1)}
           >
             <ChevronRight size={20} aria-hidden="true" />
           </button>
         </nav>
-        <fieldset className="calendar-view-switch" aria-label="Calendar view">
+        <fieldset
+          className="calendar-view-switch"
+          aria-label={text('Calendar view', 'Vista del calendario')}
+        >
           <button
             type="button"
             aria-pressed={mode === 'list'}
@@ -172,7 +224,7 @@ export function ChurchCalendar({
               setSelected(null);
             }}
           >
-            <List size={18} aria-hidden="true" /> List
+            <List size={18} aria-hidden="true" /> {text('List', 'Lista')}
           </button>
           <button
             type="button"
@@ -180,7 +232,7 @@ export function ChurchCalendar({
             aria-controls={`${id}-content`}
             onClick={() => setMode('month')}
           >
-            <CalendarDays size={18} aria-hidden="true" /> Month
+            <CalendarDays size={18} aria-hidden="true" /> {text('Month', 'Mes')}
           </button>
         </fieldset>
       </div>
@@ -189,7 +241,7 @@ export function ChurchCalendar({
           <table className="calendar-grid" aria-labelledby={`${id}-month`}>
             <thead>
               <tr>
-                {weekdays.map((day) => (
+                {dayNames.map((day) => (
                   <th key={day} scope="col">
                     <abbr title={day}>{day.slice(0, 3)}</abbr>
                   </th>
@@ -215,7 +267,7 @@ export function ChurchCalendar({
                           aria-current={key === today ? 'date' : undefined}
                           aria-pressed={selected === key}
                           aria-controls={`${id}-events`}
-                          aria-label={`${format(day, 'EEEE, MMMM d, yyyy')}, ${daily.length} gathering${daily.length === 1 ? '' : 's'}`}
+                          aria-label={`${wallDateLabel(day, 'EEEE, MMMM d, yyyy', { weekday: 'long', month: 'long', day: 'numeric', year: 'numeric' })}, ${daily.length} ${locale === 'es' ? (daily.length === 1 ? 'reunión' : 'reuniones') : `gathering${daily.length === 1 ? '' : 's'}`}`}
                           onClick={() => setSelected(key)}
                         >
                           <span className="calendar-day-number">
@@ -226,7 +278,7 @@ export function ChurchCalendar({
                               className="calendar-day-event"
                               key={event.slug + event.startAt}
                             >
-                              {event.title}
+                              {eventTitle(event)}
                               <span className="calendar-day-time">
                                 {' '}
                                 {timeLabel.format(new Date(event.startAt))}
@@ -245,8 +297,12 @@ export function ChurchCalendar({
         <div className="calendar-agenda" id={`${id}-events`}>
           <h4 className="calendar-agenda-title" aria-live="polite">
             {mode === 'month' && selected
-              ? format(calendarDate(selected), 'EEEE, MMMM d')
-              : `Gatherings in ${format(month, 'MMMM')}`}
+              ? wallDateLabel(calendarDate(selected), 'EEEE, MMMM d', {
+                  weekday: 'long',
+                  month: 'long',
+                  day: 'numeric',
+                })
+              : `${text('Gatherings in', 'Reuniones en')} ${wallDateLabel(month, 'MMMM', { month: 'long' })}`}
           </h4>
           {mode === 'month' && selected && (
             <button
@@ -254,7 +310,7 @@ export function ChurchCalendar({
               className="text-link"
               onClick={() => setSelected(null)}
             >
-              Show month’s gatherings
+              {text('Show month’s gatherings', 'Mostrar las reuniones del mes')}
             </button>
           )}
           {visible.length ? (
@@ -275,11 +331,12 @@ export function ChurchCalendar({
                       <summary className="calendar-event-summary">
                         <span className="eyebrow">
                           {event.recurring
-                            ? 'Weekly gathering'
-                            : event.ministry || 'Church event'}
+                            ? text('Weekly gathering', 'Reunión semanal')
+                            : event.ministry ||
+                              text('Church event', 'Evento de la iglesia')}
                         </span>
                         <span className="calendar-event-title">
-                          {event.title}
+                          {eventTitle(event)}
                         </span>
                         <span className="calendar-event-date">
                           <time dateTime={event.startAt}>
@@ -288,7 +345,7 @@ export function ChurchCalendar({
                           </time>
                         </span>
                         <span className="calendar-details-hint">
-                          View details
+                          {text('View details', 'Ver detalles')}
                         </span>
                       </summary>
                       <div className="calendar-event-body">
@@ -307,7 +364,7 @@ export function ChurchCalendar({
                               </time>
                             </>
                           )}{' '}
-                          (Tucson time)
+                          {text('(Tucson time)', '(hora de Tucson)')}
                         </p>
                         <p className="body-copy">
                           <MapPin size={18} aria-hidden="true" />{' '}
@@ -326,17 +383,25 @@ export function ChurchCalendar({
                                 : church.mapUrl
                             }
                           >
-                            Get directions{' '}
+                            {text('Get directions', 'Cómo llegar')}{' '}
                             <ArrowUpRight size={18} aria-hidden="true" />
                           </a>
                           <button
                             type="button"
                             className="text-link"
-                            onClick={() => downloadEvent(event)}
-                            aria-label={`Add ${event.title} to your calendar`}
+                            onClick={() =>
+                              downloadEvent({
+                                ...event,
+                                title: eventTitle(event),
+                              })
+                            }
+                            aria-label={text(
+                              `Add ${event.title} to your calendar`,
+                              `Agregar ${eventTitle(event)} a tu calendario`,
+                            )}
                           >
-                            <Download size={18} aria-hidden="true" /> Add to
-                            calendar
+                            <Download size={18} aria-hidden="true" />{' '}
+                            {text('Add to calendar', 'Agregar al calendario')}
                           </button>
                           {url && (
                             <a
@@ -345,9 +410,12 @@ export function ChurchCalendar({
                               target="_blank"
                               rel="noopener noreferrer"
                             >
-                              Event details{' '}
+                              {text('Event details', 'Detalles del evento')}{' '}
                               <span className="sr-only">
-                                for {event.title} (opens in a new tab)
+                                {text(
+                                  `for ${event.title} (opens in a new tab)`,
+                                  `de ${eventTitle(event)} (se abre en una pestaña nueva)`,
+                                )}
                               </span>
                               <ArrowUpRight size={18} aria-hidden="true" />
                             </a>
@@ -362,8 +430,14 @@ export function ChurchCalendar({
           ) : (
             <output className="empty-state">
               {selected
-                ? 'No gatherings are scheduled for this day. Choose another date to explore.'
-                : 'No more gatherings are listed for this month. Explore next month for upcoming weekly services.'}
+                ? text(
+                    'No gatherings are scheduled for this day. Choose another date to explore.',
+                    'No hay reuniones programadas para este día. Elige otra fecha para explorar.',
+                  )
+                : text(
+                    'No more gatherings are listed for this month. Explore next month for upcoming weekly services.',
+                    'No hay más reuniones este mes. Consulta el próximo mes para ver las próximas reuniones semanales.',
+                  )}
             </output>
           )}
         </div>

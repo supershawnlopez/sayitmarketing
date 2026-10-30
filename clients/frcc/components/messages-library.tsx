@@ -6,16 +6,29 @@ import type { ChurchMessage } from '@/lib/church-updates';
 import { safeMediaUrl, youtubeVideoId } from '@/lib/video';
 import { publicAsset } from '@/lib/public-asset';
 
-export function MessagesLibrary({ messages }: { messages: ChurchMessage[] }) {
+function normalizeSearch(value: string): string {
+  return value.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
+}
+
+export function MessagesLibrary({
+  messages,
+  locale = 'en',
+}: {
+  messages: ChurchMessage[];
+  locale?: 'en' | 'es';
+}) {
+  const text = (english: string, spanish: string) =>
+    locale === 'es' ? spanish : english;
   const [query, setQuery] = useState('');
   const [selected, setSelected] = useState<ChurchMessage | null>(null);
   const dialog = useRef<HTMLDialogElement>(null);
+  const normalizedQuery = normalizeSearch(query.trim());
   const shown = messages.filter((message) =>
-    [message.title, message.speaker, message.series]
-      .filter(Boolean)
-      .join(' ')
-      .toLowerCase()
-      .includes(query.trim().toLowerCase()),
+    normalizeSearch(
+      [message.title, message.speaker, message.series]
+        .filter(Boolean)
+        .join(' '),
+    ).includes(normalizedQuery),
   );
   useEffect(() => {
     if (selected) dialog.current?.showModal();
@@ -30,18 +43,24 @@ export function MessagesLibrary({ messages }: { messages: ChurchMessage[] }) {
         <label className="message-search">
           <Search size={20} aria-hidden="true" />
           <span className="sr-only">
-            Search messages by title, speaker, or series
+            {text(
+              'Search messages by title, speaker, or series',
+              'Buscar mensajes por título, predicador o serie',
+            )}
           </span>
           <input
             type="search"
-            placeholder="Search messages"
+            placeholder={text('Search messages', 'Buscar mensajes')}
             value={query}
             onChange={(event) => setQuery(event.target.value)}
           />
         </label>
       )}
       <p className="sr-only" aria-live="polite">
-        {shown.length} messages found
+        {text(
+          `${shown.length} messages found`,
+          `${shown.length} ${shown.length === 1 ? 'mensaje encontrado' : 'mensajes encontrados'}`,
+        )}
       </p>
       <ul className="recording-grid">
         {shown.map((message) => {
@@ -65,8 +84,8 @@ export function MessagesLibrary({ messages }: { messages: ChurchMessage[] }) {
                     className="play-recording"
                     type="button"
                     onClick={() => setSelected(message)}
-                    aria-label={'Play ' + message.title}
-                    title={'Play ' + message.title}
+                    aria-label={text('Play ', 'Reproducir ') + message.title}
+                    title={text('Play ', 'Reproducir ') + message.title}
                   >
                     <Play size={28} aria-hidden="true" fill="currentColor" />
                   </button>
@@ -79,10 +98,13 @@ export function MessagesLibrary({ messages }: { messages: ChurchMessage[] }) {
                 {message.date && (
                   <p>
                     <time dateTime={message.date}>
-                      {new Intl.DateTimeFormat('en-US', {
-                        dateStyle: 'long',
-                        timeZone: 'America/Phoenix',
-                      }).format(
+                      {new Intl.DateTimeFormat(
+                        locale === 'es' ? 'es-US' : 'en-US',
+                        {
+                          dateStyle: 'long',
+                          timeZone: 'America/Phoenix',
+                        },
+                      ).format(
                         new Date(
                           message.date.length === 10
                             ? message.date + 'T12:00:00-07:00'
@@ -98,7 +120,7 @@ export function MessagesLibrary({ messages }: { messages: ChurchMessage[] }) {
                     type="button"
                     onClick={() => setSelected(message)}
                   >
-                    Watch message
+                    {text('Watch message', 'Ver mensaje')}
                     <Play size={16} aria-hidden="true" />
                   </button>
                 ) : (
@@ -109,14 +131,14 @@ export function MessagesLibrary({ messages }: { messages: ChurchMessage[] }) {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Watch message
+                      {text('Watch message', 'Ver mensaje')}
                       <ArrowUpRight size={18} aria-hidden="true" />
                     </a>
                   )
                 )}
                 {audioUrl && (
                   <a className="text-link" href={audioUrl}>
-                    Listen
+                    {text('Listen', 'Escuchar')}
                     <ArrowUpRight size={18} aria-hidden="true" />
                   </a>
                 )}
@@ -127,14 +149,19 @@ export function MessagesLibrary({ messages }: { messages: ChurchMessage[] }) {
       </ul>
       {shown.length === 0 && (
         <div className="empty-state">
-          <h3>No matching messages</h3>
-          <p>Try another title, speaker, or series.</p>
+          <h3>{text('No matching messages', 'No se encontraron mensajes')}</h3>
+          <p>
+            {text(
+              'Try another title, speaker, or series.',
+              'Prueba con otro título, predicador o serie.',
+            )}
+          </p>
           <button
             type="button"
             className="button button-dark"
             onClick={() => setQuery('')}
           >
-            Clear search
+            {text('Clear search', 'Borrar búsqueda')}
           </button>
         </div>
       )}
@@ -155,8 +182,8 @@ export function MessagesLibrary({ messages }: { messages: ChurchMessage[] }) {
                 type="button"
                 className="icon-button"
                 onClick={close}
-                aria-label="Close video"
-                title="Close video"
+                aria-label={text('Close video', 'Cerrar video')}
+                title={text('Close video', 'Cerrar video')}
               >
                 <X size={22} />
               </button>
@@ -166,7 +193,7 @@ export function MessagesLibrary({ messages }: { messages: ChurchMessage[] }) {
                 src={
                   'https://www.youtube-nocookie.com/embed/' +
                   youtubeVideoId(selected.videoUrl ?? '') +
-                  '?autoplay=1'
+                  `?autoplay=1&hl=${locale}`
                 }
                 title={selected.title}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -179,7 +206,7 @@ export function MessagesLibrary({ messages }: { messages: ChurchMessage[] }) {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Open on YouTube
+              {text('Open on YouTube', 'Abrir en YouTube')}
               <ArrowUpRight size={18} aria-hidden="true" />
             </a>
           </>

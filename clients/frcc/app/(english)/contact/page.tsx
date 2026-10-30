@@ -4,6 +4,9 @@ import { church } from '@/lib/church-content';
 import { Eyebrow, PageIntro, PageShell } from '@/components/site-shell';
 import { ServiceTimes } from '@/components/service-times';
 import { heroImages } from '@/lib/hero-images';
+import { localizedMetadata } from '@/lib/localized-metadata';
+
+export const metadata = localizedMetadata('/contact', 'en', 'Visit & Contact | FRCC Tucson', 'Plan your visit to FRCC Tucson. Find our address, phone number, and service times.');
 
 export default function ContactPage() {
   return (

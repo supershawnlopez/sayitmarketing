@@ -3,12 +3,15 @@ import Link from 'next/link';
 import { ArrowDown, ArrowRight, ArrowUpRight } from 'lucide-react';
 import { church } from '@/lib/church-content';
 import { publicAsset } from '@/lib/public-asset';
+import { localizedMetadata } from '@/lib/localized-metadata';
 import {
   ConnectBand,
   Eyebrow,
   PageShell,
   VisitBand,
 } from '@/components/site-shell';
+
+export const metadata = localizedMetadata('/', 'en', 'FRCC Tucson | Family Restoration Community Church', 'A Tucson church community centered on faith, restoration, worship, and serving families.');
 
 export default function Home() {
   return (

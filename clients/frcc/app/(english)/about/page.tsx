@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 import { ministries } from '@/lib/church-content';
 import { publicAsset } from '@/lib/public-asset';
+import { localizedMetadata } from '@/lib/localized-metadata';
 import {
   ConnectBand,
   Eyebrow,
@@ -10,6 +11,8 @@ import {
   PageShell,
   VisitBand,
 } from '@/components/site-shell';
+
+export const metadata = localizedMetadata('/about', 'en', 'About | FRCC Tucson', 'Get to know Family Restoration Community Church, our pastors, and our ministries in Tucson.');
 
 export default function AboutPage() {
   return (

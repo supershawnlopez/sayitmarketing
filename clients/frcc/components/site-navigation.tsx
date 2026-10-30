@@ -5,19 +5,70 @@ import { usePathname } from 'next/navigation';
 import { useEffect, useRef, useState } from 'react';
 import { ArrowUpRight, Menu, X } from 'lucide-react';
 import { navItems } from '@/lib/church-content';
+import {
+  localeFromPathname,
+  localizedHref,
+  localizedLabel,
+} from '@/lib/locale';
+
+let pendingLanguagePath: string | undefined;
+
+export function LanguageSwitch({
+  className,
+  showArrow = false,
+  onNavigate,
+}: {
+  className?: string;
+  showArrow?: boolean;
+  onNavigate?: () => void;
+}) {
+  const pathname = usePathname();
+  const locale = localeFromPathname(pathname);
+  const targetLocale = locale === 'es' ? 'en' : 'es';
+  return (
+    <Link
+      className={className}
+      href={localizedHref(pathname, targetLocale)}
+      lang={targetLocale}
+      hrefLang={targetLocale}
+      scroll={true}
+      onNavigate={() => {
+        pendingLanguagePath = localizedHref(pathname, targetLocale);
+        onNavigate?.();
+        window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      }}
+    >
+      {targetLocale === 'es' ? 'Español' : 'English'}
+      {showArrow && <ArrowUpRight size={20} aria-hidden="true" />}
+    </Link>
+  );
+}
 
 export function SiteNavigation() {
   const pathname = usePathname();
+  const locale = localeFromPathname(pathname);
+  const currentPath = localizedHref(pathname, locale);
+  const menuLabel =
+    locale === 'es'
+      ? (openLabel: boolean) =>
+          openLabel ? 'Cerrar navegación' : 'Abrir navegación'
+      : (openLabel: boolean) =>
+          openLabel ? 'Close navigation' : 'Open navigation';
   const [open, setOpen] = useState(false);
   const toggle = useRef<HTMLButtonElement>(null);
   const panel = useRef<HTMLDivElement>(null);
   const closeLink = (href: string) => {
     setOpen(false);
-    if (pathname === href) toggle.current?.focus();
+    if (currentPath === href) toggle.current?.focus();
   };
   useEffect(() => {
     setOpen(false);
-  }, [pathname]);
+    document.documentElement.lang = locale;
+    if (pendingLanguagePath === localizedHref(pathname, locale)) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      pendingLanguagePath = undefined;
+    }
+  }, [pathname, locale]);
   useEffect(() => {
     if (!open) return;
     const escape = (event: KeyboardEvent) => {
@@ -46,38 +97,46 @@ export function SiteNavigation() {
   }, [open]);
   return (
     <>
-      <nav className="desktop-nav" aria-label="Main navigation">
+      <nav
+        className="desktop-nav"
+        aria-label={
+          locale === 'es' ? 'Navegación principal' : 'Main navigation'
+        }
+      >
         {navItems.map((item) => (
           <Link
             key={item.href}
-            href={item.href}
-            aria-current={pathname === item.href ? 'page' : undefined}
+            href={localizedHref(item.href, locale)}
+            aria-current={
+              currentPath === localizedHref(item.href, locale)
+                ? 'page'
+                : undefined
+            }
           >
-            {item.label}
+            {localizedLabel(item.label, locale)}
           </Link>
         ))}
       </nav>
       <div className="header-actions">
-        <Link
+        <LanguageSwitch
           className="language-link"
-          href="/es"
-          lang="es"
-          aria-current={pathname === '/es' ? 'page' : undefined}
+          onNavigate={() => setOpen(false)}
+        />
+        <Link
+          href={localizedHref('/contact', locale)}
+          className="button button-dark header-visit"
         >
-          Español
-        </Link>
-        <Link href="/contact" className="button button-dark header-visit">
-          Plan a visit
+          {locale === 'es' ? 'Planea tu visita' : 'Plan a visit'}
           <ArrowUpRight size={16} aria-hidden="true" />
         </Link>
         <button
           ref={toggle}
           className="menu-toggle icon-button"
           type="button"
-          aria-label={open ? 'Close navigation' : 'Open navigation'}
+          aria-label={menuLabel(open)}
           aria-expanded={open}
           aria-controls="mobile-navigation"
-          title={open ? 'Close navigation' : 'Open navigation'}
+          title={menuLabel(open)}
           onClick={() => setOpen(!open)}
         >
           {open ? <X size={24} /> : <Menu size={24} />}
@@ -96,22 +155,27 @@ export function SiteNavigation() {
             setOpen(false);
         }}
       >
-        <nav aria-label="Mobile navigation">
+        <nav
+          aria-label={
+            locale === 'es' ? 'Navegación móvil' : 'Mobile navigation'
+          }
+        >
           {navItems.map((item) => (
             <Link
               key={item.href}
-              href={item.href}
-              onClick={() => closeLink(item.href)}
-              aria-current={pathname === item.href ? 'page' : undefined}
+              href={localizedHref(item.href, locale)}
+              onClick={() => closeLink(localizedHref(item.href, locale))}
+              aria-current={
+                currentPath === localizedHref(item.href, locale)
+                  ? 'page'
+                  : undefined
+              }
             >
-              {item.label}
+              {localizedLabel(item.label, locale)}
               <ArrowUpRight size={20} aria-hidden="true" />
             </Link>
           ))}
-          <Link href="/es" lang="es" onClick={() => closeLink('/es')}>
-            Español
-            <ArrowUpRight size={20} aria-hidden="true" />
-          </Link>
+          <LanguageSwitch showArrow onNavigate={() => setOpen(false)} />
         </nav>
       </div>
     </>

@@ -1,12 +1,15 @@
 import { ArrowUpRight, Phone } from 'lucide-react';
 import { church } from '@/lib/church-content';
 import { heroImages } from '@/lib/hero-images';
+import { localizedMetadata } from '@/lib/localized-metadata';
 import {
   ConnectBand,
   Eyebrow,
   PageIntro,
   PageShell,
 } from '@/components/site-shell';
+
+export const metadata = localizedMetadata('/give', 'en', 'Give | FRCC Tucson', 'Support the ministry of Family Restoration Community Church and families in Tucson.');
 
 export default function GivePage() {
   return (

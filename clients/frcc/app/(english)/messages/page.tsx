@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import type { Metadata } from 'next';
+import { localizedMetadata } from '@/lib/localized-metadata';
 import Link from 'next/link';
 import { ArrowUpRight, Video } from 'lucide-react';
 import {
@@ -15,11 +15,7 @@ import { church } from '@/lib/church-content';
 import { safeMediaUrl } from '@/lib/video';
 import { publicAsset } from '@/lib/public-asset';
 
-export const metadata: Metadata = {
-  title: 'Messages | FRCC Tucson',
-  description:
-    'Sermons and teaching from Family Restoration Community Church in Tucson.',
-};
+export const metadata = localizedMetadata('/messages', 'en', 'Messages | FRCC Tucson', 'Sermons and teaching from Family Restoration Community Church in Tucson.');
 
 export default function MessagesPage() {
   const channel = safeMediaUrl(channelUrl);
