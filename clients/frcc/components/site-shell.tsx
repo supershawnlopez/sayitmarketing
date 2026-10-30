@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, ArrowUpRight, MapPin } from 'lucide-react';
 import { church, navItems } from '@/lib/church-content';
 import { SiteNavigation } from '@/components/site-navigation';
@@ -117,12 +118,14 @@ export function PageIntro({
 }) {
   return (
     <section className="page-intro">
-      <img
+      <Image
         className="page-intro-photo"
         src={image.src}
         alt={image.alt}
         style={{ objectPosition: image.position }}
         fetchPriority="high"
+        fill
+        sizes="100vw"
       />
       <div className="page-intro-shade" />
       <div className="container page-intro-content">
@@ -137,30 +140,24 @@ export function VisitBand() {
   return (
     <section className="visit-band" aria-label="Visit information">
       <div className="container visit-inner">
-        <div className="visit-label">
-          <MapPin size={22} aria-hidden="true" />
-          <span>
-            A church home
-            <br />
-            <strong>right here in Tucson.</strong>
-          </span>
+        <div className="visit-intro">
+          <Eyebrow>You’re invited</Eyebrow>
+          <h2>Join us this week.</h2>
+        </div>
+        <div className="visit-schedule" aria-label="Service times">
+          {church.serviceTimes.map((service) => (
+            <Link className="visit-gathering" href="/contact#service-times" key={service.day + service.time}>
+              <span className="visit-day">{service.day}</span>
+              <strong className="visit-time">{service.time}</strong>
+              <ArrowUpRight size={22} aria-hidden="true" />
+            </Link>
+          ))}
         </div>
         <a className="visit-address" href={church.mapUrl}>
-          2425 N Huachuca Dr<span>Tucson, AZ 85745</span>
+          <MapPin size={24} aria-hidden="true" />
+          <span><strong>Find us in Tucson</strong><span>2425 N Huachuca Dr</span><span>Tucson, AZ 85745</span></span>
+          <ArrowUpRight size={20} aria-hidden="true" />
         </a>
-        <Link className="text-link" href="/contact#service-times">
-          <span>
-            Service times
-            <span className="visit-times">
-              {church.serviceTimes.map((service) => (
-                <span key={service.day + service.time}>
-                  {service.day} {service.time}
-                </span>
-              ))}
-            </span>
-          </span>
-          <ArrowUpRight size={18} aria-hidden="true" />
-        </Link>
       </div>
     </section>
   );

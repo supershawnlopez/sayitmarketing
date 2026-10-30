@@ -153,7 +153,8 @@ export default function Home() {
           className="container updates-links"
           aria-label="Stay connected with FRCC"
         >
-          <Link href="/events">
+          <Link href="/events" className="update-tile">
+            <Image className="update-tile-photo" src={publicAsset('/images/stock-worship-detail.jpg')} alt="" width={1800} height={1200} sizes="(max-width: 700px) 100vw, 50vw" loading="lazy" />
             <div>
               <Eyebrow>Life together</Eyebrow>
               <h2>Events</h2>
@@ -161,7 +162,8 @@ export default function Home() {
             </div>
             <ArrowUpRight size={26} aria-hidden="true" />
           </Link>
-          <Link href="/messages">
+          <Link href="/messages" className="update-tile">
+            <Image className="update-tile-photo" src={publicAsset('/images/bible-reading.jpg')} alt="" width={2048} height={1075} sizes="(max-width: 700px) 100vw, 50vw" loading="lazy" />
             <div>
               <Eyebrow>Sermons &amp; teaching</Eyebrow>
               <h2>Messages</h2>

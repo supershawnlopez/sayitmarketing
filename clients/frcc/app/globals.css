@@ -83,13 +83,13 @@ svg {
   padding-block: 112px;
 }
 .eyebrow {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 650;
   line-height: 1.5;
   text-transform: uppercase;
 }
 h2 {
-  font-size: 54px;
+  font-size: 3.375rem;
   font-weight: 600;
   line-height: 1.09;
 }
@@ -98,11 +98,11 @@ h2 {
 }
 .body-copy {
   color: var(--muted);
-  font-size: 17px;
+  font-size: 1.0625rem;
   line-height: 1.8;
 }
 .lead-copy {
-  font-size: 25px;
+  font-size: 1.5625rem;
   line-height: 1.4;
   font-weight: 500;
 }
@@ -110,7 +110,7 @@ h2 {
   display: inline-flex;
   align-items: center;
   gap: 16px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   min-height: 44px;
 }
@@ -148,7 +148,7 @@ h2 {
   padding: 14px 23px;
   border: 1px solid transparent;
   border-radius: 2px;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.4;
   transition:
@@ -202,11 +202,11 @@ h2 {
 }
 .wordmark strong {
   font-weight: 850;
-  font-size: 38px;
+  font-size: 2.375rem;
   line-height: 1;
 }
 .wordmark > span {
-  font-size: 9px;
+  font-size: 0.5625rem;
   font-weight: 650;
   line-height: 1.4;
   padding-left: 12px;
@@ -228,7 +228,7 @@ h2 {
   min-height: 44px;
   display: flex;
   align-items: center;
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 550;
   position: relative;
 }
@@ -250,7 +250,7 @@ h2 {
   gap: 25px;
 }
 .language-link {
-  font-size: 12px;
+  font-size: 0.75rem;
   padding-block: 14px;
 }
 .language-link:hover {
@@ -259,7 +259,7 @@ h2 {
 .header-visit {
   min-height: 44px;
   padding: 10px 17px;
-  font-size: 12px;
+  font-size: 0.75rem;
   gap: 20px;
 }
 .icon-button {
@@ -293,7 +293,7 @@ h2 {
   align-items: center;
   padding-block: 17px;
   border-bottom: 1px solid var(--line);
-  font-size: 18px;
+  font-size: 1.125rem;
 }
 .skip-link {
   color: white;
@@ -336,10 +336,10 @@ h2 {
   padding-block: 45px;
 }
 .hero-content > .eyebrow {
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 .home-hero h1 {
-  font-size: 116px;
+  font-size: 7.25rem;
   line-height: 0.92;
   font-weight: 800;
   margin-block: 22px 25px;
@@ -355,7 +355,7 @@ h2 {
   gap: 20px;
 }
 .hero-welcome {
-  font-size: 18px;
+  font-size: 1.125rem;
   line-height: 1.5;
   margin-bottom: 23px;
 }
@@ -387,14 +387,14 @@ h2 {
   display: flex;
   align-items: center;
   gap: 20px;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.6;
 }
 .visit-label strong {
   font-weight: 600;
 }
 .visit-address {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.7;
   padding-left: 45px;
   border-left: 1px solid #ffffff60;
@@ -406,13 +406,13 @@ h2 {
   text-decoration: underline;
 }
 .visit-inner > .text-link {
-  font-size: 12px;
+  font-size: 0.75rem;
 }
 .visit-times {
   display: block;
   max-width: 190px;
   font-weight: 450;
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 1.7;
   margin-top: 3px;
 }
@@ -438,12 +438,12 @@ h2 {
   padding-block: 30px;
 }
 .update-item h3 {
-  font-size: 26px;
+  font-size: 1.625rem;
   line-height: 1.3;
   margin-bottom: 15px;
 }
 .update-item p {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.8;
   color: var(--muted);
 }
@@ -456,13 +456,13 @@ h2 {
   max-width: 800px;
 }
 .empty-state h3 {
-  font-size: 25px;
+  font-size: 1.5625rem;
   line-height: 1.4;
   margin-bottom: 14px;
 }
 .empty-state p {
   color: var(--muted);
-  font-size: 17px;
+  font-size: 1.0625rem;
   line-height: 1.8;
   max-width: 640px;
 }
@@ -491,11 +491,11 @@ h2 {
   border-left: 1px solid var(--line);
 }
 .updates-links h2 {
-  font-size: 32px;
+  font-size: 2rem;
   margin-top: 14px;
 }
 .updates-links p:not(.eyebrow) {
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.7;
   color: var(--muted);
   margin-top: 14px;
@@ -536,7 +536,7 @@ h2 {
   margin-bottom: 40px;
 }
 .section-topline h2 {
-  font-size: 42px;
+  font-size: 2.625rem;
   margin-top: 17px;
 }
 .story-grid {
@@ -588,16 +588,16 @@ h2 {
 }
 .story-caption .eyebrow {
   color: var(--muted);
-  font-size: 11px;
+  font-size: 0.6875rem;
 }
 .story-caption h3 {
-  font-size: 30px;
+  font-size: 1.875rem;
   font-weight: 550;
   margin-top: 10px;
 }
 .story-caption p {
   color: var(--muted);
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.7;
   margin-top: 10px;
 }
@@ -616,10 +616,10 @@ h2 {
   padding-top: 9px;
 }
 .prayer-layout h2 {
-  font-size: 52px;
+  font-size: 3.25rem;
 }
 .prayer-layout p:not(.eyebrow) {
-  font-size: 17px;
+  font-size: 1.0625rem;
   color: #c9c9cc;
   line-height: 1.8;
   max-width: 560px;
@@ -639,7 +639,7 @@ h2 {
   gap: 45px;
 }
 .connect-inner h2 {
-  font-size: 40px;
+  font-size: 2.5rem;
   margin-top: 17px;
 }
 .site-footer {
@@ -653,12 +653,12 @@ h2 {
   padding-bottom: 62px;
 }
 .footer-name {
-  font-size: 15px;
+  font-size: 0.9375rem;
   line-height: 1.6;
   margin-top: 23px;
 }
 .footer-muted {
-  font-size: 12px;
+  font-size: 0.75rem;
   color: var(--muted);
   margin-top: 11px;
 }
@@ -670,7 +670,7 @@ h2 {
   display: flex;
   max-width: 235px;
   gap: 15px;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.8;
   margin-bottom: 15px;
 }
@@ -680,7 +680,7 @@ h2 {
 .footer-top nav a {
   display: block;
   width: fit-content;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 2.2;
 }
 .footer-bottom {
@@ -690,7 +690,7 @@ h2 {
   border-top: 1px solid var(--line);
   padding-block: 23px;
   color: var(--muted);
-  font-size: 11px;
+  font-size: 0.6875rem;
 }
 .page-intro {
   position: relative;
@@ -735,14 +735,14 @@ h2 {
   object-fit: cover;
 }
 .messages-welcome h3 {
-  font-size: 32px;
+  font-size: 2rem;
   line-height: 1.2;
   margin-block: 22px;
 }
 .messages-welcome p {
   color: var(--muted);
   line-height: 1.8;
-  font-size: 16px;
+  font-size: 1rem;
 }
 .messages-service-times {
   border-top: 1px solid var(--line);
@@ -805,7 +805,7 @@ h2 {
   padding-block: 22px;
 }
 .recording-copy h3 {
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 1.35;
   margin-block: 12px;
 }
@@ -839,7 +839,7 @@ h2 {
   margin-bottom: 22px;
 }
 .message-dialog-heading h2 {
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 1.3;
 }
 .video-frame {
@@ -864,7 +864,7 @@ h2 {
   margin-bottom: 28px;
 }
 .calendar-toolbar h3 {
-  font-size: 28px;
+  font-size: 1.75rem;
   line-height: 1.3;
   min-width: 220px;
 }
@@ -891,7 +891,7 @@ h2 {
   color: var(--ink);
   border: 0;
   border-radius: 2px;
-  font-size: 13px;
+  font-size: 0.8125rem;
 }
 .calendar-view-switch button[aria-pressed='true'] {
   background: var(--ink);
@@ -903,7 +903,7 @@ h2 {
   border-collapse: collapse;
 }
 .calendar-grid th {
-  font-size: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   padding-block: 13px;
   text-align: center;
@@ -938,7 +938,7 @@ h2 {
   box-shadow: inset 0 0 0 2px var(--brand);
 }
 .calendar-day-number {
-  font-size: 13px;
+  font-size: 0.8125rem;
   font-weight: 550;
   display: grid;
   place-items: center;
@@ -956,7 +956,7 @@ h2 {
   color: var(--muted);
 }
 .calendar-day-event {
-  font-size: 11px;
+  font-size: 0.6875rem;
   line-height: 1.5;
   padding-left: 7px;
   border-left: 2px solid var(--brand);
@@ -970,7 +970,7 @@ h2 {
   margin-top: 32px;
 }
 .calendar-agenda-title {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 550;
   margin-bottom: 22px;
 }
@@ -993,17 +993,17 @@ h2 {
   background: #fff0ee;
 }
 .calendar-event-title {
-  font-size: 21px;
+  font-size: 1.3125rem;
   font-weight: 550;
   line-height: 1.4;
 }
 .calendar-event-date {
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.7;
   color: var(--muted);
 }
 .calendar-details-hint {
-  font-size: 12px;
+  font-size: 0.75rem;
   text-decoration: underline;
   text-underline-offset: 4px;
 }
@@ -1068,7 +1068,7 @@ h2 {
     gap: 30px;
   }
   .messages-welcome h3 {
-    font-size: 28px;
+    font-size: 1.75rem;
   }
   .messages-welcome > img {
     aspect-ratio: 1.5;
@@ -1083,7 +1083,7 @@ h2 {
     gap: 15px;
   }
   .calendar-toolbar h3 {
-    font-size: 24px;
+    font-size: 1.5rem;
     min-width: 0;
     flex: 1;
   }
@@ -1098,7 +1098,7 @@ h2 {
     margin-left: 0;
   }
   .calendar-grid th {
-    font-size: 10px;
+    font-size: 0.625rem;
   }
   .calendar-day {
     padding: 5px;
@@ -1106,7 +1106,7 @@ h2 {
     gap: 4px;
   }
   .calendar-day-number {
-    font-size: 12px;
+    font-size: 0.75rem;
     width: 24px;
     height: 24px;
   }
@@ -1139,7 +1139,7 @@ h2 {
   }
   .calendar-event-title {
     grid-row: auto;
-    font-size: 20px;
+    font-size: 1.25rem;
   }
   .calendar-event-date {
     grid-row: auto;
@@ -1152,14 +1152,14 @@ h2 {
   color: var(--brand-light);
 }
 .page-intro h1 {
-  font-size: 76px;
+  font-size: 4.75rem;
   font-weight: 650;
   line-height: 1.05;
   max-width: 960px;
   margin-top: 25px;
 }
 .page-intro p:not(.eyebrow) {
-  font-size: 19px;
+  font-size: 1.1875rem;
   line-height: 1.7;
   max-width: 660px;
   color: #fff;
@@ -1212,14 +1212,14 @@ h2 {
 }
 .schedule-pending h3,
 .service-schedule h3 {
-  font-size: 22px;
+  font-size: 1.375rem;
   line-height: 1.4;
   font-weight: 550;
 }
 .schedule-pending p {
   margin-top: 13px;
   color: var(--muted);
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.8;
 }
 .service-schedule {
@@ -1233,7 +1233,7 @@ h2 {
 }
 .service-schedule p {
   margin-top: 12px;
-  font-size: 17px;
+  font-size: 1.0625rem;
   line-height: 1.7;
 }
 .service-schedule p span {
@@ -1241,15 +1241,15 @@ h2 {
   margin-left: 20px;
 }
 .ministry-number {
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: var(--muted);
 }
 .ministry-list h3 {
-  font-size: 24px;
+  font-size: 1.5rem;
   font-weight: 550;
 }
 .ministry-list p {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.75;
   color: var(--muted);
 }
@@ -1280,17 +1280,17 @@ h2 {
   margin-top: 3px;
 }
 .contact-details h3 {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 550;
 }
 .contact-details p {
   color: var(--muted);
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.7;
   margin-top: 8px;
 }
 .contact-details .text-link {
-  font-size: 12px;
+  font-size: 0.75rem;
   margin-top: 9px;
 }
 .contact-prayer {
@@ -1307,12 +1307,12 @@ h2 {
   border-radius: 4px;
 }
 .giving-panel h3 {
-  font-size: 29px;
+  font-size: 1.8125rem;
   margin-top: 18px;
   font-weight: 550;
 }
 .giving-panel > p:not(.eyebrow) {
-  font-size: 16px;
+  font-size: 1rem;
   color: var(--muted);
   line-height: 1.8;
   margin-top: 13px;
@@ -1321,7 +1321,7 @@ h2 {
   margin-block: 24px 8px;
 }
 .giving-panel > .giving-notice {
-  font-size: 14px !important;
+  font-size: 0.875rem !important;
 }
 .giving-panel .text-link {
   margin-top: 12px;
@@ -1331,7 +1331,7 @@ h2 {
   padding-top: 26px;
 }
 .spanish-details h3 {
-  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 1.4;
   margin-bottom: 17px;
 }
@@ -1339,7 +1339,7 @@ h2 {
   margin-top: 35px;
 }
 .spanish-details p {
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.8;
   color: var(--muted);
 }
@@ -1375,7 +1375,7 @@ h2 {
     gap: 55px;
   }
   h2 {
-    font-size: 44px;
+    font-size: 2.75rem;
   }
   .visit-inner {
     gap: 24px;
@@ -1406,7 +1406,7 @@ h2 {
     padding-block: 44px;
   }
   .home-hero h1 {
-    font-size: 92px;
+    font-size: 5.75rem;
   }
   .visit-inner {
     grid-template-columns: 1fr 1fr;
@@ -1438,7 +1438,7 @@ h2 {
     align-items: start;
   }
   .section-topline h2 {
-    font-size: 35px;
+    font-size: 2.1875rem;
   }
   .section-topline > .text-link {
     max-width: 160px;
@@ -1447,17 +1447,17 @@ h2 {
     padding-bottom: 80px;
   }
   .story-caption h3 {
-    font-size: 26px;
+    font-size: 1.625rem;
   }
   .prayer-layout {
     grid-template-columns: 1fr;
     gap: 25px;
   }
   .prayer-layout h2 {
-    font-size: 44px;
+    font-size: 2.75rem;
   }
   .connect-inner h2 {
-    font-size: 35px;
+    font-size: 2.1875rem;
   }
   .footer-top {
     grid-template-columns: 1.3fr 1fr;
@@ -1469,7 +1469,7 @@ h2 {
     grid-row: span 2;
   }
   .page-intro h1 {
-    font-size: 60px;
+    font-size: 3.75rem;
   }
   .contact-layout,
   .giving-layout {
@@ -1477,7 +1477,7 @@ h2 {
   }
   .contact-layout h2,
   .giving-layout h2 {
-    font-size: 38px;
+    font-size: 2.375rem;
   }
   .giving-panel {
     padding: 28px;
@@ -1514,10 +1514,10 @@ h2 {
     gap: 15px;
   }
   .wordmark strong {
-    font-size: 33px;
+    font-size: 2.0625rem;
   }
   .wordmark > span {
-    font-size: 8px;
+    font-size: 0.5rem;
     padding-left: 10px;
   }
   .wordmark {
@@ -1527,7 +1527,7 @@ h2 {
     gap: 15px;
   }
   .language-link {
-    font-size: 11px;
+    font-size: 0.6875rem;
   }
   .icon-button {
     width: 40px;
@@ -1538,15 +1538,15 @@ h2 {
     padding-block: 34px;
   }
   .hero-content > .eyebrow {
-    font-size: 10px;
+    font-size: 0.625rem;
     max-width: 250px;
   }
   .home-hero h1 {
-    font-size: 68px;
+    font-size: 4.25rem;
     margin-block: 25px;
   }
   .hero-welcome {
-    font-size: 17px;
+    font-size: 1.0625rem;
   }
   .hero-scroll {
     width: 40px;
@@ -1559,7 +1559,7 @@ h2 {
     background: linear-gradient(90deg, #101014b5, #10101455);
   }
   .hero-bottom .button {
-    font-size: 12px;
+    font-size: 0.75rem;
     min-height: 50px;
     padding-inline: 17px;
     gap: 15px;
@@ -1570,16 +1570,16 @@ h2 {
   }
   .visit-label {
     gap: 9px;
-    font-size: 11px;
+    font-size: 0.6875rem;
   }
   .visit-label svg {
     width: 17px;
   }
   .visit-address {
-    font-size: 11px;
+    font-size: 0.6875rem;
   }
   .visit-inner > .text-link {
-    font-size: 10px;
+    font-size: 0.625rem;
     gap: 6px;
     min-height: 30px;
   }
@@ -1590,20 +1590,20 @@ h2 {
     padding-block: 65px;
   }
   h2 {
-    font-size: 37px;
+    font-size: 2.3125rem;
   }
   .eyebrow {
-    font-size: 10px;
+    font-size: 0.625rem;
   }
   .eyebrow + h2 {
     margin-top: 18px;
   }
   .body-copy {
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 1.8;
   }
   .lead-copy {
-    font-size: 22px;
+    font-size: 1.375rem;
   }
   .section-topline {
     flex-direction: column;
@@ -1612,7 +1612,7 @@ h2 {
     margin-bottom: 28px;
   }
   .section-topline h2 {
-    font-size: 35px;
+    font-size: 2.1875rem;
   }
   .section-topline > .text-link {
     max-width: none;
@@ -1622,7 +1622,7 @@ h2 {
     gap: 36px;
   }
   .story-caption h3 {
-    font-size: 28px;
+    font-size: 1.75rem;
   }
   .community-section {
     padding-bottom: 65px;
@@ -1631,10 +1631,10 @@ h2 {
     padding-block: 65px;
   }
   .prayer-layout h2 {
-    font-size: 36px;
+    font-size: 2.25rem;
   }
   .prayer-layout p:not(.eyebrow) {
-    font-size: 16px;
+    font-size: 1rem;
   }
   .connect-band {
     padding-block: 55px;
@@ -1645,7 +1645,7 @@ h2 {
     gap: 27px;
   }
   .connect-inner h2 {
-    font-size: 34px;
+    font-size: 2.125rem;
   }
   .site-footer {
     padding-top: 50px;
@@ -1663,22 +1663,22 @@ h2 {
     grid-column: auto;
   }
   .footer-top > div:nth-child(2) a {
-    font-size: 12px;
+    font-size: 0.75rem;
   }
   .footer-top > div:nth-child(2) svg {
     display: none;
   }
   .footer-bottom {
-    font-size: 10px;
+    font-size: 0.625rem;
   }
   .page-intro {
     padding-block: 65px;
   }
   .page-intro h1 {
-    font-size: 46px;
+    font-size: 2.875rem;
   }
   .page-intro p:not(.eyebrow) {
-    font-size: 17px;
+    font-size: 1.0625rem;
     margin-top: 23px;
   }
   .contact-layout,
@@ -1701,10 +1701,10 @@ h2 {
     padding-inline: 12px;
   }
   .ministry-list h3 {
-    font-size: 21px;
+    font-size: 1.3125rem;
   }
   .ministry-list p {
-    font-size: 15px;
+    font-size: 0.9375rem;
   }
 }
 @media (max-width: 359px) {
@@ -1712,7 +1712,7 @@ h2 {
     display: none;
   }
   .home-hero h1 {
-    font-size: 58px;
+    font-size: 3.625rem;
   }
   .hero-scroll {
     display: none;
@@ -1721,7 +1721,7 @@ h2 {
     gap: 12px;
   }
   .page-intro h1 {
-    font-size: 40px;
+    font-size: 2.5rem;
   }
 }
 @media (max-height: 640px) and (min-width: 600px) {
@@ -1730,11 +1730,11 @@ h2 {
     padding-block: 30px;
   }
   .home-hero h1 {
-    font-size: 74px;
+    font-size: 4.625rem;
     margin-block: 16px;
   }
   .hero-welcome {
-    font-size: 16px;
+    font-size: 1rem;
     margin-bottom: 15px;
   }
 }
@@ -1763,6 +1763,293 @@ h2 {
   .hero-content { min-height: 540px; padding-block: 30px; }
 }
 @media (max-width: 700px) { .leadership-layout, .worship-gallery { grid-template-columns: 1fr; } }
+/* Shared reading scale and responsive layouts for every public page.
+   Keep type relative to the reader's preferred size, including iOS Dynamic Type. */
+html {
+  font: -apple-system-body;
+  scroll-padding-top: 8rem;
+}
+:root {
+  --page-gutter: clamp(20px, 4vw, 56px);
+  --muted: #505054;
+}
+body {
+  font-size: 1.1875rem;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+.container {
+  width: min(calc(100% - 2 * var(--page-gutter)), 1328px);
+}
+h1, h2, h3, .button, .text-link {
+  overflow-wrap: anywhere;
+}
+h1, h2, h3 {
+  letter-spacing: -0.025em;
+}
+.eyebrow, .hero-content > .eyebrow, .story-caption .eyebrow {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 700;
+  letter-spacing: 0.045em;
+}
+h2, .section-topline h2, .contact-layout h2, .giving-layout h2,
+.prayer-layout h2, .connect-inner h2 {
+  font-size: clamp(2.5rem, 4.5vw, 3.75rem);
+  font-weight: 750;
+  line-height: 1.12;
+}
+.body-copy, .empty-state p, .update-item p, .messages-welcome p,
+.contact-details p, .giving-panel > p:not(.eyebrow), .spanish-details p,
+.ministry-list p, .prayer-layout p:not(.eyebrow), .schedule-pending p,
+.service-schedule p {
+  font-size: 1.1875rem;
+  line-height: 1.75;
+}
+.lead-copy {
+  font-size: clamp(1.375rem, 2.3vw, 1.75rem);
+  line-height: 1.5;
+  font-weight: 550;
+}
+.body-copy + .body-copy, .leadership-layout .body-copy {
+  margin-top: 1.25rem;
+}
+.text-link, .button, .contact-details .text-link,
+.calendar-view-switch button {
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1.5;
+  min-height: 48px;
+}
+.button {
+  min-height: 3.5rem;
+  padding: 1rem clamp(16px, 3vw, 24px);
+  gap: clamp(12px, 1.5vw, 20px);
+}
+.section-space { padding-block: clamp(4rem, 8vw, 7rem); }
+.welcome-copy { padding-top: 0; }
+.welcome-copy .body-copy, .welcome-copy .text-link { margin-top: 1.5rem; }
+.welcome-layout, .contact-layout, .giving-layout, .messages-welcome {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 24rem), 1fr));
+  gap: clamp(2rem, 5vw, 5rem);
+}
+.welcome-layout > *, .contact-layout > *, .giving-layout > *,
+.messages-welcome > *, .leadership-layout > *, .footer-top > * { min-width: 0; }
+.header-inner {
+  height: auto;
+  min-height: 5rem;
+  padding-block: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.desktop-nav { gap: clamp(12px, 1.8vw, 30px); margin-right: 0; }
+.desktop-nav a, .language-link, .header-visit { font-size: 1rem; }
+.wordmark > span { font-size: 0.6875rem; }
+.brand-link, .wordmark { max-width: 100%; }
+.wordmark { flex-wrap: wrap; }
+.wordmark strong { min-width: 0; max-width: 100%; overflow-wrap: anywhere; }
+.header-actions { gap: 1rem; margin-left: auto; max-width: 100%; flex-wrap: wrap; }
+.icon-button { min-width: 44px; min-height: 44px; }
+.mobile-navigation { max-height: 65dvh; padding-inline: var(--page-gutter); }
+.mobile-navigation a { font-size: 1.25rem; padding-block: 1rem; }
+.hero-content {
+  min-height: min(50rem, 80svh);
+  padding-block: clamp(4rem, 9vw, 8rem);
+}
+.home-hero h1 {
+  font-size: clamp(3.5rem, 9vw, 7.25rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+.hero-welcome { font-size: 1.375rem; line-height: 1.55; }
+.hero-bottom .button { font-size: 1rem; padding: 1rem clamp(16px, 3vw, 24px); min-height: 3.5rem; }
+.hero-content > .eyebrow { max-width: 34rem; }
+.page-intro { padding-block: clamp(4rem, 8vw, 7rem); }
+.page-intro h1 { font-size: clamp(2.75rem, 6vw, 5.125rem); line-height: 1.08; }
+.page-intro p:not(.eyebrow) { font-size: 1.375rem; line-height: 1.6; max-width: 40rem; }
+.visit-inner {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr) minmax(0, 1fr);
+  padding-block: 2.5rem;
+  gap: 2rem;
+}
+.visit-intro h2 { font-size: 2rem; line-height: 1.15; margin-top: 0.5rem; }
+.visit-schedule {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr));
+  gap: 1rem;
+}
+.visit-gathering {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 1rem 2rem 1rem 0;
+  border-top: 1px solid #ffffff80;
+}
+.visit-day { font-size: 1.125rem; line-height: 1.4; }
+.visit-time { font-size: 1.75rem; line-height: 1.2; font-weight: 750; }
+.visit-gathering svg { position: absolute; right: 0; top: 1.1rem; }
+.visit-gathering:hover, .visit-gathering:focus-visible { text-decoration: underline; }
+.visit-address {
+  display: flex;
+  align-items: start;
+  gap: 0.75rem;
+  border: 0;
+  padding: 0;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+}
+.visit-address > span { min-width: 0; }
+.visit-address strong { display: block; margin-bottom: 0.35rem; font-size: 1.125rem; }
+.visit-address > svg:first-child { margin-top: 0.25rem; }
+.visit-address > svg:last-child { margin-left: auto; }
+.story-grid { gap: 1.5rem; }
+.photo-story {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  min-height: 0;
+  background: var(--ink);
+  color: white;
+}
+.story-image { position: relative; inset: auto; aspect-ratio: auto; }
+.story-image img { object-fit: contain; height: auto; }
+.update-tile::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, #10101405 15%, #10101470 50%, #101014f0 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+.story-caption { position: relative; z-index: 2; padding: 2rem; border-bottom: 4px solid var(--brand); }
+.story-caption .eyebrow, .story-caption p { color: white; }
+.story-caption h3 { font-size: clamp(2rem, 3vw, 2.75rem); font-weight: 750; line-height: 1.15; margin-top: 0.75rem; }
+.story-caption p { font-size: 1.125rem; line-height: 1.6; }
+.image-arrow { top: 1.25rem; bottom: auto; z-index: 2; }
+.photo-story:hover h3, .photo-story:focus-visible h3 { color: white; text-decoration: underline; }
+.photo-story:hover .image-arrow { background: var(--brand); }
+.updates-links { gap: 1.5rem; border: 0; padding-bottom: 5rem; }
+.updates-links > a.update-tile {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  align-items: end;
+  min-height: 20rem;
+  padding: 2rem;
+  border: 0;
+  color: white;
+  background: var(--ink);
+}
+.update-tile-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.update-tile > div, .update-tile > svg { position: relative; z-index: 2; }
+.updates-links h2 { font-size: 2.75rem; line-height: 1.1; font-weight: 750; }
+.updates-links p:not(.eyebrow) { color: white; font-size: 1.125rem; line-height: 1.6; }
+.update-tile:hover h2, .update-tile:focus-visible h2 { text-decoration: underline; }
+.ministry-link { grid-template-columns: 2.25rem minmax(0, 1fr) minmax(0, 1.2fr) 24px; gap: 1.5rem; }
+.ministry-number { font-size: 1rem; }
+.ministry-list h3, .contact-details h3, .service-schedule h3,
+.spanish-details h3, .messages-welcome h3, .empty-state h3,
+.giving-panel h3, .schedule-pending h3 { font-size: 1.75rem; font-weight: 700; line-height: 1.3; }
+.giving-panel > .giving-notice { font-size: 1rem !important; }
+.service-schedule p { display: flex; flex-wrap: wrap; gap: 0.5rem 1.25rem; }
+.service-schedule p span { margin-left: 0; }
+.contact-details > a > div, .contact-row > div { min-width: 0; }
+.footer-name, .footer-top > div:nth-child(2) a, .footer-top nav a { font-size: 1.0625rem; line-height: 1.7; }
+.footer-muted, .footer-bottom { font-size: 0.9375rem; line-height: 1.6; }
+.footer-bottom { flex-wrap: wrap; }
+.footer-top nav a { padding-block: 0.375rem; min-height: 44px; }
+.calendar-toolbar { flex-wrap: wrap; }
+.calendar-toolbar h3 { font-size: 1.75rem; }
+.calendar-event-date, .calendar-details-hint { font-size: 1rem; }
+.calendar-event-title { font-size: 1.5rem; font-weight: 700; }
+.calendar-day-number { font-size: 1rem; min-width: 1.75rem; min-height: 1.75rem; width: auto; height: auto; }
+.calendar-day-event, .calendar-grid th { font-size: 0.875rem; }
+.calendar-grid { display: table; }
+.calendar-view-switch { flex-wrap: wrap; max-width: 100%; min-width: 0; }
+.calendar-event-summary > * { min-width: 0; }
+.message-dialog-heading { align-items: start; }
+.message-dialog-heading h2 { font-size: 1.5rem; }
+
+@media (max-width: 1023px) {
+  .visit-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+  .visit-schedule { grid-template-columns: repeat(auto-fit, minmax(min(100%, 12rem), 1fr)); }
+  .visit-address { border-top: 1px solid #ffffff80; padding-top: 1.25rem; }
+  .ministry-link { grid-template-columns: minmax(0, 1fr) 24px; }
+  .ministry-number { display: none; }
+  .ministry-list p { grid-column: 1; }
+  .ministry-arrow { grid-column: 2; grid-row: 1; }
+}
+@media (max-width: 700px) {
+  .header-inner { padding-block: 0.875rem; min-height: 4.75rem; }
+  .wordmark strong { font-size: 2.125rem; }
+  .language-link { font-size: 1rem; }
+  .header-actions { gap: 0.75rem; }
+  .hero-content { min-height: 38rem; padding-block: 4rem; }
+  .home-hero h1 { font-size: clamp(3.25rem, 14vw, 4.75rem); }
+  .hero-content > .eyebrow { max-width: 25rem; }
+  .hero-bottom { align-items: center; }
+  .hero-bottom > div { min-width: 0; flex: 1; }
+  .hero-bottom .button { width: 100%; }
+  .hero-scroll { display: none; }
+  .hero-shade { background: linear-gradient(90deg, #101014c0, #10101455); }
+  .page-intro h1 { font-size: clamp(2.5rem, 9vw, 3.75rem); }
+  h2, .section-topline h2, .contact-layout h2, .giving-layout h2,
+  .prayer-layout h2, .connect-inner h2 { font-size: 2.5rem; }
+  .visit-inner { padding-block: 2rem; }
+  .visit-intro h2 { font-size: 2rem; }
+  .visit-schedule { grid-template-columns: repeat(auto-fit, minmax(min(100%, 9rem), 1fr)); }
+  .visit-time { font-size: 2rem; }
+  .section-topline { padding-top: 0; border-top: 0; gap: 1.25rem; margin-bottom: 2rem; }
+  .community-section { padding-bottom: 1.5rem; }
+  .story-grid {
+    grid-template-columns: minmax(0, 1fr);
+    margin-inline: calc(-1 * var(--page-gutter));
+    gap: 1rem;
+  }
+  .photo-story { min-height: 0; }
+  .story-caption { padding: 2rem var(--page-gutter); }
+  .image-arrow { right: var(--page-gutter); }
+  .updates-links.container { width: 100%; grid-template-columns: minmax(0, 1fr); gap: 1rem; padding-bottom: 4rem; }
+  .updates-links > a.update-tile { min-height: 20rem; padding: 2rem var(--page-gutter); }
+  .prayer-band { padding-block: 4rem; }
+  .connect-band { padding-block: 3.5rem; }
+  .connect-inner { align-items: stretch; }
+  .prayer-layout .button, .contact-layout .button, .giving-panel .button { width: 100%; }
+  .footer-top { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .footer-top > div:first-child, .footer-top nav { grid-column: auto; grid-row: auto; }
+  .footer-top > div:nth-child(2) a { max-width: none; }
+  .footer-bottom { flex-direction: column; }
+  .ministry-list { margin-inline: calc(-1 * var(--page-gutter)); }
+  .ministry-link { padding: 1.75rem var(--page-gutter); }
+  .giving-panel { padding: 1.5rem; }
+  .messages-welcome > img, .worship-gallery img {
+    width: calc(100% + 2 * var(--page-gutter));
+    max-width: none;
+    margin-inline: calc(-1 * var(--page-gutter));
+  }
+  .worship-gallery { gap: 1.5rem; }
+  .calendar-event-summary { grid-template-columns: minmax(0, 1fr); padding: 1.5rem 0; }
+  .calendar-event-summary .eyebrow, .calendar-event-title,
+  .calendar-event-date, .calendar-details-hint { grid-column: auto; grid-row: auto; }
+  .calendar-event-body { padding: 0 0 1.5rem; }
+  .calendar-toolbar h3 { flex-basis: 100%; }
+  .calendar-view-switch { margin-left: 0; }
+  .calendar-navigation .icon-button { width: 48px; height: 48px; }
+  .calendar-day { padding: 4px; min-height: 4rem; }
+  .calendar-day-event { font-size: 0; padding: 0; width: 6px; height: 6px; background: var(--brand); border: 0; border-radius: 50%; }
+  .calendar-day-event::before { display: none; }
+  .calendar-day-time { display: none; }
+  .calendar-grid th { font-size: 0.75rem; overflow-wrap: anywhere; }
+  .calendar-day-number { font-size: 0.875rem; min-width: 0; }
+  .calendar-event-actions { flex-direction: column; align-items: start; }
+}
+@media (max-width: 400px) {
+  .header-inner .wordmark > span { display: none; }
+  .home-hero h1 { font-size: 3.25rem; }
+}
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
