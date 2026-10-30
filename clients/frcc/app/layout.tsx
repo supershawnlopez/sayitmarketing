@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
+import './mobile-refinement.css';
+import './visit-band.css';
 import { publicAsset } from '@/lib/public-asset';
 import { siteOrigin, siteNoIndex } from '@/lib/site-config';
 

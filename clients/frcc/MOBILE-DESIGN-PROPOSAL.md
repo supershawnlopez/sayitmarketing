@@ -1,0 +1,66 @@
+# FRCC mobile refinement — design proposal
+
+Status: proposal only. This work owns `site/app/mobile-refinement.css` and this specification. No production deployment, Git operation, credentials, network request, shell modification, or stylesheet integration is part of this change. The preview integrator must load the proposal stylesheet **after** `globals.css` in an isolated review preview. Integration belongs to the preview owner; this proposal does not edit layout imports.
+
+## Visual direction and evidence
+
+Reviewed all nine supplied `EC81B8F5-F541-4582-B76E-D3EB849B6951` screenshots and both rejected `C94394EB-3CD0-45F4-8A51-C8502A8044AF` screenshots. Original images 1–4 establish FRCC's compact single-row wordmark/language/menu header, worship-photo hero, red service band, open white captions, dark text, and circular white image arrows. Images 5–9 show Zion City: useful references for edge-to-edge mobile photography and clear section rhythm, not a replacement identity or instruction to copy black surfaces, centered copy, or oversized promotional type.
+
+The rejected images show a two-row inflated header, excessive text enlargement and dark caption panels with underlined large headings. None of those treatments belongs in this proposal. Keep FRCC's font family, colors, wordmark, photos and face identity, image-arrow treatment, hero imagery, overlay, position and content order. Only the hero title size gets a bounded mobile rule to avoid the 92px tablet title surviving at 600–700px.
+
+## Final team choice after integration review
+
+Use **18px reading copy, 16px controls and 22px lead copy** at the default root. The first proposal's 16px body only matched the restored phone override and did not resolve the owner's small-text complaint. The 18px choice raises reading copy by 12.5%; retaining the original 22px lead avoids weakening introductory emphasis. Section/card/detail headings remain 32/24/20px. This improves reading comfort without a global font cascade.
+
+Accept longer paragraphs, taller white captions and more scrolling, especially at 320px and with enlarged text. Preserve content-driven heights, full-width imagery, face identity and white captions. The root and logo remain untouched. Header changes are limited to a 15px language link, flexible height/wrapping and a 44px menu control; normal layout should retain the original compact row. Those header refinements were explicitly requested during integration review and still require visual verification.
+
+## Exact type decisions
+
+These are component declarations, not an inherited global scale. Pixel equivalents assume the normal 16px browser root. The existing Geist/Arial family and weights remain. There is no `html` or `body` font change, OS Dynamic Type opt-in, text-size-adjust rule, zoom restriction, or viewport edit. Explicit rem sizes allow a user's browser font preference to continue to affect text.
+
+| Role | Default size | Line height | Reason |
+| --- | --- | --- | --- |
+| Home hero title | `clamp(3rem, 17vw, 4.25rem)`; 54.4px at 320px, 66.3px at 390px, 68px maximum at default root | Existing 0.92 | Preserve the recognizable two-line hero; prevent the 600–700px tablet-size jump. Bounds change with user font preferences. |
+| Page intro title, including Spanish and ministry names | 2.5rem / 40px | 1.12 | Confident page identity without 46–82px interior-page headlines. |
+| Section headings, Contact/Give headings, prayer/connect headings | 2rem / 32px | 1.18 | One repeatable section hierarchy throughout the routes. |
+| Story titles, Messages welcome, Give panel, Events/Messages home links, calendar month | 1.5rem / 24px | 1.3 | Clear local emphasis while keeping captions subordinate to sections. |
+| Contact/Spanish/ministry/recording headings, empty-state heading, dialog title | 1.25rem / 20px | 1.35 | Fit practical labels and longer ministry names. |
+| Calendar event title and agenda heading | 1.25rem / 20px | 1.4 | Distinguish event name from date and action. |
+| Lead copy | 1.375rem / 22px | 1.5 | Retain original introductory emphasis above the 18px body. |
+| Body copy, hero welcome, captions, interior intro description, Spanish, ministry and Messages text, event empty output | 1.125rem / 18px | 1.65 | Address the original small-text complaint with a controlled increase. |
+| Content buttons and text links; calendar dates, view controls and details hint | 1rem / 16px | 1.5; calendar metadata 1.6 | Legible actions that wrap and grow vertically. |
+| Giving notice | 1.125rem / 18px | 1.65 | Treat the broken-link notice as essential reading copy. A single targeted `!important` is needed because the restored rule already uses it. |
+| Eyebrows outside the service band, including hero | 0.75rem / 12px | 1.5 | Readable small labels without enlarging whole sections. |
+| Messages search input | 1rem / 16px | 1.5 | Match the control scale. |
+| Footer name, address and phone | 1.125rem / 18px | 1.65 | Essential contact information uses the reading scale. |
+| Footer navigation | 1rem / 16px | 1.65 | Match other action labels. |
+| Header Español link | 0.9375rem / 15px | 1.5 | Improve the original 11px label without inflating the logo. |
+| Calendar weekday / day number | 0.75rem / 12px; 0.875rem / 14px | Existing weekday rhythm; day number 1.5 | Readable compact labels with flexible number boxes. |
+| Footer supporting text and credits | 0.875rem / 14px | 1.6 | Avoid the existing 10–12px mobile fine print. |
+
+Logo and mobile-navigation typography retain the restored sizes. Header Español uses 15px and hero welcome uses 18px. Calendar event indicators retain their existing compact treatment; readable event detail stays in the agenda. No generic `h1`, `h2`, `h3`, `p`, `a`, `button`, or universal font override is added. Service-band text is explicitly excluded from shared content typography selectors.
+
+## Layout decisions
+
+- All changes are inside `max-width: 700px`. No tablet or desktop rules are added. The 600–700px range receives the same single-column Contact, Give, Messages, story-card and footer treatment as smaller phones.
+- Reading content keeps 20px side gutters. Only identified content container widths change; header and service-band container widths are untouched. Major `.section-space` sections and Contact prayer use 56px vertical padding; stacked content uses 32px gaps. Existing hero height and intro backgrounds remain.
+- Home story cards and recording cards span the viewport by cancelling their parent gutter with 20px negative inline margins. Captions use white backgrounds with 20px horizontal and top padding. No shadow, border, new card color, card-height constraint or heading underline is introduced. The existing hover color and white circular arrow remain.
+- Home story images use intrinsic height, removing the wrapper's imposed ratio. Messages welcome and pastor photos also use intrinsic height and extend by exactly the surrounding 40px gutter. Worship-gallery photos use a full-width, single-column container. No source replacement, face generation, additional crop or image stretching is requested. Recording thumbnails retain their existing 16:9 video treatment.
+- Give retains its original pale panel, with 24px vertical / 20px horizontal padding. Contact retains its icon-and-detail rows; flexible detail children can shrink. Spanish uses the same sizes and wrapping rules as English, including the long church name.
+- Ministry index rows keep the number/title/arrow composition with `24px minmax(0, 1fr) 22px` tracks and 12px gaps. Existing description placement remains under the title. Ministry detail pages inherit the shared reading hierarchy and one-column welcome layout.
+- Events agenda summaries use one column through 700px with 24px vertical padding. Calendar view controls can wrap; labels retain text. Detail paragraphs use normal inline text flow so the existing flex layout cannot turn text fragments into competing narrow columns. Month-grid interaction and existing compact indicators are unchanged. An explicit `.calendar-event-summary .eyebrow { grid-column: auto; }` matches the restored selector specificity and defeats its `span 2` at 600–700px. Day-number boxes replace fixed 24/28px dimensions with full available cell width, automatic height and a 1.5em minimum height; 14px digits can enlarge and wrap. Day buttons retain a 78px minimum height and can grow. Weekday labels use 12px and can wrap.
+- Footer groups stack in one column, followed by stacked credits. Navigation links have a 44px minimum target height. Content actions also retain a 44px minimum height and allow text wrapping; heights remain content-driven. The dialog close control cannot shrink beside a long title.
+
+## Service-band coordination
+
+The red service band remains a distinct, full-width transition directly below the worship hero. Its owner must make address, Sunday/Wednesday times and directions clear without competing with the hero. This proposal adds **no `visit-*` styling**, edits no shell markup, and explicitly excludes both `.visit-band` and `.visit-details-band` from every broad main-content typography and container selector. The new service-band class remains entirely owned by the service agent. Service-time sections outside that band retain their existing dedicated styles. Review the combined preview with the service-band owner's work before accepting the overall mobile rhythm.
+
+## Enlargement and acceptance
+
+The open mobile menu participates in the header flex flow: `.site-header .mobile-navigation` uses `position: static`, a full-row flex basis, automatic content height (`max-height: none`) and visible overflow. This overrides the restored absolute positioning and `calc(100dvh - 80px)` limit, so no guessed header height is subtracted. Only while the menu lacks `[hidden]`, `.site-header:has(.mobile-navigation:not([hidden]))` becomes one vertical scroll region capped at `100dvh` (`100vh` fallback). The scroll region includes both the actual wrapped header and the complete menu; on short viewports, scroll down to the last link or back up to the close control. The existing `[hidden]` rule removes the closed menu from flow and the open-only height cap no longer applies. No script, shell change, global text scale or inaccessible overflow hiding is introduced. This design relies on browser support for `:has()`; verify it in the actual preview browser and target Safari.
+
+Reflow safeguards are explicit: shrinkable grid/flex children, single columns, wrapping actions and service-time pairs, and `overflow-wrap: anywhere` for long titles, addresses and labels. That wrap rule is a last resort, not forced word breaking at normal widths. Caption/card heights are unrestricted. No ellipsis, text clipping, page-level overflow hiding or suppression of browser resizing is added. Header height is automatic with a 72px minimum and 14px vertical padding. The header row and action group can wrap only when required by available space; no forced second row is introduced. The menu has a 44px nonshrinking target. Logo typography remains unchanged. Enlarged header behavior still needs joint preview review.
+
+Before acceptance, inspect Home, About, Contact, Give, Messages (welcome, populated/search/empty/dialog states), Events (list, month and expanded details), Spanish, and every ministry route. Check 320, 375, 390, 430, 600, 700 and 701px widths; confirm 701px returns to restored styles. Review 200% browser zoom and enlarged browser text separately. With the menu open, test a short landscape viewport and enlarged/wrapped header: scroll to the final Español link, return to the close button, tab through every link and close with Escape. Confirm closing restores the normal header and page scrolling. Check long Spanish headings, full addresses, long ministry links, footer credits and calendar controls for overflow. Compare imagery and faces to the original FRCC references, and confirm captions stay white. Validate service-band integration with its owner.
+
+Validation completed: PostCSS parsed all 56 final rules successfully. Final local source re-review also confirmed the menu flows inside the header, its old height cap is removed, viewport scrolling applies only while open, and the existing closed-menu hidden contract remains intact. This is a local source re-review, not independent reviewer or browser approval. Source checks passed for the 700px boundary, both service-band exclusions, untouched root, the explicit calendar eyebrow placement reset, flexible header/actions/day-number sizing and the 15px language link. There are no fixed card heights or resizing-suppression declarations, and only the targeted giving-notice declaration uses `!important`. Header menu icon dimensions are intentionally fixed; header height and calendar day-number height are automatic. `oxfmt --check app/mobile-refinement.css` passed. These are source and syntax/format checks only. Browser rendering, physical iPhone/Safari behavior, zoom, text enlargement, keyboard interaction and screenshots of this proposal have **not** been tested. The supplied screenshots describe the reference/rejected states, not proof of this proposal rendering successfully. No production readiness or device-QA claim is made.
