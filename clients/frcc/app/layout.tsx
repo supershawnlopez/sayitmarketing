@@ -19,6 +19,14 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteOrigin),
   title: 'FRCC Tucson | Family Restoration Community Church',
+  icons: {
+    icon: [
+      { url: publicAsset('/favicon.svg?v=frcc-1'), type: 'image/svg+xml' },
+      { url: publicAsset('/frcc-icon-32.png'), type: 'image/png', sizes: '32x32' },
+    ],
+    shortcut: publicAsset('/favicon.ico?v=frcc-1'),
+    apple: { url: publicAsset('/frcc-apple-touch-icon.png'), sizes: '180x180', type: 'image/png' },
+  },
   robots: siteNoIndex ? { index: false, follow: false } : { index: true, follow: true },
   description:
     'Family Restoration Community Church is a Tucson church community centered on faith, restoration, worship, and serving families.',
