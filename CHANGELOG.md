@@ -1,3 +1,9 @@
+## Session: October 29, 2026 — Homepage Support Services Alignment
+
+- Centered section text, heading box, and service links in the existing homepage support band.
+- CSS whitespace check passed. Shawn approved pushing the fix; visual/device checks remain pending.
+- Stripe signed-event validation remains open.
+
 ## Session: August 29, 2026 — Portfolio Screenshot Assets
 **AI:** Codex (GPT-5)
 **Worked on:** Added public-site screenshots to the portfolio proof cards

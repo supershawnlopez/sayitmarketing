@@ -1,5 +1,13 @@
 # SESSION_HANDOFF.md — Say It Marketing
 ### Current truth for the next AI session
+
+## October 29, 2026 — Homepage Support Services alignment
+
+- Local CSS fix centers the section text, heading box, and service-link row after Shawn reported mixed alignment on iPad.
+- Copy and destinations are unchanged. `git diff --check` passed; browser/device verification remains pending, including Samsung.
+- Shawn approved committing and pushing this fix. Review on iPad and phone after deployment; device testing remains pending.
+- Stripe signed-event validation remains open.
+
 *Last updated: August 28, 2026*
 
 ---
